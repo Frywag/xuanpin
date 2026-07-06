@@ -1,0 +1,1801 @@
+meta:
+  ontology_id: ONT-FULL-V3
+  version: 3.0-draft
+  date: '2026-06-11'
+  merges:
+  - ONT-V1(第一期方案)
+  - ONT-V2-EXTENSION(52实体/91关系)
+  - US-FBA-MVP(规则16/费率73)
+  coverage:
+    physical_tables: 575
+    domain_classified: 575
+    entity_mapped: 410
+    fields_dictionary: 11602
+    lineage_edges: 8782
+    join_edges: 219
+  design_principles: 沿用V1七原则+V2三原则
+domains:
+- domain_id: DOM-AD
+  name: 广告域
+  name_en: Advertising
+  status: 新增
+  说明: Amazon Ads(SP为主)+ Temu广告。覆盖投放对象层级、定向体系、报表对象、关键词资产
+- domain_id: DOM-CAT
+  name: 类目与商品体系域
+  name_en: CatalogTaxonomy
+  status: 新增
+  说明: Amazon BrowseNode 类目树、ProductType Schema、ASIN/Listing/变体家族。修复第一期 ProductCategory 过于简化的缺口
+- domain_id: DOM-LOG
+  name: 物流执行域
+  name_en: LogisticsExecution
+  status: 深化
+  说明: 第一期只有 Channel/Warehouse/Shipment 三个静态实体;本期补全 PSI 发货执行链路(主计划→子计划→需求单→装箱→票号→货件)与轨迹/补偿
+- domain_id: DOM-SUP
+  name: 采购供应域
+  name_en: SupplyChain
+  status: 新增
+  说明: 供应商、采购单、质检、不良品。物流执行域的上游,前置成本的发生源头
+- domain_id: DOM-PRECOST
+  name: 运营前置成本域
+  name_en: PreLaunchCost
+  status: 新增
+  说明: 开品到动销前发生的一切成本:打样、测款、素材、Listing建设、合规、首单备货、广告冷启动。支撑'开一个新品/新品牌要花多少钱'的核心问题
+- domain_id: DOM-BRAND
+  name: 品牌矩阵域
+  name_en: BrandMatrix
+  status: 新增
+  说明: 品牌、产品线、产品定位、品牌分析、竞品对标。服务白牌→品牌矩阵战略转型
+- domain_id: DOM-DATA
+  name: 数据资产域
+  name_en: DataAsset
+  status: 深化
+  说明: 第一期 DataRule 的实体化落地:数据资产、字段、血缘边,对齐数据中台元数据系统
+- domain_id: DOM-CORE
+  name: 核心主数据域
+  说明: V1继承:国家/平台/主体/服务商
+- domain_id: DOM-ORD
+  name: 订单销售域
+  说明: 新建:订单/订单行/履约/退货/业务报告;26张表
+- domain_id: DOM-FIN
+  name: 财务结算域
+  说明: 新建:结算/汇率/平台费实际/促销/财务映射;18张表
+- domain_id: DOM-INV
+  name: 库存仓储域
+  说明: 新建+V1深化:FBA快照/调拨/库存记录;36张表
+- domain_id: DOM-ORG
+  name: 组织用户域
+  说明: 新建:店铺/用户;14张表
+- domain_id: DOM-MKT
+  name: 市场调研域
+  说明: 新建:爬虫/选品/类目分析;30张表
+- domain_id: DOM-PLT-TEMU
+  name: Temu平台特化
+  说明: 35张表,特化占位
+- domain_id: DOM-PLT-SHEIN
+  name: Shein平台特化
+  说明: 26张表,特化占位
+- domain_id: DOM-PLT-TIKTOK
+  name: TikTok平台特化
+  说明: 8张表,特化占位
+entities_v1_inherited:
+- entity_id: CountryRegion
+  name: 国家/地区
+  domain: DOM-CORE
+  说明: V1继承:站点/税务/合规的地理锚点
+  key_attributes:
+  - country_code
+  - name
+  - tax_regime
+- entity_id: Platform
+  name: 销售平台
+  domain: DOM-CORE
+  说明: V1继承:Amazon/Temu/Shein/TikTok
+  key_attributes:
+  - platform_code
+  - name
+- entity_id: LegalEntity
+  name: 公司主体
+  domain: DOM-CORE
+  说明: V1继承:销售/持牌主体;物理表缺失(GAP-01)
+  key_attributes:
+  - entity_id
+  - name
+  - country
+  - tax_no
+- entity_id: Store
+  name: 店铺
+  domain: DOM-ORG
+  说明: V1继承;物理表已证:T_SHOP/dwd_shop(21字段)
+  key_attributes:
+  - shop_id
+  - shop_code
+  - platform_code
+  - platform_site_code
+  - selling_partner_id
+- entity_id: SPU
+  name: 标准产品单元
+  domain: DOM-CAT
+  说明: V1继承:款
+  key_attributes:
+  - spu_id
+  - name
+  - product_line_id
+- entity_id: SKU
+  name: 库存量单位
+  domain: DOM-CAT
+  说明: V1继承;物理表已证:T_ERP_PRODUCT_SKU(豆芽);v2增补材积挡/预估尺寸
+  key_attributes:
+  - sku_id
+  - spu_id
+  - color
+  - size
+  - estimate_us_material_grade
+- entity_id: ProductCategory
+  name: 内部品类
+  domain: DOM-CAT
+  说明: V1继承;平台侧由BrowseNode特化(R-CAT-013)
+  key_attributes:
+  - category_id
+  - name
+  - parent_id
+- entity_id: Warehouse
+  name: 仓库
+  domain: DOM-INV
+  说明: V1继承;v2增补transit中转仓枚举
+  key_attributes:
+  - warehouse_id
+  - name
+  - warehouse_type
+- entity_id: LogisticsChannel
+  name: 物流渠道(配置)
+  domain: DOM-LOG
+  说明: V1继承;与RealChannel映射
+  key_attributes:
+  - channel_id
+  - name
+  - rate_card_ref
+- entity_id: ServiceProvider
+  name: 服务商
+  domain: DOM-CORE
+  说明: V1继承;LogisticsProvider为其子类
+  key_attributes:
+  - provider_id
+  - name
+  - type
+- entity_id: InventoryRecord
+  name: 库存记录
+  domain: DOM-INV
+  说明: V1继承
+  key_attributes:
+  - sku_id
+  - warehouse_id
+  - qty
+  - snapshot_date
+- entity_id: SourceDocument
+  name: 溯源文件(L0)
+  domain: DOM-DATA
+  说明: V1继承:报价单/合同/官方页归档
+  key_attributes:
+  - source_id
+  - file_name
+  - source_party
+  - version
+- entity_id: Rule
+  name: 规则(L3基类)
+  domain: DOM-DATA
+  说明: V1继承:统一语义模型(适用条件/计算/生命周期/溯源/automation)
+  key_attributes:
+  - rule_id
+  - rule_category
+  - applicability
+  - calculation
+  - lifecycle
+  - provenance
+- entity_id: Case
+  name: 案例(L4)
+  domain: DOM-DATA
+  说明: V1继承:验算案例
+  key_attributes:
+  - case_id
+  - scenario
+  - related_rules
+entities_v2:
+- entity_id: AdProfile
+  name: 广告档案
+  domain: DOM-AD
+  说明: 广告账户在某市场的投放主体,Amazon Ads API 的顶层对象;一个店铺×站点对应一个 Profile
+  key_attributes:
+  - profile_id
+  - marketplace_id
+  - store_id
+  - currency_code
+  - timezone
+  - account_type
+  source_evidence:
+  - T_AMAZON_ADVERTISING_PROFILE
+  - dwd_amazon_ad_profile
+- entity_id: AdPortfolio
+  name: 广告组合
+  domain: DOM-AD
+  说明: Campaign 的业务分组容器,可设组合级预算;品牌矩阵下建议按 Brand×ProductLine 建组合
+  key_attributes:
+  - portfolio_id
+  - portfolio_name
+  - budget_amount
+  - budget_policy
+  - state
+  source_evidence:
+  - T_AMAZON_ADVERTISING_PORTFOLIO
+  - dwd_amazon_ad_portfolio
+- entity_id: AdCampaign
+  name: 广告活动
+  domain: DOM-AD
+  说明: 投放的最小预算与策略单元
+  key_attributes:
+  - campaign_id
+  - campaign_name
+  - ad_product_type
+  - targeting_type
+  - daily_budget
+  - bidding_strategy
+  - placement_adjustment
+  - state
+  - start_date / end_date
+  source_evidence:
+  - T_AMAZON_ADVERTISING_CAMPAIGN
+  - T_AMAZON_ADVERTISING_CAMPAIGN_EXTEND
+  - dwd_amazon_ad_campaign
+  - dwd_amazon_ad_campaign_adjustments
+- entity_id: AdGroup
+  name: 广告组
+  domain: DOM-AD
+  说明: Campaign 下的定向与出价分组;同组共享默认竞价
+  key_attributes:
+  - ad_group_id
+  - ad_group_name
+  - default_bid
+  - state
+  source_evidence:
+  - T_AMAZON_ADVERTISING_GROUP
+  - dwd_amazon_ad_group
+- entity_id: ProductAd
+  name: 商品广告
+  domain: DOM-AD
+  说明: 被推广的具体商品(ASIN/SKU)在广告组中的投放实例
+  key_attributes:
+  - ad_id
+  - asin
+  - seller_sku
+  - state
+  source_evidence:
+  - T_AMAZON_ADVERTISING_PRODUCT
+  - dwd_amazon_ad_product
+- entity_id: AdKeyword
+  name: 广告关键词
+  domain: DOM-AD
+  说明: 手动关键词定向单元;含正向关键词。匹配类型决定流量宽窄
+  key_attributes:
+  - keyword_id
+  - keyword_text
+  - match_type
+  - bid
+  - state
+  - is_negative: false
+  source_evidence:
+  - T_AMAZON_ADVERTISING_KEYWORD
+  - dwd_amazon_ad_keyword
+  - AD_AUTO_KEYWORD_BID_TB
+- entity_id: NegativeKeyword
+  name: 否定关键词
+  domain: DOM-AD
+  说明: 排除流量的关键词;可挂活动级或广告组级
+  key_attributes:
+  - keyword_id
+  - keyword_text
+  - match_type
+  - level
+  source_evidence:
+  - T_AMAZON_ADVERTISING_KEYWORD(is_negative)
+- entity_id: AdTarget
+  name: 广告投放目标(商品/类目定向)
+  domain: DOM-AD
+  说明: 非关键词定向单元:商品定向(ASIN)、类目定向(BrowseNode/Category + 细化条件)、自动定向的四类匹配子策略
+  key_attributes:
+  - target_id
+  - expression_type
+  - auto_clause
+  - refinement
+  - bid
+  - state
+  - is_negative
+  source_evidence:
+  - T_AMAZON_ADVERTISING_TARGET
+  - dwd_amazon_ad_target
+- entity_id: SearchTerm
+  name: 客户搜索词
+  domain: DOM-AD
+  说明: 买家实际输入并触发了广告的搜索词;关键词收割与否定的原料。与 AdKeyword 是'实际流量 vs 定向意图'的关系
+  key_attributes:
+  - search_term_text
+  - triggered_by
+  - first_seen_date
+  source_evidence:
+  - T_AZ_ADVERT_SEARCH_TERM_REPORT
+  - dwd_amazon_ad_search_term_report
+- entity_id: AdPlacement
+  name: 广告展示位
+  domain: DOM-AD
+  说明: 广告实际展示位置维度
+  key_attributes:
+  - placement_type
+  source_evidence:
+  - T_AZ_ADVERT_PLACEMENT_REPORT
+  - dwd_amazon_ad_placement_report
+- entity_id: AdAudience
+  name: 广告受众
+  domain: DOM-AD
+  说明: SD/再营销场景的受众分群(浏览定向/购买定向等)
+  key_attributes:
+  - audience_id
+  - audience_type
+  source_evidence:
+  - T_AZ_ADVERT_AUDIENCE_REPORT
+  - dwd_amazon_ad_audience_report
+- entity_id: AdPerformanceRecord
+  name: 广告绩效记录
+  domain: DOM-AD
+  说明: 按 维度对象×日期 的投放绩效事实;维度对象可为 Campaign/AdGroup/Keyword/Target/SearchTerm/Placement/Audience/ProductAd/ASIN(对应你们 9 张报告表)。本体层将其统一为一个事实实体
+    + dimension_type 区分
+  key_attributes:
+  - record_date
+  - dimension_type
+  - dimension_id
+  - impressions / clicks / spend
+  - attributed_sales / attributed_orders / attributed_units
+  source_evidence:
+  - T_AZ_ADVERT_*_REPORT(9张)
+  - dwd_amazon_ad_*_report(9张)
+  - T_TEMU_AD_PLATFORM_REPORT_WEEKLY/MONTHLY
+- entity_id: AdInvoice
+  name: 广告发票
+  domain: DOM-AD
+  说明: 广告费用的财务结算凭证;广告域与财务域(第一期 AdvertisingFee 规则)的对账锚点
+  key_attributes:
+  - invoice_id
+  - invoice_period
+  - amount / currency
+  - profile_id
+  source_evidence:
+  - T_AMAZON_AD_INVOICE
+  - dwd_amazon_ad_invoice
+- entity_id: KeywordAsset
+  name: 关键词资产
+  domain: DOM-AD
+  说明: 脱离单次投放的关键词知识库:精准词库、反查词库、流量关键词及分组。是公司沉淀的可复用流量资产,品牌词/竞品词/类目词在此分类
+  key_attributes:
+  - keyword_text
+  - library_type
+  - keyword_role
+  - flow_keyword_group_id
+  - site_code
+  source_evidence:
+  - T_AZ_PRECISE_KEYWORD_LIBRARY
+  - T_AZ_ASIN_KEYWORD_LIBRARY
+  - T_AZ_LISTING_V2_FLOW_KEYWORD_*
+  - T_AZ_LISTING_V2_FLOW_KEYWORD_GROUP(_RELATION)
+- entity_id: KeywordRankSnapshot
+  name: 关键词排名快照
+  domain: DOM-AD
+  说明: 爬虫抓取的 ASIN×关键词×站点 的自然位/广告位排名时序;衡量关键词资产的占位效果
+  key_attributes:
+  - asin / keyword_text / site_code
+  - snapshot_date
+  - organic_rank
+  - sp_rank / sp_slot_type
+  source_evidence:
+  - T_AZ_CW_{US,UK,DE}_ASIN_KEYWORD_RANK_INFO(±7D)
+  - T_AZ_CW_PAGE_KEYWORD_WEB_*_RANK_INFO
+  - T_AZ_CW_BRAND_TOP_SEARCH_TERMS_KEYWORD
+- entity_id: BrowseNode
+  name: Amazon 类目节点
+  domain: DOM-CAT
+  说明: Amazon 站内类目树节点(树形,叶/枝);第一期 ProductCategory 的 Amazon 特化。注意 PA-API 2026-05 起废弃,数据获取迁移 Creators API,但概念模型不变
+  key_attributes:
+  - browse_node_id
+  - display_name
+  - context_free_name
+  - is_root / is_leaf
+  - marketplace_id
+  - sales_rank_scope
+  source_evidence:
+  - '官方: PA-API GetBrowseNodes(Ancestor/Children)'
+  - '类目定向数据: T_AMAZON_ADVERTISING_TARGET'
+- entity_id: AmazonProductType
+  name: Amazon 产品类型
+  domain: DOM-CAT
+  说明: SP-API Product Type Definitions 定义的产品类型(如 DRESS/SHIRT),携带 JSON Schema 描述刊登必填属性;女装刊登合规的依据
+  key_attributes:
+  - product_type_name
+  - marketplace_id
+  - schema_version
+  - required_attributes
+  - parentage_level
+  source_evidence:
+  - '官方: SP-API product-type-definitions-v2020-09-01'
+- entity_id: ItemTypeKeyword
+  name: 商品类型关键词
+  domain: DOM-CAT
+  说明: 刊登时声明的 item_type_keyword,决定商品落入哪个 BrowseNode;ProductType 与 BrowseNode 之间的官方推荐桥
+  key_attributes:
+  - keyword_value
+  - recommended_browse_node_id
+  source_evidence:
+  - '官方: SP-API getDefinitionsProductType 推荐接口'
+- entity_id: ASIN
+  name: ASIN(Amazon 商品标识)
+  domain: DOM-CAT
+  说明: Amazon 目录中的商品标识。与第一期 SKU 区分:SKU 是公司内部货品,ASIN 是平台目录对象;一个 ASIN 可被多店铺跟卖。第一期缺失的关键实体
+  key_attributes:
+  - asin
+  - marketplace_id
+  - parent_asin
+  - brand_name
+  source_evidence:
+  - T_AZ_* 全系表均以 asin 为键
+  - T_WHP_AZ_ASIN_STAR_SCORE_RECORD
+- entity_id: Listing
+  name: 在线列表(刊登)
+  domain: DOM-CAT
+  说明: 店铺×ASIN×SellerSKU 的刊登实例,公司运营的最核心对象(你们 248 张表围绕它);承载价格、库存、标签、定位目标
+  key_attributes:
+  - listing_id
+  - store_id / asin / seller_sku / fnsku
+  - listing_status
+  - price / currency
+  - tags
+  - custom_group_id
+  source_evidence:
+  - T_WHP_AZ_EXTEND
+  - T_WHP_AMAZON_LISTING_TAG
+  - dwd_whp_amazon_listing_cus_group
+  - T_AZ_LISTING_* 系列
+- entity_id: VariationFamily
+  name: 变体家族
+  domain: DOM-CAT
+  说明: 父 ASIN 与子 ASIN 的变体关系(女装核心:颜色×尺码二维变体)
+  key_attributes:
+  - parent_asin
+  - variation_theme
+  - child_count
+  source_evidence:
+  - T_WHP_AMAZON_PARENT_PATERNITY
+  - dwd_whp_amazon_child_paternity
+- entity_id: ListingReview
+  name: Listing 评价快照
+  domain: DOM-CAT
+  说明: ASIN 星级/评分/评论数时序;品牌资产健康度的输入
+  key_attributes:
+  - asin / snapshot_date
+  - star_rating / rating_count
+  source_evidence:
+  - T_WHP_AZ_ASIN_STAR_SCORE_RECORD
+- entity_id: MainDeliveryPlan
+  name: 发货主计划
+  domain: DOM-LOG
+  说明: 面向一批 SKU 的总体补货决策(PSI v4 主计划)
+  key_attributes:
+  - main_plan_id
+  - plan_period
+  - status
+  source_evidence:
+  - T_PSI_V4_MAIN_DELIVERY_PLAN(_PRODUCT)(_PRODUCT_DEMAND)
+- entity_id: DeliveryPlan
+  name: 发货子计划
+  domain: DOM-LOG
+  说明: 主计划拆解出的可执行发货单元;直发或中转尾程两种履约路径
+  key_attributes:
+  - plan_id / main_plan_id
+  - fulfillment_path
+  - shipment_id
+  - status
+  source_evidence:
+  - T_PSI_V4_DELIVERY_PLAN(_PRODUCT)
+  - T_PSI_V4_DELIVERY_TAIL_PLAN
+- entity_id: DemandBill
+  name: 发货需求单
+  domain: DOM-LOG
+  说明: 发货计划选择的需求来源单据;装箱产品与需求单多对多(一个装箱产品可对应多个 confirmedDemandNo)
+  key_attributes:
+  - demand_no
+  - sku_id / quantity
+  - status
+  source_evidence:
+  - T_PSI_V4_DELIVERY_DEMAND_BILL(_PALLET)(_RECORD)
+  - T_PSI_V4_DELIVERY_PLAN_PRE_CREATE_DEMAND_RECORD
+- entity_id: PackBox
+  name: 装箱(箱)
+  domain: DOM-LOG
+  说明: 物理装箱单元;含装箱计划产品、安排发货装箱、已发货箱、与物流商箱号的映射
+  key_attributes:
+  - box_id
+  - box_no / carrier_box_no
+  - weight / volume
+  - box_stage
+  source_evidence:
+  - T_PSI_V4_PLAN_PACK_FILL_BOX_PRODUCT_INFO
+  - T_PSI_V4_LOGISTICS_ARRANGE_PLAN_BOX(_PRODUCT)
+  - T_PSI_V4_LOGISTICS_DELIVER_GOOD_BOX
+  - T_PSI_V4_DELIVERY_TAIL_BOX(_DEMAND)
+  - T_PSI_V4_LOGISTICS_TICKET_ORDER_BOX_RELATIONAL
+- entity_id: LogisticsTicket
+  name: 物流票号
+  domain: DOM-LOG
+  说明: 向物流商交运的运单/票号;头程计费与轨迹追踪的主键
+  key_attributes:
+  - ticket_no
+  - channel_id / provider_id
+  - total_weight / total_volume / chargeable_weight
+  - depart_date / sign_date
+  source_evidence:
+  - T_PSI_V4_LOGISTICS_DELIVER_GOOD_TICKET
+  - T_PSI_V4_TAIL_SALES_SHIPPED_DEMAND_SKU_STOCK_HEAD_TICKET
+- entity_id: InboundShipment
+  name: Amazon 入库货件
+  domain: DOM-LOG
+  说明: FBA 货件(shipment_id);血缘显示它是物流域的中枢键,1:N 关联补偿/发货计划/尾程箱/拣货单/履约报告
+  key_attributes:
+  - shipment_id
+  - destination_fc
+  - shipment_status
+  - logistics_info
+  source_evidence:
+  - T_AMAZON_INBOUND_SHIPMENT_INFO
+  - T_AMAZON_INBOUND_SHIPMENT_LOGISTICS_INFO
+- entity_id: LogisticsOrder
+  name: 物流订单
+  domain: DOM-LOG
+  说明: 向物流商下的运输委托订单
+  key_attributes:
+  - logistics_order_id
+  - provider_id / channel_id
+  - status
+  source_evidence:
+  - T_PSI_V4_LOGISTICS_ORDER_INFO
+- entity_id: RealChannel
+  name: 真实渠道
+  domain: DOM-LOG
+  说明: 物流商实际执行的渠道;与第一期 LogisticsChannel(报价渠道/配置渠道)区分——配置渠道是签约口径,真实渠道是执行口径,两者映射是渠道偏差分析的基础
+  key_attributes:
+  - real_channel_id
+  - channel_config_id
+  - provider_id
+  source_evidence:
+  - T_PLAN_LOGISTICS_REAL_CHANNEL_INFO
+  - T_PLAN_CHANNELS_CONFIG_INFO
+- entity_id: LogisticsProvider
+  name: 物流商
+  domain: DOM-LOG
+  说明: 第一期 ServiceProvider 的物流特化;含结算属性
+  key_attributes:
+  - provider_code / provider_name
+  - status
+  - default_billing_type
+  - default_settle_currency
+  source_evidence:
+  - T_LOGISTICS_SERVICE_PROVIDER
+- entity_id: TrackNode
+  name: 物流轨迹节点
+  domain: DOM-LOG
+  说明: 运输链路的节点事件;分预测节点与实际节点两套,偏差即时效异常
+  key_attributes:
+  - node_type
+  - node_name / node_time
+  - ticket_no
+  - source
+  source_evidence:
+  - T_PSI_V4_PLAN_LOGISTICS_FORECAST_TRACK_NODE_INFO
+  - T_PSI_V4_PLAN_LOGISTICS_ACTUAL_NODE_TRACK_DETAILS
+  - T_PSI_V4_LOGISTICS_RPA_GRAB_TRACK_INFO
+- entity_id: CompensationRecord
+  name: 物流补偿记录
+  domain: DOM-LOG
+  说明: 按周计算的物流商补偿(时效/丢损赔付);1:N 挂接货件
+  key_attributes:
+  - record_id / week
+  - shipment_id
+  - compensation_amount / currency
+  source_evidence:
+  - T_LOGISTICS_WEEK_COMPENSATION_RECORD
+- entity_id: TailTransitStock
+  name: 中转尾程库存
+  domain: DOM-LOG
+  说明: 中转仓(海外中转)以 SKU 维度的库存;区别第一期 InventoryRecord(FBA/三方仓)
+  key_attributes:
+  - sku_id / transit_warehouse_id
+  - quantity
+  source_evidence:
+  - T_PSI_V4_TAIL_WH_SKU_STOCK
+- entity_id: Supplier
+  name: 供应商(货品)
+  domain: DOM-SUP
+  说明: 货品供应商;与第一期 ServiceProvider(服务商)区分。女装供应链:面料厂/成衣厂/ODM
+  key_attributes:
+  - supplier_id / supplier_name
+  - supplier_type
+  - settlement_terms
+  source_evidence:
+  - T_WHP_PURCHASE_SUPPLIER
+  - dwd_whp_match_supplier_product
+- entity_id: PurchaseOrder
+  name: 采购单
+  domain: DOM-SUP
+  说明: '向供应商的下单;血缘: PO→PO产品(1:N), PO→付款物流信息'
+  key_attributes:
+  - po_no / supplier_id
+  - po_status
+  - payment_info
+  source_evidence:
+  - T_PSI_V4_PO_PRODUCT_INFO
+  - T_PSI_V4_PO_PAYMENT_LOGISTICS_INFO
+  - T_PSI_V4_POSUPPLIER_SHIPPED_SALES_TOBECONFIRMED
+- entity_id: POLine
+  name: 采购单产品行
+  domain: DOM-SUP
+  说明: 采购单 × SKU 行项目
+  key_attributes:
+  - po_line_id / po_no / sku_id
+  - quantity / unit_cost / currency
+  - expected_delivery_date
+  source_evidence:
+  - T_PSI_V4_PO_PRODUCT_INFO
+- entity_id: InspectionBill
+  name: 质检单
+  domain: DOM-SUP
+  说明: '到货/待上架质检;血缘: 待上架管理→质检单(1:N)'
+  key_attributes:
+  - inspection_id
+  - wait_shelve_id
+  - inspection_result
+  source_evidence:
+  - T_PSI_V4_WAIT_SHELVE_INSPECTION_BILL
+  - T_PSI_V4_WAREHOUSE_WAIT_SHELVE_INFO
+- entity_id: AbnormalDefective
+  name: 异常不良品
+  domain: DOM-SUP
+  说明: '质检发现的不良品实体;血缘: 不良品→处理方式(1:N)、→流程(1:N)、→预计处理信息(1:N)'
+  key_attributes:
+  - defective_id
+  - abnormal_type
+  - handle_way
+  - estimated_loss
+  source_evidence:
+  - T_PSI_V4_ABNORMAL_DEFECTIVE_INFO
+  - T_PSI_V4_ABNORMAL_DEFECTIVE_HANDLE_WAY
+  - T_PSI_V4_ABNORMAL_INSPECTION
+  - T_PSI_V4_ABNORMAL_ESTIMATE_HANDLE_INFO
+- entity_id: Consumable
+  name: 耗材
+  domain: DOM-SUP
+  说明: 包装袋/吊牌/箱等耗材库;前置成本与单件成本的输入
+  key_attributes:
+  - consumable_id / consumable_name
+  - unit_cost
+  source_evidence:
+  - T_WHP_V4_CONSUMABLE_LIBRARY
+- entity_id: PreLaunchCostItem
+  name: 前置成本项
+  domain: DOM-PRECOST
+  说明: 新品/新品牌从立项到动销前发生的成本实例;cost_category 取值见 PreLaunchCostRule 分类树。复用第一期 Rule 统一语义模型(适用条件/计算/生命周期/溯源)
+  key_attributes:
+  - cost_item_id
+  - cost_category
+  - target_scope
+  - amount / currency
+  - is_recurring
+  - amortization_rule
+  source_evidence:
+  - '规则层新建;费用证据: T_AZ_ONLINE_ASIN_FEES_ESTIMATE 等'
+- entity_id: FeeEstimate
+  name: 平台费用预估
+  domain: DOM-PRECOST
+  说明: ASIN 维度的平台费用预估(佣金/交易手续费/计件费/FBA物流费);上架前测算毛利的输入
+  key_attributes:
+  - asin / marketplace_id
+  - referral_fee_estimate
+  - fba_fulfillment_fee_estimate
+  - per_item_fee_estimate
+  - snapshot_date
+  source_evidence:
+  - T_AZ_ONLINE_ASIN_FEES_ESTIMATE
+- entity_id: GrossProfitModel
+  name: 毛利口径模型
+  domain: DOM-PRECOST
+  说明: 公司既有毛利口径的本体化(取自毛利记录表的口径注释):退换货后毛利 = 销售额 − FBA派送费(平台预估) − 亚马逊佣金 − 产品成本 − 头程运费 − 预计退换货占比×5%。作为口径实体登记,口径变更走版本不覆盖原则
+  key_attributes:
+  - model_id / model_version
+  - formula_text
+  - component_terms
+  - effective_date
+  source_evidence:
+  - T_AZ_ASIN_GROSS_PROFIT(表注释含完整公式)
+  - T_AZ_ASIN_GROSS_PROFIT_ADVERTISING_REPORT
+  - dwd_az_asin_gross_profit
+- entity_id: Brand
+  name: 品牌
+  domain: DOM-BRAND
+  说明: 品牌矩阵的顶层单元;含商标与平台备案状态。当前数据中品牌以 Listing 目录字段和品牌分析表隐含存在,本体将其显式化为一等实体
+  key_attributes:
+  - brand_id / brand_name
+  - trademark_status
+  - brand_registry_status
+  - positioning
+  - target_market
+  source_evidence:
+  - T_AMAZON_BRAND_ANALYSIS_INFO
+  - T_AMAZON_BRAND_SALES_VALUE_METRICS
+  - 新建主数据
+- entity_id: ProductLine
+  name: 产品线
+  domain: DOM-BRAND
+  说明: 品牌下的产品线(如连衣裙线/泳装线);已有物理表
+  key_attributes:
+  - product_line_id / product_line_name
+  - brand_id
+  - line_owner
+  source_evidence:
+  - T_WHP_PRODUCT_LINE
+  - dwd_whp_product_line
+- entity_id: ProductOrientation
+  name: 产品定位/目标
+  domain: DOM-BRAND
+  说明: Listing 级的定位与月度目标(目标规则);白牌→品牌转型中,定位从'爆款冲量'转向'品牌梯队角色'(引流款/利润款/形象款)
+  key_attributes:
+  - orientation_id / listing_id
+  - orientation_type
+  - monthly_target
+  - target_rule_id
+  source_evidence:
+  - T_WHP_AZ_ORIENTATION
+  - T_WHP_AMAZON_LISTING_ORIENTATION_RULE
+- entity_id: BrandAnalysisRecord
+  name: 品牌分析记录
+  domain: DOM-BRAND
+  说明: Amazon 品牌分析(ABA)指标快照:品牌销售值、搜索热词排名
+  key_attributes:
+  - brand_id / record_date
+  - sales_value_metrics
+  - top_search_terms_rank
+  source_evidence:
+  - T_AMAZON_BRAND_ANALYSIS_INFO
+  - T_AMAZON_BRAND_SALES_VALUE_METRICS
+  - T_AZ_CW_BRAND_TOP_SEARCH_TERMS_KEYWORD
+- entity_id: CompetitorASIN
+  name: 竞品 ASIN
+  domain: DOM-BRAND
+  说明: 对标竞品;含人工标注与 AI 图像识别双口径,以及父 ASIN 维度的竞品(PASIN)
+  key_attributes:
+  - competitor_asin
+  - competitor_type
+  - ai_competitor_img_type
+  - mapped_to
+  - av_pcs_price / pcs_num
+  - sign_tab_sorted
+  source_evidence:
+  - T_AZ_LISTING_COMPETITOR_ASIN
+  - T_AZ_LISTING_COMPETITOR_PASIN
+- entity_id: BrandKeywordAsset
+  name: 品牌词资产
+  domain: DOM-BRAND
+  说明: KeywordAsset 中 keyword_role=brand 的视图实体;品牌搜索量是品牌心智的代理指标,单列以支撑品牌矩阵看板
+  key_attributes:
+  - brand_id / keyword_text
+  - search_rank_trend
+  source_evidence:
+  - T_AZ_CW_BRAND_TOP_SEARCH_TERMS_KEYWORD(_NEW)
+- entity_id: DataAsset
+  name: 数据资产(表)
+  domain: DOM-DATA
+  说明: 数据中台登记的物理表资产;当前 575 张(ODS 307 / DWD 268)
+  key_attributes:
+  - asset_code
+  - asset_name_cn
+  - layer
+  - update_frequency
+  - business_meaning
+  source_evidence:
+  - 资产元数据导出(575行)
+- entity_id: DataField
+  name: 数据字段
+  domain: DOM-DATA
+  说明: 字段级元数据;敏感分级 P1-P3,质量规则随字段登记
+  key_attributes:
+  - asset_code / field_name_en / field_name_cn
+  - data_type / is_pk / nullable
+  - transformation_logic
+  - quality_rule
+  - sensitivity_level
+  source_evidence:
+  - 字段元数据导出
+- entity_id: LineageEdge
+  name: 血缘边
+  domain: DOM-DATA
+  说明: 字段级血缘(上游字段→下游字段);当前 8782 条。关系类型与确认方式是血缘可信度的依据
+  key_attributes:
+  - upstream_asset / upstream_field
+  - downstream_asset / downstream_field
+  - relation_type
+  - mapping_method
+  source_evidence:
+  - 血缘关系导出(8782行)
+entities_new:
+- entity_id: Order
+  name: 订单
+  domain: DOM-ORD
+  说明: 物理表已证:dwd_amazon_order(58字段,PK=amazon_order_id);含amazon_site/shop_id/pay_amount
+  key_attributes:
+  - amazon_order_id
+  - shop_id
+  - amazon_site
+  - marketplace_id
+  - pay_amount
+  - purchase_date
+  - order_status
+- entity_id: OrderItem
+  name: 订单行
+  domain: DOM-ORD
+  说明: 物理表已证:dwd_amazon_order_item(47字段);内嵌实际佣金与实际FBA费(对账黄金字段)
+  key_attributes:
+  - order_item_id
+  - order_id
+  - asin
+  - seller_sku
+  - quantity_ordered
+  - item_price
+  - commission
+  - fba_per_unit_fulfillment_fee_value
+  - refund_money
+  - promotion_rebate
+- entity_id: FulfilledShipmentLine
+  name: 履约发货行
+  domain: DOM-ORD
+  说明: 物理表已证:fulfilled_shipments报告;订单↔货件桥
+  key_attributes:
+  - amazon_order_id
+  - shipment_id
+  - order_item_id
+- entity_id: ReturnRecord
+  name: 退货记录
+  domain: DOM-ORD
+  说明: 物理表已证:customer_returns/退款率记录/移除订单
+  key_attributes:
+  - return_id
+  - order_id
+  - sku
+  - disposition
+- entity_id: BusinessReport
+  name: 业务报告(销售流量)
+  domain: DOM-ORD
+  说明: 物理表已证:EB_REPORT 子ASIN详情页销售与流量
+  key_attributes:
+  - asin
+  - date
+  - sessions
+  - page_views
+  - units
+- entity_id: Settlement
+  name: 平台结算
+  domain: DOM-FIN
+  说明: 物理表已证:T_AMAZON_SETTLEMENT/all_payments;账单对齐锚点
+  key_attributes:
+  - settlement_id
+  - currency
+  - planned_transfer_amount
+  - period
+- entity_id: CurrencyRate
+  name: 汇率
+  domain: DOM-FIN
+  说明: 物理表已证:三套口径order/pricing/freight
+  key_attributes:
+  - currency_1
+  - currency_2
+  - order_rate
+  - pricing_rate
+  - freight_rate
+  - date
+- entity_id: PlatformFeeRecord
+  name: 平台费用实际记录
+  domain: DOM-FIN
+  说明: 物理表已证:仓储费/超龄费/入库配置费明细;费率反推与验算的actual侧
+  key_attributes:
+  - fee_type
+  - asin_or_shipment
+  - amount
+  - charge_period
+- entity_id: PromotionRecord
+  name: 促销/优惠券记录
+  domain: DOM-FIN
+  说明: 物理表已证:promotion/coupon performance报表
+  key_attributes:
+  - promo_id
+  - asin
+  - type
+  - spend
+  - sales
+- entity_id: FinanceProductMapping
+  name: 财务产品系统映射
+  domain: DOM-FIN
+  说明: 物理表已证:FNSKU↔SellerSKU↔店铺修正映射(8字段)
+  key_attributes:
+  - normal_fn_sku
+  - revised_seller_sku
+  - revised_shop_id
+- entity_id: FBAInventorySnapshot
+  name: FBA库存快照
+  domain: DOM-INV
+  说明: 物理表已证:库存健康/库存统计;含asin×fnsku×seller_sku三元组与库龄分布
+  key_attributes:
+  - fnsku
+  - asin
+  - seller_sku
+  - shop_id
+  - age_buckets
+  - snapshot_date
+- entity_id: AllocationBill
+  name: 调拨单
+  domain: DOM-INV
+  说明: 物理表已证:T_PSI_V4_ALLOCATION_BILL(+SOURCE/RESULT)
+  key_attributes:
+  - allocation_id
+  - from_wh
+  - to_wh
+  - sku
+  - qty
+- entity_id: SysUser
+  name: 系统用户
+  domain: DOM-ORG
+  说明: 物理表已证:T_SYS_USER;血缘:user_id→ERP_PRODUCT_SKU_USER等
+  key_attributes:
+  - user_id
+  - name
+  - dept
+- entity_id: PlatformOrder_Temu
+  name: Temu订单(特化)
+  domain: DOM-PLT-TEMU
+  说明: 物理表已证:35张Temu表;平台无关核心+特化原则的占位实体
+  key_attributes:
+  - order_id
+  - shop_id
+- entity_id: PlatformOrder_Shein
+  name: Shein订单(特化)
+  domain: DOM-PLT-SHEIN
+  说明: 物理表已证:26张
+  key_attributes:
+  - order_id
+  - shop_id
+- entity_id: PlatformOrder_TikTok
+  name: TikTok订单(特化)
+  domain: DOM-PLT-TIKTOK
+  说明: 物理表已证:8张;血缘:ERP SKU.id→TIKTOK_ORDER_LINE_ITEM.sku_id
+  key_attributes:
+  - order_id
+  - sku_id
+- entity_id: MarketResearchRecord
+  name: 市场调研记录
+  domain: DOM-MKT
+  说明: 物理表已证:30张爬虫表(类目分析/选品指南/价格历史)
+  key_attributes:
+  - target
+  - metric
+  - snapshot_date
+relations_v2:
+- id: R-AD-001
+  s: AdProfile
+  p: belongs_to_store
+  o: Store(第一期)
+  card: N:1
+  note: ★ 档案挂店铺×站点
+- id: R-AD-002
+  s: AdProfile
+  p: operates_in
+  o: CountryRegion(第一期)
+  card: N:1
+  note: marketplace_id
+- id: R-AD-003
+  s: AdPortfolio
+  p: under_profile
+  o: AdProfile
+  card: N:1
+  note: ★
+- id: R-AD-004
+  s: AdCampaign
+  p: grouped_in
+  o: AdPortfolio
+  card: N:1
+  note: '★ 血缘: 商品广告报告通过portfolioId关联广告组合;可为空(未入组合)'
+- id: R-AD-005
+  s: AdCampaign
+  p: under_profile
+  o: AdProfile
+  card: N:1
+  note: ★
+- id: R-AD-006
+  s: AdGroup
+  p: under_campaign
+  o: AdCampaign
+  card: N:1
+  note: ★
+- id: R-AD-007
+  s: ProductAd
+  p: under_ad_group
+  o: AdGroup
+  card: N:1
+  note: '★ 血缘: 一个广告组下有多个商品广告,通过adGroupId关联'
+- id: R-AD-008
+  s: AdKeyword
+  p: under_ad_group
+  o: AdGroup
+  card: N:1
+  note: ★ 手动关键词定向挂广告组
+- id: R-AD-009
+  s: AdTarget
+  p: under_ad_group
+  o: AdGroup
+  card: N:1
+  note: ★ 商品/类目/自动定向挂广告组
+- id: R-AD-010
+  s: NegativeKeyword
+  p: scoped_to
+  o: AdCampaign | AdGroup
+  card: N:1
+  note: ◆ 否定词可挂活动级或组级
+- id: R-AD-011
+  s: ProductAd
+  p: promotes
+  o: Listing
+  card: N:1
+  note: ★ 通过 asin+seller_sku+store 定位刊登
+- id: R-AD-012
+  s: AdTarget
+  p: targets_asin
+  o: ASIN
+  card: N:N
+  note: ◆ 商品定向 asinSameAs
+- id: R-AD-013
+  s: AdTarget
+  p: targets_category
+  o: BrowseNode
+  card: N:N
+  note: ◆ 类目定向 categorySameAs + refinement(品牌/价格带/星级)
+- id: R-AD-014
+  s: AdTarget
+  p: excludes
+  o: ASIN | BrowseNode
+  card: N:N
+  note: ◆ 否定商品定向
+- id: R-AD-015
+  s: SearchTerm
+  p: triggered_by
+  o: AdKeyword | AdTarget
+  card: N:1
+  note: ★ 搜索词报告记录触发来源
+- id: R-AD-016
+  s: SearchTerm
+  p: harvested_into
+  o: AdKeyword
+  card: N:N
+  note: '搜索词收割: 高绩效ST升级为精准关键词(HarvestingRule的执行结果)'
+- id: R-AD-017
+  s: SearchTerm
+  p: negated_into
+  o: NegativeKeyword
+  card: N:N
+  note: 低效ST沉淀为否定词(NegationRule)
+- id: R-AD-018
+  s: AdKeyword
+  p: sourced_from
+  o: KeywordAsset
+  card: N:1
+  note: 投放词取自词库资产
+- id: R-AD-019
+  s: KeywordAsset
+  p: grouped_in
+  o: FlowKeywordGroup(KeywordAsset自分组)
+  card: N:N
+  note: '★ 血缘: 关键词组和关键词的关系表'
+- id: R-AD-020
+  s: KeywordRankSnapshot
+  p: measures
+  o: ASIN × KeywordAsset
+  card: N:1
+  note: ★ 排名快照 = ASIN×词×站点×日期
+- id: R-AD-021
+  s: AdPerformanceRecord
+  p: measures
+  o: AdCampaign|AdGroup|AdKeyword|AdTarget|SearchTerm|AdPlacement|AdAudience|ProductAd|ASIN
+  card: N:1
+  note: '★ 血缘: 各报告通过campaignId/keywordId等关联;dimension_type 区分'
+- id: R-AD-022
+  s: AdInvoice
+  p: bills
+  o: AdProfile
+  card: N:1
+  note: ★
+- id: R-AD-023
+  s: AdInvoice
+  p: reconciles_with
+  o: AdPerformanceRecord(spend合计)
+  card: 1:N
+  note: 发票与报表花费对账
+- id: R-AD-024
+  s: AdPerformanceRecord
+  p: feeds
+  o: GrossProfitModel
+  card: N:1
+  note: '★ 毛利广告花费表: 广告费进入毛利口径'
+- id: R-AD-025
+  s: AdCampaign
+  p: charged_under_rule
+  o: FinancialRule.PlatformFee.AdvertisingFee(第一期)
+  card: N:1
+  note: 费用规则挂接点,消除第一期 AdvertisingFee 孤节点
+- id: R-CAT-001
+  s: BrowseNode
+  p: has_parent
+  o: BrowseNode
+  card: N:1
+  note: ◆ Ancestor 阶梯至根节点;根节点无父
+- id: R-CAT-002
+  s: BrowseNode
+  p: has_child
+  o: BrowseNode
+  card: 1:N
+  note: ◆ 叶节点无子
+- id: R-CAT-003
+  s: ASIN
+  p: classified_in
+  o: BrowseNode
+  card: N:N
+  note: ◆ 一个商品可挂多个类目节点
+- id: R-CAT-004
+  s: ASIN
+  p: conforms_to
+  o: AmazonProductType
+  card: N:1
+  note: ◆ 刊登须满足产品类型 JSON Schema
+- id: R-CAT-005
+  s: AmazonProductType
+  p: recommends_node_via
+  o: ItemTypeKeyword
+  card: 1:N
+  note: '◆ SP-API 推荐接口: ProductType→ITK→BrowseNode'
+- id: R-CAT-006
+  s: ItemTypeKeyword
+  p: maps_to
+  o: BrowseNode
+  card: N:1
+  note: ◆
+- id: R-CAT-007
+  s: VariationFamily
+  p: parent_is
+  o: ASIN
+  card: '1:1'
+  note: ★ parent_asin
+- id: R-CAT-008
+  s: ASIN
+  p: child_of_family
+  o: VariationFamily
+  card: N:1
+  note: '★ 父子表; 女装: 颜色×尺码变体'
+- id: R-CAT-009
+  s: Listing
+  p: lists
+  o: ASIN
+  card: N:1
+  note: ★ 店铺×ASIN 刊登;同 ASIN 可多店铺刊登
+- id: R-CAT-010
+  s: Listing
+  p: sold_by
+  o: Store(第一期)
+  card: N:1
+  note: ★
+- id: R-CAT-011
+  s: Listing
+  p: fulfills_with
+  o: SKU(第一期)
+  card: N:N
+  note: ★ seller_sku→公司SKU;捆绑/多件装为N:N
+- id: R-CAT-012
+  s: ListingReview
+  p: snapshots
+  o: ASIN
+  card: N:1
+  note: ★ 星级评分时序
+- id: R-CAT-013
+  s: ProductCategory(第一期)
+  p: specialized_as
+  o: BrowseNode
+  card: 1:N
+  note: '对齐: 内部品类→各平台类目(Amazon=BrowseNode);跨平台品类映射走第一期 CategoryMapping 规则'
+- id: R-CAT-014
+  s: BrowseNode
+  p: scoped_to
+  o: CountryRegion(第一期)
+  card: N:1
+  note: ◆ 类目树按站点独立
+- id: R-LOG-001
+  s: MainDeliveryPlan
+  p: decomposes_into
+  o: DeliveryPlan
+  card: 1:N
+  note: ★ 主计划→子计划
+- id: R-LOG-002
+  s: MainDeliveryPlan
+  p: plans_for
+  o: SKU(第一期)
+  card: N:N
+  note: ★ 主计划产品信息
+- id: R-LOG-003
+  s: DeliveryPlan
+  p: selects
+  o: DemandBill
+  card: N:N
+  note: ★ 发货选择需求单
+- id: R-LOG-004
+  s: DeliveryPlan
+  p: creates
+  o: InboundShipment
+  card: N:1
+  note: '★ 血缘: 货件shipment_id 1:N 发货子计划(一货件可被多计划引用)'
+- id: R-LOG-005
+  s: PackBox
+  p: packs
+  o: SKU(第一期)
+  card: N:N
+  note: ★ 装箱产品列表
+- id: R-LOG-006
+  s: PackBox
+  p: fulfills_demand
+  o: DemandBill
+  card: N:N
+  note: ★ 一个fillBoxProductId存在多个confirmedDemandNo
+- id: R-LOG-007
+  s: PackBox
+  p: consigned_under
+  o: LogisticsTicket
+  card: N:1
+  note: ★ 票号-箱关系表(含我方箱号↔物流商箱号映射)
+- id: R-LOG-008
+  s: LogisticsTicket
+  p: ships_via
+  o: RealChannel
+  card: N:1
+  note: ★
+- id: R-LOG-009
+  s: RealChannel
+  p: configured_as
+  o: LogisticsChannel(第一期)
+  card: N:1
+  note: ★ 真实渠道↔配置渠道映射;偏差进 OPEN_ISSUES
+- id: R-LOG-010
+  s: RealChannel
+  p: operated_by
+  o: LogisticsProvider
+  card: N:1
+  note: ★
+- id: R-LOG-011
+  s: LogisticsProvider
+  p: specializes
+  o: ServiceProvider(第一期)
+  card: '1:1'
+  note: 物流商是服务商的子类
+- id: R-LOG-012
+  s: LogisticsTicket
+  p: tracked_by
+  o: TrackNode
+  card: 1:N
+  note: ★ 预测节点+实际节点两套
+- id: R-LOG-013
+  s: InboundShipment
+  p: compensated_by
+  o: CompensationRecord
+  card: 1:N
+  note: '★ 血缘: shipment_id 1:N 物流周补偿'
+- id: R-LOG-014
+  s: InboundShipment
+  p: reported_in
+  o: 履约报告(AzOrderReportFulfilledShipments)
+  card: 1:N
+  note: '★ 血缘: 货件1:N履约报告行'
+- id: R-LOG-015
+  s: DeliveryPlan
+  p: routes_through
+  o: TailBox/中转尾程(PackBox.box_stage=tail)
+  card: 1:N
+  note: '★ 中转尾程路径: 子计划→尾程箱→尾程需求单'
+- id: R-LOG-016
+  s: TailTransitStock
+  p: stocks_at
+  o: Warehouse(第一期)
+  card: N:1
+  note: '★ 中转仓 SKU 库存;Warehouse.warehouse_type 增补枚举值: transit中转仓'
+- id: R-LOG-017
+  s: LogisticsTicket
+  p: billed_under
+  o: LogisticsRule.RateCard(第一期)
+  card: N:1
+  note: '票号按报价卡计费: 计费重=max(实重,材积重)'
+- id: R-LOG-018
+  s: InboundShipment
+  p: picked_by
+  o: PickBill(拣货单)
+  card: 1:N
+  note: '★ 血缘: 货件1:N子拣货单;拣货单产品1:N计划产品'
+- id: R-SUP-001
+  s: PurchaseOrder
+  p: placed_with
+  o: Supplier
+  card: N:1
+  note: ★
+- id: R-SUP-002
+  s: PurchaseOrder
+  p: contains
+  o: POLine
+  card: 1:N
+  note: '★ 血缘: ERP SKU 1:N 采购单产品'
+- id: R-SUP-003
+  s: POLine
+  p: procures
+  o: SKU(第一期)
+  card: N:1
+  note: ★ sku_id
+- id: R-SUP-004
+  s: Supplier
+  p: matched_to
+  o: SPU(第一期)
+  card: N:N
+  note: ★ dwd_whp_match_supplier_product 供应商-产品匹配
+- id: R-SUP-005
+  s: POLine
+  p: inspected_by
+  o: InspectionBill
+  card: 1:N
+  note: ★ 待上架→质检单 1:N
+- id: R-SUP-006
+  s: InspectionBill
+  p: finds
+  o: AbnormalDefective
+  card: 1:N
+  note: ★ 异常实体→不良品处理 1:N
+- id: R-SUP-007
+  s: AbnormalDefective
+  p: attributes_to
+  o: Supplier
+  card: N:1
+  note: 不良归因供应商;供应商质量评级输入
+- id: R-SUP-008
+  s: PackBox
+  p: consumes
+  o: Consumable
+  card: N:N
+  note: 包装耗材进入单件成本
+- id: R-SUP-009
+  s: POLine
+  p: feeds_cost_to
+  o: GrossProfitModel
+  card: N:1
+  note: ★ 毛利公式中'产品成本'=采购单价
+- id: R-PRE-001
+  s: PreLaunchCostItem
+  p: amortized_to
+  o: Brand | ProductLine | SPU | Listing
+  card: N:1
+  note: 成本摊销目标,target_scope 决定
+- id: R-PRE-002
+  s: PreLaunchCostItem
+  p: governed_by
+  o: PreLaunchCostRule(规则分类树)
+  card: N:1
+  note: 每笔成本项归入分类,复用第一期 Rule 语义模型
+- id: R-PRE-003
+  s: PreLaunchCostItem
+  p: evidenced_by
+  o: SourceDocument(第一期L0)
+  card: N:N
+  note: '溯源不可断: 报价单/合同/发票'
+- id: R-PRE-004
+  s: FeeEstimate
+  p: estimates_for
+  o: ASIN
+  card: N:1
+  note: ★ ASIN 预计费用表
+- id: R-PRE-005
+  s: FeeEstimate
+  p: derived_from
+  o: FinancialRule.PlatformFee(第一期)
+  card: N:N
+  note: 预估值=平台费率规则×商品参数
+- id: R-PRE-006
+  s: GrossProfitModel
+  p: consumes
+  o: FeeEstimate + POLine成本 + LogisticsRule头程单价 + 退货率口径
+  card: N:N
+  note: ★ 口径公式六项构成的依赖关系
+- id: R-PRE-007
+  s: GrossProfitModel
+  p: versioned_as
+  o: GrossProfitModel
+  card: '1:1'
+  note: 口径版本链(previous_version),沿用'版本不覆盖'
+- id: R-BR-001
+  s: Brand
+  p: contains
+  o: ProductLine
+  card: 1:N
+  note: 品牌→产品线
+- id: R-BR-002
+  s: ProductLine
+  p: contains
+  o: SPU(第一期)
+  card: 1:N
+  note: ★ 产品线表;SPU 归线
+- id: R-BR-003
+  s: Listing
+  p: assigned_role
+  o: ProductOrientation
+  card: 1:N
+  note: ★ 定位/月目标随时间多版本
+- id: R-BR-004
+  s: ProductOrientation
+  p: governed_by
+  o: OrientationRule(产品目标规则)
+  card: N:1
+  note: ★ T_WHP_AMAZON_LISTING_ORIENTATION_RULE
+- id: R-BR-005
+  s: Brand
+  p: registered_in
+  o: CountryRegion(第一期)
+  card: N:N
+  note: 商标注册/备案按国家
+- id: R-BR-006
+  s: Brand
+  p: owned_by
+  o: LegalEntity(第一期)
+  card: N:1
+  note: 商标持有主体;品牌矩阵下主体规划的关键关系
+- id: R-BR-007
+  s: BrandAnalysisRecord
+  p: snapshots
+  o: Brand
+  card: N:1
+  note: ★ ABA 品牌指标时序
+- id: R-BR-008
+  s: CompetitorASIN
+  p: benchmarks
+  o: ASIN | VariationFamily(PASIN)
+  card: N:N
+  note: ★ 竞品对标我方 ASIN/父ASIN 两个粒度
+- id: R-BR-009
+  s: CompetitorASIN
+  p: tracked_by
+  o: KeywordRankSnapshot
+  card: 1:N
+  note: 竞品在关键词上的排名监控
+- id: R-BR-010
+  s: BrandKeywordAsset
+  p: belongs_to
+  o: Brand
+  card: N:1
+  note: 品牌词归属
+- id: R-BR-011
+  s: AdPortfolio
+  p: aligned_to
+  o: Brand × ProductLine
+  card: N:1
+  note: '治理约定: 广告组合按品牌×产品线建,广告花费可按品牌聚合(品牌矩阵分析的关键路径)'
+- id: R-BR-012
+  s: AdPerformanceRecord
+  p: aggregates_to
+  o: Brand
+  card: N:1
+  note: '推导链: 绩效→ProductAd→Listing→ASIN→SPU→ProductLine→Brand;广告费按品牌归集'
+- id: R-DAT-001
+  s: DataField
+  p: belongs_to
+  o: DataAsset
+  card: N:1
+  note: ★
+- id: R-DAT-002
+  s: LineageEdge
+  p: connects
+  o: DataField → DataField
+  card: N:1
+  note: ★ 字段级血缘 8782 条
+- id: R-DAT-003
+  s: DataAsset
+  p: layered_in
+  o: 数仓分层(ODS|DWD)
+  card: N:1
+  note: ★
+- id: R-DAT-004
+  s: DataAsset
+  p: materializes
+  o: 本体L2实体(本文件entities)
+  card: N:N
+  note: 实体↔物理表映射 = 每个实体的 source_evidence 字段;本体可验证性的保证
+- id: R-DAT-005
+  s: DataField
+  p: checked_by
+  o: DataRule.QualityRule(第一期)
+  card: N:N
+  note: ★ 字段质量规则(非空/类型/范围)
+- id: R-DAT-006
+  s: LineageEdge
+  p: confidence_from
+  o: mapping_method(直接映射>直接关联>人工确认>规则推断)
+  card: N:1
+  note: ★ 血缘可信度分级,规则推断的边需人工复核
+relations_new:
+- id: R-ORD-001
+  s: Order
+  p: placed_at
+  o: Store
+  card: N:1
+  note: '★ 血缘: T_AMAZON_ORDER.shop_id; dwd含amazon_site站点冗余'
+- id: R-ORD-002
+  s: OrderItem
+  p: belongs_to
+  o: Order
+  card: N:1
+  note: '★ 血缘: order_id 1:N 人工确认映射'
+- id: R-ORD-003
+  s: OrderItem
+  p: sells
+  o: Listing
+  card: N:1
+  note: ★ join键双侧存在{asin,seller_sku}(深挖证实)
+- id: R-ORD-004
+  s: OrderItem
+  p: references
+  o: ASIN
+  card: N:1
+  note: ★ asin字段
+- id: R-ORD-005
+  s: FulfilledShipmentLine
+  p: links
+  o: Order × InboundShipment
+  card: N:1
+  note: '★ 血缘: shipment_id 1:N 履约报告'
+- id: R-ORD-006
+  s: ReturnRecord
+  p: returns
+  o: OrderItem
+  card: N:1
+  note: 退货回链订单行;处置(可再售/弃置)进退货成本
+- id: R-ORD-007
+  s: BusinessReport
+  p: measures
+  o: ASIN
+  card: N:1
+  note: ★ 子ASIN销售流量日报
+- id: R-ORD-008
+  s: Order
+  p: recorded_with_rate
+  o: CurrencyRate
+  card: N:1
+  note: 汇率口径=order_rate(订单日),DEC-03
+- id: R-FIN-001
+  s: Settlement
+  p: settles
+  o: Store
+  card: N:1
+  note: ★ 结算按店铺×周期
+- id: R-FIN-002
+  s: Settlement
+  p: reconciles
+  o: OrderItem(实际费字段)+PlatformFeeRecord
+  card: N:N
+  note: 账单对齐(ISS-12)
+- id: R-FIN-003
+  s: PlatformFeeRecord
+  p: charges
+  o: ASIN | InboundShipment
+  card: N:1
+  note: ★ 仓储/超龄按ASIN×月;入库配置按货件×ASIN
+- id: R-FIN-004
+  s: PlatformFeeRecord
+  p: validates
+  o: Rule(RATE_CARDS)
+  card: N:1
+  note: 实际计费表反推/互验费率卡
+- id: R-FIN-005
+  s: PromotionRecord
+  p: discounts
+  o: ASIN
+  card: N:1
+  note: ★ 促销/券效果报表
+- id: R-FIN-006
+  s: FinanceProductMapping
+  p: bridges
+  o: FBAInventorySnapshot(fnsku) ↔ Listing(seller_sku×shop)
+  card: '1:1'
+  note: ★ 深挖发现的映射桥
+- id: R-FIN-007
+  s: GrossProfitModel
+  p: consumes
+  o: OrderItem + PlatformFeeRecord + CurrencyRate + POLine + LogisticsTicket
+  card: N:N
+  note: 毛利口径六项构成(承v2 R-PRE-006细化)
+- id: R-INV-001
+  s: FBAInventorySnapshot
+  p: snapshots
+  o: Listing
+  card: N:1
+  note: ★ fnsku×seller_sku×asin×shop
+- id: R-INV-002
+  s: FBAInventorySnapshot
+  p: triggers
+  o: Rule(AIS/低库存费)
+  card: N:N
+  note: 库龄分布→AIS档;供应天数→低库存费
+- id: R-INV-003
+  s: AllocationBill
+  p: moves
+  o: SKU × Warehouse→Warehouse
+  card: N:1
+  note: ★ 调拨单三表
+- id: R-INV-004
+  s: InventoryRecord
+  p: aggregates_from
+  o: FBAInventorySnapshot + TailTransitStock
+  card: 1:N
+  note: V1库存实体=各仓快照之和
+- id: R-ORG-001
+  s: Store
+  p: operated_on
+  o: Platform × CountryRegion
+  card: N:1
+  note: ★ platform_code+platform_site_code在dwd_shop
+- id: R-ORG-002
+  s: Store
+  p: owned_by
+  o: LegalEntity
+  card: N:1
+  note: ⚠物理表缺失(GAP-01),财务D2提供清单
+- id: R-ORG-003
+  s: SysUser
+  p: responsible_for
+  o: Listing | SKU | DataAsset
+  card: 1:N
+  note: '★ 血缘: T_SYS_USER.id→*_USER表;listing含principal/develop_user_id'
+- id: R-PLT-001
+  s: PlatformOrder_Temu/Shein/TikTok
+  p: specializes
+  o: Order(平台无关核心)
+  card: '1:1'
+  note: 特化继承;Shein/TikTok血缘已证shop_id/sku_id关联
+- id: R-PLT-002
+  s: PlatformOrder_TikTok
+  p: sells
+  o: SKU
+  card: N:1
+  note: '★ 血缘: ERP SKU.id→TIKTOK_ORDER_LINE_ITEM.sku_id 1:N'
+- id: R-MKT-001
+  s: MarketResearchRecord
+  p: observes
+  o: CompetitorASIN | BrowseNode | KeywordAsset
+  card: N:1
+  note: 爬虫数据挂研究对象
+- id: R-CAT-015
+  s: BrowseNode
+  p: materialized_in
+  o: DataAsset(T_ERP_PLATFORM_DICT_CATEGORY)
+  card: '1:1'
+  note: ★ 本次发现:平台类目字典表=BrowseNode物理承载
+rule_taxonomy:
+  AdvertisingRule:
+    说明: 第四个顶级规则域,与 FinancialRule/LogisticsRule/DataRule 并列;消除第一期 AdvertisingFee 单叶节点的结构性缺口
+    children:
+      CampaignStructureRule:
+      - NamingConvention
+      - PortfolioAssignment
+      - CampaignSegmentation
+      TargetingRule:
+      - AutoTargetingClause
+      - KeywordMatchPolicy
+      - ProductTargetingPolicy
+      - CategoryTargetingPolicy
+      NegationRule:
+      - NegativeKeywordThreshold
+      - NegativeProductPolicy
+      - CrossCampaignNegation
+      BiddingRule:
+      - BiddingStrategySelection
+      - PlacementAdjustment
+      - AutoBidAdjustment
+      BudgetRule:
+      - DailyBudgetAllocation
+      - BudgetCapPolicy
+      HarvestingRule:
+      - SearchTermPromotion
+      - KeywordLibraryGovernance
+      AdCostAllocationRule:
+      - AsinLevelAllocation
+      - BrandLevelAllocation
+  PreLaunchCostRule:
+    说明: 第五个顶级规则域;回答'开一个新品/新产品线/新品牌,动销前要花多少钱'。每条规则复用第一期 Rule 统一语义模型(applicability/calculation/lifecycle/provenance)
+    children:
+      ProductDevelopmentCost:
+      - SampleCost
+      - PatternCost
+      - MaterialTestCost
+      ContentProductionCost:
+      - PhotoShootCost
+      - VideoProductionCost
+      - ListingCopywritingCost
+      ComplianceCost:
+      - TextileLabelingCost
+      - SafetyTestCost
+      - IPClearanceCost
+      BrandSetupCost:
+      - TrademarkRegistration
+      - BrandRegistryCost
+      - BrandVICost
+      MarketValidationCost:
+      - TestAdBudget
+      - TestInventoryCost
+      - SampleSeedingCost
+      CapitalPreOccupation:
+      - FirstOrderInventory
+      - FirstMilePrepaid
+      - PlatformDepositRef
+      EntityTaxSetupRef:
+      - reference_only: true
+  LogisticsRule_additions:
+    TransitTailRule:
+    - TransitWarehouseFee
+    - TailLegRateCard
+    - TransitSplitPolicy
+    CompensationRule:
+    - SLACompensation
+    - LossDamageCompensation
+    ChargeableWeightRule:
+    - VolumetricDivisor
+    - WeightRounding
+  DataRule_additions:
+    EntityMapping_additions:
+    - AsinSkuMapping
+    - CompetitorMapping
+    LineageGovernance:
+    - MappingMethodPriority
+    - InferredEdgeReview
+  BrandGovernanceRule:
+    说明: 品牌矩阵治理规则,轻量新增(不展开到第一期同等深度,二期半再深化)
+    children:
+    - BrandLineAssignment
+    - OrientationAssignment
+    - CannibalizationCheck
+rule_instances_summary:
+  precost: 24
+  advertising: 21
+  logistics_add: 10
+  us_fba_mvp_rules: 16
+  rate_cards: 73
+v1_alignment:
+  new_entities_inserted_between_v1:
+  - 'Store —sells→ SPU/SKU 之间插入 Listing/ASIN 层: Store→Listing→ASIN; SKU 通过 Listing.fulfills_with 挂接'
+  - Shipment(第一期) 细化为 InboundShipment(FBA货件) 并向上补全 MainDeliveryPlan→DeliveryPlan→DemandBill→PackBox→LogisticsTicket 执行链
+  - 'ServiceProvider(第一期) 派生子类: LogisticsProvider(本期) / 货品 Supplier 独立为新实体(供应商≠服务商)'
+  - ProductCategory(第一期) 保留为内部品类,平台类目由 BrowseNode 特化承载,经 R-CAT-013 对齐
+  v1_attribute_amendments:
+  - entity: Warehouse
+    add: warehouse_type 枚举增补 'transit中转仓'
+  - entity: SKU
+    add: 'estimate_size(预估尺寸,头程材积计算输入,证据: T_ERP_PRODUCT_SKU_ESTIMATE_SIZE_UPLOAD_RECORD)'
+  - entity: Store
+    add: ad_profile_id(店铺↔广告档案外键)
+  id_mapping_chain_extension:
+    广告映射链: Profile → Store → Marketplace; Campaign → Portfolio → (Brand×ProductLine); 报表行 → campaignId/adGroupId/keywordId/targetId
+      → 对象树
+    商品映射链_修订: Seller SKU → Listing → ASIN → ParentASIN(变体家族) → BrowseNode → 内部ProductCategory; SKU → FNSKU 保留
+    品牌聚合链: AdSpend/Sales/毛利 → ASIN → SPU → ProductLine → Brand(品牌矩阵分析主路径)
+    成本映射链: POLine成本 + 头程(LogisticsTicket按RateCard) + FeeEstimate + 广告花费 → GrossProfitModel → ASIN毛利

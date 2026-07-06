@@ -1,0 +1,88 @@
+<svg viewBox="0 0 1000 760" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">
+<title>产品开发（选品）项目作战地图</title>
+<desc>两个人先行瓶颈（业务赋值、数据与账号）触发 Claude Code 封装与开发，经试运行校准进入选品运行漏斗；同时一条不依赖数据的并行建设线同步推进，两条线最终都汇入铺货底座。</desc>
+<defs>
+<marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6b7280"/></marker>
+</defs>
+<rect x="0" y="0" width="1000" height="760" fill="#ffffff"/>
+<text x="500" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1f2328">产品开发（选品）项目 · 作战地图</text>
+
+<g font-size="12.5" fill="#6b7280">
+<rect x="300" y="50" width="13" height="13" rx="3" fill="#fef3c7" stroke="#b45309"/><text x="318" y="61">👤 人先行 / 人工</text>
+<rect x="455" y="50" width="13" height="13" rx="3" fill="#dbeafe" stroke="#1d4ed8"/><text x="473" y="61">🤖 Claude Code</text>
+<rect x="600" y="50" width="13" height="13" rx="3" fill="#f3f4f6" stroke="#6b7280"/><text x="618" y="61">🤝 协作 / 并行 / 底座</text>
+</g>
+
+<text x="330" y="92" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1f2328">选品主线 · 依赖数据</text>
+<text x="815" y="92" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1f2328">并行建设线 · 不等数据</text>
+<line x1="645" y1="104" x2="645" y2="690" stroke="#e5e7eb" stroke-dasharray="4 4"/>
+
+<g>
+<rect x="50" y="108" width="270" height="56" rx="9" fill="#fef3c7" stroke="#b45309" stroke-width="1.4"/>
+<text x="185" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#7c2d12">② 数据 &amp; 账号</text>
+<text x="185" y="151" text-anchor="middle" font-size="11.5" fill="#92400e">人先行 · 收集+凭证</text>
+<rect x="360" y="108" width="270" height="56" rx="9" fill="#fef3c7" stroke="#b45309" stroke-width="1.4"/>
+<text x="495" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#7c2d12">① 业务赋值</text>
+<text x="495" y="151" text-anchor="middle" font-size="11.5" fill="#92400e">人先行 · 权重/阈值/红线</text>
+</g>
+
+<g>
+<rect x="50" y="200" width="270" height="56" rx="9" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+<text x="185" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a8a">MCP / 爬虫封装</text>
+<text x="185" y="243" text-anchor="middle" font-size="11.5" fill="#1d4ed8">取数工具 · 只取不判</text>
+<rect x="360" y="200" width="270" height="56" rx="9" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+<text x="495" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a8a">③ skill 开发</text>
+<text x="495" y="243" text-anchor="middle" font-size="11.5" fill="#1d4ed8">分类/打分/聚类/评分卡</text>
+</g>
+
+<rect x="50" y="292" width="580" height="48" rx="9" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.4"/>
+<text x="340" y="312" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">④ 试运行校准</text>
+<text x="340" y="330" text-anchor="middle" font-size="11.5" fill="#6b7280">🤝 机判 vs 人判，调阈值</text>
+
+<rect x="50" y="372" width="580" height="118" rx="9" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.4"/>
+<text x="340" y="394" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a8a">⑤ 选品运行（成本漏斗）</text>
+<g font-size="10.5">
+<rect x="62" y="408" width="98" height="40" rx="6" fill="#dbeafe" stroke="#60a5fa"/><text x="111" y="426" text-anchor="middle" fill="#1e3a8a" font-weight="600">L1 粗筛</text><text x="111" y="440" text-anchor="middle" fill="#1d4ed8">全量·便宜</text>
+<rect x="172" y="408" width="98" height="40" rx="6" fill="#dbeafe" stroke="#60a5fa"/><text x="221" y="426" text-anchor="middle" fill="#1e3a8a" font-weight="600">L2 精调研</text><text x="221" y="440" text-anchor="middle" fill="#1d4ed8">入围·差评</text>
+<rect x="282" y="408" width="98" height="40" rx="6" fill="#dbeafe" stroke="#60a5fa"/><text x="331" y="426" text-anchor="middle" fill="#1e3a8a" font-weight="600">L3 多平台</text><text x="331" y="440" text-anchor="middle" fill="#1d4ed8">同款比对·贵</text>
+<rect x="392" y="408" width="110" height="40" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="447" y="426" text-anchor="middle" fill="#7c2d12" font-weight="600">★人审</text><text x="447" y="440" text-anchor="middle" fill="#92400e">侵权/打样</text>
+<rect x="514" y="408" width="104" height="40" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="566" y="426" text-anchor="middle" fill="#7c2d12" font-weight="600">立项</text><text x="566" y="440" text-anchor="middle" fill="#92400e">拨预算</text>
+<path d="M161,428 L171,428" stroke="#6b7280" stroke-width="1.2" marker-end="url(#ah)"/>
+<path d="M271,428 L281,428" stroke="#6b7280" stroke-width="1.2" marker-end="url(#ah)"/>
+<path d="M381,428 L391,428" stroke="#6b7280" stroke-width="1.2" marker-end="url(#ah)"/>
+<path d="M503,428 L513,428" stroke="#6b7280" stroke-width="1.2" marker-end="url(#ah)"/>
+</g>
+<text x="340" y="470" text-anchor="middle" font-size="10.5" fill="#6b7280">每层 Gate 砍候选 · token 按需用在幸存者</text>
+
+<rect x="668" y="108" width="294" height="382" rx="9" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.4"/>
+<text x="815" y="130" text-anchor="middle" font-size="11.5" fill="#6b7280">独立于采集，可另派人并行</text>
+<g font-size="12.5" fill="#374151">
+<text x="686" y="158">• 152键映射 + 类目　<tspan fill="#b45309" font-size="10">P0</tspan></text>
+<text x="686" y="186">• 店铺画像 / 定位　<tspan fill="#b45309" font-size="10">P0</tspan></text>
+<text x="686" y="214">• 平台风控红线</text>
+<text x="686" y="242">• 平台规则知识库</text>
+<text x="686" y="270">• 双利润口径（M8）</text>
+<text x="686" y="298">• 内容体系 + LoRA　<tspan fill="#dc2626" font-weight="700">★</tspan></text>
+<text x="686" y="326">• 侵权合规 SOP</text>
+<text x="686" y="354">• 账号 / 主体矩阵</text>
+<text x="686" y="382">• 供应链能力　<tspan fill="#dc2626" font-weight="700">★</tspan></text>
+</g>
+<line x1="686" y1="402" x2="944" y2="402" stroke="#e5e7eb"/>
+<text x="815" y="424" text-anchor="middle" font-size="11" fill="#dc2626">★ 周期最长，最先启动</text>
+<text x="815" y="446" text-anchor="middle" font-size="11" fill="#9ca3af">（LoRA 训练 · 供应链建能力）</text>
+
+<rect x="50" y="612" width="912" height="74" rx="10" fill="#eef2f7" stroke="#475569" stroke-width="1.6"/>
+<text x="506" y="641" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">《00》铺货底座 · 闭环2 标准铺货</text>
+<text x="506" y="664" text-anchor="middle" font-size="11.5" fill="#64748b">候选品携 PScore + 三赛道 + 152键事实 交接 → 维护 / 风控 / 复制退出</text>
+
+<g stroke="#6b7280" stroke-width="1.6" fill="none">
+<path d="M185,164 L185,200" marker-end="url(#ah)"/>
+<path d="M495,164 L495,200" marker-end="url(#ah)"/>
+<path d="M185,256 L185,278 L320,278 L320,290" marker-end="url(#ah)"/>
+<path d="M495,256 L495,278 L360,278 L360,290" marker-end="url(#ah)"/>
+<path d="M340,340 L340,370" marker-end="url(#ah)"/>
+<path d="M340,490 L340,610" marker-end="url(#ah)"/>
+<path d="M815,490 L815,560 L620,560 L620,610" marker-end="url(#ah)"/>
+</g>
+<text x="705" y="552" font-size="10.5" fill="#9ca3af">并行线产出汇入</text>
+</svg>
