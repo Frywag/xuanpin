@@ -1,0 +1,218 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "freepeople_106763931",
+  "market": "US",
+  "platform": "freepeople",
+  "primary_product_id": "106763931",
+  "canonical_url": "https://www.freepeople.com/shop/sun-soaked-sarong-mini-skort/?color=000",
+  "source_refs": [
+    {
+      "source_id": "indie_frontend",
+      "envelope_id": "envelope_indie_frontend_20260706"
+    }
+  ],
+  "basic_facts": {
+    "title": "Sun Soaked Sarong Mini Skort",
+    "brand": null,
+    "category_path": [],
+    "image_url": null,
+    "price": {
+      "amount": 98.0,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 3.0,
+    "review_count": 1.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": null,
+    "sales_7d_units": null,
+    "sales_floor_units": null,
+    "revenue_30d": null,
+    "gmv_7d": null,
+    "sales_growth_rate": null,
+    "favorites_count": 1776.0,
+    "bestseller_rank_text": null,
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [],
+    "platform_price_comparison": [],
+    "same_style_signals": []
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "market_metrics.sales_growth_rate",
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "field_issues": [],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_indie_frontend_003870",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003871",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.title_cn",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003872",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.category_name",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003874",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.raw_evidence_path",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003875",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003876",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003877",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003878",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "market_metrics.favorites_count",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "收藏/心愿单热度，非成交数据"
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003879",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.image_count",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003880",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.design_signals",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=128",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "indie_frontend",
+    "category_label": "women_apparel_indie",
+    "seasonal": false,
+    "site": "freepeople",
+    "title_cn": "Sun Soaked Sarong Mini 裙裤",
+    "category_name": "Skorts (Apparel)",
+    "raw_evidence_path": "D:\\06.Fable\\sp\\commerce-intelligence\\outputs\\sites\\four-sites\\2026-06-17-live-collection\\raw\\freepeople\\106763931\\manifest.json",
+    "image_count": 4.0,
+    "design_signals": [
+      {
+        "kind": "design_details",
+        "text": "Measurements for size 6: Inseam: 1.75 in; Hips: 39.5 in; Waist: 31 in; Length: 13 in; Rise: 9.5 in"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "candidate_data_packet.schema.json",
+  "title": "CandidateDataPacket",
+  "description": "分析系统唯一输入。缺字段必须在 missing_fields，事实字段必须能在 evidence_pack 中找到对应 EvidenceRef",
+  "type": "object",
+  "required": ["candidate_id", "market", "platform", "source_refs", "basic_facts",
+               "market_metrics", "competition_metrics", "missing_fields", "evidence_pack",
+               "quality_status", "schema_version"],
+  "properties": {
+    "schema_version": {"const": "candidate.data.packet.v1"},
+    "candidate_id": {"type": "string"},
+    "market": {"const": "US"},
+    "platform": {"type": "string"},
+    "primary_product_id": {"type": ["string", "null"]},
+    "canonical_url": {"type": ["string", "null"]},
+    "source_refs": {"type": "array", "items": {
+      "type": "object", "required": ["source_id", "envelope_id"]}},
+    "basic_facts": {
+      "type": "object",
+      "properties": {
+        "title": {"type": ["string", "null"]},
+        "price": {
+          "type": ["object", "null"],
+          "required": ["amount", "currency"],
+          "properties": {"amount": {"type": "number"}, "currency": {"type": "string"}},
+          "description": "价格必须带币种；缺币种的价格视为无效字段"
+        },
+        "rating": {"type": ["number", "null"]},
+        "review_count": {"type": ["number", "null"]}
+      }
+    },
+    "market_metrics": {"type": "object"},
+    "competition_metrics": {"type": "object"},
+    "product_opportunity": {"type": "object"},
+    "cross_platform": {"type": "object"},
+    "owned_supply_inputs": {"type": "object"},
+    "missing_fields": {"type": "array", "items": {"type": "string"}},
+    "field_issues": {"type": "array"},
+    "evidence_pack": {"type": "array", "items": {"$ref": "evidence_ref.schema.json"}},
+    "quality_status": {"type": "string"}
+  }
+}

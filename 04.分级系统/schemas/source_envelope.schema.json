@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source_envelope.schema.json",
+  "title": "SourceEnvelope",
+  "description": "所有数据源（插件/前端）的统一交付信封",
+  "type": "object",
+  "required": ["envelope_id", "source_id", "source_type", "market", "collection_mode",
+               "layer_hint", "quality_status", "records", "schema_version"],
+  "properties": {
+    "envelope_id": {"type": "string"},
+    "source_id": {"type": "string", "examples": ["kalodata", "tabcut", "echotik", "shein_frontend"]},
+    "source_type": {"enum": ["plugin", "frontend", "trend", "owned"]},
+    "market": {"const": "US", "description": "P0 冻结为 US，不得混入其他市场"},
+    "collection_mode": {"enum": ["layered", "full_then_analyze", "mixed"]},
+    "layer_hint": {"enum": ["L1", "L2", "L3"]},
+    "collected_at": {"type": ["string", "null"]},
+    "collector_version": {"type": "string"},
+    "quality_status": {"enum": ["VALID", "PARTIAL_SOURCE_MISSING", "PARSE_FAILED", "ACCESS_BLOCKED"]},
+    "records": {"type": "array", "items": {"type": "object"}},
+    "errors": {"type": "array"},
+    "warnings": {"type": "array"},
+    "artifact_paths": {"type": "object"},
+    "schema_version": {"const": "source.envelope.v1"}
+  }
+}

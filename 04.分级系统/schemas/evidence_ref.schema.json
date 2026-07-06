@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence_ref.schema.json",
+  "title": "EvidenceRef",
+  "description": "字段级证据引用：绑定到具体字段而不是数据源整体，无法绑定证据的结论不得进入推荐总表",
+  "type": "object",
+  "required": ["evidence_id", "source_id", "source_type", "field_path", "artifact_path", "record_locator"],
+  "properties": {
+    "evidence_id": {"type": "string", "pattern": "^ev_"},
+    "source_id": {"type": "string"},
+    "source_type": {"enum": ["plugin", "frontend", "trend", "owned", "derived"]},
+    "tool_or_adapter": {"type": "string"},
+    "field_path": {"type": "string"},
+    "artifact_path": {"type": "string", "description": "指向仓库内真实数据文件"},
+    "record_locator": {"type": "string", "description": "sheet/行号，人工可回溯"},
+    "observed_at": {"type": ["string", "null"]},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "note": {"type": "string"}
+  }
+}

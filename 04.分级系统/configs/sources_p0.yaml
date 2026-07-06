@@ -1,0 +1,110 @@
+# P0 数据源注册表
+# 路径相对仓库根目录。market 固定 US（P0 范围冻结，不混入其他市场）。
+market: US
+
+plugin_sources:
+  - adapter: kalodata
+    workbook: 02.插件数据源/Kalodata最终交付原数据.xlsx
+    collection_mode: mixed
+    layer_hint: L1
+    default_currency: CNY          # Kalodata 页面金额为人民币换算值
+    category_label: tiktok_womenswear
+  - adapter: tabcut_echotik
+    workbook: 02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx
+    collection_mode: mixed
+    layer_hint: L1
+    default_currency: USD
+    category_label: tiktok_mixed   # Tabcut Top榜为全类目，逐行带真实类目名
+
+frontend_workbooks:
+  - source_id: shein_frontend
+    workbook: 03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx
+    category_label: women_dresses
+    seasonal: false
+    sites: [shein]
+    column_map:
+      product_id: 商品ID
+      title: 商品名称（原文）
+      title_cn: 商品名称（中文）
+      image_url: 高清主图链接
+      currency: 币种
+      price: 销售价
+      original_price: 原价
+      discount_pct: 折扣
+      bestseller_rank: 畅销榜排名
+      rating: 评分
+      review_count: 评价数
+      sales_floor: 销量
+      review_tags: 评价标签（原文）
+      trend_tags: 趋势标签（原文）
+      url: 来源URL
+      raw_evidence: 原始证据路径
+      quality: 质量状态
+
+  - source_id: indie_frontend
+    workbook: 03.前端数据源/独立站.xlsx
+    category_label: women_apparel_indie
+    seasonal: false
+    sites: [freepeople, urbanoutfitters, anthropologie]
+    column_map:
+      product_id: 商品ID
+      title: 商品名称（原文）
+      title_cn: 商品名称（中文）
+      brand: 品牌
+      category: 分类
+      currency: 币种
+      price: 售价
+      rating: 评分
+      review_count: 评价数
+      favorites: 收藏数
+      image_count: 图片数
+      design_details: 设计细节（原文）
+      url: 来源URL
+      raw_evidence: 原始证据路径
+      quality: 质量状态
+
+  - source_id: patterned_tights_frontend
+    workbook: 03.前端数据源/patterned.xlsx
+    category_label: patterned_tights
+    seasonal: true                  # 秋冬品类，6 月采集处于淡季
+    sites: [calzedonia, dreamgirl, falke, legavenue, prettylittlething, snagtights, wolford]
+    column_map:
+      product_id: 商品ID
+      title: 商品名称（原文）
+      title_cn: 商品名称（中文）
+      brand: 品牌
+      category: 分类
+      currency: 币种
+      price: 售价
+      original_price: 原价
+      rating: 评分
+      review_count: 评价数
+      image_count: 图片数
+      pattern_elements: 图案元素（原文）
+      fabric_features: 面料特性（原文）
+      stock_status: 库存状态
+      url: 来源URL
+      raw_evidence: 原始证据路径
+      quality: 质量状态
+
+  - source_id: halloween_frontend
+    workbook: 03.前端数据源/halloween不带图片.xlsx
+    category_label: halloween_decor
+    seasonal: true                  # 万圣节强季节品，销售窗口 9-10 月
+    sites: [frightprops, halloweencostumes, orientaltrading, partycity, spirithalloween]
+    column_map:
+      product_id: 商品ID
+      title: 商品名称（原文）
+      title_cn: 商品名称（中文）
+      brand: 品牌
+      category: 分类
+      currency: 币种
+      price: 售价
+      original_price: 原价
+      rating: 评分
+      review_count: 评价数
+      image_count: 图片数
+      design_details: 设计细节（原文）
+      url: 来源URL
+      raw_evidence: 原始证据路径
+      quality: 质量状态

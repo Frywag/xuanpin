@@ -1,3 +1,15 @@
 .DS_Store
 **/.DS_Store
 
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 分级系统运行产物：全量 JSONL 与前端信封体积大（~30MB），
+# 可用 CLI 一键复现（见 04.分级系统/README.md），不入库；
+# XLSX 推荐表、run_meta、样例候选包、插件 SourceEnvelope 保留入库
+04.分级系统/data/analysis_runs/*/candidate_packets.jsonl
+04.分级系统/data/analysis_runs/*/analysis_results.jsonl
+04.分级系统/data/analysis_runs/*/envelopes/envelope_*frontend*.json
+

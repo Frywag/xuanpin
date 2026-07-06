@@ -1,0 +1,145 @@
+"""端到端管道：数据源 -> SourceEnvelope -> CandidateDataPacket -> L1/L2/L3 -> XLSX。"""
+from __future__ import annotations
+
+import json
+from collections import Counter
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List
+
+import yaml
+
+from .adapters.base import COLLECTOR_VERSION
+from .adapters.frontend_workbook import FrontendWorkbookAdapter
+from .adapters.kalodata import KalodataAdapter
+from .adapters.tabcut_echotik import TabcutEchotikAdapter
+from .cross_platform import CrossPlatformComparer
+from .gates import GateRunner
+from .models import dump_json
+from .packet_builder import PacketBuilder
+from .scoring import GroupStats, PriorityScorer
+
+PLUGIN_ADAPTERS = {
+    "kalodata": KalodataAdapter,
+    "tabcut_echotik": TabcutEchotikAdapter,
+}
+
+
+def load_yaml(path: Path) -> Dict[str, Any]:
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any]):
+    envelopes = []
+    market = sources_cfg.get("market", "US")
+    for spec in sources_cfg.get("plugin_sources", []):
+        cls = PLUGIN_ADAPTERS[spec["adapter"]]
+        adapter = cls(repo_root / spec["workbook"], market=market,
+                      collection_mode=spec.get("collection_mode", "mixed"),
+                      layer_hint=spec.get("layer_hint", "L1"))
+        envelopes.extend(adapter.collect())
+    for spec in sources_cfg.get("frontend_workbooks", []):
+        adapter = FrontendWorkbookAdapter(
+            repo_root / spec["workbook"], source_id=spec["source_id"],
+            sites=spec["sites"], column_map=spec["column_map"],
+            category_label=spec["category_label"],
+            seasonal=bool(spec.get("seasonal")), market=market,
+            collection_mode="full_then_analyze", layer_hint="L1")
+        envelopes.extend(adapter.collect())
+    return envelopes
+
+
+def run_pipeline(repo_root: Path, out_dir: Path,
+                 sources_cfg_path: Path, scoring_cfg_path: Path,
+                 gates_cfg_path: Path, sample_packets: int = 10) -> Dict[str, Any]:
+    started = datetime.now(timezone.utc)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "envelopes").mkdir(exist_ok=True)
+    (out_dir / "candidate_packets").mkdir(exist_ok=True)
+
+    sources_cfg = load_yaml(sources_cfg_path)
+    scoring_cfg = load_yaml(scoring_cfg_path)
+    gates_cfg = load_yaml(gates_cfg_path)
+
+    # 1. 采集 -> SourceEnvelope
+    envelopes = collect_envelopes(repo_root, sources_cfg)
+    for env in envelopes:
+        dump_json(env.to_dict(), out_dir / "envelopes" / f"{env.envelope_id}.json")
+
+    # 2. 合并 -> CandidateDataPacket
+    builder = PacketBuilder(market=sources_cfg.get("market", "US"))
+    packets = builder.build(envelopes)
+
+    # 3. 组内统计 + 打分器
+    stats = GroupStats(packets)
+    scorer = PriorityScorer(scoring_cfg, stats)
+    runner = GateRunner(scorer, gates_cfg, market=sources_cfg.get("market", "US"))
+
+    # 4. L1 全量粗筛
+    results = runner.run_l1(packets)
+    # 5. L2 入围精调研（成本受控）
+    l2_ids = runner.run_l2(packets, results)
+    # 6. L3 终选多平台比对
+    comparer = CrossPlatformComparer(packets, stats)
+    l3_ids = runner.run_l3(packets, results, comparer)
+
+    # 7. 产物落盘
+    with open(out_dir / "candidate_packets.jsonl", "w", encoding="utf-8") as f:
+        for p in packets:
+            f.write(json.dumps(p.to_dict(), ensure_ascii=False, default=str) + "\n")
+    with open(out_dir / "analysis_results.jsonl", "w", encoding="utf-8") as f:
+        for r in results.values():
+            f.write(json.dumps(r.to_dict(), ensure_ascii=False, default=str) + "\n")
+    # 样例候选包（P0 验收要求 ≥3 个）：取 L3 入围 + 高分候选
+    sample_ids = (l3_ids + [r.candidate_id for r in sorted(
+        results.values(), key=lambda r: -(r.priority_score["pct"] or 0))])
+    seen = []
+    for cid in sample_ids:
+        if cid not in seen:
+            seen.append(cid)
+        if len(seen) >= sample_packets:
+            break
+    pk_by_id = {p.candidate_id: p for p in packets}
+    for cid in seen:
+        dump_json(pk_by_id[cid].to_dict(),
+                  out_dir / "candidate_packets" / f"{cid}.json")
+        dump_json(results[cid].to_dict(),
+                  out_dir / "candidate_packets" / f"{cid}.analysis.json")
+
+    grade_dist = Counter(r.priority_score["grade"] for r in results.values())
+    pcts = sorted((r.priority_score["pct"] or 0) for r in results.values())
+
+    run_meta = {
+        "run_id": out_dir.name,
+        "collector_version": COLLECTOR_VERSION,
+        "started_at": started.isoformat(timespec="seconds"),
+        "finished_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "market": sources_cfg.get("market", "US"),
+        "envelopes": len(envelopes),
+        "candidates_total": len(packets),
+        "l1_processed": len(results),
+        "l2_processed": len(l2_ids),
+        "l3_processed": len(l3_ids),
+        "grade_distribution": dict(grade_dist),
+        "pct_p50": pcts[len(pcts) // 2] if pcts else None,
+        "pct_p90": pcts[int(len(pcts) * 0.9)] if pcts else None,
+        "pct_max": pcts[-1] if pcts else None,
+        "scoring_config": str(scoring_cfg_path),
+        "gates_config": str(gates_cfg_path),
+        "sources_config": str(sources_cfg_path),
+        "group_stats": json.dumps(stats.to_dict(), ensure_ascii=False),
+        "envelope_warnings": json.dumps(
+            {e.envelope_id: e.warnings for e in envelopes if e.warnings},
+            ensure_ascii=False)[:2000],
+        "llm_usage": "无（全部为确定性规则；未编造任何数值）",
+        "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
+    }
+    dump_json(run_meta, out_dir / "run_meta.json")
+
+    # 8. XLSX 推荐表
+    from .xlsx_report import export_report
+    export_report(out_dir / "选品推荐表.xlsx", packets, results, run_meta)
+
+    return {"packets": packets, "results": results, "run_meta": run_meta,
+            "l2_ids": l2_ids, "l3_ids": l3_ids, "stats": stats}

@@ -1,0 +1,31 @@
+# L1 -> L2 -> L3 Gate 规则与成本控制（对应《07_分层分析系统组任务书》§7/§13）
+schema_version: layer_gates.v0
+
+l1:
+  # 阻断条件（blocked_reasons）
+  block_if:
+    - no_product_id_and_no_url        # 无产品链接且无产品 ID
+    - market_mismatch                 # 非 US 市场混入
+  # 降级条件
+  demote_if_no_demand_signal: C       # 无任何需求信号 -> 直接 C + 补采清单
+  price_missing_action: mark_l2_refetch   # 价格/币种缺失可继续，但标记 L2 补采
+
+l2:
+  # 只对 L1 入围 S/A/B 处理；按成本控制截断
+  eligible_grades: [S, A, B]
+  max_candidates: 40                  # 成本控制：单次运行 L2 上限
+  # L2 数据要求（缺失时不阻断，但必须写 required_next_data + 降置信度）
+  requires:
+    - reviews_or_review_tags          # ≥20 条评论或评价标签聚合，或明确记录不可得
+    - rating
+  missing_review_note: 本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度
+
+l3:
+  # 只对 L2 后 S/A 处理
+  eligible_grades: [S, A]
+  max_candidates: 10
+  # L3 只消费已存在的 matched_products / 同类目组，不凭空找同款
+  match_rules:
+    exact_id_join: true               # 插件源之间按 product_id 精确/前缀合并（已在 PacketBuilder 完成）
+    category_group_compare: true      # 仅在相同品类组之间做价格带层面的比较
+    forbid_fuzzy_same_product_claim: true   # 禁止把“同类目比较”写成“同款”结论

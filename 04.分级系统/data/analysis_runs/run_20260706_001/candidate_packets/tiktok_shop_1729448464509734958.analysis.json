@@ -1,0 +1,171 @@
+{
+  "schema_version": "analysis.result.v1",
+  "analysis_id": "analysis_tiktok_shop_1729448464509734958",
+  "candidate_id": "tiktok_shop_1729448464509734958",
+  "market": "US",
+  "layer_results": {
+    "L1": {
+      "passed": true,
+      "score": 52.3,
+      "grade": "S",
+      "gate_reason": "PScore 34.0/65（52.3%）-> S",
+      "required_next_data": []
+    },
+    "L2": {
+      "passed": true,
+      "score": 52.3,
+      "grade": "S",
+      "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+      "required_next_data": [
+        "reviews_or_review_tags"
+      ]
+    },
+    "L3": {
+      "passed": true,
+      "score": 52.3,
+      "grade": "S",
+      "gate_reason": "2 个数据源按商品ID互验（tabcut、echotik）；候选来自 TikTok Shop 数据源，维持原平台优先",
+      "required_next_data": [
+        "owned_supply_inputs（供应链人工输入）"
+      ]
+    }
+  },
+  "priority_score": {
+    "total": 34.0,
+    "achievable_max": 65,
+    "pct": 52.3,
+    "grade": "S",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 21.0,
+        "max_score": 25,
+        "reason": "量级信号 sales_30d_units=194,250 -> 15分；销量/销售额增长率 +7.2% -> 3分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_tabcut_000096",
+          "ev_tabcut_000097"
+        ],
+        "missing": false
+      },
+      {
+        "name": "竞争可突破",
+        "score": 7.0,
+        "max_score": 20,
+        "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_echotik_000345",
+          "ev_echotik_000348",
+          "ev_tabcut_000095"
+        ],
+        "missing": false
+      },
+      {
+        "name": "产品机会",
+        "score": 8.0,
+        "max_score": 20,
+        "reason": "评分4.6（低于类目中位_有一定改良空间）-> 5分；关联视频最高播放 18,721,163（热度信号）",
+        "evidence_refs": [
+          "ev_echotik_000347",
+          "ev_tabcut_000266"
+        ],
+        "missing": false
+      },
+      {
+        "name": "自有供应链",
+        "score": null,
+        "max_score": 20,
+        "reason": "P0 无自有/供应链人工输入，本维不计分（required_next_data）",
+        "evidence_refs": [],
+        "missing": true
+      },
+      {
+        "name": "风险",
+        "score": -2.0,
+        "max_score": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Toplux Nutrition」品牌词出现在标题中",
+        "evidence_refs": [
+          "ev_echotik_000353"
+        ],
+        "missing": false
+      }
+    ]
+  },
+  "track_tags": [
+    "观察款"
+  ],
+  "recommendation": {
+    "decision": "recommend_research",
+    "reason_summary": "市场需求：量级信号 sales_30d_units=194,250 -> 15分；销量/销售额增长率 +7.2% -> 3分；2个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.6（低于类目中位_有一定改良空间）-> 5分；关联视频最高播放 18,721,163（热度信号）",
+    "risk_summary": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Toplux Nutrition」品牌词出现在标题中（人工待确认）",
+    "next_actions": [
+      "进入立项讨论；补齐供应链输入后人审",
+      "L3 完成，等待供应链输入与人审"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "市场需求：量级信号 sales_30d_units=194,250 -> 15分；销量/销售额增长率 +7.2% -> 3分；2个独立需求证据源",
+      "claim_type": "demand",
+      "evidence_refs": [
+        "ev_tabcut_000096",
+        "ev_tabcut_000097"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+      "claim_type": "competition",
+      "evidence_refs": [
+        "ev_echotik_000345",
+        "ev_echotik_000348",
+        "ev_tabcut_000095"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "产品机会：评分4.6（低于类目中位_有一定改良空间）-> 5分；关联视频最高播放 18,721,163（热度信号）",
+      "claim_type": "product",
+      "evidence_refs": [
+        "ev_echotik_000347",
+        "ev_tabcut_000266"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Toplux Nutrition」品牌词出现在标题中（人工待确认）",
+      "claim_type": "risk",
+      "evidence_refs": [
+        "ev_echotik_000353"
+      ],
+      "confidence": "low"
+    },
+    {
+      "claim": "多源互验：tabcut、echotik 按商品ID匹配到同一商品",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_tabcut_000094",
+        "ev_echotik_000344"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "平台优先级：tiktok_shop（候选来自 TikTok Shop 数据源，维持原平台优先）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_tabcut_000094",
+        "ev_echotik_000344"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "blocked_reasons": [],
+  "confidence": "high",
+  "created_at": "2026-07-06T10:56:27+00:00"
+}
