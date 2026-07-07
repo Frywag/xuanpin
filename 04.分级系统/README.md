@@ -58,7 +58,10 @@ cd 04.分级系统 && python3 -m pytest tests/ -q
     xlsx_report.py         # 8-sheet 推荐工作簿
     store.py               # SQLite 选品库（跨 run 累积，agent 可 SQL 直查）
     llm_tasks.py           # LLM 分析任务契约（任务包生成 + 回灌校验）
-    pipeline.py / cli.py   # 端到端管道与命令行（run/grades/db-query/show/explain/llm-ingest）
+    envelope_io.py         # 标准信封直投：外部采集数据免代码接入（docs/05）
+    mcp_server.py          # 选品库 MCP 服务（stdio，零依赖；docs/04 §5）
+    pipeline.py / cli.py   # 端到端管道与命令行（run/grades/db-query/show/explain/
+                           #   llm-ingest/validate-envelope）
   tests/                   # 49 用例：解析、契约、聚类、打分、Gate、端到端
   docs/
     01_分级标准_PScoreV0与SABC阈值.md   # ★ 每个阈值的数据推导

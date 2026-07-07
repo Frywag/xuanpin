@@ -23,6 +23,14 @@ PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli db-query \
     --sql "SELECT candidate_id, grade, pct FROM results WHERE grade IN ('S','A') ORDER BY pct DESC"
 PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli show <candidate_id>     # 完整 packet+result JSON
 PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli explain <candidate_id>  # 证据链（工作簿/sheet/行）
+
+# 外部采集数据直投（免写 Adapter；输入契约见 docs/05）
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli validate-envelope <目录或文件>
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli run --repo-root . \
+    --out <run目录> --envelopes <信封目录>
+
+# 选品库 MCP 服务（其他系统/agent 只读调用，接口契约见 docs/04 §5）
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.mcp_server
 ```
 
 ## LLM 分析任务（agent 执行分析环节的方式）
@@ -77,6 +85,8 @@ PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli explain <candidat
 | `04.分级系统/configs/layer_gates_v0.yaml` | L1/L2/L3 Gate 与成本上限 |
 | `04.分级系统/configs/supply_capability.yaml` | 供应链能力档案（品类级，一次性维护） |
 | `04.分级系统/schemas/*.json` | 四个数据契约的 JSON Schema |
+| `04.分级系统/docs/04_数据中台对接标准_产品画像存储与MCP接口.md` | 中台建库 DDL（152 键画像 + 分级/证据表）、交换协议、MCP 接口面 |
+| `04.分级系统/docs/05_分级系统输入契约_SourceEnvelope接入指南.md` | 输入格式标准：采集 agent 免代码直投分级系统 |
 | `04.分级系统/docs/` | 使用指南、分级标准推导、Gate 规则、演进设计 |
 | `04.分级系统/data/selection.db` | 选品库（SQLite，跨 run 累积，gitignore，可复现） |
 

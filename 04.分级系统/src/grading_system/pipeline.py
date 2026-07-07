@@ -30,9 +30,20 @@ def load_yaml(path: Path) -> Dict[str, Any]:
         return yaml.safe_load(f)
 
 
-def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any]):
+def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any],
+                      extra_envelope_paths: List[Path] = None):
     envelopes = []
     market = sources_cfg.get("market", "US")
+    # 标准信封直投（docs/05 输入契约）：配置或命令行给目录/文件即可，无需写 Adapter
+    from .envelope_io import load_envelope_files
+    paths = [repo_root / spec["path"]
+             for spec in sources_cfg.get("envelope_inputs", []) or []]
+    paths += list(extra_envelope_paths or [])
+    for p in paths:
+        loaded, problems = load_envelope_files(p, market)
+        envelopes.extend(loaded)
+        for msg in problems:
+            print(f"[envelope_inputs] {msg}")
     for spec in sources_cfg.get("plugin_sources", []):
         cls = PLUGIN_ADAPTERS[spec["adapter"]]
         adapter = cls(repo_root / spec["workbook"], market=market,
@@ -53,7 +64,8 @@ def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any]):
 def run_pipeline(repo_root: Path, out_dir: Path,
                  sources_cfg_path: Path, scoring_cfg_path: Path,
                  gates_cfg_path: Path, sample_packets: int = 10,
-                 db_path: Path = None) -> Dict[str, Any]:
+                 db_path: Path = None,
+                 extra_envelope_paths: List[Path] = None) -> Dict[str, Any]:
     started = datetime.now(timezone.utc)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "envelopes").mkdir(exist_ok=True)
@@ -68,7 +80,7 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     capability = load_yaml(capability_path) if capability_path.exists() else {}
 
     # 1. 采集 -> SourceEnvelope
-    envelopes = collect_envelopes(repo_root, sources_cfg)
+    envelopes = collect_envelopes(repo_root, sources_cfg, extra_envelope_paths)
     for env in envelopes:
         dump_json(env.to_dict(), out_dir / "envelopes" / f"{env.envelope_id}.json")
 

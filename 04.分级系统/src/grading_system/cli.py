@@ -38,7 +38,8 @@ def cmd_run(args) -> int:
         sources_cfg_path=Path(args.sources),
         scoring_cfg_path=Path(args.scoring),
         gates_cfg_path=Path(args.gates),
-        db_path=Path(args.db) if args.db else None)
+        db_path=Path(args.db) if args.db else None,
+        extra_envelope_paths=[Path(p) for p in (args.envelopes or [])])
     meta = out["run_meta"]
     print(f"候选总数: {meta['candidates_total']}")
     print(f"等级分布: {meta['grade_distribution']}")
@@ -136,6 +137,22 @@ def cmd_llm_ingest(args) -> int:
     return 0
 
 
+def cmd_validate_envelope(args) -> int:
+    from .envelope_io import load_envelope_files
+    envelopes, problems = load_envelope_files(Path(args.path), args.market)
+    report = {
+        "accepted_envelopes": [
+            {"envelope_id": e.envelope_id, "source_id": e.source_id,
+             "source_type": e.source_type, "records": len(e.records)}
+            for e in envelopes],
+        "problems": problems,
+        "status": "ok" if envelopes and not any("拒收" in p for p in problems)
+        else ("partial" if envelopes else "rejected"),
+    }
+    _print_json(report)
+    return 0 if envelopes else 1
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="grading_system")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -147,7 +164,15 @@ def main(argv=None):
     run.add_argument("--scoring", default=str(PROJECT_DIR / "configs/scoring_v0.yaml"))
     run.add_argument("--gates", default=str(PROJECT_DIR / "configs/layer_gates_v0.yaml"))
     run.add_argument("--db", default=None, help="选品库路径（默认 data/selection.db）")
+    run.add_argument("--envelopes", action="append", default=None,
+                     help="标准 SourceEnvelope 文件/目录（可重复；见 docs/05 输入契约）")
     run.set_defaults(func=cmd_run)
+
+    ve = sub.add_parser("validate-envelope",
+                        help="校验标准 SourceEnvelope 文件（采集方交付前自检）")
+    ve.add_argument("path", help="信封 .json/.jsonl 文件或目录")
+    ve.add_argument("--market", default="US")
+    ve.set_defaults(func=cmd_validate_envelope)
 
     grades = sub.add_parser("grades", help="等级/赛道分布")
     grades.add_argument("--run", default=None)

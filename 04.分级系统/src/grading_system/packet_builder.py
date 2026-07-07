@@ -124,7 +124,9 @@ class PacketBuilder:
         pid = rec.get("product_id")
         if not pid:
             return
-        candidate_id = f"tiktok_shop_{pid}"
+        # 外部标准信封可在 record 上声明 platform；本仓插件源默认 tiktok_shop
+        platform = rec.get("platform") or "tiktok_shop"
+        candidate_id = f"{platform}_{pid}"
         merged_via_prefix = False
         if rec.get("id_truncated"):
             hit = self._find_by_prefix(packets, pid)
@@ -135,12 +137,13 @@ class PacketBuilder:
 
         packet = packets.get(candidate_id)
         if packet is None:
+            url = rec.get("fields", {}).get("canonical_url")
+            if url is None and platform == "tiktok_shop" and not rec.get("id_truncated"):
+                url = f"https://shop.tiktok.com/view/product/{pid}"
             packet = CandidateDataPacket(
                 candidate_id=candidate_id, market=self.market,
-                platform="tiktok_shop", primary_product_id=pid,
-                canonical_url=f"https://shop.tiktok.com/view/product/{pid}"
-                if not rec.get("id_truncated") else None)
-            packet.context["source_group"] = "tiktok_shop_plugin"
+                platform=platform, primary_product_id=pid, canonical_url=url)
+            packet.context["source_group"] = f"{platform}_plugin"
             packets[candidate_id] = packet
         if rec.get("id_truncated"):
             packet.add_issue(
