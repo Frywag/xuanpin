@@ -138,30 +138,45 @@ llm-ingest --bundle .. --output .. --model ..   # 校验并回灌 LLM 结果
 ### 3.3 LLM 分析环节的安全交接（核心设计）
 
 系统**不直接调用 LLM API**，而是生成任务包（`<run>/llm_tasks/*.json`），
-由 agent 执行后回灌，本轮实测生成 27 个任务包，三类：
+由 agent 执行后回灌。LLM 的产出分两档（v0.3 起）：
 
-| 任务 | 层级 | LLM 做什么 | LLM 不允许做什么 |
-|---|---|---|---|
-| review_clustering | L2 | 归纳评价标签为痛点聚类、写改良方向 | 虚构评论内容 |
-| cross_platform_compare | L3 | 解读多源互验/价格带/同风格信号，给平台优先级建议 | 凭空找同款、跨币种换算 |
-| reason_writer | L3 | 把 AnalysisResult 改写成业务可读语言 | 引入任何新事实 |
+**正式分析产出**（deep_review / run_report，回应「LLM 不只是产出草稿」）：
 
-任务包结构 = `inputs`（该候选全部可用事实）+ `allowed_evidence_ids`（证据白名单）
+| 任务 | 对象 | 产出 |
+|---|---|---|
+| deep_review | S 级全部 + pct≥48 的 A 级（上限 12） | 五维全量评审（需求/竞争/产品/供应链/风险，逐节绑定证据）+ **grade_challenge**（可不同意引擎等级）+ go/hold/reject 建议 + 放行条件 + 待人工问题 |
+| run_report | 整轮运行，**后置于选品表产出之后** | 整轮分析报告：市场格局、四赛道分析、头部候选点评、数据质量与缺口、风险总览、下一轮采集计划；渲染为 `选品分析报告.md` |
+
+**分析草稿**（review_clustering / cross_platform_compare / reason_writer）：
+L2/L3 的辅助分析，同前。
+
+任务包结构 = `inputs`（全部可用事实）+ `allowed_evidence_ids`（证据白名单）
 + `output_schema` + `rules`。回灌时 `validate_llm_output` 机器校验：
 
 1. 引用白名单外证据 → 拒绝；
-2. 输出中出现输入里不存在的数值（>100 的非平凡数字）→ 拒绝（防编造，
-   已实测拦截「月销 58,300 件」这类注入）；
+2. 输出中出现输入里不存在的数值 → 拒绝（防编造；已实测拦截「月销 58,300 件」
+   注入；inputs 里已有的数字、候选/证据 id 的内联引用是合法的）；
 3. 缺 `missing_fields` 声明 → 拒绝；
-4. 通过后入 `llm_analyses` 表，`human_review=pending`——**LLM 产出是分析草稿，
-   等级与分数永远由确定性引擎决定**，这条边界不随灵活性需求松动。
+4. deep_review 任一评审 section 缺证据、或不同意等级却无 rationale → 拒绝；
+5. run_report 提到输入之外的候选 → 拒绝。
 
-### 3.4 与 Claude Code 的典型协作流
+**等级边界（唯一不松动的红线）**：等级与分数由确定性引擎计算；deep_review
+的 grade_challenge 可以基于证据提出改级建议（本轮实测：评审将独立日节令裙
+从 A 改判 B 的建议，依据是引擎未覆盖的单款级节日窗口），但变更必须由人审
+把 `llm_analyses.human_review` 置为 approved 后才生效。
+
+### 3.4 与 Claude Code 的典型协作流（v0.3 实测闭环）
 
 ```text
-agent> run 管道                      # 确定性部分：采集->打分->分级->任务包
-agent> db-query 找出 S/A 候选        # SQL 直查选品库
-agent> 逐个读 llm_tasks/*.json       # 领取分析任务
-agent> 生成 JSON 结果 -> llm-ingest  # 机器校验，拒绝则修正重试
-人>     人审 llm_analyses 队列 + 终选款供应链核实 -> 立项
+agent> run 管道                       # 确定性：采集->打分->分级->XLSX->任务包(40个)
+agent> 执行 deep_review ×12          # S/高分A 全量评审（本轮实测执行 5 份全部通过校验）
+agent> 执行 run_report               # 整轮分析报告 -> 选品分析报告.md
+agent> 执行 L2/L3 草稿任务           # 差评聚类/多平台比对/理由改写
+agent> llm-ingest --render           # 机器校验入库 + 渲染业务可读 Markdown
+人>     读 选品分析报告.md + deep_reviews/*.md
+        人审 grade_challenge 与终选款供应链核实 -> 立项
 ```
+
+本轮实测校验器拦截记录（证明红线在工作）：评审文稿中出现输入外数值
+（非输入原值的 92.9、独立推算的年份等）均被拒绝，修正后才通过——
+对 agent 自己也一视同仁。

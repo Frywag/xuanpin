@@ -143,24 +143,14 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         "llm_usage": "无（全部为确定性规则；未编造任何数值）",
         "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
     }
-    dump_json(run_meta, out_dir / "run_meta.json")
-
     # 8. XLSX 推荐表
     from .xlsx_report import export_report
     export_report(out_dir / "选品推荐表.xlsx", packets, results, run_meta)
 
-    # 9. 写入选品库（SQLite，跨 run 累积，供 agent CLI 查询）
-    from .store import SelectionStore
-    if db_path is None:
-        db_path = Path(__file__).resolve().parents[2] / "data" / "selection.db"
-    store = SelectionStore(db_path)
-    store.record_run(run_meta, envelopes, packets, results, dict(track_dist))
-    store.close()
-    run_meta["db_path"] = str(db_path)
-
     # 10. 为 L2/L3 候选生成 LLM 分析任务包（由 agent CLI 执行后回灌）
-    from .llm_tasks import (build_cross_platform_task, build_review_clustering_task,
-                            build_reason_writer_task)
+    from .llm_tasks import (build_cross_platform_task, build_deep_review_task,
+                            build_review_clustering_task, build_reason_writer_task,
+                            build_run_report_task)
     tasks_dir = out_dir / "llm_tasks"
     tasks_dir.mkdir(exist_ok=True)
     pk_dict = {p.candidate_id: p.to_dict() for p in packets}
@@ -179,7 +169,85 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         dump_json(build_reason_writer_task(pk_dict[cid], rd, out_dir.name),
                   tasks_dir / f"{cid}.reason_writer.json")
         n_tasks += 1
+
+    # 10b. 深度评审任务：S 级全部 + 高分 A（LLM 的正式全量分析，非草稿）
+    llm_cfg = gates_cfg.get("llm", {})
+    dr_cfg = llm_cfg.get("deep_review", {})
+    deep_ids = []
+    if dr_cfg:
+        ranked = sorted(results.values(),
+                        key=lambda r: -(r.priority_score["pct"] or 0))
+        for r in ranked:
+            g, pct = r.priority_score.get("grade"), r.priority_score.get("pct") or 0
+            if g in dr_cfg.get("grades", []) or (
+                    g == "A" and pct >= dr_cfg.get("a_min_pct", 101)):
+                deep_ids.append(r.candidate_id)
+            if len(deep_ids) >= dr_cfg.get("max_candidates", 12):
+                break
+        for cid in deep_ids:
+            dump_json(build_deep_review_task(pk_dict[cid], results[cid].to_dict(),
+                                             out_dir.name),
+                      tasks_dir / f"{cid}.deep_review.json")
+            n_tasks += 1
+
+    # 10c. 整轮运行分析报告任务（后置于选品表产出之后）
+    if llm_cfg.get("run_report", {}).get("enabled"):
+        top_n = llm_cfg["run_report"].get("top_candidates", 15)
+        ranked = sorted(results.values(),
+                        key=lambda r: -(r.priority_score["pct"] or 0))[:top_n]
+        missing_freq = Counter()
+        for p in packets:
+            for m in p.missing_fields:
+                missing_freq[m] += 1
+        total = len(packets)
+        run_summary = {
+            "run_meta": {k: run_meta[k] for k in (
+                "run_id", "market", "candidates_total", "l1_processed",
+                "l2_processed", "l3_processed", "grade_distribution",
+                "track_distribution", "pct_p50", "pct_p90", "pct_max")},
+            # 预先算好比例，报告只允许引用这些现成数值（数值封闭性校验）
+            "derived": {
+                "grade_share_pct": {g: round(n / total * 100, 1)
+                                    for g, n in grade_dist.items()},
+                "track_share_pct": {t: round(n / total * 100, 1)
+                                    for t, n in track_dist.items()},
+                "sources_count": len(envelopes),
+            },
+            "group_price_bands": stats.to_dict()["price_bands"],
+            "top_candidates": [{
+                "candidate_id": r.candidate_id,
+                "title": (pk_dict[r.candidate_id]["basic_facts"].get("title") or "")[:120],
+                "platform": pk_dict[r.candidate_id]["platform"],
+                "track": r.priority_score.get("track"),
+                "grade": r.priority_score.get("grade"),
+                "pct": r.priority_score.get("pct"),
+                "confidence": r.confidence,
+                "source_count": len({s["source_id"] for s in
+                                     pk_dict[r.candidate_id]["source_refs"]}),
+                "risk_claims": [c.claim for c in r.claims if c.claim_type == "risk"][:4],
+                "reason_summary": r.recommendation.get("reason_summary", "")[:300],
+            } for r in ranked],
+            "top_missing_fields": [
+                {"field": f, "count": n, "share_pct": round(n / total * 100, 1)}
+                for f, n in missing_freq.most_common(10)],
+            "envelope_warnings": {e.envelope_id: e.warnings
+                                  for e in envelopes if e.warnings},
+        }
+        dump_json(build_run_report_task(run_summary, out_dir.name),
+                  tasks_dir / "__run__.run_report.json")
+        n_tasks += 1
     run_meta["llm_tasks_generated"] = n_tasks
+    run_meta["deep_review_candidates"] = deep_ids
+
+    # 11. 写入选品库（SQLite，跨 run 累积，供 agent CLI 查询）+ 运行记录落盘
+    from .store import SelectionStore
+    if db_path is None:
+        db_path = Path(__file__).resolve().parents[2] / "data" / "selection.db"
+    store = SelectionStore(db_path)
+    store.record_run(run_meta, envelopes, packets, results, dict(track_dist))
+    store.close()
+    run_meta["db_path"] = str(db_path)
+    dump_json(run_meta, out_dir / "run_meta.json")
 
     return {"packets": packets, "results": results, "run_meta": run_meta,
             "l2_ids": l2_ids, "l3_ids": l3_ids, "stats": stats}

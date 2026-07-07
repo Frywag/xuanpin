@@ -105,7 +105,7 @@ def cmd_explain(args) -> int:
 
 
 def cmd_llm_ingest(args) -> int:
-    from .llm_tasks import validate_llm_output
+    from .llm_tasks import render_markdown, validate_llm_output
     bundle = json.loads(Path(args.bundle).read_text(encoding="utf-8"))
     output = json.loads(Path(args.output).read_text(encoding="utf-8"))
     errors = validate_llm_output(bundle, output)
@@ -120,9 +120,19 @@ def cmd_llm_ingest(args) -> int:
         payload={"bundle_inputs_digest": sorted(bundle["inputs"].keys()),
                  "output": output})
     store.close()
+    rendered = None
+    if args.render:
+        rendered = Path(args.render)
+        rendered.parent.mkdir(parents=True, exist_ok=True)
+        rendered.write_text(render_markdown(bundle, output), encoding="utf-8")
+    note = ("深度评审/运行报告为正式分析产出；等级与分数仍由确定性引擎产生，"
+            "等级变更建议（grade_challenge）需人审确认"
+            if bundle["task_type"] in ("deep_review", "run_report")
+            else "已入库 llm_analyses，human_review=pending")
     _print_json({"status": "accepted", "candidate_id": bundle["candidate_id"],
                  "task_type": bundle["task_type"],
-                 "note": "已入库 llm_analyses，human_review=pending；等级/分数仍由确定性引擎决定"})
+                 "rendered": str(rendered) if rendered else None,
+                 "note": note})
     return 0
 
 
@@ -166,6 +176,9 @@ def main(argv=None):
     ingest.add_argument("--bundle", required=True, help="任务包 JSON 路径")
     ingest.add_argument("--output", required=True, help="LLM 输出 JSON 路径")
     ingest.add_argument("--model", required=True, help="执行模型标识（审计用）")
+    ingest.add_argument("--render", default=None,
+                        help="回灌通过后渲染业务可读 Markdown 到该路径"
+                             "（deep_review / run_report）")
     ingest.add_argument("--db", default=None)
     ingest.set_defaults(func=cmd_llm_ingest)
 

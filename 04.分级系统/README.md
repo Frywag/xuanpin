@@ -95,9 +95,12 @@ OEAK 文胸（54.7%、high 置信度）因 seller_type=BRAND 侵权风险被硬�
 - 每次运行写入 SQLite 选品库 `data/selection.db`（runs/envelopes/candidates/
   results/evidence/llm_analyses 六表，关键字段拉平 + 完整 JSON，跨 run 可对比）；
 - CLI 子命令：`grades` / `db-query --sql`（只读）/ `show` / `explain` / `llm-ingest`；
-- 运行时自动生成 LLM 分析任务包（差评聚类、多平台比对、理由改写），由
-  Claude Code 等 agent 执行后经 `llm-ingest` 校验回灌（证据白名单 +
-  数值封闭性校验，防编造）；LLM 产出仅为分析草稿，等级由确定性引擎决定。
+- 运行时自动生成五类 LLM 分析任务包：**deep_review**（S/高分A 逐款全量评审，
+  含 grade_challenge 与 go/hold/reject 建议）、**run_report**（选品表产出后的
+  整轮分析报告，渲染为 `选品分析报告.md`）为正式分析产出；差评聚类/多平台
+  比对/理由改写为 L2/L3 草稿。全部经 `llm-ingest` 校验回灌（证据白名单 +
+  数值封闭性 + 任务级规则）；等级由确定性引擎计算，评审改级建议需人审生效。
+  本轮运行已实测执行 5 份深度评审 + 1 份整轮报告（见 run_20260707_001/）。
 
 ## 如何扩展
 

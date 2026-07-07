@@ -29,3 +29,15 @@ l3:
     exact_id_join: true               # 插件源之间按 product_id 精确/前缀合并（已在 PacketBuilder 完成）
     category_group_compare: true      # 仅在相同品类组之间做价格带层面的比较
     forbid_fuzzy_same_product_claim: true   # 禁止把“同类目比较”写成“同款”结论
+
+# ================= LLM 分析任务的资格与成本控制 =================
+llm:
+  # 逐款深度评审（全量分析）：S 级全部 + 「分数较高的 A」
+  deep_review:
+    grades: [S]
+    a_min_pct: 48          # A 级中 pct ≥ 48 的进入深度评审（对应各赛道 A 档头部）
+    max_candidates: 12     # 单次运行成本上限
+  # 整轮运行分析报告：选品表产出后生成，一次运行一份
+  run_report:
+    enabled: true
+    top_candidates: 15     # 报告输入附带的头部候选数

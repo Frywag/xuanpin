@@ -27,20 +27,34 @@ PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli explain <candidat
 
 ## LLM 分析任务（agent 执行分析环节的方式）
 
-`run` 会在 `<out>/llm_tasks/` 生成三类任务包（review_clustering /
-cross_platform_compare / reason_writer）。执行方式：
+`run` 会在 `<out>/llm_tasks/` 生成五类任务包：
+
+| 任务 | 对象 | 性质 |
+|---|---|---|
+| `deep_review` | S 级全部 + pct≥48 的 A 级 | **正式分析产出**：五维全量评审 + grade_challenge（可不同意引擎等级，变更需人审）+ go/hold/reject |
+| `run_report` | 整轮运行（选品表产出后） | **正式分析产出**：整轮分析报告（市场格局/赛道/头部点评/数据缺口/下轮计划） |
+| `review_clustering` | L2 入围款 | 差评/评价标签聚类草稿 |
+| `cross_platform_compare` | L3 终选款 | 多平台比对解读草稿 |
+| `reason_writer` | L3 终选款 | 理由业务化改写草稿 |
+
+执行方式：
 
 1. 读任务包 JSON：`inputs` 是全部可用事实，`allowed_evidence_ids` 是证据白名单，
    `output_schema` 是要求的输出结构，`rules` 必须逐条遵守；
 2. 按 schema 生成**纯 JSON**结果写入文件；
-3. 回灌校验入库：
+3. 回灌校验入库（deep_review / run_report 建议加 --render 生成业务可读 Markdown）：
    ```bash
    PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli llm-ingest \
-       --bundle <out>/llm_tasks/<candidate>.review_clustering.json \
-       --output <你的结果.json> --model <模型标识>
+       --bundle <out>/llm_tasks/<candidate>.deep_review.json \
+       --output <你的结果.json> --model <模型标识> \
+       --render <out>/deep_reviews/<candidate>.md
    ```
-   校验器会拒绝：引用白名单外证据、输出输入中不存在的数值（疑似编造）、
-   缺少 missing_fields 声明。被拒绝就修正后重试，不要绕过校验器。
+   校验器会拒绝：引用白名单外证据、输出输入中不存在的数值（疑似编造；
+   引用 inputs 里已有的数字和候选/证据 id 是合法的）、缺少 missing_fields 声明、
+   deep_review 某个 section 缺证据、run_report 提到输入之外的候选。
+   被拒绝就修正后重试，不要绕过校验器。
+4. 输出 JSON 归档到 `<out>/llm_outputs/`，渲染的 Markdown 放
+   `<out>/deep_reviews/` 与 `<out>/选品分析报告.md`。
 
 ## 硬性红线（对所有 agent 生效，来自项目总纲）
 
@@ -50,7 +64,9 @@ cross_platform_compare / reason_writer）。执行方式：
 4. 趋势/热度信号（收藏、播放、Google Trends）不能当成交事实；
 5. 不修改 `02.插件数据源/`、`03.前端数据源/` 下的原始数据文件；
 6. 不在任何输出中写入 token、cookie、Auth-Token、敏感 header；
-7. 等级与分数由确定性引擎决定；LLM 产出只是分析草稿（human_review=pending）。
+7. 等级与分数由确定性引擎计算；LLM 深度评审可以在 grade_challenge 中
+   不同意引擎等级并给出证据充分的理由，但等级的实际变更必须由人审确认
+   （llm_analyses.human_review 从 pending 改为 approved 后生效）。
 
 ## 关键文件
 

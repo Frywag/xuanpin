@@ -132,3 +132,107 @@ class TestLLMTasks:
         bundle = build_reason_writer_task(p.to_dict(), r.to_dict(), "run_t")
         assert bundle["task_type"] == "reason_writer"
         assert bundle["inputs"]["grade"] == "A"
+
+
+class TestDeepReview:
+    def _bundle(self):
+        from grading_system.llm_tasks import build_deep_review_task
+        p = make_packet()
+        r = make_result(p)
+        return build_deep_review_task(p.to_dict(), r.to_dict(), "run_t")
+
+    def _good_output(self, ev):
+        sec = {"assessment": "基于证据的判断", "strengths": [], "concerns": [],
+               "evidence_refs": [ev], "confidence": "medium"}
+        return {
+            "executive_summary": "摘要",
+            "sections": {k: dict(sec) for k in
+                         ("demand", "competition", "product", "supply_chain", "risk")},
+            "grade_challenge": {"agrees_with_engine": True,
+                                "suggested_grade": None, "rationale": ""},
+            "go_recommendation": {"decision": "hold", "conditions": ["补供应链"]},
+            "open_questions": [], "next_actions": [],
+            "missing_fields": ["无评论全文"], "assumptions": [],
+            "confidence": "medium",
+        }
+
+    def test_bundle_contains_full_packet_and_engine_analysis(self):
+        b = self._bundle()
+        assert b["task_type"] == "deep_review"
+        assert b["inputs"]["candidate"]["basic_facts"]["title"] == "Floral Dress"
+        assert b["inputs"]["engine_analysis"]["grade"] == "A"
+        assert b["allowed_evidence_ids"]
+
+    def test_valid_deep_review_accepted(self):
+        b = self._bundle()
+        out = self._good_output(b["allowed_evidence_ids"][0])
+        assert validate_llm_output(b, out) == []
+
+    def test_section_without_evidence_rejected(self):
+        b = self._bundle()
+        out = self._good_output(b["allowed_evidence_ids"][0])
+        out["sections"]["risk"]["evidence_refs"] = []
+        errors = validate_llm_output(b, out)
+        assert any("sections.risk" in e for e in errors)
+
+    def test_disagree_without_rationale_rejected(self):
+        b = self._bundle()
+        out = self._good_output(b["allowed_evidence_ids"][0])
+        out["grade_challenge"] = {"agrees_with_engine": False,
+                                  "suggested_grade": "B", "rationale": ""}
+        errors = validate_llm_output(b, out)
+        assert any("rationale" in e for e in errors)
+
+
+class TestRunReport:
+    def _bundle(self):
+        from grading_system.llm_tasks import build_run_report_task
+        summary = {
+            "run_meta": {"run_id": "run_t", "candidates_total": 2234,
+                         "grade_distribution": {"S": 3, "A": 42}},
+            "derived": {"grade_share_pct": {"S": 0.1, "A": 1.9}},
+            "top_candidates": [{"candidate_id": "c1", "title": "Floral Dress",
+                                "grade": "A", "pct": 46.2}],
+            "top_missing_fields": [],
+        }
+        return build_run_report_task(summary, "run_t")
+
+    def _good_output(self):
+        return {
+            "title": "选品分析报告", "executive_summary": "摘要",
+            "market_landscape": "格局",
+            "track_analysis": [{"track": "balanced", "narrative": "叙述",
+                                "top_candidate_ids": ["c1"]}],
+            "top_candidates_review": [{"candidate_id": "c1", "one_liner": "点评"}],
+            "data_quality_and_gaps": "缺口", "risk_overview": "风险",
+            "next_collection_plan": ["补采评论"],
+            "missing_fields": [], "assumptions": [],
+        }
+
+    def test_valid_report_accepted(self):
+        assert validate_llm_output(self._bundle(), self._good_output()) == []
+
+    def test_unknown_candidate_rejected(self):
+        out = self._good_output()
+        out["top_candidates_review"].append(
+            {"candidate_id": "c_fabricated", "one_liner": "编造的候选"})
+        errors = validate_llm_output(self._bundle(), out)
+        assert any("输入之外的候选" in e for e in errors)
+
+    def test_render_markdown(self):
+        from grading_system.llm_tasks import render_markdown
+        md = render_markdown(self._bundle(), self._good_output())
+        assert "# 选品分析报告" in md
+        assert "下一轮采集计划" in md
+
+    def test_inline_candidate_id_mention_not_treated_as_number(self):
+        """正文里内联提到候选 id（含数字）是合法引用，不得触发编造判定。"""
+        out = self._good_output()
+        out["market_landscape"] = "头部候选 c1 与 run_t 的整体格局良好"
+        assert validate_llm_output(self._bundle(), out) == []
+
+    def test_truly_new_number_in_narrative_still_rejected(self):
+        out = self._good_output()
+        out["market_landscape"] = "预计月销售额可达 987654 美元"
+        errors = validate_llm_output(self._bundle(), out)
+        assert any("编造" in e for e in errors)
