@@ -12,4 +12,5 @@ __pycache__/
 04.分级系统/data/analysis_runs/*/candidate_packets.jsonl
 04.分级系统/data/analysis_runs/*/analysis_results.jsonl
 04.分级系统/data/analysis_runs/*/envelopes/envelope_*frontend*.json
+04.分级系统/data/selection.db
 

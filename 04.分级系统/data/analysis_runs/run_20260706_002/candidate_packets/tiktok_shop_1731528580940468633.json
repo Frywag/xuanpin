@@ -1,0 +1,304 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "tiktok_shop_1731528580940468633",
+  "market": "US",
+  "platform": "tiktok_shop",
+  "primary_product_id": "1731528580940468633",
+  "canonical_url": "https://shop.tiktok.com/view/product/1731528580940468633",
+  "source_refs": [
+    {
+      "source_id": "tabcut",
+      "envelope_id": "envelope_tabcut_20260707"
+    },
+    {
+      "source_id": "echotik",
+      "envelope_id": "envelope_echotik_20260707"
+    }
+  ],
+  "basic_facts": {
+    "title": "Bare Anatomy Nature x Science Rosemary Water with Rice Water |100% Natural Extract | Soft & Smooth Hair Non-Greasy & Fast Absorbing | 200 ml",
+    "brand": null,
+    "category_path": [],
+    "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731528580940468633/17315285809404686330.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+    "price": {
+      "amount": 14.99,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.6,
+    "review_count": 14700.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": 84633.0,
+    "sales_7d_units": 21600.0,
+    "sales_floor_units": null,
+    "revenue_30d": null,
+    "gmv_7d": {
+      "amount": 355200.00000000006,
+      "currency": "USD"
+    },
+    "sales_growth_rate": 0.6916,
+    "favorites_count": null,
+    "bestseller_rank_text": null,
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [
+      {
+        "source_id": "tabcut",
+        "envelope_id": "envelope_tabcut_20260707",
+        "product_id": "1731528580940468633",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "echotik",
+        "envelope_id": "envelope_echotik_20260707",
+        "product_id": "1731528580940468633",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [],
+    "same_style_signals": []
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "owned_supply_inputs.capability_profile",
+    "product_opportunity.reviews"
+  ],
+  "field_issues": [
+    {
+      "field_path": "primary_product_id",
+      "issue": "id_truncated_in_source",
+      "detail": "EchoTik 页面导出的 product_id 为截断值 17315285809404686...，已按前缀合并到完整 id",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "basic_facts.price",
+      "issue": "source_conflict",
+      "detail": "echotik 给出 {'amount': 19.99, 'currency': 'USD'}，与已有 {'amount': 14.99, 'currency': 'USD'} 不一致，保留先值",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_tabcut_000136",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=54",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000137",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=54",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000138",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=54",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000139",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=54",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000140",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.category_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=54",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000141",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=54",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000417",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000418",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 商品库页面价格（区间取下限）"
+    },
+    {
+      "evidence_id": "ev_echotik_000420",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000421",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000422",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_7d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 7 天销量（估算）"
+    },
+    {
+      "evidence_id": "ev_echotik_000423",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.gmv_7d",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000424",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.product_total_sales",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 商品累计销量（估算）"
+    },
+    {
+      "evidence_id": "ev_echotik_000425",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.affiliate_creator_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000426",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.shop_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=10",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "tiktok_shop_plugin",
+    "category_label": null,
+    "seasonal": false,
+    "category_name": "美妆个护",
+    "product_total_sales": 180900.0,
+    "affiliate_creator_count": 2308.0,
+    "shop_name": "Bare Anatomy Haircare"
+  }
+}

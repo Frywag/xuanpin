@@ -41,9 +41,10 @@ cd 04.分级系统 && python3 -m pytest tests/ -q
 ```text
 04.分级系统/
   configs/
-    sources_p0.yaml        # 数据源注册（工作簿路径、列映射、类目/季节标记）
-    scoring_v0.yaml        # ★ 分级标准：权重、分档、S/A/B/C 阈值（全部带数据依据注释）
+    sources_p0.yaml        # 数据源注册（工作簿路径、列映射、类目/季节/赛道标记）
+    scoring_v0.yaml        # ★ 分级标准：赛道权重档、分档、赛道内 S/A/B/C 阈值（带数据依据注释）
     layer_gates_v0.yaml    # L1/L2/L3 Gate 与成本上限
+    supply_capability.yaml # 供应链能力档案（品类级，一次性维护，enabled 后生效）
   schemas/                 # SourceEnvelope / EvidenceRef / CandidateDataPacket / AnalysisResult 的 JSON Schema
   src/grading_system/
     parsing.py             # ¥938.59万 / $565.19万 / 100+ / 11% 等真实格式解析（失败返回 None）
@@ -55,7 +56,9 @@ cd 04.分级系统 && python3 -m pytest tests/ -q
     cross_platform.py      # L3 多源互验 / 价格带 / 同风格红海（不凭空找同款）
     gates.py               # L1/L2/L3 编排与成本控制
     xlsx_report.py         # 8-sheet 推荐工作簿
-    pipeline.py / cli.py   # 端到端管道与命令行
+    store.py               # SQLite 选品库（跨 run 累积，agent 可 SQL 直查）
+    llm_tasks.py           # LLM 分析任务契约（任务包生成 + 回灌校验）
+    pipeline.py / cli.py   # 端到端管道与命令行（run/grades/db-query/show/explain/llm-ingest）
   tests/                   # 49 用例：解析、契约、聚类、打分、Gate、端到端
   docs/
     01_分级标准_PScoreV0与SABC阈值.md   # ★ 每个阈值的数据推导
@@ -63,23 +66,38 @@ cd 04.分级系统 && python3 -m pytest tests/ -q
   data/analysis_runs/      # 运行产物（XLSX、样例包、插件信封入库；全量 JSONL 不入库）
 ```
 
-## 分级标准一览（详见 docs/01）
+## 分级标准一览（详见 docs/01 与 docs/03）
 
-`PScore = 市场需求25 + 竞争可突破20 + 产品机会20 + 自有供应链20 − 风险15`；
-P0 供应链维缺失 → achievable_max=65，`pct = 总分/65×100`。
+`PScore = 市场需求 + 竞争可突破 + 产品机会 + 自有供应链 − 风险`，
+**打分前先判定赛道**（趋势上升/痛点改良/基础常青/均衡），各赛道用不同权重档
+（附录C「赛道只调权重」），S/A/B/C 在**赛道内部**按该赛道 pct 分布分箱：
 
-在 2,234 个真实候选的 pct 分布（p50=20.0 / p90=36.9 / p99.5=50.8 / max=60.0）上校准：
+| 赛道 | 权重档（需求/竞争/产品/供应链/风险下限） | 阈值 S/A/B | 实测 n | 实测 S/A |
+|---|---|---|---:|---|
+| 趋势上升款 | 30/15/15/20/-20 | 52/45/32 | 88 | S=3，A=9 |
+| 痛点改良款 | 20/15/30/20/-15 | 48/44/35 | 51 | A=12 |
+| 基础常青款 | 22/28/15/20/-10 | 45/34/20 | 394 | A=4 |
+| 均衡（兜底） | 25/20/20/20/-15 | 50/45/30 | 1,701 | A=17 |
 
-| 等级 | 阈值 | 硬性条件 | 实测数量 |
-|---|---|---|---:|
-| S | pct≥50 | ≥2 源互验 + 置信度≥medium + 无未确认重大 IP/质量风险 | 7（0.3%） |
-| A | pct≥45 | 单源候选封顶 A | 48（2.1%） |
-| B | pct≥30 | 覆盖率<35% 封顶 B | 387（17.3%） |
-| C | 其余 | 无需求信号强制 C；覆盖率<20% 封顶 C | 1,792（80.2%） |
+硬性条件不随赛道放松：S 必须 ≥2 源互验 + 置信度≥medium + 无未确认重大
+IP/质量风险；单源候选封顶 A；覆盖率 <35%/<20% 封顶 B/C；无需求信号强制 C。
 
-实测 S 级全部为双插件源（Tabcut×EchoTik / Kalodata×Tabcut）按商品 ID 互验的头部商品；
-OEAK 文胸（52.3%、high 置信度）因 seller_type=BRAND 侵权风险被硬性条件封顶 A——
+供应链维两级化（docs/03 §1）：利润结构代理（佣金/运费/价格位置，零人力，
+实测 2,169/2,234 款可得）+ 品类能力档案匹配（`configs/supply_capability.yaml`
+一次性维护）；逐款成本/MOQ/交期人工核实只对 L3 终选款触发。
+
+实测 S 级全部为双插件源（Tabcut×EchoTik）按商品 ID 互验的头部商品；
+OEAK 文胸（54.7%、high 置信度）因 seller_type=BRAND 侵权风险被硬性条件封顶 A——
 这是分级系统在如实执行风险规则，不是漏检。
+
+## 选品库与 Agent 集成（详见 docs/03 §3 与仓库根 CLAUDE.md）
+
+- 每次运行写入 SQLite 选品库 `data/selection.db`（runs/envelopes/candidates/
+  results/evidence/llm_analyses 六表，关键字段拉平 + 完整 JSON，跨 run 可对比）；
+- CLI 子命令：`grades` / `db-query --sql`（只读）/ `show` / `explain` / `llm-ingest`；
+- 运行时自动生成 LLM 分析任务包（差评聚类、多平台比对、理由改写），由
+  Claude Code 等 agent 执行后经 `llm-ingest` 校验回灌（证据白名单 +
+  数值封闭性校验，防编造）；LLM 产出仅为分析草稿，等级由确定性引擎决定。
 
 ## 如何扩展
 

@@ -1,0 +1,169 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "tiktok_shop_1731528580940468633",
+  "run_id": "run_20260706_002",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "Bare Anatomy Nature x Science Rosemary Water with Rice Water |100% Natural Extract | Soft & Smooth Hair Non-Greasy & Fast Absorbing | 200 ml",
+    "grade": "A",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 27.6,
+        "max": 30.0,
+        "reason": "量级信号 sales_30d_units=84,633 -> 15分；销量/销售额增长率 +69.2% -> 5分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_tabcut_000138",
+          "ev_tabcut_000139"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 5.2,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_echotik_000418",
+          "ev_echotik_000421",
+          "ev_tabcut_000137"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 3.8,
+        "max": 15.0,
+        "reason": "评分4.6（低于类目中位_有一定改良空间）-> 5分",
+        "evidence_refs": [
+          "ev_echotik_000420"
+        ]
+      },
+      {
+        "name": "自有供应链",
+        "score": 2.0,
+        "max": 10.0,
+        "reason": "售价低于组内中位，薄利结构（代理）-> 2分。逐款成本/MOQ/交期仅对终选款人工核实",
+        "evidence_refs": [
+          "ev_echotik_000418",
+          "ev_tabcut_000137"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Bare Anatomy Haircare」品牌词出现在标题中（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_echotik_000426"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=84,633 -> 15分；销量/销售额增长率 +69.2% -> 5分；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_tabcut_000138",
+          "ev_tabcut_000139"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_echotik_000418",
+          "ev_echotik_000421",
+          "ev_tabcut_000137"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.6（低于类目中位_有一定改良空间）-> 5分",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_echotik_000420"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "自有供应链：售价低于组内中位，薄利结构（代理）-> 2分。逐款成本/MOQ/交期仅对终选款人工核实",
+        "claim_type": "other",
+        "evidence_refs": [
+          "ev_echotik_000418",
+          "ev_tabcut_000137"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Bare Anatomy Haircare」品牌词出现在标题中（人工待确认）",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_echotik_000426"
+        ],
+        "confidence": "low"
+      },
+      {
+        "claim": "多源互验：tabcut、echotik 按商品ID匹配到同一商品",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_tabcut_000136",
+          "ev_echotik_000417"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "平台优先级：tiktok_shop（候选来自 TikTok Shop 数据源，维持原平台优先）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_tabcut_000136",
+          "ev_echotik_000417"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio",
+      "owned_supply_inputs.capability_profile",
+      "product_opportunity.reviews"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_echotik_000417",
+    "ev_echotik_000418",
+    "ev_echotik_000420",
+    "ev_echotik_000421",
+    "ev_echotik_000422",
+    "ev_echotik_000423",
+    "ev_echotik_000424",
+    "ev_echotik_000425",
+    "ev_echotik_000426",
+    "ev_tabcut_000136",
+    "ev_tabcut_000137",
+    "ev_tabcut_000138",
+    "ev_tabcut_000139",
+    "ev_tabcut_000140",
+    "ev_tabcut_000141"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

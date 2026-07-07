@@ -1,0 +1,68 @@
+# xuanpin 仓库指南（供 Claude Code / agent CLI 使用）
+
+女装跨境选品项目：`01.分级标准参考/` 是规范，`02.插件数据源/` 与
+`03.前端数据源/` 是已采集的真实数据（只读，不要修改），`04.分级系统/`
+是可运行的分级系统（Python 3.10+，依赖 openpyxl + pyyaml）。
+
+## 常用命令（在仓库根目录执行）
+
+```bash
+# 安装依赖
+pip install -r 04.分级系统/requirements.txt
+
+# 端到端分级：数据源 -> 候选包 -> L1/L2/L3 -> XLSX + SQLite 选品库 + LLM 任务包
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli run \
+    --repo-root . --out "04.分级系统/data/analysis_runs/run_$(date +%Y%m%d)_001"
+
+# 测试（62 用例，含消费真实数据的端到端集成测试）
+cd 04.分级系统 && python3 -m pytest tests/ -q
+
+# 查询选品库（SQLite：04.分级系统/data/selection.db，表结构见 store.py）
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli grades
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli db-query \
+    --sql "SELECT candidate_id, grade, pct FROM results WHERE grade IN ('S','A') ORDER BY pct DESC"
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli show <candidate_id>     # 完整 packet+result JSON
+PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli explain <candidate_id>  # 证据链（工作簿/sheet/行）
+```
+
+## LLM 分析任务（agent 执行分析环节的方式）
+
+`run` 会在 `<out>/llm_tasks/` 生成三类任务包（review_clustering /
+cross_platform_compare / reason_writer）。执行方式：
+
+1. 读任务包 JSON：`inputs` 是全部可用事实，`allowed_evidence_ids` 是证据白名单，
+   `output_schema` 是要求的输出结构，`rules` 必须逐条遵守；
+2. 按 schema 生成**纯 JSON**结果写入文件；
+3. 回灌校验入库：
+   ```bash
+   PYTHONPATH="04.分级系统/src" python3 -m grading_system.cli llm-ingest \
+       --bundle <out>/llm_tasks/<candidate>.review_clustering.json \
+       --output <你的结果.json> --model <模型标识>
+   ```
+   校验器会拒绝：引用白名单外证据、输出输入中不存在的数值（疑似编造）、
+   缺少 missing_fields 声明。被拒绝就修正后重试，不要绕过校验器。
+
+## 硬性红线（对所有 agent 生效，来自项目总纲）
+
+1. 不编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值；
+2. 所有结论必须绑定 evidence_refs；拿不到数据写 missing_fields，不写 0；
+3. 价格必须带币种；不同币种不做换算比较；
+4. 趋势/热度信号（收藏、播放、Google Trends）不能当成交事实；
+5. 不修改 `02.插件数据源/`、`03.前端数据源/` 下的原始数据文件；
+6. 不在任何输出中写入 token、cookie、Auth-Token、敏感 header；
+7. 等级与分数由确定性引擎决定；LLM 产出只是分析草稿（human_review=pending）。
+
+## 关键文件
+
+| 路径 | 内容 |
+|---|---|
+| `04.分级系统/configs/scoring_v0.yaml` | 分级标准（权重档、分档、赛道内 S/A/B/C 阈值），改标准只改这里 |
+| `04.分级系统/configs/sources_p0.yaml` | 数据源注册与列映射（新增前端源只加配置） |
+| `04.分级系统/configs/layer_gates_v0.yaml` | L1/L2/L3 Gate 与成本上限 |
+| `04.分级系统/configs/supply_capability.yaml` | 供应链能力档案（品类级，一次性维护） |
+| `04.分级系统/schemas/*.json` | 四个数据契约的 JSON Schema |
+| `04.分级系统/docs/` | 使用指南、分级标准推导、Gate 规则、演进设计 |
+| `04.分级系统/data/selection.db` | 选品库（SQLite，跨 run 累积，gitignore，可复现） |
+
+改动代码后必须跑测试；改动分级标准后必须重跑管道并检查
+「运行记录」sheet 里的等级/赛道分布是否仍合理（S 建议 ≤ 赛道前 1%）。

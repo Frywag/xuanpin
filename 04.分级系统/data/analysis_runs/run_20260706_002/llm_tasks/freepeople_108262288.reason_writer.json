@@ -1,0 +1,161 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "freepeople_108262288",
+  "run_id": "run_20260706_002",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "Raven Solid Convertible Maxi Skirt",
+    "grade": "A",
+    "track": "均衡款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 9.0,
+        "max": 25,
+        "reason": "量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源",
+        "evidence_refs": [
+          "ev_indie_frontend_003235"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 14.0,
+        "max": 20,
+        "reason": "竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_indie_frontend_003232",
+          "ev_indie_frontend_003234"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 13.0,
+        "max": 20,
+        "reason": "评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张",
+        "evidence_refs": [
+          "ev_indie_frontend_003233",
+          "ev_indie_frontend_003236",
+          "ev_indie_frontend_003237"
+        ]
+      },
+      {
+        "name": "自有供应链",
+        "score": 3.0,
+        "max": 10.0,
+        "reason": "售价高于组内中位，有溢价空间（代理）-> 3分。逐款成本/MOQ/交期仅对终选款人工核实",
+        "evidence_refs": [
+          "ev_indie_frontend_003232"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.0,
+        "max": 0.0,
+        "reason": "单一数据源，量价未经第二源互验：仅 indie_frontend 单源",
+        "evidence_refs": [
+          "ev_indie_frontend_003227"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_indie_frontend_003235"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_indie_frontend_003232",
+          "ev_indie_frontend_003234"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "产品机会：评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_indie_frontend_003233",
+          "ev_indie_frontend_003236",
+          "ev_indie_frontend_003237"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "自有供应链：售价高于组内中位，有溢价空间（代理）-> 3分。逐款成本/MOQ/交期仅对终选款人工核实",
+        "claim_type": "other",
+        "evidence_refs": [
+          "ev_indie_frontend_003232"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "单一数据源，量价未经第二源互验：仅 indie_frontend 单源",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_indie_frontend_003227"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "同风格红海程度：高（语料内同风格候选 688 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_indie_frontend_003227"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：freepeople（无跨平台优先级证据，维持来源平台）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_indie_frontend_003227"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "market_metrics.sales_growth_rate",
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio",
+      "owned_supply_inputs.capability_profile",
+      "product_opportunity.reviews"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_indie_frontend_003227",
+    "ev_indie_frontend_003228",
+    "ev_indie_frontend_003229",
+    "ev_indie_frontend_003231",
+    "ev_indie_frontend_003232",
+    "ev_indie_frontend_003233",
+    "ev_indie_frontend_003234",
+    "ev_indie_frontend_003235",
+    "ev_indie_frontend_003236",
+    "ev_indie_frontend_003237"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

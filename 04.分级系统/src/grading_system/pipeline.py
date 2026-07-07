@@ -52,7 +52,8 @@ def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any]):
 
 def run_pipeline(repo_root: Path, out_dir: Path,
                  sources_cfg_path: Path, scoring_cfg_path: Path,
-                 gates_cfg_path: Path, sample_packets: int = 10) -> Dict[str, Any]:
+                 gates_cfg_path: Path, sample_packets: int = 10,
+                 db_path: Path = None) -> Dict[str, Any]:
     started = datetime.now(timezone.utc)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "envelopes").mkdir(exist_ok=True)
@@ -61,6 +62,10 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     sources_cfg = load_yaml(sources_cfg_path)
     scoring_cfg = load_yaml(scoring_cfg_path)
     gates_cfg = load_yaml(gates_cfg_path)
+    # 供应链能力档案（品类级，一次性维护；enabled=false 时能力子项记 missing）
+    capability_path = scoring_cfg_path.parent / scoring_cfg.get(
+        "supply", {}).get("capability_profile", "supply_capability.yaml")
+    capability = load_yaml(capability_path) if capability_path.exists() else {}
 
     # 1. 采集 -> SourceEnvelope
     envelopes = collect_envelopes(repo_root, sources_cfg)
@@ -73,7 +78,7 @@ def run_pipeline(repo_root: Path, out_dir: Path,
 
     # 3. 组内统计 + 打分器
     stats = GroupStats(packets)
-    scorer = PriorityScorer(scoring_cfg, stats)
+    scorer = PriorityScorer(scoring_cfg, stats, capability_profile=capability)
     runner = GateRunner(scorer, gates_cfg, market=sources_cfg.get("market", "US"))
 
     # 4. L1 全量粗筛
@@ -108,6 +113,7 @@ def run_pipeline(repo_root: Path, out_dir: Path,
                   out_dir / "candidate_packets" / f"{cid}.analysis.json")
 
     grade_dist = Counter(r.priority_score["grade"] for r in results.values())
+    track_dist = Counter(r.priority_score.get("track") or "n/a" for r in results.values())
     pcts = sorted((r.priority_score["pct"] or 0) for r in results.values())
 
     run_meta = {
@@ -122,6 +128,8 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         "l2_processed": len(l2_ids),
         "l3_processed": len(l3_ids),
         "grade_distribution": dict(grade_dist),
+        "track_distribution": dict(track_dist),
+        "capability_profile_enabled": bool(capability.get("enabled")),
         "pct_p50": pcts[len(pcts) // 2] if pcts else None,
         "pct_p90": pcts[int(len(pcts) * 0.9)] if pcts else None,
         "pct_max": pcts[-1] if pcts else None,
@@ -140,6 +148,38 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     # 8. XLSX 推荐表
     from .xlsx_report import export_report
     export_report(out_dir / "选品推荐表.xlsx", packets, results, run_meta)
+
+    # 9. 写入选品库（SQLite，跨 run 累积，供 agent CLI 查询）
+    from .store import SelectionStore
+    if db_path is None:
+        db_path = Path(__file__).resolve().parents[2] / "data" / "selection.db"
+    store = SelectionStore(db_path)
+    store.record_run(run_meta, envelopes, packets, results, dict(track_dist))
+    store.close()
+    run_meta["db_path"] = str(db_path)
+
+    # 10. 为 L2/L3 候选生成 LLM 分析任务包（由 agent CLI 执行后回灌）
+    from .llm_tasks import (build_cross_platform_task, build_review_clustering_task,
+                            build_reason_writer_task)
+    tasks_dir = out_dir / "llm_tasks"
+    tasks_dir.mkdir(exist_ok=True)
+    pk_dict = {p.candidate_id: p.to_dict() for p in packets}
+    n_tasks = 0
+    for cid in l2_ids:
+        t = build_review_clustering_task(pk_dict[cid], out_dir.name)
+        if t:
+            dump_json(t, tasks_dir / f"{cid}.review_clustering.json")
+            n_tasks += 1
+    for cid in l3_ids:
+        rd = results[cid].to_dict()
+        t = build_cross_platform_task(pk_dict[cid], rd, out_dir.name)
+        if t:
+            dump_json(t, tasks_dir / f"{cid}.cross_platform_compare.json")
+            n_tasks += 1
+        dump_json(build_reason_writer_task(pk_dict[cid], rd, out_dir.name),
+                  tasks_dir / f"{cid}.reason_writer.json")
+        n_tasks += 1
+    run_meta["llm_tasks_generated"] = n_tasks
 
     return {"packets": packets, "results": results, "run_meta": run_meta,
             "l2_ids": l2_ids, "l3_ids": l3_ids, "stats": stats}

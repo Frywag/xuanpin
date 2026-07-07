@@ -149,6 +149,10 @@ class KalodataAdapter(BaseAdapter):
             if lo is not None or hi is not None:
                 self._field(rec, "price_range",
                             {"low": lo, "high": hi, "currency": CURRENCY}, sheet, row)
+            sf, _ = parse_money(r.get("shipping_fee"), CURRENCY)
+            if sf is not None:
+                self._field(rec, "shipping_fee", {"amount": sf, "currency": CURRENCY},
+                            sheet, row, note="运费，供利润结构代理指标使用")
 
         total_rows = read_sheet_dicts(self.workbook_path, "product_detail_total")
         for r in total_rows:

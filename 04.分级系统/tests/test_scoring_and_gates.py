@@ -87,13 +87,43 @@ class TestScorer:
                 assert c.evidence_refs, f"组件 {c.name} 得分但无证据"
 
     def test_supply_dimension_missing_not_zero_filled(self, scoring_cfg):
-        p = strong_packet()
+        p = strong_packet()   # 无佣金/运费/组内价格样本 -> 供应链维无任何代理信号
         scorer = PriorityScorer(scoring_cfg, GroupStats([p]))
         out = scorer.score(p)
         supply = next(c for c in out["components"] if c.name == "自有供应链")
         assert supply.score is None      # 缺失就是缺失，不是 0 分
         assert supply.missing
-        assert out["achievable_max"] == 65   # 25+20+20，风险不计入
+        # strong_packet 增长率 0.55 -> 趋势上升赛道：30+15+15 = 60 可得满分
+        assert out["track"] == "trend_rising"
+        assert out["achievable_max"] == 60
+
+    def test_supply_profit_proxy_scores_without_human_input(self, scoring_cfg):
+        """佣金/运费存在时，供应链维零人力拿到利润代理分（不再整维缺失）。"""
+        p = strong_packet()
+        p.set_fact("competition_metrics", "commission_rate", 0.11,
+                   ev("competition_metrics.commission_rate"))
+        p.context["shipping_fee"] = {"amount": 28.69, "currency": "CNY"}
+        p.add_evidence(ev("context.shipping_fee"), "context.shipping_fee")
+        scorer = PriorityScorer(scoring_cfg, GroupStats([p]))
+        out = scorer.score(p)
+        supply = next(c for c in out["components"] if c.name == "自有供应链")
+        assert supply.score is not None and supply.score > 0
+        assert "代理" in supply.reason           # 明确标注是代理指标，不是毛利事实
+        assert supply.evidence_refs
+        # 能力档案未启用 -> capability 子项仍是 missing
+        assert "owned_supply_inputs.capability_profile" in p.missing_fields
+
+    def test_capability_profile_match(self, scoring_cfg):
+        p = strong_packet()   # title: Wireless Bra
+        capability = {"enabled": True, "match_points": {"hit": 10, "miss": 2},
+                      "profiles": [{"name": "内衣塑身类",
+                                    "style_tokens": ["bra", "shapewear"]}]}
+        scorer = PriorityScorer(scoring_cfg, GroupStats([p]),
+                                capability_profile=capability)
+        out = scorer.score(p)
+        supply = next(c for c in out["components"] if c.name == "自有供应链")
+        assert supply.score is not None
+        assert "内衣塑身类" in supply.reason
 
     def test_no_demand_signal_scores_low(self, scoring_cfg):
         p = empty_packet()
@@ -101,6 +131,35 @@ class TestScorer:
         out = scorer.score(p)
         assert out["grade"] == "C"
         assert "market_metrics.<any_demand_signal>" in p.missing_fields
+
+    def test_track_assignment(self, scoring_cfg):
+        scorer = PriorityScorer(scoring_cfg, GroupStats([]))
+        # 增长 55% -> 趋势上升
+        p = strong_packet()
+        assert scorer.assign_track(p) == "trend_rising"
+        # 低评分高评论、无高增长 -> 痛点改良
+        p2 = strong_packet()
+        p2.market_metrics["sales_growth_rate"] = 0.1
+        p2.basic_facts["rating"] = 4.1
+        assert scorer.assign_track(p2) == "pain_improvement"
+        # 基础款词 + 平稳增长 + 好评 -> 基础常青
+        p3 = strong_packet()
+        p3.market_metrics["sales_growth_rate"] = 0.05
+        p3.basic_facts["rating"] = 4.8
+        assert scorer.assign_track(p3) == "evergreen"
+        # 无信号 -> 数据源 track_hint 兜底
+        p4 = empty_packet()
+        p4.context["track_hint"] = "evergreen"
+        assert scorer.assign_track(p4) == "evergreen"
+
+    def test_track_profile_changes_weights(self, scoring_cfg):
+        """同一候选在不同赛道下维度满分不同（赛道只调权重）。"""
+        p = strong_packet()          # trend_rising
+        out = PriorityScorer(scoring_cfg, GroupStats([p])).score(p)
+        demand = next(c for c in out["components"] if c.name == "市场需求")
+        assert demand.max_score == 30          # trend 档需求权重 30
+        comp = next(c for c in out["components"] if c.name == "竞争可突破")
+        assert comp.max_score == 15
 
     def test_single_source_cannot_reach_s(self, scoring_cfg):
         p = strong_packet()

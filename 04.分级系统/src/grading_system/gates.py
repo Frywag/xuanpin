@@ -80,6 +80,7 @@ class GateRunner:
             r.priority_score.update({
                 "total": scored["total"], "achievable_max": scored["achievable_max"],
                 "pct": scored["pct"], "grade": grade,
+                "track": scored["track"], "track_label": scored["track_label"],
                 "components": scored["components"],
             })
             r.track_tags = scored["track_tags"]
@@ -179,6 +180,7 @@ class GateRunner:
             r.priority_score.update({
                 "total": rescored["total"], "achievable_max": rescored["achievable_max"],
                 "pct": rescored["pct"], "grade": rescored["grade"],
+                "track": rescored["track"], "track_label": rescored["track_label"],
                 "components": rescored["components"],
             })
             r.track_tags = rescored["track_tags"]

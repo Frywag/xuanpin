@@ -53,11 +53,11 @@ def export_report(path, packets: List[CandidateDataPacket],
     # ---------- 1. 推荐总表 ----------
     ws = _sheet(wb, "推荐总表",
                 ["candidate_id", "product_link", "image", "title", "category",
-                 "source_platform",
-                 "grade", "priority_score", "pct", "track_tags", "recommendation_reason",
+                 "source_platform", "track", "grade", "priority_score", "pct",
+                 "track_tags", "recommendation_reason",
                  "risk_summary", "missing_key_fields", "next_action", "evidence_count",
                  "confidence", "L1", "L2", "L3"],
-                [30, 40, 40, 50, 20, 16, 7, 12, 8, 22, 60, 50, 40, 40, 12, 10, 6, 6, 6])
+                [30, 40, 40, 50, 20, 16, 12, 7, 12, 8, 22, 60, 50, 40, 40, 12, 10, 6, 6, 6])
     for r in ordered:
         p = by_id[r.candidate_id]
         category = (p.context.get("category_name")
@@ -66,6 +66,7 @@ def export_report(path, packets: List[CandidateDataPacket],
         ws.append([
             r.candidate_id, p.canonical_url or "", p.basic_facts.get("image_url") or "",
             p.basic_facts.get("title") or "", category, p.platform,
+            r.priority_score.get("track_label") or "",
             r.priority_score["grade"] or "", r.priority_score["total"],
             r.priority_score["pct"], "、".join(r.track_tags),
             r.recommendation["reason_summary"], r.recommendation["risk_summary"],
@@ -75,7 +76,7 @@ def export_report(path, packets: List[CandidateDataPacket],
             r.layer_results["L3"].grade or ""])
         g = r.priority_score["grade"]
         if g in GRADE_COLORS:
-            ws.cell(row=ws.max_row, column=7).font = Font(
+            ws.cell(row=ws.max_row, column=8).font = Font(
                 color=GRADE_COLORS[g], bold=g in ("S", "A"))
     ws.auto_filter.ref = ws.dimensions
 

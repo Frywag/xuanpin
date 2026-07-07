@@ -1,0 +1,42 @@
+# =====================================================================
+# 供应链能力档案（capability profile）
+# =====================================================================
+# 设计意图（回答「供应链字段不该在初筛就逐款录入」的问题）：
+#   逐款录入供应链信息在 L1 阶段不现实（2,234 款 × 人工核实）。
+#   本档案把人力从「逐款」压缩到「逐品类一次性」：供应链同事按工厂真实
+#   能力维护 5~20 条品类级条目，系统用确定性词表匹配自动给全量候选打
+#   「能力匹配」分；逐款级的成本/MOQ/交期人工核实只对 L3 终选款（≤10 款）
+#   触发，人力可控。
+#
+# 使用方法：
+#   1. 供应链同事按下方模板填写真实条目（当前为示例，enabled 保持 false）；
+#   2. 填完把 enabled 改为 true，重跑管道；
+#   3. capability 分只代表「品类能力可覆盖」，不代表逐款可做——
+#      终选款仍必须人工补录 owned_supply_inputs 后才能进入立项。
+enabled: false
+
+profiles:
+  # ---- 以下为示例条目，启用前必须替换为工厂真实能力 ----
+  - name: 内衣塑身类
+    style_tokens: [bra, bras, shapewear, bodysuit, corset]   # 与商品标题做确定性词表匹配
+    moq_range_units: [300, 1000]
+    lead_time_days: [15, 30]
+    cost_band: {currency: CNY, low: 15, high: 45}
+    fabric_capability: [nylon, spandex, seamless]
+    notes: 示例：无钢圈/无缝工艺可做，硅胶粘贴类需外协
+
+  - name: 连衣裙半裙类
+    style_tokens: [dress, dresses, skirt]
+    moq_range_units: [200, 500]
+    lead_time_days: [12, 25]
+    cost_band: {currency: CNY, low: 20, high: 60}
+    fabric_capability: [woven, knit, chiffon]
+    notes: 示例：印花与褶皱工艺可做
+
+# 匹配打分（capability_match，满 10 分）：
+#   命中 style_tokens -> 10（品类能力覆盖）
+#   未命中           -> 2（需外协评估，不清零：能力档案未必穷尽）
+#   enabled=false    -> 整个子项记 missing，不计入可得满分
+match_points:
+  hit: 10
+  miss: 2

@@ -68,6 +68,7 @@ _CONTEXT_FIELDS = {
     "affiliate_creator_count", "price_range", "shop_rating",
     "creator_conversion_ratio", "trend_tags", "review_tags_raw",
     "design_signals", "raw_evidence_path", "title_cn", "image_count",
+    "shipping_fee",
 }
 
 
@@ -225,6 +226,7 @@ class PacketBuilder:
         packet.context["source_group"] = env.source_id
         packet.context["category_label"] = rec.get("category_label")
         packet.context["seasonal"] = bool(rec.get("seasonal"))
+        packet.context["track_hint"] = rec.get("track_hint")
         packet.context["site"] = site
         if rec.get("quality_status") and rec["quality_status"] != "VALID":
             packet.quality_status = rec["quality_status"]

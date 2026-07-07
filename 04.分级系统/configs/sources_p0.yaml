@@ -67,6 +67,7 @@ frontend_workbooks:
     workbook: 03.前端数据源/patterned.xlsx
     category_label: patterned_tights
     seasonal: true                  # 秋冬品类，6 月采集处于淡季
+    track_hint: evergreen           # 三赛道采集立项：该源按基础常青赛道采集
     sites: [calzedonia, dreamgirl, falke, legavenue, prettylittlething, snagtights, wolford]
     column_map:
       product_id: 商品ID

@@ -1,0 +1,3684 @@
+{
+  "envelope_id": "envelope_tabcut_20260707",
+  "source_id": "tabcut",
+  "source_type": "plugin",
+  "market": "US",
+  "collection_mode": "mixed",
+  "layer_hint": "L1",
+  "collected_at": "2026-07-07T01:57:21+00:00",
+  "collector_version": "grading-system/0.1.0",
+  "quality_status": "VALID",
+  "records": [
+    {
+      "record_kind": "product",
+      "product_id": "1729508370969629931",
+      "id_truncated": false,
+      "fields": {
+        "title": "[NEW] [medicube] PDRN Pink Collagen Volume Multi Balm | All In One Volufiline, PDRN, NAD Stick for Youthful-Looking, Helping Look of Fine Lines, Firming Care, Anti-Aging Care | For Under-Eyes, Neck, Forehead, Smile Lines, Lip Care | Korean Skincare",
+        "unit_price": {
+          "amount": 20.0,
+          "currency": "USD"
+        },
+        "sales_30d_units": 282833.0,
+        "sales_growth_rate": 0.3892,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729508370969629931/17295083709696299310.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "product_total_sales": 834533.0,
+        "video_views_max": 31640117.0,
+        "video_count_observed": 5,
+        "video_gmv_sum": {
+          "amount": 2865392.0,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0176
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000089",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=46",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000090",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=46",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000091",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=46",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000092",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=46",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000093",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=46",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000094",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=46",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000230",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=2..8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000231",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=2..8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000232",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=2..8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000233",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=2..8",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000234",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=2..8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729448464509734958",
+      "id_truncated": false,
+      "fields": {
+        "title": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+        "unit_price": {
+          "amount": 15.97,
+          "currency": "USD"
+        },
+        "sales_30d_units": 194250.0,
+        "sales_growth_rate": 0.0725,
+        "category_name": "保健",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729448464509734958/17294484645097349580.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "product_total_sales": 1500120.0,
+        "video_views_max": 18721163.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 330079.15,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0118
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000095",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=47",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000096",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=47",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000097",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=47",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000098",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=47",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000099",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=47",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000100",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=47",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000266",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=12..12",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000267",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=12..12",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000268",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=12..12",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000269",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=12..12",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000270",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=12..12",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729679758111249333",
+      "id_truncated": false,
+      "fields": {
+        "title": "Loaded Tea – Single Packet | 32oz Caffeinated Flavored Hydration Powder Beverage Mix | Made in USA | Easy to Mix",
+        "unit_price": {
+          "amount": 2.15,
+          "currency": "USD"
+        },
+        "sales_30d_units": 135067.0,
+        "sales_growth_rate": -0.2017,
+        "category_name": "食品饮料",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729679758111249333/17296797581112493330.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000101",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=48",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000102",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=48",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000103",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=48",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000104",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=48",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000105",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=48",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000106",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=48",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732413417772650787",
+      "id_truncated": false,
+      "fields": {
+        "title": "e.l.f  Main Stain Lipliner Marker - Long-Lasting Lip Color Tool for Precise Lip Definition (Beauty & Personal Care Makeup Accessory)",
+        "unit_price": {
+          "amount": 6.0,
+          "currency": "USD"
+        },
+        "sales_30d_units": 106700.0,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1732413417772650787/17324134177726507870.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000107",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=49",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000108",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=49",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000109",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=49",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000110",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=49",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000111",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=49",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731236289885213002",
+      "id_truncated": false,
+      "fields": {
+        "title": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering",
+        "unit_price": {
+          "amount": 55.37,
+          "currency": "USD"
+        },
+        "sales_30d_units": 104947.0,
+        "sales_growth_rate": 1.8562,
+        "category_name": "五金工具",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731236289885213002/17312362898852130020.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000112",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=50",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000113",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=50",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000114",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=50",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000115",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=50",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000116",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=50",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000117",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=50",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732164626458252048",
+      "id_truncated": false,
+      "fields": {
+        "title": "Hismile iD Stain Whitening Mouthwash for White Teeth, Freshens Breath with Essential Oils 237ml",
+        "unit_price": {
+          "amount": 19.99,
+          "currency": "USD"
+        },
+        "sales_30d_units": 91981.0,
+        "sales_growth_rate": 0.0872,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1732164626458252048/17321646264582520480.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000118",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=51",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000119",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=51",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000120",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=51",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000121",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=51",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000122",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=51",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000123",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=51",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731879234948338174",
+      "id_truncated": false,
+      "fields": {
+        "title": "DRDENT Purple Teeth Whitening Strips - 7/21 Whitening Sessions - Non Sensitive Teeth Whitening - Peroxide-Free",
+        "unit_price": {
+          "amount": 17.38,
+          "currency": "USD"
+        },
+        "sales_30d_units": 88100.0,
+        "sales_growth_rate": 1.0,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731879234948338174/17318792349483381740.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "product_total_sales": 598369.0,
+        "video_views_max": 106190170.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 683697.17,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0155
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000124",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=52",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000125",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=52",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000126",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=52",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000127",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=52",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000128",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=52",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000129",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=52",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000235",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=3..3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000236",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=3..3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000237",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=3..3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000238",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=3..3",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000239",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=3..3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731406217255686451",
+      "id_truncated": false,
+      "fields": {
+        "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+        "unit_price": {
+          "amount": 24.21,
+          "currency": "USD"
+        },
+        "sales_30d_units": 86114.0,
+        "sales_growth_rate": 0.2371,
+        "category_name": "女装与女士内衣",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731406217255686451/17314062172556864510.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "product_total_sales": 568318.0,
+        "video_views_max": 23619043.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 546822.61,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0086
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000130",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=53",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000131",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=53",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000132",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=53",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000133",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=53",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000134",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=53",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000135",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=53",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000240",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=5..5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000241",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=5..5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000242",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=5..5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000243",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=5..5",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000244",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=5..5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731528580940468633",
+      "id_truncated": false,
+      "fields": {
+        "title": "Bare Anatomy Nature x Science Rosemary Water with Rice Water |100% Natural Extract | Soft & Smooth Hair Non-Greasy & Fast Absorbing | 200 ml",
+        "unit_price": {
+          "amount": 14.99,
+          "currency": "USD"
+        },
+        "sales_30d_units": 84633.0,
+        "sales_growth_rate": 0.6916,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731528580940468633/17315285809404686330.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000136",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=54",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000137",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=54",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000138",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=54",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000139",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=54",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000140",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=54",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000141",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=54",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729612709100426165",
+      "id_truncated": false,
+      "fields": {
+        "title": "Loaded Water-Viral – Single Packet | 32oz Sugar Free Caffeinated Flavored Powder Beverage Mix | Made in USA | Easy to Mix",
+        "unit_price": {
+          "amount": 2.15,
+          "currency": "USD"
+        },
+        "sales_30d_units": 77128.0,
+        "sales_growth_rate": -0.1281,
+        "category_name": "食品饮料",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729612709100426165/17296127091004261650.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000142",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=55",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000143",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=55",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000144",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=55",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000145",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=55",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000146",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=55",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000147",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=55",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732205382431839167",
+      "id_truncated": false,
+      "fields": {
+        "title": "【DealsForYouDays】Car phone holder 360 degree rotation, suitablefor car navigation in-car dashboard, horizontaland vertica screen adjustment angle,suctioncup fixed non-slip mobile phone holdersuitable for iPhone and Android",
+        "unit_price": {
+          "amount": 13.18,
+          "currency": "USD"
+        },
+        "sales_30d_units": 76518.0,
+        "sales_growth_rate": 0.7754,
+        "category_name": "汽车与摩托车",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1732205382431839167/17322053824318391670.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000148",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=56",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000149",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=56",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000150",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=56",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000151",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=56",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000152",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=56",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000153",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=56",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732417183133045688",
+      "id_truncated": false,
+      "fields": {
+        "title": "5-1 FreshHood Apparel fast shipping 100% cotton T-shirts",
+        "unit_price": {
+          "amount": 29.47,
+          "currency": "USD"
+        },
+        "sales_30d_units": 74911.0,
+        "category_name": "电脑办公",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1732417183133045688/17324171831330456880.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000154",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=57",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000155",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=57",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000156",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=57",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000157",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=57",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000158",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=57",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729718141631565851",
+      "id_truncated": false,
+      "fields": {
+        "title": "[Dr.Melaxin Official] Calcium Multi Balm Eye Care Routine Korean Skin Care Anti-aging Cosmetics Collagen Eye Stick 9g",
+        "unit_price": {
+          "amount": 18.9,
+          "currency": "USD"
+        },
+        "sales_30d_units": 73371.0,
+        "sales_growth_rate": -0.0569,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729718141631565851/17297181416315658510.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000159",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=58",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000160",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=58",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000161",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=58",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000162",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=58",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000163",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=58",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000164",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=58",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729992615540134195",
+      "id_truncated": false,
+      "fields": {
+        "title": "Dr.Flash Garment Steamer for Clothes, Portable Travel Clothing Steamer Iron, 7 Mode with LED Display, 5s Fast Heating, 90° Swivel Handle, New Year Gift,Summervibes summerwins",
+        "unit_price": {
+          "amount": 29.08,
+          "currency": "USD"
+        },
+        "sales_30d_units": 72673.0,
+        "sales_growth_rate": 0.7534,
+        "category_name": "家电",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729992615540134195/17299926155401341950.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000165",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=59",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000166",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=59",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000167",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=59",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000168",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=59",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000169",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=59",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000170",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=59",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729718097057910811",
+      "id_truncated": false,
+      "fields": {
+        "title": "[Dr.Melaxin Official] Calcium Dark Spot Eye Cream | Dark Circle, Anti-aging, Sagging, Elasticity | Korean Cosmetics",
+        "unit_price": {
+          "amount": 19.8,
+          "currency": "USD"
+        },
+        "sales_30d_units": 72646.0,
+        "sales_growth_rate": 0.866,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729718097057910811/17297180970579108110.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000171",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=60",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000172",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=60",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000173",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=60",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000174",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=60",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000175",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=60",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000176",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=60",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731493330376168096",
+      "id_truncated": false,
+      "fields": {
+        "title": "LeeFar Cutting Drink Mix –| Strawberry Açaí Flavor – 30 Servings",
+        "unit_price": {
+          "amount": 16.99,
+          "currency": "USD"
+        },
+        "sales_30d_units": 67524.0,
+        "sales_growth_rate": -0.0788,
+        "category_name": "食品饮料",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731493330376168096/17314933303761680960.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000177",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=61",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000178",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=61",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000179",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=61",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000180",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=61",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000181",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=61",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000182",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=61",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731284232420626805",
+      "id_truncated": false,
+      "fields": {
+        "title": "ADDWIN 2026 New Fascia Ring R10 Mini Muscle Recovery Fascia Device upgraded adjustable strap fits Up to 55in waist, Cordless Rechargeable, Designed for Waist & Back Muscle Recovery portable massager parents gift summervibes",
+        "unit_price": {
+          "amount": 23.98,
+          "currency": "USD"
+        },
+        "sales_30d_units": 66745.0,
+        "sales_growth_rate": 1.2904,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731284232420626805/17312842324206268050.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000183",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=62",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000184",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=62",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000185",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=62",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000186",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=62",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000187",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=62",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000188",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=62",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729415062788019186",
+      "id_truncated": false,
+      "fields": {
+        "title": "Physician's Choice Digestive Enzymes - Bloating & Mealtime Discomfort Support with Probiotics + Prebiotics for Digestion & Gut Health",
+        "unit_price": {
+          "amount": 12.97,
+          "currency": "USD"
+        },
+        "sales_30d_units": 65800.0,
+        "sales_growth_rate": -0.1641,
+        "category_name": "保健",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729415062788019186/17294150627880191860.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000189",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=63",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000190",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=63",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000191",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=63",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000192",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=63",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000193",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=63",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000194",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=63",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732294339991933438",
+      "id_truncated": false,
+      "fields": {
+        "title": "DR.DENT Purple Mouthwash - Sachets 20 Pack - Peroxide-Free - Alcohol Free - Vegan Mint",
+        "unit_price": {
+          "amount": 22.77,
+          "currency": "USD"
+        },
+        "sales_30d_units": 65184.0,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1732294339991933438/17322943399919334380.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000195",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=64",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000196",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=64",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000197",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=64",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000198",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=64",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000199",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=64",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731194857673101831",
+      "id_truncated": false,
+      "fields": {
+        "title": "Zero Sugar Best Seller Trio - World's First 3-in-1 Pre, Post, Probiotic, Apple Cider Vinegar with Vitamin B12 and Probiotics To Address Bloating, Ashwagandha & L-Theanine, Vitamin D gummies. Gluten-Free, Vegan, Non-GMO & Gelatin-Free",
+        "unit_price": {
+          "amount": 28.48,
+          "currency": "USD"
+        },
+        "sales_30d_units": 62191.0,
+        "sales_growth_rate": -0.1277,
+        "category_name": "保健",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731194857673101831/17311948576731018310.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000200",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=65",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000201",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=65",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000202",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=65",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000203",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=65",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000204",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=65",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000205",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=65",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731572915654201371",
+      "id_truncated": false,
+      "fields": {
+        "title": "[Dr.Melaxin Official] Peel Shot Keratin Care Kojic Acid Turmeric Spray 200ml Pore Clearing Exfoliating Formula Skin Repair Scrub",
+        "unit_price": {
+          "amount": 25.11,
+          "currency": "USD"
+        },
+        "sales_30d_units": 62178.0,
+        "sales_growth_rate": 0.6277,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731572915654201371/17315729156542013710.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000206",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=66",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000207",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=66",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000208",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=66",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000209",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=66",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000210",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=66",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000211",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=66",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732293553906094315",
+      "id_truncated": false,
+      "fields": {
+        "title": "[NEW] [medicube] NAD+ EGF Firming Serum | NAD+, EGF, Collagen Extract, Anti-aging, Plumping, Radiance Boosting Serum | Cares for Look of Fine Lines, Skin Elasticity & Firmness For Youthful-looking Skin (30ml / 1.01 fl. oz.) | Korean Skincare, K-Beauty",
+        "unit_price": {
+          "amount": 22.0,
+          "currency": "USD"
+        },
+        "sales_30d_units": 61016.0,
+        "sales_growth_rate": 0.496,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1732293553906094315/17322935539060943150.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000212",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=67",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000213",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=67",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000214",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=67",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000215",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=67",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000216",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=67",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000217",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=67",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1730227578434589155",
+      "id_truncated": false,
+      "fields": {
+        "title": "Caramela Beauty Cyperus Rotundus Oil for Natural Hair Reduction - 60ml/2oz",
+        "unit_price": {
+          "amount": 29.99,
+          "currency": "USD"
+        },
+        "sales_30d_units": 58700.0,
+        "sales_growth_rate": 0.0712,
+        "category_name": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1730227578434589155/17302275784345891550.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000218",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=68",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000219",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=68",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000220",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=68",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000221",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=68",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000222",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=68",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000223",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=68",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729456803530772526",
+      "id_truncated": false,
+      "fields": {
+        "title": "Toplux Keto Burn Supplement",
+        "unit_price": {
+          "amount": 17.97,
+          "currency": "USD"
+        },
+        "sales_30d_units": 56357.0,
+        "sales_growth_rate": 0.9433,
+        "category_name": "保健",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729456803530772526/17294568035307725260.webp?x-oss-process=image/resize,w_246,h_246/format,webp"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000224",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=69",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000225",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=69",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_tabcut_000226",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=69",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_tabcut_000227",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=69",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_tabcut_000228",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=69",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_tabcut_000229",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "image_url",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=69",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731174836359172331",
+      "id_truncated": false,
+      "fields": {
+        "title": "[medicube] Salmon DNA Home Aesthetic Duo ㅣ Glass Glow Salmon DNA Facial Skincare Set with PDRN Exosome Shot + PDRN Pink Collagen Capsule Cream",
+        "unit_price": {
+          "amount": 45.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 52732.0,
+        "video_views_max": 15457337.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 883253.35,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0052
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000245",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=9..9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000246",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=9..9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000247",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=9..9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000248",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=9..9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000249",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=9..9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000250",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=9..9",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000251",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=9..9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729412651341746468",
+      "id_truncated": false,
+      "fields": {
+        "title": "Halara Softlyzero Plush Backless Active Dress-Easy Peezy, Spring Dresses, Dance Dresses for Women",
+        "unit_price": {
+          "amount": 34.95,
+          "currency": "USD"
+        },
+        "product_total_sales": 281033.0,
+        "video_views_max": 31046162.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 714238.2,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0144
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000252",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=10..10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000253",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=10..10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000254",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=10..10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000255",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=10..10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000256",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=10..10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000257",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=10..10",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000258",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=10..10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731471740465091433",
+      "id_truncated": false,
+      "fields": {
+        "title": "[KaKaPeople Fajas Colombianas Shaping Pants ]  Women's Tummy Control Butt-Lifting Shapewear, Sexy and Comfortable High-Waist Body Sculpting Garment Womenswear Compression",
+        "unit_price": {
+          "amount": 23.8,
+          "currency": "USD"
+        },
+        "product_total_sales": 84123.0,
+        "video_views_max": 42218651.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 609517.8,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0048
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000259",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=11..11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000260",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=11..11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000261",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=11..11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000262",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=11..11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000263",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=11..11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000264",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=11..11",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000265",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=11..11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731310293181895469",
+      "id_truncated": false,
+      "fields": {
+        "title": "Suitable for iPhone17 16 15 14 13 12 Max Plus Pro Magnetic Mobile Phone Case with MagSafe Camera Ring Holder, Military-Grade Protection, Anti-Fall, Non-Yellowing, Wireless Casing Protector Cover, Black Silicone",
+        "unit_price": {
+          "amount": 11.06,
+          "currency": "USD"
+        },
+        "product_total_sales": 63826.0,
+        "video_views_max": 32890345.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 172754.8,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.005
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000271",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=13..13",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000272",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=13..13",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000273",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=13..13",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000274",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=13..13",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000275",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=13..13",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000276",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=13..13",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000277",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=13..13",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729499195713491090",
+      "id_truncated": false,
+      "fields": {
+        "title": "R&W Co. Highly Scented Mop Soap (Concentrated Formula) 32oz/900g by",
+        "unit_price": {
+          "amount": 9.59,
+          "currency": "USD"
+        },
+        "product_total_sales": 933923.0,
+        "video_views_max": 6578763.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 213582.62,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0289
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000278",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=14..14",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000279",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=14..14",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000280",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=14..14",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000281",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=14..14",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000282",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=14..14",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000283",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=14..14",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000284",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=14..14",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729438233542234865",
+      "id_truncated": false,
+      "fields": {
+        "title": "Shilucheng Bamboo Sheets Set 4/6 Pc,Cooling Breathable & Hotel Luxury Super Silky Soft, 16'' Deep Pocket, Wrinkle, Fade Resistant Springtok Summervibes",
+        "unit_price": {
+          "amount": 25.7,
+          "currency": "USD"
+        },
+        "product_total_sales": 308793.0,
+        "video_views_max": 49024098.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 530951.42,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0078
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000285",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=15..15",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000286",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=15..15",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000287",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=15..15",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000288",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=15..15",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000289",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=15..15",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000290",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=15..15",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000291",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=15..15",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731669926835818997",
+      "id_truncated": false,
+      "fields": {
+        "title": "4 Counts Car Seat Headrest Hook, Improved Car Seat Back Double Hooks for Kids' Toys Hats Masks Sunglasses, Soft Gentle Faux Leather",
+        "unit_price": {
+          "amount": 8.98,
+          "currency": "USD"
+        },
+        "product_total_sales": 35091.0,
+        "video_views_max": 17427276.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 198462.58,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0109
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000292",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=16..16",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000293",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=16..16",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000294",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=16..16",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000295",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=16..16",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000296",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=16..16",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000297",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=16..16",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000298",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=16..16",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729498809014588028",
+      "id_truncated": false,
+      "fields": {
+        "title": "Chemical Guys 16oz Heavy-Duty Water Spot Remover - Fast-Acting Automotive Detailing & Car Cleaning Product, Car Windshield Cleaner, Multi-Surface Solution for Paint, Metal, Wheels, Prevents Etching, Restores Shine, Car Cleaning Products",
+        "unit_price": {
+          "amount": 19.99,
+          "currency": "USD"
+        },
+        "product_total_sales": 47850.0,
+        "video_views_max": 26662421.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 406090.09,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.004
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000299",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=17..17",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000300",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=17..17",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000301",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=17..17",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000302",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=17..17",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000303",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=17..17",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000304",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=17..17",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000305",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=17..17",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731190238700934012",
+      "id_truncated": false,
+      "fields": {
+        "title": "Pre-owned THREDUP Clean Out Bag Bag Accessories Closet Clean Out for Women's & Kids' Clothing Easy Sell Solution with Pre paid Shipping Label 30 lbs Bag",
+        "unit_price": {
+          "amount": 3.25,
+          "currency": "USD"
+        },
+        "product_total_sales": 160800.0,
+        "video_views_max": 7989194.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 53713.01,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.017
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000306",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=18..18",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000307",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=18..18",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000308",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=18..18",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000309",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=18..18",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000310",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=18..18",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000311",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=18..18",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000312",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=18..18",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729488830529835238",
+      "id_truncated": false,
+      "fields": {
+        "title": "OEAK Womens Jelly Bras Full Coverage Wireless Supportive Bra Push Up Plus Size Comfort Soft No Underwire Seamless Comfortable Wireless T-Shirt Everyday Bras Wings",
+        "unit_price": {
+          "amount": 20.38,
+          "currency": "USD"
+        },
+        "product_total_sales": 192715.0,
+        "video_views_max": 7137455.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 342803.92,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0065
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000313",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=19..19",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000314",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=19..19",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000315",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=19..19",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000316",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=19..19",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000317",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=19..19",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000318",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=19..19",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000319",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=19..19",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731625997827871273",
+      "id_truncated": false,
+      "fields": {
+        "title": "Bikini Pain-Free Hair Removal Cream for Sensitive Skin, Hypoallergenic Formula-Gentle & Fast-Acting Depilatory with Citrus Scent, Aloe & Hyaluronic Acid for Soothing Care, Suitable for Men & Women",
+        "unit_price": {
+          "amount": 16.99,
+          "currency": "USD"
+        },
+        "product_total_sales": 239220.0,
+        "video_views_max": 23359824.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 320731.87,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0181
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000320",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=20..20",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000321",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=20..20",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000322",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=20..20",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000323",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=20..20",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000324",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=20..20",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000325",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=20..20",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000326",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=20..20",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729584174847071164",
+      "id_truncated": false,
+      "fields": {
+        "title": "tarte BB blur tinted moisturizer SPF 30 - instantly brightens, hydrates & smooths your skin",
+        "unit_price": {
+          "amount": 39.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 211700.0,
+        "video_views_max": 20759831.0,
+        "video_count_observed": 1,
+        "video_gmv_sum": {
+          "amount": 761998.0,
+          "currency": "USD"
+        },
+        "video_engagement_max": 0.0055
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_tabcut_000327",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=21..21",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_tabcut_000328",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=21..21",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "视频原始行中的商品价格（USD）"
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_tabcut_000329",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=21..21",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Tabcut 商品累计总销量（估算）"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_tabcut_000330",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=21..21",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+        },
+        "video_count_observed": {
+          "evidence_id": "ev_tabcut_000331",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_count_observed",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=21..21",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_gmv_sum": {
+          "evidence_id": "ev_tabcut_000332",
+          "source_id": "tabcut",
+          "source_type": "derived",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_gmv_sum",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=21..21",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+        },
+        "video_engagement_max": {
+          "evidence_id": "ev_tabcut_000333",
+          "source_id": "tabcut",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "video_engagement_max",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=最终原数据;row=21..21",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "artifact_paths": {
+    "raw_workbook": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx"
+  },
+  "schema_version": "source.envelope.v1"
+}

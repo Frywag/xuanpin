@@ -29,13 +29,17 @@ class FrontendWorkbookAdapter(BaseAdapter):
 
     def __init__(self, workbook_path, source_id: str, sites: List[str],
                  column_map: Dict[str, str], category_label: str,
-                 seasonal: bool = False, market: str = "US", **kwargs):
+                 seasonal: bool = False, market: str = "US",
+                 track_hint: str = None, **kwargs):
         super().__init__(workbook_path, market=market, **kwargs)
         self.source_id = source_id
         self.sites = sites
         self.column_map = column_map
         self.category_label = category_label
         self.seasonal = seasonal
+        # 三赛道采集提示：该数据源按哪个赛道立项采集（trend_rising/evergreen/
+        # pain_improvement）。仅当候选自身信号不足以判定赛道时作为兜底。
+        self.track_hint = track_hint
 
     def _field(self, record, name, value, sheet, row, confidence="high", note=""):
         if value in (None, ""):
@@ -85,6 +89,7 @@ class FrontendWorkbookAdapter(BaseAdapter):
             "site": sheet,
             "category_label": self.category_label,
             "seasonal": self.seasonal,
+            "track_hint": self.track_hint,
             "quality_status": QUALITY_MAP.get(raw_quality, "PARTIAL_SOURCE_MISSING"),
             "fields": {},
             "evidence": {},

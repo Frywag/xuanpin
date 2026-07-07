@@ -129,6 +129,17 @@ class GroupStats:
             return False
         return float(price["amount"]) < band["p10"]
 
+    def above_median(self, packet: CandidateDataPacket) -> Optional[bool]:
+        """售价是否高于组内中位（利润结构代理用）；样本不足返回 None。"""
+        price = packet.basic_facts.get("price")
+        if not price or price.get("amount") is None or not price.get("currency"):
+            return None
+        group = packet.context.get("source_group") or packet.platform
+        band = self.price_bands.get((group, price["currency"]))
+        if not band or band["n"] < self.MIN_PRICE_SAMPLE:
+            return None
+        return float(price["amount"]) >= band["p50"]
+
     def competitor_review_moat(self, packet: CandidateDataPacket) -> Optional[float]:
         group = packet.context.get("source_group") or packet.platform
         stats = self.review_p90.get(group)
@@ -143,10 +154,51 @@ class GroupStats:
         }
 
 
+TRACK_LABELS = {
+    "trend_rising": "趋势上升款", "evergreen": "基础常青款",
+    "pain_improvement": "痛点改良款", "balanced": "均衡款",
+}
+
+
 class PriorityScorer:
-    def __init__(self, config: Dict[str, Any], stats: GroupStats):
+    def __init__(self, config: Dict[str, Any], stats: GroupStats,
+                 capability_profile: Optional[Dict[str, Any]] = None):
         self.cfg = config
         self.stats = stats
+        self.capability = capability_profile or {}
+
+    # ================= 赛道判定（打分前，确定性） =================
+
+    def assign_track(self, p: CandidateDataPacket) -> str:
+        cfg = self.cfg.get("track_assignment")
+        if not cfg:
+            return "balanced"
+        growth = _get(p, "market_metrics.sales_growth_rate")
+        rating = _get(p, "basic_facts.rating")
+        rc = _get(p, "basic_facts.review_count")
+        title = (p.basic_facts.get("title") or "").lower()
+        for track in cfg["order"]:
+            rule = cfg[track]
+            if track == "trend_rising":
+                if (growth is not None and growth >= rule["growth_gte"]) or (
+                        rule.get("or_bestseller_rank")
+                        and _get(p, "market_metrics.bestseller_rank_text")):
+                    return track
+            elif track == "pain_improvement":
+                if (rating is not None and rc is not None
+                        and rating <= rule["rating_lte"]
+                        and rc >= rule["min_review_count"]):
+                    return track
+            elif track == "evergreen":
+                lo, hi = rule["growth_between"]
+                has_kw = any(k in title for k in rule["basics_keywords"])
+                in_range = growth is None or lo <= growth < hi
+                if has_kw and in_range:
+                    return track
+        hint = p.context.get("track_hint")
+        if hint in self.cfg.get("weight_profiles", {}):
+            return hint
+        return cfg.get("fallback", "balanced")
 
     # ================= 维度打分 =================
 
@@ -338,15 +390,79 @@ class PriorityScorer:
             evidence_refs=sorted(set(evidence)), missing=not reasons)
 
     def score_supply(self, p: CandidateDataPacket) -> ScoreComponent:
+        """供应链两级化：利润结构代理（零人力）+ 能力档案匹配（一次性维护）。
+
+        逐款级 target_cost/moq/lead_time 人工核实不在此处发生——
+        只对 L3 终选款触发（layer_gates_v0.yaml）。
+        """
         cfg = self.cfg["supply"]
-        if not cfg.get("enabled"):
+        pts, reasons, evidence = 0.0, [], []
+        achievable = 0.0
+
+        # ① 利润结构代理（max 10）——注意：是结构代理，不是毛利事实
+        proxy_pts, has_proxy = 0.0, False
+        comm = _get(p, "competition_metrics.commission_rate")
+        if comm is not None:
+            c = eval_bands(float(comm), cfg["commission_bands"]) or 0.0
+            proxy_pts += c
+            has_proxy = True
+            reasons.append(f"佣金率 {comm:.0%}（利润结构代理）-> {c:.0f}分")
+            evidence += p.evidence_for("competition_metrics.commission_rate")
+        ship = p.context.get("shipping_fee")
+        price = p.basic_facts.get("price")
+        if (ship and price and price.get("amount")
+                and ship.get("currency") == price.get("currency")):
+            ratio = float(ship["amount"]) / float(price["amount"])
+            c = eval_bands(ratio, cfg["shipping_ratio_bands"]) or 0.0
+            proxy_pts += c
+            has_proxy = True
+            reasons.append(f"运费/售价 {ratio:.0%}（利润结构代理）-> {c:.0f}分")
+            evidence += p.evidence_for("context.shipping_fee")
+        above = self.stats.above_median(p)
+        if above is not None:
+            c = float(cfg["price_position_points"]["upper_half" if above else "lower_half"])
+            proxy_pts += c
+            has_proxy = True
+            reasons.append(("售价高于组内中位，有溢价空间（代理）" if above
+                            else "售价低于组内中位，薄利结构（代理）") + f"-> {c:.0f}分")
+            evidence += p.evidence_for("basic_facts.price")
+        if has_proxy:
+            pts += min(proxy_pts, cfg["profit_proxy_max"])
+            achievable += cfg["profit_proxy_max"]
+
+        # ② 供应链能力档案匹配（max 10）
+        if self.capability.get("enabled"):
+            achievable += cfg["capability_max"]
+            title = (p.basic_facts.get("title") or "").lower()
+            import re as _re
+            words = set(_re.findall(r"[a-z\-]+", title))
+            hit_profile = None
+            for prof in self.capability.get("profiles", []):
+                if words & set(prof.get("style_tokens", [])):
+                    hit_profile = prof
+                    break
+            mp = self.capability.get("match_points", {"hit": 10, "miss": 2})
+            if hit_profile:
+                c = float(mp["hit"])
+                reasons.append(f"命中供应链能力档案「{hit_profile['name']}」-> {c:.0f}分")
+            else:
+                c = float(mp["miss"])
+                reasons.append(f"未命中能力档案（需外协评估）-> {c:.0f}分")
+            pts += min(c, cfg["capability_max"])
+            evidence += p.evidence_for("basic_facts.title")
+        else:
+            p.mark_missing("owned_supply_inputs.capability_profile")
+
+        if achievable == 0:
             return ScoreComponent(
                 name="自有供应链", score=None, max_score=self.cfg["weights"]["supply"],
-                reason="P0 无自有/供应链人工输入，本维不计分（required_next_data）",
+                reason="无利润代理信号且能力档案未启用，本维不计分（required_next_data）",
                 evidence_refs=[], missing=True)
-        return ScoreComponent(name="自有供应链", score=0.0,
-                              max_score=self.cfg["weights"]["supply"],
-                              reason="未实现", evidence_refs=[], missing=True)
+        return ScoreComponent(
+            name="自有供应链", score=min(pts, achievable), max_score=achievable,
+            reason="；".join(reasons) + "。逐款成本/MOQ/交期仅对终选款人工核实",
+            evidence_refs=sorted(set(evidence)),
+            missing=achievable < self.cfg["weights"]["supply"])
 
     # ================= 风险 =================
 
@@ -441,10 +557,35 @@ class PriorityScorer:
 
     # ================= 汇总 =================
 
+    _DIM_KEYS = {"市场需求": "demand", "竞争可突破": "competition",
+                 "产品机会": "product", "自有供应链": "supply"}
+
     def score(self, p: CandidateDataPacket):
+        track = self.assign_track(p)
+        base_w = self.cfg["weights"]
+        profile = self.cfg.get("weight_profiles", {}).get(track) or {
+            **base_w, "risk_floor": base_w["risk_floor"]}
+
         comps = [self.score_demand(p), self.score_competition(p),
                  self.score_product(p), self.score_supply(p)]
+        # 赛道权重缩放：得分与满分同比例缩放（保留“部分可得满分”的语义，
+        # 如供应链维只有利润代理时 max=10 -> 10×supply系数）
+        for comp in comps:
+            key = self._DIM_KEYS.get(comp.name)
+            if key is None:
+                continue
+            scale = float(profile[key]) / float(base_w[key])
+            if scale != 1.0:
+                if comp.score is not None:
+                    comp.score = round(comp.score * scale, 1)
+                comp.max_score = round(comp.max_score * scale, 1)
+
         risk_comp, risk_hits = self.score_risk(p)
+        risk_scale = float(profile["risk_floor"]) / float(base_w["risk_floor"])
+        if risk_scale != 1.0 and risk_comp.score is not None:
+            risk_comp.score = max(round(risk_comp.score * risk_scale, 1),
+                                  float(profile["risk_floor"]))
+            risk_comp.reason += f"（赛道风险系数×{risk_scale:.2f}）"
         comps.append(risk_comp)
 
         achievable = sum(c.max_score for c in comps if c.score is not None and c.max_score > 0)
@@ -452,10 +593,11 @@ class PriorityScorer:
         pct = round(max(0.0, raw) / achievable * 100, 1) if achievable else 0.0
 
         confidence = self._confidence(p)
-        grade = self._grade(p, pct, confidence, risk_hits, comps)
+        grade = self._grade(p, pct, confidence, risk_hits, comps, track=track)
         tags = self._track_tags(p, comps)
         return {
-            "components": comps, "risk_hits": risk_hits,
+            "components": comps, "risk_hits": risk_hits, "track": track,
+            "track_label": TRACK_LABELS.get(track, track),
             "total": round(raw, 1), "achievable_max": achievable, "pct": pct,
             "grade": grade, "confidence": confidence, "track_tags": tags,
         }
@@ -470,9 +612,11 @@ class PriorityScorer:
             return "medium"
         return "low"
 
-    def _grade(self, p, pct, confidence, risk_hits, comps) -> str:
+    def _grade(self, p, pct, confidence, risk_hits, comps,
+               track: str = "balanced") -> str:
         cfg = self.cfg["grading"]
-        th = cfg["thresholds"]
+        # 赛道内分箱：同一赛道内部比较，低天花板赛道也能产出自己的头部
+        th = cfg.get("thresholds_by_track", {}).get(track) or cfg["thresholds"]
         grade = "C"
         for g in ("S", "A", "B"):
             if pct >= th[g]:
