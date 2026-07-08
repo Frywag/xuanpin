@@ -68,13 +68,13 @@
         "matched_products": [
           {
             "source_id": "tabcut",
-            "envelope_id": "envelope_tabcut_20260707",
+            "envelope_id": "envelope_tabcut_20260708",
             "product_id": "1731236289885213002",
             "match_type": "exact_or_prefix_product_id"
           },
           {
             "source_id": "echotik",
-            "envelope_id": "envelope_echotik_20260707",
+            "envelope_id": "envelope_echotik_20260708",
             "product_id": "1731236289885213002",
             "match_type": "exact_or_prefix_product_id"
           }

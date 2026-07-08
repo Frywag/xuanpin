@@ -8,7 +8,7 @@
   "source_refs": [
     {
       "source_id": "indie_frontend",
-      "envelope_id": "envelope_indie_frontend_20260707"
+      "envelope_id": "envelope_indie_frontend_20260708"
     }
   ],
   "basic_facts": {
@@ -215,6 +215,103 @@
         "kind": "design_details",
         "text": "Measurements for size small: Inseam: 1.5 in; Waist: 26 in; Bust: 28.5 in; Top Length: 10.75 in; Shorts Rise: 12 in; Sleeve Length: 4.25 in; Skirt Length: 38.75 in"
       }
-    ]
+    ],
+    "profile": {
+      "产品中文名称": {
+        "value": "Oh So Sweet 蕾丝 Set",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003068"
+        ]
+      },
+      "产品英文标题": {
+        "value": "Oh So Sweet Lace Set",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003067"
+        ]
+      },
+      "售价": {
+        "value": "198.0 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003072"
+        ]
+      },
+      "评分": {
+        "value": 3.8333,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003073"
+        ]
+      },
+      "评论数": {
+        "value": 6.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003074"
+        ]
+      },
+      "来源类目": {
+        "value": "Sets (Collection Apparel)",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003069"
+        ]
+      },
+      "商品链接": {
+        "value": "https://www.freepeople.com/shop/oh-so-sweet-lace-set/?color=011",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "freepeople",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }

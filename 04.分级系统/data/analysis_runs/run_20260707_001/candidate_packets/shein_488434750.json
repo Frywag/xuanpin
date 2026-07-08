@@ -8,7 +8,7 @@
   "source_refs": [
     {
       "source_id": "shein_frontend",
-      "envelope_id": "envelope_shein_frontend_20260707"
+      "envelope_id": "envelope_shein_frontend_20260708"
     }
   ],
   "basic_facts": {
@@ -317,6 +317,111 @@
     "trend_tags": [
       "ALineStyles"
     ],
-    "review_tags_raw": "Shiny (1)"
+    "review_tags_raw": "Shiny (1)",
+    "profile": {
+      "产品中文名称": {
+        "value": "SHEIN LilyWest 波西米亚西部美国国旗印花女士无袖连衣裙，休闲宽松飘逸 A 字爱国风迷你裙，非常适合夏季海滩度假、独立日派对，柔软轻薄面料",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002449"
+        ]
+      },
+      "产品英文标题": {
+        "value": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini Dress, Perfect For Summer Beach Vacation, Independence Day Party, Soft Lightweight Fabric",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002448"
+        ]
+      },
+      "售价": {
+        "value": "11.79 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002453"
+        ]
+      },
+      "原价": {
+        "value": "16.09 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002454"
+        ]
+      },
+      "评分": {
+        "value": 3.6,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002456"
+        ]
+      },
+      "评论数": {
+        "value": 5.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002457"
+        ]
+      },
+      "主图链接": {
+        "value": "https://img.ltwebstatic.com/v4/j/pi/2026/06/01/af/1780283799f2f64f88ed42142869d1b678b34a2dbe.webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002450"
+        ]
+      },
+      "商品链接": {
+        "value": "https://us.shein.com/SHEIN-LilyWest-Bohemian-Western-American-Flag-Print-Sleeveless-Dress-For-Women-Casual-Loose-Flowy-A-Line-Patriotic-Mini-Dress-Perfect-For-Summer-Beach-Vacation-Independence-Day-Party-Soft-Lightweight-Fabric-p-488434750.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_488434750%7C0-2",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "shein",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }

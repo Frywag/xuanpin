@@ -101,6 +101,30 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     comparer = CrossPlatformComparer(packets, stats)
     l3_ids = runner.run_l3(packets, results, comparer)
 
+    # 6b. 商品画像标注（152 键模板）：深度评审集合（S+高分A）先做代码直取键，
+    #     语义键生成 profile_extraction LLM 任务（10b 落盘）
+    from .profile import build_direct_profile
+    profile_registry_path = scoring_cfg_path.parent / "profile_keys_v1.yaml"
+    profile_registry = (load_yaml(profile_registry_path)
+                        if profile_registry_path.exists() else {})
+    dr_cfg = gates_cfg.get("llm", {}).get("deep_review", {})
+    deep_ids: List[str] = []
+    if dr_cfg:
+        ranked = sorted(results.values(),
+                        key=lambda r: -(r.priority_score["pct"] or 0))
+        for r in ranked:
+            g, pct = r.priority_score.get("grade"), r.priority_score.get("pct") or 0
+            if g in dr_cfg.get("grades", []) or (
+                    g == "A" and pct >= dr_cfg.get("a_min_pct", 101)):
+                deep_ids.append(r.candidate_id)
+            if len(deep_ids) >= dr_cfg.get("max_candidates", 12):
+                break
+    pk_by_id = {p.candidate_id: p for p in packets}
+    if profile_registry:
+        for cid in deep_ids:
+            pk_by_id[cid].context["profile"] = build_direct_profile(
+                pk_by_id[cid], profile_registry)
+
     # 7. 产物落盘
     with open(out_dir / "candidate_packets.jsonl", "w", encoding="utf-8") as f:
         for p in packets:
@@ -182,25 +206,20 @@ def run_pipeline(repo_root: Path, out_dir: Path,
                   tasks_dir / f"{cid}.reason_writer.json")
         n_tasks += 1
 
-    # 10b. 深度评审任务：S 级全部 + 高分 A（LLM 的正式全量分析，非草稿）
+    # 10b. 深度评审 + 画像语义提取任务（对象同为 S+高分A，deep_ids 已在 6b 计算）
     llm_cfg = gates_cfg.get("llm", {})
-    dr_cfg = llm_cfg.get("deep_review", {})
-    deep_ids = []
-    if dr_cfg:
-        ranked = sorted(results.values(),
-                        key=lambda r: -(r.priority_score["pct"] or 0))
-        for r in ranked:
-            g, pct = r.priority_score.get("grade"), r.priority_score.get("pct") or 0
-            if g in dr_cfg.get("grades", []) or (
-                    g == "A" and pct >= dr_cfg.get("a_min_pct", 101)):
-                deep_ids.append(r.candidate_id)
-            if len(deep_ids) >= dr_cfg.get("max_candidates", 12):
-                break
-        for cid in deep_ids:
-            dump_json(build_deep_review_task(pk_dict[cid], results[cid].to_dict(),
-                                             out_dir.name),
-                      tasks_dir / f"{cid}.deep_review.json")
-            n_tasks += 1
+    from .profile import build_profile_extraction_task
+    for cid in deep_ids:
+        dump_json(build_deep_review_task(pk_dict[cid], results[cid].to_dict(),
+                                         out_dir.name),
+                  tasks_dir / f"{cid}.deep_review.json")
+        n_tasks += 1
+        if profile_registry:
+            t = build_profile_extraction_task(pk_by_id[cid], out_dir.name,
+                                              profile_registry)
+            if t:
+                dump_json(t, tasks_dir / f"{cid}.profile_extraction.json")
+                n_tasks += 1
 
     # 10c. 整轮运行分析报告任务（后置于选品表产出之后）
     if llm_cfg.get("run_report", {}).get("enabled"):

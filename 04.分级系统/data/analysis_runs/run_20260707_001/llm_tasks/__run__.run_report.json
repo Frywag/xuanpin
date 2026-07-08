@@ -367,7 +367,7 @@
       }
     ],
     "envelope_warnings": {
-      "envelope_indie_frontend_20260707": [
+      "envelope_indie_frontend_20260708": [
         "63 行 ACCESS_CHALLENGE（未绕过，按原样入库并降置信度）"
       ]
     }

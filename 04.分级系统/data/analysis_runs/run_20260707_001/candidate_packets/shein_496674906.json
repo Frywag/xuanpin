@@ -8,7 +8,7 @@
   "source_refs": [
     {
       "source_id": "shein_frontend",
-      "envelope_id": "envelope_shein_frontend_20260707"
+      "envelope_id": "envelope_shein_frontend_20260708"
     }
   ],
   "basic_facts": {
@@ -380,6 +380,111 @@
     "trend_tags": [
       "WorkwearBasics"
     ],
-    "review_tags_raw": "No Smell (1)Casual (2)Vacation Outfits (1)Summer Outfits (1)Worth Buying (3)Good Quality (5)Flowy (2)Beautiful (2)Wrong Style (1)"
+    "review_tags_raw": "No Smell (1)Casual (2)Vacation Outfits (1)Summer Outfits (1)Worth Buying (3)Good Quality (5)Flowy (2)Beautiful (2)Wrong Style (1)",
+    "profile": {
+      "产品中文名称": {
+        "value": "EMERY ROSE 女士平纹织物休闲办公夏季连衣裙",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001670"
+        ]
+      },
+      "产品英文标题": {
+        "value": "EMERY ROSE Women's Plain Weave Casual Office Summer Dress",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001669"
+        ]
+      },
+      "售价": {
+        "value": "16.59 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001674"
+        ]
+      },
+      "原价": {
+        "value": "21.49 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001675"
+        ]
+      },
+      "评分": {
+        "value": 4.07,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001677"
+        ]
+      },
+      "评论数": {
+        "value": 79.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001678"
+        ]
+      },
+      "主图链接": {
+        "value": "https://img.ltwebstatic.com/v4/p/ccc/2025/07/09/0b/17520280931802ca2be226ad320153e3c68187388d.webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001671"
+        ]
+      },
+      "商品链接": {
+        "value": "https://us.shein.com/EMERY-ROSE-Women-s-Plain-Weave-Casual-Office-Summer-Dress-p-496674906.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_496674906%7C0-2",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "shein",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }

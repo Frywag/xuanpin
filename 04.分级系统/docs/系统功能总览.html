@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>选品分级系统 · 功能总览</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1f2937;--sub:#6b7280;--line:#e5e7eb;--acc:#2563eb;--code:#f3f4f6;--s:#b45309}
+@media(prefers-color-scheme:dark){:root{--bg:#111418;--card:#1a1f26;--ink:#e5e7eb;--sub:#9ca3af;--line:#2d333b;--acc:#60a5fa;--code:#0d1117;--s:#f59e0b}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);padding:32px 16px}
+.wrap{max-width:980px;margin:0 auto}h1{font-size:26px;margin:0 0 4px}
+.sub{color:var(--sub);margin-bottom:24px}
+h2{font-size:18px;margin:32px 0 12px;padding-left:10px;border-left:4px solid var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{margin:0 0 6px;font-size:15px}.card p{margin:4px 0;color:var(--sub);font-size:13.5px}
+code,pre{font-family:ui-monospace,Consolas,monospace;font-size:12.5px}
+code{background:var(--code);padding:1px 6px;border-radius:4px}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto;margin:8px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:8px;font-size:13.5px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--sub);font-weight:600;white-space:nowrap}
+.tag{display:inline-block;font-size:12px;padding:0 8px;border-radius:99px;border:1px solid var(--line);color:var(--sub);margin-right:6px}
+.flow{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto}
+.s{color:var(--s);font-weight:700}
+.tblwrap{overflow-x:auto}
+</style></head><body><div class="wrap">
+<h1>女装跨境选品分级系统 · 功能总览</h1>
+<div class="sub">仓库 <code>04.分级系统/</code> · 全确定性规则引擎 + 受控 LLM 分析 · 每条结论可追溯到 工作簿→sheet→行→字段</div>
+
+<h2>① 一图看懂数据流</h2>
+<div class="flow"><pre>
+插件数据源(Kalodata/Tabcut/EchoTik) ─┐
+前端数据源(Shein/独立站/垂直站)     ─┼→ SourceEnvelope ×7 ──→ CandidateDataPacket ×2,234（多源合并+逐字段证据）
+外部采集直投(--envelopes, 免代码)   ─┘        │
+   L1 全量粗筛(赛道判定→PScore→赛道内 S/A/B/C) → L2 前40款差评聚类 → L3 前10款多平台比对
+        │
+   ├─ 选品推荐表.xlsx（9 sheet：推荐总表/评分明细/商品画像/差评改良/多平台比对/风险/证据索引/运行记录）
+   ├─ SQLite 选品库 data/selection.db（跨 run 累积）→ MCP 服务供其他系统调用
+   └─ LLM 任务包 ×52 → agent 执行 → llm-ingest 校验回灌 → 深度评审.md / 选品分析报告.md / 商品画像</pre></div>
+
+<h2>② 功能清单（做什么 · 从哪执行）</h2>
+<div class="tblwrap"><table>
+<tr><th>功能</th><th>说明</th><th>执行入口（仓库根目录，均需 <code>PYTHONPATH="04.分级系统/src"</code>）</th></tr>
+<tr><td><b>端到端分级</b></td><td>7 数据源 → 2,234 候选 → 三赛道 S/A/B/C → XLSX + 选品库 + LLM 任务包</td><td><code>python3 -m grading_system.cli run --repo-root . --out 04.分级系统/data/analysis_runs/run_日期_001</code></td></tr>
+<tr><td><b>外部数据直投</b></td><td>采集 agent 按输入契约(docs/05)产出 JSON，免写代码进管道</td><td><code>… cli validate-envelope 目录</code>（自检）→ <code>… cli run … --envelopes 目录</code></td></tr>
+<tr><td><b>查分级结果</b></td><td>等级×赛道分布 / 只读 SQL / 单候选全量 JSON / 证据链</td><td><code>… cli grades</code> · <code>… cli db-query --sql "…"</code> · <code>… cli show 候选id</code> · <code>… cli explain 候选id</code></td></tr>
+<tr><td><b>LLM 深度评审</b></td><td class="s">S+高分A 五维全量评审，可挑战引擎等级（人审生效）</td><td>读 <code>run目录/llm_tasks/*.deep_review.json</code> → 产出 JSON → <code>… cli llm-ingest --bundle … --output … --model … --render …</code></td></tr>
+<tr><td><b>整轮分析报告</b></td><td class="s">选品表产出后对整次运行出报告（市场格局/赛道/缺口/下轮计划）</td><td>同上，任务包 <code>__run__.run_report.json</code>，渲染为 <code>选品分析报告.md</code></td></tr>
+<tr><td><b>商品画像(152键)</b></td><td>直取键=代码自动填；语义键(款式/场景/季节…)=LLM 受控词表提取；供应链键=终选人工</td><td>直取自动进 XLSX「商品画像」sheet；语义任务包 <code>*.profile_extraction.json</code> 走 llm-ingest</td></tr>
+<tr><td><b>差评聚类/多平台比对/理由改写</b></td><td>L2/L3 辅助分析草稿</td><td>任务包 <code>*.review_clustering / *.cross_platform_compare / *.reason_writer</code></td></tr>
+<tr><td><b>MCP 服务</b></td><td>其他系统/agent 只读调用选品库（替代 Excel 转发）</td><td><code>python3 -m grading_system.mcp_server</code>，6 工具见 docs/04 §5</td></tr>
+<tr><td><b>测试</b></td><td>83 用例（含真实数据端到端 / MCP 往返 / 信封直投）</td><td><code>cd 04.分级系统 && python3 -m pytest tests/ -q</code></td></tr>
+</table></div>
+
+<h2>③ 输入从哪来</h2>
+<div class="grid">
+<div class="card"><h3>A. 仓库既有数据源（自动）</h3><p><code>02.插件数据源/</code> 与 <code>03.前端数据源/</code> 的 XLSX，注册在 <code>configs/sources_p0.yaml</code>，run 时自动读取。新增前端工作簿只加列映射配置。</p></div>
+<div class="card"><h3>B. 外部采集直投（推荐主路径）</h3><p>按 <code>docs/05</code> 契约产出 <code>source.envelope.v1</code> JSON：record = 标识 + fields 标准词表 + 逐字段 evidence。金额必须带币种；缺失不写不补 0。E级错误整封拒收。</p></div>
+<div class="card"><h3>C. 人工输入（终选款）</h3><p>供应链能力档案 <code>configs/supply_capability.yaml</code>（一次性）；逐款成本/MOQ/交期仅对 L3 终选款（≤10）补录。</p></div>
+</div>
+
+<h2>④ 标准怎么改</h2>
+<div class="grid">
+<div class="card"><h3>分级标准</h3><p><code>configs/scoring_v0.yaml</code>：赛道权重档、分档阈值、赛道内 S/A/B/C、风险规则。<b>改配置即改标准，代码零改动</b>；每个阈值带真实数据推导注释（docs/01）。</p></div>
+<div class="card"><h3>Gate 与成本</h3><p><code>configs/layer_gates_v0.yaml</code>：L2/L3/深度评审的对象与数量上限。</p></div>
+<div class="card"><h3>画像键注册表</h3><p><code>configs/profile_keys_v1.yaml</code>：152 键的直取路径 / 语义词表 / 人工键，来自业务三份模板。</p></div>
+</div>
+
+<h2>⑤ 红线（引擎与校验器强制）</h2>
+<div class="card"><p>① 不编造任何数值——LLM 回灌经「证据白名单 + 数值封闭性 + 受控词表」机器校验，违规直接拒收；② 每条结论必须绑定 EvidenceRef（模型层强制）；③ 缺失=missing_fields，不补 0/均值；④ 价格必须带币种，跨币种不换算；⑤ 收藏/播放是热度不是销量；⑥ <b>等级与分数由确定性引擎计算</b>，LLM 的改级建议需人审（human_review=approved）生效；⑦ 输出不含 token/cookie。</p></div>
+
+<h2>⑥ 关键文档索引</h2>
+<div class="tblwrap"><table>
+<tr><th>文档</th><th>内容</th></tr>
+<tr><td><code>docs/00_使用指南.md</code></td><td>运行、读表、追溯证据、调参、FAQ</td></tr>
+<tr><td><code>docs/01_分级标准…md</code></td><td>每个阈值的真实数据推导</td></tr>
+<tr><td><code>docs/02_LayerGate…md</code> / <code>docs/03_演进设计…md</code></td><td>Gate/缺失策略；供应链分层、三赛道、选品库、Agent/LLM 集成</td></tr>
+<tr><td><code>docs/04_数据中台对接标准…md</code></td><td>152键画像存储 DDL、交换协议、MCP 接口（给中台）</td></tr>
+<tr><td><code>docs/05_分级系统输入契约…md</code></td><td>输入格式标准（给采集方）</td></tr>
+<tr><td>仓库根 <code>CLAUDE.md</code></td><td>agent CLI 接管入口：命令 + 红线 + LLM 任务执行方式</td></tr>
+</table></div>
+<p class="sub" style="margin-top:24px">最近一次运行：run_20260707_001 · 2,234 候选 · S=3 / A=42 / B=382 / C=1,792 · 52 个 LLM 任务包 · 已执行 5 深度评审 + 1 整轮报告 + 2 画像提取</p>
+</div></body></html>

@@ -24,7 +24,7 @@ import re
 from typing import Any, Dict, List, Optional
 
 TASK_TYPES = ("review_clustering", "cross_platform_compare", "reason_writer",
-              "deep_review", "run_report")
+              "deep_review", "run_report", "profile_extraction")
 
 COMMON_RULES = [
     "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
@@ -424,6 +424,10 @@ def validate_llm_output(bundle: Dict[str, Any], output: Dict[str, Any]) -> List[
         if (output.get("go_recommendation") or {}).get("decision") not in (
                 "go_research", "hold", "reject"):
             errors.append("go_recommendation.decision 必须是 go_research/hold/reject")
+
+    if task_type == "profile_extraction":
+        from .profile import validate_profile_output  # 局部导入避免循环依赖
+        errors.extend(validate_profile_output(bundle, output))
 
     if task_type == "run_report":
         # 提到的候选必须在输入的头部候选列表里，防止编造候选

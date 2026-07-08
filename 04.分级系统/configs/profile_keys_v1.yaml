@@ -1,0 +1,60 @@
+# 商品画像键注册表 v1 —— 来源：业务方三份 152 键模板（女装服饰类 / 百货器物类 / 供应链）
+# fill 方式：direct=代码从候选包直取（零成本）；semantic=LLM 从标题/描述等真实文本
+# 提取（受控词表+证据绑定+校验回灌）；manual=供应链人工输入（终选款）
+schema_version: profile.keys.v1
+
+# ---- 直取键（代码脚本填充，逐键给候选包路径）----
+direct_keys:
+  产品中文名称: {path: context.title_cn, group: 款式SKU}
+  产品英文标题: {path: basic_facts.title, group: 款式SKU}
+  品牌: {path: basic_facts.brand, group: 款式SKU}
+  售价: {path: basic_facts.price, group: 子SKU, money: true}
+  原价: {path: basic_facts.original_price, group: 子SKU, money: true}
+  评分: {path: basic_facts.rating, group: 款式SKU}
+  评论数: {path: basic_facts.review_count, group: 款式SKU}
+  类目路径: {path: basic_facts.category_path, group: 款式SKU}
+  来源类目: {path: context.category_name, group: 款式SKU}
+  主图链接: {path: basic_facts.image_url, group: 款式SKU}
+  商品链接: {path: canonical_url, group: 款式SKU, top_level: true}
+  平台: {path: platform, group: 款式SKU, top_level: true}
+  运费: {path: context.shipping_fee, group: 包装与物流, money: true}
+
+# ---- 语义键（LLM 提取；vocab 为业务模板给定的受控词表，枚举键取值必须在表内）----
+semantic_keys:
+  womenswear:   # 女装服饰类模板（判定：类目/标题命中服饰词）
+    服饰大类: {vocab: [上装, 下装, 连衣裙, 外套, 内衣, 睡衣, 泳装, 运动服, 配饰]}
+    产品小类: {vocab_open: true, hint: T-shirt/Dress/Blouse/Leggings/Hoodie/Bra 等}
+    适用性别: {vocab: [Women, Men, Girls, Boys, Baby, Unisex]}
+    款式风格: {vocab: [Casual, Elegant, Sexy, Boho, Streetwear, Business, Sporty, Vintage]}
+    版型: {vocab: [Slim Fit, Regular Fit, Loose Fit, Oversized]}
+    廓形: {vocab: [A-line, Straight, Bodycon, Wide Leg, Flare]}
+    裙长: {vocab: [Mini, Midi, Maxi]}
+    领型: {vocab: [Crew Neck, V Neck, Square Neck, Halter, Collared, One Shoulder]}
+    袖长: {vocab: [Sleeveless, Short Sleeve, Long Sleeve]}
+    开合方式: {vocab: [Pullover, Button, Zipper, Tie, Snap]}
+    装饰元素: {vocab: [Lace, Ruffle, Bow, Sequin, Embroidery, Cutout, Print], multi: true}
+    图案类型: {vocab: [Solid, Floral, Striped, Plaid, Graphic], multi: true}
+    适用场景: {vocab: [日常, 通勤, 派对, 度假, 运动, 居家, 婚礼, 校园], multi: true}
+    适用季节: {vocab: [Spring, Summer, Fall, Winter, All Season], multi: true}
+    节日属性: {vocab_open: true, hint: Christmas/Halloween/Valentine's Day/Independence Day 或 无}
+    面料类型: {vocab: [Knit, Woven, Denim, Chiffon, Satin, Fleece, Mesh, Silicone]}
+    弹力: {vocab: [无弹, 微弹, 高弹, 四面弹]}
+  general_goods:  # 百货器物类模板（判定：非服饰类目）
+    产品大类: {vocab_open: true, hint: Home & Kitchen/Pet Supplies/Electronics 等}
+    产品小类: {vocab_open: true}
+    核心功能: {vocab: [收纳, 清洁, 防滑, 防水, 保温, 充电, 保护, 测量, 固定, 按摩, 护理], multi: true}
+    使用场景: {vocab: [厨房, 浴室, 卧室, 办公室, 车内, 庭院, 露营, 健身, 个护], multi: true}
+    主材质: {vocab_open: true, hint: Plastic/Silicone/Stainless Steel/Glass 等}
+    适用季节: {vocab: [Spring, Summer, Fall, Winter, All Season], multi: true}
+    节日属性: {vocab_open: true}
+    是否带电池: {vocab: [是, 否]}
+
+# ---- 供应链键（manual：终选款人工补录，与 owned_supply_inputs/能力档案打通）----
+manual_keys: [起订量, 交期, 供货稳定性, 综合采购成本, 质检通过率]
+
+# 语义提取的适用范围与成本控制：与 deep_review 同集合（S + 高分 A）
+apply_to: deep_review_candidates
+
+# 服饰类判定词（决定用哪套语义键）
+womenswear_tokens: [bra, bras, dress, dresses, skirt, tights, legging, shapewear,
+                    bodysuit, tank, tee, blouse, hoodie, underwear, lingerie, sock]

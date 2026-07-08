@@ -8,11 +8,11 @@
   "source_refs": [
     {
       "source_id": "tabcut",
-      "envelope_id": "envelope_tabcut_20260707"
+      "envelope_id": "envelope_tabcut_20260708"
     },
     {
       "source_id": "echotik",
-      "envelope_id": "envelope_echotik_20260707"
+      "envelope_id": "envelope_echotik_20260708"
     }
   ],
   "basic_facts": {
@@ -66,13 +66,13 @@
     "matched_products": [
       {
         "source_id": "tabcut",
-        "envelope_id": "envelope_tabcut_20260707",
+        "envelope_id": "envelope_tabcut_20260708",
         "product_id": "1731528580940468633",
         "match_type": "exact_or_prefix_product_id"
       },
       {
         "source_id": "echotik",
-        "envelope_id": "envelope_echotik_20260707",
+        "envelope_id": "envelope_echotik_20260708",
         "product_id": "1731528580940468633",
         "match_type": "exact_or_prefix_product_id"
       }
@@ -299,6 +299,105 @@
     "category_name": "美妆个护",
     "product_total_sales": 180900.0,
     "affiliate_creator_count": 2308.0,
-    "shop_name": "Bare Anatomy Haircare"
+    "shop_name": "Bare Anatomy Haircare",
+    "profile": {
+      "产品英文标题": {
+        "value": "Bare Anatomy Nature x Science Rosemary Water with Rice Water |100% Natural Extract | Soft & Smooth Hair Non-Greasy & Fast Absorbing | 200 ml",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000136",
+          "ev_echotik_000417"
+        ]
+      },
+      "售价": {
+        "value": "14.99 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000137",
+          "ev_echotik_000418"
+        ]
+      },
+      "评分": {
+        "value": 4.6,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000420"
+        ]
+      },
+      "评论数": {
+        "value": 14700.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000421"
+        ]
+      },
+      "来源类目": {
+        "value": "美妆个护",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000140"
+        ]
+      },
+      "主图链接": {
+        "value": "https://cdn.tabcut.com/dataservice/media/item/1731528580940468633/17315285809404686330.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000141"
+        ]
+      },
+      "商品链接": {
+        "value": "https://shop.tiktok.com/view/product/1731528580940468633",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "tiktok_shop",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }

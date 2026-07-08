@@ -236,3 +236,41 @@ class TestRunReport:
         out["market_landscape"] = "预计月销售额可达 987654 美元"
         errors = validate_llm_output(self._bundle(), out)
         assert any("编造" in e for e in errors)
+
+
+class TestProfile:
+    def _registry(self):
+        import yaml
+        from pathlib import Path
+        p = Path(__file__).resolve().parents[1] / "configs/profile_keys_v1.yaml"
+        return yaml.safe_load(p.read_text(encoding="utf-8"))
+
+    def test_direct_profile_fills_with_evidence(self):
+        from grading_system.profile import build_direct_profile
+        p = make_packet()
+        prof = build_direct_profile(p, self._registry())
+        assert prof["产品英文标题"]["value"] == "Floral Dress"
+        assert prof["产品英文标题"]["evidence_refs"]
+        assert prof["起订量"]["source"] == "manual"   # 供应链键待人工
+        assert "评分" not in prof                      # 缺失键不出现，不补 0
+
+    def test_semantic_task_uses_womenswear_vocab(self):
+        from grading_system.profile import build_profile_extraction_task
+        p = make_packet()   # title: Floral Dress -> 女装词表
+        b = build_profile_extraction_task(p, "run_t", self._registry())
+        assert b["task_type"] == "profile_extraction"
+        assert b["inputs"]["key_set"] == "womenswear"
+        assert "款式风格" in b["inputs"]["keys"]
+
+    def test_vocab_violation_rejected(self):
+        from grading_system.profile import build_profile_extraction_task
+        p = make_packet()
+        b = build_profile_extraction_task(p, "run_t", self._registry())
+        ev = b["allowed_evidence_ids"][0]
+        out = {"profile": {"款式风格": {"value": "Cyberpunk",
+                                        "evidence_refs": [ev], "confidence": "high"}},
+               "missing_fields": []}
+        errors = validate_llm_output(b, out)
+        assert any("受控词表" in e for e in errors)
+        out["profile"]["款式风格"]["value"] = "Boho"
+        assert validate_llm_output(b, out) == []

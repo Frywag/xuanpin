@@ -8,11 +8,11 @@
   "source_refs": [
     {
       "source_id": "kalodata",
-      "envelope_id": "envelope_kalodata_20260707"
+      "envelope_id": "envelope_kalodata_20260708"
     },
     {
       "source_id": "tabcut",
-      "envelope_id": "envelope_tabcut_20260707"
+      "envelope_id": "envelope_tabcut_20260708"
     }
   ],
   "basic_facts": {
@@ -70,13 +70,13 @@
     "matched_products": [
       {
         "source_id": "kalodata",
-        "envelope_id": "envelope_kalodata_20260707",
+        "envelope_id": "envelope_kalodata_20260708",
         "product_id": "1731406217255686451",
         "match_type": "exact_or_prefix_product_id"
       },
       {
         "source_id": "tabcut",
-        "envelope_id": "envelope_tabcut_20260707",
+        "envelope_id": "envelope_tabcut_20260708",
         "product_id": "1731406217255686451",
         "match_type": "exact_or_prefix_product_id"
       }
@@ -577,6 +577,131 @@
     },
     "video_engagement_max": 0.0086,
     "category_avg_unit_price_cny": 152.27,
-    "category_revenue_growth_rate": 0.111915681646234
+    "category_revenue_growth_rate": 0.111915681646234,
+    "profile": {
+      "产品英文标题": {
+        "value": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000008",
+          "ev_tabcut_000130"
+        ]
+      },
+      "品牌": {
+        "value": "oeak apparel",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000079"
+        ]
+      },
+      "售价": {
+        "value": "108.51 CNY",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000012",
+          "ev_tabcut_000131"
+        ]
+      },
+      "评分": {
+        "value": 4.4,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000076"
+        ]
+      },
+      "评论数": {
+        "value": 68609.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000077"
+        ]
+      },
+      "类目路径": {
+        "value": [
+          "女装与女士内衣",
+          "女士内衣",
+          "女士文胸"
+        ],
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000082"
+        ]
+      },
+      "来源类目": {
+        "value": "Womenswear & Underwear",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "主图链接": {
+        "value": "https://cdn.tabcut.com/dataservice/media/item/1731406217255686451/17314062172556864510.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000135"
+        ]
+      },
+      "商品链接": {
+        "value": "https://shop.tiktok.com/view/product/1731406217255686451",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "tiktok_shop",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "运费": {
+        "value": "28.69 CNY",
+        "group": "包装与物流",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000084"
+        ]
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }

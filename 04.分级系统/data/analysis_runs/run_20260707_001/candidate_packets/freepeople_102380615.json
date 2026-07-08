@@ -8,7 +8,7 @@
   "source_refs": [
     {
       "source_id": "indie_frontend",
-      "envelope_id": "envelope_indie_frontend_20260707"
+      "envelope_id": "envelope_indie_frontend_20260708"
     }
   ],
   "basic_facts": {
@@ -265,6 +265,103 @@
         "kind": "design_details",
         "text": "Measurements for size 6: Hips: 49.5 in; Waist: 30 in; Length: 31 in"
       }
-    ]
+    ],
+    "profile": {
+      "产品中文名称": {
+        "value": "Take Me Along Circle 半身裙",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_004268"
+        ]
+      },
+      "产品英文标题": {
+        "value": "Take Me Along Circle Skirt",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_004267"
+        ]
+      },
+      "售价": {
+        "value": "148.0 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_004272"
+        ]
+      },
+      "评分": {
+        "value": 3.8571,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_004273"
+        ]
+      },
+      "评论数": {
+        "value": 7.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_004274"
+        ]
+      },
+      "来源类目": {
+        "value": "Midi Skirts",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_004269"
+        ]
+      },
+      "商品链接": {
+        "value": "https://www.freepeople.com/shop/take-me-along-circle-skirt/?color=060",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "freepeople",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }

@@ -119,6 +119,20 @@ def export_report(path, packets: List[CandidateDataPacket],
                        c["improvement_opportunity"], c["risk_if_unfixed"],
                        ",".join(c["evidence_refs"][:5])])
 
+    # ---------- 4b. 商品画像（152 键模板；直取+manual，语义键经 LLM 回灌入库） ----------
+    ws = _sheet(wb, "商品画像",
+                ["candidate_id", "分组", "键", "值", "来源", "evidence_refs"],
+                [30, 14, 18, 60, 12, 40])
+    for r in ordered:
+        p = by_id[r.candidate_id]
+        for name, item in (p.context.get("profile") or {}).items():
+            ws.append([p.candidate_id, item.get("group", ""), name,
+                       str(item.get("value")) if item.get("value") is not None
+                       else "（待人工补录）",
+                       item.get("source", ""),
+                       ",".join(item.get("evidence_refs", [])[:4])])
+    ws.auto_filter.ref = ws.dimensions
+
     # ---------- 5. 多平台比对 ----------
     ws = _sheet(wb, "多平台比对",
                 ["candidate_id", "类型", "内容", "币种", "备注"],

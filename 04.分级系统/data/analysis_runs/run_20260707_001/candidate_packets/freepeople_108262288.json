@@ -8,7 +8,7 @@
   "source_refs": [
     {
       "source_id": "indie_frontend",
-      "envelope_id": "envelope_indie_frontend_20260707"
+      "envelope_id": "envelope_indie_frontend_20260708"
     }
   ],
   "basic_facts": {
@@ -265,6 +265,103 @@
         "kind": "design_details",
         "text": "Measurements for size small: Hips: 29 in; Waist: 23 in; Length: 40.5 in"
       }
-    ]
+    ],
+    "profile": {
+      "产品中文名称": {
+        "value": "Raven Solid Convertible 长款半身裙",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003228"
+        ]
+      },
+      "产品英文标题": {
+        "value": "Raven Solid Convertible Maxi Skirt",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003227"
+        ]
+      },
+      "售价": {
+        "value": "128.0 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003232"
+        ]
+      },
+      "评分": {
+        "value": 4.1111,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003233"
+        ]
+      },
+      "评论数": {
+        "value": 9.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003234"
+        ]
+      },
+      "来源类目": {
+        "value": "Maxi Skirts",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003229"
+        ]
+      },
+      "商品链接": {
+        "value": "https://www.freepeople.com/shop/raven-solid-convertible-maxi-skirt/?color=066",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "freepeople",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }

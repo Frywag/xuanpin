@@ -8,11 +8,11 @@
   "source_refs": [
     {
       "source_id": "tabcut",
-      "envelope_id": "envelope_tabcut_20260707"
+      "envelope_id": "envelope_tabcut_20260708"
     },
     {
       "source_id": "echotik",
-      "envelope_id": "envelope_echotik_20260707"
+      "envelope_id": "envelope_echotik_20260708"
     }
   ],
   "basic_facts": {
@@ -66,13 +66,13 @@
     "matched_products": [
       {
         "source_id": "tabcut",
-        "envelope_id": "envelope_tabcut_20260707",
+        "envelope_id": "envelope_tabcut_20260708",
         "product_id": "1731236289885213002",
         "match_type": "exact_or_prefix_product_id"
       },
       {
         "source_id": "echotik",
-        "envelope_id": "envelope_echotik_20260707",
+        "envelope_id": "envelope_echotik_20260708",
         "product_id": "1731236289885213002",
         "match_type": "exact_or_prefix_product_id"
       }
@@ -316,6 +316,105 @@
     },
     "product_total_sales": 289200.0,
     "affiliate_creator_count": 3122.0,
-    "shop_name": "SEESE Store"
+    "shop_name": "SEESE Store",
+    "profile": {
+      "产品英文标题": {
+        "value": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000112",
+          "ev_echotik_000365"
+        ]
+      },
+      "售价": {
+        "value": "55.37 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000113",
+          "ev_echotik_000366"
+        ]
+      },
+      "评分": {
+        "value": 4.2,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000369"
+        ]
+      },
+      "评论数": {
+        "value": 18200.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000370"
+        ]
+      },
+      "来源类目": {
+        "value": "五金工具",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000116"
+        ]
+      },
+      "主图链接": {
+        "value": "https://cdn.tabcut.com/dataservice/media/item/1731236289885213002/17312362898852130020.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000117"
+        ]
+      },
+      "商品链接": {
+        "value": "https://shop.tiktok.com/view/product/1731236289885213002",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "tiktok_shop",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
   }
 }
