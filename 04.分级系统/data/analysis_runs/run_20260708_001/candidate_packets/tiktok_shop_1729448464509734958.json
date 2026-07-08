@@ -1,0 +1,456 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "tiktok_shop_1729448464509734958",
+  "market": "US",
+  "platform": "tiktok_shop",
+  "primary_product_id": "1729448464509734958",
+  "canonical_url": "https://shop.tiktok.com/view/product/1729448464509734958",
+  "source_refs": [
+    {
+      "source_id": "tabcut",
+      "envelope_id": "envelope_tabcut_20260708"
+    },
+    {
+      "source_id": "echotik",
+      "envelope_id": "envelope_echotik_20260708"
+    }
+  ],
+  "basic_facts": {
+    "title": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+    "brand": null,
+    "category_path": [],
+    "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729448464509734958/17294484645097349580.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+    "price": {
+      "amount": 15.97,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.6,
+    "review_count": 128600.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": 194250.0,
+    "sales_7d_units": 39000.0,
+    "sales_floor_units": null,
+    "revenue_30d": null,
+    "gmv_7d": {
+      "amount": 879200.0,
+      "currency": "USD"
+    },
+    "sales_growth_rate": 0.0725,
+    "favorites_count": null,
+    "bestseller_rank_text": null,
+    "video_views_max": 18721163.0,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [
+      {
+        "source_id": "tabcut",
+        "envelope_id": "envelope_tabcut_20260708",
+        "product_id": "1729448464509734958",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "echotik",
+        "envelope_id": "envelope_echotik_20260708",
+        "product_id": "1729448464509734958",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [],
+    "same_style_signals": []
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "field_issues": [
+    {
+      "field_path": "primary_product_id",
+      "issue": "id_truncated_in_source",
+      "detail": "EchoTik 页面导出的 product_id 为截断值 17294484645097349...，已按前缀合并到完整 id",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "basic_facts.price",
+      "issue": "source_conflict",
+      "detail": "echotik 给出 {'amount': 29.97, 'currency': 'USD'}，与已有 {'amount': 15.97, 'currency': 'USD'} 不一致，保留先值",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_tabcut_000095",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=47",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000096",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=47",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000097",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=47",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000098",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=47",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000099",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.category_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=47",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000100",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=47",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000266",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.product_total_sales",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=12..12",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Tabcut 商品累计总销量（估算）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000267",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.video_views_max",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=12..12",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000268",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.video_count_observed",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=12..12",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000269",
+      "source_id": "tabcut",
+      "source_type": "derived",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.video_gmv_sum",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=12..12",
+      "observed_at": null,
+      "confidence": "medium",
+      "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000270",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.video_engagement_max",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=12..12",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000345",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000346",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 商品库页面价格（区间取下限）"
+    },
+    {
+      "evidence_id": "ev_echotik_000348",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000349",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000350",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_7d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 7 天销量（估算）"
+    },
+    {
+      "evidence_id": "ev_echotik_000351",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.gmv_7d",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000353",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.affiliate_creator_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000354",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.shop_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=3",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "tiktok_shop_plugin",
+    "category_label": null,
+    "seasonal": false,
+    "category_name": "保健",
+    "product_total_sales": 1500120.0,
+    "video_count_observed": 1,
+    "video_gmv_sum": {
+      "amount": 330079.15,
+      "currency": "USD"
+    },
+    "video_engagement_max": 0.0118,
+    "affiliate_creator_count": 15400.0,
+    "shop_name": "Toplux Nutrition",
+    "profile": {
+      "产品英文标题": {
+        "value": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000095",
+          "ev_echotik_000345"
+        ]
+      },
+      "售价": {
+        "value": "15.97 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000096",
+          "ev_echotik_000346"
+        ]
+      },
+      "评分": {
+        "value": 4.6,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000348"
+        ]
+      },
+      "评论数": {
+        "value": 128600.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000349"
+        ]
+      },
+      "来源类目": {
+        "value": "保健",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000099"
+        ]
+      },
+      "主图链接": {
+        "value": "https://cdn.tabcut.com/dataservice/media/item/1729448464509734958/17294484645097349580.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000100"
+        ]
+      },
+      "商品链接": {
+        "value": "https://shop.tiktok.com/view/product/1729448464509734958",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "tiktok_shop",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

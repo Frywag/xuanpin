@@ -558,7 +558,7 @@ class PriorityScorer:
     # ================= 汇总 =================
 
     _DIM_KEYS = {"市场需求": "demand", "竞争可突破": "competition",
-                 "产品机会": "product", "自有供应链": "supply"}
+                 "产品机会": "product"}
 
     def score(self, p: CandidateDataPacket):
         track = self.assign_track(p)
@@ -566,8 +566,9 @@ class PriorityScorer:
         profile = self.cfg.get("weight_profiles", {}).get(track) or {
             **base_w, "risk_floor": base_w["risk_floor"]}
 
+        # 供应链自 v0.4 起退出打分（业务决策）：仅作画像字段，终选后人工调查存库
         comps = [self.score_demand(p), self.score_competition(p),
-                 self.score_product(p), self.score_supply(p)]
+                 self.score_product(p)]
         # 赛道权重缩放：得分与满分同比例缩放（保留“部分可得满分”的语义，
         # 如供应链维只有利润代理时 max=10 -> 10×supply系数）
         for comp in comps:

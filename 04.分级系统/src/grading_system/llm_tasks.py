@@ -24,7 +24,7 @@ import re
 from typing import Any, Dict, List, Optional
 
 TASK_TYPES = ("review_clustering", "cross_platform_compare", "reason_writer",
-              "deep_review", "run_report", "profile_extraction")
+              "deep_review", "run_report", "profile_extraction", "style_match_report")
 
 COMMON_RULES = [
     "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
@@ -247,6 +247,54 @@ def build_run_report_task(run_summary: Dict[str, Any], run_id: str) -> Dict[str,
          "对没有需求信号的品类（如本轮图案连裤袜）要说明是数据缺失而非品类否定"])
 
 
+def build_style_match_task(cards, pairs, run_id):
+    """多平台同款/同款式/同趋势比对（独立模块，单独出报告）。
+
+    同款判定由大模型综合标题语义/价格结构/类目/图片URL/趋势词做出，
+    **不使用商品 id**（id 相同只说明是同一 listing，不是同款判定）。
+    cards 为候选卡（含各项指标），pairs 为确定性预筛的跨源候选对（降成本），
+    LLM 可补充 pairs 之外它认为相关的对，但只能引用 cards 内候选。
+    """
+    schema = {
+        "pair_judgements": [{
+            "candidate_a": "cards 内 id", "candidate_b": "cards 内 id",
+            "verdict": "same_product|same_style|same_trend|unrelated",
+            "rationale": "str（综合了哪些指标：标题语义/价格/类目/图片/趋势词）",
+            "evidence_refs": ["⊆ allowed_evidence_ids"],
+            "confidence": "high|medium|low"}],
+        "trend_alignment": [{
+            "candidate_id": "cards 内 id", "trend_keyword": "str（来自 inputs.trend_keywords）",
+            "rationale": "str"}],
+        "summary": "str（红海/空白/跨平台机会的总体判断）",
+        "missing_fields": ["str"], "assumptions": ["str"]}
+    return _base_bundle(
+        "style_match_report", "__style_match__", run_id,
+        {"cards": cards, "prefilter_pairs": pairs,
+         "trend_keywords": [],
+         "note": "趋势站数据源（Pinterest/Google Trends 等）接入后 trend_keywords 会带真实趋势词；当前为空则 trend_alignment 只能基于平台趋势标签"},
+        sorted({e for c in cards for e in c.get("evidence_refs", [])}), schema,
+        ["verdict 必须四选一；same_product 需标题语义高度一致且价格结构可解释，仅平台不同",
+         "不得依据商品 id 判定同款；id 相同的多源记录已在数据层合并，不属于本任务",
+         "判断不了的对给 unrelated 并说明证据不足，不要猜测"])
+
+
+def validate_style_match_output(bundle, output):
+    errors = []
+    ids = {c["candidate_id"] for c in bundle["inputs"]["cards"]}
+    for i, pj in enumerate(output.get("pair_judgements") or []):
+        if pj.get("verdict") not in ("same_product", "same_style", "same_trend", "unrelated"):
+            errors.append(f"pair_judgements[{i}].verdict 非法")
+        for k in ("candidate_a", "candidate_b"):
+            if pj.get(k) not in ids:
+                errors.append(f"pair_judgements[{i}].{k} 不在 cards 中")
+        if pj.get("verdict") != "unrelated" and not pj.get("evidence_refs"):
+            errors.append(f"pair_judgements[{i}] 缺 evidence_refs")
+    for i, ta in enumerate(output.get("trend_alignment") or []):
+        if ta.get("candidate_id") not in ids:
+            errors.append(f"trend_alignment[{i}].candidate_id 不在 cards 中")
+    return errors
+
+
 # ================= 渲染（回灌通过后生成业务可读 Markdown） =================
 
 def render_markdown(bundle: Dict[str, Any], output: Dict[str, Any]) -> str:
@@ -254,6 +302,20 @@ def render_markdown(bundle: Dict[str, Any], output: Dict[str, Any]) -> str:
         return _render_run_report(bundle, output)
     if bundle["task_type"] == "deep_review":
         return _render_deep_review(bundle, output)
+    if bundle["task_type"] == "style_match_report":
+        L = ["# 多平台同款/同款式/同趋势比对报告", "",
+             f"> run：`{bundle['run_id']}`（LLM 综合判定，不使用商品 id；经校验回灌）", "",
+             "## 总体判断", "", output.get("summary", ""), "", "## 逐对判定", ""]
+        for pj in output.get("pair_judgements", []):
+            L.append(f"- **{pj['verdict']}**（{pj.get('confidence')}）：`{pj['candidate_a']}` × "
+                     f"`{pj['candidate_b']}` —— {pj.get('rationale','')}")
+        if output.get("trend_alignment"):
+            L += ["", "## 趋势契合", ""]
+            for ta in output["trend_alignment"]:
+                L.append(f"- `{ta['candidate_id']}` ↔ {ta.get('trend_keyword')}：{ta.get('rationale','')}")
+        if output.get("missing_fields"):
+            L += ["", "## 缺失数据", ""] + [f"- {m}" for m in output["missing_fields"]]
+        return "\n".join(L)
     return "```json\n" + json.dumps(output, ensure_ascii=False, indent=2) + "\n```\n"
 
 
@@ -424,6 +486,9 @@ def validate_llm_output(bundle: Dict[str, Any], output: Dict[str, Any]) -> List[
         if (output.get("go_recommendation") or {}).get("decision") not in (
                 "go_research", "hold", "reject"):
             errors.append("go_recommendation.decision 必须是 go_research/hold/reject")
+
+    if task_type == "style_match_report":
+        errors.extend(validate_style_match_output(bundle, output))
 
     if task_type == "profile_extraction":
         from .profile import validate_profile_output  # 局部导入避免循环依赖

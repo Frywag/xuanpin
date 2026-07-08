@@ -120,8 +120,11 @@ def run_pipeline(repo_root: Path, out_dir: Path,
             if len(deep_ids) >= dr_cfg.get("max_candidates", 12):
                 break
     pk_by_id = {p.candidate_id: p for p in packets}
+    # S/A/B 全量画像直取（下游 152 键核对用）；语义任务仍限深评集合控成本
+    sab_ids = [r.candidate_id for r in results.values()
+               if r.priority_score.get("grade") in ("S", "A", "B")]
     if profile_registry:
-        for cid in deep_ids:
+        for cid in sab_ids:
             pk_by_id[cid].context["profile"] = build_direct_profile(
                 pk_by_id[cid], profile_registry)
 
@@ -179,6 +182,14 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         "llm_usage": "无（全部为确定性规则；未编造任何数值）",
         "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
     }
+    # 7b. S/A/B 全量产品信息保留（含全部字段/证据/画像，供下游 152 键核对）
+    with open(out_dir / "sab_products_full.jsonl", "w", encoding="utf-8") as f:
+        for cid in sorted(sab_ids, key=lambda c: -(results[c].priority_score["pct"] or 0)):
+            f.write(json.dumps({"packet": pk_by_id[cid].to_dict(),
+                                "result": results[cid].to_dict()},
+                               ensure_ascii=False, default=str) + "\n")
+    run_meta_sab = len(sab_ids)
+
     # 8. XLSX 推荐表
     from .xlsx_report import export_report
     export_report(out_dir / "选品推荐表.xlsx", packets, results, run_meta)
@@ -267,8 +278,43 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         dump_json(build_run_report_task(run_summary, out_dir.name),
                   tasks_dir / "__run__.run_report.json")
         n_tasks += 1
+    # 10d. 多平台同款/同款式/同趋势比对任务（独立模块；LLM 综合判定，不用商品 id）
+    from .llm_tasks import build_style_match_task
+    from .cross_platform import style_tokens_of
+    top_for_match = sorted([r for r in results.values()
+                            if r.priority_score.get("grade") in ("S", "A")],
+                           key=lambda r: -(r.priority_score["pct"] or 0))[:20]
+    cards = []
+    for r in top_for_match:
+        pk = pk_by_id[r.candidate_id]
+        cards.append({
+            "candidate_id": r.candidate_id, "platform": pk.platform,
+            "source_group": pk.context.get("source_group"),
+            "title": pk.basic_facts.get("title"),
+            "price": pk.basic_facts.get("price"),
+            "category": pk.context.get("category_name") or pk.context.get("category_label"),
+            "image_url": pk.basic_facts.get("image_url"),
+            "trend_tags": pk.context.get("trend_tags"),
+            "style_tokens": sorted(style_tokens_of(pk.basic_facts.get("title") or "")),
+            "evidence_refs": pk.evidence_for("basic_facts.title")
+                             + pk.evidence_for("basic_facts.price")})
+    pairs = []
+    for i, a in enumerate(cards):
+        for b in cards[i + 1:]:
+            if (a["source_group"] != b["source_group"]
+                    and set(a["style_tokens"]) & set(b["style_tokens"])):
+                pairs.append({"candidate_a": a["candidate_id"],
+                              "candidate_b": b["candidate_id"],
+                              "shared_tokens": sorted(set(a["style_tokens"])
+                                                      & set(b["style_tokens"]))})
+    if cards:
+        dump_json(build_style_match_task(cards, pairs[:40], out_dir.name),
+                  tasks_dir / "__style_match__.style_match_report.json")
+        n_tasks += 1
+
     run_meta["llm_tasks_generated"] = n_tasks
     run_meta["deep_review_candidates"] = deep_ids
+    run_meta["sab_full_retained"] = run_meta_sab
 
     # 11. 写入选品库（SQLite，跨 run 累积，供 agent CLI 查询）+ 运行记录落盘
     from .store import SelectionStore

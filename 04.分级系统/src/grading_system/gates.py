@@ -235,7 +235,7 @@ class GateRunner:
             l3.score = r.priority_score["pct"]
             l3.grade = r.priority_score["grade"]
             l3.gate_reason = "；".join(reasons) if reasons else "无跨平台证据，仅输出单平台结论"
-            l3.required_next_data = ["owned_supply_inputs（供应链人工输入）"]
+            l3.required_next_data = ["供应链字段人工调查（选品后画像存库用，不参与打分）"]
             r.recommendation["next_actions"] = list(dict.fromkeys(
                 r.recommendation["next_actions"] + ["L3 完成，等待供应链输入与人审"]))
         return [p.candidate_id for p in selected]

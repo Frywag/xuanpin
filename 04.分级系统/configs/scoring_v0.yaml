@@ -16,7 +16,7 @@ weights:
   demand: 25
   competition: 20
   product: 20
-  supply: 20        # 拆为 profit_proxy(10, 零人力代理) + capability_match(10, 能力档案)
+  supply: 0         # v0.4：供应链退出打分，仅作画像字段（选品后人工调查存库）
   risk_floor: -15
 
 # ================= 三赛道差异化权重（对应附录C §1「赛道只调权重」） =================
@@ -24,13 +24,13 @@ weights:
 # 缩放各维得分与满分；pct = 总分/该赛道可得满分，S/A/B/C 在 pct 上统一分箱。
 weight_profiles:
   balanced:                                   # 默认档（信号不足以判定赛道）
-    {demand: 25, competition: 20, product: 20, supply: 20, risk_floor: -15}
+    {demand: 25, competition: 20, product: 20, supply: 0, risk_floor: -15}
   trend_rising:                               # 趋势上升款：动能优先，窗口/库存风险放大
-    {demand: 30, competition: 15, product: 15, supply: 20, risk_floor: -20}
+    {demand: 30, competition: 15, product: 15, supply: 0, risk_floor: -20}
   evergreen:                                  # 基础常青款：竞争结构与护城河更重要
-    {demand: 22, competition: 28, product: 15, supply: 20, risk_floor: -10}
+    {demand: 22, competition: 28, product: 15, supply: 0, risk_floor: -10}
   pain_improvement:                           # 痛点改良款：产品机会（差评/改良空间）优先
-    {demand: 20, competition: 15, product: 30, supply: 20, risk_floor: -15}
+    {demand: 20, competition: 15, product: 30, supply: 0, risk_floor: -15}
 
 # 赛道判定（确定性，优先级从上到下，首个命中生效）：
 #   数据依据：Tabcut 增长率 p50=+38.9%；Shein 评分 p25=4.29；基础款词表见 track_tags
