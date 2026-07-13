@@ -1,0 +1,80 @@
+{
+  "run_id": "run_20260713_001",
+  "collector_version": "grading-system/0.1.0",
+  "started_at": "2026-07-13T10:41:35+00:00",
+  "finished_at": "2026-07-13T10:41:38+00:00",
+  "market": "US",
+  "envelopes": 7,
+  "candidates_total": 2234,
+  "l1_processed": 2234,
+  "l2_processed": 40,
+  "l3_processed": 10,
+  "grade_distribution": {
+    "A": 73,
+    "C": 1787,
+    "B": 367,
+    "S": 7
+  },
+  "track_distribution": {
+    "trend_rising": 88,
+    "balanced": 1532,
+    "evergreen": 563,
+    "pain_improvement": 51
+  },
+  "capability_profile_enabled": false,
+  "pct_p50": 20.0,
+  "pct_p90": 38.5,
+  "pct_max": 63.8,
+  "scoring_config": "/home/user/xuanpin/04.分级系统/configs/scoring_v0.yaml",
+  "gates_config": "/home/user/xuanpin/04.分级系统/configs/layer_gates_v0.yaml",
+  "sources_config": "/home/user/xuanpin/04.分级系统/configs/sources_p0.yaml",
+  "group_stats": "{\"price_bands\": {\"tiktok_shop_plugin|CNY\": {\"n\": 10, \"p10\": 141.981, \"p25\": 185.14, \"p50\": 204.41, \"p75\": 240.105, \"p90\": 381.1449999999995}, \"tiktok_shop_plugin|USD\": {\"n\": 36, \"p10\": 7.49, \"p25\": 14.5375, \"p50\": 19.99, \"p75\": 26.395, \"p90\": 36.975}, \"shein_frontend|USD\": {\"n\": 199, \"p10\": 5.494, \"p25\": 9.19, \"p50\": 12.09, \"p75\": 14.89, \"p90\": 17.670000000000005}, \"indie_frontend|USD\": {\"n\": 850, \"p10\": 48.0, \"p25\": 78.0, \"p50\": 124.6, \"p75\": 168.0, \"p90\": 298.0}, \"patterned_tights_frontend|USD\": {\"n\": 534, \"p10\": 10.860000000000001, \"p25\": 17.0, \"p50\": 22.99, \"p75\": 37.0, \"p90\": 49.0}, \"halloween_frontend|USD\": {\"n\": 541, \"p10\": 8.49, \"p25\": 16.99, \"p50\": 27.99, \"p75\": 49.99, \"p90\": 229.99}}, \"review_p90\": {\"tiktok_shop_plugin\": {\"n\": 11, \"p90\": 68609.0}, \"shein_frontend\": {\"n\": 83, \"p90\": 1000.0}, \"indie_frontend\": {\"n\": 402, \"p90\": 31.900000000000034}, \"halloween_frontend\": {\"n\": 208, \"p90\": 0.0}}}",
+  "envelope_warnings": "{\"envelope_indie_frontend_20260713\": [\"63 行 ACCESS_CHALLENGE（未绕过，按原样入库并降置信度）\"]}",
+  "llm_usage": "无（全部为确定性规则；未编造任何数值）",
+  "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
+  "llm_tasks_generated": 54,
+  "deep_review_candidates": [
+    "tiktok_shop_1729508370969629931",
+    "tiktok_shop_1731284232420626805",
+    "tiktok_shop_1731236289885213002",
+    "tiktok_shop_1731528580940468633",
+    "shein_488434750",
+    "shein_496674906",
+    "tiktok_shop_1731406217255686451",
+    "tiktok_shop_1729448464509734958",
+    "freepeople_101516367",
+    "freepeople_108262288",
+    "freepeople_107004988",
+    "freepeople_106763931"
+  ],
+  "sab_full_retained": 447,
+  "tracks_v1": {
+    "rule_status": "calibration_pending_business_approval",
+    "evaluations": 6702,
+    "per_track": {
+      "trend_new": {
+        "PENDING_DATA": 2234
+      },
+      "hit_improvement": {
+        "REJECTED": 94,
+        "PENDING_DATA": 2140
+      },
+      "long_tail_direct": {
+        "ELIGIBLE": 655,
+        "PENDING_DATA": 1422,
+        "REJECTED": 157
+      }
+    },
+    "eligible_grades": {
+      "trend_new": {},
+      "hit_improvement": {},
+      "long_tail_direct": {
+        "A": 624,
+        "B": 2,
+        "S": 29
+      }
+    },
+    "clusters": 2
+  },
+  "db_path": "/home/user/xuanpin/04.分级系统/data/selection.db"
+}

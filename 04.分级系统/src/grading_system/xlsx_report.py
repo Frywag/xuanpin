@@ -6,6 +6,7 @@ Sheet 结构对应《07_分层分析系统组任务书》§12：
 """
 from __future__ import annotations
 
+import json
 from typing import Any, Dict, List
 
 from openpyxl import Workbook
@@ -38,6 +39,127 @@ def _sheet(wb: Workbook, title: str, headers: List[str], widths: List[int]):
         cell.alignment = Alignment(vertical="center")
     ws.freeze_panes = "A2"
     return ws
+
+
+def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cfg):
+    """三赛道独立推荐工作簿（tracks.v1，校准态）。
+
+    页签对应《三赛道独立SAB分级》§13：三张 SAB 表、跨赛道汇总、待补数据、
+    未准入与淘汰依据、机会簇、数据源覆盖与角色、规则版本与运行记录。
+    评分明细/证据索引/152键在主工作簿（选品推荐表.xlsx），此处不重复。
+    """
+    wb = Workbook()
+    wb.remove(wb.active)
+    by_id = {p.candidate_id: p for p in packets}
+    labels = {tid: t["label"] for tid, t in tracks_cfg["tracks"].items()}
+
+    def cand_cols(e):
+        p = by_id.get(e.subject_id)
+        return [e.subject_id, p.basic_facts.get("title") if p else "",
+                p.platform if p else "",
+                ",".join(p.context.get("source_roles") or []) if p else ""]
+
+    for tid, label in labels.items():
+        ws = _sheet(wb, f"{label}_SAB",
+                    ["rank", "grade", "candidate_id", "title", "platform",
+                     "source_roles", "score", "准入理由", "confidence", "风险",
+                     "缺失字段", "下一步补采", "cluster_id", "rule_status"],
+                    [6, 7, 30, 46, 14, 20, 8, 60, 10, 30, 36, 40, 16, 26])
+        eligible = sorted([e for e in evaluations
+                           if e.track_id == tid and e.admission_status == "ELIGIBLE"],
+                          key=lambda e: -(e.score or 0))
+        for i, e in enumerate(eligible, 1):
+            ws.append([i, e.grade] + cand_cols(e) + [
+                e.score, "；".join(e.admission_reasons)[:300], e.confidence,
+                "；".join(e.risks)[:120], "、".join(e.missing_fields)[:150],
+                "；".join(e.refetch_tasks[:3]), e.cluster_id or "", e.rule_status])
+        ws.auto_filter.ref = ws.dimensions
+
+    ws = _sheet(wb, "跨赛道汇总",
+                ["candidate_id", "title", "platform",
+                 "趋势新品", "爆款改款", "长尾直接选品", "建议开发方式(待人审)"],
+                [30, 46, 14, 22, 22, 22, 26])
+    by_cand = {}
+    for e in evaluations:
+        by_cand.setdefault(e.subject_id, {})[e.track_id] = e
+    for cid, m in by_cand.items():
+        if not any(e.admission_status == "ELIGIBLE" for e in m.values()):
+            continue
+        p = by_id.get(cid)
+        def cell(tid):
+            e = m.get(tid)
+            if e is None:
+                return ""
+            return e.grade or e.admission_status
+        best = max((e for e in m.values() if e.grade),
+                   key=lambda e: e.score or 0, default=None)
+        ws.append([cid, p.basic_facts.get("title") if p else "",
+                   p.platform if p else "", cell("trend_new"),
+                   cell("hit_improvement"), cell("long_tail_direct"),
+                   best.recommended_development_mode if best else ""])
+    ws.auto_filter.ref = ws.dimensions
+
+    ws = _sheet(wb, "待补数据",
+                ["track", "candidate_id", "title", "缺失证据", "补采任务"],
+                [16, 30, 44, 60, 50])
+    for e in evaluations:
+        if e.admission_status == "PENDING_DATA":
+            p = by_id.get(e.subject_id)
+            ws.append([labels[e.track_id], e.subject_id,
+                       p.basic_facts.get("title") if p else "",
+                       "、".join(e.missing_fields)[:200],
+                       "；".join(e.refetch_tasks[:3])])
+    ws.auto_filter.ref = ws.dimensions
+
+    ws = _sheet(wb, "未准入与淘汰依据",
+                ["track", "candidate_id", "title", "淘汰依据", "evidence_refs"],
+                [16, 30, 44, 70, 36])
+    for e in evaluations:
+        if e.admission_status == "REJECTED":
+            p = by_id.get(e.subject_id)
+            ws.append([labels[e.track_id], e.subject_id,
+                       p.basic_facts.get("title") if p else "",
+                       "；".join(e.admission_reasons)[:250],
+                       ",".join(e.evidence_refs[:5])])
+    ws.auto_filter.ref = ws.dimensions
+
+    ws = _sheet(wb, "机会簇与跨平台相似",
+                ["cluster_id", "version", "代表款型", "关系类型", "confidence",
+                 "human_review", "成员数", "成员（candidate_id×source_group）"],
+                [16, 8, 30, 12, 11, 13, 8, 80])
+    for c in clusters:
+        ws.append([c["cluster_id"], c["cluster_version"], c["representative_style"],
+                   c["relation_type"], c["confidence"], c["human_review"],
+                   len(c["members"]),
+                   "；".join(f"{m['candidate_id']}({m['source_group']})"
+                             for m in c["members"][:8])])
+    ws.auto_filter.ref = ws.dimensions
+
+    ws = _sheet(wb, "数据源覆盖与角色",
+                ["source_group", "候选数", "roles", "趋势准入判定覆盖"],
+                [28, 10, 30, 22])
+    from collections import Counter as _C
+    grp = _C(p.context.get("source_group") for p in packets)
+    roles_of = {p.context.get("source_group"):
+                ",".join(p.context.get("source_roles") or []) for p in packets}
+    for g, n in grp.most_common():
+        ws.append([g, n, roles_of.get(g, ""), "100%（每候选三条赛道记录）"])
+
+    ws = _sheet(wb, "规则版本与运行记录", ["key", "value"], [36, 100])
+    for k, v in [("rule_version", tracks_cfg.get("rule_version")),
+                 ("rule_status", tracks_cfg.get("rule_status")),
+                 ("说明", "所有等级为校准态草案，业务金标与参数批准前不是正式生产等级"),
+                 ("evaluations", len(evaluations)),
+                 ("clusters", len(clusters)),
+                 ("l2_queues", json.dumps({k: len(v["l2_queue"]) for k, v in budgets.items()},
+                                          ensure_ascii=False)),
+                 ("l3_queues", json.dumps({k: len(v["l3_queue"]) for k, v in budgets.items()},
+                                          ensure_ascii=False)),
+                 ("待业务确认参数", "；".join(tracks_cfg.get(
+                     "pending_business_confirmation", [])))]:
+        ws.append([k, str(v)])
+    wb.save(path)
+    return path
 
 
 def export_report(path, packets: List[CandidateDataPacket],

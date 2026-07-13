@@ -63,6 +63,12 @@ CREATE TABLE IF NOT EXISTS llm_analyses (
     json TEXT,
     PRIMARY KEY (candidate_id, run_id, task_type)
 );
+CREATE TABLE IF NOT EXISTS track_evaluations (
+    run_id TEXT, subject_type TEXT, subject_id TEXT, track_id TEXT,
+    admission_status TEXT, grade TEXT, score REAL, confidence TEXT,
+    cluster_id TEXT, rule_status TEXT, rule_version TEXT, json TEXT,
+    PRIMARY KEY (run_id, subject_type, subject_id, track_id)
+);
 CREATE INDEX IF NOT EXISTS idx_results_grade ON results (run_id, grade, pct);
 CREATE INDEX IF NOT EXISTS idx_candidates_group ON candidates (run_id, source_group);
 CREATE INDEX IF NOT EXISTS idx_evidence_cand ON evidence (run_id, candidate_id);
@@ -140,6 +146,17 @@ class SelectionStore:
               json.dumps(r.to_dict(), ensure_ascii=False, default=str))
              for r in results.values()])
         c.commit()
+
+    def record_track_evaluations(self, run_id: str, evaluations):
+        self.conn.execute("DELETE FROM track_evaluations WHERE run_id=?", (run_id,))
+        self.conn.executemany(
+            "INSERT INTO track_evaluations VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+            [(e.run_id, e.subject_type, e.subject_id, e.track_id,
+              e.admission_status, e.grade, e.score, e.confidence,
+              e.cluster_id, e.rule_status, e.rule_version,
+              json.dumps(e.to_dict(), ensure_ascii=False, default=str))
+             for e in evaluations])
+        self.conn.commit()
 
     def record_llm_analysis(self, run_id: str, candidate_id: str, task_type: str,
                             model: str, ingested_at: str, payload: Dict[str, Any]):

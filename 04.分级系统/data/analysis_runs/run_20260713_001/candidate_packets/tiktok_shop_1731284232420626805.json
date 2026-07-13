@@ -1,0 +1,437 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "tiktok_shop_1731284232420626805",
+  "market": "US",
+  "platform": "tiktok_shop",
+  "primary_product_id": "1731284232420626805",
+  "canonical_url": "https://shop.tiktok.com/view/product/1731284232420626805",
+  "source_refs": [
+    {
+      "source_id": "tabcut",
+      "envelope_id": "envelope_tabcut_20260713"
+    },
+    {
+      "source_id": "echotik",
+      "envelope_id": "envelope_echotik_20260713"
+    }
+  ],
+  "basic_facts": {
+    "title": "ADDWIN 2026 New Fascia Ring R10 Mini Muscle Recovery Fascia Device upgraded adjustable strap fits Up to 55in waist, Cordless Rechargeable, Designed for Waist & Back Muscle Recovery portable massager parents gift summervibes",
+    "brand": null,
+    "category_path": [],
+    "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731284232420626805/17312842324206268050.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+    "price": {
+      "amount": 23.98,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.3,
+    "review_count": 9279.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": 66745.0,
+    "sales_7d_units": 26900.0,
+    "sales_floor_units": null,
+    "revenue_30d": null,
+    "gmv_7d": {
+      "amount": 2017400.0,
+      "currency": "USD"
+    },
+    "sales_growth_rate": 1.2904,
+    "favorites_count": null,
+    "bestseller_rank_text": null,
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [
+      {
+        "source_id": "tabcut",
+        "envelope_id": "envelope_tabcut_20260713",
+        "product_id": "1731284232420626805",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "echotik",
+        "envelope_id": "envelope_echotik_20260713",
+        "product_id": "1731284232420626805",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [],
+    "same_style_signals": []
+  },
+  "freshness": {
+    "listed_at": null,
+    "first_seen_at": null,
+    "last_seen_at": null,
+    "new_arrival_flag": null,
+    "collection_name": null,
+    "earliest_review_at": null,
+    "earliest_content_at": null,
+    "freshness_status": "unknown",
+    "novelty_status": "unknown",
+    "freshness_evidence_refs": [],
+    "novelty_evidence_refs": []
+  },
+  "style_attributes": {},
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "field_issues": [
+    {
+      "field_path": "primary_product_id",
+      "issue": "id_truncated_in_source",
+      "detail": "EchoTik 页面导出的 product_id 为截断值 17312842324206268...，已按前缀合并到完整 id",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "basic_facts.price",
+      "issue": "source_conflict",
+      "detail": "echotik 给出 {'amount': 69.99, 'currency': 'USD'}，与已有 {'amount': 23.98, 'currency': 'USD'} 不一致，保留先值",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_tabcut_000183",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=62",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000184",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=62",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000185",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=62",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000186",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=62",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000187",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.category_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=62",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000188",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=62",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000376",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000377",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 商品库页面价格（区间取下限）"
+    },
+    {
+      "evidence_id": "ev_echotik_000378",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.price_range",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000380",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000381",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000382",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_7d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 7 天销量（估算）"
+    },
+    {
+      "evidence_id": "ev_echotik_000383",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.gmv_7d",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000384",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.product_total_sales",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 商品累计销量（估算）"
+    },
+    {
+      "evidence_id": "ev_echotik_000385",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.affiliate_creator_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000386",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.shop_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=6",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "tiktok_shop_plugin",
+    "category_label": null,
+    "seasonal": false,
+    "source_roles": [
+      "transaction",
+      "content"
+    ],
+    "category_name": "美妆个护",
+    "price_range": {
+      "low": 69.99,
+      "high": 79.99,
+      "currency": "USD"
+    },
+    "product_total_sales": 127400.0,
+    "affiliate_creator_count": 826.0,
+    "shop_name": "AddWin Shop",
+    "profile": {
+      "产品英文标题": {
+        "value": "ADDWIN 2026 New Fascia Ring R10 Mini Muscle Recovery Fascia Device upgraded adjustable strap fits Up to 55in waist, Cordless Rechargeable, Designed for Waist & Back Muscle Recovery portable massager parents gift summervibes",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000183",
+          "ev_echotik_000376"
+        ]
+      },
+      "售价": {
+        "value": "23.98 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000184",
+          "ev_echotik_000377"
+        ]
+      },
+      "评分": {
+        "value": 4.3,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000380"
+        ]
+      },
+      "评论数": {
+        "value": 9279.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000381"
+        ]
+      },
+      "来源类目": {
+        "value": "美妆个护",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000187"
+        ]
+      },
+      "主图链接": {
+        "value": "https://cdn.tabcut.com/dataservice/media/item/1731284232420626805/17312842324206268050.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000188"
+        ]
+      },
+      "商品链接": {
+        "value": "https://shop.tiktok.com/view/product/1731284232420626805",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "tiktok_shop",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

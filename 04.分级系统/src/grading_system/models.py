@@ -114,6 +114,22 @@ class CandidateDataPacket:
             "matched_products": [], "platform_price_comparison": [],
             "same_style_signals": [],
         }
+        # 新鲜度与款型（三赛道改造新增；红线：first_seen_at 只代表系统首次观察，
+        # 不得冒充上架时间；页面新品标签≠市场款型新颖度，两者分字段保存）
+        self.freshness: Dict[str, Any] = {
+            "listed_at": None,            # 来源明确提供的上架/首次可售时间
+            "first_seen_at": None,        # 系统首次观察时间（仅观察事实）
+            "last_seen_at": None,
+            "new_arrival_flag": None,     # 页面明确新品标记/新品集合位置
+            "collection_name": None,
+            "earliest_review_at": None,
+            "earliest_content_at": None,
+            "freshness_status": "unknown",   # confirmed/inferred/unknown/old
+            "novelty_status": "unknown",     # 市场款型新颖度：confirmed/inferred/unknown/old
+            "freshness_evidence_refs": [],
+            "novelty_evidence_refs": [],
+        }
+        self.style_attributes: Dict[str, Any] = {}   # 廓形/材质/颜色/图案/长度/场景
         self.owned_supply_inputs: Dict[str, Any] = {
             "target_cost": None, "moq": None, "lead_time_days": None,
             "fabric_capability": [], "compliance_notes": [],
@@ -186,6 +202,8 @@ class CandidateDataPacket:
             "competition_metrics": self.competition_metrics,
             "product_opportunity": self.product_opportunity,
             "cross_platform": self.cross_platform,
+            "freshness": self.freshness,
+            "style_attributes": self.style_attributes,
             "owned_supply_inputs": self.owned_supply_inputs,
             "missing_fields": self.missing_fields,
             "field_issues": [i.to_dict() for i in self.field_issues],

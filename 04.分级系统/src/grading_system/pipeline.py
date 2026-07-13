@@ -56,6 +56,8 @@ def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any],
             sites=spec["sites"], column_map=spec["column_map"],
             category_label=spec["category_label"],
             seasonal=bool(spec.get("seasonal")), market=market,
+            track_hint=spec.get("track_hint"),
+            source_roles=spec.get("source_roles"),
             collection_mode="full_then_analyze", layer_hint="L1")
         envelopes.extend(adapter.collect())
     return envelopes
@@ -182,6 +184,23 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         "llm_usage": "无（全部为确定性规则；未编造任何数值）",
         "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
     }
+    # 6c. 三赛道独立评估（tracks.v1；legacy 单赛道结果保留为旧版兼容）
+    tracks_cfg_path = scoring_cfg_path.parent / "tracks_v1.yaml"
+    track_evals, clusters, track_budgets = [], [], {}
+    if tracks_cfg_path.exists():
+        from .track_eval import TrackEvaluator
+        tracks_cfg = load_yaml(tracks_cfg_path)
+        evaluator = TrackEvaluator(tracks_cfg, stats, out_dir.name)
+        track_evals, clusters, track_budgets = evaluator.run(packets)
+        with open(out_dir / "track_evaluations.jsonl", "w", encoding="utf-8") as f:
+            for e in track_evals:
+                f.write(json.dumps(e.to_dict(), ensure_ascii=False, default=str) + "\n")
+        dump_json({"clusters": clusters, "budgets": track_budgets},
+                  out_dir / "opportunity_clusters.json")
+        from .xlsx_report import export_track_report
+        export_track_report(out_dir / "三赛道选品推荐表.xlsx", packets,
+                            track_evals, clusters, track_budgets, tracks_cfg)
+
     # 7b. S/A/B 全量产品信息保留（含全部字段/证据/画像，供下游 152 键核对）
     with open(out_dir / "sab_products_full.jsonl", "w", encoding="utf-8") as f:
         for cid in sorted(sab_ids, key=lambda c: -(results[c].priority_score["pct"] or 0)):
@@ -315,6 +334,19 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     run_meta["llm_tasks_generated"] = n_tasks
     run_meta["deep_review_candidates"] = deep_ids
     run_meta["sab_full_retained"] = run_meta_sab
+    if track_evals:
+        from collections import Counter as _C
+        run_meta["tracks_v1"] = {
+            "rule_status": "calibration_pending_business_approval",
+            "evaluations": len(track_evals),
+            "per_track": {tid: dict(_C(e.admission_status for e in track_evals
+                                       if e.track_id == tid))
+                          for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
+            "eligible_grades": {tid: dict(_C(e.grade for e in track_evals
+                                             if e.track_id == tid and e.grade))
+                                for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
+            "clusters": len(clusters),
+        }
 
     # 11. 写入选品库（SQLite，跨 run 累积，供 agent CLI 查询）+ 运行记录落盘
     from .store import SelectionStore
@@ -322,6 +354,8 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         db_path = Path(__file__).resolve().parents[2] / "data" / "selection.db"
     store = SelectionStore(db_path)
     store.record_run(run_meta, envelopes, packets, results, dict(track_dist))
+    if track_evals:
+        store.record_track_evaluations(out_dir.name, track_evals)
     store.close()
     run_meta["db_path"] = str(db_path)
     dump_json(run_meta, out_dir / "run_meta.json")

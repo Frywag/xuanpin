@@ -82,7 +82,8 @@ class TabcutEchotikAdapter(BaseAdapter):
                 continue
             rec = products.setdefault(pid, {
                 "record_kind": "product", "product_id": pid,
-                "id_truncated": False, "fields": {}, "evidence": {},
+                "id_truncated": False, "source_roles": ["transaction", "content"],
+                "fields": {}, "evidence": {},
             })
             self._field(rec, "title", d.get("商品标题"), sheet, row)
             price = parse_number(d.get("价格"))
@@ -168,7 +169,8 @@ class TabcutEchotikAdapter(BaseAdapter):
             pid = strip_truncated_id(pid_raw)
             rec = {
                 "record_kind": "product", "product_id": pid,
-                "id_truncated": truncated, "fields": {}, "evidence": {},
+                "id_truncated": truncated, "source_roles": ["transaction"],
+                "fields": {}, "evidence": {},
             }
             row = r["_row"]
             self._field(rec, "title", r.get("product_name"), sheet, row)

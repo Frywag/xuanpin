@@ -86,6 +86,7 @@ class KalodataAdapter(BaseAdapter):
                 "record_kind": "product",
                 "product_id": pid,
                 "id_truncated": False,
+                "source_roles": ["transaction"],
                 "fields": {},
                 "evidence": {},
             }

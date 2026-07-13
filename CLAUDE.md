@@ -64,6 +64,17 @@ PYTHONPATH="04.分级系统/src" python3 -m grading_system.mcp_server
 4. 输出 JSON 归档到 `<out>/llm_outputs/`，渲染的 Markdown 放
    `<out>/deep_reviews/` 与 `<out>/选品分析报告.md`。
 
+## 三赛道模型（tracks.v1，校准态）
+
+自 v0.5 起分级采用三赛道独立管道（trend_new/hit_improvement/long_tail_direct）：
+每候选每 run 恰好 3 条 TrackEvaluation（ELIGIBLE/PENDING_DATA/REJECTED；
+PENDING/REJECTED 无正式等级），趋势新品不设销量等数据门槛，独立站按发现源
+参与。所有等级带 rule_status=calibration——业务金标批准前不是正式生产等级，
+待确认参数清单见 configs/tracks_v1.yaml。产物：三赛道选品推荐表.xlsx、
+track_evaluations.jsonl、opportunity_clusters.json；规则见
+01.分级标准参考/三赛道独立SAB分级_目标业务规则.md 与 docs/07。
+旧单赛道输出保留为 legacy。本项目不含商品立项/产品定义/组合与上市回流。
+
 ## 硬性红线（对所有 agent 生效，来自项目总纲）
 
 1. 不编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值；

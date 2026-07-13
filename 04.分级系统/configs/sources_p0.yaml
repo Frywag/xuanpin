@@ -18,6 +18,7 @@ plugin_sources:
 
 frontend_workbooks:
   - source_id: shein_frontend
+    source_roles: [transaction, voc, discovery]   # 来源角色多值（附三赛道规则 §6）
     workbook: 03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx
     category_label: women_dresses
     seasonal: false
@@ -42,6 +43,7 @@ frontend_workbooks:
       quality: 质量状态
 
   - source_id: indie_frontend
+    source_roles: [discovery]        # 款型发现源：不要求提供平台成交量
     workbook: 03.前端数据源/独立站.xlsx
     category_label: women_apparel_indie
     seasonal: false
@@ -64,6 +66,7 @@ frontend_workbooks:
       quality: 质量状态
 
   - source_id: patterned_tights_frontend
+    source_roles: [discovery]
     workbook: 03.前端数据源/patterned.xlsx
     category_label: patterned_tights
     seasonal: true                  # 秋冬品类，6 月采集处于淡季
@@ -89,6 +92,7 @@ frontend_workbooks:
       quality: 质量状态
 
   - source_id: halloween_frontend
+    source_roles: [discovery, voc]
     workbook: 03.前端数据源/halloween不带图片.xlsx
     category_label: halloween_decor
     seasonal: true                  # 万圣节强季节品，销售窗口 9-10 月

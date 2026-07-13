@@ -25,7 +25,8 @@ KEY_FIELDS = [
     "competition_metrics.commission_rate",
 ]
 
-# 需求信号字段（至少命中一个才算“有需求信号”）
+# [LEGACY] 旧单赛道管道的需求信号口径；三赛道管道使用 track_eval.SIGNAL_REGISTRY
+# （评分器与 Gate 共享同一注册表），本列表仅为旧输出兼容保留
 DEMAND_SIGNAL_FIELDS = [
     "market_metrics.sales_30d_units", "market_metrics.sales_7d_units",
     "market_metrics.sales_floor_units", "market_metrics.gmv_7d",
@@ -144,6 +145,7 @@ class PacketBuilder:
                 candidate_id=candidate_id, market=self.market,
                 platform=platform, primary_product_id=pid, canonical_url=url)
             packet.context["source_group"] = f"{platform}_plugin"
+            packet.context["source_roles"] = rec.get("source_roles") or []
             packets[candidate_id] = packet
         if rec.get("id_truncated"):
             packet.add_issue(
@@ -230,6 +232,7 @@ class PacketBuilder:
         packet.context["category_label"] = rec.get("category_label")
         packet.context["seasonal"] = bool(rec.get("seasonal"))
         packet.context["track_hint"] = rec.get("track_hint")
+        packet.context["source_roles"] = rec.get("source_roles") or []
         packet.context["site"] = site
         if rec.get("quality_status") and rec["quality_status"] != "VALID":
             packet.quality_status = rec["quality_status"]
