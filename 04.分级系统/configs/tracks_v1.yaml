@@ -18,6 +18,11 @@ tracks:
       # 明确不设任何数据门槛：销量/销售额/评论/收藏/达人/增长率/畅销榜
       data_gates: none
       reject_only_if: [confirmed_old_product, confirmed_old_style]
+      # 硬性保证：以下信号在趋势赛道的准入与评分中一律不得读取——
+      # 独立站等发现源必须与交易平台公平竞争趋势 S/A/B（业务确认 2026-07-13）
+      forbidden_signals: [rating, review_count, sales_30d_units, sales_7d_units,
+                          sales_floor_units, gmv_7d, revenue_30d, favorites_count,
+                          sales_growth_rate, bestseller_rank_as_demand]
     scoring_dims_draft:   # 维度优先级已确认，权重为草案（待金标校准）
       freshness_credibility: 30
       cross_platform_resonance: 25   # 多平台相似=加权项而非准入项
@@ -30,6 +35,12 @@ tracks:
     l3_budget_draft: 5
     refetch_focus: [上架时间与新品标签, 跨平台同款式召回, 图片属性相似证据,
                     TikTok内容发布时间与创作者广度, 相似款新增时间序列]
+    # 补采分层（业务确认 2026-07-13）：评论不属于趋势赛道 L1/L2 —
+    # 评论全量采集与分析后置为 L3 终选验证事项（且主要服务改款赛道）
+    l2_focus: [上架时间与新品标签, 跨平台同款式召回, 图片属性相似证据,
+               TikTok内容发布时间与创作者广度]
+    l3_focus: [相似款新增时间序列, 目标平台机会验证, 评论全量采集与分析(终选验证),
+               IP与季节窗口人工确认]
 
   hit_improvement:
     label: 爆款改款

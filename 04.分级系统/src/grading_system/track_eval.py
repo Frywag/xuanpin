@@ -220,6 +220,15 @@ class TrackEvaluator:
         return below / len(peers)
 
     # ---------- 赛道一：趋势新品 ----------
+    # 硬性保证（业务确认 2026-07-13）：本方法不得读取 rating/review_count/
+    # 销量/GMV/收藏/增长率/畅销榜等数据点位——独立站等发现源与交易平台
+    # 公平竞争趋势 S/A/B；评论全量采集与分析后置为 L3 终选验证事项。
+    TREND_FORBIDDEN_PATHS = (
+        "basic_facts.rating", "basic_facts.review_count",
+        "market_metrics.sales_30d_units", "market_metrics.sales_7d_units",
+        "market_metrics.sales_floor_units", "market_metrics.gmv_7d",
+        "market_metrics.revenue_30d", "market_metrics.favorites_count",
+        "market_metrics.sales_growth_rate")
 
     def eval_trend_new(self, p: CandidateDataPacket,
                        cluster_id: Optional[str]) -> TrackEvaluation:
@@ -248,7 +257,8 @@ class TrackEvaluator:
             return self._mk(p, "trend_new", "PENDING_DATA",
                             reasons + [f"缺：{m}" for m in missing],
                             missing_fields=missing,
-                            refetch_tasks=self.cfg["tracks"]["trend_new"]["refetch_focus"],
+                            refetch_tasks=self.cfg["tracks"]["trend_new"].get(
+                                "l2_focus", self.cfg["tracks"]["trend_new"]["refetch_focus"]),
                             cluster_id=cluster_id)
         # ELIGIBLE：草案评分（多平台相似/内容只加权）
         dims = self.cfg["tracks"]["trend_new"]["scoring_dims_draft"]
@@ -281,7 +291,8 @@ class TrackEvaluator:
             "trend_new", pct), score=pct, components=comps,
             evidence_refs=sorted(set(ev)), confidence="medium",
             cluster_id=cluster_id,
-            refetch_tasks=self.cfg["tracks"]["trend_new"]["refetch_focus"])
+            refetch_tasks=self.cfg["tracks"]["trend_new"].get(
+                "l3_focus", self.cfg["tracks"]["trend_new"]["refetch_focus"]))
 
     # ---------- 赛道二：爆款改款 ----------
 

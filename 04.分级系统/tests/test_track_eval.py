@@ -161,3 +161,45 @@ class TestLongTailAndBudgets:
         assert set(budgets) == set(TRACK_IDS)
         for tid in TRACK_IDS:
             assert set(budgets[tid]) == {"l2_queue", "l3_queue"}
+
+
+class TestTrendFairness:
+    """业务确认（2026-07-13）：趋势赛道不要求评论等数据点位，
+    独立站与交易平台公平竞争；评论全量采集与分析后置 L3。"""
+
+    def _fresh(self, p):
+        p.freshness.update({"freshness_status": "confirmed",
+                            "new_arrival_flag": "page_new_arrival",
+                            "novelty_status": "confirmed",
+                            "freshness_evidence_refs": ["ev_f"],
+                            "novelty_evidence_refs": ["ev_n"]})
+        return p
+
+    def test_reviews_and_sales_do_not_affect_trend_result(self):
+        """同一候选带不带评论/销量，趋势准入与分数必须完全一致。"""
+        bare = self._fresh(base_packet("fa1", group="indie_frontend"))
+        rich = self._fresh(base_packet("fa1", group="indie_frontend"))
+        rich.set_fact("basic_facts", "rating", 4.9, ev("basic_facts.rating", "ev_r"))
+        rich.set_fact("basic_facts", "review_count", 5000,
+                      ev("basic_facts.review_count", "ev_rc"))
+        rich.set_fact("market_metrics", "sales_30d_units", 99999,
+                      ev("market_metrics.sales_30d_units", "ev_s"))
+        e1 = make_evaluator([bare]).eval_trend_new(bare, None)
+        e2 = make_evaluator([rich]).eval_trend_new(rich, None)
+        assert (e1.admission_status, e1.grade, e1.score) \
+            == (e2.admission_status, e2.grade, e2.score)
+
+    def test_indie_can_reach_top_grades_without_reviews(self):
+        """独立站无评论无销量，凭新款证据+设计细节+机会簇可公平竞争高等级。"""
+        p = self._fresh(base_packet("fa2", group="indie_frontend"))
+        p.context["design_signals"] = [{"kind": "design_details", "text": "wrap maxi"}]
+        p.add_evidence(ev("context.design_signals", "ev_d"), "context.design_signals")
+        e = make_evaluator([p]).eval_trend_new(p, cluster_id="clu_x")
+        assert e.admission_status == "ELIGIBLE"
+        assert e.grade in ("S", "A")   # 不因缺评论/销量被压制
+
+    def test_review_collection_deferred_to_l3(self):
+        """趋势赛道 L2 补采不含评论；评论出现在 L3 终选验证清单。"""
+        tcfg = CFG["tracks"]["trend_new"]
+        assert not any("评论" in x for x in tcfg["l2_focus"])
+        assert any("评论" in x for x in tcfg["l3_focus"])
