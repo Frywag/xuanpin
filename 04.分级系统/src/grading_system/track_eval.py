@@ -25,7 +25,7 @@ import re
 from collections import defaultdict
 from typing import Any, Dict, List, Optional
 
-from .models import CandidateDataPacket
+from .models import CandidateDataPacket, EvidenceRef
 from .scoring import GroupStats, eval_bands, percentile
 
 # ================= 统一信号注册表（评分与 Gate 共用同一口径） =================
@@ -206,6 +206,41 @@ class TrackEvaluator:
             return cap
         return g
 
+    def _risk_penalty(self, dims: Dict[str, Any], risks: List[str]) -> float:
+        """风险扣减（草案）：每条已登记风险按 risk_floor 的 1/3 扣，扣满为止。"""
+        if not risks:
+            return 0.0
+        return dims.get("risk_floor", 0) * min(1.0, len(risks) / 3)
+
+    def _apply_business_confirmations(self, packets: List[CandidateDataPacket]):
+        """业务确认证据通道（规则 §7.3 A.6/B.3）：configs/business_confirmations.yaml
+        中人工登记的确认作为合法证据写入 packet.freshness（confirmed/old），
+        confirmed 走确证准入，old 触发 REJECTED；每条确认生成可追溯 EvidenceRef。"""
+        entries = (self.cfg.get("business_confirmations") or {}).get("confirmations") or []
+        if not entries:
+            return
+        by_cid = {p.candidate_id: p for p in packets}
+        for i, ent in enumerate(entries):
+            p = by_cid.get(ent.get("candidate_id"))
+            field = ent.get("field")            # freshness | novelty
+            status = ent.get("status")          # confirmed | old
+            if p is None or field not in ("freshness", "novelty") \
+                    or status not in ("confirmed", "old"):
+                continue
+            eid = f"ev_bizconfirm_{p.candidate_id}_{field}"
+            ref = EvidenceRef(eid, "business_confirmation", "manual",
+                              "business_confirmations.yaml", f"freshness.{field}",
+                              "04.分级系统/configs/business_confirmations.yaml",
+                              f"confirmations[{i}]", confidence="high",
+                              note=ent.get("note", "业务确认"))
+            p.add_evidence(ref, f"freshness.{field}")
+            if field == "freshness":
+                p.freshness["freshness_status"] = status
+                p.freshness.setdefault("freshness_evidence_refs", []).append(eid)
+            else:
+                p.freshness["novelty_status"] = status
+                p.freshness.setdefault("novelty_evidence_refs", []).append(eid)
+
     def _txn_percentile(self, p) -> Optional[float]:
         """交易信号在同组内的相对位置（0-1）；用于「适量销量」相对口径。"""
         group = p.context.get("source_group") or p.platform
@@ -300,19 +335,45 @@ class TrackEvaluator:
             comps.append({"name": "跨平台款型共振(召回级)", "score": pts,
                           "max": dims["cross_platform_resonance"]})
             score += pts
+        else:
+            comps.append({"name": "跨平台款型共振(召回级)", "score": 0,
+                          "max": dims["cross_platform_resonance"],
+                          "note": "留槽：未命中机会簇（加权项非门槛）"})
         if p.market_metrics.get("trend_signals") or _has(p, "market_metrics.video_views_max"):
             pts = dims["content_diffusion"] * 0.5
             comps.append({"name": "内容扩散", "score": pts, "max": dims["content_diffusion"]})
             score += pts
             ev += p.evidence_for("context.trend_tags") + p.evidence_for(
                 "market_metrics.video_views_max")
+        else:
+            comps.append({"name": "内容扩散", "score": 0,
+                          "max": dims["content_diffusion"],
+                          "note": "留槽：本轮无内容信号，补证后计分"})
         if p.context.get("design_signals") or p.style_attributes:
             pts = dims["style_definability"] * 0.7
             comps.append({"name": "款型可定义性", "score": pts,
                           "max": dims["style_definability"]})
             score += pts
             ev += p.evidence_for("context.design_signals")
-        pct = round(score / sum(v for k, v in dims.items() if k != "risk_floor") * 100, 1)
+        else:
+            comps.append({"name": "款型可定义性", "score": 0,
+                          "max": dims["style_definability"],
+                          "note": "留槽：缺设计元素/款型属性证据"})
+        # 目标市场适配（价格带代理，草案）：价格不是趋势赛道禁读信号；
+        # 缺价格按留槽 0 分处理（不淘汰）
+        price = _get(p, "basic_facts.price")
+        if isinstance(price, dict) and price.get("amount") is not None:
+            pos = self.stats.price_position(p)
+            pts = dims["market_fit"] * (0.7 if pos == "within_p25_p75" else 0.3)
+            comps.append({"name": "目标市场适配(价格带代理)", "score": round(pts, 1),
+                          "max": dims["market_fit"]})
+            score += pts
+            ev += p.evidence_for("basic_facts.price")
+        else:
+            comps.append({"name": "目标市场适配(价格带代理)", "score": 0,
+                          "max": dims["market_fit"], "note": "留槽：缺价格"})
+        pct = round(max(0.0, score)
+                    / sum(v for k, v in dims.items() if k != "risk_floor") * 100, 1)
         provisional = bool(prov_notes)
         return self._mk(p, "trend_new", "ELIGIBLE", reasons, grade=self._grade_from(
             "trend_new", pct, cap=prov.get("grade_cap") if provisional else None),
@@ -344,7 +405,7 @@ class TrackEvaluator:
             reasons.append("有交易信号但低于「适量」草案分位")
         else:
             missing.append("交易类需求证据（销量/GMV/评论积累）")
-        # ② 评分偏低（相对+样本量）
+        # ② 评分偏低（相对口径优先 + 绝对警戒线兜底 + 样本量，均为草案）
         rating = _get(p, "basic_facts.rating")
         rc = _get(p, "basic_facts.review_count") or 0
         low_cfg = tcfg["low_rating_draft"]
@@ -355,8 +416,20 @@ class TrackEvaluator:
             missing.append(f"评分样本不足（评论 {rc:.0f} < {low_cfg['min_review_sample']}，"
                            "低分可能是小样本噪音）")
         else:
-            low_rating = rating <= low_cfg["absolute_ceiling"]
-            reasons.append(f"评分 {rating}（样本 {rc:.0f}）"
+            # 相对口径：低于同组（平台/来源组）评分分位（规则 §8.4，样本≥8 才启用）
+            group = p.context.get("source_group") or p.platform
+            peer_ratings = sorted(
+                r for q in self._peers.get(group, [])
+                if (r := _get(q, "basic_facts.rating")) is not None)
+            rel_low, rel_note = None, ""
+            if len(peer_ratings) >= 8:
+                idx = max(0, int(len(peer_ratings)
+                                 * low_cfg.get("relative_percentile", 0.25)) - 1)
+                p_low = peer_ratings[idx]
+                rel_low = rating <= p_low
+                rel_note = f"，组内p{int(low_cfg.get('relative_percentile', 0.25)*100)}={p_low}"
+            low_rating = bool(rel_low) or rating <= low_cfg["absolute_ceiling"]
+            reasons.append(f"评分 {rating}（样本 {rc:.0f}{rel_note}）"
                            + ("显著偏低" if low_rating else "未显著偏低"))
         # ③ 负面聚类较多
         clusters = p.product_opportunity.get("negative_review_clusters") or []
@@ -394,10 +467,27 @@ class TrackEvaluator:
         # 三项联合成立（或占位豁免）-> ELIGIBLE
         dims = self.cfg["tracks"]["hit_improvement"]["scoring_dims_draft"]
         base = sum(v for k, v in dims.items() if k != "risk_floor")
-        score = (dims["demand_validated"] * min(1.0, (txn_pct or 0.5) + 0.3)
-                 + dims["pain_intensity"] * min(1.0, n_clusters / 4)
-                 + dims["fixability"] * 0.6)
-        pct = round(score / base * 100, 1)
+        d_demand = dims["demand_validated"] * min(1.0, (txn_pct or 0.5) + 0.3)
+        d_pain = dims["pain_intensity"] * min(1.0, n_clusters / 4)
+        d_fix = dims["fixability"] * 0.6
+        comps = [
+            {"name": "需求已验证程度", "score": round(d_demand, 1),
+             "max": dims["demand_validated"]},
+            {"name": "痛点强度(聚类数量)", "score": round(d_pain, 1),
+             "max": dims["pain_intensity"],
+             **({"note": "留槽：负面聚类占位豁免，待评论全文回补"}
+                if not n_clusters else {})},
+            {"name": "可改性(草案系数)", "score": round(d_fix, 1),
+             "max": dims["fixability"]},
+            {"name": "改后差异化", "score": 0,
+             "max": dims["differentiation_after_fix"],
+             "note": "留槽：L2/L3 改良方案评审后计分"},
+            {"name": "竞争与价格空间", "score": 0,
+             "max": dims["competition_price_room"],
+             "note": "留槽：L2/L3 竞品比对后计分"},
+        ]
+        score = d_demand + d_pain + d_fix
+        pct = round(max(0.0, score) / base * 100, 1)
         ev = (p.evidence_for("basic_facts.rating")
               + p.evidence_for("context.review_tags_raw")
               + [e for c in clusters for e in c.get("evidence_refs", [])])
@@ -407,7 +497,7 @@ class TrackEvaluator:
                             "hit_improvement", pct,
                             cap=prov.get("grade_cap") if provisional else None),
                         score=pct,
-                        components=[{"name": "三项联合准入", "score": pct, "max": 100}],
+                        components=comps,
                         evidence_refs=sorted(set(ev)),
                         confidence="low" if provisional else "medium",
                         missing_fields=missing,
@@ -467,11 +557,32 @@ class TrackEvaluator:
         else:
             pos = self.stats.price_position(p)
             price_factor = 1.0 if pos == "within_p25_p75" else 0.5
-        score = (dims["demand_stability"] * min(1.0, txn_pct + 0.3)
-                 + dims["competition_breakthrough"] * 0.5
-                 + dims["price_profit_structure"] * price_factor
-                 + dims["fact_completeness"] * min(1.0, len(p.evidence_pack) / 10))
-        pct = round(score / base * 100, 1)
+        d_demand = dims["demand_stability"] * min(1.0, txn_pct + 0.3)
+        d_comp = dims["competition_breakthrough"] * 0.5
+        d_price = dims["price_profit_structure"] * price_factor
+        d_fact = dims["fact_completeness"] * min(1.0, len(p.evidence_pack) / 10)
+        penalty = self._risk_penalty(dims, risks)   # 风险扣减（草案）
+        comps = [
+            {"name": "需求稳定性", "score": round(d_demand, 1),
+             "max": dims["demand_stability"]},
+            {"name": "竞争可突破", "score": round(d_comp, 1),
+             "max": dims["competition_breakthrough"],
+             "note": "中性占位0.5：竞争结构字段当前源结构性缺失，补证后计分"},
+            {"name": "价格带与利润结构"
+             + ("(缺价格占位)" if price_missing else ""),
+             "score": round(d_price, 1), "max": dims["price_profit_structure"]},
+            {"name": "事实完整度", "score": round(d_fact, 1),
+             "max": dims["fact_completeness"]},
+            {"name": "直接承接可行性", "score": 0,
+             "max": dims["direct_feasibility"],
+             "note": "留槽：L2/L3 供应/成本/MOQ 事实回补后计分"},
+        ]
+        if penalty:
+            comps.append({"name": "风险扣减(草案)", "score": round(penalty, 1),
+                          "max": dims.get("risk_floor", 0),
+                          "note": "；".join(risks)[:120]})
+        score = d_demand + d_comp + d_price + d_fact + penalty
+        pct = round(max(0.0, score) / base * 100, 1)
         ev = p.evidence_for("basic_facts.price") + p.evidence_for(
             "basic_facts.review_count")
         for s in SIGNAL_REGISTRY["transaction"][:5]:
@@ -483,8 +594,7 @@ class TrackEvaluator:
                             cap=prov.get("grade_cap_if_missing_price")
                             if provisional else None),
                         score=pct,
-                        components=[{"name": "稳定需求×竞争×价格结构", "score": pct,
-                                     "max": 100}],
+                        components=comps,
                         evidence_refs=sorted(set(ev)),
                         confidence="low" if provisional else "medium",
                         risks=risks,
@@ -502,6 +612,8 @@ class TrackEvaluator:
             self._peers[p.context.get("source_group") or p.platform].append(p)
         for p in packets:
             assess_freshness(p)
+        # 业务确认证据（人工登记，见 configs/business_confirmations.yaml）
+        self._apply_business_confirmations(packets)
         clusters = build_opportunity_clusters(packets, self.cfg, self.run_id)
         cluster_of = {}
         for c in clusters:

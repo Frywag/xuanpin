@@ -1,0 +1,327 @@
+{
+  "task_type": "profile_extraction",
+  "candidate_id": "freepeople_108262288",
+  "run_id": "run_20260714_003",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只依据 inputs.text 中的真实文本判断，不得使用外部知识补全事实",
+    "带 vocab 的键取值必须严格从词表中选择；判断不了就进 missing_fields",
+    "multi 键可给列表；每个键必须带 evidence_refs 与 confidence"
+  ],
+  "inputs": {
+    "key_set": "womenswear",
+    "keys": {
+      "服饰大类": {
+        "vocab": [
+          "上装",
+          "下装",
+          "连衣裙",
+          "外套",
+          "内衣",
+          "睡衣",
+          "泳装",
+          "运动服",
+          "配饰"
+        ]
+      },
+      "产品小类": {
+        "vocab_open": true,
+        "hint": "T-shirt/Dress/Blouse/Leggings/Hoodie/Bra 等"
+      },
+      "适用性别": {
+        "vocab": [
+          "Women",
+          "Men",
+          "Girls",
+          "Boys",
+          "Baby",
+          "Unisex"
+        ]
+      },
+      "款式风格": {
+        "vocab": [
+          "Casual",
+          "Elegant",
+          "Sexy",
+          "Boho",
+          "Streetwear",
+          "Business",
+          "Sporty",
+          "Vintage"
+        ]
+      },
+      "版型": {
+        "vocab": [
+          "Slim Fit",
+          "Regular Fit",
+          "Loose Fit",
+          "Oversized"
+        ]
+      },
+      "廓形": {
+        "vocab": [
+          "A-line",
+          "Straight",
+          "Bodycon",
+          "Wide Leg",
+          "Flare"
+        ]
+      },
+      "裙长": {
+        "vocab": [
+          "Mini",
+          "Midi",
+          "Maxi"
+        ]
+      },
+      "领型": {
+        "vocab": [
+          "Crew Neck",
+          "V Neck",
+          "Square Neck",
+          "Halter",
+          "Collared",
+          "One Shoulder"
+        ]
+      },
+      "袖长": {
+        "vocab": [
+          "Sleeveless",
+          "Short Sleeve",
+          "Long Sleeve"
+        ]
+      },
+      "开合方式": {
+        "vocab": [
+          "Pullover",
+          "Button",
+          "Zipper",
+          "Tie",
+          "Snap"
+        ]
+      },
+      "装饰元素": {
+        "vocab": [
+          "Lace",
+          "Ruffle",
+          "Bow",
+          "Sequin",
+          "Embroidery",
+          "Cutout",
+          "Print"
+        ],
+        "multi": true
+      },
+      "图案类型": {
+        "vocab": [
+          "Solid",
+          "Floral",
+          "Striped",
+          "Plaid",
+          "Graphic"
+        ],
+        "multi": true
+      },
+      "适用场景": {
+        "vocab": [
+          "日常",
+          "通勤",
+          "派对",
+          "度假",
+          "运动",
+          "居家",
+          "婚礼",
+          "校园"
+        ],
+        "multi": true
+      },
+      "适用季节": {
+        "vocab": [
+          "Spring",
+          "Summer",
+          "Fall",
+          "Winter",
+          "All Season"
+        ],
+        "multi": true
+      },
+      "节日属性": {
+        "vocab_open": true,
+        "hint": "Christmas/Halloween/Valentine's Day/Independence Day 或 无"
+      },
+      "面料类型": {
+        "vocab": [
+          "Knit",
+          "Woven",
+          "Denim",
+          "Chiffon",
+          "Satin",
+          "Fleece",
+          "Mesh",
+          "Silicone"
+        ]
+      },
+      "弹力": {
+        "vocab": [
+          "无弹",
+          "微弹",
+          "高弹",
+          "四面弹"
+        ]
+      }
+    },
+    "text": {
+      "title": "Raven Solid Convertible Maxi Skirt",
+      "title_cn": "Raven Solid Convertible 长款半身裙",
+      "category_name": "Maxi Skirts",
+      "category_path": [],
+      "design_signals": [
+        {
+          "kind": "design_details",
+          "text": "Measurements for size small: Hips: 29 in; Waist: 23 in; Length: 40.5 in"
+        }
+      ],
+      "trend_tags": null,
+      "review_tags_raw": null
+    }
+  },
+  "allowed_evidence_ids": [
+    "ev_indie_frontend_003227",
+    "ev_indie_frontend_003228",
+    "ev_indie_frontend_003229",
+    "ev_indie_frontend_003237"
+  ],
+  "output_schema": {
+    "profile": {
+      "服饰大类": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "产品小类": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用性别": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "款式风格": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "版型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "廓形": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "裙长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "领型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "袖长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "开合方式": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "装饰元素": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "图案类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用场景": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用季节": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "节日属性": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "面料类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "弹力": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    },
+    "missing_fields": [
+      "输入文本不足以判断的键，逐个列出"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

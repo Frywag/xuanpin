@@ -1,0 +1,121 @@
+{
+  "task_type": "cross_platform_compare",
+  "candidate_id": "tiktok_shop_1731406217255686451",
+  "run_id": "run_20260714_003",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只比较 inputs 里已有的 matched_products 与价格带，不得凭空找同款",
+    "不得把不同币种的价格直接换算比较"
+  ],
+  "inputs": {
+    "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+    "platform": "tiktok_shop",
+    "matched_products": [
+      {
+        "source_id": "kalodata",
+        "envelope_id": "envelope_kalodata_20260714",
+        "product_id": "1731406217255686451",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "tabcut",
+        "envelope_id": "envelope_tabcut_20260714",
+        "product_id": "1731406217255686451",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [
+      {
+        "style_group": "intimates",
+        "source_group": "候选自身（tiktok_shop）",
+        "currency": "CNY",
+        "n": 1,
+        "p25": 108.51,
+        "p50": 108.51,
+        "p75": 108.51,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "intimates",
+        "source_group": "tiktok_shop_plugin",
+        "currency": "CNY",
+        "n": 9,
+        "p25": 184.97,
+        "p50": 201.66,
+        "p75": 239.73,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "tiktok_shop_plugin 语料中有 6 款标题命中相同风格词 ['bra', 'bras']",
+        "kind": "style_token_overlap",
+        "count": 6,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ],
+    "note": "不同来源币种不同且未换算；同风格信号不构成同款结论"
+  },
+  "allowed_evidence_ids": [
+    "ev_kalodata_000003",
+    "ev_kalodata_000004",
+    "ev_kalodata_000005",
+    "ev_kalodata_000008",
+    "ev_kalodata_000009",
+    "ev_kalodata_000010",
+    "ev_kalodata_000011",
+    "ev_kalodata_000012",
+    "ev_kalodata_000013",
+    "ev_kalodata_000014",
+    "ev_kalodata_000076",
+    "ev_kalodata_000077",
+    "ev_kalodata_000078",
+    "ev_kalodata_000079",
+    "ev_kalodata_000080",
+    "ev_kalodata_000081",
+    "ev_kalodata_000082",
+    "ev_kalodata_000083",
+    "ev_kalodata_000084",
+    "ev_kalodata_000085",
+    "ev_kalodata_000086",
+    "ev_kalodata_000087",
+    "ev_kalodata_000088",
+    "ev_tabcut_000130",
+    "ev_tabcut_000131",
+    "ev_tabcut_000132",
+    "ev_tabcut_000133",
+    "ev_tabcut_000135",
+    "ev_tabcut_000240",
+    "ev_tabcut_000241",
+    "ev_tabcut_000242",
+    "ev_tabcut_000243",
+    "ev_tabcut_000244"
+  ],
+  "output_schema": {
+    "platform_priority": "str（平台 id）",
+    "red_ocean_level": "high|medium|low",
+    "differentiation_space": [
+      "str"
+    ],
+    "final_suggestion": "str",
+    "claims": [
+      {
+        "claim": "str",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

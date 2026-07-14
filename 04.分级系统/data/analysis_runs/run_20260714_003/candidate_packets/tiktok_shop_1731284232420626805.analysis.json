@@ -1,0 +1,164 @@
+{
+  "schema_version": "analysis.result.v1",
+  "analysis_id": "analysis_tiktok_shop_1731284232420626805",
+  "candidate_id": "tiktok_shop_1731284232420626805",
+  "market": "US",
+  "layer_results": {
+    "L1": {
+      "passed": true,
+      "score": 62.2,
+      "grade": "S",
+      "gate_reason": "PScore 37.3/60.0（62.2%）-> S",
+      "required_next_data": []
+    },
+    "L2": {
+      "passed": true,
+      "score": 62.2,
+      "grade": "S",
+      "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+      "required_next_data": [
+        "reviews_or_review_tags"
+      ]
+    },
+    "L3": {
+      "passed": true,
+      "score": 62.2,
+      "grade": "S",
+      "gate_reason": "2 个数据源按商品ID互验（tabcut、echotik）；候选来自 TikTok Shop 数据源，维持原平台优先",
+      "required_next_data": [
+        "供应链字段人工调查（选品后画像存库用，不参与打分）"
+      ]
+    }
+  },
+  "priority_score": {
+    "total": 37.3,
+    "achievable_max": 60.0,
+    "pct": 62.2,
+    "grade": "S",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 28.8,
+        "max_score": 30.0,
+        "reason": "量级信号 sales_7d_units=26,900 -> 15分；销量/销售额增长率 +129.0% -> 6分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_echotik_000382",
+          "ev_tabcut_000186"
+        ],
+        "missing": false
+      },
+      {
+        "name": "竞争可突破",
+        "score": 5.2,
+        "max_score": 15.0,
+        "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_echotik_000377",
+          "ev_echotik_000381",
+          "ev_tabcut_000184"
+        ],
+        "missing": false
+      },
+      {
+        "name": "产品机会",
+        "score": 6.0,
+        "max_score": 15.0,
+        "reason": "评分4.3（低于类目P25_有明确改良空间）-> 8分",
+        "evidence_refs": [
+          "ev_echotik_000380"
+        ],
+        "missing": false
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max_score": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「AddWin Shop」品牌词出现在标题中（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_echotik_000386"
+        ],
+        "missing": false
+      }
+    ],
+    "track": "trend_rising",
+    "track_label": "趋势上升款"
+  },
+  "track_tags": [
+    "趋势上升款",
+    "痛点改良款"
+  ],
+  "recommendation": {
+    "decision": "recommend_research",
+    "reason_summary": "市场需求：量级信号 sales_7d_units=26,900 -> 15分；销量/销售额增长率 +129.0% -> 6分；2个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分",
+    "risk_summary": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「AddWin Shop」品牌词出现在标题中（人工待确认）",
+    "next_actions": [
+      "进入立项讨论；补齐供应链输入后人审",
+      "L3 完成，等待供应链输入与人审"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "市场需求：量级信号 sales_7d_units=26,900 -> 15分；销量/销售额增长率 +129.0% -> 6分；2个独立需求证据源",
+      "claim_type": "demand",
+      "evidence_refs": [
+        "ev_echotik_000382",
+        "ev_tabcut_000186"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+      "claim_type": "competition",
+      "evidence_refs": [
+        "ev_echotik_000377",
+        "ev_echotik_000381",
+        "ev_tabcut_000184"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分",
+      "claim_type": "product",
+      "evidence_refs": [
+        "ev_echotik_000380"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「AddWin Shop」品牌词出现在标题中（人工待确认）",
+      "claim_type": "risk",
+      "evidence_refs": [
+        "ev_echotik_000386"
+      ],
+      "confidence": "low"
+    },
+    {
+      "claim": "多源互验：tabcut、echotik 按商品ID匹配到同一商品",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_tabcut_000183",
+        "ev_echotik_000376"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "平台优先级：tiktok_shop（候选来自 TikTok Shop 数据源，维持原平台优先）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_tabcut_000183",
+        "ev_echotik_000376"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "blocked_reasons": [],
+  "confidence": "high",
+  "created_at": "2026-07-14T16:19:44+00:00"
+}

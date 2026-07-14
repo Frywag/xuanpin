@@ -317,6 +317,107 @@ class TestTrendFairness:
             == (e2.admission_status, e2.grade, e2.score)
 
 
+class TestBusinessConfirmationChannel:
+    """规则 §7.3 A.6/B.3：业务人员确认是合法证据（configs/business_confirmations.yaml）。"""
+
+    def _cfg_with(self, entries):
+        c = copy.deepcopy(CFG)
+        c["business_confirmations"] = {"confirmations": entries}
+        return c
+
+    def test_confirmed_novelty_and_freshness_upgrade_to_confirmed_basis(self):
+        p = base_packet("bc1")
+        cfg = self._cfg_with([
+            {"candidate_id": "bc1", "field": "freshness", "status": "confirmed",
+             "note": "业务确认近期推出"},
+            {"candidate_id": "bc1", "field": "novelty", "status": "confirmed",
+             "note": "业务确认新款型"}])
+        evals, _, _ = TrackEvaluator(cfg, GroupStats([p]), "run_t").run([p])
+        e = next(x for x in evals if x.track_id == "trend_new")
+        assert e.admission_status == "ELIGIBLE"
+        assert e.admission_basis == "confirmed"      # 不再是占位
+        assert any(r.startswith("ev_bizconfirm_") for r in e.evidence_refs)
+
+    def test_confirmed_old_style_is_rejected(self):
+        p = base_packet("bc2")
+        cfg = self._cfg_with([
+            {"candidate_id": "bc2", "field": "novelty", "status": "old",
+             "note": "业务确认旧款型"}])
+        evals, _, _ = TrackEvaluator(cfg, GroupStats([p]), "run_t").run([p])
+        e = next(x for x in evals if x.track_id == "trend_new")
+        assert e.admission_status == "REJECTED"
+
+
+class TestScoringDimsCoverage:
+    """规则 §7.6/§8.5/§9.3：声明的评分维度必须全部出现在评分明细
+    （已计分或留槽 0 分标注），保证每个分数可解释（§16.8）。"""
+
+    def test_trend_components_cover_all_dims(self):
+        p = base_packet("dc1")
+        p.set_fact("basic_facts", "price", {"amount": 25.0, "currency": "USD"},
+                   ev("basic_facts.price", "ev_dc1_p"))
+        e = make_evaluator([p]).eval_trend_new(p, None)
+        names = "".join(c["name"] for c in e.components)
+        for kw in ("新鲜度", "共振", "内容扩散", "可定义", "市场适配"):
+            assert kw in names, f"趋势评分明细缺维度：{kw}"
+        fit = next(c for c in e.components if "市场适配" in c["name"])
+        assert fit["score"] > 0        # 有价格即计分（价格带代理）
+
+    def test_hit_components_cover_all_dims(self):
+        p = base_packet("dc2", group="shein_frontend", roles=("transaction", "voc"))
+        p.set_fact("market_metrics", "sales_floor_units", 800,
+                   ev("market_metrics.sales_floor_units", "ev_dc2_s"))
+        p.set_fact("basic_facts", "rating", 3.8, ev("basic_facts.rating", "ev_dc2_r"))
+        p.set_fact("basic_facts", "review_count", 120,
+                   ev("basic_facts.review_count", "ev_dc2_rc"))
+        p.product_opportunity["negative_review_clusters"] = [
+            {"cluster_name": f"痛点{i}", "mention_count": 5,
+             "evidence_refs": [f"ev_dc2_c{i}"]} for i in range(3)]
+        e = make_evaluator([p]).eval_hit_improvement(p)
+        names = "".join(c["name"] for c in e.components)
+        for kw in ("需求已验证", "痛点强度", "可改性", "差异化", "竞争与价格空间"):
+            assert kw in names, f"改款评分明细缺维度：{kw}"
+
+    def test_longtail_components_cover_all_dims_and_risk(self):
+        p = base_packet("dc3", group="shein_frontend", roles=("transaction",))
+        p.set_fact("market_metrics", "sales_floor_units", 400,
+                   ev("market_metrics.sales_floor_units", "ev_dc3_s"))
+        p.set_fact("basic_facts", "price", {"amount": 19.9, "currency": "USD"},
+                   ev("basic_facts.price", "ev_dc3_p"))
+        p.set_fact("competition_metrics", "seller_type", "BRAND",
+                   ev("competition_metrics.seller_type", "ev_dc3_b"))
+        e = make_evaluator([p]).eval_long_tail(p)
+        names = "".join(c["name"] for c in e.components)
+        for kw in ("需求稳定性", "竞争可突破", "价格带", "事实完整度", "直接承接"):
+            assert kw in names, f"长尾评分明细缺维度：{kw}"
+        risk = next(c for c in e.components if "风险扣减" in c["name"])
+        assert risk["score"] < 0       # 品牌自营风险自动扣减（草案）
+
+    def test_hit_relative_low_rating_uses_group_percentile(self):
+        """低评分相对口径：组内 p25 之下即偏低，即使高于绝对线 4.0。"""
+        peers = []
+        for i in range(9):
+            q = base_packet(f"pr{i}", group="shein_frontend",
+                            roles=("transaction", "voc"))
+            q.set_fact("basic_facts", "rating", 4.8,
+                       ev("basic_facts.rating", f"ev_pr{i}_r"))
+            peers.append(q)
+        target = base_packet("prx", group="shein_frontend",
+                             roles=("transaction", "voc"))
+        target.set_fact("market_metrics", "sales_floor_units", 800,
+                        ev("market_metrics.sales_floor_units", "ev_prx_s"))
+        target.set_fact("basic_facts", "rating", 4.2,
+                        ev("basic_facts.rating", "ev_prx_r"))
+        target.set_fact("basic_facts", "review_count", 120,
+                        ev("basic_facts.review_count", "ev_prx_rc"))
+        evaluator = make_evaluator(peers + [target])
+        evaluator._peers["shein_frontend"] = peers + [target]
+        e = evaluator.eval_hit_improvement(target)
+        # 4.2 高于绝对线 4.0，但低于组内 p25(4.8) -> 相对偏低成立，可占位准入
+        assert e.admission_status == "ELIGIBLE"
+        assert e.admission_basis == "provisional_rule"
+
+
 class TestTrackReportGovernance:
     """《执行矛盾与流程待确认问题》临时执行规则在交付表上的落地。"""
 

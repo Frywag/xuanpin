@@ -233,6 +233,10 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         from .track_eval import TrackEvaluator
         tracks_cfg = load_yaml(tracks_cfg_path)
         run_meta["project_status"] = tracks_cfg.get("project_status", "legacy_only")
+        # 业务确认证据通道（规则 §7.3：业务人员确认是合法准入证据）
+        bc_path = scoring_cfg_path.parent / "business_confirmations.yaml"
+        if bc_path.exists():
+            tracks_cfg["business_confirmations"] = load_yaml(bc_path) or {}
         evaluator = TrackEvaluator(tracks_cfg, stats, out_dir.name)
         track_evals, clusters, track_budgets = evaluator.run(packets)
         with open(out_dir / "track_evaluations.jsonl", "w", encoding="utf-8") as f:
