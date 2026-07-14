@@ -14,3 +14,8 @@ __pycache__/
 04.分级系统/data/analysis_runs/*/envelopes/envelope_*frontend*.json
 04.分级系统/data/selection.db
 
+
+# 大体积可复现产物（每 run 约 12MB，CLI 一键重算）：自 run_20260714 起不再入库；
+# run_20260713_001 的历史副本保留在库中作三赛道首轮基线
+04.分级系统/data/analysis_runs/*/track_evaluations.jsonl
+04.分级系统/data/analysis_runs/*/sab_products_full.jsonl

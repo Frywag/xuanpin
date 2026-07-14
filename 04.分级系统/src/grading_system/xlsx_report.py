@@ -77,8 +77,8 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
 
     ws = _sheet(wb, "跨赛道汇总",
                 ["candidate_id", "title", "platform",
-                 "趋势新品", "爆款改款", "长尾直接选品", "建议开发方式(待人审)"],
-                [30, 46, 14, 22, 22, 22, 26])
+                 "趋势新品", "爆款改款", "长尾直接选品", "可选开发方式(并列展示,人工决策)"],
+                [30, 46, 14, 22, 22, 22, 40])
     by_cand = {}
     for e in evaluations:
         by_cand.setdefault(e.subject_id, {})[e.track_id] = e
@@ -91,24 +91,33 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
             if e is None:
                 return ""
             return e.grade or e.admission_status
-        best = max((e for e in m.values() if e.grade),
-                   key=lambda e: e.score or 0, default=None)
+        # P0-04 临时口径：三赛道分数未经金标统一标尺，禁止跨赛道直接比较、
+        # 禁止用最高分自动带出开发方式——并列展示全部已准入赛道的开发方式，人工决策
+        modes = "；".join(f"{labels[e.track_id]}→{e.recommended_development_mode}"
+                          for e in m.values() if e.grade)
         ws.append([cid, p.basic_facts.get("title") if p else "",
                    p.platform if p else "", cell("trend_new"),
-                   cell("hit_improvement"), cell("long_tail_direct"),
-                   best.recommended_development_mode if best else ""])
+                   cell("hit_improvement"), cell("long_tail_direct"), modes])
     ws.auto_filter.ref = ws.dimensions
 
+    # 补证预算（P0-03）：进入 refetch_queue 的候选获得本轮补采名额，
+    # 其余 PENDING 留在待补池等下轮预算——避免「缺数据者永远无预算」死锁
+    in_refetch = {(tid, item["subject_id"])
+                  for tid, b in budgets.items()
+                  for item in b.get("refetch_queue", [])}
     ws = _sheet(wb, "待补数据",
-                ["track", "candidate_id", "title", "缺失证据", "补采任务"],
-                [16, 30, 44, 60, 50])
+                ["track", "candidate_id", "title", "缺失证据", "补采任务",
+                 "本轮补证预算"],
+                [16, 30, 44, 60, 50, 14])
     for e in evaluations:
         if e.admission_status == "PENDING_DATA":
             p = by_id.get(e.subject_id)
             ws.append([labels[e.track_id], e.subject_id,
                        p.basic_facts.get("title") if p else "",
                        "、".join(e.missing_fields)[:200],
-                       "；".join(e.refetch_tasks[:3])])
+                       "；".join(e.refetch_tasks[:3]),
+                       "入队(open)" if (e.track_id, e.subject_id) in in_refetch
+                       else "待下轮"])
     ws.auto_filter.ref = ws.dimensions
 
     ws = _sheet(wb, "未准入与淘汰依据",
@@ -148,6 +157,7 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
     ws = _sheet(wb, "规则版本与运行记录", ["key", "value"], [36, 100])
     for k, v in [("rule_version", tracks_cfg.get("rule_version")),
                  ("rule_status", tracks_cfg.get("rule_status")),
+                 ("project_status", tracks_cfg.get("project_status")),
                  ("说明", "所有等级为校准态草案，业务金标与参数批准前不是正式生产等级"),
                  ("evaluations", len(evaluations)),
                  ("clusters", len(clusters)),
@@ -155,6 +165,9 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
                                           ensure_ascii=False)),
                  ("l3_queues", json.dumps({k: len(v["l3_queue"]) for k, v in budgets.items()},
                                           ensure_ascii=False)),
+                 ("refetch_queues(补证预算,P0-03)",
+                  json.dumps({k: len(v.get("refetch_queue", []))
+                              for k, v in budgets.items()}, ensure_ascii=False)),
                  ("待业务确认参数", "；".join(tracks_cfg.get(
                      "pending_business_confirmation", [])))]:
         ws.append([k, str(v)])
@@ -298,6 +311,8 @@ def export_report(path, packets: List[CandidateDataPacket],
 
     # ---------- 8. 运行记录 ----------
     ws = _sheet(wb, "运行记录", ["key", "value"], [40, 110])
+    ws.append(["结果口径", "本工作簿为 Legacy 基线结果（旧单赛道链路），非正式生产推荐；"
+               "三赛道校准结果见 三赛道选品推荐表.xlsx 与 track_evaluations 表"])
     for k, v in run_meta.items():
         ws.append([k, str(v)])
 

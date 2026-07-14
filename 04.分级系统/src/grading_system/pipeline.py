@@ -30,6 +30,23 @@ def load_yaml(path: Path) -> Dict[str, Any]:
         return yaml.safe_load(f)
 
 
+def _rel(path, root: Path) -> str:
+    """路径转仓库相对（可复现审计，P0-07）；不在仓库内则原样返回。"""
+    try:
+        return str(Path(path).resolve().relative_to(Path(root).resolve()))
+    except ValueError:
+        return str(path)
+
+
+# run 模式语义（P0-07/P0-09 回放可审计性）：run_meta.run_mode 记录本次运行属于哪一种，
+# 汇报口径必须与之一致，禁止把普通全量运行表述为「严格快照回放」。
+RUN_MODES = {
+    "full": "普通全量运行（当前数据可得性下的完整管道，非基线回放）",
+    "strict_snapshot": "严格快照回放（不可变基线目录，不补字段，结果可复现比对）",
+    "enhanced_replay": "受控增强回放（补采后重放，须声明相对基线新增的数据面）",
+}
+
+
 def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any],
                       extra_envelope_paths: List[Path] = None):
     envelopes = []
@@ -44,6 +61,16 @@ def collect_envelopes(repo_root: Path, sources_cfg: Dict[str, Any],
         envelopes.extend(loaded)
         for msg in problems:
             print(f"[envelope_inputs] {msg}")
+    # 工作簿缺失快速失败（P0-07）：换环境回放时给出明确清单，而不是在
+    # openpyxl 深处抛裸异常或静默跳过部分数据源导致结果不可比
+    missing_books = [spec["workbook"]
+                     for key in ("plugin_sources", "frontend_workbooks")
+                     for spec in sources_cfg.get(key, []) or []
+                     if not (repo_root / spec["workbook"]).exists()]
+    if missing_books:
+        raise FileNotFoundError(
+            "数据源工作簿缺失（sources 配置中的文件必须全部存在；跨环境回放请使用"
+            "不可变基线目录并核对文件清单，见 docs/07）：" + "；".join(missing_books))
     for spec in sources_cfg.get("plugin_sources", []):
         cls = PLUGIN_ADAPTERS[spec["adapter"]]
         adapter = cls(repo_root / spec["workbook"], market=market,
@@ -67,7 +94,10 @@ def run_pipeline(repo_root: Path, out_dir: Path,
                  sources_cfg_path: Path, scoring_cfg_path: Path,
                  gates_cfg_path: Path, sample_packets: int = 10,
                  db_path: Path = None,
-                 extra_envelope_paths: List[Path] = None) -> Dict[str, Any]:
+                 extra_envelope_paths: List[Path] = None,
+                 run_mode: str = "full") -> Dict[str, Any]:
+    if run_mode not in RUN_MODES:
+        raise ValueError(f"未知 run_mode：{run_mode}（可选：{sorted(RUN_MODES)}）")
     started = datetime.now(timezone.utc)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "envelopes").mkdir(exist_ok=True)
@@ -162,6 +192,17 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         "collector_version": COLLECTOR_VERSION,
         "started_at": started.isoformat(timespec="seconds"),
         "finished_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        # 运行模式与结果语义（P0-07/P0-09）：汇报口径必须按此标注，
+        # 普通全量运行不得表述为「严格快照回放」
+        "run_mode": run_mode,
+        "run_mode_semantics": RUN_MODES[run_mode],
+        "project_status": None,  # 由 tracks_v1.yaml 提供；纯 legacy 运行记 legacy_only
+        "result_semantics": (
+            "双链并行过渡期：legacy 单赛道结果为基线参考（非正式生产推荐）；"
+            "tracks.v1 三赛道结果为校准态（rule_status=calibration_pending_"
+            "business_approval）。业务金标批准前两者均不得作为正式生产等级；"
+            "唯一业务事实源的切换时点待业务拍板（见 tracks_v1.yaml "
+            "pending_business_confirmation）"),
         "market": sources_cfg.get("market", "US"),
         "envelopes": len(envelopes),
         "candidates_total": len(packets),
@@ -174,9 +215,9 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         "pct_p50": pcts[len(pcts) // 2] if pcts else None,
         "pct_p90": pcts[int(len(pcts) * 0.9)] if pcts else None,
         "pct_max": pcts[-1] if pcts else None,
-        "scoring_config": str(scoring_cfg_path),
-        "gates_config": str(gates_cfg_path),
-        "sources_config": str(sources_cfg_path),
+        "scoring_config": _rel(scoring_cfg_path, repo_root),
+        "gates_config": _rel(gates_cfg_path, repo_root),
+        "sources_config": _rel(sources_cfg_path, repo_root),
         "group_stats": json.dumps(stats.to_dict(), ensure_ascii=False),
         "envelope_warnings": json.dumps(
             {e.envelope_id: e.warnings for e in envelopes if e.warnings},
@@ -187,9 +228,11 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     # 6c. 三赛道独立评估（tracks.v1；legacy 单赛道结果保留为旧版兼容）
     tracks_cfg_path = scoring_cfg_path.parent / "tracks_v1.yaml"
     track_evals, clusters, track_budgets = [], [], {}
+    run_meta["project_status"] = "legacy_only"
     if tracks_cfg_path.exists():
         from .track_eval import TrackEvaluator
         tracks_cfg = load_yaml(tracks_cfg_path)
+        run_meta["project_status"] = tracks_cfg.get("project_status", "legacy_only")
         evaluator = TrackEvaluator(tracks_cfg, stats, out_dir.name)
         track_evals, clusters, track_budgets = evaluator.run(packets)
         with open(out_dir / "track_evaluations.jsonl", "w", encoding="utf-8") as f:
@@ -346,6 +389,11 @@ def run_pipeline(repo_root: Path, out_dir: Path,
                                              if e.track_id == tid and e.grade))
                                 for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
             "clusters": len(clusters),
+            # 预算拆分（P0-03）：l2/l3=已准入深挖，refetch=PENDING_DATA 补证
+            "budgets": {tid: {"l2": len(b.get("l2_queue", [])),
+                              "l3": len(b.get("l3_queue", [])),
+                              "refetch": len(b.get("refetch_queue", []))}
+                        for tid, b in track_budgets.items()},
         }
 
     # 11. 写入选品库（SQLite，跨 run 累积，供 agent CLI 查询）+ 运行记录落盘
@@ -357,7 +405,7 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     if track_evals:
         store.record_track_evaluations(out_dir.name, track_evals)
     store.close()
-    run_meta["db_path"] = str(db_path)
+    run_meta["db_path"] = _rel(db_path, repo_root)
     dump_json(run_meta, out_dir / "run_meta.json")
 
     return {"packets": packets, "results": results, "run_meta": run_meta,

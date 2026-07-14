@@ -39,7 +39,9 @@ TOOLS = [
     },
     {
         "name": "query_grades",
-        "description": "某次运行的等级×赛道分布；run_id 缺省为最新一次",
+        "description": "某次运行的等级分布，双口径标注返回：tracks_v1_calibration"
+                       "（三赛道校准态，非正式生产等级）+ legacy_baseline"
+                       "（旧单赛道基线，非正式生产推荐）；run_id 缺省为最新一次",
         "inputSchema": {"type": "object",
                         "properties": {"run_id": {"type": "string"}}, "required": []},
     },
@@ -71,7 +73,8 @@ TOOLS = [
     {
         "name": "db_query",
         "description": "对选品库执行只读 SQL（表：runs/envelopes/candidates/results/"
-                       "evidence/llm_analyses；写语句会被拒绝）",
+                       "evidence/llm_analyses/track_evaluations；写语句会被拒绝。"
+                       "results=legacy 基线口径，track_evaluations=tracks.v1 校准口径）",
         "inputSchema": {"type": "object",
                         "properties": {"sql": {"type": "string"},
                                        "limit": {"type": "integer", "default": 50}},
@@ -93,10 +96,27 @@ class McpServer:
                 "l3_processed, grade_distribution, track_distribution "
                 "FROM runs ORDER BY started_at DESC")
         if name == "query_grades":
+            # 双口径标注（P0-08）：调用方不得把任一口径当正式生产等级
             run_id = args.get("run_id") or self.store.latest_run_id()
-            return {"run_id": run_id, "distribution": self.store.query(
-                "SELECT track, grade, COUNT(*) AS n, ROUND(AVG(pct),1) AS avg_pct "
-                "FROM results WHERE run_id=? GROUP BY track, grade", (run_id,))}
+            return {
+                "run_id": run_id,
+                "tracks_v1_calibration": {
+                    "note": "三赛道校准口径（rule_status=calibration_pending_"
+                            "business_approval，非正式生产等级）；"
+                            "PENDING_DATA/REJECTED 无正式等级",
+                    "distribution": self.store.query(
+                        "SELECT track_id, admission_status, grade, COUNT(*) AS n, "
+                        "ROUND(AVG(score),1) AS avg_score "
+                        "FROM track_evaluations WHERE run_id=? "
+                        "GROUP BY track_id, admission_status, grade "
+                        "ORDER BY track_id, admission_status", (run_id,))},
+                "legacy_baseline": {
+                    "note": "legacy 单赛道基线口径，非正式生产推荐"
+                            "（唯一业务事实源切换待业务确认）",
+                    "distribution": self.store.query(
+                        "SELECT track, grade, COUNT(*) AS n, ROUND(AVG(pct),1) AS avg_pct "
+                        "FROM results WHERE run_id=? GROUP BY track, grade", (run_id,))},
+            }
         if name == "get_candidate":
             return self.store.get_candidate(args["candidate_id"], args.get("run_id"))
         if name == "get_evidence_chain":

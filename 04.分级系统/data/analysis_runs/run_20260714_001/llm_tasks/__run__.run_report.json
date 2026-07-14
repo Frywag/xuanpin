@@ -1,0 +1,407 @@
+{
+  "task_type": "run_report",
+  "candidate_id": "__run__",
+  "run_id": "run_20260714_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "报告中的所有数值必须直接取自 inputs（含 inputs.derived 的比例），不要自行计算新数值",
+    "提到具体候选时 candidate_id 必须在 inputs.top_candidates 里",
+    "对没有需求信号的品类（如本轮图案连裤袜）要说明是数据缺失而非品类否定"
+  ],
+  "inputs": {
+    "run_meta": {
+      "run_id": "run_20260714_001",
+      "market": "US",
+      "candidates_total": 2234,
+      "l1_processed": 2234,
+      "l2_processed": 40,
+      "l3_processed": 10,
+      "grade_distribution": {
+        "A": 73,
+        "C": 1787,
+        "B": 367,
+        "S": 7
+      },
+      "track_distribution": {
+        "trend_rising": 88,
+        "balanced": 1532,
+        "evergreen": 563,
+        "pain_improvement": 51
+      },
+      "pct_p50": 20.0,
+      "pct_p90": 38.5,
+      "pct_max": 63.8
+    },
+    "derived": {
+      "grade_share_pct": {
+        "A": 3.3,
+        "C": 80.0,
+        "B": 16.4,
+        "S": 0.3
+      },
+      "track_share_pct": {
+        "trend_rising": 3.9,
+        "balanced": 68.6,
+        "evergreen": 25.2,
+        "pain_improvement": 2.3
+      },
+      "sources_count": 7
+    },
+    "group_price_bands": {
+      "tiktok_shop_plugin|CNY": {
+        "n": 10,
+        "p10": 141.981,
+        "p25": 185.14,
+        "p50": 204.41,
+        "p75": 240.105,
+        "p90": 381.1449999999995
+      },
+      "tiktok_shop_plugin|USD": {
+        "n": 36,
+        "p10": 7.49,
+        "p25": 14.5375,
+        "p50": 19.99,
+        "p75": 26.395,
+        "p90": 36.975
+      },
+      "shein_frontend|USD": {
+        "n": 199,
+        "p10": 5.494,
+        "p25": 9.19,
+        "p50": 12.09,
+        "p75": 14.89,
+        "p90": 17.670000000000005
+      },
+      "indie_frontend|USD": {
+        "n": 850,
+        "p10": 48.0,
+        "p25": 78.0,
+        "p50": 124.6,
+        "p75": 168.0,
+        "p90": 298.0
+      },
+      "patterned_tights_frontend|USD": {
+        "n": 534,
+        "p10": 10.860000000000001,
+        "p25": 17.0,
+        "p50": 22.99,
+        "p75": 37.0,
+        "p90": 49.0
+      },
+      "halloween_frontend|USD": {
+        "n": 541,
+        "p10": 8.49,
+        "p25": 16.99,
+        "p50": 27.99,
+        "p75": 49.99,
+        "p90": 229.99
+      }
+    },
+    "top_candidates": [
+      {
+        "candidate_id": "tiktok_shop_1729508370969629931",
+        "title": "[NEW] [medicube] PDRN Pink Collagen Volume Multi Balm | All In One Volufiline, PDRN, NAD Stick for Youthful-Looking, Hel",
+        "platform": "tiktok_shop",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 63.8,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「medicube US Store」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=282,833 -> 15分；销量/销售额增长率 +38.9% -> 5分；2个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分；关联视频最高播放 31,640,117（热度信号）"
+      },
+      {
+        "candidate_id": "tiktok_shop_1731284232420626805",
+        "title": "ADDWIN 2026 New Fascia Ring R10 Mini Muscle Recovery Fascia Device upgraded adjustable strap fits Up to 55in waist, Cord",
+        "platform": "tiktok_shop",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 62.2,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「AddWin Shop」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_7d_units=26,900 -> 15分；销量/销售额增长率 +129.0% -> 6分；2个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分"
+      },
+      {
+        "candidate_id": "tiktok_shop_1731236289885213002",
+        "title": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleani",
+        "platform": "tiktok_shop",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 57.2,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「SEESE Store」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=104,947 -> 15分；销量/销售额增长率 +185.6% -> 6分；2个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 outside -> 2分；产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分"
+      },
+      {
+        "candidate_id": "tiktok_shop_1731528580940468633",
+        "title": "Bare Anatomy Nature x Science Rosemary Water with Rice Water |100% Natural Extract | Soft & Smooth Hair Non-Greasy & Fas",
+        "platform": "tiktok_shop",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 56.5,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Bare Anatomy Haircare」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=84,633 -> 15分；销量/销售额增长率 +69.2% -> 5分；2个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.6（低于类目中位_有一定改良空间）-> 5分"
+      },
+      {
+        "candidate_id": "shein_488434750",
+        "title": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini",
+        "platform": "shein",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 55.8,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 shein_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源；竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "shein_496674906",
+        "title": "EMERY ROSE Women's Plain Weave Casual Office Summer Dress",
+        "platform": "shein",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 54.2,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 shein_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_floor_units=3,100 -> 15分；带平台畅销榜标记；1个独立需求证据源；竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分；产品机会：评分4.07（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "tiktok_shop_1731406217255686451",
+        "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+        "platform": "tiktok_shop",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 53.8,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND（人工待确认）",
+          "达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源；竞争可突破：类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%"
+      },
+      {
+        "candidate_id": "tiktok_shop_1729448464509734958",
+        "title": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+        "platform": "tiktok_shop",
+        "track": "balanced",
+        "grade": "S",
+        "pct": 52.3,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Toplux Nutrition」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=194,250 -> 15分；销量/销售额增长率 +7.2% -> 3分；2个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.6（低于类目中位_有一定改良空间）-> 5分；关联视频最高播放 18,721,163（热度信号）"
+      },
+      {
+        "candidate_id": "freepeople_101516367",
+        "title": "Oh So Sweet Lace Set",
+        "platform": "freepeople",
+        "track": "balanced",
+        "grade": "A",
+        "pct": 52.3,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 indie_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 favorites_count=5,405 -> 10分；1个独立需求证据源；竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p10_p90 -> 4分；产品机会：评分3.8333（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张"
+      },
+      {
+        "candidate_id": "freepeople_108262288",
+        "title": "Raven Solid Convertible Maxi Skirt",
+        "platform": "freepeople",
+        "track": "balanced",
+        "grade": "A",
+        "pct": 52.3,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 indie_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源；竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张"
+      },
+      {
+        "candidate_id": "freepeople_107004988",
+        "title": "Eyes On You Skort",
+        "platform": "freepeople",
+        "track": "balanced",
+        "grade": "A",
+        "pct": 52.3,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 indie_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 favorites_count=2,028 -> 8分；1个独立需求证据源；竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分；产品机会：评分3.0（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张"
+      },
+      {
+        "candidate_id": "freepeople_106763931",
+        "title": "Sun Soaked Sarong Mini Skort",
+        "platform": "freepeople",
+        "track": "balanced",
+        "grade": "A",
+        "pct": 52.3,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 indie_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 favorites_count=1,776 -> 8分；1个独立需求证据源；竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分；产品机会：评分3.0（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张"
+      },
+      {
+        "candidate_id": "freepeople_102380615",
+        "title": "Take Me Along Circle Skirt",
+        "platform": "freepeople",
+        "track": "balanced",
+        "grade": "A",
+        "pct": 52.3,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 indie_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 favorites_count=2,307 -> 8分；1个独立需求证据源；竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分；产品机会：评分3.8571（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张"
+      },
+      {
+        "candidate_id": "tiktok_shop_1731879234948338174",
+        "title": "DRDENT Purple Teeth Whitening Strips - 7/21 Whitening Sessions - Non Sensitive Teeth Whitening - Peroxide-Free",
+        "platform": "tiktok_shop",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 51.8,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 tabcut 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=88,100 -> 15分；销量/销售额增长率 +100.0% -> 6分；1个独立需求证据源；竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分；产品机会：关联视频最高播放 106,190,170（热度信号）"
+      },
+      {
+        "candidate_id": "shein_489732434",
+        "title": "Wood Ear Trim Gathered Ruched Umbrella Skirt Sun Dress Baby Doll Dress Spaghetti Strap Square Neck Dress 100% Pure Cotto",
+        "platform": "shein",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 51.7,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 shein_frontend 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_floor_units=3,500 -> 15分；带平台畅销榜标记；1个独立需求证据源；竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分；产品机会：评分4.71（口碑较好_改良空间有限）-> 2分；有趋势标签/设计细节记录"
+      }
+    ],
+    "top_missing_fields": [
+      {
+        "field": "owned_supply_inputs.target_cost",
+        "count": 2234,
+        "share_pct": 100.0
+      },
+      {
+        "field": "owned_supply_inputs.moq",
+        "count": 2234,
+        "share_pct": 100.0
+      },
+      {
+        "field": "owned_supply_inputs.lead_time_days",
+        "count": 2234,
+        "share_pct": 100.0
+      },
+      {
+        "field": "freshness.style_novelty_evidence",
+        "count": 2234,
+        "share_pct": 100.0
+      },
+      {
+        "field": "freshness.listed_at",
+        "count": 2230,
+        "share_pct": 99.8
+      },
+      {
+        "field": "competition_metrics.category_top10_shop_ratio",
+        "count": 2224,
+        "share_pct": 99.6
+      },
+      {
+        "field": "market_metrics.sales_growth_rate",
+        "count": 2205,
+        "share_pct": 98.7
+      },
+      {
+        "field": "basic_facts.rating",
+        "count": 1595,
+        "share_pct": 71.4
+      },
+      {
+        "field": "basic_facts.review_count",
+        "count": 1530,
+        "share_pct": 68.5
+      },
+      {
+        "field": "market_metrics.<any_demand_signal>",
+        "count": 1215,
+        "share_pct": 54.4
+      }
+    ],
+    "envelope_warnings": {
+      "envelope_indie_frontend_20260714": [
+        "63 行 ACCESS_CHALLENGE（未绕过，按原样入库并降置信度）"
+      ]
+    }
+  },
+  "allowed_evidence_ids": [],
+  "output_schema": {
+    "title": "str",
+    "executive_summary": "str（≤300字：这轮分析发现了什么、建议做什么）",
+    "market_landscape": "str（数据源覆盖了什么市场、看到什么格局）",
+    "track_analysis": [
+      {
+        "track": "trend_rising|pain_improvement|evergreen|balanced",
+        "narrative": "str（该赛道的发现与建议）",
+        "top_candidate_ids": [
+          "⊆ inputs.top_candidates 中的 candidate_id"
+        ]
+      }
+    ],
+    "top_candidates_review": [
+      {
+        "candidate_id": "⊆ inputs.top_candidates",
+        "one_liner": "str（一句话点评）"
+      }
+    ],
+    "data_quality_and_gaps": "str（缺什么数据、对结论的影响）",
+    "risk_overview": "str",
+    "next_collection_plan": [
+      "str（下一轮补采/扩源的优先级）"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

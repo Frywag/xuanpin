@@ -39,11 +39,20 @@ def cmd_run(args) -> int:
         scoring_cfg_path=Path(args.scoring),
         gates_cfg_path=Path(args.gates),
         db_path=Path(args.db) if args.db else None,
-        extra_envelope_paths=[Path(p) for p in (args.envelopes or [])])
+        extra_envelope_paths=[Path(p) for p in (args.envelopes or [])],
+        run_mode=args.run_mode)
     meta = out["run_meta"]
     print(f"候选总数: {meta['candidates_total']}")
-    print(f"等级分布: {meta['grade_distribution']}")
-    print(f"赛道分布: {meta['track_distribution']}")
+    print(f"运行模式: {meta['run_mode']}（{meta['run_mode_semantics']}）")
+    print(f"项目状态: {meta.get('project_status')}")
+    # 双口径标注（P0-08）：legacy 与 tracks.v1 并行输出，禁止混称
+    print(f"[legacy 基线口径｜非正式生产推荐] 等级分布: {meta['grade_distribution']}")
+    print(f"[legacy 基线口径] 赛道分布: {meta['track_distribution']}")
+    tv = meta.get("tracks_v1")
+    if tv:
+        print(f"[tracks.v1 校准口径｜{tv['rule_status']}] 准入分布: {tv['per_track']}")
+        print(f"[tracks.v1 校准口径] ELIGIBLE 草案等级: {tv['eligible_grades']}")
+        print(f"[tracks.v1 校准口径] 预算队列(l2/l3/补采): {tv.get('budgets')}")
     print(f"L2 处理: {meta['l2_processed']}  L3 处理: {meta['l3_processed']}")
     print(f"LLM 任务包: {meta.get('llm_tasks_generated', 0)} 个（{args.out}/llm_tasks/）")
     print(f"选品库: {meta.get('db_path')}")
@@ -60,15 +69,40 @@ def _open_store(args):
     return SelectionStore(db)
 
 
+LEGACY_NOTE = "legacy 单赛道基线，非正式生产推荐（唯一业务事实源切换待业务确认）"
+TRACKS_NOTE = ("tracks.v1 三赛道校准口径（rule_status=calibration_pending_"
+               "business_approval，非正式生产等级）；PENDING_DATA/REJECTED 无正式等级")
+
+
 def cmd_grades(args) -> int:
     store = _open_store(args)
     run_id = args.run or store.latest_run_id()
-    rows = store.query(
+    legacy_rows = store.query(
         "SELECT track, grade, COUNT(*) AS n, ROUND(AVG(pct),1) AS avg_pct "
         "FROM results WHERE run_id=? GROUP BY track, grade "
         "ORDER BY track, CASE grade WHEN 'S' THEN 0 WHEN 'A' THEN 1 "
         "WHEN 'B' THEN 2 ELSE 3 END", (run_id,))
-    _print_json({"run_id": run_id, "distribution": rows})
+    if args.legacy:  # 兼容旧脚本：只看 legacy 口径
+        _print_json({"run_id": run_id, "caliber": "legacy_baseline",
+                     "note": LEGACY_NOTE, "distribution": legacy_rows})
+        store.close()
+        return 0
+    # 默认双口径标注输出（P0-08）：以 tracks.v1 为主口径，legacy 为基线参考
+    track_rows = store.query(
+        "SELECT track_id, admission_status, grade, COUNT(*) AS n, "
+        "ROUND(AVG(score),1) AS avg_score "
+        "FROM track_evaluations WHERE run_id=? "
+        "GROUP BY track_id, admission_status, grade "
+        "ORDER BY track_id, admission_status, CASE grade WHEN 'S' THEN 0 "
+        "WHEN 'A' THEN 1 WHEN 'B' THEN 2 ELSE 3 END", (run_id,))
+    _print_json({
+        "run_id": run_id,
+        "tracks_v1_calibration": {
+            "note": TRACKS_NOTE if track_rows
+            else TRACKS_NOTE + "；本 run 无 track_evaluations 记录",
+            "distribution": track_rows},
+        "legacy_baseline": {"note": LEGACY_NOTE, "distribution": legacy_rows},
+    })
     store.close()
     return 0
 
@@ -166,6 +200,11 @@ def main(argv=None):
     run.add_argument("--db", default=None, help="选品库路径（默认 data/selection.db）")
     run.add_argument("--envelopes", action="append", default=None,
                      help="标准 SourceEnvelope 文件/目录（可重复；见 docs/05 输入契约）")
+    run.add_argument("--run-mode", default="full",
+                     choices=["full", "strict_snapshot", "enhanced_replay"],
+                     help="运行模式（写入 run_meta 供审计）：full=普通全量运行；"
+                          "strict_snapshot=严格快照回放（不可变基线目录）；"
+                          "enhanced_replay=受控增强回放（补采后）")
     run.set_defaults(func=cmd_run)
 
     ve = sub.add_parser("validate-envelope",
@@ -174,8 +213,11 @@ def main(argv=None):
     ve.add_argument("--market", default="US")
     ve.set_defaults(func=cmd_validate_envelope)
 
-    grades = sub.add_parser("grades", help="等级/赛道分布")
+    grades = sub.add_parser(
+        "grades", help="等级/赛道分布（默认双口径标注：tracks.v1 校准 + legacy 基线）")
     grades.add_argument("--run", default=None)
+    grades.add_argument("--legacy", action="store_true",
+                        help="只输出 legacy 单赛道基线口径（旧脚本兼容）")
     grades.add_argument("--db", default=None)
     grades.set_defaults(func=cmd_grades)
 

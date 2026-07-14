@@ -6,7 +6,10 @@
 # 不得称为正式生产等级（交接清单 §14/§17）。
 schema_version: tracks.v1
 rule_status: calibration_pending_business_approval
-rule_version: tracks_v1_draft_20260713
+rule_version: tracks_v1_draft_20260714
+# 项目状态机（P0-09）：FRAMEWORK_READY -> CALIBRATION_READY -> PRODUCTION_ENABLED -> LISTING_READY
+# 当前：框架就绪，部分进入校准就绪；未达生产启用——任何 S/A/B 均不得称正式生产结果
+project_status: FRAMEWORK_READY_PARTIAL_CALIBRATION
 
 tracks:
   trend_new:
@@ -33,6 +36,7 @@ tracks:
     grade_thresholds_draft: {S: 70, A: 45}   # ELIGIBLE 且低于 A 线 -> B（单源早期可进 B）
     l2_budget_draft: 15
     l3_budget_draft: 5
+    refetch_budget_draft: 20   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
     refetch_focus: [上架时间与新品标签, 跨平台同款式召回, 图片属性相似证据,
                     TikTok内容发布时间与创作者广度, 相似款新增时间序列]
     # 补采分层（业务确认 2026-07-13）：评论不属于趋势赛道 L1/L2 —
@@ -66,6 +70,7 @@ tracks:
     grade_thresholds_draft: {S: 70, A: 45}
     l2_budget_draft: 15
     l3_budget_draft: 5
+    refetch_budget_draft: 20   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
     refetch_focus: [评论全文, 退货原因与客服问题, 聚类频次占比严重度,
                     竞品共同痛点, 改良方案与目标成本]
 
@@ -90,6 +95,7 @@ tracks:
     grade_thresholds_draft: {S: 70, A: 45}
     l2_budget_draft: 10
     l3_budget_draft: 3
+    refetch_budget_draft: 15   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
     refetch_focus: [多周期需求证据, 评论护城河, 供应能力匹配, 利润结构]
 
 # 机会簇（P0 只实现召回+证据+版本+人工复核框架；相似阈值待业务标注样本）
@@ -110,3 +116,10 @@ pending_business_confirmation:
   - 款型历史库范围/回看窗口/「市场款型新」判定口径
   - same_style/same_trend 召回与确认阈值
   - 确定性 REJECTED 风险红线清单
+  # ---- 流程待确认（《执行矛盾与流程待确认问题》2026-07-14，会议拍板项）----
+  - 唯一业务事实源：track_evaluations 何时替代 legacy results（P0-01）
+  - 三赛道编排是否接管深评/152/LLM 任务对象与真实采集成本投向（P0-02/P0-05）
+  - PENDING_DATA 补采任务的负责人/到期/回灌 run 语义（P0-03）
+  - 跨赛道最终决策：完全人审 or 另批规则（P0-04）
+  - 趋势赛道排序与预算对象：机会簇 vs 单商品（P0-06）
+  - 2,000 款不可变基线目录与回放文件清单（P0-07）

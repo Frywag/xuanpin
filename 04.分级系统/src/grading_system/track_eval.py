@@ -434,15 +434,26 @@ class TrackEvaluator:
             evaluations.append(self.eval_trend_new(p, cluster_of.get(p.candidate_id)))
             evaluations.append(self.eval_hit_improvement(p))
             evaluations.append(self.eval_long_tail(p))
-        # 赛道独立 L2/L3 预算（互不挤占）
+        # 赛道独立预算（互不挤占）。两类预算拆分（P0-03 解死锁）：
+        #   refetch_queue —— 准入补证预算：从 PENDING_DATA 中取，专供补采缺失证据，
+        #                    使「最需要补证据的候选」获得赛道预算而非被排除；
+        #   l2/l3_queue  —— 已准入深挖预算：仅从 ELIGIBLE 中按分取。
         budgets = {}
         for tid in TRACK_IDS:
             tcfg = self.cfg["tracks"][tid]
             eligible = sorted([e for e in evaluations
                                if e.track_id == tid and e.admission_status == "ELIGIBLE"],
                               key=lambda e: -(e.score or 0))
+            pending = sorted([e for e in evaluations
+                              if e.track_id == tid and e.admission_status == "PENDING_DATA"],
+                             key=lambda e: (-len(e.evidence_refs), e.subject_id))
             budgets[tid] = {
                 "l2_queue": [e.subject_id for e in eligible[: tcfg["l2_budget_draft"]]],
                 "l3_queue": [e.subject_id for e in eligible[: tcfg["l3_budget_draft"]]],
+                "refetch_queue": [
+                    {"subject_id": e.subject_id, "missing": e.missing_fields,
+                     "tasks": e.refetch_tasks, "status": "open",
+                     "owner": None, "due": None}
+                    for e in pending[: tcfg.get("refetch_budget_draft", 0)]],
             }
         return evaluations, clusters, budgets

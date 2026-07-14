@@ -73,7 +73,16 @@ PENDING/REJECTED 无正式等级），趋势新品不设销量等数据门槛，
 待确认参数清单见 configs/tracks_v1.yaml。产物：三赛道选品推荐表.xlsx、
 track_evaluations.jsonl、opportunity_clusters.json；规则见
 01.分级标准参考/三赛道独立SAB分级_目标业务规则.md 与 docs/07。
-旧单赛道输出保留为 legacy。本项目不含商品立项/产品定义/组合与上市回流。
+本项目不含商品立项/产品定义/组合与上市回流。
+
+过渡期双链口径（2026-07-14 修订，详见 docs/07 §2.6）：legacy 单赛道输出
+保留为**基线参考（非正式生产推荐）**，tracks.v1 为校准口径——`grades` 与
+MCP `query_grades` 默认双口径标注返回（`--legacy` 兼容旧脚本）；对外汇报
+必须按 run_meta.run_mode（full/strict_snapshot/enhanced_replay）与
+project_status 措辞，普通全量运行不得称「严格快照回放」。每赛道
+PENDING_DATA 有独立补证预算 refetch_queue（与 l2/l3 深挖预算拆分）。
+唯一事实源切换、编排接管、簇 vs 单品等业务拍板项 agent 不得自行决定，
+只登记 tracks_v1.yaml pending_business_confirmation。
 
 ## 硬性红线（对所有 agent 生效，来自项目总纲）
 

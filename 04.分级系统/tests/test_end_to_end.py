@@ -16,8 +16,24 @@ pytestmark = pytest.mark.skipif(
     reason="真实数据源不在仓库中")
 
 
+def _missing_workbooks():
+    """sources_p0.yaml 里配置但当前环境缺失的工作簿（跨环境回放常见）。"""
+    import yaml
+    cfg = yaml.safe_load((PROJECT_DIR / "configs/sources_p0.yaml")
+                         .read_text(encoding="utf-8"))
+    books = [spec["workbook"]
+             for key in ("plugin_sources", "frontend_workbooks")
+             for spec in cfg.get(key, []) or []]
+    return [b for b in books if not (REPO_ROOT / b).exists()]
+
+
 @pytest.fixture(scope="module")
 def pipeline_output(tmp_path_factory):
+    missing = _missing_workbooks()
+    if missing:
+        # 明确跳过而非报错（P0-07）：换环境回放时数据文件不全属于环境问题，
+        # 不是代码缺陷；严格回放请使用不可变基线目录并核对文件清单（docs/07）
+        pytest.skip("数据源工作簿缺失，端到端测试跳过：" + "；".join(missing))
     from grading_system.pipeline import run_pipeline
     out_dir = tmp_path_factory.mktemp("run")
     return run_pipeline(

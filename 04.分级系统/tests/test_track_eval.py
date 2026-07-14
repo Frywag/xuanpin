@@ -160,7 +160,29 @@ class TestLongTailAndBudgets:
         _, _, budgets = make_evaluator(packets).run(packets)
         assert set(budgets) == set(TRACK_IDS)
         for tid in TRACK_IDS:
-            assert set(budgets[tid]) == {"l2_queue", "l3_queue"}
+            assert set(budgets[tid]) == {"l2_queue", "l3_queue", "refetch_queue"}
+
+    def test_refetch_budget_split_no_deadlock(self):
+        """P0-03：补证预算与深挖预算拆分——PENDING_DATA 候选进入 refetch_queue
+        获得本轮补采名额（带任务/状态/负责人占位），不再「缺数据者永远无预算」。"""
+        packets = [base_packet(f"p{i}") for i in range(6)]
+        _, _, budgets = make_evaluator(packets).run(packets)
+        q = budgets["trend_new"]["refetch_queue"]
+        assert q, "PENDING_DATA 候选必须获得补证名额"
+        assert len(q) <= CFG["tracks"]["trend_new"]["refetch_budget_draft"]
+        for item in q:
+            assert set(item) == {"subject_id", "missing", "tasks",
+                                 "status", "owner", "due"}
+            assert item["status"] == "open"
+            assert item["tasks"], "补证队列条目必须带可执行补采任务"
+        # 补证队列（PENDING）与深挖队列（ELIGIBLE）互不重叠
+        assert not ({i["subject_id"] for i in q}
+                    & set(budgets["trend_new"]["l2_queue"]))
+
+    def test_all_tracks_have_refetch_budget(self):
+        """每条赛道都必须配置独立补证预算（tracks_v1.yaml）。"""
+        for tid in TRACK_IDS:
+            assert CFG["tracks"][tid].get("refetch_budget_draft", 0) > 0
 
 
 class TestTrendFairness:
@@ -203,3 +225,45 @@ class TestTrendFairness:
         tcfg = CFG["tracks"]["trend_new"]
         assert not any("评论" in x for x in tcfg["l2_focus"])
         assert any("评论" in x for x in tcfg["l3_focus"])
+
+
+class TestTrackReportGovernance:
+    """《执行矛盾与流程待确认问题》临时执行规则在交付表上的落地。"""
+
+    @pytest.fixture()
+    def workbook(self, tmp_path):
+        from openpyxl import load_workbook
+        from grading_system.xlsx_report import export_track_report
+        packets = [base_packet(f"x{i}") for i in range(3)]
+        packets[0].freshness.update({"freshness_status": "confirmed",
+                                     "new_arrival_flag": "page_new_arrival",
+                                     "novelty_status": "confirmed",
+                                     "freshness_evidence_refs": ["ev_f"],
+                                     "novelty_evidence_refs": ["ev_n"]})
+        evals, clusters, budgets = make_evaluator(packets).run(packets)
+        out = tmp_path / "三赛道.xlsx"
+        export_track_report(out, packets, evals, clusters, budgets, CFG)
+        wb = load_workbook(out, read_only=True)
+        yield wb
+        wb.close()
+
+    def test_p0_04_no_cross_track_auto_decision(self, workbook):
+        """跨赛道汇总只并列展示各赛道开发方式，不自动选「最佳赛道」。"""
+        headers = [str(c.value or "")
+                   for c in next(workbook["跨赛道汇总"].iter_rows(max_row=1))]
+        assert any("人工决策" in h for h in headers)
+        assert not any(("建议赛道" in h) or ("最佳" in h) for h in headers)
+
+    def test_p0_03_pending_sheet_marks_refetch_budget(self, workbook):
+        """待补数据 sheet 标注每行是否进入本轮补证预算队列。"""
+        rows = list(workbook["待补数据"].iter_rows(values_only=True))
+        assert "本轮补证预算" in rows[0]
+        col = rows[0].index("本轮补证预算")
+        marks = {r[col] for r in rows[1:] if r[col]}
+        assert marks <= {"入队(open)", "待下轮"} and "入队(open)" in marks
+
+    def test_p0_09_rule_sheet_carries_project_status_and_refetch(self, workbook):
+        keys = [str(r[0]) for r in
+                workbook["规则版本与运行记录"].iter_rows(values_only=True)]
+        assert "project_status" in keys
+        assert any("refetch_queues" in k for k in keys)
