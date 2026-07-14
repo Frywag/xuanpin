@@ -1,0 +1,162 @@
+{
+  "schema_version": "analysis.result.v1",
+  "analysis_id": "analysis_freepeople_108262288",
+  "candidate_id": "freepeople_108262288",
+  "market": "US",
+  "layer_results": {
+    "L1": {
+      "passed": true,
+      "score": 52.3,
+      "grade": "A",
+      "gate_reason": "PScore 34.0/65（52.3%）-> A",
+      "required_next_data": []
+    },
+    "L2": {
+      "passed": true,
+      "score": 52.3,
+      "grade": "A",
+      "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+      "required_next_data": [
+        "reviews_or_review_tags"
+      ]
+    },
+    "L3": {
+      "passed": true,
+      "score": 52.3,
+      "grade": "A",
+      "gate_reason": "同风格信号：indie_frontend 语料中有 682 款标题命中相同风格词 ['skirt']；无跨平台优先级证据，维持来源平台",
+      "required_next_data": [
+        "供应链字段人工调查（选品后画像存库用，不参与打分）"
+      ]
+    }
+  },
+  "priority_score": {
+    "total": 34.0,
+    "achievable_max": 65,
+    "pct": 52.3,
+    "grade": "A",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 9.0,
+        "max_score": 25,
+        "reason": "量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源",
+        "evidence_refs": [
+          "ev_indie_frontend_003235"
+        ],
+        "missing": false
+      },
+      {
+        "name": "竞争可突破",
+        "score": 14.0,
+        "max_score": 20,
+        "reason": "竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_indie_frontend_003232",
+          "ev_indie_frontend_003234"
+        ],
+        "missing": false
+      },
+      {
+        "name": "产品机会",
+        "score": 13.0,
+        "max_score": 20,
+        "reason": "评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张",
+        "evidence_refs": [
+          "ev_indie_frontend_003233",
+          "ev_indie_frontend_003236",
+          "ev_indie_frontend_003237"
+        ],
+        "missing": false
+      },
+      {
+        "name": "风险",
+        "score": -2.0,
+        "max_score": 0.0,
+        "reason": "单一数据源，量价未经第二源互验：仅 indie_frontend 单源",
+        "evidence_refs": [
+          "ev_indie_frontend_003227"
+        ],
+        "missing": false
+      }
+    ],
+    "track": "balanced",
+    "track_label": "均衡款"
+  },
+  "track_tags": [
+    "观察款"
+  ],
+  "recommendation": {
+    "decision": "research_more",
+    "reason_summary": "市场需求：量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源；竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张",
+    "risk_summary": "单一数据源，量价未经第二源互验：仅 indie_frontend 单源",
+    "next_actions": [
+      "补齐关键缺字段后复评",
+      "L3 完成，等待供应链输入与人审"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "市场需求：量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源",
+      "claim_type": "demand",
+      "evidence_refs": [
+        "ev_indie_frontend_003235"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分",
+      "claim_type": "competition",
+      "evidence_refs": [
+        "ev_indie_frontend_003232",
+        "ev_indie_frontend_003234"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "产品机会：评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张",
+      "claim_type": "product",
+      "evidence_refs": [
+        "ev_indie_frontend_003233",
+        "ev_indie_frontend_003236",
+        "ev_indie_frontend_003237"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "单一数据源，量价未经第二源互验：仅 indie_frontend 单源",
+      "claim_type": "risk",
+      "evidence_refs": [
+        "ev_indie_frontend_003227"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "同风格红海程度：高（语料内同风格候选 688 款，词表确定性匹配）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_indie_frontend_003227"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "平台优先级：freepeople（无跨平台优先级证据，维持来源平台）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_indie_frontend_003227"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "missing_fields": [
+    "market_metrics.sales_growth_rate",
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "blocked_reasons": [],
+  "confidence": "medium",
+  "created_at": "2026-07-14T16:06:52+00:00"
+}

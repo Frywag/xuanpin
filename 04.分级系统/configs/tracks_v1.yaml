@@ -37,6 +37,15 @@ tracks:
     l2_budget_draft: 15
     l3_budget_draft: 5
     refetch_budget_draft: 20   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
+    # ---- 临时可跑占位规则（业务指示 2026-07-14）----
+    # 背景：缺失多为数据源结构性没有（不是漏采）。上架时间/款型新颖度证据缺失时
+    # 不再卡在待补池：无「旧款确证」即临时准入，照常按证据强度评分进入筛选流程；
+    # 缺失照记 missing_fields，补证照排队列。人工确定最终门限/字段后改本段即生效。
+    provisional_admission:
+      enabled: true
+      status: interim_runnable_defaults   # 占位规则，待业务最终确认替换
+      missing_freshness_factor: 0.3       # 无任何新鲜度证据时的占位计分系数（confirmed=1.0/inferred=0.7）
+      grade_cap: null                     # 趋势赛道公平竞争，不设占位等级上限（等级仍由证据强度决定）
     refetch_focus: [上架时间与新品标签, 跨平台同款式召回, 图片属性相似证据,
                     TikTok内容发布时间与创作者广度, 相似款新增时间序列]
     # 补采分层（业务确认 2026-07-13）：评论不属于趋势赛道 L1/L2 —
@@ -71,6 +80,15 @@ tracks:
     l2_budget_draft: 15
     l3_budget_draft: 5
     refetch_budget_draft: 20   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
+    # ---- 临时可跑占位规则（业务指示 2026-07-14）----
+    # 插件源多无评论全文（结构性缺失）：有交易信号 + 确证低评分（样本≥30）时，
+    # 负面聚类缺失可占位豁免准入；痛点未经聚类确认，占位等级上限 B（S/A 须待
+    # 评论全文回补后确认）。评分缺失或样本不足仍 PENDING（低分前提无法占位判断）。
+    provisional_admission:
+      enabled: true
+      status: interim_runnable_defaults
+      waive_negative_clusters_if_low_rating: true
+      grade_cap: B
     refetch_focus: [评论全文, 退货原因与客服问题, 聚类频次占比严重度,
                     竞品共同痛点, 改良方案与目标成本]
 
@@ -96,6 +114,15 @@ tracks:
     l2_budget_draft: 10
     l3_budget_draft: 3
     refetch_budget_draft: 15   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
+    # ---- 临时可跑占位规则（业务指示 2026-07-14）----
+    # 缺价格时可占位准入（价格/利润结构不可判 -> 占位等级上限 B）；
+    # 无交易证据仍 PENDING（稳定需求是本赛道前提）；单次暴涨排除不豁免（抗噪红线）。
+    provisional_admission:
+      enabled: true
+      status: interim_runnable_defaults
+      allow_missing_price: true
+      missing_price_factor: 0.3           # 价格带位置不可判时的占位计分系数
+      grade_cap_if_missing_price: B
     refetch_focus: [多周期需求证据, 评论护城河, 供应能力匹配, 利润结构]
 
 # 机会簇（P0 只实现召回+证据+版本+人工复核框架；相似阈值待业务标注样本）
@@ -117,6 +144,7 @@ pending_business_confirmation:
   - same_style/same_trend 召回与确认阈值
   - 确定性 REJECTED 风险红线清单
   # ---- 流程待确认（《执行矛盾与流程待确认问题》2026-07-14，会议拍板项）----
+  - 临时可跑占位规则 provisional_admission 的最终门限与字段（2026-07-14 业务指示先行启用）
   - 唯一业务事实源：track_evaluations 何时替代 legacy results（P0-01）
   - 三赛道编排是否接管深评/152/LLM 任务对象与真实采集成本投向（P0-02/P0-05）
   - PENDING_DATA 补采任务的负责人/到期/回灌 run 语义（P0-03）

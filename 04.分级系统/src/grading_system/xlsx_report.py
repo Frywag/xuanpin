@@ -61,15 +61,17 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
 
     for tid, label in labels.items():
         ws = _sheet(wb, f"{label}_SAB",
-                    ["rank", "grade", "candidate_id", "title", "platform",
+                    ["rank", "grade", "准入依据", "candidate_id", "title", "platform",
                      "source_roles", "score", "准入理由", "confidence", "风险",
                      "缺失字段", "下一步补采", "cluster_id", "rule_status"],
-                    [6, 7, 30, 46, 14, 20, 8, 60, 10, 30, 36, 40, 16, 26])
+                    [6, 7, 14, 30, 46, 14, 20, 8, 60, 10, 30, 36, 40, 16, 26])
         eligible = sorted([e for e in evaluations
                            if e.track_id == tid and e.admission_status == "ELIGIBLE"],
                           key=lambda e: -(e.score or 0))
         for i, e in enumerate(eligible, 1):
-            ws.append([i, e.grade] + cand_cols(e) + [
+            basis = ("确证" if e.admission_basis == "confirmed"
+                     else "临时规则(占位)")
+            ws.append([i, e.grade, basis] + cand_cols(e) + [
                 e.score, "；".join(e.admission_reasons)[:300], e.confidence,
                 "；".join(e.risks)[:120], "、".join(e.missing_fields)[:150],
                 "；".join(e.refetch_tasks[:3]), e.cluster_id or "", e.rule_status])
@@ -106,13 +108,18 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
                   for tid, b in budgets.items()
                   for item in b.get("refetch_queue", [])}
     ws = _sheet(wb, "待补数据",
-                ["track", "candidate_id", "title", "缺失证据", "补采任务",
-                 "本轮补证预算"],
-                [16, 30, 44, 60, 50, 14])
+                ["track", "准入状态", "candidate_id", "title", "缺失证据",
+                 "补采任务", "本轮补证预算"],
+                [16, 14, 30, 44, 60, 50, 14])
     for e in evaluations:
-        if e.admission_status == "PENDING_DATA":
+        # 临时规则准入的候选仍缺证据：与 PENDING 一并列入补采视图（业务指示 2026-07-14）
+        if e.admission_status == "PENDING_DATA" or (
+                e.admission_status == "ELIGIBLE"
+                and e.admission_basis == "provisional_rule" and e.missing_fields):
             p = by_id.get(e.subject_id)
-            ws.append([labels[e.track_id], e.subject_id,
+            ws.append([labels[e.track_id],
+                       "临时准入" if e.admission_status == "ELIGIBLE" else "待补准入",
+                       e.subject_id,
                        p.basic_facts.get("title") if p else "",
                        "、".join(e.missing_fields)[:200],
                        "；".join(e.refetch_tasks[:3]),
@@ -160,6 +167,12 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
                  ("project_status", tracks_cfg.get("project_status")),
                  ("说明", "所有等级为校准态草案，业务金标与参数批准前不是正式生产等级"),
                  ("evaluations", len(evaluations)),
+                 ("临时规则准入(占位,业务指示2026-07-14)", json.dumps(
+                     {tid: sum(1 for e in evaluations
+                               if e.track_id == tid
+                               and e.admission_status == "ELIGIBLE"
+                               and e.admission_basis == "provisional_rule")
+                      for tid in labels}, ensure_ascii=False)),
                  ("clusters", len(clusters)),
                  ("l2_queues", json.dumps({k: len(v["l2_queue"]) for k, v in budgets.items()},
                                           ensure_ascii=False)),

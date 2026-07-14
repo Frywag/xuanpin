@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "shein_479365234",
+  "run_id": "run_20260714_002",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "EMERY ROSE Women's Elegant Water-Soluble Lace Printed Round Neck Short Sleeve Dress, Summer",
+    "rating": 3.92,
+    "review_count": 27.0,
+    "review_tags_raw": "Will Repurchase (1)No Smell (1)Casual (1)Love (3)See-Through (1)Beautiful (1)True to Picture (1)Comfortable (1)Not Fit (1)",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_shein_frontend_001353",
+    "ev_shein_frontend_001354",
+    "ev_shein_frontend_001357"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

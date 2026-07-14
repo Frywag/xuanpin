@@ -388,6 +388,13 @@ def run_pipeline(repo_root: Path, out_dir: Path,
             "eligible_grades": {tid: dict(_C(e.grade for e in track_evals
                                              if e.track_id == tid and e.grade))
                                 for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
+            # 临时规则准入（占位，业务指示 2026-07-14）：数据源结构性缺失的候选
+            # 照常进入筛选流程，缺失照记、补证照排；最终门限待人工确认
+            "provisional_eligible": {
+                tid: sum(1 for e in track_evals
+                         if e.track_id == tid and e.admission_status == "ELIGIBLE"
+                         and e.admission_basis == "provisional_rule")
+                for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
             "clusters": len(clusters),
             # 预算拆分（P0-03）：l2/l3=已准入深挖，refetch=PENDING_DATA 补证
             "budgets": {tid: {"l2": len(b.get("l2_queue", [])),

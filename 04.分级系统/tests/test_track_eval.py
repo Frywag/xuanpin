@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """三赛道独立评估：验收场景测试（交接清单 §12）。"""
+import copy
 from pathlib import Path
 
 import pytest
@@ -11,6 +12,15 @@ from grading_system.track_eval import TRACK_IDS, TrackEvaluator, assess_freshnes
 
 CFG = yaml.safe_load((Path(__file__).resolve().parents[1] /
                       "configs/tracks_v1.yaml").read_text(encoding="utf-8"))
+
+
+def strict_cfg():
+    """关闭临时可跑占位规则后的严格证据口径（回归对照用）。"""
+    c = copy.deepcopy(CFG)
+    for t in c["tracks"].values():
+        if "provisional_admission" in t:
+            t["provisional_admission"]["enabled"] = False
+    return c
 
 
 def ev(path, eid, src="s1"):
@@ -75,11 +85,24 @@ class TestTrendNew:
         assert e.grade in ("S", "A", "B")   # 无销量绝不淘汰（单源早期可 B）
         assert e.evidence_refs              # 新款证据 100% 绑定
 
-    def test_scene7_first_seen_only_is_pending(self):
-        """场景七：只有系统首次采集，无上架/新品/新颖度证据 -> PENDING_DATA。"""
+    def test_scene7_first_seen_only_admits_provisionally(self):
+        """场景七更新（业务指示 2026-07-14）：无上架/新颖度证据属数据源结构性
+        缺失 -> 按占位规则临时准入并照常评分；缺失照记、依据标注。"""
         p = base_packet("cn2")
         assess_freshness(p)
         e = make_evaluator([p]).eval_trend_new(p, None)
+        assert e.admission_status == "ELIGIBLE"
+        assert e.admission_basis == "provisional_rule"
+        assert e.grade is not None
+        assert e.confidence == "low"
+        assert e.missing_fields          # 缺失仍然点出来
+        assert e.provisional_notes
+
+    def test_scene7_strict_config_still_pending(self):
+        """关闭占位规则（enabled: false）即回到严格证据口径 -> PENDING_DATA。"""
+        p = base_packet("cn2s")
+        assess_freshness(p)
+        e = TrackEvaluator(strict_cfg(), GroupStats([p]), "run_t").eval_trend_new(p, None)
         assert e.admission_status == "PENDING_DATA"
         assert e.grade is None
 
@@ -91,11 +114,13 @@ class TestTrendNew:
         assert e.admission_status == "REJECTED"
 
     def test_scene5_indie_discovery_not_structurally_rejected(self):
-        """场景五：独立站缺交易字段，按发现源参与趋势判断，不被淘汰为 REJECTED。"""
+        """场景五：独立站缺交易字段，按发现源参与趋势判断，不被淘汰为 REJECTED
+        （占位规则下临时准入参赛；确证旧款仍会 REJECTED）。"""
         p = base_packet("cn4", group="indie_frontend")
         assess_freshness(p)
         e = make_evaluator([p]).eval_trend_new(p, None)
-        assert e.admission_status == "PENDING_DATA"   # 待补，而非否定
+        assert e.admission_status != "REJECTED"
+        assert e.admission_status == "ELIGIBLE"       # 临时准入，照常竞争
 
     def test_shein_new_arrival_collection_is_recent_evidence(self):
         p = base_packet("cn5", group="shein_frontend")
@@ -138,17 +163,57 @@ class TestHitImprovement:
         e = make_evaluator([p]).eval_hit_improvement(p)
         assert e.admission_status == "REJECTED"
 
-    def test_missing_voc_is_pending_not_graded(self):
+    def test_missing_voc_admits_provisionally_capped_b(self):
+        """业务指示 2026-07-14：评论全文属源结构性缺失——有交易信号+确证低评分
+        即占位豁免负面聚类准入；痛点未确认，占位等级上限 B。"""
         p = self._demand_packet("h4", rating=3.8, rc=120, clusters=0)
         e = make_evaluator([p]).eval_hit_improvement(p)
-        assert e.admission_status == "PENDING_DATA"
+        assert e.admission_status == "ELIGIBLE"
+        assert e.admission_basis == "provisional_rule"
+        assert e.grade == "B"            # grade_cap: B（占位）
         assert any("聚类" in m or "评论" in m for m in e.missing_fields)
+
+    def test_missing_voc_strict_config_still_pending(self):
+        p = self._demand_packet("h4s", rating=3.8, rc=120, clusters=0)
+        e = TrackEvaluator(strict_cfg(), GroupStats([p]), "run_t").eval_hit_improvement(p)
+        assert e.admission_status == "PENDING_DATA"
+
+    def test_no_rating_cannot_admit_provisionally(self):
+        """低分前提无法确证（缺评分）时占位规则不适用 -> 仍 PENDING。"""
+        p = self._demand_packet("h5", rating=None, rc=0, clusters=0)
+        e = make_evaluator([p]).eval_hit_improvement(p)
+        assert e.admission_status == "PENDING_DATA"
 
 
 class TestLongTailAndBudgets:
     def test_not_a_catchall(self):
-        """未命中前两赛道 ≠ 自动进入长尾：无交易证据 -> PENDING_DATA。"""
+        """未命中前两赛道 ≠ 自动进入长尾：无交易证据 -> PENDING_DATA
+        （稳定需求是本赛道前提，占位规则不豁免）。"""
         p = base_packet("l1")
+        e = make_evaluator([p]).eval_long_tail(p)
+        assert e.admission_status == "PENDING_DATA"
+
+    def test_missing_price_admits_provisionally_capped_b(self):
+        """业务指示 2026-07-14：仅缺价格（源结构性没有）时占位准入，
+        价格/利润结构不可判 -> 占位等级上限 B。"""
+        p = base_packet("l2", group="shein_frontend", roles=("transaction",))
+        p.set_fact("market_metrics", "sales_floor_units", 400,
+                   ev("market_metrics.sales_floor_units", "ev_l2_s"))
+        e = make_evaluator([p]).eval_long_tail(p)
+        assert e.admission_status == "ELIGIBLE"
+        assert e.admission_basis == "provisional_rule"
+        assert e.grade == "B"
+        assert any(m.startswith("价格") for m in e.missing_fields)
+
+    def test_spike_exclusion_not_waived_by_provisional(self):
+        """单次暴涨排除是抗噪红线，占位规则不豁免 -> 仍 PENDING。"""
+        p = base_packet("l3", group="shein_frontend", roles=("transaction",))
+        p.set_fact("market_metrics", "sales_floor_units", 400,
+                   ev("market_metrics.sales_floor_units", "ev_l3_s"))
+        p.set_fact("market_metrics", "sales_growth_rate", 1.2,
+                   ev("market_metrics.sales_growth_rate", "ev_l3_g"))
+        p.set_fact("basic_facts", "price", {"amount": 19.9, "currency": "USD"},
+                   ev("basic_facts.price", "ev_l3_p"))
         e = make_evaluator([p]).eval_long_tail(p)
         assert e.admission_status == "PENDING_DATA"
 
@@ -163,19 +228,29 @@ class TestLongTailAndBudgets:
             assert set(budgets[tid]) == {"l2_queue", "l3_queue", "refetch_queue"}
 
     def test_refetch_budget_split_no_deadlock(self):
-        """P0-03：补证预算与深挖预算拆分——PENDING_DATA 候选进入 refetch_queue
-        获得本轮补采名额（带任务/状态/负责人占位），不再「缺数据者永远无预算」。"""
+        """P0-03：补证预算与深挖预算拆分——缺证据候选（临时准入或 PENDING）
+        进入 refetch_queue 获得本轮补采名额，不再「缺数据者永远无预算」。"""
         packets = [base_packet(f"p{i}") for i in range(6)]
         _, _, budgets = make_evaluator(packets).run(packets)
         q = budgets["trend_new"]["refetch_queue"]
-        assert q, "PENDING_DATA 候选必须获得补证名额"
+        assert q, "缺证据候选必须获得补证名额"
         assert len(q) <= CFG["tracks"]["trend_new"]["refetch_budget_draft"]
         for item in q:
             assert set(item) == {"subject_id", "missing", "tasks",
-                                 "status", "owner", "due"}
+                                 "status", "owner", "due", "basis"}
             assert item["status"] == "open"
+            assert item["basis"] in ("provisional_eligible", "pending")
             assert item["tasks"], "补证队列条目必须带可执行补采任务"
-        # 补证队列（PENDING）与深挖队列（ELIGIBLE）互不重叠
+            assert item["missing"], "补证队列条目必须点出缺失证据"
+
+    def test_refetch_queue_strict_config_from_pending(self):
+        """严格口径（占位规则关闭）下补证队列仍从 PENDING_DATA 取（P0-03 原语义）。"""
+        packets = [base_packet(f"q{i}") for i in range(6)]
+        _, _, budgets = TrackEvaluator(strict_cfg(), GroupStats(packets),
+                                       "run_t").run(packets)
+        q = budgets["trend_new"]["refetch_queue"]
+        assert q and all(i["basis"] == "pending" for i in q)
+        # 严格口径下补证队列（PENDING）与深挖队列（ELIGIBLE）互不重叠
         assert not ({i["subject_id"] for i in q}
                     & set(budgets["trend_new"]["l2_queue"]))
 
@@ -225,6 +300,21 @@ class TestTrendFairness:
         tcfg = CFG["tracks"]["trend_new"]
         assert not any("评论" in x for x in tcfg["l2_focus"])
         assert any("评论" in x for x in tcfg["l3_focus"])
+
+    def test_provisional_path_also_blind_to_reviews_and_sales(self):
+        """占位规则准入路径同样不得读取评论/销量：带不带这些字段结果必须一致。"""
+        bare = base_packet("fp1", group="indie_frontend")
+        rich = base_packet("fp1", group="indie_frontend")
+        rich.set_fact("basic_facts", "rating", 4.9, ev("basic_facts.rating", "ev_pr"))
+        rich.set_fact("basic_facts", "review_count", 5000,
+                      ev("basic_facts.review_count", "ev_prc"))
+        rich.set_fact("market_metrics", "sales_30d_units", 99999,
+                      ev("market_metrics.sales_30d_units", "ev_ps"))
+        e1 = make_evaluator([bare]).eval_trend_new(bare, None)
+        e2 = make_evaluator([rich]).eval_trend_new(rich, None)
+        assert e1.admission_basis == "provisional_rule"
+        assert (e1.admission_status, e1.grade, e1.score) \
+            == (e2.admission_status, e2.grade, e2.score)
 
 
 class TestTrackReportGovernance:

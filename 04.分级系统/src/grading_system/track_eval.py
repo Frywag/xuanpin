@@ -78,6 +78,10 @@ class TrackEvaluation:
     rule_status: str = "calibration_pending_business_approval"
     rule_version: str = ""
     legacy_grade: Optional[str] = None   # 仅旧表兼容导出用
+    # 准入依据（业务指示 2026-07-14 临时可跑规则）：confirmed=证据确证准入；
+    # provisional_rule=占位规则准入（数据源结构性缺失，最终门限待人工确认）
+    admission_basis: str = "confirmed"
+    provisional_notes: List[str] = dataclasses.field(default_factory=list)
 
     def to_dict(self):
         return dataclasses.asdict(self)
@@ -181,16 +185,26 @@ class TrackEvaluator:
             confidence=kw.get("confidence", "low"),
             cluster_id=kw.get("cluster_id"),
             rule_version=self.rule_version,
-            legacy_grade=None if kw.get("grade") else "C")
+            legacy_grade=None if kw.get("grade") else "C",
+            admission_basis=kw.get("admission_basis", "confirmed"),
+            provisional_notes=kw.get("provisional_notes", []))
         return ev
 
-    def _grade_from(self, track_id: str, score: float) -> str:
+    _GRADE_ORDER = {"S": 0, "A": 1, "B": 2}
+
+    def _grade_from(self, track_id: str, score: float,
+                    cap: Optional[str] = None) -> str:
         th = self.cfg["tracks"][track_id]["grade_thresholds_draft"]
         if score >= th["S"]:
-            return "S"
-        if score >= th["A"]:
-            return "A"
-        return "B"   # ELIGIBLE 的下限是 B（观察），不是 C
+            g = "S"
+        elif score >= th["A"]:
+            g = "A"
+        else:
+            g = "B"   # ELIGIBLE 的下限是 B（观察），不是 C
+        # 占位等级上限（临时规则准入时生效；人工在 tracks_v1.yaml 调整）
+        if cap and self._GRADE_ORDER[g] < self._GRADE_ORDER[cap]:
+            return cap
+        return g
 
     def _txn_percentile(self, p) -> Optional[float]:
         """交易信号在同组内的相对位置（0-1）；用于「适量销量」相对口径。"""
@@ -253,19 +267,31 @@ class TrackEvaluator:
                             ["已确认旧商品/旧款型（销量增长不能覆盖该结论）"],
                             evidence_refs=f.get("freshness_evidence_refs", []),
                             cluster_id=cluster_id)
+        prov = self.cfg["tracks"]["trend_new"].get("provisional_admission", {})
+        prov_notes = []
         if not (has_recent and has_novel):
-            return self._mk(p, "trend_new", "PENDING_DATA",
-                            reasons + [f"缺：{m}" for m in missing],
-                            missing_fields=missing,
-                            refetch_tasks=self.cfg["tracks"]["trend_new"].get(
-                                "l2_focus", self.cfg["tracks"]["trend_new"]["refetch_focus"]),
-                            cluster_id=cluster_id)
+            if not prov.get("enabled"):
+                return self._mk(p, "trend_new", "PENDING_DATA",
+                                reasons + [f"缺：{m}" for m in missing],
+                                missing_fields=missing,
+                                refetch_tasks=self.cfg["tracks"]["trend_new"].get(
+                                    "l2_focus", self.cfg["tracks"]["trend_new"]["refetch_focus"]),
+                                cluster_id=cluster_id)
+            # 临时可跑规则（业务指示 2026-07-14）：缺失多为数据源结构性没有，
+            # 无「旧款确证」即临时准入，照常按证据强度评分；缺失照记、补证照排
+            if not has_recent:
+                prov_notes.append("近期推出证据缺失（源无该点位）→ 占位视为待验证新品")
+            if not has_novel:
+                prov_notes.append("款型新颖度证据缺失（历史款型库未建）→ 无旧款确证即占位视为新款")
+            reasons.append("临时规则准入（占位，最终门限与字段待人工确认）")
         # ELIGIBLE：草案评分（多平台相似/内容只加权）
         dims = self.cfg["tracks"]["trend_new"]["scoring_dims_draft"]
         comps, score, ev = [], 0.0, list(f.get("freshness_evidence_refs", []))
         ev += f.get("novelty_evidence_refs", [])
-        fresh_pts = dims["freshness_credibility"] * (
-            1.0 if f.get("freshness_status") == "confirmed" else 0.7)
+        fresh_factor = (1.0 if f.get("freshness_status") == "confirmed"
+                        else 0.7 if f.get("freshness_status") == "inferred"
+                        else prov.get("missing_freshness_factor", 0.3))
+        fresh_pts = dims["freshness_credibility"] * fresh_factor
         comps.append({"name": "新鲜度可信度", "score": round(fresh_pts, 1),
                       "max": dims["freshness_credibility"]})
         score += fresh_pts
@@ -287,12 +313,19 @@ class TrackEvaluator:
             score += pts
             ev += p.evidence_for("context.design_signals")
         pct = round(score / sum(v for k, v in dims.items() if k != "risk_floor") * 100, 1)
+        provisional = bool(prov_notes)
         return self._mk(p, "trend_new", "ELIGIBLE", reasons, grade=self._grade_from(
-            "trend_new", pct), score=pct, components=comps,
-            evidence_refs=sorted(set(ev)), confidence="medium",
+            "trend_new", pct, cap=prov.get("grade_cap") if provisional else None),
+            score=pct, components=comps,
+            evidence_refs=sorted(set(ev)),
+            confidence="low" if provisional else "medium",
             cluster_id=cluster_id,
+            missing_fields=missing,
+            admission_basis="provisional_rule" if provisional else "confirmed",
+            provisional_notes=prov_notes,
             refetch_tasks=self.cfg["tracks"]["trend_new"].get(
-                "l3_focus", self.cfg["tracks"]["trend_new"]["refetch_focus"]))
+                "l2_focus" if provisional else "l3_focus",
+                self.cfg["tracks"]["trend_new"]["refetch_focus"]))
 
     # ---------- 赛道二：爆款改款 ----------
 
@@ -338,15 +371,27 @@ class TrackEvaluator:
             return self._mk(p, "hit_improvement", "REJECTED",
                             reasons + ["评分正常，不构成改款机会"],
                             evidence_refs=p.evidence_for("basic_facts.rating"))
+        prov = self.cfg["tracks"]["hit_improvement"].get("provisional_admission", {})
+        prov_notes = []
         if missing or not enough_clusters:
             if not enough_clusters and n_clusters:
                 missing.append(f"负面聚类不足（{n_clusters} < "
                                f"{tcfg['negative_clusters_draft']['min_clusters']}）")
-            return self._mk(p, "hit_improvement", "PENDING_DATA",
-                            reasons + [f"缺：{m}" for m in missing],
-                            missing_fields=missing,
-                            refetch_tasks=self.cfg["tracks"]["hit_improvement"]["refetch_focus"])
-        # 三项联合成立 -> ELIGIBLE
+            # 临时可跑规则（业务指示 2026-07-14）：评论全文属源结构性缺失时，
+            # 有交易信号 + 确证低评分（样本达标）即可占位豁免负面聚类准入；
+            # 低分前提本身无法确证（缺评分/样本不足/缺交易信号）仍 PENDING
+            if (prov.get("enabled")
+                    and prov.get("waive_negative_clusters_if_low_rating")
+                    and low_rating is True and has_txn):
+                prov_notes.append("负面聚类证据缺失（源无评论全文）→ 占位豁免准入；"
+                                  "痛点未经聚类确认，S/A 须待评论回补")
+                reasons.append("临时规则准入（占位，最终门限与字段待人工确认）")
+            else:
+                return self._mk(p, "hit_improvement", "PENDING_DATA",
+                                reasons + [f"缺：{m}" for m in missing],
+                                missing_fields=missing,
+                                refetch_tasks=self.cfg["tracks"]["hit_improvement"]["refetch_focus"])
+        # 三项联合成立（或占位豁免）-> ELIGIBLE
         dims = self.cfg["tracks"]["hit_improvement"]["scoring_dims_draft"]
         base = sum(v for k, v in dims.items() if k != "risk_floor")
         score = (dims["demand_validated"] * min(1.0, (txn_pct or 0.5) + 0.3)
@@ -356,10 +401,18 @@ class TrackEvaluator:
         ev = (p.evidence_for("basic_facts.rating")
               + p.evidence_for("context.review_tags_raw")
               + [e for c in clusters for e in c.get("evidence_refs", [])])
+        provisional = bool(prov_notes)
         return self._mk(p, "hit_improvement", "ELIGIBLE", reasons,
-                        grade=self._grade_from("hit_improvement", pct), score=pct,
+                        grade=self._grade_from(
+                            "hit_improvement", pct,
+                            cap=prov.get("grade_cap") if provisional else None),
+                        score=pct,
                         components=[{"name": "三项联合准入", "score": pct, "max": 100}],
-                        evidence_refs=sorted(set(ev)), confidence="medium",
+                        evidence_refs=sorted(set(ev)),
+                        confidence="low" if provisional else "medium",
+                        missing_fields=missing,
+                        admission_basis="provisional_rule" if provisional else "confirmed",
+                        provisional_notes=prov_notes,
                         refetch_tasks=self.cfg["tracks"]["hit_improvement"]["refetch_focus"])
 
     # ---------- 赛道三：长尾直接选品 ----------
@@ -386,33 +439,58 @@ class TrackEvaluator:
         risks = []
         if _get(p, "competition_metrics.seller_type") == "BRAND":
             risks.append("品牌自营，直接跟卖有 IP 风险（人工确认前不阻断）")
-        if not _has(p, "basic_facts.price"):
+        price_missing = not _has(p, "basic_facts.price")
+        if price_missing:
             missing.append("价格与币种（价格带匹配无法判断）")
+        prov = self.cfg["tracks"]["long_tail_direct"].get("provisional_admission", {})
+        prov_notes = []
         if missing:
-            return self._mk(p, "long_tail_direct", "PENDING_DATA",
-                            reasons + [f"缺：{m}" for m in missing],
-                            missing_fields=missing, risks=risks,
-                            refetch_tasks=self.cfg["tracks"]["long_tail_direct"]["refetch_focus"])
+            # 临时可跑规则（业务指示 2026-07-14）：仅缺价格时可占位准入
+            # （价格/利润结构不可判 -> 占位等级上限）；无交易证据仍 PENDING
+            # （稳定需求是本赛道前提），单次暴涨排除不豁免（抗噪红线）
+            only_price = (price_missing and has_txn and not spike
+                          and all(m.startswith("价格") for m in missing))
+            if prov.get("enabled") and prov.get("allow_missing_price") and only_price:
+                prov_notes.append("价格缺失（源无该点位）→ 占位准入；"
+                                  "价格/利润结构不可判，等级上限见占位规则")
+                reasons.append("临时规则准入（占位，最终门限与字段待人工确认）")
+            else:
+                return self._mk(p, "long_tail_direct", "PENDING_DATA",
+                                reasons + [f"缺：{m}" for m in missing],
+                                missing_fields=missing, risks=risks,
+                                refetch_tasks=self.cfg["tracks"]["long_tail_direct"]["refetch_focus"])
         dims = self.cfg["tracks"]["long_tail_direct"]["scoring_dims_draft"]
         base = sum(v for k, v in dims.items() if k != "risk_floor")
         txn_pct = self._txn_percentile(p) or 0.5
-        pos = self.stats.price_position(p)
+        if price_missing:
+            price_factor = prov.get("missing_price_factor", 0.3)
+        else:
+            pos = self.stats.price_position(p)
+            price_factor = 1.0 if pos == "within_p25_p75" else 0.5
         score = (dims["demand_stability"] * min(1.0, txn_pct + 0.3)
                  + dims["competition_breakthrough"] * 0.5
-                 + dims["price_profit_structure"] * (
-                     1.0 if pos == "within_p25_p75" else 0.5)
+                 + dims["price_profit_structure"] * price_factor
                  + dims["fact_completeness"] * min(1.0, len(p.evidence_pack) / 10))
         pct = round(score / base * 100, 1)
         ev = p.evidence_for("basic_facts.price") + p.evidence_for(
             "basic_facts.review_count")
         for s in SIGNAL_REGISTRY["transaction"][:5]:
             ev += p.evidence_for(s)
+        provisional = bool(prov_notes)
         return self._mk(p, "long_tail_direct", "ELIGIBLE", reasons,
-                        grade=self._grade_from("long_tail_direct", pct), score=pct,
+                        grade=self._grade_from(
+                            "long_tail_direct", pct,
+                            cap=prov.get("grade_cap_if_missing_price")
+                            if provisional else None),
+                        score=pct,
                         components=[{"name": "稳定需求×竞争×价格结构", "score": pct,
                                      "max": 100}],
-                        evidence_refs=sorted(set(ev)), confidence="medium",
+                        evidence_refs=sorted(set(ev)),
+                        confidence="low" if provisional else "medium",
                         risks=risks,
+                        missing_fields=missing,
+                        admission_basis="provisional_rule" if provisional else "confirmed",
+                        provisional_notes=prov_notes,
                         refetch_tasks=self.cfg["tracks"]["long_tail_direct"]["refetch_focus"])
 
     # ---------- 运行 ----------
@@ -435,25 +513,33 @@ class TrackEvaluator:
             evaluations.append(self.eval_hit_improvement(p))
             evaluations.append(self.eval_long_tail(p))
         # 赛道独立预算（互不挤占）。两类预算拆分（P0-03 解死锁）：
-        #   refetch_queue —— 准入补证预算：从 PENDING_DATA 中取，专供补采缺失证据，
-        #                    使「最需要补证据的候选」获得赛道预算而非被排除；
-        #   l2/l3_queue  —— 已准入深挖预算：仅从 ELIGIBLE 中按分取。
+        #   refetch_queue —— 准入补证预算：临时规则准入但证据未补齐的高分候选优先
+        #                    （补证后可确证/升级），其后是 PENDING_DATA 待补候选；
+        #   l2/l3_queue  —— 已准入深挖预算：从 ELIGIBLE（含临时准入）按分取。
+        #   同一候选可同时占深挖与补证名额（两类预算目的不同，不算冲突）。
         budgets = {}
         for tid in TRACK_IDS:
             tcfg = self.cfg["tracks"][tid]
             eligible = sorted([e for e in evaluations
                                if e.track_id == tid and e.admission_status == "ELIGIBLE"],
                               key=lambda e: -(e.score or 0))
+            prov_needy = sorted(
+                [e for e in eligible
+                 if e.admission_basis == "provisional_rule" and e.missing_fields],
+                key=lambda e: (-(e.score or 0), e.subject_id))
             pending = sorted([e for e in evaluations
                               if e.track_id == tid and e.admission_status == "PENDING_DATA"],
                              key=lambda e: (-len(e.evidence_refs), e.subject_id))
+            refetch_pool = prov_needy + pending
             budgets[tid] = {
                 "l2_queue": [e.subject_id for e in eligible[: tcfg["l2_budget_draft"]]],
                 "l3_queue": [e.subject_id for e in eligible[: tcfg["l3_budget_draft"]]],
                 "refetch_queue": [
                     {"subject_id": e.subject_id, "missing": e.missing_fields,
                      "tasks": e.refetch_tasks, "status": "open",
-                     "owner": None, "due": None}
-                    for e in pending[: tcfg.get("refetch_budget_draft", 0)]],
+                     "owner": None, "due": None,
+                     "basis": ("provisional_eligible"
+                               if e.admission_status == "ELIGIBLE" else "pending")}
+                    for e in refetch_pool[: tcfg.get("refetch_budget_draft", 0)]],
             }
         return evaluations, clusters, budgets

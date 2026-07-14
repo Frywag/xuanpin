@@ -84,6 +84,11 @@ PENDING_DATA 有独立补证预算 refetch_queue（与 l2/l3 深挖预算拆分�
 唯一事实源切换、编排接管、簇 vs 单品等业务拍板项 agent 不得自行决定，
 只登记 tracks_v1.yaml pending_business_confirmation。
 
+临时可跑占位规则（2026-07-14 业务指示，docs/07 §2.7）：数据源结构性缺失
+的候选按 tracks_v1.yaml `provisional_admission` 占位规则临时准入、照常评分
+（admission_basis=provisional_rule，confidence=low，改款/长尾占位上限 B），
+缺失照记、补证照排；人工改配置即调整门限，enabled:false 回严格口径。
+
 ## 硬性红线（对所有 agent 生效，来自项目总纲）
 
 1. 不编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值；

@@ -52,6 +52,7 @@ def cmd_run(args) -> int:
     if tv:
         print(f"[tracks.v1 校准口径｜{tv['rule_status']}] 准入分布: {tv['per_track']}")
         print(f"[tracks.v1 校准口径] ELIGIBLE 草案等级: {tv['eligible_grades']}")
+        print(f"[tracks.v1 校准口径] 其中临时规则准入(占位): {tv.get('provisional_eligible')}")
         print(f"[tracks.v1 校准口径] 预算队列(l2/l3/补采): {tv.get('budgets')}")
     print(f"L2 处理: {meta['l2_processed']}  L3 处理: {meta['l3_processed']}")
     print(f"LLM 任务包: {meta.get('llm_tasks_generated', 0)} 个（{args.out}/llm_tasks/）")
