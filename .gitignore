@@ -19,3 +19,14 @@ __pycache__/
 # run_20260713_001 的历史副本保留在库中作三赛道首轮基线
 04.分级系统/data/analysis_runs/*/track_evaluations.jsonl
 04.分级系统/data/analysis_runs/*/sab_products_full.jsonl
+
+# codebase-memory 索引排除：运行过程和交付数据表均可由管道重算，
+# 不进入代码知识图谱；保留 run_meta.json 作为轻量运行审计记录。
+04.分级系统/data/analysis_runs/*/*.xlsx
+04.分级系统/data/analysis_runs/*/candidate_packets/
+04.分级系统/data/analysis_runs/*/envelopes/
+04.分级系统/data/analysis_runs/*/llm_tasks/
+04.分级系统/data/analysis_runs/*/llm_outputs/
+04.分级系统/data/analysis_runs/*/deep_reviews/
+04.分级系统/data/analysis_runs/*/opportunity_clusters.json
+04.分级系统/data/analysis_runs/*/选品分析报告.md
