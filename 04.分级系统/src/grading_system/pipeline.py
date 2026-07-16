@@ -225,20 +225,36 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         "llm_usage": "无（全部为确定性规则；未编造任何数值）",
         "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
     }
-    # 6c. 三赛道独立评估（tracks.v1；legacy 单赛道结果保留为旧版兼容）
+    # 6c. 三赛道主链（tracks.v2 存在时为主链：L0→开发方向→三赛道各自 L1/L2/L3；
+    #     趋势独立为词级 ABCDE。tracks_v1.yaml 仅在无 v2 时兼容运行）
+    tracks_v2_path = scoring_cfg_path.parent / "tracks_v2.yaml"
     tracks_cfg_path = scoring_cfg_path.parent / "tracks_v1.yaml"
     track_evals, clusters, track_budgets = [], [], {}
+    trend_words, directions = [], {}
     run_meta["project_status"] = "legacy_only"
-    if tracks_cfg_path.exists():
+    bc_path = scoring_cfg_path.parent / "business_confirmations.yaml"
+    if tracks_v2_path.exists():
+        from .tracks_v2 import TracksV2Evaluator, build_amazon_word_freq
+        tracks_cfg = load_yaml(tracks_v2_path)
+        run_meta["project_status"] = tracks_cfg.get("project_status", "legacy_only")
+        if bc_path.exists():
+            tracks_cfg["business_confirmations"] = load_yaml(bc_path) or {}
+        evaluator = TracksV2Evaluator(tracks_cfg, stats, out_dir.name,
+                                      build_amazon_word_freq(packets))
+        track_evals, clusters, track_budgets, trend_words, directions = \
+            evaluator.run_v2(packets)
+        with open(out_dir / "trend_words.jsonl", "w", encoding="utf-8") as f:
+            for w in trend_words:
+                f.write(json.dumps(w, ensure_ascii=False, default=str) + "\n")
+    elif tracks_cfg_path.exists():
         from .track_eval import TrackEvaluator
         tracks_cfg = load_yaml(tracks_cfg_path)
         run_meta["project_status"] = tracks_cfg.get("project_status", "legacy_only")
-        # 业务确认证据通道（规则 §7.3：业务人员确认是合法准入证据）
-        bc_path = scoring_cfg_path.parent / "business_confirmations.yaml"
         if bc_path.exists():
             tracks_cfg["business_confirmations"] = load_yaml(bc_path) or {}
         evaluator = TrackEvaluator(tracks_cfg, stats, out_dir.name)
         track_evals, clusters, track_budgets = evaluator.run(packets)
+    if track_evals:
         with open(out_dir / "track_evaluations.jsonl", "w", encoding="utf-8") as f:
             for e in track_evals:
                 f.write(json.dumps(e.to_dict(), ensure_ascii=False, default=str) + "\n")
@@ -246,7 +262,38 @@ def run_pipeline(repo_root: Path, out_dir: Path,
                   out_dir / "opportunity_clusters.json")
         from .xlsx_report import export_track_report
         export_track_report(out_dir / "三赛道选品推荐表.xlsx", packets,
-                            track_evals, clusters, track_budgets, tracks_cfg)
+                            track_evals, clusters, track_budgets, tracks_cfg,
+                            word_evals=trend_words if tracks_v2_path.exists() else None,
+                            directions=directions if tracks_v2_path.exists() else None)
+
+    # 6d. v2 主链接管下游对象（2026-07-16 业务重构）：深评/152/LLM 任务
+    #     由三赛道各自 L2/L3 队列决定，legacy 名单降为审计基线
+    if tracks_v2_path.exists() and track_evals:
+        ev_by_key = {(e.subject_id, e.track_id): e for e in track_evals}
+        l3_union, l2_union = [], []
+        for tid, b in track_budgets.items():
+            l3_union += [c for c in b["l3_queue"] if c not in l3_union]
+            l2_union += [c for c in b["l2_queue"] if c not in l2_union]
+        # 深评对象：走完 L3 的各赛道终选款（按分排序，沿用 llm.deep_review 上限）
+        finalists = sorted(
+            [e for e in track_evals if e.layer_reached == "L3" and e.grade],
+            key=lambda e: -(e.score or 0))
+        seen_ids = []
+        for e in finalists:
+            if e.subject_id not in seen_ids:
+                seen_ids.append(e.subject_id)
+        deep_ids = seen_ids[: dr_cfg.get("max_candidates", 12) or 12]
+        # 152 键画像对象：三赛道 L2∪L3 入围款
+        profile_ids = [c for c in l2_union + l3_union if c in pk_by_id]
+        if profile_registry:
+            for cid in dict.fromkeys(profile_ids):
+                pk_by_id[cid].context["profile"] = build_direct_profile(
+                    pk_by_id[cid], profile_registry)
+        # 评论聚类对象：任一赛道 L2 且带改款方向
+        l2_ids = [c for c in l2_union
+                  if "改款" in (directions.get(c, {}) or {}).get("options", [])]
+        # 跨平台比对/理由改写对象：各赛道 L3 终选款
+        l3_ids = [c for c in l3_union if c in results]
 
     # 7b. S/A/B 全量产品信息保留（含全部字段/证据/画像，供下游 152 键核对）
     with open(out_dir / "sab_products_full.jsonl", "w", encoding="utf-8") as f:
@@ -383,29 +430,41 @@ def run_pipeline(repo_root: Path, out_dir: Path,
     run_meta["sab_full_retained"] = run_meta_sab
     if track_evals:
         from collections import Counter as _C
-        run_meta["tracks_v1"] = {
+        tids = sorted({e.track_id for e in track_evals})
+        run_meta["tracks"] = {
+            "schema_version": tracks_cfg.get("schema_version", "tracks.v1"),
+            "rule_version": tracks_cfg.get("rule_version"),
             "rule_status": "calibration_pending_business_approval",
             "evaluations": len(track_evals),
             "per_track": {tid: dict(_C(e.admission_status for e in track_evals
-                                       if e.track_id == tid))
-                          for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
+                                       if e.track_id == tid)) for tid in tids},
             "eligible_grades": {tid: dict(_C(e.grade for e in track_evals
                                              if e.track_id == tid and e.grade))
-                                for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
-            # 临时规则准入（占位，业务指示 2026-07-14）：数据源结构性缺失的候选
-            # 照常进入筛选流程，缺失照记、补证照排；最终门限待人工确认
+                                for tid in tids},
+            "layers": {tid: dict(_C(e.layer_reached for e in track_evals
+                                    if e.track_id == tid
+                                    and e.admission_status == "ELIGIBLE"))
+                       for tid in tids},
+            # 临时规则准入（占位）：结构性缺失候选照常进流程，缺失照记补证照排
             "provisional_eligible": {
                 tid: sum(1 for e in track_evals
                          if e.track_id == tid and e.admission_status == "ELIGIBLE"
                          and e.admission_basis == "provisional_rule")
-                for tid in ("trend_new", "hit_improvement", "long_tail_direct")},
+                for tid in tids},
             "clusters": len(clusters),
-            # 预算拆分（P0-03）：l2/l3=已准入深挖，refetch=PENDING_DATA 补证
             "budgets": {tid: {"l2": len(b.get("l2_queue", [])),
                               "l3": len(b.get("l3_queue", [])),
                               "refetch": len(b.get("refetch_queue", []))}
                         for tid, b in track_budgets.items()},
         }
+        if trend_words:
+            run_meta["trend_words"] = {
+                "count": len(trend_words),
+                "grades": dict(_C(w["grade"] for w in trend_words)),
+                "note": "词级趋势独立体系（头部独立站+社媒；小红书源待接入）"}
+        if directions:
+            run_meta["development_directions"] = dict(_C(
+                "/".join(d.get("options", [])) for d in directions.values()))
 
     # 11. 写入选品库（SQLite，跨 run 累积，供 agent CLI 查询）+ 运行记录落盘
     from .store import SelectionStore

@@ -82,6 +82,8 @@ class TrackEvaluation:
     # provisional_rule=占位规则准入（数据源结构性缺失，最终门限待人工确认）
     admission_basis: str = "confirmed"
     provisional_notes: List[str] = dataclasses.field(default_factory=list)
+    # v2 主链：赛道内分层淘汰进度（L1 低成本准入 / L2 定向深挖 / L3 终选验证）
+    layer_reached: str = "L1"
 
     def to_dict(self):
         return dataclasses.asdict(self)

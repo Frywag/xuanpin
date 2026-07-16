@@ -48,12 +48,20 @@ def cmd_run(args) -> int:
     # 双口径标注（P0-08）：legacy 与 tracks.v1 并行输出，禁止混称
     print(f"[legacy 基线口径｜非正式生产推荐] 等级分布: {meta['grade_distribution']}")
     print(f"[legacy 基线口径] 赛道分布: {meta['track_distribution']}")
-    tv = meta.get("tracks_v1")
+    tv = meta.get("tracks") or meta.get("tracks_v1")
     if tv:
-        print(f"[tracks.v1 校准口径｜{tv['rule_status']}] 准入分布: {tv['per_track']}")
-        print(f"[tracks.v1 校准口径] ELIGIBLE 草案等级: {tv['eligible_grades']}")
-        print(f"[tracks.v1 校准口径] 其中临时规则准入(占位): {tv.get('provisional_eligible')}")
-        print(f"[tracks.v1 校准口径] 预算队列(l2/l3/补采): {tv.get('budgets')}")
+        sv = tv.get("schema_version", "tracks.v1")
+        print(f"[{sv} 校准口径｜{tv['rule_status']}] 准入分布: {tv['per_track']}")
+        print(f"[{sv} 校准口径] ELIGIBLE 草案等级: {tv['eligible_grades']}")
+        if tv.get("layers"):
+            print(f"[{sv} 校准口径] 分层到达(L1/L2/L3): {tv['layers']}")
+        print(f"[{sv} 校准口径] 其中临时规则准入(占位): {tv.get('provisional_eligible')}")
+        print(f"[{sv} 校准口径] 预算队列(l2/l3/补采): {tv.get('budgets')}")
+        if meta.get("development_directions"):
+            print(f"[开发方向] {meta['development_directions']}")
+        if meta.get("trend_words"):
+            print(f"[趋势词体系ABCDE] {meta['trend_words']['grades']}"
+                  f"（共 {meta['trend_words']['count']} 词）")
     print(f"L2 处理: {meta['l2_processed']}  L3 处理: {meta['l3_processed']}")
     print(f"LLM 任务包: {meta.get('llm_tasks_generated', 0)} 个（{args.out}/llm_tasks/）")
     print(f"选品库: {meta.get('db_path')}")

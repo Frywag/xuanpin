@@ -1,0 +1,121 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "tiktok_shop_1729718141631565851",
+  "run_id": "run_20260716_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "[Dr.Melaxin Official] Calcium Multi Balm Eye Care Routine Korean Skin Care Anti-aging Cosmetics Collagen Eye Stick 9g",
+    "grade": "S",
+    "track": "痛点改良款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 16.0,
+        "max": 20.0,
+        "reason": "量级信号 sales_7d_units=21,600 -> 15分；销量/销售额增长率 -5.7% -> 2分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_echotik_000432",
+          "ev_tabcut_000162"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 5.2,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_echotik_000428",
+          "ev_echotik_000431",
+          "ev_tabcut_000160"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 12.0,
+        "max": 30.0,
+        "reason": "评分4.2（低于类目P25_有明确改良空间）-> 8分",
+        "evidence_refs": [
+          "ev_echotik_000430"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": 0,
+        "max": 0.0,
+        "reason": "未命中风险规则",
+        "evidence_refs": []
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_7d_units=21,600 -> 15分；销量/销售额增长率 -5.7% -> 2分；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_echotik_000432",
+          "ev_tabcut_000162"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_echotik_000428",
+          "ev_echotik_000431",
+          "ev_tabcut_000160"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_echotik_000430"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio",
+      "product_opportunity.reviews"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_echotik_000427",
+    "ev_echotik_000428",
+    "ev_echotik_000430",
+    "ev_echotik_000431",
+    "ev_echotik_000432",
+    "ev_echotik_000433",
+    "ev_echotik_000434",
+    "ev_echotik_000435",
+    "ev_echotik_000436",
+    "ev_tabcut_000159",
+    "ev_tabcut_000160",
+    "ev_tabcut_000161",
+    "ev_tabcut_000162",
+    "ev_tabcut_000163",
+    "ev_tabcut_000164"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

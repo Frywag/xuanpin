@@ -1,0 +1,130 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "tiktok_shop_1729679758111249333",
+  "run_id": "run_20260716_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "Loaded Tea – Single Packet | 32oz Caffeinated Flavored Hydration Powder Beverage Mix | Made in USA | Easy to Mix",
+    "grade": "B",
+    "track": "均衡款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 18.0,
+        "max": 25,
+        "reason": "量级信号 sales_30d_units=135,067 -> 15分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_tabcut_000103"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 3.0,
+        "max": 20,
+        "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 outside -> 2分",
+        "evidence_refs": [
+          "ev_echotik_000356",
+          "ev_echotik_000359",
+          "ev_tabcut_000102"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 2.0,
+        "max": 20,
+        "reason": "评分4.9（口碑较好_改良空间有限）-> 2分",
+        "evidence_refs": [
+          "ev_echotik_000358"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.0,
+        "max": 0.0,
+        "reason": "售价低于来源类目P10，毛利与质量风险：售价低于来源类目P10",
+        "evidence_refs": [
+          "ev_echotik_000356",
+          "ev_tabcut_000102"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=135,067 -> 15分；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_tabcut_000103"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 outside -> 2分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_echotik_000356",
+          "ev_echotik_000359",
+          "ev_tabcut_000102"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.9（口碑较好_改良空间有限）-> 2分",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_echotik_000358"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "售价低于来源类目P10，毛利与质量风险：售价低于来源类目P10",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_tabcut_000102",
+          "ev_echotik_000356"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_echotik_000355",
+    "ev_echotik_000356",
+    "ev_echotik_000358",
+    "ev_echotik_000359",
+    "ev_echotik_000360",
+    "ev_echotik_000361",
+    "ev_echotik_000362",
+    "ev_echotik_000363",
+    "ev_echotik_000364",
+    "ev_tabcut_000101",
+    "ev_tabcut_000102",
+    "ev_tabcut_000103",
+    "ev_tabcut_000104",
+    "ev_tabcut_000105",
+    "ev_tabcut_000106"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

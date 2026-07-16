@@ -41,7 +41,8 @@ def _sheet(wb: Workbook, title: str, headers: List[str], widths: List[int]):
     return ws
 
 
-def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cfg):
+def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cfg,
+                        word_evals=None, directions=None):
     """三赛道独立推荐工作簿（tracks.v1，校准态）。
 
     页签对应《三赛道独立SAB分级》§13：三张 SAB 表、跨赛道汇总、待补数据、
@@ -61,26 +62,31 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
 
     for tid, label in labels.items():
         ws = _sheet(wb, f"{label}_SAB",
-                    ["rank", "grade", "准入依据", "candidate_id", "title", "platform",
-                     "source_roles", "score", "准入理由", "confidence", "风险",
-                     "缺失字段", "下一步补采", "cluster_id", "rule_status"],
-                    [6, 7, 14, 30, 46, 14, 20, 8, 60, 10, 30, 36, 40, 16, 26])
+                    ["rank", "grade", "分层", "开发方向", "准入依据", "candidate_id",
+                     "title", "platform", "source_roles", "score", "准入理由",
+                     "confidence", "风险", "缺失字段", "下一步补采", "cluster_id",
+                     "rule_status"],
+                    [6, 7, 8, 14, 14, 30, 46, 14, 20, 8, 60, 10, 30, 36, 40, 16, 26])
         eligible = sorted([e for e in evaluations
                            if e.track_id == tid and e.admission_status == "ELIGIBLE"],
                           key=lambda e: -(e.score or 0))
         for i, e in enumerate(eligible, 1):
             basis = ("确证" if e.admission_basis == "confirmed"
                      else "临时规则(占位)")
-            ws.append([i, e.grade, basis] + cand_cols(e) + [
+            dirn = "/".join(((directions or {}).get(e.subject_id) or {})
+                            .get("options", [])) if directions else ""
+            ws.append([i, e.grade, getattr(e, "layer_reached", ""), dirn, basis]
+                      + cand_cols(e) + [
                 e.score, "；".join(e.admission_reasons)[:300], e.confidence,
                 "；".join(e.risks)[:120], "、".join(e.missing_fields)[:150],
                 "；".join(e.refetch_tasks[:3]), e.cluster_id or "", e.rule_status])
         ws.auto_filter.ref = ws.dimensions
 
+    track_order = list(labels)
     ws = _sheet(wb, "跨赛道汇总",
-                ["candidate_id", "title", "platform",
-                 "趋势新品", "爆款改款", "长尾直接选品", "可选开发方式(并列展示,人工决策)"],
-                [30, 46, 14, 22, 22, 22, 40])
+                ["candidate_id", "title", "platform"] + [labels[t] for t in track_order]
+                + ["可选开发方式(并列展示,人工决策)"],
+                [30, 46, 14] + [22] * len(track_order) + [40])
     by_cand = {}
     for e in evaluations:
         by_cand.setdefault(e.subject_id, {})[e.track_id] = e
@@ -98,9 +104,22 @@ def export_track_report(path, packets, evaluations, clusters, budgets, tracks_cf
         modes = "；".join(f"{labels[e.track_id]}→{e.recommended_development_mode}"
                           for e in m.values() if e.grade)
         ws.append([cid, p.basic_facts.get("title") if p else "",
-                   p.platform if p else "", cell("trend_new"),
-                   cell("hit_improvement"), cell("long_tail_direct"), modes])
+                   p.platform if p else ""]
+                  + [cell(t) for t in track_order] + [modes])
     ws.auto_filter.ref = ws.dimensions
+
+    if word_evals is not None:
+        ws = _sheet(wb, "趋势词表ABCDE",
+                    ["grade", "word", "score", "站点覆盖", "出现次数", "新品位占比",
+                     "Amazon语料频次", "内容信号", "示例候选", "缺失", "rule_status"],
+                    [7, 20, 8, 40, 9, 10, 14, 8, 46, 24, 26])
+        for w in word_evals:
+            ws.append([w["grade"], w["word"], w["score"], "、".join(w["sites"])[:120],
+                       w["occurrences"], w["new_arrival_share"],
+                       w["amazon_freq"] if w["amazon_freq"] is not None else "缺语料",
+                       w["content_signal"], "、".join(w["examples"]),
+                       "、".join(w["missing_fields"]), w["rule_status"]])
+        ws.auto_filter.ref = ws.dimensions
 
     # 补证预算（P0-03）：进入 refetch_queue 的候选获得本轮补采名额，
     # 其余 PENDING 留在待补池等下轮预算——避免「缺数据者永远无预算」死锁

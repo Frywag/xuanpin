@@ -64,16 +64,18 @@ PYTHONPATH="04.分级系统/src" python3 -m grading_system.mcp_server
 4. 输出 JSON 归档到 `<out>/llm_outputs/`，渲染的 Markdown 放
    `<out>/deep_reviews/` 与 `<out>/选品分析报告.md`。
 
-## 三赛道模型（tracks.v1，校准态）
+## 三赛道主链（tracks.v2，校准态，2026-07-16 重构）
 
-自 v0.5 起分级采用三赛道独立管道（trend_new/hit_improvement/long_tail_direct）：
-每候选每 run 恰好 3 条 TrackEvaluation（ELIGIBLE/PENDING_DATA/REJECTED；
-PENDING/REJECTED 无正式等级），趋势新品不设销量等数据门槛，独立站按发现源
-参与。所有等级带 rule_status=calibration——业务金标批准前不是正式生产等级，
-待确认参数清单见 configs/tracks_v1.yaml。产物：三赛道选品推荐表.xlsx、
-track_evaluations.jsonl、opportunity_clusters.json；规则见
-01.分级标准参考/三赛道独立SAB分级_目标业务规则.md 与 docs/07。
-本项目不含商品立项/产品定义/组合与上市回流。
+主链：L0 技术检查 → **开发方向**（铺货无条件；改款=评价多+差评比例超阈，
+差评比例缺失用评分≤4.2 代理占位；改款方向使赛道销量门限放宽×0.7）→
+三赛道扇出（**新品**=近期推出+近期销量不错 / **爆款**=销量很高 /
+**长尾**=销量稳定；每候选每 run 恰好 3 条 TrackEvaluation）→ 各赛道内部
+L1→L2→L3 分层淘汰（等级上限 L1=B/L2=A/L3 才可 S）→ 各自 S/A/B。
+**趋势独立为词级 ABCDE 体系**（头部独立站+社媒发现源；小红书待接入；
+产物 趋势词表ABCDE + trend_words.jsonl）。深评/152/LLM 对象由三赛道
+L2/L3 队列决定；配置在 configs/tracks_v2.yaml（占位草案，人工改门限即
+生效）。旧口径：tracks_v1.yaml（不运行，历史）、legacy 单赛道（审计基线）。
+详见 docs/08。本项目不含商品立项/产品定义/组合与上市回流。
 
 过渡期双链口径（2026-07-14 修订，详见 docs/07 §2.6）：legacy 单赛道输出
 保留为**基线参考（非正式生产推荐）**，tracks.v1 为校准口径——`grades` 与

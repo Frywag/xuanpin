@@ -1,0 +1,109 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "tiktok_shop_1732164626458252048",
+  "run_id": "run_20260716_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "Hismile iD Stain Whitening Mouthwash for White Teeth, Freshens Breath with Essential Oils 237ml",
+    "grade": "A",
+    "track": "基础常青款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 16.7,
+        "max": 22.0,
+        "reason": "量级信号 sales_30d_units=91,981 -> 15分；销量/销售额增长率 +8.7% -> 3分；1个独立需求证据源",
+        "evidence_refs": [
+          "ev_tabcut_000120",
+          "ev_tabcut_000121"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 9.8,
+        "max": 28.0,
+        "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_tabcut_000119"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 0.0,
+        "max": 15.0,
+        "reason": "无产品机会信号",
+        "evidence_refs": []
+      },
+      {
+        "name": "风险",
+        "score": -1.3,
+        "max": 0.0,
+        "reason": "单一数据源，量价未经第二源互验：仅 tabcut 单源（赛道风险系数×0.67）",
+        "evidence_refs": [
+          "ev_tabcut_000118"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=91,981 -> 15分；销量/销售额增长率 +8.7% -> 3分；1个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_tabcut_000120",
+          "ev_tabcut_000121"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_tabcut_000119"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "单一数据源，量价未经第二源互验：仅 tabcut 单源",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_tabcut_000118"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "basic_facts.rating",
+      "basic_facts.review_count",
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_tabcut_000118",
+    "ev_tabcut_000119",
+    "ev_tabcut_000120",
+    "ev_tabcut_000121",
+    "ev_tabcut_000122",
+    "ev_tabcut_000123"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

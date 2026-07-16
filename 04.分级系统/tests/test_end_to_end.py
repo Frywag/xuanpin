@@ -99,10 +99,18 @@ class TestEndToEnd:
 
     def test_l2_l3_cost_caps(self, pipeline_output):
         out, _ = pipeline_output
-        assert len(out["l2_ids"]) <= 40
-        assert len(out["l3_ids"]) <= 10
-        # L3 是 L2 的子集
-        assert set(out["l3_ids"]) <= set(out["l2_ids"])
+        tv = out["run_meta"].get("tracks") or {}
+        if tv.get("schema_version") == "tracks.v2":
+            # v2 主链：深挖对象由三赛道各自预算决定，不再是全局前 40/前 10
+            budgets = tv["budgets"]
+            assert len(out["l3_ids"]) <= sum(b["l3"] for b in budgets.values())
+            assert len(out["l2_ids"]) <= sum(b["l2"] for b in budgets.values())
+            for tid, b in budgets.items():
+                assert b["l3"] <= b["l2"]
+        else:
+            assert len(out["l2_ids"]) <= 40
+            assert len(out["l3_ids"]) <= 10
+            assert set(out["l3_ids"]) <= set(out["l2_ids"])
 
     def test_xlsx_written_with_all_sheets(self, pipeline_output):
         _, out_dir = pipeline_output
