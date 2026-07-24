@@ -295,6 +295,56 @@ def run_pipeline(repo_root: Path, out_dir: Path,
         # 跨平台比对/理由改写对象：各赛道 L3 终选款
         l3_ids = [c for c in l3_union if c in results]
 
+    # 6e. segments.v1 试点链（2026-07-24 总方案）：三平台独立 L3->细分市场->
+    #     L2/L1->C/B/A/S；Amazon 数据缺失时范围=INCOMPLETE_SCOPE 不发布优势标签
+    seg_cfg_path = scoring_cfg_path.parent / "segments_v1.yaml"
+    if seg_cfg_path.exists():
+        from .segments_v1 import SegmentsV1Pipeline
+        seg_cfg = load_yaml(seg_cfg_path)
+        seg_out = SegmentsV1Pipeline(seg_cfg, out_dir.name).run(packets)
+        dump_json(seg_out, out_dir / "segments_v1_results.json")
+        from .xlsx_report import _sheet
+        from openpyxl import Workbook as _WB
+        swb = _WB(); swb.remove(swb.active)
+        for pk, r in seg_out["platform_runs"].items():
+            ws = _sheet(swb, f"{pk}_细分市场",
+                        ["segment_id", "tier", "l2_score", "stage", "l1_gate",
+                         "成员数", "销量分位中位", "评分中位", "价格区间", "头部占比",
+                         "L1问题/缺口"], [22, 6, 9, 22, 13, 8, 11, 9, 16, 9, 50])
+            for e in r["evals"]:
+                s = r["snapshots"][e["segment_id"]]
+                ws.append([e["segment_id"], e["final_tier"], e["l2_score"],
+                           e["stage"], e.get("l1_gate"), s["member_count"],
+                           s["txn_percentile_median"], s["rating_median"],
+                           str(s["price_range"]), s["head_share"],
+                           "；".join(e.get("l1_problems", []) or e["missing"])[:120]])
+        ws = _sheet(swb, "L3筛选与人工队列",
+                    ["platform", "L3_PASS", "L3_REJECTED", "已确认归属(试点批量)",
+                     "待人工确认"], [10, 10, 12, 18, 12])
+        for pk, r in seg_out["platform_runs"].items():
+            ws.append([pk, sum(1 for d in r["l3"] if d["status"] == "L3_PASS"),
+                       sum(1 for d in r["l3"] if d["status"] == "L3_REJECTED"),
+                       len(r["assignments"]), len(r["review_queue"])])
+        ws = _sheet(swb, "跨平台范围状态", ["key", "value"], [30, 90])
+        for k, v in seg_out["scope"].items():
+            ws.append([k, str(v)])
+        ws.append(["机会入选待审(S/A)", str(len(seg_out["opportunity_decisions"]))])
+        swb.save(out_dir / "平台细分市场结果表.xlsx")
+        run_meta["segments_v1"] = {
+            "rule_version": seg_out["rule_version"],
+            "scope": seg_out["scope"]["scope_status"],
+            "platform_task_status": seg_out["scope"]["platform_task_status"],
+            "excluded_to_trend_system": seg_out["excluded_to_trend_system"],
+            "per_platform": {pk: {
+                "l3_pass": sum(1 for d in r["l3"] if d["status"] == "L3_PASS"),
+                "segments": len(r["snapshots"]),
+                "tiers": {t: sum(1 for e in r["evals"] if e["final_tier"] == t)
+                          for t in ("S", "A", "B", "C")},
+                "review_queue": len(r["review_queue"])}
+                for pk, r in seg_out["platform_runs"].items()},
+            "opportunity_decisions_pending": len(seg_out["opportunity_decisions"]),
+        }
+
     # 7b. S/A/B 全量产品信息保留（含全部字段/证据/画像，供下游 152 键核对）
     with open(out_dir / "sab_products_full.jsonl", "w", encoding="utf-8") as f:
         for cid in sorted(sab_ids, key=lambda c: -(results[c].priority_score["pct"] or 0)):

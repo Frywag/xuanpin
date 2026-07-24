@@ -64,6 +64,16 @@ PYTHONPATH="04.分级系统/src" python3 -m grading_system.mcp_server
 4. 输出 JSON 归档到 `<out>/llm_outputs/`，渲染的 Markdown 放
    `<out>/deep_reviews/` 与 `<out>/选品分析报告.md`。
 
+## segments.v1 试点主链（2026-07-24 总方案，最新）
+
+三平台（Amazon/TikTok/SHEIN）独立运行：L3 商品销量硬筛（PASS/REJECTED，
+无例外）→ 受控属性解析 → 人工确认唯一 primary_segment_id（试点开关
+pilot_auto_approve 批量确认留痕，生产须关）→ 细分市场为对象的 L2/L1 →
+C/B/A/S（仅 L1 PASS 可 A/S）→ 多平台综合（任务齐套+校准通过才发优势标签；
+当前 Amazon 缺源=INCOMPLETE_SCOPE 不发布）→ 机会入选 Gate（人工）→
+商品策略双轴（开发动作×经营类型）。独立站全部进趋势体系不入主链。
+配置 configs/segments_v1.yaml；详见 docs/09。tracks.v2/legacy 为过渡对照。
+
 ## 三赛道主链（tracks.v2，校准态，2026-07-16 重构）
 
 主链：L0 技术检查 → **开发方向**（铺货无条件；改款=评价多+差评比例超阈，
