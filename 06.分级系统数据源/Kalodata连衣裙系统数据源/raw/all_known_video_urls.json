@@ -1,0 +1,2661 @@
+{
+  "schema_version": "kalodata.video_urls.v1",
+  "status": "done",
+  "started_at": "2026-07-10T08:27:08.409Z",
+  "source": "GET /video/detail/getVideoUrl?videoId=...",
+  "requested_video_ids": [
+    "7649355179061415181",
+    "7651649564759313694",
+    "7649785545190608159",
+    "7655546149146791198",
+    "7647980966652153119",
+    "7653995557790207263",
+    "7649370512224685343",
+    "7648285293547769102",
+    "7643118349907430669",
+    "7648661794025753887",
+    "7631315413887945997",
+    "7645380278642412831",
+    "7649021623508552974",
+    "7650017597165030670",
+    "7631753461809417485",
+    "7637590624102812958",
+    "7645357106354228493",
+    "7596548729885314334",
+    "7621277814607727903",
+    "7637186263551954190",
+    "7634677626069634334",
+    "7648303001383259405",
+    "7615044223288577311",
+    "7646989457215819039",
+    "7654590476124687629",
+    "7627291468385815822",
+    "7632730711585279245",
+    "7617484484807642398",
+    "7659611181488934175",
+    "7626500773127425294",
+    "7648422743163129102",
+    "7629182500165717279",
+    "7657043944588594446",
+    "7649865425232219406",
+    "7646542552786652447",
+    "7639926942996647181",
+    "7648014701774900493",
+    "7651639495917456671",
+    "7634016449605963039",
+    "7633858097148202253",
+    "7643887301684120845",
+    "7652095672518331679",
+    "7651573451915922701",
+    "7657347835439926559",
+    "7648349184843599117",
+    "7654655019408543007",
+    "7646227833739562270",
+    "7656384623869512974",
+    "7654784942097894686",
+    "7649406715544358157",
+    "7647376365888589087",
+    "7658003419889732894",
+    "7615343132292418846",
+    "7651577376245042463",
+    "7648124319461117197",
+    "7652814161973431565",
+    "7654770243851619614",
+    "7644009713897573645",
+    "7648593681200532750",
+    "7654896600120167693",
+    "7648304419146091789",
+    "7648076900543237390",
+    "7652117965009210654",
+    "7654898065026993422",
+    "7656169851312016653",
+    "7643497302761442591",
+    "7628804543161273630",
+    "7654497778445471006",
+    "7635316400629763358",
+    "7617231094718418207",
+    "7558972431612808503",
+    "7590430553137024286",
+    "7617570042036735263",
+    "7651732460539022605",
+    "7617862055407717662",
+    "7646281992308346126",
+    "7641715506998742286",
+    "7625790685102230798",
+    "7625816608321047822",
+    "7632392577987202317",
+    "7621964549444422925",
+    "7652098428146617631",
+    "7651694915918859533",
+    "7647300909721980173",
+    "7655155062905310478",
+    "7646997667301854495",
+    "7643259872720555295",
+    "7637178528324144397",
+    "7632150062675528990",
+    "7639952153431362847",
+    "7645167967612849439",
+    "7647200632503340319",
+    "7650858027058220318",
+    "7651797875038457101",
+    "7651334946644036894",
+    "7649964847349632286",
+    "7651348861532769566",
+    "7651383814824054030",
+    "7638721120090279199",
+    "7652466409787723039",
+    "7651031767050226958",
+    "7650185788256308493",
+    "7649884720569847053",
+    "7645494786203372813",
+    "7645415641423351053",
+    "7638788062113254669",
+    "7654651827614534926",
+    "7640252247607151902",
+    "7630582900475399437",
+    "7627239494999117087",
+    "7647660918129691917",
+    "7648096481731185934",
+    "7651711293467954462",
+    "7652543439464172813",
+    "7657269238805187854",
+    "7651069624850730254",
+    "7655095410289036557",
+    "7629445954705444126",
+    "7637864229332126990",
+    "7617087400782712077",
+    "7639787539792022798",
+    "7640166436756851998",
+    "7634676870113545503",
+    "7635351567381613837",
+    "7645490979776072973",
+    "7642358620151139598",
+    "7642896908813487391",
+    "7634182478470630670",
+    "7647379463054937358",
+    "7639750831935376653",
+    "7614231772011842847",
+    "7624960595334319390",
+    "7613535041704021279",
+    "7622475933521284366",
+    "7621385574292802847",
+    "7618728499452398879",
+    "7604896070434327821",
+    "7600938568894156087",
+    "7605765268882591006",
+    "7623896833487539469",
+    "7652132814325828878",
+    "7639513448577076493",
+    "7654329576637713678",
+    "7639017315471789343",
+    "7638713531617021215",
+    "7628629289046379807",
+    "7651956465766288671",
+    "7641765095835438366",
+    "7633641386486598925",
+    "7632810701806963982",
+    "7638408524720082189",
+    "7624965081134124319",
+    "7604533403731381535",
+    "7638816198645370126",
+    "7600130135718743326",
+    "7522596245236354335",
+    "7632671780645260574",
+    "7598071304566115615",
+    "7569020147126603039",
+    "7581676682713566495",
+    "7635743505838525726",
+    "7630299225020009759",
+    "7604589027924184350",
+    "7639293452034870541",
+    "7648731583792385294",
+    "7644486706984471822",
+    "7637665846164344078",
+    "7649218327604219149",
+    "7642215135775313182",
+    "7654373442917043470",
+    "7618239188168674591",
+    "7612918682313854239",
+    "7628623226825919775",
+    "7652559051154312462",
+    "7656074953392917791",
+    "7638052969409203486",
+    "7617117469437725982",
+    "7613981044030606623",
+    "7634651839765417246",
+    "7650975907263368479",
+    "7608370539924688142",
+    "7619032034152926494",
+    "7650157749418118413",
+    "7630726635481845022",
+    "7650423055151385869",
+    "7643825963620502798",
+    "7642709841588292878",
+    "7636061881936973087",
+    "7629446080429690126",
+    "7617632306940873997",
+    "7647624439319842061",
+    "7601248507684605239",
+    "7629111225095441678",
+    "7617174522491391246",
+    "7618028674482261261",
+    "7609413129994390798",
+    "7638047363218558221",
+    "7628021411562442014",
+    "7637586021068115230",
+    "7638765108218432799",
+    "7634030648830823710",
+    "7621441998305692958",
+    "7635753355473603870",
+    "7591725693575253262",
+    "7649879328393678094",
+    "7598630774027455758",
+    "7591637905089645837",
+    "7651255965450358047",
+    "7610454485269368077",
+    "7569054433837976887",
+    "7563515171977710879",
+    "7569086237533883661",
+    "7654023163478576397",
+    "7648956665282268430",
+    "7607339204065971487",
+    "7650408921227595022",
+    "7542422974935108895",
+    "7642537147831995679",
+    "7644485929062780174",
+    "7601871574483897613",
+    "7535321441407945997",
+    "7633715153824959775",
+    "7645808896866536718",
+    "7651447485281422623",
+    "7647238027290430750",
+    "7656173995896737038",
+    "7655880559524154655",
+    "7646159210350267679",
+    "7647944479206313246",
+    "7655781541888478494",
+    "7657349645575703821"
+  ],
+  "quota_before": {
+    "DOWNLOAD.VIDEO": {
+      "count": 10,
+      "progress": {
+        "total": 10,
+        "used": 0,
+        "remain": 10,
+        "full": false
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    },
+    "DATA.EXPORT": {
+      "count": 0,
+      "progress": {
+        "total": 0,
+        "used": 0,
+        "remain": 0,
+        "full": true
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    },
+    "DATA.EXPORT.NUM": {
+      "count": 0,
+      "progress": {
+        "total": 0,
+        "used": 0,
+        "remain": 0,
+        "full": true
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    },
+    "DETAIL.ACCESS_TIMES": {
+      "count": 10,
+      "progress": {
+        "total": 30,
+        "used": 30,
+        "remain": 0,
+        "full": true
+      },
+      "guidance": "Today's detail times has been used up"
+    },
+    "AI.CREDITS": {
+      "count": 0,
+      "progress": {
+        "total": 1500,
+        "used": 221,
+        "remain": 1279,
+        "full": false
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    }
+  },
+  "records": [
+    {
+      "video_id": "7649355179061415181",
+      "requested_at": "2026-07-10T08:27:08.536Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649355179061415181.mp4"
+      }
+    },
+    {
+      "video_id": "7651649564759313694",
+      "requested_at": "2026-07-10T08:27:09.130Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651649564759313694.mp4"
+      }
+    },
+    {
+      "video_id": "7649785545190608159",
+      "requested_at": "2026-07-10T08:27:09.725Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649785545190608159.mp4"
+      }
+    },
+    {
+      "video_id": "7655546149146791198",
+      "requested_at": "2026-07-10T08:27:10.302Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7655546149146791198.mp4"
+      }
+    },
+    {
+      "video_id": "7647980966652153119",
+      "requested_at": "2026-07-10T08:27:10.880Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647980966652153119.mp4"
+      }
+    },
+    {
+      "video_id": "7653995557790207263",
+      "requested_at": "2026-07-10T08:27:11.459Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7653995557790207263.mp4"
+      }
+    },
+    {
+      "video_id": "7649370512224685343",
+      "requested_at": "2026-07-10T08:27:12.038Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649370512224685343.mp4"
+      }
+    },
+    {
+      "video_id": "7648285293547769102",
+      "requested_at": "2026-07-10T08:27:12.634Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648285293547769102.mp4"
+      }
+    },
+    {
+      "video_id": "7643118349907430669",
+      "requested_at": "2026-07-10T08:27:13.214Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7643118349907430669.mp4"
+      }
+    },
+    {
+      "video_id": "7648661794025753887",
+      "requested_at": "2026-07-10T08:27:13.798Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648661794025753887.mp4"
+      }
+    },
+    {
+      "video_id": "7631315413887945997",
+      "requested_at": "2026-07-10T08:27:14.376Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7631315413887945997.mp4"
+      }
+    },
+    {
+      "video_id": "7645380278642412831",
+      "requested_at": "2026-07-10T08:27:14.955Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7645380278642412831.mp4"
+      }
+    },
+    {
+      "video_id": "7649021623508552974",
+      "requested_at": "2026-07-10T08:27:15.538Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649021623508552974.mp4"
+      }
+    },
+    {
+      "video_id": "7650017597165030670",
+      "requested_at": "2026-07-10T08:27:16.143Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7650017597165030670.mp4"
+      }
+    },
+    {
+      "video_id": "7631753461809417485",
+      "requested_at": "2026-07-10T08:27:16.727Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7631753461809417485.mp4"
+      }
+    },
+    {
+      "video_id": "7637590624102812958",
+      "requested_at": "2026-07-10T08:27:17.310Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7637590624102812958.mp4"
+      }
+    },
+    {
+      "video_id": "7645357106354228493",
+      "requested_at": "2026-07-10T08:27:17.908Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7645357106354228493.mp4"
+      }
+    },
+    {
+      "video_id": "7596548729885314334",
+      "requested_at": "2026-07-10T08:27:18.489Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7596548729885314334.mp4"
+      }
+    },
+    {
+      "video_id": "7621277814607727903",
+      "requested_at": "2026-07-10T08:27:19.076Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7621277814607727903.mp4"
+      }
+    },
+    {
+      "video_id": "7637186263551954190",
+      "requested_at": "2026-07-10T08:27:19.662Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7637186263551954190.mp4"
+      }
+    },
+    {
+      "video_id": "7634677626069634334",
+      "requested_at": "2026-07-10T08:27:20.248Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7634677626069634334.mp4"
+      }
+    },
+    {
+      "video_id": "7648303001383259405",
+      "requested_at": "2026-07-10T08:27:20.822Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648303001383259405.mp4"
+      }
+    },
+    {
+      "video_id": "7615044223288577311",
+      "requested_at": "2026-07-10T08:27:21.402Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7615044223288577311.mp4"
+      }
+    },
+    {
+      "video_id": "7646989457215819039",
+      "requested_at": "2026-07-10T08:27:23.735Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7646989457215819039.mp4"
+      }
+    },
+    {
+      "video_id": "7654590476124687629",
+      "requested_at": "2026-07-10T08:27:24.335Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654590476124687629.mp4"
+      }
+    },
+    {
+      "video_id": "7627291468385815822",
+      "requested_at": "2026-07-10T08:27:24.918Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7627291468385815822.mp4"
+      }
+    },
+    {
+      "video_id": "7632730711585279245",
+      "requested_at": "2026-07-10T08:27:25.507Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7632730711585279245.mp4"
+      }
+    },
+    {
+      "video_id": "7617484484807642398",
+      "requested_at": "2026-07-10T08:27:26.086Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617484484807642398.mp4"
+      }
+    },
+    {
+      "video_id": "7659611181488934175",
+      "requested_at": "2026-07-10T08:27:26.666Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7659611181488934175.mp4"
+      }
+    },
+    {
+      "video_id": "7626500773127425294",
+      "requested_at": "2026-07-10T08:27:27.245Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7626500773127425294.mp4"
+      }
+    },
+    {
+      "video_id": "7648422743163129102",
+      "requested_at": "2026-07-10T08:27:27.822Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648422743163129102.mp4"
+      }
+    },
+    {
+      "video_id": "7629182500165717279",
+      "requested_at": "2026-07-10T08:27:28.400Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7629182500165717279.mp4"
+      }
+    },
+    {
+      "video_id": "7657043944588594446",
+      "requested_at": "2026-07-10T08:27:28.979Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7657043944588594446.mp4"
+      }
+    },
+    {
+      "video_id": "7649865425232219406",
+      "requested_at": "2026-07-10T08:27:29.558Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649865425232219406.mp4"
+      }
+    },
+    {
+      "video_id": "7646542552786652447",
+      "requested_at": "2026-07-10T08:27:30.140Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7646542552786652447.mp4"
+      }
+    },
+    {
+      "video_id": "7639926942996647181",
+      "requested_at": "2026-07-10T08:27:30.719Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7639926942996647181.mp4"
+      }
+    },
+    {
+      "video_id": "7648014701774900493",
+      "requested_at": "2026-07-10T08:27:31.302Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648014701774900493.mp4"
+      }
+    },
+    {
+      "video_id": "7651639495917456671",
+      "requested_at": "2026-07-10T08:27:31.884Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651639495917456671.mp4"
+      }
+    },
+    {
+      "video_id": "7634016449605963039",
+      "requested_at": "2026-07-10T08:27:32.468Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7634016449605963039.mp4"
+      }
+    },
+    {
+      "video_id": "7633858097148202253",
+      "requested_at": "2026-07-10T08:27:36.522Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7633858097148202253.mp4"
+      }
+    },
+    {
+      "video_id": "7643887301684120845",
+      "requested_at": "2026-07-10T08:27:37.101Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7643887301684120845.mp4"
+      }
+    },
+    {
+      "video_id": "7652095672518331679",
+      "requested_at": "2026-07-10T08:27:37.676Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652095672518331679.mp4"
+      }
+    },
+    {
+      "video_id": "7651573451915922701",
+      "requested_at": "2026-07-10T08:27:38.259Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651573451915922701.mp4"
+      }
+    },
+    {
+      "video_id": "7657347835439926559",
+      "requested_at": "2026-07-10T08:27:38.840Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7657347835439926559.mp4"
+      }
+    },
+    {
+      "video_id": "7648349184843599117",
+      "requested_at": "2026-07-10T08:27:39.418Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648349184843599117.mp4"
+      }
+    },
+    {
+      "video_id": "7654655019408543007",
+      "requested_at": "2026-07-10T08:27:39.997Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654655019408543007.mp4"
+      }
+    },
+    {
+      "video_id": "7646227833739562270",
+      "requested_at": "2026-07-10T08:27:40.583Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7646227833739562270.mp4"
+      }
+    },
+    {
+      "video_id": "7656384623869512974",
+      "requested_at": "2026-07-10T08:27:41.164Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7656384623869512974.mp4"
+      }
+    },
+    {
+      "video_id": "7654784942097894686",
+      "requested_at": "2026-07-10T08:27:41.747Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654784942097894686.mp4"
+      }
+    },
+    {
+      "video_id": "7649406715544358157",
+      "requested_at": "2026-07-10T08:27:42.319Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649406715544358157.mp4"
+      }
+    },
+    {
+      "video_id": "7647376365888589087",
+      "requested_at": "2026-07-10T08:27:46.557Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647376365888589087.mp4"
+      }
+    },
+    {
+      "video_id": "7658003419889732894",
+      "requested_at": "2026-07-10T08:27:48.684Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7658003419889732894.mp4"
+      }
+    },
+    {
+      "video_id": "7615343132292418846",
+      "requested_at": "2026-07-10T08:27:52.156Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7615343132292418846.mp4"
+      }
+    },
+    {
+      "video_id": "7651577376245042463",
+      "requested_at": "2026-07-10T08:27:55.296Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651577376245042463.mp4"
+      }
+    },
+    {
+      "video_id": "7648124319461117197",
+      "requested_at": "2026-07-10T08:27:55.879Z",
+      "http_status": 200,
+      "success": false,
+      "message": "Not found video",
+      "data": null
+    },
+    {
+      "video_id": "7652814161973431565",
+      "requested_at": "2026-07-10T08:27:56.585Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652814161973431565.mp4"
+      }
+    },
+    {
+      "video_id": "7654770243851619614",
+      "requested_at": "2026-07-10T08:27:59.578Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654770243851619614.mp4"
+      }
+    },
+    {
+      "video_id": "7644009713897573645",
+      "requested_at": "2026-07-10T08:28:02.949Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7644009713897573645.mp4"
+      }
+    },
+    {
+      "video_id": "7648593681200532750",
+      "requested_at": "2026-07-10T08:28:07.322Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648593681200532750.mp4"
+      }
+    },
+    {
+      "video_id": "7654896600120167693",
+      "requested_at": "2026-07-10T08:28:07.897Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654896600120167693.mp4"
+      }
+    },
+    {
+      "video_id": "7648304419146091789",
+      "requested_at": "2026-07-10T08:28:08.469Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648304419146091789.mp4"
+      }
+    },
+    {
+      "video_id": "7648076900543237390",
+      "requested_at": "2026-07-10T08:28:13.866Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648076900543237390.mp4"
+      }
+    },
+    {
+      "video_id": "7652117965009210654",
+      "requested_at": "2026-07-10T08:28:14.438Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652117965009210654.mp4"
+      }
+    },
+    {
+      "video_id": "7654898065026993422",
+      "requested_at": "2026-07-10T08:28:15.019Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654898065026993422.mp4"
+      }
+    },
+    {
+      "video_id": "7656169851312016653",
+      "requested_at": "2026-07-10T08:28:15.600Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7656169851312016653.mp4"
+      }
+    },
+    {
+      "video_id": "7643497302761442591",
+      "requested_at": "2026-07-10T08:28:16.180Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7643497302761442591.mp4"
+      }
+    },
+    {
+      "video_id": "7628804543161273630",
+      "requested_at": "2026-07-10T08:28:16.752Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7628804543161273630.mp4"
+      }
+    },
+    {
+      "video_id": "7654497778445471006",
+      "requested_at": "2026-07-10T08:28:17.327Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654497778445471006.mp4"
+      }
+    },
+    {
+      "video_id": "7635316400629763358",
+      "requested_at": "2026-07-10T08:28:17.910Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7635316400629763358.mp4"
+      }
+    },
+    {
+      "video_id": "7617231094718418207",
+      "requested_at": "2026-07-10T08:28:18.493Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617231094718418207.mp4"
+      }
+    },
+    {
+      "video_id": "7558972431612808503",
+      "requested_at": "2026-07-10T08:28:19.072Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7558972431612808503.mp4"
+      }
+    },
+    {
+      "video_id": "7590430553137024286",
+      "requested_at": "2026-07-10T08:28:19.654Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7590430553137024286.mp4"
+      }
+    },
+    {
+      "video_id": "7617570042036735263",
+      "requested_at": "2026-07-10T08:28:20.230Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617570042036735263.mp4"
+      }
+    },
+    {
+      "video_id": "7651732460539022605",
+      "requested_at": "2026-07-10T08:28:20.834Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651732460539022605.mp4"
+      }
+    },
+    {
+      "video_id": "7617862055407717662",
+      "requested_at": "2026-07-10T08:28:21.416Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617862055407717662.mp4"
+      }
+    },
+    {
+      "video_id": "7646281992308346126",
+      "requested_at": "2026-07-10T08:28:22.038Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7646281992308346126.mp4"
+      }
+    },
+    {
+      "video_id": "7641715506998742286",
+      "requested_at": "2026-07-10T08:28:22.618Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7641715506998742286.mp4"
+      }
+    },
+    {
+      "video_id": "7625790685102230798",
+      "requested_at": "2026-07-10T08:28:23.212Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7625790685102230798.mp4"
+      }
+    },
+    {
+      "video_id": "7625816608321047822",
+      "requested_at": "2026-07-10T08:28:23.843Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7625816608321047822.mp4"
+      }
+    },
+    {
+      "video_id": "7632392577987202317",
+      "requested_at": "2026-07-10T08:28:24.439Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7632392577987202317.mp4"
+      }
+    },
+    {
+      "video_id": "7621964549444422925",
+      "requested_at": "2026-07-10T08:28:25.018Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7621964549444422925.mp4"
+      }
+    },
+    {
+      "video_id": "7652098428146617631",
+      "requested_at": "2026-07-10T08:28:25.595Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652098428146617631.mp4"
+      }
+    },
+    {
+      "video_id": "7651694915918859533",
+      "requested_at": "2026-07-10T08:28:26.170Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651694915918859533.mp4"
+      }
+    },
+    {
+      "video_id": "7647300909721980173",
+      "requested_at": "2026-07-10T08:28:26.770Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647300909721980173.mp4"
+      }
+    },
+    {
+      "video_id": "7655155062905310478",
+      "requested_at": "2026-07-10T08:28:27.362Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7655155062905310478.mp4"
+      }
+    },
+    {
+      "video_id": "7646997667301854495",
+      "requested_at": "2026-07-10T08:28:27.966Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7646997667301854495.mp4"
+      }
+    },
+    {
+      "video_id": "7643259872720555295",
+      "requested_at": "2026-07-10T08:28:28.548Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7643259872720555295.mp4"
+      }
+    },
+    {
+      "video_id": "7637178528324144397",
+      "requested_at": "2026-07-10T08:28:29.185Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7637178528324144397.mp4"
+      }
+    },
+    {
+      "video_id": "7632150062675528990",
+      "requested_at": "2026-07-10T08:28:29.767Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7632150062675528990.mp4"
+      }
+    },
+    {
+      "video_id": "7639952153431362847",
+      "requested_at": "2026-07-10T08:28:30.341Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7639952153431362847.mp4"
+      }
+    },
+    {
+      "video_id": "7645167967612849439",
+      "requested_at": "2026-07-10T08:28:30.926Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7645167967612849439.mp4"
+      }
+    },
+    {
+      "video_id": "7647200632503340319",
+      "requested_at": "2026-07-10T08:28:31.502Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647200632503340319.mp4"
+      }
+    },
+    {
+      "video_id": "7650858027058220318",
+      "requested_at": "2026-07-10T08:28:32.084Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7650858027058220318.mp4"
+      }
+    },
+    {
+      "video_id": "7651797875038457101",
+      "requested_at": "2026-07-10T08:28:32.713Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651797875038457101.mp4"
+      }
+    },
+    {
+      "video_id": "7651334946644036894",
+      "requested_at": "2026-07-10T08:28:33.334Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651334946644036894.mp4"
+      }
+    },
+    {
+      "video_id": "7649964847349632286",
+      "requested_at": "2026-07-10T08:28:33.914Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649964847349632286.mp4"
+      }
+    },
+    {
+      "video_id": "7651348861532769566",
+      "requested_at": "2026-07-10T08:28:34.489Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651348861532769566.mp4"
+      }
+    },
+    {
+      "video_id": "7651383814824054030",
+      "requested_at": "2026-07-10T08:28:35.062Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651383814824054030.mp4"
+      }
+    },
+    {
+      "video_id": "7638721120090279199",
+      "requested_at": "2026-07-10T08:28:35.686Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638721120090279199.mp4"
+      }
+    },
+    {
+      "video_id": "7652466409787723039",
+      "requested_at": "2026-07-10T08:28:36.261Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652466409787723039.mp4"
+      }
+    },
+    {
+      "video_id": "7651031767050226958",
+      "requested_at": "2026-07-10T08:28:36.843Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651031767050226958.mp4"
+      }
+    },
+    {
+      "video_id": "7650185788256308493",
+      "requested_at": "2026-07-10T08:28:37.423Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7650185788256308493.mp4"
+      }
+    },
+    {
+      "video_id": "7649884720569847053",
+      "requested_at": "2026-07-10T08:28:38.005Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649884720569847053.mp4"
+      }
+    },
+    {
+      "video_id": "7645494786203372813",
+      "requested_at": "2026-07-10T08:28:38.581Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7645494786203372813.mp4"
+      }
+    },
+    {
+      "video_id": "7645415641423351053",
+      "requested_at": "2026-07-10T08:28:39.181Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7645415641423351053.mp4"
+      }
+    },
+    {
+      "video_id": "7638788062113254669",
+      "requested_at": "2026-07-10T08:28:39.757Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638788062113254669.mp4"
+      }
+    },
+    {
+      "video_id": "7654651827614534926",
+      "requested_at": "2026-07-10T08:28:40.337Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654651827614534926.mp4"
+      }
+    },
+    {
+      "video_id": "7640252247607151902",
+      "requested_at": "2026-07-10T08:28:40.915Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7640252247607151902.mp4"
+      }
+    },
+    {
+      "video_id": "7630582900475399437",
+      "requested_at": "2026-07-10T08:28:41.557Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7630582900475399437.mp4"
+      }
+    },
+    {
+      "video_id": "7627239494999117087",
+      "requested_at": "2026-07-10T08:28:42.136Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7627239494999117087.mp4"
+      }
+    },
+    {
+      "video_id": "7647660918129691917",
+      "requested_at": "2026-07-10T08:28:42.720Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647660918129691917.mp4"
+      }
+    },
+    {
+      "video_id": "7648096481731185934",
+      "requested_at": "2026-07-10T08:28:43.301Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648096481731185934.mp4"
+      }
+    },
+    {
+      "video_id": "7651711293467954462",
+      "requested_at": "2026-07-10T08:28:43.880Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651711293467954462.mp4"
+      }
+    },
+    {
+      "video_id": "7652543439464172813",
+      "requested_at": "2026-07-10T08:28:44.462Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652543439464172813.mp4"
+      }
+    },
+    {
+      "video_id": "7657269238805187854",
+      "requested_at": "2026-07-10T08:28:45.054Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7657269238805187854.mp4"
+      }
+    },
+    {
+      "video_id": "7651069624850730254",
+      "requested_at": "2026-07-10T08:28:45.631Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651069624850730254.mp4"
+      }
+    },
+    {
+      "video_id": "7655095410289036557",
+      "requested_at": "2026-07-10T08:28:46.251Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7655095410289036557.mp4"
+      }
+    },
+    {
+      "video_id": "7629445954705444126",
+      "requested_at": "2026-07-10T08:28:46.841Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7629445954705444126.mp4"
+      }
+    },
+    {
+      "video_id": "7637864229332126990",
+      "requested_at": "2026-07-10T08:28:47.422Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7637864229332126990.mp4"
+      }
+    },
+    {
+      "video_id": "7617087400782712077",
+      "requested_at": "2026-07-10T08:28:48.009Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617087400782712077.mp4"
+      }
+    },
+    {
+      "video_id": "7639787539792022798",
+      "requested_at": "2026-07-10T08:28:48.588Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7639787539792022798.mp4"
+      }
+    },
+    {
+      "video_id": "7640166436756851998",
+      "requested_at": "2026-07-10T08:28:49.189Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7640166436756851998.mp4"
+      }
+    },
+    {
+      "video_id": "7634676870113545503",
+      "requested_at": "2026-07-10T08:28:49.770Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7634676870113545503.mp4"
+      }
+    },
+    {
+      "video_id": "7635351567381613837",
+      "requested_at": "2026-07-10T08:28:50.368Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7635351567381613837.mp4"
+      }
+    },
+    {
+      "video_id": "7645490979776072973",
+      "requested_at": "2026-07-10T08:28:50.957Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7645490979776072973.mp4"
+      }
+    },
+    {
+      "video_id": "7642358620151139598",
+      "requested_at": "2026-07-10T08:28:51.536Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7642358620151139598.mp4"
+      }
+    },
+    {
+      "video_id": "7642896908813487391",
+      "requested_at": "2026-07-10T08:28:52.114Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7642896908813487391.mp4"
+      }
+    },
+    {
+      "video_id": "7634182478470630670",
+      "requested_at": "2026-07-10T08:28:52.697Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7634182478470630670.mp4"
+      }
+    },
+    {
+      "video_id": "7647379463054937358",
+      "requested_at": "2026-07-10T08:28:53.273Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647379463054937358.mp4"
+      }
+    },
+    {
+      "video_id": "7639750831935376653",
+      "requested_at": "2026-07-10T08:29:02.101Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7639750831935376653.mp4"
+      }
+    },
+    {
+      "video_id": "7614231772011842847",
+      "requested_at": "2026-07-10T08:29:02.716Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7614231772011842847.mp4"
+      }
+    },
+    {
+      "video_id": "7624960595334319390",
+      "requested_at": "2026-07-10T08:29:03.295Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7624960595334319390.mp4"
+      }
+    },
+    {
+      "video_id": "7613535041704021279",
+      "requested_at": "2026-07-10T08:29:03.877Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7613535041704021279.mp4"
+      }
+    },
+    {
+      "video_id": "7622475933521284366",
+      "requested_at": "2026-07-10T08:29:04.460Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7622475933521284366.mp4"
+      }
+    },
+    {
+      "video_id": "7621385574292802847",
+      "requested_at": "2026-07-10T08:29:05.045Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7621385574292802847.mp4"
+      }
+    },
+    {
+      "video_id": "7618728499452398879",
+      "requested_at": "2026-07-10T08:29:05.621Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7618728499452398879.mp4"
+      }
+    },
+    {
+      "video_id": "7604896070434327821",
+      "requested_at": "2026-07-10T08:29:06.198Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7604896070434327821.mp4"
+      }
+    },
+    {
+      "video_id": "7600938568894156087",
+      "requested_at": "2026-07-10T08:29:06.786Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7600938568894156087.mp4"
+      }
+    },
+    {
+      "video_id": "7605765268882591006",
+      "requested_at": "2026-07-10T08:29:07.363Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7605765268882591006.mp4"
+      }
+    },
+    {
+      "video_id": "7623896833487539469",
+      "requested_at": "2026-07-10T08:29:07.961Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7623896833487539469.mp4"
+      }
+    },
+    {
+      "video_id": "7652132814325828878",
+      "requested_at": "2026-07-10T08:29:08.556Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652132814325828878.mp4"
+      }
+    },
+    {
+      "video_id": "7639513448577076493",
+      "requested_at": "2026-07-10T08:29:09.139Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7639513448577076493.mp4"
+      }
+    },
+    {
+      "video_id": "7654329576637713678",
+      "requested_at": "2026-07-10T08:29:09.719Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654329576637713678.mp4"
+      }
+    },
+    {
+      "video_id": "7639017315471789343",
+      "requested_at": "2026-07-10T08:29:10.292Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7639017315471789343.mp4"
+      }
+    },
+    {
+      "video_id": "7638713531617021215",
+      "requested_at": "2026-07-10T08:29:10.878Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638713531617021215.mp4"
+      }
+    },
+    {
+      "video_id": "7628629289046379807",
+      "requested_at": "2026-07-10T08:29:11.459Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7628629289046379807.mp4"
+      }
+    },
+    {
+      "video_id": "7651956465766288671",
+      "requested_at": "2026-07-10T08:29:12.037Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651956465766288671.mp4"
+      }
+    },
+    {
+      "video_id": "7641765095835438366",
+      "requested_at": "2026-07-10T08:29:12.619Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7641765095835438366.mp4"
+      }
+    },
+    {
+      "video_id": "7633641386486598925",
+      "requested_at": "2026-07-10T08:29:13.201Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7633641386486598925.mp4"
+      }
+    },
+    {
+      "video_id": "7632810701806963982",
+      "requested_at": "2026-07-10T08:29:13.775Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7632810701806963982.mp4"
+      }
+    },
+    {
+      "video_id": "7638408524720082189",
+      "requested_at": "2026-07-10T08:29:14.351Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638408524720082189.mp4"
+      }
+    },
+    {
+      "video_id": "7624965081134124319",
+      "requested_at": "2026-07-10T08:29:14.925Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7624965081134124319.mp4"
+      }
+    },
+    {
+      "video_id": "7604533403731381535",
+      "requested_at": "2026-07-10T08:29:15.507Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7604533403731381535.mp4"
+      }
+    },
+    {
+      "video_id": "7638816198645370126",
+      "requested_at": "2026-07-10T08:29:16.090Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638816198645370126.mp4"
+      }
+    },
+    {
+      "video_id": "7600130135718743326",
+      "requested_at": "2026-07-10T08:29:16.669Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7600130135718743326.mp4"
+      }
+    },
+    {
+      "video_id": "7522596245236354335",
+      "requested_at": "2026-07-10T08:29:17.270Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7522596245236354335.mp4"
+      }
+    },
+    {
+      "video_id": "7632671780645260574",
+      "requested_at": "2026-07-10T08:29:17.846Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7632671780645260574.mp4"
+      }
+    },
+    {
+      "video_id": "7598071304566115615",
+      "requested_at": "2026-07-10T08:29:20.334Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7598071304566115615.mp4"
+      }
+    },
+    {
+      "video_id": "7569020147126603039",
+      "requested_at": "2026-07-10T08:29:20.929Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7569020147126603039.mp4"
+      }
+    },
+    {
+      "video_id": "7581676682713566495",
+      "requested_at": "2026-07-10T08:29:21.507Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7581676682713566495.mp4"
+      }
+    },
+    {
+      "video_id": "7635743505838525726",
+      "requested_at": "2026-07-10T08:29:22.090Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7635743505838525726.mp4"
+      }
+    },
+    {
+      "video_id": "7630299225020009759",
+      "requested_at": "2026-07-10T08:29:22.669Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7630299225020009759.mp4"
+      }
+    },
+    {
+      "video_id": "7604589027924184350",
+      "requested_at": "2026-07-10T08:29:23.247Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7604589027924184350.mp4"
+      }
+    },
+    {
+      "video_id": "7639293452034870541",
+      "requested_at": "2026-07-10T08:29:23.830Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7639293452034870541.mp4"
+      }
+    },
+    {
+      "video_id": "7648731583792385294",
+      "requested_at": "2026-07-10T08:29:24.412Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648731583792385294.mp4"
+      }
+    },
+    {
+      "video_id": "7644486706984471822",
+      "requested_at": "2026-07-10T08:29:24.993Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7644486706984471822.mp4"
+      }
+    },
+    {
+      "video_id": "7637665846164344078",
+      "requested_at": "2026-07-10T08:29:30.406Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7637665846164344078.mp4"
+      }
+    },
+    {
+      "video_id": "7649218327604219149",
+      "requested_at": "2026-07-10T08:29:30.987Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649218327604219149.mp4"
+      }
+    },
+    {
+      "video_id": "7642215135775313182",
+      "requested_at": "2026-07-10T08:29:31.561Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7642215135775313182.mp4"
+      }
+    },
+    {
+      "video_id": "7654373442917043470",
+      "requested_at": "2026-07-10T08:29:32.175Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654373442917043470.mp4"
+      }
+    },
+    {
+      "video_id": "7618239188168674591",
+      "requested_at": "2026-07-10T08:29:32.762Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7618239188168674591.mp4"
+      }
+    },
+    {
+      "video_id": "7612918682313854239",
+      "requested_at": "2026-07-10T08:29:33.340Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7612918682313854239.mp4"
+      }
+    },
+    {
+      "video_id": "7628623226825919775",
+      "requested_at": "2026-07-10T08:29:33.934Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7628623226825919775.mp4"
+      }
+    },
+    {
+      "video_id": "7652559051154312462",
+      "requested_at": "2026-07-10T08:29:34.511Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7652559051154312462.mp4"
+      }
+    },
+    {
+      "video_id": "7656074953392917791",
+      "requested_at": "2026-07-10T08:29:35.088Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7656074953392917791.mp4"
+      }
+    },
+    {
+      "video_id": "7638052969409203486",
+      "requested_at": "2026-07-10T08:29:35.672Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638052969409203486.mp4"
+      }
+    },
+    {
+      "video_id": "7617117469437725982",
+      "requested_at": "2026-07-10T08:29:36.255Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617117469437725982.mp4"
+      }
+    },
+    {
+      "video_id": "7613981044030606623",
+      "requested_at": "2026-07-10T08:29:36.836Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7613981044030606623.mp4"
+      }
+    },
+    {
+      "video_id": "7634651839765417246",
+      "requested_at": "2026-07-10T08:29:37.409Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7634651839765417246.mp4"
+      }
+    },
+    {
+      "video_id": "7650975907263368479",
+      "requested_at": "2026-07-10T08:29:37.984Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7650975907263368479.mp4"
+      }
+    },
+    {
+      "video_id": "7608370539924688142",
+      "requested_at": "2026-07-10T08:29:38.560Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7608370539924688142.mp4"
+      }
+    },
+    {
+      "video_id": "7619032034152926494",
+      "requested_at": "2026-07-10T08:29:39.140Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7619032034152926494.mp4"
+      }
+    },
+    {
+      "video_id": "7650157749418118413",
+      "requested_at": "2026-07-10T08:29:39.722Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7650157749418118413.mp4"
+      }
+    },
+    {
+      "video_id": "7630726635481845022",
+      "requested_at": "2026-07-10T08:29:40.306Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7630726635481845022.mp4"
+      }
+    },
+    {
+      "video_id": "7650423055151385869",
+      "requested_at": "2026-07-10T08:29:40.886Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7650423055151385869.mp4"
+      }
+    },
+    {
+      "video_id": "7643825963620502798",
+      "requested_at": "2026-07-10T08:29:41.473Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7643825963620502798.mp4"
+      }
+    },
+    {
+      "video_id": "7642709841588292878",
+      "requested_at": "2026-07-10T08:29:42.063Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7642709841588292878.mp4"
+      }
+    },
+    {
+      "video_id": "7636061881936973087",
+      "requested_at": "2026-07-10T08:29:42.639Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7636061881936973087.mp4"
+      }
+    },
+    {
+      "video_id": "7629446080429690126",
+      "requested_at": "2026-07-10T08:29:43.217Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7629446080429690126.mp4"
+      }
+    },
+    {
+      "video_id": "7617632306940873997",
+      "requested_at": "2026-07-10T08:29:43.792Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617632306940873997.mp4"
+      }
+    },
+    {
+      "video_id": "7647624439319842061",
+      "requested_at": "2026-07-10T08:29:44.367Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647624439319842061.mp4"
+      }
+    },
+    {
+      "video_id": "7601248507684605239",
+      "requested_at": "2026-07-10T08:29:44.947Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7601248507684605239.mp4"
+      }
+    },
+    {
+      "video_id": "7629111225095441678",
+      "requested_at": "2026-07-10T08:29:45.533Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7629111225095441678.mp4"
+      }
+    },
+    {
+      "video_id": "7617174522491391246",
+      "requested_at": "2026-07-10T08:29:54.945Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7617174522491391246.mp4"
+      }
+    },
+    {
+      "video_id": "7618028674482261261",
+      "requested_at": "2026-07-10T08:29:58.802Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7618028674482261261.mp4"
+      }
+    },
+    {
+      "video_id": "7609413129994390798",
+      "requested_at": "2026-07-10T08:30:03.383Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7609413129994390798.mp4"
+      }
+    },
+    {
+      "video_id": "7638047363218558221",
+      "requested_at": "2026-07-10T08:30:05.821Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638047363218558221.mp4"
+      }
+    },
+    {
+      "video_id": "7628021411562442014",
+      "requested_at": "2026-07-10T08:30:06.407Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7628021411562442014.mp4"
+      }
+    },
+    {
+      "video_id": "7637586021068115230",
+      "requested_at": "2026-07-10T08:30:11.377Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7637586021068115230.mp4"
+      }
+    },
+    {
+      "video_id": "7638765108218432799",
+      "requested_at": "2026-07-10T08:30:11.960Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7638765108218432799.mp4"
+      }
+    },
+    {
+      "video_id": "7634030648830823710",
+      "requested_at": "2026-07-10T08:30:12.535Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7634030648830823710.mp4"
+      }
+    },
+    {
+      "video_id": "7621441998305692958",
+      "requested_at": "2026-07-10T08:30:13.151Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7621441998305692958.mp4"
+      }
+    },
+    {
+      "video_id": "7635753355473603870",
+      "requested_at": "2026-07-10T08:30:13.730Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7635753355473603870.mp4"
+      }
+    },
+    {
+      "video_id": "7591725693575253262",
+      "requested_at": "2026-07-10T08:30:14.329Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7591725693575253262.mp4"
+      }
+    },
+    {
+      "video_id": "7649879328393678094",
+      "requested_at": "2026-07-10T08:30:14.916Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7649879328393678094.mp4"
+      }
+    },
+    {
+      "video_id": "7598630774027455758",
+      "requested_at": "2026-07-10T08:30:15.507Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7598630774027455758.mp4"
+      }
+    },
+    {
+      "video_id": "7591637905089645837",
+      "requested_at": "2026-07-10T08:30:16.089Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7591637905089645837.mp4"
+      }
+    },
+    {
+      "video_id": "7651255965450358047",
+      "requested_at": "2026-07-10T08:30:16.667Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651255965450358047.mp4"
+      }
+    },
+    {
+      "video_id": "7610454485269368077",
+      "requested_at": "2026-07-10T08:30:17.255Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7610454485269368077.mp4"
+      }
+    },
+    {
+      "video_id": "7569054433837976887",
+      "requested_at": "2026-07-10T08:30:29.623Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7569054433837976887.mp4"
+      }
+    },
+    {
+      "video_id": "7563515171977710879",
+      "requested_at": "2026-07-10T08:30:30.205Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7563515171977710879.mp4"
+      }
+    },
+    {
+      "video_id": "7569086237533883661",
+      "requested_at": "2026-07-10T08:30:39.639Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7569086237533883661.mp4"
+      }
+    },
+    {
+      "video_id": "7654023163478576397",
+      "requested_at": "2026-07-10T08:30:43.951Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7654023163478576397.mp4"
+      }
+    },
+    {
+      "video_id": "7648956665282268430",
+      "requested_at": "2026-07-10T08:30:44.529Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7648956665282268430.mp4"
+      }
+    },
+    {
+      "video_id": "7607339204065971487",
+      "requested_at": "2026-07-10T08:30:45.114Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7607339204065971487.mp4"
+      }
+    },
+    {
+      "video_id": "7650408921227595022",
+      "requested_at": "2026-07-10T08:30:45.698Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7650408921227595022.mp4"
+      }
+    },
+    {
+      "video_id": "7542422974935108895",
+      "requested_at": "2026-07-10T08:30:46.281Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7542422974935108895.mp4"
+      }
+    },
+    {
+      "video_id": "7642537147831995679",
+      "requested_at": "2026-07-10T08:30:46.894Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7642537147831995679.mp4"
+      }
+    },
+    {
+      "video_id": "7644485929062780174",
+      "requested_at": "2026-07-10T08:30:54.485Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7644485929062780174.mp4"
+      }
+    },
+    {
+      "video_id": "7601871574483897613",
+      "requested_at": "2026-07-10T08:30:55.058Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7601871574483897613.mp4"
+      }
+    },
+    {
+      "video_id": "7535321441407945997",
+      "requested_at": "2026-07-10T08:30:55.633Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7535321441407945997.mp4"
+      }
+    },
+    {
+      "video_id": "7633715153824959775",
+      "requested_at": "2026-07-10T08:31:02.191Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7633715153824959775.mp4"
+      }
+    },
+    {
+      "video_id": "7645808896866536718",
+      "requested_at": "2026-07-10T08:31:02.779Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7645808896866536718.mp4"
+      }
+    },
+    {
+      "video_id": "7651447485281422623",
+      "requested_at": "2026-07-10T08:31:03.365Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7651447485281422623.mp4"
+      }
+    },
+    {
+      "video_id": "7647238027290430750",
+      "requested_at": "2026-07-10T08:31:03.941Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647238027290430750.mp4"
+      }
+    },
+    {
+      "video_id": "7656173995896737038",
+      "requested_at": "2026-07-10T08:31:04.523Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7656173995896737038.mp4"
+      }
+    },
+    {
+      "video_id": "7655880559524154655",
+      "requested_at": "2026-07-10T08:31:05.122Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7655880559524154655.mp4"
+      }
+    },
+    {
+      "video_id": "7646159210350267679",
+      "requested_at": "2026-07-10T08:31:05.700Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7646159210350267679.mp4"
+      }
+    },
+    {
+      "video_id": "7647944479206313246",
+      "requested_at": "2026-07-10T08:31:08.133Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7647944479206313246.mp4"
+      }
+    },
+    {
+      "video_id": "7655781541888478494",
+      "requested_at": "2026-07-10T08:31:08.723Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7655781541888478494.mp4"
+      }
+    },
+    {
+      "video_id": "7657349645575703821",
+      "requested_at": "2026-07-10T08:31:12.451Z",
+      "http_status": 200,
+      "success": true,
+      "message": null,
+      "data": {
+        "url": "https://live.kalocdn.com/video/7657349645575703821.mp4"
+      }
+    }
+  ],
+  "updated_at": "2026-07-10T08:31:13.609Z",
+  "quota_after": {
+    "DOWNLOAD.VIDEO": {
+      "count": 10,
+      "progress": {
+        "total": 10,
+        "used": 0,
+        "remain": 10,
+        "full": false
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    },
+    "DATA.EXPORT": {
+      "count": 0,
+      "progress": {
+        "total": 0,
+        "used": 0,
+        "remain": 0,
+        "full": true
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    },
+    "DATA.EXPORT.NUM": {
+      "count": 0,
+      "progress": {
+        "total": 0,
+        "used": 0,
+        "remain": 0,
+        "full": true
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    },
+    "DETAIL.ACCESS_TIMES": {
+      "count": 10,
+      "progress": {
+        "total": 30,
+        "used": 30,
+        "remain": 0,
+        "full": true
+      },
+      "guidance": "Today's detail times has been used up"
+    },
+    "AI.CREDITS": {
+      "count": 0,
+      "progress": {
+        "total": 1500,
+        "used": 221,
+        "remain": 1279,
+        "full": false
+      },
+      "guidance": "The amount of the benefit reached the limit."
+    }
+  },
+  "finished_at": "2026-07-10T08:31:14.192Z",
+  "summary": {
+    "requested": 231,
+    "records": 231,
+    "successful": 230,
+    "urls": 230
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0FT4QF9D5",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "WIHOLL Summer Dresses for Women Flowy Casual Midi Dress Beach Vacation Sundresses with Pockets",
+    "rating": 4.3,
+    "review_count": 2286.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":331,\"positive\":264,\"negative\":67,\"snippets\":[\"Customers find the dress fits beautifully and is figure flattering, with one customer noting it has no slits.\",\"and will be perfect for summer and travel. Can be dressed up, or remain more \\\"casual.\\\"...\",\"...excellent material stretchy, breathable, the blue and tan 💙 its\",\". It’s soft and stretchy. It has pockets. Who doesn’t love a dress with pockets?!?! It doesn’t cling and it’s not see through at all....\",\"if you have a larger chest. Seems like it'd be perfect for the itty bitty girlies. Fit fine and true to size\"]},{\"tag\":\"appearance\",\"mentions\":250,\"positive\":223,\"negative\":27,\"snippets\":[\"Customers find the dress pretty, appreciating its pattern and print, with one customer noting it looks great even on heavier women.\",\"and comfortable dress! Pockets are a win! I'm 5ft and was afraid it would be too long but it was a great length, didn't trip on it.\",\"and comfortable. Stretch to material. It was perfect for church Easter morning with an added white belt and short sweater\",\"...I have since bought two more different prints and love them.\",\"that you can dress up with a nice wedge heel or dress down with a pair...\",\"...I have ordered another in my regular size in another color.\",\"and comfortable summer dress. OH,and did I mention it has pockets 😉.\"]},{\"tag\":\"comfort\",\"mentions\":236,\"positive\":231,\"negative\":5,\"snippets\":[\"Customers find the dress comfortable, particularly noting that it is true to size and has pockets.\",\", but not the most flattering if you have a larger chest. Seems like it'd be perfect for the itty bitty girlies. Fit fine and true to size\",\", true to size and great for the Florida weather, I have ordered another one in a different pattern I liked...\",\", almost feels like wearing pjs. Bought it for a cruise & can’t wait to wear it! Also, true to size....\",\"I love this- with a short sleeve cardigan it worked great for work.\"]},{\"tag\":\"quality\",\"mentions\":179,\"positive\":160,\"negative\":19,\"snippets\":[\"Customers find the dress to be of good quality, with one customer noting that it doesn't appear cheap.\",\"! Very comfortable, looks great on even for a heavier woman, I will definitely buy another one\",\"and i recommend. the straps are thick tho and don’t look the best but will cover up the fat near your arms....\",\". Will buy more in different colors for vacation. No ironing needed. Packs easily.\",\". Comfortable and very pretty. Looks like the picture shown above. I would recommend it if you’re considering it.\"]},{\"tag\":\"material\",\"mentions\":121,\"positive\":86,\"negative\":35,\"snippets\":[\"Customers like the fabric of the dress, describing it as nice and lightweight, with one customer noting it's a polyester knit with 5% spandex.\",\". It has a creamy tan color in it that’s hard to see in the photos. It’s seems more white and blue....\",\"Great dress. I bought it in black, size small. I’m 5’9” and 137lbs.\",\", not too thin and perfect for summer or cooler days with a cardigan...\",\". Can wear a few times but then it fades and looks worn out.\"]},{\"tag\":\"pockets\",\"mentions\":100,\"positive\":98,\"negative\":2,\"snippets\":[\"Customers love the dress's pockets, with one mentioning they are invisible and another noting it's easy to wear.\",\". Who doesn’t love a dress with pockets?!?! It doesn’t cling and it’s not see through at all....\",\". My only issue is the pattern on the chest doesnt line up with the bottom and makes me feel like its on wrong.\",\"This dress will not disappoint! Material is soft and airy. She has\",\"!!! 🥳 I got so many compliments on it. I've only worn it once, so I have not washed it yet....\"]},{\"tag\":\"sizing\",\"mentions\":99,\"positive\":73,\"negative\":26,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others mention it runs big and packs small.\",\"and great for the Florida weather, I have ordered another one in a different pattern I liked...\",\"- 2x fits because its small. Otherwise would gave been too large!\",\". I ordered the 2X but could’ve gotten the XL. Lightweight, t-shirt material.\"]},{\"tag\":\"softness\",\"mentions\":97,\"positive\":92,\"negative\":5,\"snippets\":[\"Customers appreciate the dress's soft material that feels good on the skin.\",\", not see through. Perfect for summer. I’m 5’4” and the length is mid calf. Good dress, especially for the price....\",\"the fit it true to size. I ordered a size up for roominess but will order a different color in my regular size.\",\", and it even has pockets. I can dress it up to go on the town or for daily wear. Definitely a great find!\",\"Super cute! I am pretty tall, and it hits like a midi dress. It's\",\"and casual but you can dress it up with some heeled sandals!\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_98a3ba09070e512f",
+    "ev_bf0f57861ec5e9c6",
+    "ev_d0aaca7c05bfd446"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

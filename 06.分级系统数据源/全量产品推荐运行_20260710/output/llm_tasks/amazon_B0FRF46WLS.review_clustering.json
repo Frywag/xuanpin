@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0FRF46WLS",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Opemiby Summer Dresses for Women 2026 Flowy Ruffle 3/4 Sleeve V Neck Tiered Casual Babydoll Boho Beach Mini Dress",
+    "rating": 4.0,
+    "review_count": 1085.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":211,\"positive\":200,\"negative\":11,\"snippets\":[\"Customers find the dress pretty and appreciate its classy print, with one customer mentioning they received many compliments on their first wear.\",\"and comfortable and I love the print. I think I'll order more in other colors.\",\"that’s very comfortable and fun! Had lots of compliments on it over past few weeks. It’s cool and airy! Would definitely recommend....\",\"& comfy! Love the design. I did put it in the dryer & had no problems! The material feels good & the sizing seems right on. Love this one!\",\". A bit of a wider cut. Buttons of top lay nice. Comfy and easy to wear yet look nice. It is not a cotton blendof that matters to you\"]},{\"tag\":\"quality\",\"mentions\":94,\"positive\":78,\"negative\":16,\"snippets\":[\", very comfortable,vibrant colors and fits true to size (I generally wear a 14 and bought a large). It's everythink I wanted\",\"! Flowy size but still true to size. I love the mixture print- perfect for our tropical South Florida vibe....\",\"but bought another similar from Dokotoo that I love more. But nice fabric and true to size.\",\", flowy, and works for everything from just coming off the beach to a night out. The print is awesome!\"]},{\"tag\":\"comfort\",\"mentions\":74,\"positive\":74,\"negative\":0,\"snippets\":[\"Customers find the dress comfortable, describing it as a super-comfortable summer look.\",\"! Fits nice overall. Material is very thin but not see through. Disappointed in the finishes or lack there of....\",\"and fun! Had lots of compliments on it over past few weeks. It’s cool and airy! Would definitely recommend....\",\"! Love the design. I did put it in the dryer & had no problems! The material feels good & the sizing seems right on. Love this one!\",\". Very flattering, received lots of compliments. Appreciate that it can hide belly but still feel feminine and pretty.\"]},{\"tag\":\"versatility\",\"mentions\":50,\"positive\":48,\"negative\":2,\"snippets\":[\"Customers find the dress versatile, noting it works well for both work and casual outings, and can be dressed up or down for different occasions.\",\"yet classy dress. The material is see through, so I had to wear an under slip which was fine. My top size is 10/12 or medium....\",\"if you’re trying to cover up a little extra weight, or if you just like a baby doll type fit. Cool and comfy!...\",\".. the long sleeves, excellent for those days I don’t want the sun on my arms or when the evening cools...\"]},{\"tag\":\"color\",\"mentions\":39,\"positive\":36,\"negative\":3,\"snippets\":[\". Fits flowy. Purchased a medium and I'm 5\\\"8 and 160 lbs....\",\"and fits true to size (I generally wear a 14 and bought a large). It's everythink I wanted\",\"( blue/ purple). Fit was good, BUT it is Not soft. Returned the item.\",\"and the material is light but not see through. It fits perfectly....\"]},{\"tag\":\"lightweight\",\"mentions\":38,\"positive\":38,\"negative\":0,\"snippets\":[\"Customers appreciate the dress's lightweight material, with one mentioning it's perfect for summer wear.\",\", not see through, colors are gorgeous and it’s a dream when you put it on....\",\"and great to wear for work in the spring and summer ! Would def order again!\",\". Super comfortable. It was a little over sized for what I was looking for....\",\"and soft - not cotton but still seems like it will be comfortable in...\"]},{\"tag\":\"fit\",\"mentions\":201,\"positive\":118,\"negative\":83,\"snippets\":[\"Customers have mixed opinions about the dress's fit, with some loving it while others find it runs big and runs unflattering.\",\". I love the mixture print- perfect for our tropical South Florida vibe....\",\". Yes, it’s supposed to be loose and flowy, but it hung on me like a tent. Had to return.\",\"It is a pretty dress, very thin materal but I like it that way and\",\", Im usually at Large, but could have worn a small in this dress\",\"so size down and will be short on tall women. I haven't washed it yet but the material looks and feels nice.\"]},{\"tag\":\"fabric quality\",\"mentions\":73,\"positive\":32,\"negative\":41,\"snippets\":[\"Customers have mixed opinions about the fabric quality of the dress, with some finding it wonderful while others describe it as cheap and polyester-spandex blend.\",\", but you get what you pay for. I would order more but I don’t love the other patterns....\",\"but the small is a medium. And Im considering the style. Otherwise nice dress. Im 5’4 normally a 4-6 size.\",\"...Good style, fun pattern, and the fabric is light and soft -\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_9120a1e4a3f92691",
+    "ev_c8cae1c1cb81faf2",
+    "ev_e8f591efd8fa2845"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

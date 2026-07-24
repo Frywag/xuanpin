@@ -1,0 +1,27 @@
+{
+  "generated_from_run": "output",
+  "canonical_key_count": 152,
+  "delivery_products": 246,
+  "files": [
+    {
+      "path": "产品推荐表_全量数据_含入库152键_20260710.xlsx",
+      "bytes": 5376098,
+      "sha256": "cd4cd0f373a859563fa912344c8688a87edf4365193835e08c143704cf390039"
+    },
+    {
+      "path": "产品推荐_入库152键_20260710.jsonl",
+      "bytes": 8308464,
+      "sha256": "b6f91666d01738123a140a12b351e5c5f784ac05d61beddac5ec4f418485bd06"
+    },
+    {
+      "path": "数据源充分性与全量运行结论_20260710.md",
+      "bytes": 2759,
+      "sha256": "db9bfd81473100109196640ebe69663b440e28073eb93d1fae57ffdba5c98276"
+    },
+    {
+      "path": "canonical_152_spec.json",
+      "bytes": 33286,
+      "sha256": "d386fec0702e26878b98e5693d2d3628661774a481775751081a6d4dfa28bb62"
+    }
+  ]
+}

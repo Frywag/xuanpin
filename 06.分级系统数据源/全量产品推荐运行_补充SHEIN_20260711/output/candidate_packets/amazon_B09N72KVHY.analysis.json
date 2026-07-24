@@ -1,0 +1,164 @@
+{
+  "schema_version": "analysis.result.v1",
+  "analysis_id": "analysis_amazon_B09N72KVHY",
+  "candidate_id": "amazon_B09N72KVHY",
+  "market": "US",
+  "layer_results": {
+    "L1": {
+      "passed": true,
+      "score": 62.7,
+      "grade": "S",
+      "gate_reason": "PScore 37.6/60.0（62.7%）-> S",
+      "required_next_data": []
+    },
+    "L2": {
+      "passed": true,
+      "score": 62.7,
+      "grade": "S",
+      "gate_reason": "评价标签聚类：0 个负面聚类 / 0 次标签提及",
+      "required_next_data": []
+    },
+    "L3": {
+      "passed": true,
+      "score": 62.7,
+      "grade": "S",
+      "gate_reason": "2 个数据源按商品ID互验（seller_sprite_amazon、frontend_amazon）；同风格信号：frontend_amazon 语料中有 324 款标题命中相同风格词 ['dresses', 'tank']；带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台",
+      "required_next_data": [
+        "供应链字段人工调查（选品后画像存库用，不参与打分）"
+      ]
+    }
+  },
+  "priority_score": {
+    "total": 37.6,
+    "achievable_max": 60.0,
+    "pct": 62.7,
+    "grade": "S",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 24.0,
+        "max_score": 30.0,
+        "reason": "量级信号 sales_30d_units=36,574 -> 12分；销量/销售额增长率 +57.3% -> 5分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_06e7a10741c219a8",
+          "ev_41646a6ceb94850c"
+        ],
+        "missing": false
+      },
+      {
+        "name": "竞争可突破",
+        "score": 6.8,
+        "max_score": 15.0,
+        "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_1616ba17f8ca7856",
+          "ev_248854b95fb65d71",
+          "ev_851212fba8990b78",
+          "ev_d2a7fc473fdf2f2b"
+        ],
+        "missing": false
+      },
+      {
+        "name": "产品机会",
+        "score": 6.8,
+        "max_score": 15.0,
+        "reason": "评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_370087eaefe93cf0",
+          "ev_39316449484666ac",
+          "ev_a13e20b13d908bde"
+        ],
+        "missing": false
+      },
+      {
+        "name": "风险",
+        "score": 0.0,
+        "max_score": 0.0,
+        "reason": "未命中风险规则（赛道风险系数×1.33）",
+        "evidence_refs": [],
+        "missing": false
+      }
+    ],
+    "track": "trend_rising",
+    "track_label": "趋势上升款"
+  },
+  "track_tags": [
+    "趋势上升款"
+  ],
+  "recommendation": {
+    "decision": "recommend_research",
+    "reason_summary": "市场需求：量级信号 sales_30d_units=36,574 -> 12分；销量/销售额增长率 +57.3% -> 5分；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+    "risk_summary": "",
+    "next_actions": [
+      "进入立项讨论；补齐供应链输入后人审",
+      "L3 完成，等待供应链输入与人审"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "市场需求：量级信号 sales_30d_units=36,574 -> 12分；销量/销售额增长率 +57.3% -> 5分；2个独立需求证据源",
+      "claim_type": "demand",
+      "evidence_refs": [
+        "ev_06e7a10741c219a8",
+        "ev_41646a6ceb94850c"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+      "claim_type": "competition",
+      "evidence_refs": [
+        "ev_1616ba17f8ca7856",
+        "ev_248854b95fb65d71",
+        "ev_851212fba8990b78",
+        "ev_d2a7fc473fdf2f2b"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+      "claim_type": "product",
+      "evidence_refs": [
+        "ev_370087eaefe93cf0",
+        "ev_39316449484666ac",
+        "ev_a13e20b13d908bde"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_4423a20f476e0b9c",
+        "ev_3cb63be344499711"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "同风格红海程度：高（语料内同风格候选 536 款，词表确定性匹配）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_4423a20f476e0b9c",
+        "ev_3cb63be344499711"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_0afb2a75fc2f4e70"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio"
+  ],
+  "blocked_reasons": [],
+  "confidence": "high",
+  "created_at": "2026-07-10T20:45:43+00:00"
+}

@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0CR5HKB56",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "GRECERELLE 2026 Women Year-Round Casual Round Neck Loose Split Wrinkle-Free Long Maxi Vacation Dress with Pockets (XXS-4XL)",
+    "rating": 4.6,
+    "review_count": 7870.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":1999,\"positive\":1711,\"negative\":288,\"snippets\":[\"Customers find the dress fits well, describing it as beautiful, not tight, and perfect in size, while also being flattering and slimming.\",\". The fabric has some heft to it, which I like. It’s quite versatile, being both casual and dressy. I may order another.\",\"and washes well. I'm 5'5\\\", 148 lbs and got a medium. Purchased it in black and the dark grey....\",\"...along with the shoulders make this dress look very elegant and\",\". Good buy and can dress it up with accessories to go from casual to dressy\",\". Great for spring, summer and fall, and can dress it up or down for more casual occasions\"]},{\"tag\":\"quality\",\"mentions\":1374,\"positive\":1351,\"negative\":23,\"snippets\":[\"Customers praise the dress's quality, describing it as a perfect summer piece and an amazing find.\",\"and I love the fabric and drapes beautifully... if u r hippy and conservative about showing those curves make sure you get an...\",\". Looks as if it will hold up for years to come. With different accessories I can easily dress this up or down. 10/10.\",\"! Feels great against skin, very slimming, great fabric. Can dress up or down. I love it so much that I bought the shorter version too!\",\"… however, I bought several colors in this dress… army green fits over sized and the grey is so tight I could barely get it...\"]},{\"tag\":\"comfort\",\"mentions\":1220,\"positive\":1211,\"negative\":9,\"snippets\":[\"Customers find the dress comfortable, with one mentioning that the pockets add to its comfort.\",\", has pockets and can be worn relaxed or you can dress it up! I need this dress in all colors!\",\"! The fabric is so soft. Runs a tad big. Can dress it up or down. Washes well. I have purchased 2 other colors!...\",\". In summer it’s great with the light sweater for work and a winter under my long sweaters....\",\". I am 5’6 and 145 pounds, normally I wear a medium to large and purchased a large in this and it fits perfect.\"]},{\"tag\":\"material\",\"mentions\":1054,\"positive\":957,\"negative\":97,\"snippets\":[\"Customers appreciate the dress's material, describing it as lovely and perfect, with one customer noting the extra fabric under the arms.\",\". Super comfortable. I need to buy another one. Got a grease stain on it and treated it and the color faded significantly in that area....\",\"and fit of this dress. I’m 5-2 and it almost reaches the ground but if I belt it or wear heels, that helps the length a little....\",\". Can dress up or down. I love it so much that I bought the shorter version too!\",\", not to heavy Fits nicely, not baggy. Can be dressed up or casual. I’m 5’3” 140 lb size medium\"]},{\"tag\":\"appearance\",\"mentions\":1027,\"positive\":967,\"negative\":60,\"snippets\":[\"Customers find the dress visually appealing and well-designed, appreciating that it can be dressed up or down.\",\"...I returned it and bought an XS which works out better for me. It is a\",\", casual dress that I plan to wear with sandals in the summer and boots,...\",\", feels very well made, super cute and comfortable. I ordered 2. You can dress it up or down. I couldn’t be happier with my purchase.\",\"and looks way more elegant than the price point. Fabric is excellent and the fit makes this older body look great!\",\". Goes great with a Jean jacket or on its own. Can totally wear it with flats on the summer and then boots in the fall....\"]},{\"tag\":\"softness\",\"mentions\":938,\"positive\":922,\"negative\":16,\"snippets\":[\"and presents the life of leisure with a touch of sophistication. It can also be dressed up with accessories for a casual occasion....\",\"and I normally wear large but you can go one size down if you want it to be more fitting and not...\",\"and fits perfectly! Not to tight and not too lose. Not baggy, is fitted at the waist. The pockets and under arms are very nice details.\",\".Color is vibrant just like in the pictures. Also, love that it doesn’t have wrinkles after washing....\"]},{\"tag\":\"versatility\",\"mentions\":490,\"positive\":484,\"negative\":6,\"snippets\":[\"Customers find the dress versatile, describing it as great for both work and play, perfect for dinner, and casual wear.\",\"This is my favorite dress! The look and feel are amazing. It’s\",\", throw a blazer on and wear to work, or throw sneakers on for a more casual...\",\", can dress it up or keep it casual. I wear a size 12 and ordered a Large. Fits great.\",\"but add a belt and heels and now it is dressy. Soft fabric with a great drape, not too thin or too thick....\"]},{\"tag\":\"pockets\",\"mentions\":409,\"positive\":364,\"negative\":45,\"snippets\":[\"Customers love the dress's pockets, particularly noting that they lay flat and are well-placed.\",\"! The little cap sleeve detail adds style. It’s an easy outfit with little effort.\",\". Also very flattering. Size is true. I’m 5’5 and 145 lbs and medium fits perfectly.\",\", and it covers your armpits completely!! I am 5’3in 135lbs and the small fits amazing.\",\"...It’s just right and is not see through. It’s comfortable,\",\"and can be worn relaxed or you can dress it up! I need this dress in all colors!\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_4261888ee136b247",
+    "ev_4b79587c67fbb6ef",
+    "ev_cee94d59cecb196a"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0FRS91D2B",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "WIHOLL Summer Dresses for Women 2026 Maxi Dresses Long Flowy A Line Sleeveless Sundresses with Pockets",
+    "rating": 4.4,
+    "review_count": 1549.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":251,\"positive\":210,\"negative\":41,\"snippets\":[\"Customers like how the dress fits, noting it's not too clingy and is comfortable around the underarms.\",\". I did order a crochet sweater cover up to wear over the top to dress it up a little....\",\". The color is beautiful. I don’t feel like it’s see through as I’m able to wear it without a slip....\",\"! Colors are nice n bright! Love the pockets too. I weigh 120 n ordered a M!\",\"however, there is not a lot of stretch so if you want a looser fit you might want to size up....\"]},{\"tag\":\"appearance\",\"mentions\":236,\"positive\":223,\"negative\":13,\"snippets\":[\"Customers find the dress visually appealing, particularly appreciating its vibrant pattern, and one customer notes that it looks more expensive than its cost.\",\", comfortable and it washes well. I like to take it when I travel. It can be dressed up a bit or worn very casual....\",\"and can be dressed up or dressed down . Wore it on a recent cruise and it was great....\",\". The second time I washed it the material came out matted and dull....\",\". Arrived in a vacuum bag but creases quickly dropped out. Fabric hangs well and is soft and stretchy. I imagine it will wash well.\"]},{\"tag\":\"comfort\",\"mentions\":177,\"positive\":175,\"negative\":2,\"snippets\":[\"Customers find the dress comfortable, with one mentioning that it has pockets.\",\"and great for those days that start at work or church and end with friends for dinner. Very comfortable .\",\". Very happy with my purchase. It’s stretchy in the right places without being too tight.\",\"...I'm 5'1\\\" and this dress comes to my ankles. I can wear flats with it.\",\", stretchy, flattering on my curves and I get lots of compliments....\",\"and casual enough for every day or even transitioning into a summer evening....\"]},{\"tag\":\"quality\",\"mentions\":138,\"positive\":129,\"negative\":9,\"snippets\":[\"Customers find the dress to be well-made and nicer than expected.\",\". The fabric is flowy and the style is good. You may not be able to tell from the pictures, but it has a slightly fitted waist....\",\"! I'm 5'9\\\" and it's a midi on me. Very soft and comfortable. Dress it up with a scarf or not.\",\". Fit perfectly. Love the style. Comfortable, flattering.. and color perfect.\"]},{\"tag\":\"fabric\",\"mentions\":103,\"positive\":80,\"negative\":23,\"snippets\":[\"Customers love the material of the dress, finding it fantastic and thick enough, with one customer noting it's made of 95% polyester and 5% spandex.\",\". Stretchy, comfy, and wrinkle resistant. I would definately purchase again!\",\"and pretty colors. I plan to get a few more. Lightweight but not see through. Lots of compliments when I wear it.\",\". Soft and comfy. Better than I thought it would be especially for the price.\"]},{\"tag\":\"versatility\",\"mentions\":96,\"positive\":93,\"negative\":3,\"snippets\":[\"Customers find the dress versatile, noting it can be worn for both casual and dressy occasions, with one customer mentioning it pairs well with a sweater or blazer.\",\"This dress is true to fit. It is of great quality. It will make a\",\". Cool, light weight knit cotton. Love the crisp white and blue pattern. Very happy with this dress.\",\"but great on warm day. Have not washed yet, hope it holds up.\"]},{\"tag\":\"softness\",\"mentions\":89,\"positive\":88,\"negative\":1,\"snippets\":[\"Customers appreciate the dress's softness, noting that the fabric feels nice and has a pleasant texture.\",\"I liked it so well I ordered another one in a different color. A+\",\"and comfortable, with perfect midi length for my short 5' 3\\\", 180# frame. Washes well, so far, and doesn't wrinkle!...\",\". Love this dress! Wrinkles came out after it was washed. Pockets are a plus. Will check into ordering more.\",\"and beautiful. The dress washes great in cold water. Place on hanger for drying....\"]},{\"tag\":\"size\",\"mentions\":79,\"positive\":57,\"negative\":22,\"snippets\":[\"Customers are satisfied with the dress's size, finding it perfect and suitable for plus-size summer wear, with one customer noting that it runs generous.\",\". The pattern camouflages any lumps and bumps in the tummy area. I am 5’2, 165 lbs and purchased a size large....\",\"and the material is nice. It is a very flattering dress for many body types.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_3392ab0bab7e5d07",
+    "ev_4726cc267e455502",
+    "ev_7586362c3f764b0d",
+    "ev_c1a01b70cf8abcdd",
+    "ev_ef539f5cf60e1acb"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

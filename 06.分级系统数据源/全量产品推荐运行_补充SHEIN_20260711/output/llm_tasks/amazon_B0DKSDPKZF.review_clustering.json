@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0DKSDPKZF",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Dokotoo Womens Summer Dresses 2026 V Neck A Line Short Sleeve Casual Ruffle Babydoll Mini Dress",
+    "rating": 4.3,
+    "review_count": 1326.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":182,\"positive\":172,\"negative\":10,\"snippets\":[\"Customers find the dress cute, particularly for beach wear, and appreciate that it can be styled casually. One customer mentions it can be dressed up with accessories like a necklace and wedges.\",\"and soft but it was not flattering on me. It gave moo moo pajama vibes. I’m 5 feet, 111 lbs and ordered a small.\",\", but way too short to actually wear out of the house, and I'm average height. I missed the return window, so I use it as a house dress....\",\"and perfect size. I am usually a med sometimes a small and this was perfect. Material is nice!...\",\". I love a simple yet cute dress for summer. The color is cute and the dress is comfortable. I'm going to look into other colors....\"]},{\"tag\":\"fit\",\"mentions\":163,\"positive\":138,\"negative\":25,\"snippets\":[\"Customers find the dress flattering and comfortable, noting that it hits right at the knee, though one customer mentions it runs a bit big.\",\"for someone with a large chest and curvy however, in my mid late 40s I don’t deal with...\",\"Pretty, comfortable dress in my favorite color! Great fit and\",\". I'm 5'2 and it hit me just above my knee which is perfect for me....\",\". I will definitely order more colors. It is so comfortable to throw on every day!\",\"!! However, this dress was definitely worn by someone and returned....\"]},{\"tag\":\"comfort\",\"mentions\":141,\"positive\":140,\"negative\":1,\"snippets\":[\"Customers find the dress comfortable, describing it as a cute casual piece, with one customer specifically noting its pocket feature.\",\". The material is thick so no see through mishaps! I have already bought this dress in another color. Highly recommend!\",\"! Got lots of comments on it. Perfect for summertime and the fit is correct as to the sizing chart.\",\"and light to wear. This dress can be dressed up or dressed down....\",\"and has pockets. I’m 5’6”, 164lbs and it sits about 5” above the knee. I am very pleasantly surprised.\"]},{\"tag\":\"quality\",\"mentions\":100,\"positive\":92,\"negative\":8,\"snippets\":[\"Customers find the dress to be well-made and great quality, with some mentioning it works well as a teacher outfit.\",\". I’m around a size 10 and l ordered a medium. I kept it, but if l order this again in another color, I’d probably get a large.\",\"! It has been my go to dress this summer. It is very comfortable and true to size....\",\"! I have the green and the color is vibrant. Not too clingy. I could have sized down one size. Great length. Not too thick for summer.\",\"...It fits true to size and the material is soft, breathable, and\",\". It’s flowy and super comfortable, making it perfect for warmer weather....\"]},{\"tag\":\"color\",\"mentions\":78,\"positive\":69,\"negative\":9,\"snippets\":[\"Customers like the dress's color, particularly the green shade, with one customer noting that it maintains its hue after multiple washesings.\",\", I would have given it five stars but there was a tiny hole on the sleeve ,, very easy to sew not a big deal\",\".! Very comfortable dress and perfect length. Nice material also not too thin.\",\". The fabric is super soft with a a decent amount of stretch but not so much it looses its shape....\"]},{\"tag\":\"versatility\",\"mentions\":74,\"positive\":73,\"negative\":1,\"snippets\":[\"Customers find the dress versatile, noting it can be worn casually or dressed up with a sweater, and one customer mentions it's perfect for church.\",\"I love the kelly green color and comfortable fabric. This is the\",\"...Well this one fit perfectly! The green is beautiful! It’s a\",\", lightweight dress good for work or out to lunch with the girls!\",\"and small sleeves make it perfect as I am not a fan of showing my arms !...\"]},{\"tag\":\"material\",\"mentions\":66,\"positive\":49,\"negative\":17,\"snippets\":[\"Customers like the dress's material, describing it as a good quality knit fabric that feels thicker than t-shirt material.\",\"...Pretty color.! Very comfortable dress and perfect length.\",\"! True to size. I am a medium or size 8. Throw in the dryer and you’re ready to go. I wore this at a wedding and dressed it up !!!...\"]},{\"tag\":\"softness\",\"mentions\":63,\"positive\":63,\"negative\":0,\"snippets\":[\"Customers appreciate the dress's soft material, describing it as having a t-shirt feel.\",\"but it was not flattering on me. It gave moo moo pajama vibes. I’m 5 feet, 111 lbs and ordered a small.\",\"and comfortable. It is not see thru and did not come wrinkled. I think I will get a lot of use out of it.\",\". The dress is so comfortable too! I would like to get it several more colors. You won’t be sorry on this one!\",\"and it washes and dries nicely. Fits true to size. I’m 5’2” and 111 lbs. I got a small.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_24183c9fb51c2f58",
+    "ev_32afb7d7b94df2e0",
+    "ev_348aceadbeb9e30e",
+    "ev_378e849a03dfc53f",
+    "ev_4f31266fa9c50d49"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0CDBRYYBH",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Wkior Shift Dress for Women V Neck Short Sleeves Solid Color Casual Flowy Summer Dresses(S-2XL)",
+    "rating": 4.1,
+    "review_count": 6721.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":681,\"positive\":489,\"negative\":192,\"snippets\":[\"Customers love how the dress fits, particularly noting that it hangs well and hits just above the knee.\",\"...Love the color! Wore it to a wedding and got lots of compliments.\",\", only complaint was the cuffs were a little tight on my arms.\",\"I could not find anything in the store for my granddaughters' graduation This was perfect.\",\"...I ordered a Large based on reviews and expected it to fit but it was\",\"and it is so simple that it can be dressed up for church or dressed down for running errands....\"]},{\"tag\":\"appearance\",\"mentions\":569,\"positive\":524,\"negative\":45,\"snippets\":[\"Customers like the appearance of the dress, finding it cute and nice-looking, with one customer noting it looks expensive.\",\"and comfortable. It is just perfect! If I had to change anything it wouls be to make the arm holes just a bit bigger....\",\". A little tight at my elbows but I have huge arms. I wear a medium. May have been able to pull off a small if not for my arms.\",\"! Color is a little more olive than the pic, but I love it. Washed well, but requires ironing. Fit and length are great.\",\"The dress’ material is very light and it will travel well. It is\",\"but keep in mind that it is loose fit therefore it will not give you any...\"]},{\"tag\":\"quality\",\"mentions\":406,\"positive\":365,\"negative\":41,\"snippets\":[\"Customers find the dress to be of great quality, describing it as a perfect work dress and lovely summer piece.\",\"so no complaints there. It’s a bit short for my height (5’6”) but no reflection on the dress.\",\". Falls just right, material feels good against the skin. A must buy!! Color was on point. Length right above my knee....\",\"just was not a good fit for me. It was too tight across the bust , but if I sized up it would have been too big everywhere else....\",\"and a good weight, not sheer but also not too heavy so comfortable in warmer weather. It runs true to size....\"]},{\"tag\":\"comfort\",\"mentions\":310,\"positive\":300,\"negative\":10,\"snippets\":[\"Customers find the dress comfortable, describing it as cute and feeling confident while wearing it.\",\", but a solid professional look. It has nice little flutter sleeves. I got several compliments when I wore it to work.\",\". Wore it to a wedding and had so many compliments on it! Great length and love the sleeves! I am 5’3” and 136 pounds....\",\"...I chose the BO- Rosy colour and loving it! It’s very vibrant also\",\"and cool on warm days. I also loved the little details on the sleeves....\",\". Sleeves hit just at elbow. Doesn’t wrinkle. Flows nicely!. It’s just really a cute dress and I get compliments often....\"]},{\"tag\":\"color\",\"mentions\":250,\"positive\":229,\"negative\":21,\"snippets\":[\"Customers love the colors of the dress, with multiple options available, and one customer notes that darker shades are not see-through.\",\". It was oversized, but still wearable. I liked it so much I decided to order the medium in teal....\",\"and true to size I could not find anything in the store for my granddaughters' graduation This was perfect.\",\", comfort and quality are excellent. The major drawback for me was how low cut the neckline is. I couldn't find a way to make it flattering.\",\"and length. Color doesn’t run. It’s an all around great staple for your closet.\"]},{\"tag\":\"flattering\",\"mentions\":154,\"positive\":135,\"negative\":19,\"snippets\":[\"Customers find the dress flattering, particularly noting its shape and cut, with one customer mentioning how it hides flabby arms.\",\". 4 stars due to color only. I expected hot pink, this color is more fuchsia....\",\". Love it so much, I have the smaller one to a friend and bought myself a new one.\",\". I've worn it several times since then, and always get compliments when I do....\"]},{\"tag\":\"material\",\"mentions\":253,\"positive\":174,\"negative\":79,\"snippets\":[\"Customers have mixed opinions about the dress's material, with some praising its flowy and nice feel, while others find it cheap and not great.\",\", and very pretty. I think I’ll look sharp in my new Easter outfit....\",\". Came very wrinkled and said could not put in dryer . Said to iron. Really I don't own one\",\"(it’s very light but not see through). The size is just right too. I look great in it.\"]},{\"tag\":\"length\",\"mentions\":154,\"positive\":87,\"negative\":67,\"snippets\":[\"Customers have mixed opinions about the dress's length, with some finding it perfect and just above the knees, while others report it being noticeably too short.\",\". I’m 5 feet 8 inches and it hit right at the knee. The fabric is light and comfortable and flowey....\",\". The color was the only thing that was the same as it appeared....\",\". LOVE the sleeves. I wore it to an outdoor graduation with sandals and it was great!...\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_9563f0e51f228a30",
+    "ev_d958c519f2a43218",
+    "ev_f72d62b1cfa141e1"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

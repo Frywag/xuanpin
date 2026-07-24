@@ -1,0 +1,771 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "amazon_B0CWVMP1GC",
+  "market": "US",
+  "platform": "amazon",
+  "primary_product_id": "B0CWVMP1GC",
+  "canonical_url": "https://www.amazon.com/Summer-Dresses-Sleeveless-Sundresses-Pockets/dp/B0CWVMP1GC/ref=zg_bs_g_2346727011_d_sccl_22/134-8901815-8266119",
+  "source_refs": [
+    {
+      "source_id": "seller_sprite_amazon",
+      "envelope_id": "envelope_seller_sprite_amazon_20260710"
+    },
+    {
+      "source_id": "frontend_amazon",
+      "envelope_id": "envelope_frontend_amazon_20260710"
+    }
+  ],
+  "basic_facts": {
+    "title": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+    "brand": "OFEEFAN",
+    "category_path": [
+      "Clothing, Shoes & Jewelry",
+      "Women",
+      "Clothing",
+      "Dresses",
+      "Casual"
+    ],
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/811gATfZw8L._AC_UL600_SR600,400_.jpg",
+    "price": {
+      "amount": 12.99,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.3,
+    "review_count": 4996.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": 19800.0,
+    "sales_7d_units": null,
+    "sales_floor_units": null,
+    "revenue_30d": {
+      "amount": 257202.0,
+      "currency": "USD"
+    },
+    "gmv_7d": null,
+    "sales_growth_rate": 0.7792,
+    "favorites_count": null,
+    "bestseller_rank_text": "Best Sellers Rank: #617 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry) #22 in Women's Casual Dresses",
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": [
+      {
+        "signal": "bsr_improving",
+        "kind": "platform_trend_tag",
+        "evidence_refs": [
+          "ev_312db98d239db31c"
+        ]
+      }
+    ]
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [
+      {
+        "cluster_name": "正面标签",
+        "tags": []
+      }
+    ],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [
+      {
+        "source_id": "seller_sprite_amazon",
+        "envelope_id": "envelope_seller_sprite_amazon_20260710",
+        "product_id": "B0CWVMP1GC",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "frontend_amazon",
+        "envelope_id": "envelope_frontend_amazon_20260710",
+        "product_id": "B0CWVMP1GC",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [
+      {
+        "style_group": "dress",
+        "source_group": "候选自身（amazon）",
+        "currency": "USD",
+        "n": 1,
+        "p25": 12.99,
+        "p50": 12.99,
+        "p75": 12.99,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "amazon_plugin",
+        "currency": "USD",
+        "n": 200,
+        "p25": 14.99,
+        "p50": 26.48,
+        "p75": 37.99,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_aerie",
+        "currency": "USD",
+        "n": 20,
+        "p25": 52.46,
+        "p50": 54.95,
+        "p75": 59.95,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_alo_yoga",
+        "currency": "USD",
+        "n": 45,
+        "p25": 138.0,
+        "p50": 138.0,
+        "p75": 138.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_amazon",
+        "currency": "USD",
+        "n": 399,
+        "p25": 18.88,
+        "p50": 29.99,
+        "p75": 39.99,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_cupshe",
+        "currency": "USD",
+        "n": 48,
+        "p25": 32.75,
+        "p50": 36.0,
+        "p75": 40.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_for_love_lemons",
+        "currency": "USD",
+        "n": 116,
+        "p25": 22900.0,
+        "p50": 28250.0,
+        "p75": 31900.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_good_american",
+        "currency": "USD",
+        "n": 12,
+        "p25": 93.0,
+        "p50": 138.0,
+        "p75": 148.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_lulus",
+        "currency": "USD",
+        "n": 21,
+        "p25": 69.0,
+        "p50": 79.0,
+        "p75": 99.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_madewell",
+        "currency": "USD",
+        "n": 31,
+        "p25": 123.0,
+        "p50": 148.0,
+        "p75": 158.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_quince",
+        "currency": "USD",
+        "n": 89,
+        "p25": 59.9,
+        "p50": 69.9,
+        "p75": 99.9,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_reformation",
+        "currency": "USD",
+        "n": 47,
+        "p25": 248.0,
+        "p50": 278.0,
+        "p75": 313.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_skims",
+        "currency": "USD",
+        "n": 24,
+        "p25": 68.0,
+        "p50": 86.0,
+        "p75": 98.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "tiktok_shop_plugin",
+        "currency": "CNY",
+        "n": 88,
+        "p25": 168.96,
+        "p50": 275.63,
+        "p75": 345.18,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "frontend_amazon 语料中有 318 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 318,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "amazon_plugin 语料中有 153 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 153,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "tiktok_shop_plugin 语料中有 24 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 24,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_quince 语料中有 1 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 1,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ]
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio"
+  ],
+  "field_issues": [
+    {
+      "field_path": "basic_facts.title",
+      "issue": "source_conflict",
+      "detail": "frontend_amazon 给出 'Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet'，与已有 'OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet' 不一致，保留先值",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "basic_facts.image_url",
+      "issue": "source_conflict",
+      "detail": "frontend_amazon 给出 'https://m.media-amazon.com/images/I/811gATfZw8L._AC_UL320_.jpg'，与已有 'https://images-na.ssl-images-amazon.com/images/I/811gATfZw8L._AC_UL600_SR600,400_.jpg' 不一致，保留先值",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "basic_facts.review_count",
+      "issue": "source_conflict",
+      "detail": "frontend_amazon 给出 4998.0，与已有 4996.0 不一致，保留先值",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_f5228138b592f4d6",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.title",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=英文标题",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_2a15ebc9ea7626ea",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.title_cn",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=中文标题",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_ac7b960c3c6176e2",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.brand",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=品牌",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_074f912210714638",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.category_name",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=类目路径",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_613c2f3bc7f9285d",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.category_path",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=类目路径",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_e04a7fb563130f52",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=图片链接",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_951a7cef80927136",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.price",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=价格($)",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_773d7222b55500e3",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=星级",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_d87f1611edc19252",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=评分数",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_6782cfb30ff82d36",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=近30天销量(父体)",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "SellerSprite 估算；父体近30天销量"
+    },
+    {
+      "evidence_id": "ev_17b1e7452016ea04",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.revenue_30d",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=近30天销售额($)",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "SellerSprite 估算"
+    },
+    {
+      "evidence_id": "ev_4dc239e1d1c023e6",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=销量增长率",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "源表百分数口径归一为小数"
+    },
+    {
+      "evidence_id": "ev_ad5cb3d607e8ad5d",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.bestseller_rank_text",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=Amazon类目排名",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_4bcc831599eb3416",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.seller_name",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=卖家名称",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_4586103537fedc23",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.image_count",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=主图数量",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_92c12475a147554f",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.review_tags_raw",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=评论亮点",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_72a858ced9d2e9dd",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.raw_evidence_path",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=采集说明",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_508231aa241241fc",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.design_signals",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=英文五点/面料/产品属性JSON",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_312db98d239db31c",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.trend_tags",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=23;column=销量趋势/BSR趋势/价格趋势",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "全量趋势行聚合得出"
+    },
+    {
+      "evidence_id": "ev_e8cd77cbb5146a2b",
+      "source_id": "frontend_amazon",
+      "source_type": "frontend",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.title",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx",
+      "record_locator": "sheet=商品详情;row=137;column=商品名称",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_2b1b4f5f57db8bb2",
+      "source_id": "frontend_amazon",
+      "source_type": "frontend",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.brand",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx",
+      "record_locator": "sheet=商品详情;row=137;column=品牌",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_ee3aac1e8ed6dc30",
+      "source_id": "frontend_amazon",
+      "source_type": "frontend",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx",
+      "record_locator": "sheet=商品详情;row=137;column=主图URL",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_861db1bb950ee948",
+      "source_id": "frontend_amazon",
+      "source_type": "frontend",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.price",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx",
+      "record_locator": "sheet=商品详情;row=137;column=价格/币种",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_099e0a7985f333a7",
+      "source_id": "frontend_amazon",
+      "source_type": "frontend",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx",
+      "record_locator": "sheet=商品详情;row=137;column=评分",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_0f07e8a22a09060f",
+      "source_id": "frontend_amazon",
+      "source_type": "frontend",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx",
+      "record_locator": "sheet=商品详情;row=137;column=评价数",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "amazon_plugin",
+    "category_label": "women_dresses_multisite",
+    "seasonal": false,
+    "title_cn": "OFEEFAN 女式夏季连衣裙 2026 宽松 V 领无袖背心裙泳衣罩衫带口袋花卉/素色/孔眼",
+    "category_name": "Casual",
+    "seller_name": "OFEEFAN",
+    "image_count": 0.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":450,\"positive\":366,\"negative\":84,\"snippets\":[\"Customers like how the dress fits, noting it's not tight and is not too long or too short, with one customer mentioning it's flattering for all shapes and sizes.\",\". Should have purchased more than one. It’s true to size, light weight and comfortable.\",\". Can be worn casual or dressed up with accessories. Pockets are great. Nice quality.\",\"except the armpit area has a very large opening. I find this to be the case with almost all of these affordable dresses....\",\". Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"appearance\",\"mentions\":442,\"positive\":409,\"negative\":33,\"snippets\":[\"Customers find the dress visually appealing, describing it as cute with a nice print, and one customer mentions it's suitable for wearing out.\",\".. You can use it on the beach .. picnic .. just relax at the house .. with a little bit of accessories l, it can...\",\"and easy to dress up a little bit. Glad I bought this it is the perfect summer dress.\",\"Not a dress but a bathing suit cover dress. Very see through but\",\". Color is perfect for a hot summer day. Nice quality for the price.\"]},{\"tag\":\"comfort\",\"mentions\":380,\"positive\":374,\"negative\":6,\"snippets\":[\"Customers find the dress comfortable, describing it as stylish and summer-friendly, with one customer noting that it sits well on the body.\",\", they are thick enough so they are not flimsy. perfect for work (I wear a cardigan).\",\"with plenty of room to move around. I bought a pair of bike shorts to wear under as it is a little short for my age.\",\"/casual but very cute dress that I could wear for several different occasions… when I...\",\"I believe I purchased at least six of these beauties. They are\",\"and cool in this Florida heat and humidity. I’ve had many compliments....\"]},{\"tag\":\"summer-friendly\",\"mentions\":181,\"positive\":176,\"negative\":5,\"snippets\":[\"Customers find this dress suitable for summer wear, appreciating it as a nice swim coverup and sundress, with some mentioning it works well as a nightgown.\",\". Colors were spot on to the picture. It's a thinner material but perfect for the hotter days. Fit true to size....\",\"!! I used it all summer and I was able to wear it to day picnics or fancy dinner w the right belt and accessories....\",\". Does run on the larger size. Comfortable, washes great. A little longer than I would like , but I am only 5'3\\\"....\",\". Not too short, not too long. Flattering. Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"pockets\",\"mentions\":154,\"positive\":143,\"negative\":11,\"snippets\":[\"Customers appreciate the dress's pockets, noting they are a nice touch and perfect for summer wear, with one customer mentioning they are helpful for carrying money.\",\"...I am 5'5\\\" - 126 lbs.\",\"and I also wore it on a road trip recently and it was so cool and comfortable in the car as it didn't wrinkle...\",\", I used for travel because they don’t take up a lot of space in a suitcase, they do not...\",\". This hands down is my favorite summer dress in my closet. The print is unique.\",\"I’m in love with this dress!! It’s so light & comfortable and\"]},{\"tag\":\"softness\",\"mentions\":149,\"positive\":135,\"negative\":14,\"snippets\":[\"Customers find the dress soft and lovely for summer wear, with one customer noting it feels cool on the skin.\",\"and comfy---I'm not in the habit of wearing anything like this, but for the cruise,...\",\"and silky, light weight feeling. It has pockets. This hands down is my favorite summer dress in my closet. The print is unique.\",\"and comfortable. Cool for summer. True to size. Something I would buy in another print I like it so much....\",\"and easy care. The length for me at 5'5\\\" was perfect. Nice underarm fit as well....\"]},{\"tag\":\"material\",\"mentions\":200,\"positive\":128,\"negative\":72,\"snippets\":[\"Customers have mixed opinions about the dress's material, with some finding it lovely and noting it has just enough give, while others describe it as awful, thin, and too slinky.\",\", perfect for the summer. The pockets are a nice touch and I love the green print....\",\". It is not thin. It does move as you move and the length is not worrisome. You can sit, walk fast, and not expose yourself, lol!...\"]},{\"tag\":\"sizing\",\"mentions\":157,\"positive\":94,\"negative\":63,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report it runs large or too short.\",\". Something I would buy in another print I like it so much....\",\". All stitching is white and I guess is to be stylish. Comes off ugly.\",\". The fabric is substantial and does not wrinkle. Great style for summer.\"]}]",
+    "raw_evidence_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+    "design_signals": [
+      {
+        "kind": "bullet_points",
+        "text": "MATERIAL: Women's summer dress is well made of soft,comfy and skin-friendly fabric,stretchy and not shrink,providing a pleasant dressing experience for you.|||FEATURES:It features casual style,cute v neck,classic sleeveless and short length.Two pockets can provide extra storage for carrying small items.|||MATCHING:Knee length dress is easy to style with leggings,boots or a scarf to achieve a classic look.Wearing a necklace,the v neck will highlights the neckline and adds sparkle to your look.|||OCCASIONS:Super good for casual daily wear and other occasions,such as party,club,work,office,church,holiday,outgoing,vacation,engagement,maternity,beach etc.|||LOOSE FIT DESIGN:This dress is casual in style,loose fitting,suitable for most body shapes,easy to show your glamorous and cute femininity.It is a tank dress,flowy dress,sundress,swing dress,summer dress,loose dress."
+      },
+      {
+        "kind": "material",
+        "text": "Plain:60%Polyester,35%Rayon,5%Spandex;Floral/Eyelet:95%Polyester,5%Spandex."
+      },
+      {
+        "kind": "attributes",
+        "text": "{\"STYLE\":{\"Color\":\"A Floral 05\",\"Occasion Type\":\"Church, Work\",\"Apparel Silhouette\":\"A-line\",\"Neck Style\":\"V-Neck\",\"Sleeve Type\":\"Sleeveless\",\"Seasons\":\"Summer\",\"Apparel Occasion and Lifestyle\":\"Casual\",\"Style Name\":\"Soft\",\"Apparel Closure Type\":\"Pull On\",\"Back Style\":\"Backless\",\"Strap Type\":\"Strapless\",\"Pattern\":\"Solid\",\"Waist Style\":\"High Waist\",\"Hemline Form\":\"Straight Hemline\",\"collar-type\":\"No Collar\",\"Theme\":\"Floral\"},\"MEASUREMENTS\":{\"Item Length Description\":\"Knee-Length\",\"Special Size Type\":\"One Size\"},\"FEATURES & SPECS\":{\"Apparel Closure Type\":\"Pull On\",\"Pocket Description\":\"Two pockets, providing extra storage for small items.\",\"Additional Features\":\"Pocket\",\"Sleeve Length Description\":\"Sleeveless\",\"Fit to Size Sentiment\":\"Positive\",\"Fit Type\":\"Loose\"},\"ITEM DETAILS\":{\"Brand Name\":\"OFEEFAN\",\"Age Range Description\":\"Adult\",\"Style Number\":\"WDR90560652014U0701\",\"Garment Size Country\":\"United States\",\"Unit Count\":\"1 Count\",\"Number of Items\":\"1\"},\"MATERIALS & CARE\":{\"Material Type\":\"Polyester Blend\",\"Product Care Instructions\":\"Machine Wash\",\"Apparel Fabric Weight Class\":\"Lightweight\",\"Apparel Fabric Stretch\":\"Medium Stretch\",\"Fabric Type\":\"Plain:60%Polyester,35%Rayon,5%Spandex;Floral/Eyelet:95%Polyester,5%Spandex.\"}}"
+      },
+      {
+        "kind": "review_summary",
+        "text": "Customers find the dress comfortable, soft, and not too long or too short, with one noting it's flattering for all shapes and sizes. They appreciate its appearance, with one mentioning it's suitable for wearing out, and consider it a great summer dress with pockets. The material receives mixed feedback - while some praise the eyelet fabric, others find it thin and of poor quality. The sizing is also mixed, with some finding it true to size while others say it runs large."
+      }
+    ],
+    "trend_tags": [
+      "bsr_improving"
+    ],
+    "track_hint": null,
+    "site": "amazon",
+    "profile": {
+      "产品中文名称": {
+        "value": "OFEEFAN 女式夏季连衣裙 2026 宽松 V 领无袖背心裙泳衣罩衫带口袋花卉/素色/孔眼",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_2a15ebc9ea7626ea"
+        ]
+      },
+      "产品英文标题": {
+        "value": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_f5228138b592f4d6",
+          "ev_e8cd77cbb5146a2b"
+        ]
+      },
+      "品牌": {
+        "value": "OFEEFAN",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_ac7b960c3c6176e2",
+          "ev_2b1b4f5f57db8bb2"
+        ]
+      },
+      "售价": {
+        "value": "12.99 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_951a7cef80927136",
+          "ev_861db1bb950ee948"
+        ]
+      },
+      "评分": {
+        "value": 4.3,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_773d7222b55500e3",
+          "ev_099e0a7985f333a7"
+        ]
+      },
+      "评论数": {
+        "value": 4996.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_d87f1611edc19252",
+          "ev_0f07e8a22a09060f"
+        ]
+      },
+      "类目路径": {
+        "value": [
+          "Clothing, Shoes & Jewelry",
+          "Women",
+          "Clothing",
+          "Dresses",
+          "Casual"
+        ],
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_613c2f3bc7f9285d"
+        ]
+      },
+      "来源类目": {
+        "value": "Casual",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_074f912210714638"
+        ]
+      },
+      "主图链接": {
+        "value": "https://images-na.ssl-images-amazon.com/images/I/811gATfZw8L._AC_UL600_SR600,400_.jpg",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_e04a7fb563130f52",
+          "ev_ee3aac1e8ed6dc30"
+        ]
+      },
+      "商品链接": {
+        "value": "https://www.amazon.com/Summer-Dresses-Sleeveless-Sundresses-Pockets/dp/B0CWVMP1GC/ref=zg_bs_g_2346727011_d_sccl_22/134-8901815-8266119",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "amazon",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

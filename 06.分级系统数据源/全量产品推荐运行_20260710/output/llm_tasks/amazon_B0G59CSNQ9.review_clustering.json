@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0G59CSNQ9",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Summer Dresses for Women 2026 V Neck Sleeveless Lace Boho Dress Elegant Classy Spring Beach Vacation Outfits",
+    "rating": 4.2,
+    "review_count": 448.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":70,\"positive\":65,\"negative\":5,\"snippets\":[\"Customers find the dress super cute and very nice for summer, appreciating its cool pattern.\",\"and very soft casual dress (buttery, brushed-feeling fabric), and it fits true to...\",\"and comfortable. Material is thin but still substantial, so perfect for hot weather. Can be dressed up or down with the right accessories....\",\"& fits perfect! Ordered it for bachelorette party for our soon to be granddaughter-in-law in Cancun. Can’t beat the price either!\",\". Fit seems slightly big. I ordered a medium 5’2” 140lba and could have ordered a small. Patterns en colors are great for summer....\"]},{\"tag\":\"fit\",\"mentions\":66,\"positive\":54,\"negative\":12,\"snippets\":[\"Customers find the dress fits well and is flattering, with one customer noting it's not too clingy around the stomach area and another mentioning it hits at the mid-knee length.\",\". It's comfortable and can be either dressed up or down. Nice quality and definitely worth the price.\",\"5’2”, 140 pounds and purchased size small.\",\". I am 5’3” and 125. Size S was perfect. Recommend\"]},{\"tag\":\"comfort\",\"mentions\":40,\"positive\":40,\"negative\":0,\"snippets\":[\". Material is thin but still substantial, so perfect for hot weather. Can be dressed up or down with the right accessories....\",\"Very cute, perfect length and weight of material is just right.\",\"and will be an easy item to pack for trips also, Style and cut...\",\". Im 5'7\\\" 150 lbs and got size large even though medium was recommended....\",\"...It hits at my mid knee and I am 5'2\\\".\"]},{\"tag\":\"quality\",\"mentions\":33,\"positive\":29,\"negative\":4,\"snippets\":[\"Customers find the dress to be of excellent quality, with one customer noting it's not made of cheap fabric.\",\". I did size down and ordered a L but in my opinion, you could go with your true size also....\",\"...It hits at my mid knee and I am 5'2\\\". Super comfortable and\"]},{\"tag\":\"fabric quality\",\"mentions\":27,\"positive\":21,\"negative\":6,\"snippets\":[\"Customers like the fabric of the dress, with some noting it is nice and heavy cotton, though others mention it is thin.\",\", colors are bright, fit was good. Will wear it again and again!\",\"but still substantial, so perfect for hot weather. Can be dressed up or down with the right accessories....\",\"with a fuzzy print screen pattern. Using as a bathing suit cover up; wouldn’t wear it outside of that.\"]},{\"tag\":\"summer-friendly\",\"mentions\":24,\"positive\":24,\"negative\":0,\"snippets\":[\"Customers find this dress perfect for summer, particularly noting it's cool for hot Florida weather, and one customer mentions it works well as a beach coverup.\",\". Fits great. I am 5’3” and 125. Size S was perfect. Recommend\"]},{\"tag\":\"sizing\",\"mentions\":17,\"positive\":15,\"negative\":2,\"snippets\":[\"Customers are satisfied with the sizing of the dress, finding it true to size.\",\", I gave 3 stars because the coloring is way off from the pink shown in the picture....\",\"to a bit large. On the black-and-white dress, the white is not truly white. It’s more of a creamy pink white.\",\"...Fits great. I am 5’3” and 125.\",\"though. It fit as I would expect. I really like the v neck. Also, the little lace cutout on the bottom is super cute!...\"]},{\"tag\":\"color\",\"mentions\":23,\"positive\":16,\"negative\":7,\"snippets\":[\"Customers have mixed opinions about the dress's colors, with some finding them nice while others report that the colors are off.\",\". I have worn it to my daughters graduation., dinners light weight. Dress it up or down.\",\"This dress is so lightweight and soft. It fits TTS and is the\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_364103b709f3ab7d",
+    "ev_4ab8b885f8feb42e",
+    "ev_58eb469c2f50e20e",
+    "ev_a16222fc2d612e4f",
+    "ev_b90843afd4d7b9c4"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

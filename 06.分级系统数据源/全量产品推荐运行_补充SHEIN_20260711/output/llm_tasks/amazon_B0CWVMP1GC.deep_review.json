@@ -1,0 +1,511 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "amazon_B0CWVMP1GC",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "amazon_B0CWVMP1GC",
+      "platform": "amazon",
+      "canonical_url": "https://www.amazon.com/Summer-Dresses-Sleeveless-Sundresses-Pockets/dp/B0CWVMP1GC/ref=zg_bs_g_2346727011_d_sccl_22/134-8901815-8266119",
+      "basic_facts": {
+        "title": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+        "brand": "OFEEFAN",
+        "category_path": [
+          "Clothing, Shoes & Jewelry",
+          "Women",
+          "Clothing",
+          "Dresses",
+          "Casual"
+        ],
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/811gATfZw8L._AC_UL600_SR600,400_.jpg",
+        "price": {
+          "amount": 12.99,
+          "currency": "USD"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.3,
+        "review_count": 4996.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 19800.0,
+        "sales_7d_units": null,
+        "sales_floor_units": null,
+        "revenue_30d": {
+          "amount": 257202.0,
+          "currency": "USD"
+        },
+        "gmv_7d": null,
+        "sales_growth_rate": 0.7792,
+        "favorites_count": null,
+        "bestseller_rank_text": "Best Sellers Rank: #617 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry) #22 in Women's Casual Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": [
+          {
+            "signal": "bsr_improving",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_312db98d239db31c"
+            ]
+          }
+        ]
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [
+          {
+            "cluster_name": "正面标签",
+            "tags": []
+          }
+        ],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [],
+        "same_style_signals": []
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio"
+      ],
+      "field_issues": [
+        {
+          "field_path": "basic_facts.title",
+          "issue": "source_conflict",
+          "detail": "frontend_amazon 给出 'Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet'，与已有 'OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet' 不一致，保留先值",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "basic_facts.image_url",
+          "issue": "source_conflict",
+          "detail": "frontend_amazon 给出 'https://m.media-amazon.com/images/I/811gATfZw8L._AC_UL320_.jpg'，与已有 'https://images-na.ssl-images-amazon.com/images/I/811gATfZw8L._AC_UL600_SR600,400_.jpg' 不一致，保留先值",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "basic_facts.review_count",
+          "issue": "source_conflict",
+          "detail": "frontend_amazon 给出 4998.0，与已有 4996.0 不一致，保留先值",
+          "evidence_refs": []
+        }
+      ],
+      "context": {
+        "category_name": "Casual",
+        "category_label": "women_dresses_multisite",
+        "source_group": "amazon_plugin",
+        "site": "amazon",
+        "shop_name": null,
+        "seller_name": "OFEEFAN",
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":450,\"positive\":366,\"negative\":84,\"snippets\":[\"Customers like how the dress fits, noting it's not tight and is not too long or too short, with one customer mentioning it's flattering for all shapes and sizes.\",\". Should have purchased more than one. It’s true to size, light weight and comfortable.\",\". Can be worn casual or dressed up with accessories. Pockets are great. Nice quality.\",\"except the armpit area has a very large opening. I find this to be the case with almost all of these affordable dresses....\",\". Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"appearance\",\"mentions\":442,\"positive\":409,\"negative\":33,\"snippets\":[\"Customers find the dress visually appealing, describing it as cute with a nice print, and one customer mentions it's suitable for wearing out.\",\".. You can use it on the beach .. picnic .. just relax at the house .. with a little bit of accessories l, it can...\",\"and easy to dress up a little bit. Glad I bought this it is the perfect summer dress.\",\"Not a dress but a bathing suit cover dress. Very see through but\",\". Color is perfect for a hot summer day. Nice quality for the price.\"]},{\"tag\":\"comfort\",\"mentions\":380,\"positive\":374,\"negative\":6,\"snippets\":[\"Customers find the dress comfortable, describing it as stylish and summer-friendly, with one customer noting that it sits well on the body.\",\", they are thick enough so they are not flimsy. perfect for work (I wear a cardigan).\",\"with plenty of room to move around. I bought a pair of bike shorts to wear under as it is a little short for my age.\",\"/casual but very cute dress that I could wear for several different occasions… when I...\",\"I believe I purchased at least six of these beauties. They are\",\"and cool in this Florida heat and humidity. I’ve had many compliments....\"]},{\"tag\":\"summer-friendly\",\"mentions\":181,\"positive\":176,\"negative\":5,\"snippets\":[\"Customers find this dress suitable for summer wear, appreciating it as a nice swim coverup and sundress, with some mentioning it works well as a nightgown.\",\". Colors were spot on to the picture. It's a thinner material but perfect for the hotter days. Fit true to size....\",\"!! I used it all summer and I was able to wear it to day picnics or fancy dinner w the right belt and accessories....\",\". Does run on the larger size. Comfortable, washes great. A little longer than I would like , but I am only 5'3\\\"....\",\". Not too short, not too long. Flattering. Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"pockets\",\"mentions\":154,\"positive\":143,\"negative\":11,\"snippets\":[\"Customers appreciate the dress's pockets, noting they are a nice touch and perfect for summer wear, with one customer mentioning they are helpful for carrying money.\",\"...I am 5'5\\\" - 126 lbs.\",\"and I also wore it on a road trip recently and it was so cool and comfortable in the car as it didn't wrinkle...\",\", I used for travel because they don’t take up a lot of space in a suitcase, they do not...\",\". This hands down is my favorite summer dress in my closet. The print is unique.\",\"I’m in love with this dress!! It’s so light & comfortable and\"]},{\"tag\":\"softness\",\"mentions\":149,\"positive\":135,\"negative\":14,\"snippets\":[\"Customers find the dress soft and lovely for summer wear, with one customer noting it feels cool on the skin.\",\"and comfy---I'm not in the habit of wearing anything like this, but for the cruise,...\",\"and silky, light weight feeling. It has pockets. This hands down is my favorite summer dress in my closet. The print is unique.\",\"and comfortable. Cool for summer. True to size. Something I would buy in another print I like it so much....\",\"and easy care. The length for me at 5'5\\\" was perfect. Nice underarm fit as well....\"]},{\"tag\":\"material\",\"mentions\":200,\"positive\":128,\"negative\":72,\"snippets\":[\"Customers have mixed opinions about the dress's material, with some finding it lovely and noting it has just enough give, while others describe it as awful, thin, and too slinky.\",\", perfect for the summer. The pockets are a nice touch and I love the green print....\",\". It is not thin. It does move as you move and the length is not worrisome. You can sit, walk fast, and not expose yourself, lol!...\"]},{\"tag\":\"sizing\",\"mentions\":157,\"positive\":94,\"negative\":63,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report it runs large or too short.\",\". Something I would buy in another print I like it so much....\",\". All stitching is white and I guess is to be stylish. Comes off ugly.\",\". The fabric is substantial and does not wrinkle. Great style for summer.\"]}]"
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "S",
+      "pct": 53.2,
+      "total": 31.9,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 20.4,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_30d_units=19,800 -> 9分；销量/销售额增长率 +77.9% -> 5分；2个独立需求证据源",
+          "evidence_refs": [
+            "ev_4dc239e1d1c023e6",
+            "ev_6782cfb30ff82d36"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 5.2,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+          "evidence_refs": [
+            "ev_0f07e8a22a09060f",
+            "ev_861db1bb950ee948",
+            "ev_951a7cef80927136",
+            "ev_d87f1611edc19252"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 9.0,
+          "max_score": 15.0,
+          "reason": "评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "evidence_refs": [
+            "ev_099e0a7985f333a7",
+            "ev_312db98d239db31c",
+            "ev_773d7222b55500e3"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「OFEEFAN」品牌词出现在标题中（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_4bcc831599eb3416"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_30d_units=19,800 -> 9分；销量/销售额增长率 +77.9% -> 5分；2个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_4dc239e1d1c023e6",
+            "ev_6782cfb30ff82d36"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_0f07e8a22a09060f",
+            "ev_861db1bb950ee948",
+            "ev_951a7cef80927136",
+            "ev_d87f1611edc19252"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_099e0a7985f333a7",
+            "ev_312db98d239db31c",
+            "ev_773d7222b55500e3"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「OFEEFAN」品牌词出现在标题中（人工待确认）",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_4bcc831599eb3416"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 53.2,
+          "grade": "S",
+          "gate_reason": "PScore 31.9/60.0（53.2%）-> S",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 53.2,
+          "grade": "S",
+          "gate_reason": "评价标签聚类：0 个负面聚类 / 0 次标签提及",
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": null,
+          "score": null,
+          "grade": null,
+          "gate_reason": null,
+          "required_next_data": []
+        }
+      },
+      "confidence": "high"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_f5228138b592f4d6",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=商品详情;row=23;column=英文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_2a15ebc9ea7626ea",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=商品详情;row=23;column=中文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_ac7b960c3c6176e2",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.brand",
+        "record_locator": "sheet=商品详情;row=23;column=品牌",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_074f912210714638",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=商品详情;row=23;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_613c2f3bc7f9285d",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.category_path",
+        "record_locator": "sheet=商品详情;row=23;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_e04a7fb563130f52",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=商品详情;row=23;column=图片链接",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_951a7cef80927136",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=商品详情;row=23;column=价格($)",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_773d7222b55500e3",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=商品详情;row=23;column=星级",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_d87f1611edc19252",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=商品详情;row=23;column=评分数",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_6782cfb30ff82d36",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=商品详情;row=23;column=近30天销量(父体)",
+        "note": "SellerSprite 估算；父体近30天销量"
+      },
+      {
+        "evidence_id": "ev_17b1e7452016ea04",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.revenue_30d",
+        "record_locator": "sheet=商品详情;row=23;column=近30天销售额($)",
+        "note": "SellerSprite 估算"
+      },
+      {
+        "evidence_id": "ev_4dc239e1d1c023e6",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=商品详情;row=23;column=销量增长率",
+        "note": "源表百分数口径归一为小数"
+      },
+      {
+        "evidence_id": "ev_ad5cb3d607e8ad5d",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=商品详情;row=23;column=Amazon类目排名",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_4bcc831599eb3416",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.seller_name",
+        "record_locator": "sheet=商品详情;row=23;column=卖家名称",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_4586103537fedc23",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.image_count",
+        "record_locator": "sheet=商品详情;row=23;column=主图数量",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_92c12475a147554f",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.review_tags_raw",
+        "record_locator": "sheet=商品详情;row=23;column=评论亮点",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_72a858ced9d2e9dd",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=商品详情;row=23;column=采集说明",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_508231aa241241fc",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.design_signals",
+        "record_locator": "sheet=商品详情;row=23;column=英文五点/面料/产品属性JSON",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_312db98d239db31c",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=商品详情;row=23;column=销量趋势/BSR趋势/价格趋势",
+        "note": "全量趋势行聚合得出"
+      },
+      {
+        "evidence_id": "ev_e8cd77cbb5146a2b",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=商品详情;row=137;column=商品名称",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_2b1b4f5f57db8bb2",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.brand",
+        "record_locator": "sheet=商品详情;row=137;column=品牌",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_ee3aac1e8ed6dc30",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=商品详情;row=137;column=主图URL",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_861db1bb950ee948",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=商品详情;row=137;column=价格/币种",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_099e0a7985f333a7",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=商品详情;row=137;column=评分",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_0f07e8a22a09060f",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=商品详情;row=137;column=评价数",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_074f912210714638",
+    "ev_099e0a7985f333a7",
+    "ev_0f07e8a22a09060f",
+    "ev_17b1e7452016ea04",
+    "ev_2a15ebc9ea7626ea",
+    "ev_2b1b4f5f57db8bb2",
+    "ev_312db98d239db31c",
+    "ev_4586103537fedc23",
+    "ev_4bcc831599eb3416",
+    "ev_4dc239e1d1c023e6",
+    "ev_508231aa241241fc",
+    "ev_613c2f3bc7f9285d",
+    "ev_6782cfb30ff82d36",
+    "ev_72a858ced9d2e9dd",
+    "ev_773d7222b55500e3",
+    "ev_861db1bb950ee948",
+    "ev_92c12475a147554f",
+    "ev_951a7cef80927136",
+    "ev_ac7b960c3c6176e2",
+    "ev_ad5cb3d607e8ad5d",
+    "ev_d87f1611edc19252",
+    "ev_e04a7fb563130f52",
+    "ev_e8cd77cbb5146a2b",
+    "ev_ee3aac1e8ed6dc30",
+    "ev_f5228138b592f4d6"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

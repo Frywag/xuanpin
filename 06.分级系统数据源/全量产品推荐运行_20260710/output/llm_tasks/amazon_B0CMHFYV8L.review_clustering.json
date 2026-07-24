@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0CMHFYV8L",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "ANRABESS Womens Summer Dress Ruffle Sleeve V Neck Midi Dresses Fashion Casual Fit Flowy Tiered Boho Beach Vacation Sundress",
+    "rating": 4.3,
+    "review_count": 3831.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":577,\"positive\":468,\"negative\":109,\"snippets\":[\"Customers find the dress has a flattering fit that hits right at the knees and is particularly suitable for curvy figures, with one customer noting it's very forgiving in the belly area.\",\"and comfortable. Doesn’t look like a nightgown but has the same comfortable fit. I feel like I’m cheating when I wear this to work, haha....\",\", it’s a nice material, it looks accurate to style and color. But I will say the neck line is higher than expected.\",\", his below knee, not fond of the flutter sleeve, but that’s my personal opinion. Washes well and will be great item to pack for travel.\",\"and forgiving. Great summer dress for running errands in your tennis shoes or dress it up with some cute sandals.\"]},{\"tag\":\"style\",\"mentions\":430,\"positive\":380,\"negative\":50,\"snippets\":[\"Customers like the dress's style, particularly its charming print, with one customer noting it's nice enough for special occasions.\",\"5’ 4”, 175lb, D cup, ordered large. This dress is so\",\"and comfortable. I have plenty of room in this dress that it isn’t snug and is flown....\",\"...it was going to be a boring old summer dress but it is actually\",\". Then neckline and shoulder ruffles really give it a cute look....\",\". This is a good basic dress that can easily be dressed up or down. A little longer for occasions where longer hemline is appropriate....\",\". Such a flattering fit. I would say it is pretty true to size. The material is plenty thick and extra soft. I am going to buy more colors.\"]},{\"tag\":\"comfort\",\"mentions\":429,\"positive\":421,\"negative\":8,\"snippets\":[\"Customers find the dress comfortable, particularly appreciating that it has pockets, and one customer mentions it feels like they're dressed for the day.\",\". Doesn’t look like a nightgown but has the same comfortable fit. I feel like I’m cheating when I wear this to work, haha....\",\". I ordered the dress in XXL, it’s a little big, but I like loose fitting clothing. I may try an XL if I decide to get another one.\",\"This dress can be worn by almost any size woman. It is soft,\",\"and flows over the body. I chose the sky blue color which is such a pretty blue....\",\"Love it!! Just what I was hoping for. It fits perfectly & is\"]},{\"tag\":\"appearance\",\"mentions\":342,\"positive\":317,\"negative\":25,\"snippets\":[\"Customers find the dress attractive, describing it as perfect for summer and suitable for teachers.\",\"! Perfect for work or dress it up for other occasions. Nice light weight fabric for spring & summer wear. Dark green color is stunning....\",\". I can wear it as is or dress it up by wearing a jacket over it or a sweater.. true to size. Washes great no wrinkles!\",\"but I swear it shrunk a little after the first wash. No I’m not fatter! Easy wash and dry, not wrinkly out of the dryer. Ready to pop on....\",\"...The soft material makes it extremely comfortable! This is the\"]},{\"tag\":\"fabric\",\"mentions\":256,\"positive\":184,\"negative\":72,\"snippets\":[\"Customers like the fabric of the dress, describing it as thick, not clingy, and great for summer wear.\",\", great color, fit is good and comfortable-maybe a bit big but it doesn’t look it. Wish I had bought it earlier in the summer.\",\", it looks accurate to style and color. But I will say the neck line is higher than expected.\",\", came with hole in pocket , threads unraveling on sleeves. Poorly made, sent back immediately!\",\". Soft and cool. I could have sized down one size but the fit is still good. Very forgiving in style. Length is great. I love it.\"]},{\"tag\":\"color\",\"mentions\":197,\"positive\":165,\"negative\":32,\"snippets\":[\"Customers love the dress's color, particularly the dark green and black options, with one customer noting that the navy shade is true to its name.\",\"...Doesnt cling, and can dress up or wear casual. Flattering style,\",\". It was very comfortable. The fabric was soft and had a good feel and wasn't see through.\",\"but the sleeves are silly looking a d the bust cuts right across your breast....\"]},{\"tag\":\"versatility\",\"mentions\":176,\"positive\":173,\"negative\":3,\"snippets\":[\"Customers find the dress versatile, noting it works well for both casual and dressy occasions, and can be dressed up with blazers or down with sandals.\",\". But heavy and thick so not what i expected. The good thing is it doesn’t wrinkle and is super comfy....\",\", and is amazing for travel, as the fabric is cool, comfortable, and really doesn't wrinkle!\",\". The fabric is not too thin and very soft. I live in a warm climate and I am calling them my summer uniform....\"]},{\"tag\":\"softness\",\"mentions\":161,\"positive\":158,\"negative\":3,\"snippets\":[\"Customers appreciate the dress's soft fabric, with one noting that it doesn't cling to the body.\",\"Not a dress person, but this one has definitely changed my mind.\",\"and breathable material that fares well in the South. Good value for the price....\",\"...The dress is long enough to be able to do that appropriately! The\",\"and the fit is flattering for my curvy shape. I love the pockets!...\",\"...it on it was perfect length, bodice fit .flattering neck line,\",\", deep black color, no processing smell, I\\\"m 5'4 127lbs 36 D waist 28-...\",\"...The small fit perfectly. I'm older so I like the midi length. The\",\", the neckline is not low and the stitching is good. Easy to wash....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_1c60d365e92642c4",
+    "ev_9794db28ccec3e9e",
+    "ev_dc3cf03583f03b95"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

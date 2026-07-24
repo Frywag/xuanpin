@@ -1,0 +1,174 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "amazon_B0CN2XRCZH",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "ANRABESS Women's Summer Casual Sleeveless Square Neck Dress 2026 Smocked Ruffle Backless Boho Beach Cute Teen Short Sundress",
+    "grade": "S",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 19.2,
+        "max": 30.0,
+        "reason": "量级信号 sales_30d_units=10,000 -> 9分；带平台畅销榜标记；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_16016f0f071987f3",
+          "ev_258ddf1785ede1d7",
+          "ev_533647c44d4e60c7"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 6.8,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_022fdbae60f8578f",
+          "ev_103f1b597f57fa14",
+          "ev_92d997e0e38df9ca",
+          "ev_b047652fccecbcfd"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 9.0,
+        "max": 15.0,
+        "reason": "评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_078fe1549c7c0d8d",
+          "ev_2049bfed0a6e7763",
+          "ev_795bcf25f61726b0"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ANRABESS」品牌词出现在标题中（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_ae6efcf79c5b0c6d"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=10,000 -> 9分；带平台畅销榜标记；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_16016f0f071987f3",
+          "ev_258ddf1785ede1d7",
+          "ev_533647c44d4e60c7"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_022fdbae60f8578f",
+          "ev_103f1b597f57fa14",
+          "ev_92d997e0e38df9ca",
+          "ev_b047652fccecbcfd"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_078fe1549c7c0d8d",
+          "ev_2049bfed0a6e7763",
+          "ev_795bcf25f61726b0"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ANRABESS」品牌词出现在标题中（人工待确认）",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_ae6efcf79c5b0c6d"
+        ],
+        "confidence": "low"
+      },
+      {
+        "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_6ed63981009762ed",
+          "ev_d31e925267afa4a1"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "同风格红海程度：高（语料内同风格候选 1597 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_6ed63981009762ed",
+          "ev_d31e925267afa4a1"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_258ddf1785ede1d7"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_022fdbae60f8578f",
+    "ev_078fe1549c7c0d8d",
+    "ev_09a2018accb13690",
+    "ev_0d62e5246e659e40",
+    "ev_103f1b597f57fa14",
+    "ev_16016f0f071987f3",
+    "ev_18969bd8d3c3d121",
+    "ev_2049bfed0a6e7763",
+    "ev_258ddf1785ede1d7",
+    "ev_4e962f923581c63d",
+    "ev_533647c44d4e60c7",
+    "ev_69e1226b71f02e3d",
+    "ev_6ed63981009762ed",
+    "ev_726e1f4e0fc1d5f0",
+    "ev_72db3fdff5b967f9",
+    "ev_780cf21468658093",
+    "ev_795bcf25f61726b0",
+    "ev_92d997e0e38df9ca",
+    "ev_a56f0b50a6c50bef",
+    "ev_ae6efcf79c5b0c6d",
+    "ev_b047652fccecbcfd",
+    "ev_bc6d4de449228857",
+    "ev_d31e925267afa4a1",
+    "ev_ef843c8143e4d8e9",
+    "ev_fbad4bd162c6301a"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

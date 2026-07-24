@@ -1,0 +1,350 @@
+{
+  "task_type": "profile_extraction",
+  "candidate_id": "amazon_B0CN2XRCZH",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只依据 inputs.text 中的真实文本判断，不得使用外部知识补全事实",
+    "带 vocab 的键取值必须严格从词表中选择；判断不了就进 missing_fields",
+    "multi 键可给列表；每个键必须带 evidence_refs 与 confidence"
+  ],
+  "inputs": {
+    "key_set": "womenswear",
+    "keys": {
+      "服饰大类": {
+        "vocab": [
+          "上装",
+          "下装",
+          "连衣裙",
+          "外套",
+          "内衣",
+          "睡衣",
+          "泳装",
+          "运动服",
+          "配饰"
+        ]
+      },
+      "产品小类": {
+        "vocab_open": true,
+        "hint": "T-shirt/Dress/Blouse/Leggings/Hoodie/Bra 等"
+      },
+      "适用性别": {
+        "vocab": [
+          "Women",
+          "Men",
+          "Girls",
+          "Boys",
+          "Baby",
+          "Unisex"
+        ]
+      },
+      "款式风格": {
+        "vocab": [
+          "Casual",
+          "Elegant",
+          "Sexy",
+          "Boho",
+          "Streetwear",
+          "Business",
+          "Sporty",
+          "Vintage"
+        ]
+      },
+      "版型": {
+        "vocab": [
+          "Slim Fit",
+          "Regular Fit",
+          "Loose Fit",
+          "Oversized"
+        ]
+      },
+      "廓形": {
+        "vocab": [
+          "A-line",
+          "Straight",
+          "Bodycon",
+          "Wide Leg",
+          "Flare"
+        ]
+      },
+      "裙长": {
+        "vocab": [
+          "Mini",
+          "Midi",
+          "Maxi"
+        ]
+      },
+      "领型": {
+        "vocab": [
+          "Crew Neck",
+          "V Neck",
+          "Square Neck",
+          "Halter",
+          "Collared",
+          "One Shoulder"
+        ]
+      },
+      "袖长": {
+        "vocab": [
+          "Sleeveless",
+          "Short Sleeve",
+          "Long Sleeve"
+        ]
+      },
+      "开合方式": {
+        "vocab": [
+          "Pullover",
+          "Button",
+          "Zipper",
+          "Tie",
+          "Snap"
+        ]
+      },
+      "装饰元素": {
+        "vocab": [
+          "Lace",
+          "Ruffle",
+          "Bow",
+          "Sequin",
+          "Embroidery",
+          "Cutout",
+          "Print"
+        ],
+        "multi": true
+      },
+      "图案类型": {
+        "vocab": [
+          "Solid",
+          "Floral",
+          "Striped",
+          "Plaid",
+          "Graphic"
+        ],
+        "multi": true
+      },
+      "适用场景": {
+        "vocab": [
+          "日常",
+          "通勤",
+          "派对",
+          "度假",
+          "运动",
+          "居家",
+          "婚礼",
+          "校园"
+        ],
+        "multi": true
+      },
+      "适用季节": {
+        "vocab": [
+          "Spring",
+          "Summer",
+          "Fall",
+          "Winter",
+          "All Season"
+        ],
+        "multi": true
+      },
+      "节日属性": {
+        "vocab_open": true,
+        "hint": "Christmas/Halloween/Valentine's Day/Independence Day 或 无"
+      },
+      "面料类型": {
+        "vocab": [
+          "Knit",
+          "Woven",
+          "Denim",
+          "Chiffon",
+          "Satin",
+          "Fleece",
+          "Mesh",
+          "Silicone"
+        ]
+      },
+      "弹力": {
+        "vocab": [
+          "无弹",
+          "微弹",
+          "高弹",
+          "四面弹"
+        ]
+      }
+    },
+    "text": {
+      "title": "ANRABESS Women's Summer Casual Sleeveless Square Neck Dress 2026 Smocked Ruffle Backless Boho Beach Cute Teen Short Sundress",
+      "title_cn": "ANRABESS 女式夏季休闲无袖方领连衣裙 2026 缩褶荷叶边露背波西米亚风海滩可爱少女短背心裙",
+      "category_name": "Casual",
+      "category_path": [
+        "Clothing, Shoes & Jewelry",
+        "Women",
+        "Clothing",
+        "Dresses",
+        "Casual"
+      ],
+      "design_signals": [
+        {
+          "kind": "bullet_points",
+          "text": "Fit Type - Slim fit. This summer dress features an elasticated ruched bust design and falls just above the knee.|||Size - XS=US(0-2), S=US(4-6), M=US(8-10), L=US(12-14), XL=US(16-18). More details in rich description.|||Material - 60% polyester, 35% rayon, 5% elastane. Stretch - Medium, Thickness - Medium, Softness - Medium.Some lighter colors may be see-through.Machine or hand wash cold, do not bleach. Hang or lay flat to dry, do not tumble dry.|||Features - This short sundress has a square neck, ruffle sleeves, a smocked bodice, high waist, and a backless design(No pockets). It's perfect for daily wear, vacation, travel, cruise, lounge, shopping, and the beach.|||Color Notice - Actual colors may slightly vary due to lighting conditions and screen display differences. For accurate color reference, we recommend viewing under natural daylight (D65 standard)."
+        },
+        {
+          "kind": "material",
+          "text": "35%rayon + 60%polyester + 5%elastane"
+        },
+        {
+          "kind": "attributes",
+          "text": "{\"STYLE\":{\"Color\":\"Black\",\"Occasion Type\":\"Beach, Casual, Cruise, Daily, Resort\",\"Apparel Silhouette\":\"A-line\",\"Neck Style\":\"Square Neck\",\"Sleeve Type\":\"Sleeveless\",\"Seasons\":\"Summer\",\"Apparel Occasion and Lifestyle\":\"Casual\",\"Style Name\":\"Soft\",\"Apparel Closure Type\":\"Pull On\",\"Back Style\":\"Backless\",\"Strap Type\":\"Spaghetti\",\"Pattern\":\"Mini\",\"Waist Style\":\"High Waist\",\"Hemline Form\":\"Straight Hemline\",\"collar-type\":\"No Collar\",\"Theme\":\"Casual\"},\"MEASUREMENTS\":{\"Item Length Description\":\"5.00\",\"Special Size Type\":\"One Size\",\"Chest Size\":\"37 Inches\",\"Waist Size\":\"29 Inches\"},\"FEATURES & SPECS\":{\"Embellishment Feature\":\"Fashion\",\"Apparel Closure Type\":\"Pull On\",\"Pocket Description\":\"No Pocket\",\"Additional Features\":\"Adjustable Straps, Smocked Tiered Mini Short Sundress, Beach Cover-Up, Sleeveless Square Neck Tank Swing Dress, Backless Design\",\"Sleeve Length Description\":\"Sleeveless\",\"Fit to Size Sentiment\":\"Good\",\"Shoulder to Bottom Hem Length\":\"5 Inches\",\"Fit Type\":\"fitted\"},\"ITEM DETAILS\":{\"Brand Name\":\"ANRABESS\",\"Age Range Description\":\"Adult\",\"Garment Size Country\":\"United States\",\"Unit Count\":\"1 Count\",\"Number of Items\":\"1\"},\"MATERIALS & CARE\":{\"Material Type\":\"35%Rayon,60%Polyester,5%Elastane\",\"Product Care Instructions\":\"Machine Wash\",\"Apparel Fabric Weight Class\":\"Medium Weight\",\"Apparel Fabric Stretch\":\"Medium Stretch\",\"Fabric Type\":\"35%rayon + 60%polyester + 5%elastane\"}}"
+        },
+        {
+          "kind": "review_summary",
+          "text": "Customers find the dress comfortable, flattering, and suitable for summer wear, particularly noting it's perfect for beach restaurants and back-to-school events. The dress features heavy cotton material that feels luxurious, and customers appreciate its simple style that doesn't look cheap. The color receives mixed feedback, with some loving it while others note the color was a bit off."
+        }
+      ],
+      "trend_tags": [
+        "bsr_improving"
+      ],
+      "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":219,\"positive\":202,\"negative\":17,\"snippets\":[\"Customers find the dress cute and appreciate its simple style, noting that it doesn't look cheap.\",\"it’s not of the quality of a $40 dress. The material is somewhat thin and color doesn’t match picture shown....\",\". Very comfortable to wear. Perfect for the hot weather in AZ. I receive compliments from strangers. So happy I came across this dress.\",\"!! Nice thin and soft material perfect for summer! The fit is very flattering. I need this in every color! I got a size small....\"]},{\"tag\":\"fit\",\"mentions\":185,\"positive\":152,\"negative\":33,\"snippets\":[\"Customers find the dress flattering, with one mentioning it hits perfectly above the knee, and another noting it's easy to slip on.\",\"and super feminine. It was perfect for the 4th of july. Not too hot either....\",\"and comfy EXCEPT the straps are a tiny bit too close together in the front. So that leaves a tiny bit of armpit area exposed....\",\", and great dress, color is very flattering. This should be a staple in your closet for the summer\",\"...Ordered this dress for our beach trip and it is very comfortable.\",\"and good material. Cardigan fits over it nicely for the cooler evenings....\"]},{\"tag\":\"comfort\",\"mentions\":113,\"positive\":112,\"negative\":1,\"snippets\":[\"Customers find the dress comfortable, describing it as the comfiest and flattering, with one mentioning it works well in hot desert heat.\",\". The straps are wide enough to wear a normal bra, but the square neckline can be an issue for that....\",\"EXCEPT the straps are a tiny bit too close together in the front. So that leaves a tiny bit of armpit area exposed....\",\"and non-see-through. It’s a great length for tall people. It’s not a heavy fabric so you can wear it on hot days....\",\". the thick straps hide my bra, and the black color i chose hides any underwear lines....\"]},{\"tag\":\"quality\",\"mentions\":108,\"positive\":81,\"negative\":27,\"snippets\":[\"Customers find the dress to be high quality, with one mentioning its jersey knit material, though some note it is terribly made.\",\"and material is comfortable. I will continue to wear it this summer....\",\", color is very flattering. This should be a staple in your closet for the summer\"]},{\"tag\":\"softness\",\"mentions\":62,\"positive\":60,\"negative\":2,\"snippets\":[\"Customers appreciate the dress's soft fabric and luxurious feel.\",\", not see through, doesn’t feel like paper, but it’s on the thinner side Quality: stitching is fine but it’s made cheaply....\",\". The pattern is not double sided however, so it would be a little cheap looking for an adult to wear.\",\"This dress is so beautiful and inexpensive! I love the fabric,\"]},{\"tag\":\"material\",\"mentions\":55,\"positive\":42,\"negative\":13,\"snippets\":[\"Customers love the material of the dress, describing it as nice and heavy cotton, with one customer noting that it's substantial enough not to be transparent.\",\", TTS, and a good price. My only hesitation is the length, but that’s a personal preference.\"]},{\"tag\":\"suitable for summer\",\"mentions\":51,\"positive\":51,\"negative\":0,\"snippets\":[\"Customers find this dress perfect for summer, particularly for beach restaurants and back-to-school events.\",\"! The fit is very flattering. I need this in every color! I got a size small....\",\"can be worn over a bathing suit or dressed up. Super soft and comfy fit hot days or a vacation.\"]},{\"tag\":\"color\",\"mentions\":66,\"positive\":44,\"negative\":22,\"snippets\":[\"Customers have mixed opinions about the dress's color, with some loving it while others report that it was a bit off.\",\". I bought the hot pink & the black one too. Very comfortable. Soft material....\"]}]"
+    }
+  },
+  "allowed_evidence_ids": [
+    "ev_0d62e5246e659e40",
+    "ev_18969bd8d3c3d121",
+    "ev_6ed63981009762ed",
+    "ev_780cf21468658093",
+    "ev_795bcf25f61726b0",
+    "ev_d31e925267afa4a1",
+    "ev_ef843c8143e4d8e9"
+  ],
+  "output_schema": {
+    "profile": {
+      "服饰大类": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "产品小类": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用性别": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "款式风格": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "版型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "廓形": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "裙长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "领型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "袖长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "开合方式": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "装饰元素": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "图案类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用场景": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用季节": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "节日属性": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "面料类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "弹力": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    },
+    "missing_fields": [
+      "输入文本不足以判断的键，逐个列出"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

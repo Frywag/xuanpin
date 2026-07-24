@@ -1,0 +1,706 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "shein_488434750",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "shein_488434750",
+      "platform": "shein",
+      "canonical_url": "https://us.shein.com/SHEIN-LilyWest-Bohemian-Western-American-Flag-Print-Sleeveless-Dress-For-Women-Casual-Loose-Flowy-A-Line-Patriotic-Mini-Dress-Perfect-For-Summer-Beach-Vacation-Independence-Day-Party-Soft-Lightweight-Fabric-p-488434750.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_488434750%7C0-2",
+      "basic_facts": {
+        "title": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini Dress, Perfect For Summer Beach Vacation, Independence Day Party, Soft Lightweight Fabric",
+        "brand": null,
+        "category_path": [],
+        "image_url": "https://img.ltwebstatic.com/v4/j/pi/2026/06/01/af/1780283799f2f64f88ed42142869d1b678b34a2dbe.webp",
+        "price": {
+          "amount": 11.79,
+          "currency": "USD"
+        },
+        "original_price": {
+          "amount": 16.09,
+          "currency": "USD"
+        },
+        "discount_pct": -0.27,
+        "rating": 3.6,
+        "review_count": 5,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": null,
+        "sales_7d_units": null,
+        "sales_floor_units": 800,
+        "revenue_30d": null,
+        "gmv_7d": null,
+        "sales_growth_rate": null,
+        "favorites_count": null,
+        "bestseller_rank_text": "#8 Bestseller in New Arrival Mini Casual Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": [
+          {
+            "signal": "ALineStyles",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_d589d2e96f359c00"
+            ]
+          }
+        ]
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [
+          {
+            "cluster_name": "正面标签",
+            "tags": [
+              {
+                "tag": "Shiny",
+                "count": 1
+              }
+            ]
+          }
+        ],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [
+          {
+            "style_group": "dress",
+            "source_group": "候选自身（shein）",
+            "currency": "USD",
+            "n": 1,
+            "p25": 11.79,
+            "p50": 11.79,
+            "p75": 11.79,
+            "note": "候选商品价格"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "amazon_plugin",
+            "currency": "USD",
+            "n": 200,
+            "p25": 14.99,
+            "p50": 26.48,
+            "p75": 37.99,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_aerie",
+            "currency": "USD",
+            "n": 20,
+            "p25": 52.46,
+            "p50": 54.95,
+            "p75": 59.95,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_alo_yoga",
+            "currency": "USD",
+            "n": 45,
+            "p25": 138.0,
+            "p50": 138.0,
+            "p75": 138.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_amazon",
+            "currency": "USD",
+            "n": 399,
+            "p25": 18.88,
+            "p50": 29.99,
+            "p75": 39.99,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_cupshe",
+            "currency": "USD",
+            "n": 48,
+            "p25": 32.75,
+            "p50": 36.0,
+            "p75": 40.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_for_love_lemons",
+            "currency": "USD",
+            "n": 116,
+            "p25": 22900.0,
+            "p50": 28250.0,
+            "p75": 31900.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_good_american",
+            "currency": "USD",
+            "n": 12,
+            "p25": 93.0,
+            "p50": 138.0,
+            "p75": 148.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_lulus",
+            "currency": "USD",
+            "n": 21,
+            "p25": 69.0,
+            "p50": 79.0,
+            "p75": 99.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_madewell",
+            "currency": "USD",
+            "n": 31,
+            "p25": 123.0,
+            "p50": 148.0,
+            "p75": 158.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_quince",
+            "currency": "USD",
+            "n": 89,
+            "p25": 59.9,
+            "p50": 69.9,
+            "p75": 99.9,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_reformation",
+            "currency": "USD",
+            "n": 47,
+            "p25": 248.0,
+            "p50": 278.0,
+            "p75": 313.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_shein",
+            "currency": "USD",
+            "n": 191,
+            "p25": 9.42,
+            "p50": 12.09,
+            "p75": 15.11,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_skims",
+            "currency": "USD",
+            "n": 24,
+            "p25": 68.0,
+            "p50": 86.0,
+            "p75": 98.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "tiktok_shop_plugin",
+            "currency": "CNY",
+            "n": 88,
+            "p25": 168.96,
+            "p50": 275.63,
+            "p75": 345.18,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          }
+        ],
+        "same_style_signals": [
+          {
+            "signal": "frontend_amazon 语料中有 358 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 358,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_shein 语料中有 190 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 190,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "amazon_plugin 语料中有 164 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 164,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_for_love_lemons 语料中有 116 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 116,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "tiktok_shop_plugin 语料中有 84 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 84,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_quince 语料中有 79 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 79,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_lulus 语料中有 76 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 76,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_urban_outfitters 语料中有 70 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 70,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_anthropologie 语料中有 66 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 66,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_free_people 语料中有 66 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 66,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_cupshe 语料中有 48 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 48,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_reformation 语料中有 47 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 47,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_alo_yoga 语料中有 45 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 45,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_everlane 语料中有 45 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 45,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_princess_polly 语料中有 33 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 33,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_madewell 语料中有 31 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 31,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_lululemon 语料中有 25 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 25,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_skims 语料中有 24 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 24,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_aerie 语料中有 18 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 18,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_good_american 语料中有 12 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 12,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          }
+        ]
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "market_metrics.sales_growth_rate",
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": "Women Dresses",
+        "category_label": "women_dresses_shein",
+        "source_group": "frontend_shein",
+        "site": "shein",
+        "shop_name": null,
+        "seller_name": null,
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": "Shiny (1)"
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "A",
+      "pct": 58.3,
+      "total": 35.0,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 20.4,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_0fe824da88fe5717",
+            "ev_36ae176af0fc3137"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 6.8,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "evidence_refs": [
+            "ev_454db011456c3560",
+            "ev_a2370fe4fcb437c1"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 10.5,
+          "max_score": 15.0,
+          "reason": "评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张",
+          "evidence_refs": [
+            "ev_3bb3d0effd0314e1",
+            "ev_7ee173db73e7eb5a",
+            "ev_d589d2e96f359c00"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 frontend_shein 单源（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_8813165f02bce2b1"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_0fe824da88fe5717",
+            "ev_36ae176af0fc3137"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_454db011456c3560",
+            "ev_a2370fe4fcb437c1"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_3bb3d0effd0314e1",
+            "ev_7ee173db73e7eb5a",
+            "ev_d589d2e96f359c00"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 frontend_shein 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_8813165f02bce2b1"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "同风格红海程度：高（语料内同风格候选 1597 款，词表确定性匹配）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_8813165f02bce2b1"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "平台优先级：shein（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_0fe824da88fe5717"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 58.3,
+          "grade": "A",
+          "gate_reason": "PScore 35.0/60.0（58.3%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 58.3,
+          "grade": "A",
+          "gate_reason": "评价标签聚类：0 个负面聚类 / 1 次标签提及",
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": true,
+          "score": 58.3,
+          "grade": "A",
+          "gate_reason": "同风格信号：frontend_amazon 语料中有 358 款标题命中相同风格词 ['dress']；带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台",
+          "required_next_data": [
+            "供应链字段人工调查（选品后画像存库用，不参与打分）"
+          ]
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_8813165f02bce2b1",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=shein;row=189;column=商品名称（原文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_9690702d66eef9d9",
+        "source_id": "frontend_shein",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=shein;row=189;column=商品名称（中文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_bd22db2e3e08d4df",
+        "source_id": "frontend_shein",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=shein;row=189;column=站点",
+        "note": "由 SHEIN 美国站女装连衣裙类目确定"
+      },
+      {
+        "evidence_id": "ev_3744789f40818ae3",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=shein;row=189;column=高清主图链接",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_a2370fe4fcb437c1",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=shein;row=189;column=销售价/币种",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_474d1fe6b50e1f52",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.original_price",
+        "record_locator": "sheet=shein;row=189;column=原价/币种",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_ad46bdb0530a3e99",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.discount_pct",
+        "record_locator": "sheet=shein;row=189;column=折扣",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_3bb3d0effd0314e1",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=shein;row=189;column=评分",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_454db011456c3560",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=shein;row=189;column=评价数",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_36ae176af0fc3137",
+        "source_id": "frontend_shein",
+        "field_path": "market_metrics.sales_floor_units",
+        "record_locator": "sheet=shein;row=189;column=销量",
+        "note": "SHEIN 销量为下限口径，例如 100+ 记为 100"
+      },
+      {
+        "evidence_id": "ev_0fe824da88fe5717",
+        "source_id": "frontend_shein",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=shein;row=189;column=畅销榜排名",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_d589d2e96f359c00",
+        "source_id": "frontend_shein",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=shein;row=189;column=趋势标签（原文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_2c21a9d8660ed203",
+        "source_id": "frontend_shein",
+        "field_path": "context.review_tags_raw",
+        "record_locator": "sheet=shein;row=189;column=评价标签（原文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_7ee173db73e7eb5a",
+        "source_id": "frontend_shein",
+        "field_path": "context.image_count",
+        "record_locator": "sheet=shein;row=189;column=商品ID",
+        "note": "由 media 表按商品ID去重计数"
+      },
+      {
+        "evidence_id": "ev_5a1a047184e7c181",
+        "source_id": "frontend_shein",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=shein;row=189;column=原始证据路径",
+        "note": "工作簿内原始证据路径另保留在 source_raw_evidence_path"
+      },
+      {
+        "evidence_id": "ev_16de27a9288f2b14",
+        "source_id": "frontend_shein",
+        "field_path": "context.design_signals",
+        "record_locator": "sheet=shein;row=189;column=商品描述/详情字段/颜色/尺码",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_0fe824da88fe5717",
+    "ev_16de27a9288f2b14",
+    "ev_2c21a9d8660ed203",
+    "ev_36ae176af0fc3137",
+    "ev_3744789f40818ae3",
+    "ev_3bb3d0effd0314e1",
+    "ev_454db011456c3560",
+    "ev_474d1fe6b50e1f52",
+    "ev_5a1a047184e7c181",
+    "ev_7ee173db73e7eb5a",
+    "ev_8813165f02bce2b1",
+    "ev_9690702d66eef9d9",
+    "ev_a2370fe4fcb437c1",
+    "ev_ad46bdb0530a3e99",
+    "ev_bd22db2e3e08d4df",
+    "ev_d589d2e96f359c00"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

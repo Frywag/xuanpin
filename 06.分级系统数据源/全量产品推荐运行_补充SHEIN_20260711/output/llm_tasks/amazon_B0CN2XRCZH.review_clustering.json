@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0CN2XRCZH",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "ANRABESS Women's Summer Casual Sleeveless Square Neck Dress 2026 Smocked Ruffle Backless Boho Beach Cute Teen Short Sundress",
+    "rating": 4.3,
+    "review_count": 1816.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":219,\"positive\":202,\"negative\":17,\"snippets\":[\"Customers find the dress cute and appreciate its simple style, noting that it doesn't look cheap.\",\"it’s not of the quality of a $40 dress. The material is somewhat thin and color doesn’t match picture shown....\",\". Very comfortable to wear. Perfect for the hot weather in AZ. I receive compliments from strangers. So happy I came across this dress.\",\"!! Nice thin and soft material perfect for summer! The fit is very flattering. I need this in every color! I got a size small....\"]},{\"tag\":\"fit\",\"mentions\":185,\"positive\":152,\"negative\":33,\"snippets\":[\"Customers find the dress flattering, with one mentioning it hits perfectly above the knee, and another noting it's easy to slip on.\",\"and super feminine. It was perfect for the 4th of july. Not too hot either....\",\"and comfy EXCEPT the straps are a tiny bit too close together in the front. So that leaves a tiny bit of armpit area exposed....\",\", and great dress, color is very flattering. This should be a staple in your closet for the summer\",\"...Ordered this dress for our beach trip and it is very comfortable.\",\"and good material. Cardigan fits over it nicely for the cooler evenings....\"]},{\"tag\":\"comfort\",\"mentions\":113,\"positive\":112,\"negative\":1,\"snippets\":[\"Customers find the dress comfortable, describing it as the comfiest and flattering, with one mentioning it works well in hot desert heat.\",\". The straps are wide enough to wear a normal bra, but the square neckline can be an issue for that....\",\"EXCEPT the straps are a tiny bit too close together in the front. So that leaves a tiny bit of armpit area exposed....\",\"and non-see-through. It’s a great length for tall people. It’s not a heavy fabric so you can wear it on hot days....\",\". the thick straps hide my bra, and the black color i chose hides any underwear lines....\"]},{\"tag\":\"quality\",\"mentions\":108,\"positive\":81,\"negative\":27,\"snippets\":[\"Customers find the dress to be high quality, with one mentioning its jersey knit material, though some note it is terribly made.\",\"and material is comfortable. I will continue to wear it this summer....\",\", color is very flattering. This should be a staple in your closet for the summer\"]},{\"tag\":\"softness\",\"mentions\":62,\"positive\":60,\"negative\":2,\"snippets\":[\"Customers appreciate the dress's soft fabric and luxurious feel.\",\", not see through, doesn’t feel like paper, but it’s on the thinner side Quality: stitching is fine but it’s made cheaply....\",\". The pattern is not double sided however, so it would be a little cheap looking for an adult to wear.\",\"This dress is so beautiful and inexpensive! I love the fabric,\"]},{\"tag\":\"material\",\"mentions\":55,\"positive\":42,\"negative\":13,\"snippets\":[\"Customers love the material of the dress, describing it as nice and heavy cotton, with one customer noting that it's substantial enough not to be transparent.\",\", TTS, and a good price. My only hesitation is the length, but that’s a personal preference.\"]},{\"tag\":\"suitable for summer\",\"mentions\":51,\"positive\":51,\"negative\":0,\"snippets\":[\"Customers find this dress perfect for summer, particularly for beach restaurants and back-to-school events.\",\"! The fit is very flattering. I need this in every color! I got a size small....\",\"can be worn over a bathing suit or dressed up. Super soft and comfy fit hot days or a vacation.\"]},{\"tag\":\"color\",\"mentions\":66,\"positive\":44,\"negative\":22,\"snippets\":[\"Customers have mixed opinions about the dress's color, with some loving it while others report that it was a bit off.\",\". I bought the hot pink & the black one too. Very comfortable. Soft material....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_022fdbae60f8578f",
+    "ev_078fe1549c7c0d8d",
+    "ev_2049bfed0a6e7763",
+    "ev_a56f0b50a6c50bef",
+    "ev_b047652fccecbcfd"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

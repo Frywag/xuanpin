@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0GWDP51CM",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "V FOR CITY Womens Summer Dresses with Built in Bra 2026 Square Neck Beach Dress with Pockets Casual Flare Sun Dresses",
+    "rating": 4.2,
+    "review_count": 64.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":6,\"positive\":6,\"negative\":0,\"snippets\":[\"Customers are satisfied with how the dress fits, with one mentioning that the length goes to about their knee.\"]},{\"tag\":\"softness\",\"mentions\":6,\"positive\":5,\"negative\":1,\"snippets\":[\", loved the material, and was nice enough for a dinner on the cruise. Very comfortable and perfect for summer!\",\"...Not what I was hoping for at all. The dress fit fine. It’s a\"]},{\"tag\":\"appearance\",\"mentions\":5,\"positive\":5,\"negative\":0,\"snippets\":[\", basic black dress. I'm 5'4\\\", 165 lb, and busty, and I ordered the medium....\"]},{\"tag\":\"bra support\",\"mentions\":5,\"positive\":3,\"negative\":2,\"snippets\":[\"Customers have mixed opinions about the dress's bra support, with some finding it supportive while others report zero support.\",\"The built in bra was practically worthless for a larger chest.\",\", but it's not squashing my boobs into weird shapes either, so it's fine....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_0cc27a515851e770",
+    "ev_a51ad26051d75184",
+    "ev_ce8cd6daa106a6f6"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

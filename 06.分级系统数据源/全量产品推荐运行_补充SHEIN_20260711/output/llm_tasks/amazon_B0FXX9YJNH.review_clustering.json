@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0FXX9YJNH",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Dokotoo Casual Dresses for Women Lapel Collared V Neck Mid Sleeved Pleated Summer Dresses for Women 2026 Midi Dresses",
+    "rating": 4.3,
+    "review_count": 751.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":141,\"positive\":111,\"negative\":30,\"snippets\":[\"Customers like how the dress fits, with one mentioning it's great for larger women, while another notes it's comfortable and soft.\",\"(Large) 5’3” 175-180 lbs Light and Soft materials and super comfortable to wear! I love the pockets!...\",\". Comfortable too. Really nice fabric and it is a good weight - not to thin but not to heavy for the summer heat....\",\"Love,love,love this dress I’m 5’2 195lbs bought the XL and it was a\",\". Wore in the summer heat of Europe and was very comfortable.\",\"...🥰 so many compliments! I usually wear XL in most dresses. It was\"]},{\"tag\":\"appearance\",\"mentions\":131,\"positive\":130,\"negative\":1,\"snippets\":[\"Customers find the dress cute and cool, with one customer specifically appreciating the detail on the sleeves, while another notes its distinctly summery vibe.\",\"and I'll keep it anyway because it'll be perfect for the summer.\",\"! Nice weight fabric- cool but not too thin like some China dresses. Sleeves cover my flab....\",\"and the fit was great. Unfortunately, the material is quite see -through....\",\"and the colors are beautiful. It is a forgiving dress with a nice length. Just be aware that a slip is needed under this one....\"]},{\"tag\":\"comfort\",\"mentions\":81,\"positive\":77,\"negative\":4,\"snippets\":[\"Customers find the dress comfortable, with one mentioning it has pockets.\",\"...But, I wore it on a blistering summer day and it was very cool and\",\". The dress itself looks very nice and is and looks very good quality....\",\", however, the yellow depicted on the site is a MUSTARD yellow and the dress is actually a bright lemon yellow...\",\"but still pretty. Attractive fabric and fit, the collar a sleeve details, how it hangs looks more expensive than it is....\",\", the fabric is cool and breathable, not see-through, the color is exactly like the picture, beautiful, it fits...\"]},{\"tag\":\"quality\",\"mentions\":73,\"positive\":68,\"negative\":5,\"snippets\":[\"Customers describe the dress as well-made and a favorite summer piece.\",\"! It can either be casual or dressy. It runs true to size too. I live in a hot climate and this dress is perfect!\",\"and the color. The size was perfect. I’d like to get more in different colors. Very comfortable and flattering.\",\", the pink is a bright and vibrant color. It’s baggy fit, but has a nice flow, and pockets!...\"]},{\"tag\":\"fabric\",\"mentions\":64,\"positive\":51,\"negative\":13,\"snippets\":[\"Customers appreciate the fabric of the dress, noting its softness and good quality, with one customer mentioning it has a little give and is breathable.\",\". It hides my belly and accentuates my body. I definitely would order again.\",\", and really good quality. It runs a bit long, but once hemmed it was perfect. True to size and the black\",\"Cute dress. Bought for a cruise...packed well and didnt wrinkle.\"]},{\"tag\":\"color\",\"mentions\":41,\"positive\":37,\"negative\":4,\"snippets\":[\"Customers like the dress's color, with one mentioning that the pink version is bright.\",\".. excellent for these hot temperature. Plan to wear on Mother's day with colorful earrings and necklace set.\",\", just too fussy and dressy for me. I wanted a comfortable dress for vacation and this just wasn't it....\"]},{\"tag\":\"casual wear\",\"mentions\":39,\"positive\":38,\"negative\":1,\"snippets\":[\"Customers find this dress suitable for casual wear, particularly for summer events and work, with one customer noting it's perfect for outdoor activities.\",\". The fabric is light and airy and dress looks to be high quality....\",\". Material is not thin or see through. Great for vacation. Length is perfect, just at the knees....\"]},{\"tag\":\"length\",\"mentions\":26,\"positive\":19,\"negative\":7,\"snippets\":[\"Customers like the dress's length, with one mentioning that the sleeves reach the elbow.\",\"for what I needed, so I'm returning. Otherwise, a great dress.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_0c26617b2b73f837",
+    "ev_32047259601e071f",
+    "ev_9b311ad0cb127097",
+    "ev_b80dcaa8e39e042a",
+    "ev_db68b63afc4973a1"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

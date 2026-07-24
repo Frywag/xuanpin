@@ -1,0 +1,172 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "amazon_B0CWVMP1GC",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+    "grade": "S",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 20.4,
+        "max": 30.0,
+        "reason": "量级信号 sales_30d_units=19,800 -> 9分；销量/销售额增长率 +77.9% -> 5分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_4dc239e1d1c023e6",
+          "ev_6782cfb30ff82d36"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 5.2,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+        "evidence_refs": [
+          "ev_0f07e8a22a09060f",
+          "ev_861db1bb950ee948",
+          "ev_951a7cef80927136",
+          "ev_d87f1611edc19252"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 9.0,
+        "max": 15.0,
+        "reason": "评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_099e0a7985f333a7",
+          "ev_312db98d239db31c",
+          "ev_773d7222b55500e3"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「OFEEFAN」品牌词出现在标题中（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_4bcc831599eb3416"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=19,800 -> 9分；销量/销售额增长率 +77.9% -> 5分；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_4dc239e1d1c023e6",
+          "ev_6782cfb30ff82d36"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_0f07e8a22a09060f",
+          "ev_861db1bb950ee948",
+          "ev_951a7cef80927136",
+          "ev_d87f1611edc19252"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_099e0a7985f333a7",
+          "ev_312db98d239db31c",
+          "ev_773d7222b55500e3"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「OFEEFAN」品牌词出现在标题中（人工待确认）",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_4bcc831599eb3416"
+        ],
+        "confidence": "low"
+      },
+      {
+        "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_f5228138b592f4d6",
+          "ev_e8cd77cbb5146a2b"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "同风格红海程度：高（语料内同风格候选 496 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_f5228138b592f4d6",
+          "ev_e8cd77cbb5146a2b"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_ad5cb3d607e8ad5d"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_074f912210714638",
+    "ev_099e0a7985f333a7",
+    "ev_0f07e8a22a09060f",
+    "ev_17b1e7452016ea04",
+    "ev_2a15ebc9ea7626ea",
+    "ev_2b1b4f5f57db8bb2",
+    "ev_312db98d239db31c",
+    "ev_4586103537fedc23",
+    "ev_4bcc831599eb3416",
+    "ev_4dc239e1d1c023e6",
+    "ev_508231aa241241fc",
+    "ev_613c2f3bc7f9285d",
+    "ev_6782cfb30ff82d36",
+    "ev_72a858ced9d2e9dd",
+    "ev_773d7222b55500e3",
+    "ev_861db1bb950ee948",
+    "ev_92c12475a147554f",
+    "ev_951a7cef80927136",
+    "ev_ac7b960c3c6176e2",
+    "ev_ad5cb3d607e8ad5d",
+    "ev_d87f1611edc19252",
+    "ev_e04a7fb563130f52",
+    "ev_e8cd77cbb5146a2b",
+    "ev_ee3aac1e8ed6dc30",
+    "ev_f5228138b592f4d6"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

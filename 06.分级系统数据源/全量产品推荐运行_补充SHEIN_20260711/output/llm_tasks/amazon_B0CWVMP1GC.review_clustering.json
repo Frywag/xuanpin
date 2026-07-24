@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0CWVMP1GC",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+    "rating": 4.3,
+    "review_count": 4996.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":450,\"positive\":366,\"negative\":84,\"snippets\":[\"Customers like how the dress fits, noting it's not tight and is not too long or too short, with one customer mentioning it's flattering for all shapes and sizes.\",\". Should have purchased more than one. It’s true to size, light weight and comfortable.\",\". Can be worn casual or dressed up with accessories. Pockets are great. Nice quality.\",\"except the armpit area has a very large opening. I find this to be the case with almost all of these affordable dresses....\",\". Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"appearance\",\"mentions\":442,\"positive\":409,\"negative\":33,\"snippets\":[\"Customers find the dress visually appealing, describing it as cute with a nice print, and one customer mentions it's suitable for wearing out.\",\".. You can use it on the beach .. picnic .. just relax at the house .. with a little bit of accessories l, it can...\",\"and easy to dress up a little bit. Glad I bought this it is the perfect summer dress.\",\"Not a dress but a bathing suit cover dress. Very see through but\",\". Color is perfect for a hot summer day. Nice quality for the price.\"]},{\"tag\":\"comfort\",\"mentions\":380,\"positive\":374,\"negative\":6,\"snippets\":[\"Customers find the dress comfortable, describing it as stylish and summer-friendly, with one customer noting that it sits well on the body.\",\", they are thick enough so they are not flimsy. perfect for work (I wear a cardigan).\",\"with plenty of room to move around. I bought a pair of bike shorts to wear under as it is a little short for my age.\",\"/casual but very cute dress that I could wear for several different occasions… when I...\",\"I believe I purchased at least six of these beauties. They are\",\"and cool in this Florida heat and humidity. I’ve had many compliments....\"]},{\"tag\":\"summer-friendly\",\"mentions\":181,\"positive\":176,\"negative\":5,\"snippets\":[\"Customers find this dress suitable for summer wear, appreciating it as a nice swim coverup and sundress, with some mentioning it works well as a nightgown.\",\". Colors were spot on to the picture. It's a thinner material but perfect for the hotter days. Fit true to size....\",\"!! I used it all summer and I was able to wear it to day picnics or fancy dinner w the right belt and accessories....\",\". Does run on the larger size. Comfortable, washes great. A little longer than I would like , but I am only 5'3\\\"....\",\". Not too short, not too long. Flattering. Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"pockets\",\"mentions\":154,\"positive\":143,\"negative\":11,\"snippets\":[\"Customers appreciate the dress's pockets, noting they are a nice touch and perfect for summer wear, with one customer mentioning they are helpful for carrying money.\",\"...I am 5'5\\\" - 126 lbs.\",\"and I also wore it on a road trip recently and it was so cool and comfortable in the car as it didn't wrinkle...\",\", I used for travel because they don’t take up a lot of space in a suitcase, they do not...\",\". This hands down is my favorite summer dress in my closet. The print is unique.\",\"I’m in love with this dress!! It’s so light & comfortable and\"]},{\"tag\":\"softness\",\"mentions\":149,\"positive\":135,\"negative\":14,\"snippets\":[\"Customers find the dress soft and lovely for summer wear, with one customer noting it feels cool on the skin.\",\"and comfy---I'm not in the habit of wearing anything like this, but for the cruise,...\",\"and silky, light weight feeling. It has pockets. This hands down is my favorite summer dress in my closet. The print is unique.\",\"and comfortable. Cool for summer. True to size. Something I would buy in another print I like it so much....\",\"and easy care. The length for me at 5'5\\\" was perfect. Nice underarm fit as well....\"]},{\"tag\":\"material\",\"mentions\":200,\"positive\":128,\"negative\":72,\"snippets\":[\"Customers have mixed opinions about the dress's material, with some finding it lovely and noting it has just enough give, while others describe it as awful, thin, and too slinky.\",\", perfect for the summer. The pockets are a nice touch and I love the green print....\",\". It is not thin. It does move as you move and the length is not worrisome. You can sit, walk fast, and not expose yourself, lol!...\"]},{\"tag\":\"sizing\",\"mentions\":157,\"positive\":94,\"negative\":63,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report it runs large or too short.\",\". Something I would buy in another print I like it so much....\",\". All stitching is white and I guess is to be stylish. Comes off ugly.\",\". The fabric is substantial and does not wrinkle. Great style for summer.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_099e0a7985f333a7",
+    "ev_0f07e8a22a09060f",
+    "ev_773d7222b55500e3",
+    "ev_92c12475a147554f",
+    "ev_d87f1611edc19252"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

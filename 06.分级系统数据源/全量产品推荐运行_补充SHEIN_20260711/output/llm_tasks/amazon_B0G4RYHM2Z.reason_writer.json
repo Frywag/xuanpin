@@ -1,0 +1,174 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "amazon_B0G4RYHM2Z",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "Zeagoo Summer Dresses for Women Casual A Line Dress 2026 V Neck Short Dresses Floral Sundress Pleated Boho Dress",
+    "grade": "S",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 19.2,
+        "max": 30.0,
+        "reason": "量级信号 sales_30d_units=19,881 -> 9分；带平台畅销榜标记；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_5db10249b0fccfab",
+          "ev_a794a875858d9821",
+          "ev_e891bf81b8eca90f"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 6.8,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_2d478e4cb8511110",
+          "ev_876776608ff96486",
+          "ev_a91598a3443e1242",
+          "ev_e1d8abd5ff101b75"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 9.0,
+        "max": 15.0,
+        "reason": "评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_417d1e731d87f1a0",
+          "ev_b4ff27008667e5a5",
+          "ev_c3cb9fd46c211f55"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ZEAGOO」品牌词出现在标题中（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_5faeb3ff5fec0fc5"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=19,881 -> 9分；带平台畅销榜标记；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_5db10249b0fccfab",
+          "ev_a794a875858d9821",
+          "ev_e891bf81b8eca90f"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_2d478e4cb8511110",
+          "ev_876776608ff96486",
+          "ev_a91598a3443e1242",
+          "ev_e1d8abd5ff101b75"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_417d1e731d87f1a0",
+          "ev_b4ff27008667e5a5",
+          "ev_c3cb9fd46c211f55"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ZEAGOO」品牌词出现在标题中（人工待确认）",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_5faeb3ff5fec0fc5"
+        ],
+        "confidence": "low"
+      },
+      {
+        "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_3ed9d5129a3a4738",
+          "ev_9c4b22a3c0b8b3b8"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "同风格红海程度：高（语料内同风格候选 1677 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_3ed9d5129a3a4738",
+          "ev_9c4b22a3c0b8b3b8"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_5db10249b0fccfab"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_0db0d9be9d892be5",
+    "ev_1521070558115f88",
+    "ev_1a8e150a1940d07e",
+    "ev_2d478e4cb8511110",
+    "ev_3ed9d5129a3a4738",
+    "ev_40ee60c867001773",
+    "ev_417d1e731d87f1a0",
+    "ev_519c4a8c9c19cb56",
+    "ev_5db10249b0fccfab",
+    "ev_5faeb3ff5fec0fc5",
+    "ev_876776608ff96486",
+    "ev_99f05c100fe30388",
+    "ev_9c4b22a3c0b8b3b8",
+    "ev_a794a875858d9821",
+    "ev_a91598a3443e1242",
+    "ev_b4ff27008667e5a5",
+    "ev_b78780c08ba59f91",
+    "ev_ba4fe7d34776666f",
+    "ev_c3cb9fd46c211f55",
+    "ev_c5e3b42e7aace39f",
+    "ev_d3f0612d4802939e",
+    "ev_d70929da571785cc",
+    "ev_e1d8abd5ff101b75",
+    "ev_e891bf81b8eca90f",
+    "ev_f8537010509f03fd"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

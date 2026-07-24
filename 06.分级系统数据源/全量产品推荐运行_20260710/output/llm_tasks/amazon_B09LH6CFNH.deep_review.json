@@ -1,0 +1,439 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "amazon_B09LH6CFNH",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "amazon_B09LH6CFNH",
+      "platform": "amazon",
+      "canonical_url": "https://www.amazon.com/Sundresses-Strapless-Coverups-Shouder-Dresses/dp/B09LH6CFNH/ref=zg_bs_g_2346727011_d_sccl_18/134-8901815-8266119",
+      "basic_facts": {
+        "title": "CHICGAL Summer Dresses for Women Beach Cover Ups Strapless Boho Floral Print Sundress 2026",
+        "brand": "CHICGAL",
+        "category_path": [
+          "Clothing, Shoes & Jewelry",
+          "Women",
+          "Clothing",
+          "Dresses",
+          "Casual"
+        ],
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/81nx00bvxOL._AC_UL600_SR600,400_.jpg",
+        "price": {
+          "amount": 13.88,
+          "currency": "USD"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.3,
+        "review_count": 14165.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 30023.0,
+        "sales_7d_units": null,
+        "sales_floor_units": null,
+        "revenue_30d": {
+          "amount": 416719.25,
+          "currency": "USD"
+        },
+        "gmv_7d": null,
+        "sales_growth_rate": 0.8619,
+        "favorites_count": null,
+        "bestseller_rank_text": "Best Sellers Rank: #572 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry) #18 in Women's Casual Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": []
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [
+          {
+            "cluster_name": "正面标签",
+            "tags": []
+          }
+        ],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [],
+        "same_style_signals": []
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": "Casual",
+        "category_label": null,
+        "source_group": "amazon_plugin",
+        "site": null,
+        "shop_name": null,
+        "seller_name": "Chicgal",
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":966,\"positive\":906,\"negative\":60,\"snippets\":[\"Customers like the appearance of the dress, finding it cute with a pretty pattern, and one customer describes it as feminine and flirty.\",\"Material is a little heavier/thicker than I thought. Overall it's a\",\"and perfect summer dress for any occasion - from running errands, beach day...\",\". It is also a bit of a thicker material that doesn't allow any show-through....\",\"and comfortable. Perfect for a beach getaway. The material is light and sexy enough for ladies who are with larger breast....\",\". The material is a good weight…not too heavy or light. I wouldn’t size down in this one. It sort of squashes the chest area....\"]},{\"tag\":\"fit\",\"mentions\":956,\"positive\":798,\"negative\":158,\"snippets\":[\"Customers find the dress fits beautifully and stays in place, with one customer noting it doesn't slip at all.\",\", it exceeds my expectations. Know your body type- this looks best if you like the way a high-wasted dress looks on you....\",\"and comfortable! Thought it was gonna be to small but it fit perfectly. Everyone gave me compliments on the color and style.\",\"and doesn't flatten my chest. Colors are stunning! This is the second pattern I've ordered. Machine wash but hang dry....\",\"and it longer than expected. I am tall and I thought it would be above my knee and it actually falls right at my knees.\"]},{\"tag\":\"comfort\",\"mentions\":557,\"positive\":531,\"negative\":26,\"snippets\":[\"Customers find the dress comfortable, particularly in hot weather, with one customer noting it doesn't feel like wearing a tent.\",\", colors are amazing & better than the pic! Material is soft & breathable but not see through. Highly recommend!...\",\"...the house during hot weather to look presentable, but still\",\". The fit is true to size, if in between sizes I'd say size down....\",\", light weight, and. made the bump look cute. It can be used a dress or beach coverup....\",\"Adorable strapless summer fun dress. Slip on and go anywhere.\",\". It’s true to size. I would have loved for it to be just a tad shorter.\"]},{\"tag\":\"quality\",\"mentions\":421,\"positive\":351,\"negative\":70,\"snippets\":[\"Customers find the dress to be well-made, with one customer noting it is well sewn.\",\"if it was anywhere near the color pictured. It shows a bright blue, almost purple type of color but the dress is blue.\",\". Washes well. Lightweight and of modest length. Machine wash, hang dry. Great value.\",\", and received quickly. I was unsure about the pattern, but when I received it in person, I loved it more than the way it looked online....\",\". Got it in two different prints. It’s true to size, the fabric is great. Great for going to the beach or a bbq.\"]},{\"tag\":\"material\",\"mentions\":390,\"positive\":276,\"negative\":114,\"snippets\":[\"Customers appreciate the fabric of the dress, describing it as good and beautiful, with one customer noting its flowy nature.\",\", breathable, ruched part doesn’t squeeze or rub uncomfortably. I wore it all day & felt comfy & cute the whole time!...\",\", soft. Comes right above knee The color is mayb a little brighter then pictured. But overall, its perfect\",\"but the top fits well and is tight enough to feel secure and stretchy enough to fit but the design and material doesn't look like the...\",\"because it will not get wrinkled when packed. Whether in a suitcase or beach bag, you’ll be good to go to dinner or wherever!\"]},{\"tag\":\"summer-friendly\",\"mentions\":285,\"positive\":280,\"negative\":5,\"snippets\":[\"Customers find this dress perfect for summer, particularly as a beach cover-up, and one customer mentions it's ideal for tropical trips.\",\"! The colors are vibrant and it fit just perfectly. I am 5'2, 187lbs and it was the perfect length....\",\"Really cute dress, I’m 5,3 so it’s down to my knees , flowy soft\",\". Not sheer since it’s stretchy and loose I could’ve downsized\",\", love the print. I'm 5'4, 135lbs. and got a large. Bought a second one Medium size and both fit good.\"]},{\"tag\":\"color\",\"mentions\":282,\"positive\":242,\"negative\":40,\"snippets\":[\"Customers like the colors of the dress, describing them as lovely, with one customer noting they are true to both color and size.\",\"and the fit. We were going on a trip and I had a bag that was fully packed....\",\"! Certainly a summer favorite! Very comfortable. Perfect fit. 5'5\\\", 34D, 148lbs. Ordered Medium.\",\"and material of the dress. It’s a great travel dress, too. Looks great with a white jacket.\",\"and it fit just perfectly. I am 5'2, 187lbs and it was the perfect length....\"]},{\"tag\":\"softness\",\"mentions\":229,\"positive\":205,\"negative\":24,\"snippets\":[\". Comes right above knee The color is mayb a little brighter then pictured. But overall, its perfect\",\", perfect for summer hot days or even can be dressed up with some heels. I ordered a few colors.\",\"cabd colors are vibrant. I have 3. Best money I e er spent. Bought a size XXL. Fits perfect . They wash up beautiful I love them.\",\"and fairly lightweight. It stays up, even though it doesn't have straps. The colors are pretty together....\"]}]"
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "A",
+      "pct": 52.8,
+      "total": 31.7,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 22.8,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_30d_units=30,023 -> 12分；销量/销售额增长率 +86.2% -> 6分；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_3f2572e21011556e",
+            "ev_567fa56799cda2ad"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 5.2,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+          "evidence_refs": [
+            "ev_16ac7f969fc8b9f6",
+            "ev_a997ead6f80b50aa"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 9.0,
+          "max_score": 15.0,
+          "reason": "评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "evidence_refs": [
+            "ev_7aac22832eba62e0",
+            "ev_c4a3ae8d242b5ed6"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -5.3,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源；店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Chicgal」品牌词出现在标题中（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_7b509e5f9a5e1e96",
+            "ev_b7a1193bc73abeb6"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_30d_units=30,023 -> 12分；销量/销售额增长率 +86.2% -> 6分；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_3f2572e21011556e",
+            "ev_567fa56799cda2ad"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_16ac7f969fc8b9f6",
+            "ev_a997ead6f80b50aa"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_7aac22832eba62e0",
+            "ev_c4a3ae8d242b5ed6"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_b7a1193bc73abeb6"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Chicgal」品牌词出现在标题中（人工待确认）",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_7b509e5f9a5e1e96"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 52.8,
+          "grade": "A",
+          "gate_reason": "PScore 31.7/60.0（52.8%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 52.8,
+          "grade": "A",
+          "gate_reason": "评价标签聚类：0 个负面聚类 / 0 次标签提及",
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": null,
+          "score": null,
+          "grade": null,
+          "gate_reason": null,
+          "required_next_data": []
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_b7a1193bc73abeb6",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=商品详情;row=19;column=英文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_fcc6553955442b6c",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=商品详情;row=19;column=中文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_96173fb327090e08",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.brand",
+        "record_locator": "sheet=商品详情;row=19;column=品牌",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_bd4c54a6c6a618d1",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=商品详情;row=19;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_ebb0700ee2ea8559",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.category_path",
+        "record_locator": "sheet=商品详情;row=19;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_8e71bde08e6f8467",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=商品详情;row=19;column=图片链接",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_16ac7f969fc8b9f6",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=商品详情;row=19;column=价格($)",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_7aac22832eba62e0",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=商品详情;row=19;column=星级",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_a997ead6f80b50aa",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=商品详情;row=19;column=评分数",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_3f2572e21011556e",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=商品详情;row=19;column=近30天销量(父体)",
+        "note": "SellerSprite 估算；父体近30天销量"
+      },
+      {
+        "evidence_id": "ev_d5ab7b4724b86d2f",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.revenue_30d",
+        "record_locator": "sheet=商品详情;row=19;column=近30天销售额($)",
+        "note": "SellerSprite 估算"
+      },
+      {
+        "evidence_id": "ev_567fa56799cda2ad",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=商品详情;row=19;column=销量增长率",
+        "note": "源表百分数口径归一为小数"
+      },
+      {
+        "evidence_id": "ev_5062b972ea3f89a8",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=商品详情;row=19;column=Amazon类目排名",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_7b509e5f9a5e1e96",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.seller_name",
+        "record_locator": "sheet=商品详情;row=19;column=卖家名称",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_0d44fa5ee3377bf2",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.image_count",
+        "record_locator": "sheet=商品详情;row=19;column=主图数量",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_d3eeead88664310a",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.review_tags_raw",
+        "record_locator": "sheet=商品详情;row=19;column=评论亮点",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_49792249f38a163a",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=商品详情;row=19;column=采集说明",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_b2cbdbbe9011e4e7",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.design_signals",
+        "record_locator": "sheet=商品详情;row=19;column=英文五点/面料/产品属性JSON",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_c4a3ae8d242b5ed6",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=商品详情;row=19;column=销量趋势/BSR趋势/价格趋势",
+        "note": "全量趋势行聚合得出"
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_0d44fa5ee3377bf2",
+    "ev_16ac7f969fc8b9f6",
+    "ev_3f2572e21011556e",
+    "ev_49792249f38a163a",
+    "ev_5062b972ea3f89a8",
+    "ev_567fa56799cda2ad",
+    "ev_7aac22832eba62e0",
+    "ev_7b509e5f9a5e1e96",
+    "ev_8e71bde08e6f8467",
+    "ev_96173fb327090e08",
+    "ev_a997ead6f80b50aa",
+    "ev_b2cbdbbe9011e4e7",
+    "ev_b7a1193bc73abeb6",
+    "ev_bd4c54a6c6a618d1",
+    "ev_c4a3ae8d242b5ed6",
+    "ev_d3eeead88664310a",
+    "ev_d5ab7b4724b86d2f",
+    "ev_ebb0700ee2ea8559",
+    "ev_fcc6553955442b6c"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

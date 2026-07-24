@@ -1,0 +1,1581 @@
+{
+  "envelope_id": "envelope_frontend_farm_rio_20260710",
+  "source_id": "frontend_farm_rio",
+  "source_type": "frontend",
+  "market": "US",
+  "collection_mode": "full_then_analyze",
+  "layer_hint": "L1",
+  "collected_at": "2026-07-10T13:25:47+00:00",
+  "collector_version": "full_selection_input_normalizer/1.0",
+  "quality_status": "PARTIAL_SOURCE_MISSING",
+  "records": [
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_7d6e00a10bd96ec2",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Add to bag XXS XS S M L XL",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/artsy-flora-green-sleeveless-midi-dress",
+        "image_url": "https://farmrio.com/cdn/shop/files/358939_01_480ea04f-160d-4954-8eab-ca84d539cab3.jpg?format=pjpg&v=1774504301&width=425",
+        "unit_price": {
+          "amount": 248.0,
+          "currency": "USD"
+        },
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Multicolor Artsy Flora Midi Dress Regular Price $248 Sale Price $173 | 价格: $248 | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Multicolor Artsy Flora Midi Dress Regular Price $248 Sale Price $173 | 价格: $248 | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_28b4fc768bedb203",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_cd2248acf7647361",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_fa18a4ae80c1332b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_35457183f90432e8",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_523669b860b1636f",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "unit_price",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=价格/币种",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_825e3485cdea9d97",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_da492d1927d89844",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_b02f6e1556e8701e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_bb15b3014e12ca73",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_b4ed91bde9f3538a",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_46d624b71ca6d043",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Add to bag XXS XS S M L XL",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/florart-brown-midi-wrap-dress",
+        "image_url": "https://farmrio.com/cdn/shop/files/358964_01.jpg?format=pjpg&v=1771638587&width=425",
+        "unit_price": {
+          "amount": 270.0,
+          "currency": "USD"
+        },
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Brown Florart Midi Wrap Dress Regular Price $270 Sale Price $135 | 价格: $270 | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Brown Florart Midi Wrap Dress Regular Price $270 Sale Price $135 | 价格: $270 | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_cd16ce480db08071",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_f39478aed06d724b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_3e31450a786a1949",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_faaa56ebf610dfc1",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_591259d79608e20a",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "unit_price",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=价格/币种",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_2c2d6fc81be0b44e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_ed863a91e50d46ae",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_551c8a15c7febdc7",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_6fdc5f0013e75c67",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_0f551959c33b2a98",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_03430d30d81ba31f",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Add to bag XXS XS S M L XL",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/garden-scarf-soft-pink-midi-dress",
+        "image_url": "https://farmrio.com/cdn/shop/files/358183_01.jpg?format=pjpg&v=1770068523&width=425",
+        "unit_price": {
+          "amount": 270.0,
+          "currency": "USD"
+        },
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Soft Pink Garden Scarf V Neck Midi Dress Regular Price $270 Sale Price $189 | 价格: $270 | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Soft Pink Garden Scarf V Neck Midi Dress Regular Price $270 Sale Price $189 | 价格: $270 | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_e1e04e77719b7469",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_e7f4dcec7809975b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_17002336abc913a9",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_b02fa07e18ea39b9",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_cc094a577a6d1bb2",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "unit_price",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=价格/币种",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_3445d49003092f4a",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_38003452cb4dd873",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_ad413a9b1b430b94",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_f624fcf1b3b57be4",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_6d6a087484dbec1a",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_7a176672fdf0cc5e",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Add to bag XXS XS S M L XL",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/one-shoulder-midi-dress-with-bubble-waist",
+        "image_url": "https://farmrio.com/cdn/shop/files/348874_01.jpg?format=pjpg&v=1774550523&width=425",
+        "unit_price": {
+          "amount": 348.0,
+          "currency": "USD"
+        },
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Off-White One-Shoulder Midi Dress Regular Price $348 Sale Price $278 | 价格: $348 | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Add to bag XXS XS S M L XL | 列表信息: Add to bag XXS XS S M L XL Off-White One-Shoulder Midi Dress Regular Price $348 Sale Price $278 | 价格: $348 | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_6557bf8c41b7842f",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_a7845d174accd0ac",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_eb5e6f5a7e005622",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_4b178d7bcf184a9e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_9cfc6eaa3d8f5880",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "unit_price",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=价格/币种",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_83e14448154b509a",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_aba2de5ab9ca586b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_10a646ca46d5b6c6",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_4e39956fe3189fb0",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_3425340cd68436d1",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_4fc931af374dd2a8",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Notify me",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/light-blue-embroidery-short-sleeve-midi-dress",
+        "image_url": "https://farmrio.com/cdn/shop/files/348855_01.jpg?format=pjpg&v=1770068716&width=425",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_82f621ee923286cc",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_692782cd29cc4a37",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_e60ea55a888e7094",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_c630b18403e1a430",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_c9e34ec9c2a61882",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_805f62446a71cf30",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_8cf921cfd56c48e3",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_1e26b944d0e4e87b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_8a4470139ba14bb7",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_8626ed931be6fbeb",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Notify me",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/rococo-flowers-bright-blue-midi-dress",
+        "image_url": "https://farmrio.com/cdn/shop/files/353560_01.jpg?format=pjpg&v=1771638713&width=425",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_06d31f779afce76d",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_334c9fde258fbf63",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_20896f20633cf492",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_fa354f9b392b6c9e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_4a9307b12a6f1ed6",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_d5a82967c02659e3",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_73a24b43c067063e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_02b0d473e7cb617e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_6a8d7f69029bee64",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_7dcc5cbbf4850e98",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Notify me",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/have-a-nice-trip-maxi-dress",
+        "image_url": "https://farmrio.com/cdn/shop/files/348558_01.jpg?format=pjpg&v=1773702696&width=425",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_10883262b3d34ae8",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_ecd61174f22e9fcf",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_15c1de57307cef02",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_16034897219317e7",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_786d1884b5292aad",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_ee753db5aae21069",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_e946f7825dff3cbe",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_314dff4047749f41",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_2b26fe7be5925ebe",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_475828c4615788a6",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Notify me",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/maira-floral-dark-blue-midi-dress-1",
+        "image_url": "https://farmrio.com/cdn/shop/files/353550_01.jpg?format=pjpg&v=1770068878&width=425",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_2bd40dab7b9c687f",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_7e9251e154c8293e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_b1647cabf9cf506b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_a8832e8de1400f90",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_eed5da732026f1c1",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_d44c37392042230e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_329a41fec7512ea1",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_3a34c4dbc9ff450b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_5160673e9fa0fd59",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_da242dd503883db4",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Notify me",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/boho-enchance-mocha-lace-long-sleeve-blouse",
+        "image_url": "https://farmrio.com/cdn/s/shopify/files/348878_01_1281d371-6de6-4e69-a292-6da179801539.jpg",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_eb600ea8445d7dfe",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_dc03df4a19ef7eda",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_811f1394bfdef285",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_b14027fc5d5827fa",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_96aaa0dc7443cfe5",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_5f9b56a477c7814c",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_a659beb1506fd397",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_31c5052efce49339",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_2fca4b220977191b",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_e38f4586e4fa429d",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Notify me",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/tropical-painting-maxi-multicolor-maxi-dress",
+        "image_url": "https://farmrio.com/cdn/s/shopify/files/349023_01.jpg",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_68c14f3a0d823ac1",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_ad1dc3548e39c3e9",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_cb37930b09925e54",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_c47bdceb01766b6e",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_65eecbe251e680e7",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_0c2badb050ad4599",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_1d112760b30672fc",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_93ec73e7d8be505a",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_4d85f76087d95a8a",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "farm_rio",
+      "site": "farm_rio",
+      "product_id": "url_9381fb5598c29422",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Notify me",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://farmrio.com/products/floral-delhi-tapestry-light-pink-midi-dress",
+        "image_url": "https://farmrio.com/cdn/s/shopify/files/358182_01.jpg",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Notify me | 列表信息: Notify me | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://farmrio.com/collections/sale-dresses",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_81c5e3f212c17df8",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_a6b3f76da74b2224",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_72f4e3a9f7de1e35",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_04774a7228022867",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_5e721628a962b7b4",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_c037559652acf544",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_de2845c80e7ff487",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_67902f130d0db421",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_cb5d03311a507205",
+          "source_id": "frontend_farm_rio",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "11 行详情采集状态为失败或受阻，保留列表事实并降级。"
+  ],
+  "artifact_paths": {
+    "workbook": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx"
+  },
+  "schema_version": "source.envelope.v1"
+}

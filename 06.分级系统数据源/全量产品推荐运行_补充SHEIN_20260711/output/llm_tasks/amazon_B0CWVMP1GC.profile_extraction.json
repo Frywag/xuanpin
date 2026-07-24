@@ -1,0 +1,350 @@
+{
+  "task_type": "profile_extraction",
+  "candidate_id": "amazon_B0CWVMP1GC",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只依据 inputs.text 中的真实文本判断，不得使用外部知识补全事实",
+    "带 vocab 的键取值必须严格从词表中选择；判断不了就进 missing_fields",
+    "multi 键可给列表；每个键必须带 evidence_refs 与 confidence"
+  ],
+  "inputs": {
+    "key_set": "womenswear",
+    "keys": {
+      "服饰大类": {
+        "vocab": [
+          "上装",
+          "下装",
+          "连衣裙",
+          "外套",
+          "内衣",
+          "睡衣",
+          "泳装",
+          "运动服",
+          "配饰"
+        ]
+      },
+      "产品小类": {
+        "vocab_open": true,
+        "hint": "T-shirt/Dress/Blouse/Leggings/Hoodie/Bra 等"
+      },
+      "适用性别": {
+        "vocab": [
+          "Women",
+          "Men",
+          "Girls",
+          "Boys",
+          "Baby",
+          "Unisex"
+        ]
+      },
+      "款式风格": {
+        "vocab": [
+          "Casual",
+          "Elegant",
+          "Sexy",
+          "Boho",
+          "Streetwear",
+          "Business",
+          "Sporty",
+          "Vintage"
+        ]
+      },
+      "版型": {
+        "vocab": [
+          "Slim Fit",
+          "Regular Fit",
+          "Loose Fit",
+          "Oversized"
+        ]
+      },
+      "廓形": {
+        "vocab": [
+          "A-line",
+          "Straight",
+          "Bodycon",
+          "Wide Leg",
+          "Flare"
+        ]
+      },
+      "裙长": {
+        "vocab": [
+          "Mini",
+          "Midi",
+          "Maxi"
+        ]
+      },
+      "领型": {
+        "vocab": [
+          "Crew Neck",
+          "V Neck",
+          "Square Neck",
+          "Halter",
+          "Collared",
+          "One Shoulder"
+        ]
+      },
+      "袖长": {
+        "vocab": [
+          "Sleeveless",
+          "Short Sleeve",
+          "Long Sleeve"
+        ]
+      },
+      "开合方式": {
+        "vocab": [
+          "Pullover",
+          "Button",
+          "Zipper",
+          "Tie",
+          "Snap"
+        ]
+      },
+      "装饰元素": {
+        "vocab": [
+          "Lace",
+          "Ruffle",
+          "Bow",
+          "Sequin",
+          "Embroidery",
+          "Cutout",
+          "Print"
+        ],
+        "multi": true
+      },
+      "图案类型": {
+        "vocab": [
+          "Solid",
+          "Floral",
+          "Striped",
+          "Plaid",
+          "Graphic"
+        ],
+        "multi": true
+      },
+      "适用场景": {
+        "vocab": [
+          "日常",
+          "通勤",
+          "派对",
+          "度假",
+          "运动",
+          "居家",
+          "婚礼",
+          "校园"
+        ],
+        "multi": true
+      },
+      "适用季节": {
+        "vocab": [
+          "Spring",
+          "Summer",
+          "Fall",
+          "Winter",
+          "All Season"
+        ],
+        "multi": true
+      },
+      "节日属性": {
+        "vocab_open": true,
+        "hint": "Christmas/Halloween/Valentine's Day/Independence Day 或 无"
+      },
+      "面料类型": {
+        "vocab": [
+          "Knit",
+          "Woven",
+          "Denim",
+          "Chiffon",
+          "Satin",
+          "Fleece",
+          "Mesh",
+          "Silicone"
+        ]
+      },
+      "弹力": {
+        "vocab": [
+          "无弹",
+          "微弹",
+          "高弹",
+          "四面弹"
+        ]
+      }
+    },
+    "text": {
+      "title": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+      "title_cn": "OFEEFAN 女式夏季连衣裙 2026 宽松 V 领无袖背心裙泳衣罩衫带口袋花卉/素色/孔眼",
+      "category_name": "Casual",
+      "category_path": [
+        "Clothing, Shoes & Jewelry",
+        "Women",
+        "Clothing",
+        "Dresses",
+        "Casual"
+      ],
+      "design_signals": [
+        {
+          "kind": "bullet_points",
+          "text": "MATERIAL: Women's summer dress is well made of soft,comfy and skin-friendly fabric,stretchy and not shrink,providing a pleasant dressing experience for you.|||FEATURES:It features casual style,cute v neck,classic sleeveless and short length.Two pockets can provide extra storage for carrying small items.|||MATCHING:Knee length dress is easy to style with leggings,boots or a scarf to achieve a classic look.Wearing a necklace,the v neck will highlights the neckline and adds sparkle to your look.|||OCCASIONS:Super good for casual daily wear and other occasions,such as party,club,work,office,church,holiday,outgoing,vacation,engagement,maternity,beach etc.|||LOOSE FIT DESIGN:This dress is casual in style,loose fitting,suitable for most body shapes,easy to show your glamorous and cute femininity.It is a tank dress,flowy dress,sundress,swing dress,summer dress,loose dress."
+        },
+        {
+          "kind": "material",
+          "text": "Plain:60%Polyester,35%Rayon,5%Spandex;Floral/Eyelet:95%Polyester,5%Spandex."
+        },
+        {
+          "kind": "attributes",
+          "text": "{\"STYLE\":{\"Color\":\"A Floral 05\",\"Occasion Type\":\"Church, Work\",\"Apparel Silhouette\":\"A-line\",\"Neck Style\":\"V-Neck\",\"Sleeve Type\":\"Sleeveless\",\"Seasons\":\"Summer\",\"Apparel Occasion and Lifestyle\":\"Casual\",\"Style Name\":\"Soft\",\"Apparel Closure Type\":\"Pull On\",\"Back Style\":\"Backless\",\"Strap Type\":\"Strapless\",\"Pattern\":\"Solid\",\"Waist Style\":\"High Waist\",\"Hemline Form\":\"Straight Hemline\",\"collar-type\":\"No Collar\",\"Theme\":\"Floral\"},\"MEASUREMENTS\":{\"Item Length Description\":\"Knee-Length\",\"Special Size Type\":\"One Size\"},\"FEATURES & SPECS\":{\"Apparel Closure Type\":\"Pull On\",\"Pocket Description\":\"Two pockets, providing extra storage for small items.\",\"Additional Features\":\"Pocket\",\"Sleeve Length Description\":\"Sleeveless\",\"Fit to Size Sentiment\":\"Positive\",\"Fit Type\":\"Loose\"},\"ITEM DETAILS\":{\"Brand Name\":\"OFEEFAN\",\"Age Range Description\":\"Adult\",\"Style Number\":\"WDR90560652014U0701\",\"Garment Size Country\":\"United States\",\"Unit Count\":\"1 Count\",\"Number of Items\":\"1\"},\"MATERIALS & CARE\":{\"Material Type\":\"Polyester Blend\",\"Product Care Instructions\":\"Machine Wash\",\"Apparel Fabric Weight Class\":\"Lightweight\",\"Apparel Fabric Stretch\":\"Medium Stretch\",\"Fabric Type\":\"Plain:60%Polyester,35%Rayon,5%Spandex;Floral/Eyelet:95%Polyester,5%Spandex.\"}}"
+        },
+        {
+          "kind": "review_summary",
+          "text": "Customers find the dress comfortable, soft, and not too long or too short, with one noting it's flattering for all shapes and sizes. They appreciate its appearance, with one mentioning it's suitable for wearing out, and consider it a great summer dress with pockets. The material receives mixed feedback - while some praise the eyelet fabric, others find it thin and of poor quality. The sizing is also mixed, with some finding it true to size while others say it runs large."
+        }
+      ],
+      "trend_tags": [
+        "bsr_improving"
+      ],
+      "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":450,\"positive\":366,\"negative\":84,\"snippets\":[\"Customers like how the dress fits, noting it's not tight and is not too long or too short, with one customer mentioning it's flattering for all shapes and sizes.\",\". Should have purchased more than one. It’s true to size, light weight and comfortable.\",\". Can be worn casual or dressed up with accessories. Pockets are great. Nice quality.\",\"except the armpit area has a very large opening. I find this to be the case with almost all of these affordable dresses....\",\". Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"appearance\",\"mentions\":442,\"positive\":409,\"negative\":33,\"snippets\":[\"Customers find the dress visually appealing, describing it as cute with a nice print, and one customer mentions it's suitable for wearing out.\",\".. You can use it on the beach .. picnic .. just relax at the house .. with a little bit of accessories l, it can...\",\"and easy to dress up a little bit. Glad I bought this it is the perfect summer dress.\",\"Not a dress but a bathing suit cover dress. Very see through but\",\". Color is perfect for a hot summer day. Nice quality for the price.\"]},{\"tag\":\"comfort\",\"mentions\":380,\"positive\":374,\"negative\":6,\"snippets\":[\"Customers find the dress comfortable, describing it as stylish and summer-friendly, with one customer noting that it sits well on the body.\",\", they are thick enough so they are not flimsy. perfect for work (I wear a cardigan).\",\"with plenty of room to move around. I bought a pair of bike shorts to wear under as it is a little short for my age.\",\"/casual but very cute dress that I could wear for several different occasions… when I...\",\"I believe I purchased at least six of these beauties. They are\",\"and cool in this Florida heat and humidity. I’ve had many compliments....\"]},{\"tag\":\"summer-friendly\",\"mentions\":181,\"positive\":176,\"negative\":5,\"snippets\":[\"Customers find this dress suitable for summer wear, appreciating it as a nice swim coverup and sundress, with some mentioning it works well as a nightgown.\",\". Colors were spot on to the picture. It's a thinner material but perfect for the hotter days. Fit true to size....\",\"!! I used it all summer and I was able to wear it to day picnics or fancy dinner w the right belt and accessories....\",\". Does run on the larger size. Comfortable, washes great. A little longer than I would like , but I am only 5'3\\\"....\",\". Not too short, not too long. Flattering. Medium fits me perfectly, I’m 5’6” 148 lbs. love the color and the print. Recommend!\"]},{\"tag\":\"pockets\",\"mentions\":154,\"positive\":143,\"negative\":11,\"snippets\":[\"Customers appreciate the dress's pockets, noting they are a nice touch and perfect for summer wear, with one customer mentioning they are helpful for carrying money.\",\"...I am 5'5\\\" - 126 lbs.\",\"and I also wore it on a road trip recently and it was so cool and comfortable in the car as it didn't wrinkle...\",\", I used for travel because they don’t take up a lot of space in a suitcase, they do not...\",\". This hands down is my favorite summer dress in my closet. The print is unique.\",\"I’m in love with this dress!! It’s so light & comfortable and\"]},{\"tag\":\"softness\",\"mentions\":149,\"positive\":135,\"negative\":14,\"snippets\":[\"Customers find the dress soft and lovely for summer wear, with one customer noting it feels cool on the skin.\",\"and comfy---I'm not in the habit of wearing anything like this, but for the cruise,...\",\"and silky, light weight feeling. It has pockets. This hands down is my favorite summer dress in my closet. The print is unique.\",\"and comfortable. Cool for summer. True to size. Something I would buy in another print I like it so much....\",\"and easy care. The length for me at 5'5\\\" was perfect. Nice underarm fit as well....\"]},{\"tag\":\"material\",\"mentions\":200,\"positive\":128,\"negative\":72,\"snippets\":[\"Customers have mixed opinions about the dress's material, with some finding it lovely and noting it has just enough give, while others describe it as awful, thin, and too slinky.\",\", perfect for the summer. The pockets are a nice touch and I love the green print....\",\". It is not thin. It does move as you move and the length is not worrisome. You can sit, walk fast, and not expose yourself, lol!...\"]},{\"tag\":\"sizing\",\"mentions\":157,\"positive\":94,\"negative\":63,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report it runs large or too short.\",\". Something I would buy in another print I like it so much....\",\". All stitching is white and I guess is to be stylish. Comes off ugly.\",\". The fabric is substantial and does not wrinkle. Great style for summer.\"]}]"
+    }
+  },
+  "allowed_evidence_ids": [
+    "ev_074f912210714638",
+    "ev_2a15ebc9ea7626ea",
+    "ev_312db98d239db31c",
+    "ev_508231aa241241fc",
+    "ev_613c2f3bc7f9285d",
+    "ev_e8cd77cbb5146a2b",
+    "ev_f5228138b592f4d6"
+  ],
+  "output_schema": {
+    "profile": {
+      "服饰大类": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "产品小类": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用性别": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "款式风格": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "版型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "廓形": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "裙长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "领型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "袖长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "开合方式": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "装饰元素": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "图案类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用场景": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用季节": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "节日属性": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "面料类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "弹力": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    },
+    "missing_fields": [
+      "输入文本不足以判断的键，逐个列出"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

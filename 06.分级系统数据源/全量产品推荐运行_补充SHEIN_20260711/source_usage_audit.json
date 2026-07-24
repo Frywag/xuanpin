@@ -1,0 +1,389 @@
+{
+  "generated_at": "2026-07-10T20:44:12.446Z",
+  "input_root": "06.分级系统数据源",
+  "sources": [
+    {
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "candidate_records": 200,
+      "sheet_rows_scanned": {
+        "概览": 0,
+        "产品总表": 0,
+        "全字段长表": 0,
+        "销量趋势": 0,
+        "BSR趋势": 0,
+        "价格趋势": 0,
+        "评论趋势": 0,
+        "采集说明": 0
+      },
+      "trend_rows_consumed": {
+        "销量趋势": 1980,
+        "BSR趋势": 62586,
+        "价格趋势": 21221,
+        "评论趋势": 62594
+      },
+      "full_field_rows_consumed": 33676,
+      "usage": "全部产品行进入评分；全部趋势行聚合；全字段长表逐行扫描并保留字段目录与关键原值。"
+    },
+    {
+      "source_id": "frontend_abercrombie_fitch",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Abercrombie & Fitch.xlsx",
+      "candidate_records": 0,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 0,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_aerie",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Aerie.xlsx",
+      "candidate_records": 30,
+      "partial_records": 30,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 30,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_alo_yoga",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Alo Yoga.xlsx",
+      "candidate_records": 48,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 48,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_amazon",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx",
+      "candidate_records": 425,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 425,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_anthropologie",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Anthropologie.xlsx",
+      "candidate_records": 72,
+      "partial_records": 72,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 72,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_cider",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Cider.xlsx",
+      "candidate_records": 0,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 0,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_cupshe",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Cupshe.xlsx",
+      "candidate_records": 48,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 48,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_everlane",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Everlane.xlsx",
+      "candidate_records": 52,
+      "partial_records": 37,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 52,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_farm_rio",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Farm Rio.xlsx",
+      "candidate_records": 11,
+      "partial_records": 11,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 11,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_for_love_lemons",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/For Love & Lemons.xlsx",
+      "candidate_records": 126,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 126,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_free_people",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Free People.xlsx",
+      "candidate_records": 72,
+      "partial_records": 72,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 72,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_good_american",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Good American.xlsx",
+      "candidate_records": 43,
+      "partial_records": 43,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 43,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_lululemon",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+      "candidate_records": 26,
+      "partial_records": 26,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 26,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_lulus",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lulus.xlsx",
+      "candidate_records": 121,
+      "partial_records": 105,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 121,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_madewell",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Madewell.xlsx",
+      "candidate_records": 41,
+      "partial_records": 41,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 41,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_old_navy",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Old Navy.xlsx",
+      "candidate_records": 0,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 0,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_princess_polly",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Princess Polly.xlsx",
+      "candidate_records": 135,
+      "partial_records": 134,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 135,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_quince",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Quince.xlsx",
+      "candidate_records": 102,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 102,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_reformation",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Reformation.xlsx",
+      "candidate_records": 49,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 49,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_revolve",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Revolve.xlsx",
+      "candidate_records": 0,
+      "partial_records": 0,
+      "skipped_records": 500,
+      "sheet_rows_scanned": {
+        "商品详情": 500,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_skims",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Skims.xlsx",
+      "candidate_records": 53,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 53,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_urban_outfitters",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Urban Outfitters.xlsx",
+      "candidate_records": 72,
+      "partial_records": 72,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 72,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "frontend_vuori",
+      "source_type": "frontend",
+      "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Vuori.xlsx",
+      "candidate_records": 0,
+      "partial_records": 0,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "商品详情": 0,
+        "站点摘要": 5
+      },
+      "usage": "商品详情全部有效行进入评分或详情增强；失败行保留可见事实并降级，不补造缺失值。"
+    },
+    {
+      "source_id": "kalodata_dresses",
+      "source_type": "plugin",
+      "artifact_path": "06.分级系统数据源/Kalodata连衣裙系统数据源/Kalodata连衣裙_20260710.source_envelope.json",
+      "candidate_records": 93,
+      "package_files_verified": 32,
+      "jsonl_rows_available": {
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/ledgers/raw_dataset_records.jsonl": 1208,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/ledgers/raw_field_dictionary.jsonl": 2019,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/ledgers/raw_field_ledger.jsonl": 84494,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/ledgers/request_response_ledger.jsonl": 515,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/brand_profile_snapshots.jsonl": 21,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/category_daily_metrics.jsonl": 150,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/category_market_snapshot.jsonl": 5,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/category_top_creators.jsonl": 50,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/category_top_products.jsonl": 50,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/category_top_shops.jsonl": 50,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/collector_endpoint_costs.jsonl": 108,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/creator_profile_snapshots.jsonl": 35,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/entity_relationships.jsonl": 1081,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/product_daily_history.jsonl": 600,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/product_profile_snapshots.jsonl": 93,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/shop_profile_snapshots.jsonl": 34,
+        "06.分级系统数据源/Kalodata连衣裙系统数据源/processed/video_assets.jsonl": 231
+      },
+      "usage": "93 个标准商品记录全量进入评分；原始响应、处理表和账本通过交付清单与哈希保留审计。",
+      "warnings": [
+        "Kalodata trial plan exposed only page 1 with 10 rows per list/filter; the collector expanded coverage through four child categories and multiple sort dimensions.",
+        "Observed market totals were 37,353 products and 99,425 product videos; this envelope contains 93 unique product candidates actually returned by accessible endpoints.",
+        "Search quota 30/30 and detail quota 30/30 were used; export quota was 0."
+      ]
+    },
+    {
+      "source_id": "frontend_shein",
+      "source_type": "frontend",
+      "artifact_path": "03.前端数据源/shein数据源.xlsx",
+      "candidate_records": 200,
+      "partial_records": 1,
+      "skipped_records": 0,
+      "sheet_rows_scanned": {
+        "run_summary": 1,
+        "shein": 200,
+        "media": 1592
+      },
+      "media_records": 1592,
+      "usage": "SHEIN 商品行全部进入评分；价格、销量下限、评分、评论、榜单、趋势、描述、颜色、尺码和媒体均保留字段级证据。",
+      "warnings": [
+        "销量采用来源下限口径；媒体表按商品ID关联并去重。"
+      ]
+    }
+  ],
+  "source_count": 26,
+  "candidate_records_before_cross_source_merge": 2019,
+  "frontend_workbooks": 24,
+  "plugin_sources": 2,
+  "full_use_policy": "候选级数据全量进入分级；时间序列全量聚合；未知字段保留在标准信封和原始文件审计中；缺失值不以0、均值或主观推断填充。",
+  "incremental_source": {
+    "source_id": "frontend_shein",
+    "products": 200,
+    "media_records": 1592
+  }
+}

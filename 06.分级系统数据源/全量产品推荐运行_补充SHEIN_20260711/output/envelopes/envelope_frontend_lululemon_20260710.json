@@ -1,0 +1,3557 @@
+{
+  "envelope_id": "envelope_frontend_lululemon_20260710",
+  "source_id": "frontend_lululemon",
+  "source_type": "frontend",
+  "market": "US",
+  "collection_mode": "full_then_analyze",
+  "layer_hint": "L1",
+  "collected_at": "2026-07-10T13:25:47+00:00",
+  "collector_version": "full_selection_input_normalizer/1.0",
+  "quality_status": "PARTIAL_SOURCE_MISSING",
+  "records": [
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_7c1b231a67eaa51e",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Ace Advantage Cutout Tennis Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/ace-advantage-cutout-tennis-dress/dhl2uqb9ti?color=12826",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GAMS_012826_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Ace Advantage Cutout Tennis Dress | 列表信息: Ace Advantage Cutout Tennis Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Ace Advantage Cutout Tennis Dress | 列表信息: Ace Advantage Cutout Tennis Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_7d46757450546f32",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_77efdc416baa94f9",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_a93ea0a153c69533",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_9d582902d2c84649",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_035c7caf03fb1225",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_22889f8e3187a8e5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_a3c4c048214a78ad",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_b0e281bbe0f8a5a5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_65534d48ed750ff3",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=2;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_0dd0b8e7eb62b74f",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "2-in-1 Maxi Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/skirts-and-dresses-dresses/2-in-1-Maxi-Dress/_/prod20002015?color=35955",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1FFRS_035955_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: 2-in-1 Maxi Dress | 列表信息: 2-in-1 Maxi Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: 2-in-1 Maxi Dress | 列表信息: 2-in-1 Maxi Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_ccd40b56c3045186",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_6f817e451f216df0",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_3de5be6c4209d790",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_cd4c28fbfe55f758",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_5eee8a71af94b4e4",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_2fb984901f6bd8bb",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_89f0d8d23aff0c8a",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_294efb07f8b94ba4",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_2c2f5cd085b68a68",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=3;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_b2b5bb6977604e41",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "2-in-1 Bubble-Hem Mini Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/2-in-1-bubble-hem-mini-dress/of6a0v9ml3?color=71148",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GLNS_071148_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: 2-in-1 Bubble-Hem Mini Dress | 列表信息: 2-in-1 Bubble-Hem Mini Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: 2-in-1 Bubble-Hem Mini Dress | 列表信息: 2-in-1 Bubble-Hem Mini Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_2410deb3a74ec614",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_31bd01170b29663a",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_a3297aa45b266093",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_5c3af356a4aebef2",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_9e1b7c391727098b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_555303fd653f7e5f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_dac50d9c595417a5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_437382a1b457e46d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_8308ff97fe5b878a",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=4;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_7e136c84edecadd1",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Flow Y Dress Light Support, B/C Cup",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/flow-y-dress-light-support-bc-cup/aqcs9fl2io?color=0284",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GMXS_0284_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Flow Y Dress Light Support, B/C Cup | 列表信息: Flow Y Dress Light Support, B/C Cup | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Flow Y Dress Light Support, B/C Cup | 列表信息: Flow Y Dress Light Support, B/C Cup | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_e802885b581ce280",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_341a32a585d83c66",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_6e2ea74b82d0d5b2",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_1c9dc73d328e5a40",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_94fedb0781119a42",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_8ec41d09ae4cf61f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_1125e0c0c8263335",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_871640ba1cac6054",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_3e368c8e4a75fb10",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=5;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_5b410cacd77d8c82",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Ribbed Heavyweight Cotton Mini Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/ribbed-heavyweight-cotton-mini-dress/f554m0itac?color=0284",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GLLS_0284_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Ribbed Heavyweight Cotton Mini Dress | 列表信息: Ribbed Heavyweight Cotton Mini Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Ribbed Heavyweight Cotton Mini Dress | 列表信息: Ribbed Heavyweight Cotton Mini Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_c132725d6c2f19e5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_34848146eb84ddee",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_542d9a18bfb267a2",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_8cfc1b4559e048e7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_bb8e6b85801e89fd",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_ba7929cb87b3edfd",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_8e3ed91f261a140a",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_089bd7e923620330",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_57245ea09c273440",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=6;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_8734e3bd38b659ca",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Tech Ribbed Fit-and-Flare Midi Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/tech-ribbed-fit-and-flare-midi-dress/fykasmh0mk?color=72756",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GLKS_072756_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Tech Ribbed Fit-and-Flare Midi Dress | 列表信息: Tech Ribbed Fit-and-Flare Midi Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Tech Ribbed Fit-and-Flare Midi Dress | 列表信息: Tech Ribbed Fit-and-Flare Midi Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_8b79926f2131cfb2",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_e329c4ff4d587025",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_fd5c5b5a4fd6a6ed",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_41491390044f8164",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_b09cad7d57bbf602",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_616f2a79020af4d0",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_0f0ec43ddd3b1be9",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_2aa9c3f89380644b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_573e8eea41d5372c",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=7;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_35511ab58172b9a6",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "2-in-1 Wide-Leg Jumpsuit",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/2-in-1-wide-leg-jumpsuit/riifl2fnpo?color=74110",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GLOS_074110_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: 2-in-1 Wide-Leg Jumpsuit | 列表信息: 2-in-1 Wide-Leg Jumpsuit | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: 2-in-1 Wide-Leg Jumpsuit | 列表信息: 2-in-1 Wide-Leg Jumpsuit | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_9f0f57b7c596a1f7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_57a4140b69c2df6b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_0d8bb30c0cfd698d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_b77948ae24a6dba0",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_aeaa5f7c6d6c446f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_2736176a3fa9f8a5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_34b5587b28c94fad",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_8f06c4f5d5de1783",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_4e8eea16d20e8689",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=8;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_fc0e26c25cfeb951",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ Dress Updated Sleek Liner",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/skirts-and-dresses-dresses/lululemon-Align-Dress-Updated-Sleek-Liner/_/prod20002931?color=75743",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1FKQS_075743_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ Dress Updated Sleek Liner | 列表信息: lululemon Align™ Dress Updated Sleek Liner | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ Dress Updated Sleek Liner | 列表信息: lululemon Align™ Dress Updated Sleek Liner | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_869f56d322a24687",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_f85993c5f9f8a732",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_c9808341ab8964eb",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_9a8b63a05181acd4",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_4771e5f80b17a9c8",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_a167c8b7aa85a237",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_b3d7ca3ac0e02ae4",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_2a30060d3c0f4583",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_a090948de418e665",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=9;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_cfd00603dcea47bd",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Ribbed Heavyweight Cotton Midi Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/ribbed-heavyweight-cotton-midi-dress/f50f1n0y69?color=0001",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GGWS_0001_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Ribbed Heavyweight Cotton Midi Dress | 列表信息: Ribbed Heavyweight Cotton Midi Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Ribbed Heavyweight Cotton Midi Dress | 列表信息: Ribbed Heavyweight Cotton Midi Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_4b1e0804f6e43a92",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_6ad551aa6f79f8be",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_9104c4e6cd9110f8",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_1e3fcbe1ba227811",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_f64f65eb09b93f3b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_5211b515c96025fc",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_559ec931278202ad",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_f5676b67d05069f6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_87848f8efe50c549",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=10;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_de221fc9bbdee0ea",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ High-Neck Dress A/B Cup Sleek Liner",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/lululemon-align-high-neck-dress-ab-cup-sleek-liner/ymr4dmtun2?color=75700",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/LW1GHAS_075700_1?$product_tile$&wid=320&op_usm=0.8",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 列表信息: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 列表信息: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_be0f5b9d56eca890",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_ab15a7873c41ca9e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_4468dddbac699c6d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_d2756985806c401b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_121675148654b7a9",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_83fac731c0daf22f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_d755b615a9ff5ee1",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_1305c884358cb708",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_6ab9a887ab609d84",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=11;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_d2f00756553c76eb",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ Ribbed-Trim Cami Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/lululemon-align-ribbed-trim-cami-dress/qek715w0hh?color=0023",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/0023?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ Ribbed-Trim Cami Dress | 列表信息: lululemon Align™ Ribbed-Trim Cami Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ Ribbed-Trim Cami Dress | 列表信息: lululemon Align™ Ribbed-Trim Cami Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_c0e5bb6426a9b687",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_be6cc2a3313343a5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_41b3010f2d8a8577",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_01e947673b78a2cc",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_509322e55831c37e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_1739100c9e81e489",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_9f7765a4d4ee7f05",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_e38300bb38a5e062",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_7fca760a56b2a9a3",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=12;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_49662ee34563b43a",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Scuba Cotton Jersey T-Shirt Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/scuba-cotton-jersey-t-shirt-dress/eezgvk3f3r?color=0002",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/0002?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Scuba Cotton Jersey T-Shirt Dress | 列表信息: Scuba Cotton Jersey T-Shirt Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Scuba Cotton Jersey T-Shirt Dress | 列表信息: Scuba Cotton Jersey T-Shirt Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_39e7d8389c9d4bf0",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_5b90693845f02847",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_da3cdba0ecd1dc7d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_2740cffac64e6dee",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_9c111f4ea91efcbe",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_397b8c3c5fc002c6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_e27c339bc684ffe9",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_3fc38d1fe1e67728",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_e03a81b9846196a8",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=13;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_15e7720d03342b1a",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Scoop-Neck Cutout Tennis Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/skirts-and-dresses-dresses/Scoop-Neck-Cutout-Tennis-Dress/_/prod20002079?color=0023",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/0023?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Scoop-Neck Cutout Tennis Dress | 列表信息: Scoop-Neck Cutout Tennis Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Scoop-Neck Cutout Tennis Dress | 列表信息: Scoop-Neck Cutout Tennis Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_41afa350296f330e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_63520074348a93ec",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_df515faac0f8d8bf",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_86f3b66687852ff6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_15388883e52133a3",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_6d32104f94ec856e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_58491cf358a02168",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_caa216e5490e9947",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_566ae981c5eb4b69",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=14;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_a78212743bcb02b4",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Lightweight Softstreme Ruched T-Shirt Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/lightweight-softstreme-ruched-t-shirt-dress/m0ggl40yb5?color=72762",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/72762?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Lightweight Softstreme Ruched T-Shirt Dress | 列表信息: Lightweight Softstreme Ruched T-Shirt Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Lightweight Softstreme Ruched T-Shirt Dress | 列表信息: Lightweight Softstreme Ruched T-Shirt Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_d965e95e2ccd23e8",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_b1d1ebdb62b7864e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_1681b1f97bed3991",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_f095b44e44349c82",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_42d8eacdc0f0cb17",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_dc24a6ef8e602368",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_ae60507bc533e4bf",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_b8fca001ba216c47",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_d24cd5a3e5e32963",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=15;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_01afc051614dd52c",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "2-in-1 Bubble-Hem Mini Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/2-in-1-bubble-hem-mini-dress/of6a0v9ml3-md?color=0001",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/0001?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: 2-in-1 Bubble-Hem Mini Dress | 列表信息: 2-in-1 Bubble-Hem Mini Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: 2-in-1 Bubble-Hem Mini Dress | 列表信息: 2-in-1 Bubble-Hem Mini Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_cb26337e0148fdd5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_76855b51631b86a5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_af1ebbbee1288e9f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_b02ac6455b354df9",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_c6e0afdb802072a5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_fd0d763e1f742d7d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_86a900494ae8525c",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_eb36235fe05e1c4b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_a5d65e0011ed7e7f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=16;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_1086acd7fbb8facf",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Flow Y Dress Light Support, B/C Cup",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/flow-y-dress-light-support-bc-cup/aqcs9fl2io-md?color=75702",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/75702?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Flow Y Dress Light Support, B/C Cup | 列表信息: Flow Y Dress Light Support, B/C Cup | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Flow Y Dress Light Support, B/C Cup | 列表信息: Flow Y Dress Light Support, B/C Cup | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_54dd495fe9dfc58f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_74dcb4f9c63618b7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_0045eeee39d5f75b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_d63fb689b678a3b7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_9490876180a8b7ad",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_f47cd6cc25e5c7d8",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_88b22c14c799aa5a",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_1810ea59320b9f55",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_dbda20293f18ac0e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=17;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_f93e70ac55bb1e87",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Court Champ Racerback Tennis Dress B/C Cup",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/court-champ-racerback-tennis-dress-bc-cup/d2wzz0zvkl-md?color=75735",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/75735",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Court Champ Racerback Tennis Dress B/C Cup | 列表信息: Court Champ Racerback Tennis Dress B/C Cup | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Court Champ Racerback Tennis Dress B/C Cup | 列表信息: Court Champ Racerback Tennis Dress B/C Cup | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_1a408b54b5bae0c7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_02d79b029a892b40",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_4e3c993e55d434d6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_e30b312e8d762e26",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_61b0245054608724",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_092798dd6ede770d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_25f9aa1435bb2c6d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_2ffb49fba531c1c5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_b983de3ed81f9ac7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=18;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_9106b895e2bed149",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "2-in-1 Maxi Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/skirts-and-dresses-dresses/2-in-1-Maxi-Dress-MD/_/prod20002014?color=72763",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/72763",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: 2-in-1 Maxi Dress | 列表信息: 2-in-1 Maxi Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: 2-in-1 Maxi Dress | 列表信息: 2-in-1 Maxi Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_44dffd63fdcff469",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_d4abf49910112b0c",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_ec0c0a219f9a1827",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_375ad83d5706348f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_c849df59a655e4f9",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_fd88a348c8873e50",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_1a099a745082ff01",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_ecc0e5cf813487fe",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_a44dea9836e49fa0",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=19;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_3cda2617235fd3a0",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ High-Neck Dress A/B Cup Sleek Liner",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/lululemon-align-high-neck-dress-ab-cup-sleek-liner/ymr4dmtun2-md?color=75702",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/75702?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 列表信息: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 列表信息: lululemon Align™ High-Neck Dress A/B Cup Sleek Liner | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_7f20630122981192",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_28d6fbba48b6b0e1",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_efce936236427a72",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_45f28ef6b37851af",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_1746f43bd57c3582",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_b0e27d2329951ce6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_3fa7eb31153c248a",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_964f6796874b9a08",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_804a019446cd89c3",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=20;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_ed9f271fbd7f7664",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Scoop-Neck Cutout Tennis Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/skirts-and-dresses-dresses/Scoop-Neck-Cutout-Tennis-Dress-MD/_/prod20002078?color=75740",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/75740",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Scoop-Neck Cutout Tennis Dress | 列表信息: Scoop-Neck Cutout Tennis Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Scoop-Neck Cutout Tennis Dress | 列表信息: Scoop-Neck Cutout Tennis Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_8bd055d082c0f7d4",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_f88de9359ebc7d89",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_e0ca6df95bab8a9e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_08fe124087819b14",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_2229307c928f8502",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_3f0692307ee39d88",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_de1611a7b3549be4",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_1b8f2ad29434f2dc",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_01d5c909ec6fc5d1",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=21;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_a6fe2ade9e6bf675",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ High-Neck Dress C/D Cup Sleek Liner",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/lululemon-align-high-neck-dress-cd-cup-sleek-liner/b28h2859eu-md?color=72756",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/72756?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ High-Neck Dress C/D Cup Sleek Liner | 列表信息: lululemon Align™ High-Neck Dress C/D Cup Sleek Liner | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ High-Neck Dress C/D Cup Sleek Liner | 列表信息: lululemon Align™ High-Neck Dress C/D Cup Sleek Liner | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_e995e0a9629b013c",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_842b3cad7dc07665",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_e948264f77464b14",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_ecef21922ed800bc",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_001880c22903a332",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_502b8d64237a6b04",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_3ca2ee50e0045dba",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_767096f1d9fb5698",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_cb563d51a33040b9",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=22;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_b4ddb27d6c0378e2",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ Dress Updated Sleek Liner",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/skirts-and-dresses-dresses/lululemon-Align-Dress-Updated-Sleek-Liner-MD/_/prod20002930?color=74050",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/74050",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ Dress Updated Sleek Liner | 列表信息: lululemon Align™ Dress Updated Sleek Liner | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ Dress Updated Sleek Liner | 列表信息: lululemon Align™ Dress Updated Sleek Liner | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_a1c065e2e5ae7e54",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_a7e4cb30c0677d57",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_8c14e997cc60f2e7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_00cd59c7de03658e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_28ed15783ca17c42",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_398b2f418f400d3e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_7f3becfa21ef7910",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_17e2e568b3104270",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_d6cbdf9038e102e0",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=23;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_a54c67044c1d2b9f",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Sleeveless Golf Polo Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/sleeveless-golf-polo-dress/fj3mn3l2ca-md?color=80940",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/80940",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Sleeveless Golf Polo Dress | 列表信息: Sleeveless Golf Polo Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Sleeveless Golf Polo Dress | 列表信息: Sleeveless Golf Polo Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_051846bc6aa64ce3",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_dac4607914787b8f",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_1a730d804c349626",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_d9d5e131b5fd0d70",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_0faf7614b5245aa3",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_24a2c0456224c681",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_6f1581dfa701df92",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_10c653913b19eaf2",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_2f8b567248e7f509",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=24;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_bb7b2046aa54a082",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "Paisley-Mesh Pleated Tennis Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/paisley-mesh-pleated-tennis-dress/uobm8yw93k-md?color=74114",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/74114",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: Paisley-Mesh Pleated Tennis Dress | 列表信息: Paisley-Mesh Pleated Tennis Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: Paisley-Mesh Pleated Tennis Dress | 列表信息: Paisley-Mesh Pleated Tennis Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_72c2ae8277adc2d6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_4341101cc9018a9e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_6619597440c0fe9a",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_5c98590a5afa3019",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_399ce43e67e8d0b6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_cf4bea6d22b35631",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_9a3d164a9ed43192",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_22052a708ebcabb6",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_080850fdf0cf3d56",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=25;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_f1d4caaca068e9b0",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ Layered Dress",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/lululemon-align-layered-dress/by6yifvzuq-md?color=36522",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/36522",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ Layered Dress | 列表信息: lululemon Align™ Layered Dress | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ Layered Dress | 列表信息: lululemon Align™ Layered Dress | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_94c14bce55a5dea5",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_24d93f0e099b09fd",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_e31ffc94cd94fba1",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_9c20391d66143281",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_93d8b07c6b85a835",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_e3ae09c0bfdfce1e",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_ba2d4e4b01c7e4f8",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_8b3b19f906106fe4",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_13d6de22fba9aed7",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=26;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "platform": "lululemon",
+      "site": "lululemon",
+      "product_id": "url_efe7f6ddcf0d2941",
+      "id_truncated": false,
+      "category_label": "women_dresses_multisite",
+      "seasonal": false,
+      "quality_status": "PARTIAL_SOURCE_MISSING",
+      "fields": {
+        "title": "lululemon Align™ High-Neck Dress Light Support, A/B Cup",
+        "category_name": "Women Dresses",
+        "canonical_url": "https://shop.lululemon.com/p/skirts-and-dresses-dresses/Align-High-Neck-Dress-LS-AB-Cup-MD/_/prod11870964?color=31382",
+        "image_url": "https://images.lululemon.com/is/image/lululemon/31382?wid=34&hei=34&fit=crop",
+        "raw_evidence_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+        "design_signals": [
+          {
+            "kind": "details",
+            "text": "列表标题: lululemon Align™ High-Neck Dress Light Support, A/B Cup | 列表信息: lululemon Align™ High-Neck Dress Light Support, A/B Cup | 详情状态: fetch_failed: HTTPError"
+          }
+        ],
+        "product_details_text": "列表标题: lululemon Align™ High-Neck Dress Light Support, A/B Cup | 列表信息: lululemon Align™ High-Neck Dress Light Support, A/B Cup | 详情状态: fetch_failed: HTTPError",
+        "category_source": "https://shop.lululemon.com/c/women-dresses/n1mk31",
+        "detail_status": "fetch_failed: HTTPError"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_ceadcc0f8214e93b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "title",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=商品名称",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_45ea4f26f11ed10b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_name",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "medium",
+          "note": "由交付目录品类范围确定"
+        },
+        "canonical_url": {
+          "evidence_id": "ev_025eaf21de4f3578",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "canonical_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=商品URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "image_url": {
+          "evidence_id": "ev_2bc81fe3cc698b12",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "image_url",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=主图URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "raw_evidence_path": {
+          "evidence_id": "ev_c75b7f6054efc71d",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "raw_evidence_path",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "design_signals": {
+          "evidence_id": "ev_69f8fe98bba52c23",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "design_signals",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=商品描述/材质/洗护/颜色/尺码/商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "product_details_text": {
+          "evidence_id": "ev_45bbbc2b325e0a2b",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "product_details_text",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=商品详细信息",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "category_source": {
+          "evidence_id": "ev_9d027a41b6434148",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "category_source",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=连衣裙类目URL",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        },
+        "detail_status": {
+          "evidence_id": "ev_c12f356eb2183aee",
+          "source_id": "frontend_lululemon",
+          "source_type": "frontend",
+          "tool_or_adapter": "full_selection_input_normalizer/1.0",
+          "field_path": "detail_status",
+          "artifact_path": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx",
+          "record_locator": "sheet=商品详情;row=27;column=详情采集状态",
+          "observed_at": "2026-07-10T13:25:47+00:00",
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "26 行详情采集状态为失败或受阻，保留列表事实并降级。"
+  ],
+  "artifact_paths": {
+    "workbook": "06.分级系统数据源/前端数据源最终报表_按站点/Lululemon.xlsx"
+  },
+  "schema_version": "source.envelope.v1"
+}

@@ -1,0 +1,351 @@
+{
+  "task_type": "profile_extraction",
+  "candidate_id": "amazon_B0FV8B1HD4",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只依据 inputs.text 中的真实文本判断，不得使用外部知识补全事实",
+    "带 vocab 的键取值必须严格从词表中选择；判断不了就进 missing_fields",
+    "multi 键可给列表；每个键必须带 evidence_refs 与 confidence"
+  ],
+  "inputs": {
+    "key_set": "womenswear",
+    "keys": {
+      "服饰大类": {
+        "vocab": [
+          "上装",
+          "下装",
+          "连衣裙",
+          "外套",
+          "内衣",
+          "睡衣",
+          "泳装",
+          "运动服",
+          "配饰"
+        ]
+      },
+      "产品小类": {
+        "vocab_open": true,
+        "hint": "T-shirt/Dress/Blouse/Leggings/Hoodie/Bra 等"
+      },
+      "适用性别": {
+        "vocab": [
+          "Women",
+          "Men",
+          "Girls",
+          "Boys",
+          "Baby",
+          "Unisex"
+        ]
+      },
+      "款式风格": {
+        "vocab": [
+          "Casual",
+          "Elegant",
+          "Sexy",
+          "Boho",
+          "Streetwear",
+          "Business",
+          "Sporty",
+          "Vintage"
+        ]
+      },
+      "版型": {
+        "vocab": [
+          "Slim Fit",
+          "Regular Fit",
+          "Loose Fit",
+          "Oversized"
+        ]
+      },
+      "廓形": {
+        "vocab": [
+          "A-line",
+          "Straight",
+          "Bodycon",
+          "Wide Leg",
+          "Flare"
+        ]
+      },
+      "裙长": {
+        "vocab": [
+          "Mini",
+          "Midi",
+          "Maxi"
+        ]
+      },
+      "领型": {
+        "vocab": [
+          "Crew Neck",
+          "V Neck",
+          "Square Neck",
+          "Halter",
+          "Collared",
+          "One Shoulder"
+        ]
+      },
+      "袖长": {
+        "vocab": [
+          "Sleeveless",
+          "Short Sleeve",
+          "Long Sleeve"
+        ]
+      },
+      "开合方式": {
+        "vocab": [
+          "Pullover",
+          "Button",
+          "Zipper",
+          "Tie",
+          "Snap"
+        ]
+      },
+      "装饰元素": {
+        "vocab": [
+          "Lace",
+          "Ruffle",
+          "Bow",
+          "Sequin",
+          "Embroidery",
+          "Cutout",
+          "Print"
+        ],
+        "multi": true
+      },
+      "图案类型": {
+        "vocab": [
+          "Solid",
+          "Floral",
+          "Striped",
+          "Plaid",
+          "Graphic"
+        ],
+        "multi": true
+      },
+      "适用场景": {
+        "vocab": [
+          "日常",
+          "通勤",
+          "派对",
+          "度假",
+          "运动",
+          "居家",
+          "婚礼",
+          "校园"
+        ],
+        "multi": true
+      },
+      "适用季节": {
+        "vocab": [
+          "Spring",
+          "Summer",
+          "Fall",
+          "Winter",
+          "All Season"
+        ],
+        "multi": true
+      },
+      "节日属性": {
+        "vocab_open": true,
+        "hint": "Christmas/Halloween/Valentine's Day/Independence Day 或 无"
+      },
+      "面料类型": {
+        "vocab": [
+          "Knit",
+          "Woven",
+          "Denim",
+          "Chiffon",
+          "Satin",
+          "Fleece",
+          "Mesh",
+          "Silicone"
+        ]
+      },
+      "弹力": {
+        "vocab": [
+          "无弹",
+          "微弹",
+          "高弹",
+          "四面弹"
+        ]
+      }
+    },
+    "text": {
+      "title": "WIHOLL Summer Dresses Cap Sleeve Crewneck Maxi Long Casual Dress with Pockets Beach Vacation Sundresses 2026 Trendy",
+      "title_cn": "WIHOLL 夏季连衣裙盖袖圆领超长休闲连衣裙带口袋海滩度假背心裙 2026 时尚",
+      "category_name": "Casual",
+      "category_path": [
+        "Clothing, Shoes & Jewelry",
+        "Women",
+        "Clothing",
+        "Dresses",
+        "Casual"
+      ],
+      "design_signals": [
+        {
+          "kind": "bullet_points",
+          "text": "✦ Flattering Crew Neck & Cap Sleeve Design: This timeless maxi dress features a soft crew neck and cap sleeves that cover arms gently, with a flowing curved hem that skims your figure beautifully. Hugs in all the right places without feeling restrictive—ideal for everyday confidence. Cap Sleeve/ Crew Neck/ Maxi Dress/ Curved Hem/ Classic Fit/ Versatile Dress/ Solid Color/ Floral Print.|||✦ Ultra-Soft All-Day Comfort Fabric: Crafted from 95% Polyester + 5% Spandex blend, this dress feels silky smooth against skin—lightweight yet not sheer. Breathable for warm days and wrinkle-resistant, perfect for travel or busy schedules (no ironing needed!) .|||✦ Effortlessly Versatile for Every Occasion: Dress down with sneakers for grocery runs, layer with a blazer for office meetings, or add a belt and heels for dinner dates. Works for brunch, church, family gatherings, vacation, or casual home days—truly a wardrobe staple .|||✦ Fits All Body Types Perfectly: Sizes S(US 4-6), M(US 8-10), L(US 12-14), XL(US 16-18), XXL(US 20-22). True-to-size fit that flatters curves and offers room to move—choose your regular size for a comfortable, polished look .|||✦ Easy Care & Long-Lasting Quality: Machine washable (cold water) and tumble dry low—colors stay vibrant wash after wash. No dry cleaning needed, saving you time and money. Available in neutral solids and subtle florals you’ll reach for again and again ."
+        },
+        {
+          "kind": "material",
+          "text": "95% Polyester, 5% Spandex"
+        },
+        {
+          "kind": "attributes",
+          "text": "{\"STYLE\":{\"Color\":\"Floral Black Flowers\",\"Occasion Type\":\"beach, casual, travel, vacation, work\",\"Apparel Silhouette\":\"A-line\",\"Neck Style\":\"Crew Neck\",\"Sleeve Type\":\"Cap Sleeve\",\"Seasons\":\"Summer\",\"Apparel Occasion and Lifestyle\":\"Casual\",\"Style Name\":\"Soft\",\"Back Style\":\"Closed Back\",\"Strap Type\":\"Cap Sleeve\",\"Pattern\":\"Printed\",\"Waist Style\":\"Mid Waist\",\"collar-type\":\"Crew Neck\"},\"MEASUREMENTS\":{\"Item Length Description\":\"Maxi\",\"Special Size Type\":\"Standard\"},\"FEATURES & SPECS\":{\"Sleeve Length Description\":\"Short Sleeve\",\"Fit to Size Sentiment\":\"True\",\"Shoulder to Bottom Hem Length\":\"120 Centimeters\",\"Fit Type\":\"Standard\"},\"ITEM DETAILS\":{\"Brand Name\":\"WIHOLL\",\"Age Range Description\":\"Adult\",\"Garment Size Country\":\"United States\",\"Unit Count\":\"1 Count\"},\"MATERIALS & CARE\":{\"Material Type\":\"Polyester\",\"Product Care Instructions\":\"Machine Wash\",\"Apparel Fabric Weight Class\":\"Lightweight\",\"Apparel Fabric Stretch\":\"High Stretch\",\"Fabric Type\":\"95% Polyester, 5% Spandex\"}}"
+        },
+        {
+          "kind": "review_summary",
+          "text": "Customers find the dress flattering, comfortable, and well-made, with one mentioning it's perfect for summer wear. The dress is soft and features pockets, and customers like its appearance, with one noting it looks summery. The length receives mixed feedback - while some find it nice, others say it's too long. The fabric quality is also mixed, with some praising the material while others find it thin and cheaply made."
+        }
+      ],
+      "trend_tags": [
+        "sales_trend_rising",
+        "bsr_improving"
+      ],
+      "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":113,\"positive\":93,\"negative\":20,\"snippets\":[\"Customers like how the dress fits, describing it as loose and flattering, with one customer noting it skims over their curves.\",\". The Material makes it very comfortable and lightweight. I would highly recommend this dress!...\",\". I’m sure if I’m walking and the wind is blowing, you can see my tummy, but otherwise it flatters my shape very well....\",\"and fabric is decent considering a lot of Amazon items are really cheaply made....\",\"...True to size. Not a fit tight and not big, and very comfortable.\",\"and does not feel heavy for a long dress. Everyone loved it.\"]},{\"tag\":\"comfort\",\"mentions\":97,\"positive\":97,\"negative\":0,\"snippets\":[\"Customers find the dress comfortable, with one mentioning it works well for casual shopping and another noting its true-to-size fit.\",\"as well! I’m 7 months pregnant and it looks great with my bump. I’ll definitely wear it postpartum as well....\",\", cool in hot floria heat, pockets hold cell phone without falling out when, washes up like a dream and no wrinkles....\",\". Perfect fit and does not feel heavy for a long dress. Everyone loved it.\",\"and I feel really pretty when I wear it. The low price is the icing on top!...\"]},{\"tag\":\"appearance\",\"mentions\":95,\"positive\":91,\"negative\":4,\"snippets\":[\"Customers find the dress visually appealing, with one mentioning it has a summery look and another noting the well-done print.\",\"and comfortable. Wish the sleeves were just a tad bit longer. I don’t like showing too much of my arms. But it is cute dress....\",\"! Nice length. I will definitely get a lot of wear out of it for Spring and summer!\",\", feels great. Its very flattering, even if your body isn't perfect. The pockets are such great addition.\"]},{\"tag\":\"quality\",\"mentions\":71,\"positive\":59,\"negative\":12,\"snippets\":[\"Customers find the dress to be of good quality, describing it as a perfect Hawaiian dress.\",\", not too long or short, pockets are great. The material is higher quality and the pattern is as shown. True to size.\",\", feels soft on skin and not clingy. Love the pockets and was true to size. You can add a belt to dress it up.\",\". Good material. Size fits nicely. And of course the most important thing, IT Has Pockets!!!\",\"! Can be dressed up for a party or worn casually for comfort to shop.\"]},{\"tag\":\"softness\",\"mentions\":45,\"positive\":44,\"negative\":1,\"snippets\":[\"Customers find the dress super soft and comfortable to wear.\",\", very cool for warm weather. I now own 2 of them. Best part ... it has POCKETS!!!...\",\"! Has pockets and I'm 5'6\\\" and the length is perfect. Lands just at the top of my foot!\",\"but not clingy. Neck is a little high, but it feels comfortable. At 5'3\\\" length is perfect for me with flat or low heel sandals.\"]},{\"tag\":\"pockets\",\"mentions\":42,\"positive\":41,\"negative\":1,\"snippets\":[\", doesn't look like a moo moo or potato bag, for it being a loose...\",\". Lightweight fabric with stretch. Super Comfy. Always get tons of compliments!\",\"I love ittttt. I have a bigger stomach and this hides it. It has\"]},{\"tag\":\"fabric quality\",\"mentions\":60,\"positive\":38,\"negative\":22,\"snippets\":[\"Customers have mixed opinions about the fabric quality of the dress, with some loving it and finding it nice, while others mention it's not what they expected.\",\". They could have cut on the fold like the front. Maybe it was just the one delivered to me and if so, I hope your dress is better.\"]},{\"tag\":\"length\",\"mentions\":43,\"positive\":29,\"negative\":14,\"snippets\":[\"Customers have mixed opinions about the dress's length, with some finding it nice while others say it's too short to wear.\",\", just like the model, love the pockets, doesn't look like a moo moo or potato bag, for it being a loose...\",\". I will definitely get a lot of wear out of it for Spring and summer!\",\". I am 5'2\\\" and it is only half an inch from the floor. I realize I'm not tall but I don't typically have dresses fall THAT long\",\"...bottom and this is flowing enough that it fits perfectly and it’s\"]}]"
+    }
+  },
+  "allowed_evidence_ids": [
+    "ev_2a70326908660c75",
+    "ev_398e3698b47ca306",
+    "ev_723cc32216f51edf",
+    "ev_86d371b1b6a5e0d0",
+    "ev_8b3c36f599391537",
+    "ev_d13b9eaef7b1ba52",
+    "ev_de25d9732aa013f1"
+  ],
+  "output_schema": {
+    "profile": {
+      "服饰大类": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "产品小类": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用性别": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "款式风格": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "版型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "廓形": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "裙长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "领型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "袖长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "开合方式": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "装饰元素": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "图案类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用场景": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用季节": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "节日属性": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "面料类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "弹力": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    },
+    "missing_fields": [
+      "输入文本不足以判断的键，逐个列出"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

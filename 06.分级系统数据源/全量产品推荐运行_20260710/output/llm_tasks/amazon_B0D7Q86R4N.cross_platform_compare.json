@@ -1,0 +1,251 @@
+{
+  "task_type": "cross_platform_compare",
+  "candidate_id": "amazon_B0D7Q86R4N",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只比较 inputs 里已有的 matched_products 与价格带，不得凭空找同款",
+    "不得把不同币种的价格直接换算比较"
+  ],
+  "inputs": {
+    "title": "elescat Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026",
+    "platform": "amazon",
+    "matched_products": [
+      {
+        "source_id": "seller_sprite_amazon",
+        "envelope_id": "envelope_seller_sprite_amazon_20260710",
+        "product_id": "B0D7Q86R4N",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "frontend_amazon",
+        "envelope_id": "envelope_frontend_amazon_20260710",
+        "product_id": "B0D7Q86R4N",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [
+      {
+        "style_group": "dress",
+        "source_group": "候选自身（amazon）",
+        "currency": "USD",
+        "n": 1,
+        "p25": 14.99,
+        "p50": 14.99,
+        "p75": 14.99,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "amazon_plugin",
+        "currency": "USD",
+        "n": 200,
+        "p25": 14.99,
+        "p50": 26.48,
+        "p75": 37.99,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_aerie",
+        "currency": "USD",
+        "n": 20,
+        "p25": 52.46,
+        "p50": 54.95,
+        "p75": 59.95,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_alo_yoga",
+        "currency": "USD",
+        "n": 45,
+        "p25": 138.0,
+        "p50": 138.0,
+        "p75": 138.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_amazon",
+        "currency": "USD",
+        "n": 399,
+        "p25": 18.88,
+        "p50": 29.99,
+        "p75": 39.99,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_cupshe",
+        "currency": "USD",
+        "n": 48,
+        "p25": 32.75,
+        "p50": 36.0,
+        "p75": 40.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_for_love_lemons",
+        "currency": "USD",
+        "n": 116,
+        "p25": 22900.0,
+        "p50": 28250.0,
+        "p75": 31900.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_good_american",
+        "currency": "USD",
+        "n": 12,
+        "p25": 93.0,
+        "p50": 138.0,
+        "p75": 148.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_lulus",
+        "currency": "USD",
+        "n": 21,
+        "p25": 69.0,
+        "p50": 79.0,
+        "p75": 99.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_madewell",
+        "currency": "USD",
+        "n": 31,
+        "p25": 123.0,
+        "p50": 148.0,
+        "p75": 158.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_quince",
+        "currency": "USD",
+        "n": 89,
+        "p25": 59.9,
+        "p50": 69.9,
+        "p75": 99.9,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_reformation",
+        "currency": "USD",
+        "n": 47,
+        "p25": 248.0,
+        "p50": 278.0,
+        "p75": 313.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_skims",
+        "currency": "USD",
+        "n": 24,
+        "p25": 68.0,
+        "p50": 86.0,
+        "p75": 98.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "tiktok_shop_plugin",
+        "currency": "CNY",
+        "n": 88,
+        "p25": 168.96,
+        "p50": 275.63,
+        "p75": 345.18,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "frontend_amazon 语料中有 318 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 318,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "amazon_plugin 语料中有 153 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 153,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "tiktok_shop_plugin 语料中有 24 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 24,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_quince 语料中有 1 款标题命中相同风格词 ['dresses']",
+        "kind": "style_token_overlap",
+        "count": 1,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ],
+    "note": "不同来源币种不同且未换算；同风格信号不构成同款结论"
+  },
+  "allowed_evidence_ids": [
+    "ev_037a2245e1638500",
+    "ev_07d2ae7adc7075d2",
+    "ev_2ddbc260b6bf05de",
+    "ev_372cd4a040e6df08",
+    "ev_3a226fecf2ff7c25",
+    "ev_4e644b9122899e81",
+    "ev_4f896cfbca4b2a0a",
+    "ev_5de937c0522f96dd",
+    "ev_6211f9bff38d668f",
+    "ev_6d0454b44eebf900",
+    "ev_7c99a6e95ebb7b01",
+    "ev_884564d47782046a",
+    "ev_8ab3767bd0b013cd",
+    "ev_8d2920878e7709f0",
+    "ev_92bfc56146d01a73",
+    "ev_9cd2e9e2dfee8134",
+    "ev_b818963b28fb15af",
+    "ev_c8994d8cc1a40023",
+    "ev_c94f0c76e9e0a8d6",
+    "ev_caddda9f2a0289b9",
+    "ev_cb5fbb2f53c7c0ca",
+    "ev_d743ca21efb35296",
+    "ev_dd49a0374b343cb4",
+    "ev_e42c1d3b3abfbc78",
+    "ev_eba6eebd89a99b4e"
+  ],
+  "output_schema": {
+    "platform_priority": "str（平台 id）",
+    "red_ocean_level": "high|medium|low",
+    "differentiation_space": [
+      "str"
+    ],
+    "final_suggestion": "str",
+    "claims": [
+      {
+        "claim": "str",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

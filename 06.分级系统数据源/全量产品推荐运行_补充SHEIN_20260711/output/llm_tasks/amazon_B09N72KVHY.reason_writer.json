@@ -1,0 +1,162 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "amazon_B09N72KVHY",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "Summer Dresses for Women Beach Boho Sleeveless Vintage Floral Flowy Pocket Tshirt Tank Sundresses 2026",
+    "grade": "S",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 24.0,
+        "max": 30.0,
+        "reason": "量级信号 sales_30d_units=36,574 -> 12分；销量/销售额增长率 +57.3% -> 5分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_06e7a10741c219a8",
+          "ev_41646a6ceb94850c"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 6.8,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_1616ba17f8ca7856",
+          "ev_248854b95fb65d71",
+          "ev_851212fba8990b78",
+          "ev_d2a7fc473fdf2f2b"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 6.8,
+        "max": 15.0,
+        "reason": "评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_370087eaefe93cf0",
+          "ev_39316449484666ac",
+          "ev_a13e20b13d908bde"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": 0.0,
+        "max": 0.0,
+        "reason": "未命中风险规则（赛道风险系数×1.33）",
+        "evidence_refs": []
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=36,574 -> 12分；销量/销售额增长率 +57.3% -> 5分；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_06e7a10741c219a8",
+          "ev_41646a6ceb94850c"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_1616ba17f8ca7856",
+          "ev_248854b95fb65d71",
+          "ev_851212fba8990b78",
+          "ev_d2a7fc473fdf2f2b"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_370087eaefe93cf0",
+          "ev_39316449484666ac",
+          "ev_a13e20b13d908bde"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_4423a20f476e0b9c",
+          "ev_3cb63be344499711"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "同风格红海程度：高（语料内同风格候选 536 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_4423a20f476e0b9c",
+          "ev_3cb63be344499711"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_0afb2a75fc2f4e70"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_06e7a10741c219a8",
+    "ev_0afb2a75fc2f4e70",
+    "ev_1616ba17f8ca7856",
+    "ev_17e246d4c2efd9d7",
+    "ev_248854b95fb65d71",
+    "ev_2aa8775556095b26",
+    "ev_2e60813d86bce00e",
+    "ev_370087eaefe93cf0",
+    "ev_383b82c77dc4524b",
+    "ev_39316449484666ac",
+    "ev_3cb63be344499711",
+    "ev_41646a6ceb94850c",
+    "ev_4423a20f476e0b9c",
+    "ev_4dd01c499eba5066",
+    "ev_64383f3d1b5678ee",
+    "ev_6a249ea0d19fd68e",
+    "ev_832100a85407acd7",
+    "ev_851212fba8990b78",
+    "ev_8d9366e42fe6f734",
+    "ev_a044ffb0412b9d7d",
+    "ev_a13e20b13d908bde",
+    "ev_bc69b00461c74585",
+    "ev_c8bccbad5038aeb7",
+    "ev_d2a7fc473fdf2f2b",
+    "ev_e6a7b847f1782515"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

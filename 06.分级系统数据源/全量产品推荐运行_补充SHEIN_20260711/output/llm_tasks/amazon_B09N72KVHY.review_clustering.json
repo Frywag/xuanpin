@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B09N72KVHY",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Summer Dresses for Women Beach Boho Sleeveless Vintage Floral Flowy Pocket Tshirt Tank Sundresses 2026",
+    "rating": 4.4,
+    "review_count": 19566.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":1558,\"positive\":1295,\"negative\":263,\"snippets\":[\"Customers find the dress flattering, not tight, and slimming.\",\"...I'm 5'4, 198, and purchased the xxl. It fits perfectly and is\",\". Gives me plenty of space and flair. I'm buying a couple of different colors!\",\"! love the pockets and flow of the dress! ordered another in different pattern....\",\"I’ve collected a few of this dress style and they all fit the need.\",\", pockets and perfect for casual summer wear. Highly recommend\",\", it looks more like a nightgown than a dress and I would not be comfortable wearing it in the...\"]},{\"tag\":\"appearance\",\"mentions\":1377,\"positive\":1279,\"negative\":98,\"snippets\":[\"Customers find the dress chic, high quality, and exactly as described.\",\", but I have to return it. I am very sad as I got is on sale and now I will have to pay full price if I want it. It runs large....\",\"and very comfortable. It fits true to size, on me anyway. I’m going to buy some more in different colors. Lol\",\"but too short for me. I am older and 5’ 7” and it was about 3” above the knee. It fit very well otherwise. Be cute on a younger me.\",\"ever! I am 5’10”, it comes to about 3-4” above my knees and as I am old, I wear it with a pair of capri leggings....\"]},{\"tag\":\"comfort\",\"mentions\":1161,\"positive\":1141,\"negative\":20,\"snippets\":[\"Customers find the dress comfortable, particularly in hot weather, and appreciate that it has pockets.\",\"The pattern and color is pretty, it‘s a very loose fit that’s\",\"but not very flattering. After a few washes, the fabric is already pilling.\",\"...I have bought several of these other dresses this year as they’re\",\", have pockets and fit well but was disappointed when my dress was...\",\"& cute dress ever! I am 5’10”, it comes to about 3-4” above my knees and as I am old, I wear it with a pair of capri leggings....\",\"Love, Love, Love this dress. Besides the beautiful pattern, it is\",\"and the coolest thing to wear on a 90 degree, 90% humid day which...\"]},{\"tag\":\"quality\",\"mentions\":530,\"positive\":481,\"negative\":49,\"snippets\":[\"Customers find the dress well-constructed, with one mentioning it's sewn without feeling cheap.\",\"! Nicer material than expected. Very good quality for money! And… pockets!!! This can dress up or just use as beach cover up. Great find!!!\",\". This will be a staple for around the house and errands. Loose, super comfy, and pretty. That’s what I was looking for!...\",\". This is my 2nd one. I left the original one on vacation by mistake. Was thinking of getting another as a spare. Lol. Seriously.\",\"This dress is so pretty and feminine. The material is soft and seems\",\". I ordered the small but returned for a medium. I'm 5'9 120 lbs....\"]},{\"tag\":\"pockets\",\"mentions\":472,\"positive\":445,\"negative\":27,\"snippets\":[\"Customers like the dress's pockets, describing them as nice and perfect for summer wear, with one customer noting that they fall below the waist and don't stick out.\",\". A great summer addition. Material is soft and flowey. So many designs to choose from. Great quality and great price.\",\". I liked it so much when I tried it on, I went ahead and ordered a second one....\",\"it's a nice little dress to wear around the house or if you're just running to the store the...\",\". Husband likes it too! Bought the 2x, I don’t like tight or clingy clothes.\"]},{\"tag\":\"color\",\"mentions\":465,\"positive\":400,\"negative\":65,\"snippets\":[\"Customers like the dress's colors, with one mentioning that the print is vibrant.\",\"! Not cheap made. Easy to wear casually or dressy. Pleased with this purchase at a great price!\",\"and beautiful. I am 5' 1\\\", 155-160 lbs. My measurements are 38DDD, 33, 37....\",\"...quality, washes well, no shrinkage, no pilling, very comfortable,\",\", can be worn anywhere. Got many compliments and bought a few more.\",\"and style of this dress. Was looking for something simple to slip on while on vacation and this fits what I was wanting perfectly.\"]},{\"tag\":\"versatility\",\"mentions\":416,\"positive\":410,\"negative\":6,\"snippets\":[\"Customers find the dress versatile, describing it as a go-to piece for all occasions that can be dressed up or down.\",\"...you want a more sophisticated look or wear flip flops with it and be\",\". It's super cute and it's great for those hot and humid days.\",\"This lovely green dress fits as expected and is comfortable. It's a\",\", great to wear to church, to dine out, or around the house to relax...\",\"...to wear around the house or split on some cute sandals and it\"]},{\"tag\":\"fabric\",\"mentions\":588,\"positive\":407,\"negative\":181,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it great and noting it's not sheer, while others describe it as cheap polyester.\",\". But way to long for my 5' body. I wish they would make more clothing for petite women. Its so frustrating....\",\". Nice deep pockets. Fits perfectly with plenty of room. I weigh 150 and bought SzL.\",\". However, the color of the striped dress doesn’t match the picture. It is ok but was disappointing....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_248854b95fb65d71",
+    "ev_370087eaefe93cf0",
+    "ev_39316449484666ac",
+    "ev_64383f3d1b5678ee",
+    "ev_851212fba8990b78"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

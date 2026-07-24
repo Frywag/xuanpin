@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0GHDPMXWV",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Backless Cami Dress Backless Dress House Dress for Women Sleeveless Long Cami Lounge Dress Backless for Indoor Summer Wear",
+    "rating": 4.4,
+    "review_count": 558.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":98,\"positive\":81,\"negative\":17,\"snippets\":[\"Customers appreciate the dress's fit, noting it is true to size with a loose design that allows plenty of movement.\",\"...this dress makes me feel comfortable while still looking cute and\",\"the flowy fabric and open back design create such a pretty effortless...\"]},{\"tag\":\"comfort\",\"mentions\":79,\"positive\":70,\"negative\":9,\"snippets\":[\"Customers find the dress comfortable, describing it as ideal for everyday wear and big but forgiving. One customer mentions it doesn't irritate the skin at all, while another notes it's not scratchy.\",\"and confident in this dress it is not tight anywhere and the fabric feels amazing which makes it easy to wear for long periods.\",\"...These are the perfect summer dress, with just the right balance of\",\", practical and sexy to make any mama feel ready for summer.\",\"and I feel incredible in it 😊 I got a M, could have sized down to a S! For reference 5’4” 170lbs\"]},{\"tag\":\"style\",\"mentions\":72,\"positive\":71,\"negative\":1,\"snippets\":[\"Customers appreciate the dress's style, particularly its low back and open back detail, which makes them feel sexy around the house. One customer mentions it's perfect for summer or around the house, while another notes it looks polished enough to wear outside the home.\",\". It is easy. I cannot emphasize enough how much I love this dress....\",\"but it’s definitely not navy blue. It’s a much brighter blue, which is not what I wanted.\",\"...in every color not just for you but for your Man love the comfy feel &\",\"and comfortable!! Worth the price! Be ready for ur partner to not leave you alone tho😆\"]},{\"tag\":\"softness\",\"mentions\":52,\"positive\":44,\"negative\":8,\"snippets\":[\"Customers find the dress incredibly soft and luxurious, with one customer noting that the fabric isn't scratchy.\",\"...TikTok trends but this dress completely lived up to the hype it is\",\"comfortable flattering and easy to wear I love that it works for relaxing at...\",\"and breathable and the cut is very forgiving. The open back makes it feel fashionable without being too revealing....\",\"...or cheap feeling but the material is actually very nice it is\",\"...I purchased the darker green color. The back is very low. The\",\"and flows as she walks. I like it because it's quite sexy on her....\"]},{\"tag\":\"household use\",\"mentions\":34,\"positive\":33,\"negative\":1,\"snippets\":[\"Customers find the dress perfect for lounging around the house and holidays, with one mentioning it's great for casual daytime wear with sandals.\",\", with just the right balance of comfy, practical and sexy to make any mama feel ready for summer.\",\"at the end of a long day. Love the feel, color and how light weighted it feels. Fun and sexy.\"]},{\"tag\":\"adjustability\",\"mentions\":28,\"positive\":28,\"negative\":0,\"snippets\":[\"Customers appreciate the dress's adjustability, particularly its adjustable back and straps.\",\"...The material feels soft and smooth, not cheap at all. The\",\"helps create a flattering fit, and the dress looks great whether I'm...\",\"and elegant design make it stand out from other casual dresses. I highly recommend it to anyone looking for comfort and style.\",\"...I’m short (5’1) and the dress reaches the top of my feet. It’s\",\"provide as much tightness or looseness around the chest you’d like.\"]},{\"tag\":\"quality\",\"mentions\":33,\"positive\":21,\"negative\":12,\"snippets\":[\"Customers have mixed opinions about the dress's quality, with some finding it nice while others report issues with poorly sewn seams.\",\"...waited over two weeks for this to arrive just to receive a\",\"...I’ll order a small and hope that’s a bit shorter. Overall, a\"]},{\"tag\":\"fabric quality\",\"mentions\":32,\"positive\":20,\"negative\":12,\"snippets\":[\"Customers have mixed opinions about the fabric quality of the dress, with some finding it nice and amazing to feel, while others describe it as awful.\",\". The open back gives it a feminine look while still being easy to wear....\",\", tie doesn't stay tied without a knot. Seam are not well sewn and already showing separation. Wash in sink....\",\", love the fit... Not to loose, but also isn't fitted. Just right for cute and comfy vibes.\",\"I love how this dress drapes over the body without clinging the\",\"and high quality and the open back detail adds the perfect...\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_6398e9abc6ec02ac",
+    "ev_caf63d8a100b9fa3",
+    "ev_d53010faf612f634"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

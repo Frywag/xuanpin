@@ -1,0 +1,172 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "amazon_B0FQTR83H2",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "WIHOLL Summer Dresses for Women 2026 Maxi Dress Boho Halter Dress Sundresses Beach Vacation Clothes Travel Outfits",
+    "grade": "S",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 21.6,
+        "max": 30.0,
+        "reason": "量级信号 sales_30d_units=22,748 -> 9分；销量/销售额增长率 +99.1% -> 6分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_6df0a26e70e75c23",
+          "ev_902334de36f8df28"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 6.8,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_79c61a756887f883",
+          "ev_b63e89c7fb513e5e",
+          "ev_c047f87efddcd57c",
+          "ev_f818c9b241719fd9"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 6.8,
+        "max": 15.0,
+        "reason": "评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_2a0500bc6808ac10",
+          "ev_623f2e69225b5f31",
+          "ev_dda6ae2db66ef436"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「WIHOLL FASHION」品牌词出现在标题中（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_0b5ed170b2051626"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=22,748 -> 9分；销量/销售额增长率 +99.1% -> 6分；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_6df0a26e70e75c23",
+          "ev_902334de36f8df28"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_79c61a756887f883",
+          "ev_b63e89c7fb513e5e",
+          "ev_c047f87efddcd57c",
+          "ev_f818c9b241719fd9"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_2a0500bc6808ac10",
+          "ev_623f2e69225b5f31",
+          "ev_dda6ae2db66ef436"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「WIHOLL FASHION」品牌词出现在标题中（人工待确认）",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_0b5ed170b2051626"
+        ],
+        "confidence": "low"
+      },
+      {
+        "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_0868461b0fa5c4d3",
+          "ev_0b4c1c923cae5450"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "同风格红海程度：高（语料内同风格候选 1677 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_0868461b0fa5c4d3",
+          "ev_0b4c1c923cae5450"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_1b0d657d4bdc808f"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_0868461b0fa5c4d3",
+    "ev_0b4c1c923cae5450",
+    "ev_0b5ed170b2051626",
+    "ev_1944ea08f6b112f5",
+    "ev_1b0d657d4bdc808f",
+    "ev_2582aba2d49ea480",
+    "ev_2a0500bc6808ac10",
+    "ev_49eb4f54f5f47cd3",
+    "ev_579ba8961143f51d",
+    "ev_623f2e69225b5f31",
+    "ev_6df0a26e70e75c23",
+    "ev_6e83cf748aee66ac",
+    "ev_7293cc4a5b49d4b5",
+    "ev_79c61a756887f883",
+    "ev_902334de36f8df28",
+    "ev_9bd413703b212d14",
+    "ev_a01f0bfd69a3d0fe",
+    "ev_a416927496236f38",
+    "ev_b63e89c7fb513e5e",
+    "ev_c047f87efddcd57c",
+    "ev_cfc92a2a66bedc6a",
+    "ev_dda6ae2db66ef436",
+    "ev_e9cc83a6c0ed414d",
+    "ev_f7107b8e27bf5fad",
+    "ev_f818c9b241719fd9"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

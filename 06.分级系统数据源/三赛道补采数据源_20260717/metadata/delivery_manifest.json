@@ -1,0 +1,113 @@
+{
+  "schema_version": "system.delivery.folder.v1",
+  "package_id": "three_track_enrichment_20260717",
+  "generated_at": "2026-07-17T06:01:57.371440+00:00",
+  "direct_system_input": "三赛道补采_20260717.source_envelope.json",
+  "file_count_excluding_this_manifest": 19,
+  "total_bytes_excluding_this_manifest": 73443124,
+  "record_counts": {
+    "products": 1786,
+    "browser_pages_visited": 198,
+    "browser_pages_identity_accepted": 64,
+    "browser_pages_stale_redirect": 134,
+    "browser_updated_records": 64,
+    "browser_updated_fields": 196
+  },
+  "files": [
+    {
+      "path": ".DS_Store",
+      "bytes": 6148,
+      "sha256": "2b87e7b5b8db370700183f6904011ef9e1c7912e1f9f6845ba94e31b892c9a28"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1066,
+      "sha256": "d16a2ff97ab88fd9ab134224f33268bff92c585fa92919d4ee7b6305b546711b"
+    },
+    {
+      "path": "ledgers/field_coverage_ledger.jsonl",
+      "bytes": 6307432,
+      "sha256": "e2fcb1f57193f7f12d53846d2ff41ced69e09dd6553fe1ae552706e5d4494db0"
+    },
+    {
+      "path": "ledgers/media_mapping.jsonl",
+      "bytes": 809044,
+      "sha256": "2a9ed511855ab6ce977a88c22600d7b50a0bdfe30a94aff16f31fb26e40ba2a2"
+    },
+    {
+      "path": "processed/amazon_trend_word_frequency.jsonl",
+      "bytes": 16665,
+      "sha256": "ef31d2f787698a1eaedf3d26fe4cea0f1fa0e8ff47a6948b403db47881b47040"
+    },
+    {
+      "path": "processed/browser_refetch_identity_audit.jsonl",
+      "bytes": 96910,
+      "sha256": "97329bd8e1504b94e641464c4db7c4083e087a5608ec3793eaa6ff3fa4f0f8ef"
+    },
+    {
+      "path": "processed/enriched_candidate_facts.jsonl",
+      "bytes": 8464044,
+      "sha256": "874dd56f660957b6bd7f0dca2aefbe5fc1b1fc3a215be217ac7daf5aef1fdc53"
+    },
+    {
+      "path": "processed/refetch_status_summary.jsonl",
+      "bytes": 3382,
+      "sha256": "098ce5a55acd603605bdfc3ad9ced4576f02271f4641e9765ced35a1205f3ab7"
+    },
+    {
+      "path": "raw/Kalodata连衣裙全量采集_20260710.xlsx",
+      "bytes": 477587,
+      "sha256": "8e919e87bfd1e15304743fcd5263c488689ef5c47a8094375690c763d1052908"
+    },
+    {
+      "path": "raw/amazon_womens_dresses_skill.csv",
+      "bytes": 3767378,
+      "sha256": "7e50a7858f129a285f316ecb09c6986947d3978aa32a6aa0b27867e3bc2b9d49"
+    },
+    {
+      "path": "raw/browser/anthropologie_pdp_refetch_20260717.jsonl",
+      "bytes": 1237194,
+      "sha256": "0928b1038568c2648c714e360c70a733e9cba2a31b0e1157bce9ac9f4c57d4b7"
+    },
+    {
+      "path": "raw/browser/freepeople_pdp_refetch_20260717.jsonl",
+      "bytes": 469982,
+      "sha256": "05c680370482bb76cdda2f2bbdec52b5579b04f6b0dafb91432fd84fb211df10"
+    },
+    {
+      "path": "raw/browser/urbanoutfitters_pdp_refetch_20260717.jsonl",
+      "bytes": 587095,
+      "sha256": "8cc88ea606e079653a687b151e00f57662491f27028c3df123b1c9e39892a847"
+    },
+    {
+      "path": "raw/candidate_packets_20260717.jsonl",
+      "bytes": 12812914,
+      "sha256": "ad9fd31a81b14cf3d64f0e9f7b8252a47ff1bbf9267fbb7658cb6fff6c0ca6d8"
+    },
+    {
+      "path": "raw/patterned.xlsx",
+      "bytes": 2142080,
+      "sha256": "a62836092de9776f07344d8b461dac6b4447adee81f28089a2bcb30fcd7ec90a"
+    },
+    {
+      "path": "raw/独立站.xlsx",
+      "bytes": 22203999,
+      "sha256": "4738582647b4a29efff96eee5af260403777cddbfe1bb565712e6622a339000d"
+    },
+    {
+      "path": "workbooks/三赛道补采数据源索引_20260717.xlsx",
+      "bytes": 262979,
+      "sha256": "0a31ac01ae17e5a917411df1bd98cdd27ed6a23423e25c8b83fbdb9d90e28ff6"
+    },
+    {
+      "path": "workbooks/三赛道选品推荐表_补采版.xlsx",
+      "bytes": 2371360,
+      "sha256": "77e2e5118fa0ed80e9bf1371403c9a762c74f8878a1d61ac04de93f7b25cb497"
+    },
+    {
+      "path": "三赛道补采_20260717.source_envelope.json",
+      "bytes": 11405865,
+      "sha256": "67715cbe5fc781fa57cc68b25f7bdd85e8d951186cc0b48792c9d6fca5fa72cd"
+    }
+  ]
+}

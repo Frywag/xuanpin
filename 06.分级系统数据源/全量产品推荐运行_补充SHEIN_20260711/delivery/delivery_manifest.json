@@ -1,0 +1,28 @@
+{
+  "generated_from_run": "output",
+  "canonical_key_count": 152,
+  "delivery_products": 353,
+  "shein_products_added": 200,
+  "files": [
+    {
+      "path": "产品推荐表_全量数据_补充SHEIN_含入库152键_20260711.xlsx",
+      "bytes": 6935255,
+      "sha256": "9ad18356bc59d6daee537f60d2b654024f3cbdaaf5e488b35f9b40fada93461d"
+    },
+    {
+      "path": "产品推荐_补充SHEIN_入库152键_20260711.jsonl",
+      "bytes": 11728645,
+      "sha256": "3ee09d1ae96c471c48f80e0240f139c3e10f7615674c9dc7ef233fd23742db1e"
+    },
+    {
+      "path": "数据源充分性与SHEIN补充运行结论_20260711.md",
+      "bytes": 2022,
+      "sha256": "1d93a16fc263017d52fa91c7964670227a832049087af7a6513b379e78f2731a"
+    },
+    {
+      "path": "canonical_152_spec.json",
+      "bytes": 33286,
+      "sha256": "d386fec0702e26878b98e5693d2d3628661774a481775751081a6d4dfa28bb62"
+    }
+  ]
+}
