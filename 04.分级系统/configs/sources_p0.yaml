@@ -17,6 +17,39 @@ plugin_sources:
     category_label: tiktok_mixed   # Tabcut Top榜为全类目，逐行带真实类目名
 
 frontend_workbooks:
+  # Amazon 平台（segments.v1 主链任务；2026-07-24 接入 06.分级系统数据源）
+  - source_id: amazon_frontend
+    source_roles: [transaction, voc]
+    workbook: 06.分级系统数据源/前端数据源最终报表_按站点/Amazon.xlsx
+    category_label: women_dresses
+    seasonal: false
+    sites: [商品详情]
+    column_map:
+      product_id: SKU/商品ID
+      title: 商品名称
+      brand: 品牌
+      price: 价格
+      currency: 币种
+      rating: 评分
+      review_count: 评价数
+      url: 商品URL
+      image_url: 主图URL
+  - source_id: sellersprite_amazon
+    source_roles: [transaction, voc]
+    workbook: 06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx
+    category_label: women_dresses
+    seasonal: false
+    sites: [产品总表]
+    column_map:
+      product_id: ASIN
+      title: 英文标题
+      title_cn: 中文标题
+      brand: 品牌
+      price: 价格($)
+      rating: 星级
+      review_count: 评分数
+      sales_floor: 近30天销量(父体)
+
   - source_id: shein_frontend
     source_roles: [transaction, voc, discovery]   # 来源角色多值（附三赛道规则 §6）
     workbook: 03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx
