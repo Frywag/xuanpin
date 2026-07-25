@@ -1,0 +1,184 @@
+{
+  "schema_version": "analysis.result.v1",
+  "analysis_id": "analysis_tiktok_shop_1731406217255686451",
+  "candidate_id": "tiktok_shop_1731406217255686451",
+  "market": "US",
+  "layer_results": {
+    "L1": {
+      "passed": true,
+      "score": 53.8,
+      "grade": "A",
+      "gate_reason": "PScore 32.3/60.0（53.8%）-> A",
+      "required_next_data": []
+    },
+    "L2": {
+      "passed": true,
+      "score": 53.8,
+      "grade": "A",
+      "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+      "required_next_data": [
+        "reviews_or_review_tags"
+      ]
+    },
+    "L3": {
+      "passed": true,
+      "score": 53.8,
+      "grade": "A",
+      "gate_reason": "2 个数据源按商品ID互验（kalodata、tabcut）；同风格信号：tiktok_shop_plugin 语料中有 6 款标题命中相同风格词 ['bra', 'bras']；视频销售额占比 93%，内容驱动型，优先 TikTok Shop",
+      "required_next_data": [
+        "供应链字段人工调查（选品后画像存库用，不参与打分）"
+      ]
+    }
+  },
+  "priority_score": {
+    "total": 32.3,
+    "achievable_max": 60.0,
+    "pct": 53.8,
+    "grade": "A",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 27.6,
+        "max_score": 30.0,
+        "reason": "量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_kalodata_000011",
+          "ev_kalodata_000014",
+          "ev_tabcut_000132",
+          "ev_tabcut_000133"
+        ],
+        "missing": false
+      },
+      {
+        "name": "竞争可突破",
+        "score": 5.2,
+        "max_score": 15.0,
+        "reason": "类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分",
+        "evidence_refs": [
+          "ev_kalodata_000004",
+          "ev_kalodata_000077"
+        ],
+        "missing": false
+      },
+      {
+        "name": "产品机会",
+        "score": 7.5,
+        "max_score": 15.0,
+        "reason": "评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%",
+        "evidence_refs": [
+          "ev_kalodata_000076",
+          "ev_kalodata_000087"
+        ],
+        "missing": false
+      },
+      {
+        "name": "风险",
+        "score": -8.0,
+        "max_score": 0.0,
+        "reason": "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND；达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_kalodata_000080",
+          "ev_kalodata_000081"
+        ],
+        "missing": false
+      }
+    ],
+    "track": "trend_rising",
+    "track_label": "趋势上升款"
+  },
+  "track_tags": [
+    "趋势上升款"
+  ],
+  "recommendation": {
+    "decision": "research_more",
+    "reason_summary": "市场需求：量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源；竞争可突破：类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%",
+    "risk_summary": "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND（人工待确认）；达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%",
+    "next_actions": [
+      "补齐关键缺字段后复评",
+      "L3 完成，等待供应链输入与人审"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "市场需求：量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源",
+      "claim_type": "demand",
+      "evidence_refs": [
+        "ev_kalodata_000011",
+        "ev_kalodata_000014",
+        "ev_tabcut_000132",
+        "ev_tabcut_000133"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "竞争可突破：类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分",
+      "claim_type": "competition",
+      "evidence_refs": [
+        "ev_kalodata_000004",
+        "ev_kalodata_000077"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%",
+      "claim_type": "product",
+      "evidence_refs": [
+        "ev_kalodata_000076",
+        "ev_kalodata_000087"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND（人工待确认）",
+      "claim_type": "risk",
+      "evidence_refs": [
+        "ev_kalodata_000080"
+      ],
+      "confidence": "low"
+    },
+    {
+      "claim": "达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%",
+      "claim_type": "risk",
+      "evidence_refs": [
+        "ev_kalodata_000081"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "多源互验：kalodata、tabcut 按商品ID匹配到同一商品",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_kalodata_000008",
+        "ev_tabcut_000130"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "同风格红海程度：低（语料内同风格候选 6 款，词表确定性匹配）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_kalodata_000008",
+        "ev_tabcut_000130"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "平台优先级：tiktok_shop（视频销售额占比 93%，内容驱动型，优先 TikTok Shop）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_kalodata_000087"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "basic_facts.price(band)",
+    "product_opportunity.reviews"
+  ],
+  "blocked_reasons": [],
+  "confidence": "high",
+  "created_at": "2026-07-14T14:02:05+00:00"
+}

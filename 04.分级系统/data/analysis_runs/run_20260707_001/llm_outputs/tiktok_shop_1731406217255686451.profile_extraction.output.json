@@ -1,0 +1,13 @@
+{
+  "profile": {
+    "服饰大类": {"value": "内衣", "evidence_refs": ["ev_kalodata_000082"], "confidence": "high"},
+    "产品小类": {"value": "Bra", "evidence_refs": ["ev_kalodata_000008", "ev_kalodata_000082"], "confidence": "high"},
+    "适用性别": {"value": "Women", "evidence_refs": ["ev_kalodata_000008"], "confidence": "high"},
+    "款式风格": {"value": "Casual", "evidence_refs": ["ev_kalodata_000008"], "confidence": "medium"},
+    "适用场景": {"value": ["日常"], "evidence_refs": ["ev_kalodata_000008"], "confidence": "high"},
+    "适用季节": {"value": ["All Season"], "evidence_refs": ["ev_kalodata_000008"], "confidence": "low"},
+    "节日属性": {"value": "无", "evidence_refs": ["ev_kalodata_000008"], "confidence": "medium"}
+  },
+  "missing_fields": ["版型", "廓形", "裙长", "领型", "袖长", "开合方式", "装饰元素", "图案类型", "面料类型", "弹力"],
+  "assumptions": ["款式风格 Casual 依据标题 Everyday Bras 的日常定位推断", "适用季节 All Season 依据 Everyday/Tshirt Bra 的常服属性推断，置信度低"]
+}

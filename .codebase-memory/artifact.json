@@ -1,0 +1,11 @@
+{
+    "schema_version": 2,
+    "commit": "decad8e2e812769afe2cc17b0ff1b615ec9debf5",
+    "indexed_at": "2026-07-15T01:53:35Z",
+    "project": "product-selection",
+    "nodes": 20471,
+    "edges": 24641,
+    "original_size": 27983872,
+    "compressed_size": 2909475,
+    "compression_level": 3
+}

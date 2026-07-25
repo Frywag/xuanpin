@@ -1,0 +1,489 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "shein_496674906",
+  "market": "US",
+  "platform": "shein",
+  "primary_product_id": "496674906",
+  "canonical_url": "https://us.shein.com/EMERY-ROSE-Women-s-Plain-Weave-Casual-Office-Summer-Dress-p-496674906.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_496674906%7C0-2",
+  "source_refs": [
+    {
+      "source_id": "shein_frontend",
+      "envelope_id": "envelope_shein_frontend_20260708"
+    }
+  ],
+  "basic_facts": {
+    "title": "EMERY ROSE Women's Plain Weave Casual Office Summer Dress",
+    "brand": null,
+    "category_path": [],
+    "image_url": "https://img.ltwebstatic.com/v4/p/ccc/2025/07/09/0b/17520280931802ca2be226ad320153e3c68187388d.webp",
+    "price": {
+      "amount": 16.59,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 21.49,
+      "currency": "USD"
+    },
+    "discount_pct": -0.23,
+    "rating": 4.07,
+    "review_count": 79.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": null,
+    "sales_7d_units": null,
+    "sales_floor_units": 3100.0,
+    "revenue_30d": null,
+    "gmv_7d": null,
+    "sales_growth_rate": null,
+    "favorites_count": null,
+    "bestseller_rank_text": "#7 Bestseller in Floral Women Short Dresses",
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": [
+      {
+        "signal": "WorkwearBasics",
+        "kind": "platform_trend_tag",
+        "evidence_refs": [
+          "ev_shein_frontend_001681"
+        ]
+      }
+    ]
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [
+      {
+        "cluster_name": "款式与图片不符",
+        "mention_count": 1,
+        "representative_reviews": [
+          "Wrong Style (1)"
+        ],
+        "improvement_opportunity": "图片与实物一致性管控",
+        "risk_if_unfixed": "信任流失、差评",
+        "evidence_refs": [
+          "ev_shein_frontend_001682"
+        ],
+        "frequency_hint": "low"
+      },
+      {
+        "cluster_name": "正面标签",
+        "tags": [
+          {
+            "tag": "No Smell",
+            "count": 1
+          },
+          {
+            "tag": "Casual",
+            "count": 2
+          },
+          {
+            "tag": "Vacation Outfits",
+            "count": 1
+          },
+          {
+            "tag": "Summer Outfits",
+            "count": 1
+          },
+          {
+            "tag": "Worth Buying",
+            "count": 3
+          },
+          {
+            "tag": "Good Quality",
+            "count": 5
+          },
+          {
+            "tag": "Flowy",
+            "count": 2
+          },
+          {
+            "tag": "Beautiful",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "negative_review_clusters": [
+      {
+        "cluster_name": "款式与图片不符",
+        "mention_count": 1,
+        "representative_reviews": [
+          "Wrong Style (1)"
+        ],
+        "improvement_opportunity": "图片与实物一致性管控",
+        "risk_if_unfixed": "信任流失、差评",
+        "evidence_refs": [
+          "ev_shein_frontend_001682"
+        ],
+        "frequency_hint": "low"
+      }
+    ],
+    "improvement_points": [
+      {
+        "point": "图片与实物一致性管控",
+        "from_cluster": "款式与图片不符",
+        "evidence_refs": [
+          "ev_shein_frontend_001682"
+        ]
+      }
+    ],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [],
+    "platform_price_comparison": [
+      {
+        "style_group": "dress",
+        "source_group": "候选自身（shein）",
+        "currency": "USD",
+        "n": 1,
+        "p25": 16.59,
+        "p50": 16.59,
+        "p75": 16.59,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "indie_frontend",
+        "currency": "USD",
+        "n": 686,
+        "p25": 88.0,
+        "p50": 128.0,
+        "p75": 188.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "shein_frontend",
+        "currency": "USD",
+        "n": 191,
+        "p25": 9.42,
+        "p50": 12.09,
+        "p75": 15.11,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "shein_frontend 语料中有 190 款标题命中相同风格词 ['dress']",
+        "kind": "style_token_overlap",
+        "count": 190,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "indie_frontend 语料中有 3 款标题命中相同风格词 ['dress']",
+        "kind": "style_token_overlap",
+        "count": 3,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "patterned_tights_frontend 语料中有 3 款标题命中相同风格词 ['dress']",
+        "kind": "style_token_overlap",
+        "count": 3,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ]
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "market_metrics.sales_growth_rate",
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio"
+  ],
+  "field_issues": [],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_shein_frontend_001669",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001670",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.title_cn",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001671",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001673",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.raw_evidence_path",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001674",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001675",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.original_price",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001676",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.discount_pct",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001677",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001678",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001679",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "market_metrics.sales_floor_units",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Shein 销量为下限口径（如 100+ 记 100）"
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001680",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "market_metrics.bestseller_rank_text",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001681",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.trend_tags",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_001682",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.review_tags_raw",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=114",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "shein_frontend",
+    "category_label": "women_dresses",
+    "seasonal": false,
+    "track_hint": null,
+    "site": "shein",
+    "title_cn": "EMERY ROSE 女士平纹织物休闲办公夏季连衣裙",
+    "raw_evidence_path": "outputs\\full-runs\\monthly-300-sop\\shein-women-dresses-200-20260624\\browser\\product-20.json",
+    "trend_tags": [
+      "WorkwearBasics"
+    ],
+    "review_tags_raw": "No Smell (1)Casual (2)Vacation Outfits (1)Summer Outfits (1)Worth Buying (3)Good Quality (5)Flowy (2)Beautiful (2)Wrong Style (1)",
+    "profile": {
+      "产品中文名称": {
+        "value": "EMERY ROSE 女士平纹织物休闲办公夏季连衣裙",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001670"
+        ]
+      },
+      "产品英文标题": {
+        "value": "EMERY ROSE Women's Plain Weave Casual Office Summer Dress",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001669"
+        ]
+      },
+      "售价": {
+        "value": "16.59 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001674"
+        ]
+      },
+      "原价": {
+        "value": "21.49 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001675"
+        ]
+      },
+      "评分": {
+        "value": 4.07,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001677"
+        ]
+      },
+      "评论数": {
+        "value": 79.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001678"
+        ]
+      },
+      "主图链接": {
+        "value": "https://img.ltwebstatic.com/v4/p/ccc/2025/07/09/0b/17520280931802ca2be226ad320153e3c68187388d.webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_001671"
+        ]
+      },
+      "商品链接": {
+        "value": "https://us.shein.com/EMERY-ROSE-Women-s-Plain-Weave-Casual-Office-Summer-Dress-p-496674906.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_496674906%7C0-2",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "shein",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

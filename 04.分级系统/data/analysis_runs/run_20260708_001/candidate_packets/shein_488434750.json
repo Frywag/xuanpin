@@ -1,0 +1,426 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "shein_488434750",
+  "market": "US",
+  "platform": "shein",
+  "primary_product_id": "488434750",
+  "canonical_url": "https://us.shein.com/SHEIN-LilyWest-Bohemian-Western-American-Flag-Print-Sleeveless-Dress-For-Women-Casual-Loose-Flowy-A-Line-Patriotic-Mini-Dress-Perfect-For-Summer-Beach-Vacation-Independence-Day-Party-Soft-Lightweight-Fabric-p-488434750.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_488434750%7C0-2",
+  "source_refs": [
+    {
+      "source_id": "shein_frontend",
+      "envelope_id": "envelope_shein_frontend_20260708"
+    }
+  ],
+  "basic_facts": {
+    "title": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini Dress, Perfect For Summer Beach Vacation, Independence Day Party, Soft Lightweight Fabric",
+    "brand": null,
+    "category_path": [],
+    "image_url": "https://img.ltwebstatic.com/v4/j/pi/2026/06/01/af/1780283799f2f64f88ed42142869d1b678b34a2dbe.webp",
+    "price": {
+      "amount": 11.79,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 16.09,
+      "currency": "USD"
+    },
+    "discount_pct": -0.27,
+    "rating": 3.6,
+    "review_count": 5.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": null,
+    "sales_7d_units": null,
+    "sales_floor_units": 800.0,
+    "revenue_30d": null,
+    "gmv_7d": null,
+    "sales_growth_rate": null,
+    "favorites_count": null,
+    "bestseller_rank_text": "#8 Bestseller in New Arrival Mini Casual Dresses",
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": [
+      {
+        "signal": "ALineStyles",
+        "kind": "platform_trend_tag",
+        "evidence_refs": [
+          "ev_shein_frontend_002460"
+        ]
+      }
+    ]
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [
+      {
+        "cluster_name": "正面标签",
+        "tags": [
+          {
+            "tag": "Shiny",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [],
+    "platform_price_comparison": [
+      {
+        "style_group": "dress",
+        "source_group": "候选自身（shein）",
+        "currency": "USD",
+        "n": 1,
+        "p25": 11.79,
+        "p50": 11.79,
+        "p75": 11.79,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "indie_frontend",
+        "currency": "USD",
+        "n": 686,
+        "p25": 88.0,
+        "p50": 128.0,
+        "p75": 188.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "shein_frontend",
+        "currency": "USD",
+        "n": 191,
+        "p25": 9.42,
+        "p50": 12.09,
+        "p75": 15.11,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "shein_frontend 语料中有 190 款标题命中相同风格词 ['dress']",
+        "kind": "style_token_overlap",
+        "count": 190,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "indie_frontend 语料中有 3 款标题命中相同风格词 ['dress']",
+        "kind": "style_token_overlap",
+        "count": 3,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "patterned_tights_frontend 语料中有 3 款标题命中相同风格词 ['dress']",
+        "kind": "style_token_overlap",
+        "count": 3,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ]
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "market_metrics.sales_growth_rate",
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio"
+  ],
+  "field_issues": [],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_shein_frontend_002448",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002449",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.title_cn",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002450",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002452",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.raw_evidence_path",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002453",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002454",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.original_price",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002455",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.discount_pct",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002456",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002457",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002458",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "market_metrics.sales_floor_units",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Shein 销量为下限口径（如 100+ 记 100）"
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002459",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "market_metrics.bestseller_rank_text",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002460",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.trend_tags",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_shein_frontend_002461",
+      "source_id": "shein_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.review_tags_raw",
+      "artifact_path": "03.前端数据源/shein-women-dresses-200-20260624.no-images.xlsx",
+      "record_locator": "sheet=shein;row=189",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "shein_frontend",
+    "category_label": "women_dresses",
+    "seasonal": false,
+    "track_hint": null,
+    "site": "shein",
+    "title_cn": "SHEIN LilyWest 波西米亚西部美国国旗印花女士无袖连衣裙，休闲宽松飘逸 A 字爱国风迷你裙，非常适合夏季海滩度假、独立日派对，柔软轻薄面料",
+    "raw_evidence_path": "outputs\\full-runs\\monthly-300-sop\\shein-women-dresses-200-20260624\\browser\\product-88.json",
+    "trend_tags": [
+      "ALineStyles"
+    ],
+    "review_tags_raw": "Shiny (1)",
+    "profile": {
+      "产品中文名称": {
+        "value": "SHEIN LilyWest 波西米亚西部美国国旗印花女士无袖连衣裙，休闲宽松飘逸 A 字爱国风迷你裙，非常适合夏季海滩度假、独立日派对，柔软轻薄面料",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002449"
+        ]
+      },
+      "产品英文标题": {
+        "value": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini Dress, Perfect For Summer Beach Vacation, Independence Day Party, Soft Lightweight Fabric",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002448"
+        ]
+      },
+      "售价": {
+        "value": "11.79 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002453"
+        ]
+      },
+      "原价": {
+        "value": "16.09 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002454"
+        ]
+      },
+      "评分": {
+        "value": 3.6,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002456"
+        ]
+      },
+      "评论数": {
+        "value": 5.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002457"
+        ]
+      },
+      "主图链接": {
+        "value": "https://img.ltwebstatic.com/v4/j/pi/2026/06/01/af/1780283799f2f64f88ed42142869d1b678b34a2dbe.webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_shein_frontend_002450"
+        ]
+      },
+      "商品链接": {
+        "value": "https://us.shein.com/SHEIN-LilyWest-Bohemian-Western-American-Flag-Print-Sleeveless-Dress-For-Women-Casual-Loose-Flowy-A-Line-Patriotic-Mini-Dress-Perfect-For-Summer-Beach-Vacation-Independence-Day-Party-Soft-Lightweight-Fabric-p-488434750.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_488434750%7C0-2",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "shein",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0F2847P7N",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "WIHOLL Women's Summer Dress 2026 A-Line Sleeveless Casual Sundress with Pockets Floral/Solid",
+    "rating": 4.3,
+    "review_count": 2425.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":293,\"positive\":252,\"negative\":41,\"snippets\":[\"Customers find the dress fits well and offers good value for money, with one customer noting it hits right above the knee.\",\". I love the pockets and easily dressed this up with platform heels and a matching straw pursue....\",\", flattering to body build and is cool and comfortable soft jersey like fabric. Fit me great 5’-6” 160 lbs perfect sizing....\",\"! Ordered an XL as usually Amazon items run small but it is true to size so I could have gotten away with ordering a large.\",\". ordered XL which is what I typically wear. Very soft, comfortable breathable fabric. Will be ordering an additional color\"]},{\"tag\":\"appearance\",\"mentions\":278,\"positive\":263,\"negative\":15,\"snippets\":[\"Customers like the appearance of the dress, describing it as cute with a pretty pattern, particularly suitable for hot summer days, and one customer mentions it can be dressed up or down.\",\"but I think maybe I should have gotten the small instead of the medium. The medium seemed big on me even though it’s the size I typically wear....\",\"and the fit is great! The price is amazing as well! The quality of the material is also wonderful....\",\"and affordable dress. I’m 5’6” and 135 pounds, I ordered a large, and I could’ve gone down a size, but I don’t mind as it still looks nice....\",\"& good Style for me & my HIGH waist! Light weight for those warm Summer days & short enough to be cute with leggings.\"]},{\"tag\":\"comfort\",\"mentions\":206,\"positive\":195,\"negative\":11,\"snippets\":[\"...When I tried using a belt, the pockets kinda stick out. It is\",\", but it also feels like the material will start pilling after a few washes.\",\"& nice dress for the $. I’m 5’5” & bought a Lg. Dress falls right at my knees. The red floral is more like a rusty red.\",\"Love, love, love these summer dresses! The price is great, it’s\",\"(material hangs on the body well) and the pockets are amazing!...\",\". I tried this dress on as soon it I saw it arrived and immediately decided that's what I was wearing the rest of the day....\"]},{\"tag\":\"quality\",\"mentions\":152,\"positive\":135,\"negative\":17,\"snippets\":[\"Customers find the dress to be of good quality, describing it as a perfect sundress.\",\"...I also bought the solid black. This is comfy- soft material and\",\". Not the best quality. Materials is thin which is nice for hot Summers, but after 1 wash it’s already starting to look a little worn.\"]},{\"tag\":\"softness\",\"mentions\":110,\"positive\":106,\"negative\":4,\"snippets\":[\", summer dress and it laundered awesome, pulled it out of the dryer straight to a hanger! Bam - ready to wear!...\",\", nice basic style for everyday wear. Look a little more put together than shorts plus pretty sure dresses are way cooler\",\". Super comfy. Good cut. Fit true to size!! I'm 5'9\\\", 155lbs. Waist 30\\\", bust 36\\\" and hips 40\\\" and the medium fit perfect!!\"]},{\"tag\":\"suitable for summer\",\"mentions\":99,\"positive\":94,\"negative\":5,\"snippets\":[\"Customers find this dress suitable for summer, describing it as perfect for both day and night, casual everyday wear, and versatile enough to dress up or down.\",\". Great fit, material is good quality and very comfortable. Love the print not too overwhelming or low quality looking.\",\"and comfortable dress. You could wear it almost anywhere. Neckline is not too low nor too high\",\"and it laundered awesome, pulled it out of the dryer straight to a hanger! Bam - ready to wear!...\"]},{\"tag\":\"fabric\",\"mentions\":123,\"positive\":74,\"negative\":49,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it nice and great, while others describe it as cheap and thin.\",\"but too short for a 61 year old. I am 5'4 128 pounds and this is a small on me.\",\"and printing- looks awful after a few washes. Already donated- worn 3 x.\",\", design, have ordered same style previously. Runs true to size. But this one seemed short. Decided to return for this reason....\"]},{\"tag\":\"size\",\"mentions\":105,\"positive\":66,\"negative\":39,\"snippets\":[\"Customers have mixed experiences with the dress's fit, with some finding it true to size while others report it runs big.\",\"My wife bought this dress. It is flattering and comfortable and\",\"and stretchy. She is about 210lbs and 5’2 got an XL and it fit good....\",\". Dress is ill fitting on a smaller person. Too long and large in the arm area....\",\". But this one seemed short. Decided to return for this reason....\",\". I would wear this at the beach or a barbecue. I bought a small I’m 5’2. 118 lb....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_18b4bf5b1f688c2b",
+    "ev_579d915e7ebc5613",
+    "ev_987dd07de521dc45"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

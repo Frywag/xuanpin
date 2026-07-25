@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0FQTR83H2",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "WIHOLL Summer Dresses for Women 2026 Maxi Dress Boho Halter Dress Sundresses Beach Vacation Clothes Travel Outfits",
+    "rating": 4.4,
+    "review_count": 861.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":100,\"positive\":82,\"negative\":18,\"snippets\":[\"Customers find the dress fits nicely and is comfortable enough for all-day wear, with one customer noting it's flattering for their body type.\",\". I just bought another one in a different color, size large. I liked the way the large fit just as well....\",\"Comfortable vacations dress, good quality material, well made.\",\"! Looks just as pictured. Its lightweight so it is great for summer!\",\"Great “Go Anywhere Dress”.\"]},{\"tag\":\"appearance\",\"mentions\":86,\"positive\":81,\"negative\":5,\"snippets\":[\"Customers find the dress visually appealing, with one mentioning its beautiful print and another noting it looks expensive.\",\"and good material for the cost. However the fit is a little different, the pockets are bellybutton hight vs hips.\",\"and I got so many compliments! Compliment it with the right accessories, BAM! Night out!...\",\".I had a black one.This one fit totally differently.And I just wasn't in love with the color but otherwise they are really comfy\"]},{\"tag\":\"comfort\",\"mentions\":74,\"positive\":74,\"negative\":0,\"snippets\":[\"Customers find the dress extremely comfortable, with one mentioning it has pockets.\",\". It’s made out of t shirt type fabric. That makes it even better\",\"and classy looking. I bought the \\\"Ink\\\" color and received tons of compliments....\",\"and complimentary. The pockets and great. I find myself wearing this more than I thought I would....\"]},{\"tag\":\"quality\",\"mentions\":62,\"positive\":58,\"negative\":4,\"snippets\":[\"Customers find the dress to be of good quality, describing it as a nice sundress.\",\"and true to size . I love the style of the tie back and pickets . Comfortable material - can’t wait to wear it on the cruise !!\",\", good quality. Length was good, color was vibrant. More clingy than I wanted, I thought it be a looser fit....\"]},{\"tag\":\"material\",\"mentions\":47,\"positive\":38,\"negative\":9,\"snippets\":[\"Customers like the material of the dress, describing it as nice, with one customer noting it's not flimsy or see-through.\",\"...It’s longer for me but can be adjusted. I like the Color &\"]},{\"tag\":\"suitable for summer\",\"mentions\":41,\"positive\":41,\"negative\":0,\"snippets\":[\"Customers find this dress suitable for summer, describing it as a must-have for summer wear, a good cover-up, and perfect for casual days. One customer mentions it was ideal for a night in Punta Cana.\",\"and can throw a Shaw or sweater long or short for spring and fall . Very pleased\",\", cotton quality is good, I’ve watched it three times and still no lint balls!\"]},{\"tag\":\"pockets\",\"mentions\":37,\"positive\":33,\"negative\":4,\"snippets\":[\"and that it can be dressed up or thrown over a swimsuit. The fabric was a nice weight and it did not need to be ironed.\",\"so thats always a plus! Fits true to size! Looks just as pictured. Its lightweight so it is great for summer!\"]},{\"tag\":\"softness\",\"mentions\":27,\"positive\":26,\"negative\":1,\"snippets\":[\"Customers find the dress super soft and comfortable against the skin.\",\", slightly stretchy fabric. Flows well and is super comfy....\",\". It glides across your body without clinging. The material is thin, perfect for those hot, Caribbean nights....\",\"and flowing.. great for my warm weather vaca. Lot's of compliments given....\",\"and medium weight but holds its shape. It fit as expected, true to size....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_2a0500bc6808ac10",
+    "ev_a01f0bfd69a3d0fe",
+    "ev_b63e89c7fb513e5e",
+    "ev_c047f87efddcd57c",
+    "ev_dda6ae2db66ef436"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

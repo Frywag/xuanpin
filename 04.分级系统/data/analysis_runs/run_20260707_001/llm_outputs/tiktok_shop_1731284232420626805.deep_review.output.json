@@ -1,0 +1,58 @@
+{
+  "executive_summary": "ADDWIN 筋膜环按摩设备处于爆发早期：增长率 +129.0% 为头部候选最高，7 天销量 26,900 件、GMV $2,017,400 双源互验，但累计总销量 127,400 件、达人 826 个，规模和分发深度都远小于 medicube——上升空间与不确定性并存。它是充电式电子设备，涉及电池与 3C 认证，超出女装供应链能力；且类目口径存在冲突（Tabcut 榜单记为美妆个护，标题实为肌肉恢复设备），需人工核对。建议 hold：品类外，作为「早期爆品捕捉」方法论的验证样例保留。",
+  "sections": {
+    "demand": {
+      "assessment": "增长率 +129.0% 是头部候选中最高，30 天 66,745 件、7 天 26,900 件（7 天占 30 天约四成，加速特征明显），GMV $2,017,400 由 EchoTik 独立佐证。累计总销量 127,400 件表明处于生命周期早段，需求趋势真实但基数尚小。",
+      "strengths": ["双源互验", "加速特征明显，处于窗口早期"],
+      "concerns": ["基数小，高增长率部分来自低基数效应", "无趋势曲线数据，无法排除单周脉冲"],
+      "evidence_refs": ["ev_tabcut_000185", "ev_tabcut_000186", "ev_echotik_000382", "ev_echotik_000383", "ev_echotik_000384"],
+      "confidence": "medium"
+    },
+    "competition": {
+      "assessment": "与 medicube 同样受制于类目数据缺口：集中度缺失，评论门槛为跨类目代理。达人 826 个，分发网络尚薄，意味着竞争者若跟进内容投放，先发壁垒有限。",
+      "strengths": ["价格带位置处于组内主流区间"],
+      "concerns": ["类目竞争结构数据缺失", "达人网络薄，先发内容壁垒不稳固"],
+      "evidence_refs": ["ev_echotik_000377", "ev_echotik_000385"],
+      "confidence": "low"
+    },
+    "product": {
+      "assessment": "评分 4.3 低于观测类目 P25，存在改良空间信号，但无评论全文无法定位痛点。标题主打「可调节绑带、无线充电、便携」，产品卖点结构清晰，适配演示型短视频。",
+      "strengths": ["卖点结构适配内容电商"],
+      "concerns": ["痛点未知（无评论全文）", "类目口径冲突：榜单类目为美妆个护，标题为肌肉恢复设备，需人工核对"],
+      "evidence_refs": ["ev_echotik_000380", "ev_tabcut_000183", "ev_tabcut_000187"],
+      "confidence": "medium"
+    },
+    "supply_chain": {
+      "assessment": "仅有价格位置代理信号。作为充电式电子设备，涉及电池运输、3C/FCC 类认证与硬件供应链，与女装供应链能力档案完全不匹配。",
+      "strengths": ["售价高于组内中位（代理指标）"],
+      "concerns": ["电子设备认证与硬件供应链超出本项目能力", "成本/MOQ/交期缺失"],
+      "evidence_refs": ["ev_echotik_000377", "ev_tabcut_000184"],
+      "confidence": "low"
+    },
+    "risk": {
+      "assessment": "店铺「AddWin Shop」品牌词与标题品牌一致，疑似品牌自营（启发式识别，需人工确认）；相比 medicube，ADDWIN 品牌认知度信号弱，仿款的 IP 风险可能更低，但设备类的安全责任风险（电池、皮肤接触）更高。趋势赛道的风险系数已在引擎中放大。",
+      "strengths": [],
+      "concerns": ["疑似品牌自营（待人工确认）", "电子设备安全与认证风险", "窗口期风险：高增长可能快速见顶"],
+      "evidence_refs": ["ev_echotik_000386", "ev_tabcut_000183"],
+      "confidence": "medium"
+    }
+  },
+  "grade_challenge": {
+    "agrees_with_engine": true,
+    "suggested_grade": null,
+    "rationale": "双源互验+最高增长率支撑 S 的市场信号等级；品类范围问题在开款决策层处理，不改等级。"
+  },
+  "go_recommendation": {
+    "decision": "hold",
+    "conditions": [
+      "品类外（电子设备），不进入女装开款流程",
+      "保留为「早期爆品捕捉」样例：验证 7天/30天销量比 + 高增长率的早期识别规则",
+      "若扩品类需先做 3C/电池认证与安全责任评估"
+    ]
+  },
+  "open_questions": ["类目口径冲突（美妆个护 vs 肌肉恢复设备）以哪个为准", "增长是否由单一达人/单条视频驱动（需趋势曲线与视频明细）"],
+  "next_actions": ["归档为早期爆品识别样例", "不列入女装开款清单"],
+  "missing_fields": ["评论全文", "趋势曲线", "类目竞争结构", "owned_supply_inputs 全部"],
+  "assumptions": ["「ADDWIN 品牌认知度弱于 medicube」为评审者判断，未在数据中验证"],
+  "confidence": "medium"
+}

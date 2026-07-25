@@ -1,0 +1,1631 @@
+{
+  "capturedAt": "2026-07-10T06:46:19.553Z",
+  "pagePath": "/brand",
+  "captures": [
+    {
+      "url": "https://www.kalodata.com/brand",
+      "method": "GET",
+      "postData": null,
+      "status": 200,
+      "mimeType": "text/html"
+    },
+    {
+      "url": "https://www.kalodata.com/api/tiktok/brand/queryList",
+      "method": "POST",
+      "postData": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [],
+        "showCateIds": [],
+        "pageNo": 1,
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ]
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": [
+          {
+            "item_sold": "21.43万",
+            "revenue_growth_rate": "6.48%",
+            "revenue": "¥1.03亿",
+            "prev_revenue": 735063965,
+            "avg_unit_price": "¥481.15",
+            "engagement": "160.59万",
+            "ad_spend": "¥1,619.57万",
+            "market_share": "12.48%",
+            "is_blue_v": 0,
+            "next_revenue": 782679406,
+            "brand_id": "94650961978330888",
+            "id": "94650961978330888",
+            "brand_name": "VEVOR",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/a946cbf078.jpg",
+            "main_pri_cate_id": "五金工具",
+            "creator_count": "7,348",
+            "video_count": "1.56万",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 2659500.0849271324
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 2822107.0081869755
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 3030376.872643272
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 3451799.6399089578
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 3911685.837551381
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 3507752.2165981587
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 3043902.4357101605
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 4054486.258789958
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 2470369.466997316
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 4655124.435234569
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 4353717.430444678
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 2639123.8237592145
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 3366584.774263682
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 2869238.713184088
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 3105730.8149607633
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 3419503.8896626695
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 3588940.3811529707
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 5090540.476271359
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 4986052.722763868
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 5900867.819410945
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 3372888.2698644563
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 3580652.036552638
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 4589867.173964738
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 4761575.771987635
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 2813355.4370350237
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 2296361.178109182
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 2446902.673506132
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 2284398.410164079
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 1907973.0950844174
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 2136694.771885722
+              }
+            ]
+          },
+          {
+            "item_sold": "23.81万",
+            "revenue_growth_rate": "12.61%",
+            "revenue": "¥8,375.28万",
+            "prev_revenue": 579812694,
+            "avg_unit_price": "¥351.75",
+            "engagement": "132.86万",
+            "ad_spend": "¥1,929.84万",
+            "market_share": "2.85%",
+            "is_blue_v": 0,
+            "next_revenue": 652903183,
+            "brand_id": "615134780887334310",
+            "id": "615134780887334310",
+            "brand_name": "QVC",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/918dcbf57a.jpg",
+            "main_pri_cate_id": "居家日用",
+            "creator_count": "7,388",
+            "video_count": "2.02万",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 753399.5991439344
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 1274805.1771579983
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 997075.788973061
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 1506974.2161225667
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 3181699.357950878
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 2249763.223154533
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 1147617.6240785406
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 2351323.300608078
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 2736745.184631586
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 5401098.277677752
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 4601572.103135509
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 4355338.791317049
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 3707289.941230424
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 2346954.03743588
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 2781806.977613208
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 2524125.624214424
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 3740262.5946937525
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 5463014.505554235
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 4628567.041478411
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 4426935.557291843
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 2870359.0039745895
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 2623957.264666916
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 3432194.6529877363
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 5022514.046947719
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 2646464.653327445
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 1535510.887658389
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 1435066.1412508069
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1297099.0250365187
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 1308076.366477562
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 1405208.7508917348
+              }
+            ]
+          },
+          {
+            "item_sold": "34.36万",
+            "revenue_growth_rate": "-7.35%",
+            "revenue": "¥8,174.70万",
+            "prev_revenue": 624540255,
+            "avg_unit_price": "¥237.92",
+            "engagement": "234.99万",
+            "ad_spend": "¥1,929.63万",
+            "market_share": "6.25%",
+            "is_blue_v": 0,
+            "next_revenue": 578652830,
+            "brand_id": "224768033588517972",
+            "id": "224768033588517972",
+            "brand_name": "Halara",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/6e811fc8b2.jpg",
+            "main_pri_cate_id": "运动与户外",
+            "creator_count": "6,226",
+            "video_count": "2.12万",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 2552842.4771546014
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 2455936.8821551106
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 3018577.8442096678
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 3126587.423990216
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 3149471.549410606
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 3086391.6159934774
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 2230310.357713082
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 2445886.061759011
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 2496161.5653769067
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 3463738.424431837
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 4352105.309644325
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 2422272.514182831
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 2771711.995108197
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 2201989.4690355673
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 2658346.910350919
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 2963707.103305364
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 3005167.1705676527
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 3555097.054727044
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 3105885.6541087744
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 3165821.653021707
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 2138481.0272785947
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 2643057.5126541425
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 3034090.6342358254
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 3129999.592349764
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 2404430.818357849
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 2182208.1733872336
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 1961977.8510038387
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1907479.7703570337
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 1990428.2365730202
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 2126828.209396338
+              }
+            ]
+          },
+          {
+            "item_sold": "47.87万",
+            "revenue_growth_rate": "4.39%",
+            "revenue": "¥8,120.27万",
+            "prev_revenue": 584748468,
+            "avg_unit_price": "¥169.62",
+            "engagement": "437.81万",
+            "ad_spend": "¥1,803.35万",
+            "market_share": "3.50%",
+            "is_blue_v": 0,
+            "next_revenue": 610433162,
+            "brand_id": "1020468529415323115",
+            "id": "1020468529415323115",
+            "brand_name": "medicube",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/405f487d31.jpg",
+            "main_pri_cate_id": "美妆个护",
+            "creator_count": "1.18万",
+            "video_count": "2.51万",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 2754158.3721167236
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 2605314.196419472
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 2340480.347861535
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 2473056.0858783163
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 2107856.0315249516
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 2317975.60892754
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 2091028.2297788498
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 1816484.0167136595
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 2699192.648707409
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 4383641.471617352
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 3775064.5106498622
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 2397733.6005707104
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 2549864.0486462614
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 2660810.4766110675
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 2756148.8602778814
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 2945742.8406427284
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 3248739.8851785166
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 2890693.345109896
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 3234381.832387811
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 3302493.4606107958
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 2561552.807691001
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 3242848.4560247306
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 3437342.324285763
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 4170522.5396609707
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 2931437.5106158913
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 2169972.4836090636
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 2017685.0222509087
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1765746.7133199715
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 1819534.7351972007
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 1735176.478581377
+              }
+            ]
+          },
+          {
+            "item_sold": "4.22万",
+            "revenue_growth_rate": "-9.99%",
+            "revenue": "¥6,722.40万",
+            "prev_revenue": 520725908,
+            "avg_unit_price": "¥1,593.82",
+            "engagement": "99.98万",
+            "ad_spend": "¥1,638.24万",
+            "market_share": "10.54%",
+            "is_blue_v": 0,
+            "next_revenue": 468710340,
+            "brand_id": "254908352003963178",
+            "id": "254908352003963178",
+            "brand_name": "NINJA",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/313bd670b9.jpg",
+            "main_pri_cate_id": "家电",
+            "creator_count": "1,184",
+            "video_count": "3,080",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 594784.9984713116
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 600123.7218466556
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 656600.1290892414
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 1483888.1679518973
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 1958176.7163773482
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 2686966.470768081
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 1824810.9522030097
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 937680.5380983116
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 978482.1822875972
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 3518743.9616808775
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 6395701.3962020585
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 2470484.899955838
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 7683348.574922716
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 1938839.9633114787
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 1650373.8832082073
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 2142360.770458946
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 1389597.7171586778
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 3719374.053062472
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 5478082.209464279
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 4948492.101776675
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 1385348.9146312464
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 822864.8299758807
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 2717577.5384719907
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 2863926.1473655603
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 1008384.75388117
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 871489.8936712301
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 1118612.8341882664
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1039866.494547678
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 849917.1790603661
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 1489084.6893365493
+              }
+            ]
+          },
+          {
+            "item_sold": "2.9万",
+            "revenue_growth_rate": "-21.12%",
+            "revenue": "¥5,083.81万",
+            "prev_revenue": 418306236,
+            "avg_unit_price": "¥1,750.44",
+            "engagement": "31.25万",
+            "ad_spend": "¥1,217.87万",
+            "market_share": "6.97%",
+            "is_blue_v": 0,
+            "next_revenue": 329954976,
+            "brand_id": "983604885084170919",
+            "id": "983604885084170919",
+            "brand_name": "SHARK",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/28e2e5e650.jpg",
+            "main_pri_cate_id": "家电",
+            "creator_count": "668",
+            "video_count": "1,659",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 2169711.043924313
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 1800198.6615483915
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 1486043.1429833202
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 2164975.099364745
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 2038950.9121174032
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 2481439.141216836
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 1464323.6742874612
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 1054182.6273057717
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 850643.4758976798
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 2344966.878418317
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 3659331.181845976
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 1635106.4306824743
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 2141139.7221184224
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 1617170.8394197777
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 1512256.4799402112
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 1496612.1547712062
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 2199204.9461561977
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 4393253.932126235
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 4099872.201650983
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 4480014.063933145
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 877744.810952203
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 624376.0573427998
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 1352239.9021639433
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 824697.2857288446
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 461573.19020280597
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 463134.6944321772
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 214317.96718415598
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 202251.9278459082
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 255326.90151849712
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 473083.94197778305
+              }
+            ]
+          },
+          {
+            "item_sold": "19.72万",
+            "revenue_growth_rate": "-4.98%",
+            "revenue": "¥4,727.95万",
+            "prev_revenue": 356822106,
+            "avg_unit_price": "¥239.78",
+            "engagement": "192.48万",
+            "ad_spend": "¥1,056.31万",
+            "market_share": "10.04%",
+            "is_blue_v": 0,
+            "next_revenue": 339060744,
+            "brand_id": "182449797841068698",
+            "id": "182449797841068698",
+            "brand_name": "Crocs",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/47ad32f4c5.jpg",
+            "main_pri_cate_id": "鞋靴",
+            "creator_count": "4,630",
+            "video_count": "1.3万",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 1178213.608723715
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 1102150.0152868838
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 1071343.683119883
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 1232209.803988178
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 1286880.5245099703
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 2282149.4038115297
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 1829871.182525393
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 1744360.498692122
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 1916858.8511057512
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 2027661.1067703909
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 2651991.914936984
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 1505219.6895064034
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 1468872.0317967182
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 1480582.5321873832
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 1464737.7789856303
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 2126193.633862146
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 1892655.5695213506
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 1753278.3911404014
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 1859143.8665624894
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 1429131.9088222305
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 1154218.4325848422
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 1851111.8660189556
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 1772902.7414478378
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 2371983.3542820257
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 1632129.632775079
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 1148043.6185752624
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 1109922.0029214933
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1201433.3661718245
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 914192.88650338
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 820024.1193056357
+              }
+            ]
+          },
+          {
+            "item_sold": "10.5万",
+            "revenue_growth_rate": "79.27%",
+            "revenue": "¥3,873.38万",
+            "prev_revenue": 204140416,
+            "avg_unit_price": "¥369.04",
+            "engagement": "197.32万",
+            "ad_spend": "¥842.00万",
+            "market_share": "3.24%",
+            "is_blue_v": 0,
+            "next_revenue": 365962717,
+            "brand_id": "434074671847875222",
+            "id": "434074671847875222",
+            "brand_name": "MERACH",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/18cd134fa5.jpg",
+            "main_pri_cate_id": "运动与户外",
+            "creator_count": "2,348",
+            "video_count": "5,739",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 779277.6437816353
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 807858.2736012501
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 833314.3323028841
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 877785.5080341067
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 835401.433569997
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 796201.24333322
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 674867.8194109454
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 677585.6235350069
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 727403.2679960594
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 1164940.3132112648
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 1575299.0454190304
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 852733.7024832693
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 1316407.9899446275
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 1004670.9922886164
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 945900.9409926283
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 1061854.6726908311
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 1075862.282161905
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 2954910.079152087
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 2971477.324455617
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 2482332.4387675375
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 1467229.0654618337
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 1388920.678058226
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 2351628.019159561
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 2589084.349628019
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 1386058.5657505859
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 1127578.7614226993
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 1077963.9229541053
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1041753.7792573972
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 904472.942215579
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 983004.4501817441
+              }
+            ]
+          },
+          {
+            "item_sold": "21.78万",
+            "revenue_growth_rate": "4.63%",
+            "revenue": "¥3,730.19万",
+            "prev_revenue": 268300529,
+            "avg_unit_price": "¥171.30",
+            "engagement": "74.35万",
+            "ad_spend": "¥697.59万",
+            "market_share": "4.37%",
+            "is_blue_v": 0,
+            "next_revenue": 280727179,
+            "brand_id": "957826216894089052",
+            "id": "957826216894089052",
+            "brand_name": "Micro Ingredients",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/9d7b231355.jpg",
+            "main_pri_cate_id": "保健",
+            "creator_count": "3,628",
+            "video_count": "9,568",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 1126383.6668138737
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 1146288.6163671569
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 1197749.363046506
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 1270186.4999830145
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 1223928.7291503889
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 1206386.8600740563
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 1169966.980330876
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 913815.2665013418
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 1209266.9769337908
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 1380672.0793559125
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 1682710.0587695756
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 1014117.6750348201
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 1195863.9807045555
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 1201702.6870944728
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 1289756.2251588136
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 1253017.9705812412
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 1347674.7630533003
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 1540635.0511261337
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 1289407.4803818322
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 1545209.634133913
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 1133834.7657709685
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 1276297.5846723511
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 1316518.3952169039
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 1302410.2999626321
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 1293601.1821856846
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 1092634.6434758976
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 1089987.1590175629
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1208842.8848048374
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 1230138.6690219792
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 1152872.9829806027
+              }
+            ]
+          },
+          {
+            "item_sold": "29.18万",
+            "revenue_growth_rate": "6.81%",
+            "revenue": "¥3,541.67万",
+            "prev_revenue": 252062090,
+            "avg_unit_price": "¥121.39",
+            "engagement": "738.52万",
+            "ad_spend": "¥694.59万",
+            "market_share": "4.57%",
+            "is_blue_v": 0,
+            "next_revenue": 269218229,
+            "brand_id": "71428252201831146",
+            "id": "71428252201831146",
+            "brand_name": "Leefar",
+            "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/02e89b67a4.jpg",
+            "main_pri_cate_id": "保健",
+            "creator_count": "3,699",
+            "video_count": "8,546",
+            "revenue_trend": [
+              {
+                "partition_day": "2026-06-09",
+                "revenue": 1220054.285423107
+              },
+              {
+                "partition_day": "2026-06-10",
+                "revenue": 1184383.8026972858
+              },
+              {
+                "partition_day": "2026-06-11",
+                "revenue": 1208529.8773652206
+              },
+              {
+                "partition_day": "2026-06-12",
+                "revenue": 1236256.8196487413
+              },
+              {
+                "partition_day": "2026-06-13",
+                "revenue": 1136594.0143356998
+              },
+              {
+                "partition_day": "2026-06-14",
+                "revenue": 1100757.0064884329
+              },
+              {
+                "partition_day": "2026-06-15",
+                "revenue": 1176173.1834086354
+              },
+              {
+                "partition_day": "2026-06-16",
+                "revenue": 1235586.235010361
+              },
+              {
+                "partition_day": "2026-06-17",
+                "revenue": 1213257.8048034785
+              },
+              {
+                "partition_day": "2026-06-18",
+                "revenue": 1343874.919319224
+              },
+              {
+                "partition_day": "2026-06-19",
+                "revenue": 1487913.5102082412
+              },
+              {
+                "partition_day": "2026-06-20",
+                "revenue": 642101.4369670822
+              },
+              {
+                "partition_day": "2026-06-21",
+                "revenue": 891236.4031660835
+              },
+              {
+                "partition_day": "2026-06-22",
+                "revenue": 1034764.0044841525
+              },
+              {
+                "partition_day": "2026-06-23",
+                "revenue": 1014045.1132927948
+              },
+              {
+                "partition_day": "2026-06-24",
+                "revenue": 1074589.2584162788
+              },
+              {
+                "partition_day": "2026-06-25",
+                "revenue": 1149373.2377620002
+              },
+              {
+                "partition_day": "2026-06-26",
+                "revenue": 1318059.5848761762
+              },
+              {
+                "partition_day": "2026-06-27",
+                "revenue": 1064219.6555355506
+              },
+              {
+                "partition_day": "2026-06-28",
+                "revenue": 1357453.3410333933
+              },
+              {
+                "partition_day": "2026-06-29",
+                "revenue": 1114915.9221388048
+              },
+              {
+                "partition_day": "2026-06-30",
+                "revenue": 1169672.2492101777
+              },
+              {
+                "partition_day": "2026-07-01",
+                "revenue": 1474391.7518768895
+              },
+              {
+                "partition_day": "2026-07-02",
+                "revenue": 1395104.460373
+              },
+              {
+                "partition_day": "2026-07-03",
+                "revenue": 1145305.567822808
+              },
+              {
+                "partition_day": "2026-07-04",
+                "revenue": 936829.7720555763
+              },
+              {
+                "partition_day": "2026-07-05",
+                "revenue": 947037.1980840438
+              },
+              {
+                "partition_day": "2026-07-06",
+                "revenue": 1310485.511431192
+              },
+              {
+                "partition_day": "2026-07-07",
+                "revenue": 1477980.0251384312
+              },
+              {
+                "partition_day": "2026-07-08",
+                "revenue": 1355728.233175935
+              }
+            ]
+          }
+        ],
+        "message": null,
+        "cached": true,
+        "code": null
+      }
+    },
+    {
+      "url": "https://www.kalodata.com/api/tiktok/brand/list/enrich",
+      "method": "POST",
+      "postData": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [],
+        "showCateIds": [],
+        "pageNo": 1,
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "ids": [
+          "94650961978330888",
+          "615134780887334310",
+          "224768033588517972",
+          "1020468529415323115",
+          "254908352003963178",
+          "983604885084170919",
+          "182449797841068698",
+          "434074671847875222",
+          "957826216894089052",
+          "71428252201831146"
+        ]
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": [
+          {
+            "brand_id": "94650961978330888",
+            "top3_creator_ratio": "6.65%",
+            "top3_product_ratio": "7.84%",
+            "top3_video_ratio": "1.66%",
+            "top3_product_ids": [
+              "1729623258925928622",
+              "1729525789848998062",
+              "1729999058370334894"
+            ]
+          },
+          {
+            "brand_id": "615134780887334310",
+            "top3_creator_ratio": "9.71%",
+            "top3_product_ratio": "11.44%",
+            "top3_video_ratio": "2.39%",
+            "top3_product_ids": [
+              "1731012068101624775",
+              "1732287505087632327",
+              "1730902284646454215"
+            ]
+          },
+          {
+            "brand_id": "224768033588517972",
+            "top3_creator_ratio": "7.54%",
+            "top3_product_ratio": "19.37%",
+            "top3_video_ratio": "3.68%",
+            "top3_product_ids": [
+              "1729412651341746468",
+              "1730762320809595172",
+              "1731230647792800036"
+            ]
+          },
+          {
+            "brand_id": "1020468529415323115",
+            "top3_creator_ratio": "12.09%",
+            "top3_product_ratio": "51.43%",
+            "top3_video_ratio": "5.26%",
+            "top3_product_ids": [
+              "1729508370969629931",
+              "1729606769780232427",
+              "1731761697513836779"
+            ]
+          },
+          {
+            "brand_id": "254908352003963178",
+            "top3_creator_ratio": "15.11%",
+            "top3_product_ratio": "58.32%",
+            "top3_video_ratio": "6.98%",
+            "top3_product_ids": [
+              "1731966270376022101",
+              "1732091998513369173",
+              "1732016671031726165"
+            ]
+          },
+          {
+            "brand_id": "983604885084170919",
+            "top3_creator_ratio": "23.95%",
+            "top3_product_ratio": "56.64%",
+            "top3_video_ratio": "13.57%",
+            "top3_product_ids": [
+              "1732212014127944368",
+              "1732212014289490608",
+              "1731966270190097072"
+            ]
+          },
+          {
+            "brand_id": "182449797841068698",
+            "top3_creator_ratio": "18.52%",
+            "top3_product_ratio": "23.60%",
+            "top3_video_ratio": "4.79%",
+            "top3_product_ids": [
+              "1732211811415856062",
+              "1730223029542622142",
+              "1730697408540152766"
+            ]
+          },
+          {
+            "brand_id": "434074671847875222",
+            "top3_creator_ratio": "11.27%",
+            "top3_product_ratio": "37.74%",
+            "top3_video_ratio": "5.60%",
+            "top3_product_ids": [
+              "1730969865402749631",
+              "1729919684324856511",
+              "1731545593921376358"
+            ]
+          },
+          {
+            "brand_id": "957826216894089052",
+            "top3_creator_ratio": "14.30%",
+            "top3_product_ratio": "25.12%",
+            "top3_video_ratio": "3.58%",
+            "top3_product_ids": [
+              "1729482835128784557",
+              "1729385034780414637",
+              "1729409703327011501"
+            ]
+          },
+          {
+            "brand_id": "71428252201831146",
+            "top3_creator_ratio": "7.18%",
+            "top3_product_ratio": "49.57%",
+            "top3_video_ratio": "2.83%",
+            "top3_product_ids": [
+              "1731493330376168096",
+              "1731494787917189767",
+              "1731494860163420306"
+            ]
+          }
+        ],
+        "message": null,
+        "cached": true,
+        "code": null
+      }
+    },
+    {
+      "url": "https://www.kalodata.com/api/tiktok/brand/count",
+      "method": "POST",
+      "postData": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [],
+        "showCateIds": [],
+        "pageNo": 1,
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ]
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": 5352,
+        "message": null,
+        "cached": true,
+        "code": null
+      }
+    }
+  ]
+}

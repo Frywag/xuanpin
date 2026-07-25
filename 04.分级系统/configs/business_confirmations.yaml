@@ -1,0 +1,28 @@
+# =====================================================================
+# 业务确认证据登记（规则《三赛道独立SAB分级》§7.3 A.6/B.3：
+# 业务人员确认是合法的近期推出/款型新颖度证据）
+# =====================================================================
+# 用途：人工在此登记对具体候选的确认，下次 run 自动生效——
+#   status=confirmed 使趋势赛道走「确证准入」（不再是占位）；
+#   status=old 触发确定性 REJECTED（确证旧款/旧款型）。
+# 每条登记会生成可追溯 EvidenceRef（artifact=本文件，locator=条目序号），
+# 满足「所有结论必须绑定 evidence_refs」红线。
+#
+# 字段：
+#   candidate_id  候选 id（选品库/推荐表中的 candidate_id）
+#   field         freshness（近期推出）| novelty（款型新颖度）
+#   status        confirmed | old
+#   note          确认依据与确认人/日期（必填，进入证据链 note）
+#
+# 示例（去掉注释即生效）：
+# confirmations:
+#   - candidate_id: shein_488434750
+#     field: novelty
+#     status: confirmed
+#     note: 业务确认为新款型——版型/材质组合近半年市场未见（确认人：xx，2026-07-15）
+#   - candidate_id: tiktok_shop_1731406217255686451
+#     field: freshness
+#     status: old
+#     note: 该商品 2025 年已在售，页面新品标签为集合位复用（确认人：xx，2026-07-15）
+
+confirmations: []

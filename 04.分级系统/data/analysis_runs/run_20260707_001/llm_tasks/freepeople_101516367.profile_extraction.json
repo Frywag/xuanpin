@@ -1,0 +1,166 @@
+{
+  "task_type": "profile_extraction",
+  "candidate_id": "freepeople_101516367",
+  "run_id": "run_20260707_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只依据 inputs.text 中的真实文本判断，不得使用外部知识补全事实",
+    "带 vocab 的键取值必须严格从词表中选择；判断不了就进 missing_fields",
+    "multi 键可给列表；每个键必须带 evidence_refs 与 confidence"
+  ],
+  "inputs": {
+    "key_set": "general_goods",
+    "keys": {
+      "产品大类": {
+        "vocab_open": true,
+        "hint": "Home & Kitchen/Pet Supplies/Electronics 等"
+      },
+      "产品小类": {
+        "vocab_open": true
+      },
+      "核心功能": {
+        "vocab": [
+          "收纳",
+          "清洁",
+          "防滑",
+          "防水",
+          "保温",
+          "充电",
+          "保护",
+          "测量",
+          "固定",
+          "按摩",
+          "护理"
+        ],
+        "multi": true
+      },
+      "使用场景": {
+        "vocab": [
+          "厨房",
+          "浴室",
+          "卧室",
+          "办公室",
+          "车内",
+          "庭院",
+          "露营",
+          "健身",
+          "个护"
+        ],
+        "multi": true
+      },
+      "主材质": {
+        "vocab_open": true,
+        "hint": "Plastic/Silicone/Stainless Steel/Glass 等"
+      },
+      "适用季节": {
+        "vocab": [
+          "Spring",
+          "Summer",
+          "Fall",
+          "Winter",
+          "All Season"
+        ],
+        "multi": true
+      },
+      "节日属性": {
+        "vocab_open": true
+      },
+      "是否带电池": {
+        "vocab": [
+          "是",
+          "否"
+        ]
+      }
+    },
+    "text": {
+      "title": "Oh So Sweet Lace Set",
+      "title_cn": "Oh So Sweet 蕾丝 Set",
+      "category_name": "Sets (Collection Apparel)",
+      "category_path": [],
+      "design_signals": [
+        {
+          "kind": "design_details",
+          "text": "Measurements for size small: Inseam: 1.5 in; Waist: 26 in; Bust: 28.5 in; Top Length: 10.75 in; Shorts Rise: 12 in; Sleeve Length: 4.25 in; Skirt Length: 38.75 in"
+        }
+      ],
+      "trend_tags": null,
+      "review_tags_raw": null
+    }
+  },
+  "allowed_evidence_ids": [
+    "ev_indie_frontend_003067",
+    "ev_indie_frontend_003068",
+    "ev_indie_frontend_003069",
+    "ev_indie_frontend_003077"
+  ],
+  "output_schema": {
+    "profile": {
+      "产品大类": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "产品小类": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "核心功能": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "使用场景": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "主材质": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用季节": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "节日属性": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "是否带电池": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    },
+    "missing_fields": [
+      "输入文本不足以判断的键，逐个列出"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

@@ -1,0 +1,723 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "tiktok_shop_1731406217255686451",
+  "market": "US",
+  "platform": "tiktok_shop",
+  "primary_product_id": "1731406217255686451",
+  "canonical_url": "https://shop.tiktok.com/view/product/1731406217255686451",
+  "source_refs": [
+    {
+      "source_id": "kalodata",
+      "envelope_id": "envelope_kalodata_20260713"
+    },
+    {
+      "source_id": "tabcut",
+      "envelope_id": "envelope_tabcut_20260713"
+    }
+  ],
+  "basic_facts": {
+    "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+    "brand": "oeak apparel",
+    "category_path": [
+      "女装与女士内衣",
+      "女士内衣",
+      "女士文胸"
+    ],
+    "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731406217255686451/17314062172556864510.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+    "price": {
+      "amount": 108.51,
+      "currency": "CNY"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.4,
+    "review_count": 68609.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": 86499.0,
+    "sales_7d_units": null,
+    "sales_floor_units": null,
+    "revenue_30d": {
+      "amount": 9385900.0,
+      "currency": "CNY"
+    },
+    "gmv_7d": null,
+    "sales_growth_rate": 0.5547,
+    "favorites_count": null,
+    "bestseller_rank_text": null,
+    "video_views_max": 10219600.0,
+    "video_revenue_share": 0.929,
+    "related_creator_count": 594.0,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": 0.04232579491333785,
+    "category_top10_shop_ratio": 0.1186290732759144,
+    "category_shop_count": 19111.0,
+    "competitor_review_max": null,
+    "commission_rate": 0.11,
+    "seller_type": "BRAND",
+    "creator_gmv_concentration": 0.40299999999999997
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [
+      {
+        "source_id": "kalodata",
+        "envelope_id": "envelope_kalodata_20260713",
+        "product_id": "1731406217255686451",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "tabcut",
+        "envelope_id": "envelope_tabcut_20260713",
+        "product_id": "1731406217255686451",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [
+      {
+        "style_group": "intimates",
+        "source_group": "候选自身（tiktok_shop）",
+        "currency": "CNY",
+        "n": 1,
+        "p25": 108.51,
+        "p50": 108.51,
+        "p75": 108.51,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "intimates",
+        "source_group": "tiktok_shop_plugin",
+        "currency": "CNY",
+        "n": 9,
+        "p25": 184.97,
+        "p50": 201.66,
+        "p75": 239.73,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "tiktok_shop_plugin 语料中有 6 款标题命中相同风格词 ['bra', 'bras']",
+        "kind": "style_token_overlap",
+        "count": 6,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ]
+  },
+  "freshness": {
+    "listed_at": null,
+    "first_seen_at": null,
+    "last_seen_at": null,
+    "new_arrival_flag": null,
+    "collection_name": null,
+    "earliest_review_at": null,
+    "earliest_content_at": null,
+    "freshness_status": "unknown",
+    "novelty_status": "unknown",
+    "freshness_evidence_refs": [],
+    "novelty_evidence_refs": []
+  },
+  "style_attributes": {},
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "basic_facts.price(band)",
+    "product_opportunity.reviews"
+  ],
+  "field_issues": [
+    {
+      "field_path": "basic_facts.price",
+      "issue": "source_conflict",
+      "detail": "tabcut 给出 {'amount': 24.21, 'currency': 'USD'}，与已有 {'amount': 108.51, 'currency': 'CNY'} 不一致，保留先值",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "market_metrics.sales_30d_units",
+      "issue": "source_conflict",
+      "detail": "tabcut 给出 86114.0，与已有 86499.0 不一致，保留先值",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "market_metrics.sales_growth_rate",
+      "issue": "source_conflict",
+      "detail": "tabcut 给出 0.2371，与已有 0.5547 不一致，保留先值",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "market_metrics.video_views_max",
+      "issue": "source_conflict",
+      "detail": "tabcut 给出 23619043.0，与已有 10219600.0 不一致，保留先值",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_kalodata_000008",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_top_products;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000009",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "context.seller_name",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_top_products;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000010",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "market_metrics.revenue_30d",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_top_products;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Kalodata 30d GMV，人民币换算口径"
+    },
+    {
+      "evidence_id": "ev_kalodata_000011",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_top_products;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000012",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_top_products;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000013",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "competition_metrics.commission_rate",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_top_products;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000014",
+      "source_id": "kalodata",
+      "source_type": "derived",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_top_products;row=2",
+      "observed_at": null,
+      "confidence": "medium",
+      "note": "derived: mean(trend后3点)/mean(前3点)-1"
+    },
+    {
+      "evidence_id": "ev_kalodata_000076",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000077",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000078",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "context.shop_rating",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000079",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "basic_facts.brand",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000080",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "competition_metrics.seller_type",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000081",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "competition_metrics.creator_gmv_concentration",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000082",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "basic_facts.category_path",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000083",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "context.price_range",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000084",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "context.shipping_fee",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "运费，供利润结构代理指标使用"
+    },
+    {
+      "evidence_id": "ev_kalodata_000085",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "market_metrics.related_creator_count",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail_total;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000086",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "context.creator_conversion_ratio",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail_total;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000087",
+      "source_id": "kalodata",
+      "source_type": "derived",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "market_metrics.video_revenue_share",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_detail_total;row=2",
+      "observed_at": null,
+      "confidence": "medium",
+      "note": "derived: original_video_revenue / original_revenue"
+    },
+    {
+      "evidence_id": "ev_kalodata_000088",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "market_metrics.video_views_max",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=product_videos;row=1..5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "深挖商品关联视频最高播放量"
+    },
+    {
+      "evidence_id": "ev_tabcut_000130",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=53",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000131",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=53",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000132",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=53",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000133",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=53",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000135",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=53",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000240",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.product_total_sales",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=5..5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Tabcut 商品累计总销量（估算）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000241",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.video_views_max",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=5..5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000242",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.video_count_observed",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=5..5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000243",
+      "source_id": "tabcut",
+      "source_type": "derived",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.video_gmv_sum",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=5..5",
+      "observed_at": null,
+      "confidence": "medium",
+      "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000244",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.video_engagement_max",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=5..5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000003",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "competition_metrics.category_top3_shop_ratio",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_summary;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000004",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "competition_metrics.category_top10_shop_ratio",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_summary;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_kalodata_000005",
+      "source_id": "kalodata",
+      "source_type": "plugin",
+      "tool_or_adapter": "KalodataAdapter",
+      "field_path": "competition_metrics.category_shop_count",
+      "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+      "record_locator": "sheet=category_summary;row=2",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "tiktok_shop_plugin",
+    "category_label": null,
+    "seasonal": false,
+    "source_roles": [
+      "transaction"
+    ],
+    "seller_name": "OEAK Apparel",
+    "category_name": "Womenswear & Underwear",
+    "shop_rating": 4.4,
+    "price_range": {
+      "low": 129.1,
+      "high": 198.58,
+      "currency": "CNY"
+    },
+    "shipping_fee": {
+      "amount": 28.69,
+      "currency": "CNY"
+    },
+    "creator_conversion_ratio": 0.6215932914046122,
+    "product_total_sales": 568318.0,
+    "video_count_observed": 1,
+    "video_gmv_sum": {
+      "amount": 546822.61,
+      "currency": "USD"
+    },
+    "video_engagement_max": 0.0086,
+    "category_avg_unit_price_cny": 152.27,
+    "category_revenue_growth_rate": 0.111915681646234,
+    "profile": {
+      "产品英文标题": {
+        "value": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000008",
+          "ev_tabcut_000130"
+        ]
+      },
+      "品牌": {
+        "value": "oeak apparel",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000079"
+        ]
+      },
+      "售价": {
+        "value": "108.51 CNY",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000012",
+          "ev_tabcut_000131"
+        ]
+      },
+      "评分": {
+        "value": 4.4,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000076"
+        ]
+      },
+      "评论数": {
+        "value": 68609.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000077"
+        ]
+      },
+      "类目路径": {
+        "value": [
+          "女装与女士内衣",
+          "女士内衣",
+          "女士文胸"
+        ],
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000082"
+        ]
+      },
+      "来源类目": {
+        "value": "Womenswear & Underwear",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "主图链接": {
+        "value": "https://cdn.tabcut.com/dataservice/media/item/1731406217255686451/17314062172556864510.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000135"
+        ]
+      },
+      "商品链接": {
+        "value": "https://shop.tiktok.com/view/product/1731406217255686451",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "tiktok_shop",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "运费": {
+        "value": "28.69 CNY",
+        "group": "包装与物流",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_kalodata_000084"
+        ]
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

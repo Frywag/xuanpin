@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0CYZ9LMRF",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "R.Vivimos Womens Summer Cotton Flowy Maxi Dress Short Sleeve V Neck Empire Waist Boho Tiered Ruffle Casual Loose Long Dresses",
+    "rating": 4.0,
+    "review_count": 726.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":144,\"positive\":130,\"negative\":14,\"snippets\":[\"Customers find the dress nice and perfect for summer wear, particularly as a beach cover-up, with one customer noting it pairs well with gold jewelry and sandals.\",\". A little see through but a slip fixes that. I'm 5'4, 136 pounds & large chested - I got medium. It fits perfectly. HANG DRY.\",\"and i would highly recommend but my issue was after a wash or two, the dress shrunk and only came up to my knees\",\"but shrinks in the dryer. It’s probably three inches shorter now than it was when I bought it.\",\". I’ve received so many compliments on it. Love that it’s 100% cotton and I hope to buy more colors in the future!\"]},{\"tag\":\"fabric\",\"mentions\":90,\"positive\":70,\"negative\":20,\"snippets\":[\"Customers appreciate the fabric of the dress, describing it as soft, gauzy, and flowy.\",\", flowy covered my upper arms, and the front buttons can be closed or left open depending on...\",\"it is somewhat stiff. Was not flowy like it appeared to be so it is sort of tent like....\",\". No way. The fabric is rough and almost crunchy… such a bummer....\"]},{\"tag\":\"comfort\",\"mentions\":83,\"positive\":81,\"negative\":2,\"snippets\":[\"Customers find the dress comfortable, with one mentioning it works well in hot weather and another noting it balances comfort with elegance.\",\". I would even say its sexy if I were sexy but at 70 I’m sad to say those days are mostly over. I do love this dress....\",\"and cute. Very low cut, but nothing a pin or a few stitches can’t fix! I bought the pink....\",\"and cute. A little see through but a slip fixes that. I'm 5'4, 136 pounds & large chested - I got medium. It fits perfectly. HANG DRY.\",\"and pretty. Washes up well. I take it out of the washer and let it hang to dry. Perfect! Highly recommend! Cheers!\"]},{\"tag\":\"color\",\"mentions\":57,\"positive\":49,\"negative\":8,\"snippets\":[\". The sizing around the chest and arms runs small even with XL size. It was ok with an undershirt and the buttons open.\",\"and fabric. The length is mid-calf. I would order one size ip maybe? It fir great except too tight in the shoulder/sleeve area\",\", fit and fabric so breathable. Wear it to the beach and have had so many compliments.\"]},{\"tag\":\"lightweight\",\"mentions\":47,\"positive\":45,\"negative\":2,\"snippets\":[\"Customers appreciate that the dress is lightweight, noting that the fabric is light without being sheer.\",\"and flowy. I do wish the fabric was a bit thicker—not sure how well it’ll hold up long-term....\",\", the navy color was pretty. You can't wear it with just a bra--really need a tank top underneath....\",\"it is as well as the color. Not crazy about the price, but I may think about purchasing 1 or 2 more.\",\". Vibrant color. Cons- very much a pyramid shape. Short curvy ladies beware.\"]},{\"tag\":\"versatility\",\"mentions\":39,\"positive\":36,\"negative\":3,\"snippets\":[\"Customers find the dress versatile, using it as a beach and pool cover-up, and one customer mentions it works well with an undershirt.\",\"and am glad it is made with cotton as so many of Amazon’s clothing are made from polyester and other cheap materials....\"]},{\"tag\":\"fit\",\"mentions\":159,\"positive\":102,\"negative\":57,\"snippets\":[\"Customers have mixed experiences with the dress's fit, with some finding the medium size perfect and the length suitable, while others report that it runs extremely small through the chest and the sizing is huge.\",\"yet forgiving, with a boho look that works equally well as casual wear or even a beach cover-up....\",\". Not so tight to not be comfortable but they don't swing like you see in the picture....\",\"4. Beautiful pink color (exactly what I wanted and expected) 5....\",\". Will definitely buy in several colors. Great for showers, luncheons....\"]},{\"tag\":\"opacity\",\"mentions\":52,\"positive\":27,\"negative\":25,\"snippets\":[\"Customers have mixed opinions about the dress's opacity, with some finding it not completely sheer, while others describe it as see-through.\",\"...genuine cotton, very light and airy- slightly sheer but certainly\",\"but a slip fixes that. I'm 5'4, 136 pounds & large chested - I got medium. It fits perfectly. HANG DRY.\",\", if you want for dress. Very deep v neck. So you would need a cami.\",\"so I added a slip, and it is very low cute but nothing a little safety pin couldn’t fix.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_640d42d7f44e6197",
+    "ev_972c1a5acd191c42",
+    "ev_ef30a662564c5382"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

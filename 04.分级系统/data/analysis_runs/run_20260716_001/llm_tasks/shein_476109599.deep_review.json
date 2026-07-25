@@ -1,0 +1,372 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "shein_476109599",
+  "run_id": "run_20260716_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "shein_476109599",
+      "platform": "shein",
+      "canonical_url": "https://us.shein.com/Women-s-Casual-Elegant-Fashion-Color-Blocking-Lace-Patchwork-Strapless-Pink-Dress-Suitable-For-Vacation-Beach-Music-Festival-Wedding-Season-Spring-Summer-p-476109599.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_476109599%7C0-2",
+      "basic_facts": {
+        "title": "Women's Casual Elegant Fashion Color-Blocking Lace Patchwork Strapless Pink Dress, Suitable For Vacation, Beach, Music Festival/Wedding Season, Spring/Summer",
+        "brand": null,
+        "category_path": [],
+        "image_url": "https://img.ltwebstatic.com/v4/j/spmp/2026/05/12/49/17785733216259fb5012799ca3d6f97a18780b0640.webp",
+        "price": {
+          "amount": 19.94,
+          "currency": "USD"
+        },
+        "original_price": {
+          "amount": 29.59,
+          "currency": "USD"
+        },
+        "discount_pct": -0.33,
+        "rating": null,
+        "review_count": null,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": null,
+        "sales_7d_units": null,
+        "sales_floor_units": 4100.0,
+        "revenue_30d": null,
+        "gmv_7d": null,
+        "sales_growth_rate": null,
+        "favorites_count": null,
+        "bestseller_rank_text": "#4 Bestseller in Petite Women's Summer Short Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": [
+          {
+            "signal": "TealCollection",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_shein_frontend_001493"
+            ]
+          },
+          {
+            "signal": "Cowboycore",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_shein_frontend_001493"
+            ]
+          },
+          {
+            "signal": "CoralCrush",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_shein_frontend_001493"
+            ]
+          }
+        ]
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [],
+        "same_style_signals": []
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "basic_facts.rating",
+        "basic_facts.review_count",
+        "market_metrics.sales_growth_rate",
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio",
+        "freshness.listed_at",
+        "freshness.style_novelty_evidence"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": null,
+        "category_label": "women_dresses",
+        "source_group": "shein_frontend",
+        "site": "shein",
+        "shop_name": null,
+        "seller_name": null,
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": null
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "B",
+      "pct": 46.8,
+      "total": 28.1,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 24.0,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_floor_units=4,100 -> 15分；带平台畅销榜标记；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_shein_frontend_001491",
+            "ev_shein_frontend_001492"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 3.8,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 outside -> 2分",
+          "evidence_refs": [
+            "ev_shein_frontend_001488"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 3.0,
+          "max_score": 15.0,
+          "reason": "有趋势标签/设计细节记录",
+          "evidence_refs": [
+            "ev_shein_frontend_001493"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_shein_frontend_001483"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_floor_units=4,100 -> 15分；带平台畅销榜标记；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_shein_frontend_001491",
+            "ev_shein_frontend_001492"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 outside -> 2分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_shein_frontend_001488"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：有趋势标签/设计细节记录",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_shein_frontend_001493"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_shein_frontend_001483"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 46.8,
+          "grade": "B",
+          "gate_reason": "PScore 28.1/60.0（46.8%）-> B",
+          "required_next_data": [
+            "basic_facts.rating"
+          ]
+        },
+        "L2": {
+          "passed": null,
+          "score": null,
+          "grade": null,
+          "gate_reason": null,
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": null,
+          "score": null,
+          "grade": null,
+          "gate_reason": null,
+          "required_next_data": []
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_shein_frontend_001483",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001484",
+        "source_id": "shein_frontend",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001485",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001487",
+        "source_id": "shein_frontend",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001488",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001489",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.original_price",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001490",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.discount_pct",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001491",
+        "source_id": "shein_frontend",
+        "field_path": "market_metrics.sales_floor_units",
+        "record_locator": "sheet=shein;row=98",
+        "note": "Shein 销量为下限口径（如 100+ 记 100）"
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001492",
+        "source_id": "shein_frontend",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_001493",
+        "source_id": "shein_frontend",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=shein;row=98",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_shein_frontend_001483",
+    "ev_shein_frontend_001484",
+    "ev_shein_frontend_001485",
+    "ev_shein_frontend_001487",
+    "ev_shein_frontend_001488",
+    "ev_shein_frontend_001489",
+    "ev_shein_frontend_001490",
+    "ev_shein_frontend_001491",
+    "ev_shein_frontend_001492",
+    "ev_shein_frontend_001493"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

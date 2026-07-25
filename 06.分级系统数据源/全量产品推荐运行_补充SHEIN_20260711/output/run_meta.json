@@ -1,0 +1,52 @@
+{
+  "run_id": "output",
+  "collector_version": "grading-system/0.1.0",
+  "started_at": "2026-07-10T20:45:43+00:00",
+  "finished_at": "2026-07-10T20:45:43+00:00",
+  "market": "US",
+  "envelopes": 26,
+  "candidates_total": 2000,
+  "l1_processed": 2000,
+  "l2_processed": 40,
+  "l3_processed": 10,
+  "grade_distribution": {
+    "A": 68,
+    "S": 8,
+    "B": 277,
+    "C": 1647
+  },
+  "track_distribution": {
+    "trend_rising": 285,
+    "balanced": 1378,
+    "evergreen": 80,
+    "pain_improvement": 257
+  },
+  "capability_profile_enabled": false,
+  "pct_p50": 20.0,
+  "pct_p90": 43.7,
+  "pct_max": 62.7,
+  "scoring_config": "04.分级系统/configs/scoring_v0.yaml",
+  "gates_config": "04.分级系统/configs/layer_gates_v0.yaml",
+  "sources_config": "06.分级系统数据源/全量产品推荐运行_补充SHEIN_20260711/sources_full_with_shein_20260711.yaml",
+  "group_stats": "{\"price_bands\": {\"amazon_plugin|USD\": {\"n\": 200, \"p10\": 12.99, \"p25\": 14.99, \"p50\": 26.479999999999997, \"p75\": 37.99, \"p90\": 43.891000000000005}, \"tiktok_shop_plugin|CNY\": {\"n\": 93, \"p10\": 103.49000000000001, \"p25\": 151.87, \"p50\": 274.61, \"p75\": 354.79, \"p90\": 539.2779999999999}, \"frontend_aerie|USD\": {\"n\": 30, \"p10\": 31.46, \"p25\": 52.46, \"p50\": 55.58, \"p75\": 59.95, \"p90\": 78.0}, \"frontend_alo_yoga|USD\": {\"n\": 45, \"p10\": 138.0, \"p25\": 138.0, \"p50\": 138.0, \"p75\": 138.0, \"p90\": 138.0}, \"frontend_amazon|USD\": {\"n\": 406, \"p10\": 13.235, \"p25\": 17.99, \"p50\": 29.99, \"p75\": 39.97, \"p90\": 47.59}, \"frontend_cupshe|USD\": {\"n\": 48, \"p10\": 29.0, \"p25\": 32.75, \"p50\": 36.0, \"p75\": 40.0, \"p90\": 44.0}, \"frontend_farm_rio|USD\": {\"n\": 4, \"p10\": 254.6, \"p25\": 264.5, \"p50\": 270.0, \"p75\": 289.5, \"p90\": 324.6}, \"frontend_for_love_lemons|USD\": {\"n\": 126, \"p10\": 19800.0, \"p25\": 23150.0, \"p50\": 28900.0, \"p75\": 34900.0, \"p90\": 48900.0}, \"frontend_good_american|USD\": {\"n\": 43, \"p10\": 82.8, \"p25\": 123.0, \"p50\": 158.0, \"p75\": 163.5, \"p90\": 169.0}, \"frontend_lulus|USD\": {\"n\": 66, \"p10\": 54.0, \"p25\": 66.0, \"p50\": 78.5, \"p75\": 87.25, \"p90\": 99.0}, \"frontend_madewell|USD\": {\"n\": 41, \"p10\": 88.0, \"p25\": 118.0, \"p50\": 138.0, \"p75\": 148.0, \"p90\": 168.0}, \"frontend_quince|USD\": {\"n\": 99, \"p10\": 49.9, \"p25\": 54.0, \"p50\": 64.9, \"p75\": 82.0, \"p90\": 149.9}, \"frontend_reformation|USD\": {\"n\": 48, \"p10\": 178.0, \"p25\": 248.0, \"p50\": 278.0, \"p75\": 328.0, \"p90\": 378.0}, \"frontend_skims|USD\": {\"n\": 51, \"p10\": 20.0, \"p25\": 51.0, \"p50\": 68.0, \"p75\": 88.0, \"p90\": 108.0}, \"frontend_shein|USD\": {\"n\": 199, \"p10\": 5.494, \"p25\": 9.19, \"p50\": 12.09, \"p75\": 14.89, \"p90\": 17.670000000000005}}, \"review_p90\": {\"amazon_plugin\": {\"n\": 199, \"p90\": 5059.400000000005}, \"tiktok_shop_plugin\": {\"n\": 93, \"p90\": 1448.6}, \"frontend_amazon\": {\"n\": 403, \"p90\": 2476.0}, \"frontend_cupshe\": {\"n\": 10, \"p90\": 120.5}, \"frontend_lulus\": {\"n\": 12, \"p90\": 37.0}, \"frontend_quince\": {\"n\": 99, \"p90\": 4594.200000000001}, \"frontend_shein\": {\"n\": 83, \"p90\": 1000.0}}}",
+  "envelope_warnings": "{\"envelope_frontend_abercrombie_fitch_20260710\": [\"该站点本轮无有效商品行，仍保留数据源审计记录。\"], \"envelope_frontend_aerie_20260710\": [\"30 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_anthropologie_20260710\": [\"72 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_cider_20260710\": [\"该站点本轮无有效商品行，仍保留数据源审计记录。\"], \"envelope_frontend_everlane_20260710\": [\"37 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_farm_rio_20260710\": [\"11 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_free_people_20260710\": [\"72 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_good_american_20260710\": [\"43 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_lululemon_20260710\": [\"26 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_lulus_20260710\": [\"105 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_madewell_20260710\": [\"41 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_old_navy_20260710\": [\"该站点本轮无有效商品行，仍保留数据源审计记录。\"], \"envelope_frontend_princess_polly_20260710\": [\"134 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_revolve_20260710\": [\"该站点本轮无有效商品行，仍保留数据源审计记录。\"], \"envelope_frontend_urban_outfitters_20260710\": [\"72 行详情采集状态为失败或受阻，保留列表事实并降级。\"], \"envelope_frontend_vuori_20260710\": [\"该站点本轮无有效商品行，仍保留数据源审计记录。\"], \"envelope_seller_sprite_amazon_20260710\": [\"销量与销售额为 SellerSprite 估算值；趋势工作表按全部有效行聚合。\"], \"envelope_frontend_shein_20260711\": [\"销量采用来源下限口径；媒体表按商品ID关联并去重。\"], \"envelope_kalodata_dresses_20260710\": [\"Kalodata trial plan exposed only page 1 with 10 rows per list/filter; the collector expanded coverage through four child categories and multiple sort dimensions.\", \"Observed market totals were 37,353 products and 99,425 product videos; this envelope contains 93 unique product candidates actually returned by accessible endpoints.\", \"Search quota 30/30 and detail quota 30/30 were used; export quota was 0.\"]}",
+  "llm_usage": "无（全部为确定性规则；未编造任何数值）",
+  "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
+  "llm_tasks_generated": 83,
+  "deep_review_candidates": [
+    "amazon_B09N72KVHY",
+    "shein_488434750",
+    "amazon_B09NFHM7YJ",
+    "amazon_B0F1RW5JJC",
+    "amazon_B0FV8B1HD4",
+    "amazon_B0FQTR83H2",
+    "amazon_B0D7Q86R4N",
+    "amazon_B0G4RYHM2Z",
+    "amazon_B0GFNKBM2J",
+    "amazon_B0CN2XRCZH",
+    "shein_472914284",
+    "amazon_B0CWVMP1GC"
+  ],
+  "sab_full_retained": 353,
+  "db_path": "06.分级系统数据源/全量产品推荐运行_补充SHEIN_20260711/selection_full_with_shein_20260711.db"
+}

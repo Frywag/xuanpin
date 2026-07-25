@@ -1,3 +1,32 @@
 .DS_Store
 **/.DS_Store
 
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 分级系统运行产物：全量 JSONL 与前端信封体积大（~30MB），
+# 可用 CLI 一键复现（见 04.分级系统/README.md），不入库；
+# XLSX 推荐表、run_meta、样例候选包、插件 SourceEnvelope 保留入库
+04.分级系统/data/analysis_runs/*/candidate_packets.jsonl
+04.分级系统/data/analysis_runs/*/analysis_results.jsonl
+04.分级系统/data/analysis_runs/*/envelopes/envelope_*frontend*.json
+04.分级系统/data/selection.db
+
+
+# 大体积可复现产物（每 run 约 12MB，CLI 一键重算）：自 run_20260714 起不再入库；
+# run_20260713_001 的历史副本保留在库中作三赛道首轮基线
+04.分级系统/data/analysis_runs/*/track_evaluations.jsonl
+04.分级系统/data/analysis_runs/*/sab_products_full.jsonl
+
+# codebase-memory 索引排除：运行过程和交付数据表均可由管道重算，
+# 不进入代码知识图谱；保留 run_meta.json 作为轻量运行审计记录。
+04.分级系统/data/analysis_runs/*/*.xlsx
+04.分级系统/data/analysis_runs/*/candidate_packets/
+04.分级系统/data/analysis_runs/*/envelopes/
+04.分级系统/data/analysis_runs/*/llm_tasks/
+04.分级系统/data/analysis_runs/*/llm_outputs/
+04.分级系统/data/analysis_runs/*/deep_reviews/
+04.分级系统/data/analysis_runs/*/opportunity_clusters.json
+04.分级系统/data/analysis_runs/*/选品分析报告.md

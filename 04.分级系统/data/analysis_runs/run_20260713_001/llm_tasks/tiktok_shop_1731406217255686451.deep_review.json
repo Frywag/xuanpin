@@ -1,0 +1,650 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "tiktok_shop_1731406217255686451",
+  "run_id": "run_20260713_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "tiktok_shop_1731406217255686451",
+      "platform": "tiktok_shop",
+      "canonical_url": "https://shop.tiktok.com/view/product/1731406217255686451",
+      "basic_facts": {
+        "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+        "brand": "oeak apparel",
+        "category_path": [
+          "女装与女士内衣",
+          "女士内衣",
+          "女士文胸"
+        ],
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731406217255686451/17314062172556864510.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "price": {
+          "amount": 108.51,
+          "currency": "CNY"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.4,
+        "review_count": 68609.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 86499.0,
+        "sales_7d_units": null,
+        "sales_floor_units": null,
+        "revenue_30d": {
+          "amount": 9385900.0,
+          "currency": "CNY"
+        },
+        "gmv_7d": null,
+        "sales_growth_rate": 0.5547,
+        "favorites_count": null,
+        "bestseller_rank_text": null,
+        "video_views_max": 10219600.0,
+        "video_revenue_share": 0.929,
+        "related_creator_count": 594.0,
+        "trend_signals": []
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": 0.04232579491333785,
+        "category_top10_shop_ratio": 0.1186290732759144,
+        "category_shop_count": 19111.0,
+        "competitor_review_max": null,
+        "commission_rate": 0.11,
+        "seller_type": "BRAND",
+        "creator_gmv_concentration": 0.40299999999999997
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [
+          {
+            "source_id": "kalodata",
+            "envelope_id": "envelope_kalodata_20260713",
+            "product_id": "1731406217255686451",
+            "match_type": "exact_or_prefix_product_id"
+          },
+          {
+            "source_id": "tabcut",
+            "envelope_id": "envelope_tabcut_20260713",
+            "product_id": "1731406217255686451",
+            "match_type": "exact_or_prefix_product_id"
+          }
+        ],
+        "platform_price_comparison": [
+          {
+            "style_group": "intimates",
+            "source_group": "候选自身（tiktok_shop）",
+            "currency": "CNY",
+            "n": 1,
+            "p25": 108.51,
+            "p50": 108.51,
+            "p75": 108.51,
+            "note": "候选商品价格"
+          },
+          {
+            "style_group": "intimates",
+            "source_group": "tiktok_shop_plugin",
+            "currency": "CNY",
+            "n": 9,
+            "p25": 184.97,
+            "p50": 201.66,
+            "p75": 239.73,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          }
+        ],
+        "same_style_signals": [
+          {
+            "signal": "tiktok_shop_plugin 语料中有 6 款标题命中相同风格词 ['bra', 'bras']",
+            "kind": "style_token_overlap",
+            "count": 6,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          }
+        ]
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "basic_facts.price(band)",
+        "product_opportunity.reviews",
+        "freshness.listed_at",
+        "freshness.style_novelty_evidence"
+      ],
+      "field_issues": [
+        {
+          "field_path": "basic_facts.price",
+          "issue": "source_conflict",
+          "detail": "tabcut 给出 {'amount': 24.21, 'currency': 'USD'}，与已有 {'amount': 108.51, 'currency': 'CNY'} 不一致，保留先值",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "market_metrics.sales_30d_units",
+          "issue": "source_conflict",
+          "detail": "tabcut 给出 86114.0，与已有 86499.0 不一致，保留先值",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "market_metrics.sales_growth_rate",
+          "issue": "source_conflict",
+          "detail": "tabcut 给出 0.2371，与已有 0.5547 不一致，保留先值",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "market_metrics.video_views_max",
+          "issue": "source_conflict",
+          "detail": "tabcut 给出 23619043.0，与已有 10219600.0 不一致，保留先值",
+          "evidence_refs": []
+        }
+      ],
+      "context": {
+        "category_name": "Womenswear & Underwear",
+        "category_label": null,
+        "source_group": "tiktok_shop_plugin",
+        "site": null,
+        "shop_name": null,
+        "seller_name": "OEAK Apparel",
+        "seasonal": false,
+        "shipping_fee": {
+          "amount": 28.69,
+          "currency": "CNY"
+        },
+        "product_total_sales": 568318.0,
+        "video_engagement_max": 0.0086,
+        "affiliate_creator_count": null,
+        "review_tags_raw": null
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "A",
+      "pct": 53.8,
+      "total": 32.3,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 27.6,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源",
+          "evidence_refs": [
+            "ev_kalodata_000011",
+            "ev_kalodata_000014",
+            "ev_tabcut_000132",
+            "ev_tabcut_000133"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 5.2,
+          "max_score": 15.0,
+          "reason": "类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分",
+          "evidence_refs": [
+            "ev_kalodata_000004",
+            "ev_kalodata_000077"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 7.5,
+          "max_score": 15.0,
+          "reason": "评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%",
+          "evidence_refs": [
+            "ev_kalodata_000076",
+            "ev_kalodata_000087"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -8.0,
+          "max_score": 0.0,
+          "reason": "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND；达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_kalodata_000080",
+            "ev_kalodata_000081"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_kalodata_000011",
+            "ev_kalodata_000014",
+            "ev_tabcut_000132",
+            "ev_tabcut_000133"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "竞争可突破：类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_kalodata_000004",
+            "ev_kalodata_000077"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_kalodata_000076",
+            "ev_kalodata_000087"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND（人工待确认）",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_kalodata_000080"
+          ],
+          "confidence": "low"
+        },
+        {
+          "claim": "达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_kalodata_000081"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "多源互验：kalodata、tabcut 按商品ID匹配到同一商品",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_kalodata_000008",
+            "ev_tabcut_000130"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "同风格红海程度：低（语料内同风格候选 6 款，词表确定性匹配）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_kalodata_000008",
+            "ev_tabcut_000130"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "平台优先级：tiktok_shop（视频销售额占比 93%，内容驱动型，优先 TikTok Shop）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_kalodata_000087"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 53.8,
+          "grade": "A",
+          "gate_reason": "PScore 32.3/60.0（53.8%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 53.8,
+          "grade": "A",
+          "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+          "required_next_data": [
+            "reviews_or_review_tags"
+          ]
+        },
+        "L3": {
+          "passed": true,
+          "score": 53.8,
+          "grade": "A",
+          "gate_reason": "2 个数据源按商品ID互验（kalodata、tabcut）；同风格信号：tiktok_shop_plugin 语料中有 6 款标题命中相同风格词 ['bra', 'bras']；视频销售额占比 93%，内容驱动型，优先 TikTok Shop",
+          "required_next_data": [
+            "供应链字段人工调查（选品后画像存库用，不参与打分）"
+          ]
+        }
+      },
+      "confidence": "high"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_kalodata_000008",
+        "source_id": "kalodata",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=category_top_products;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000009",
+        "source_id": "kalodata",
+        "field_path": "context.seller_name",
+        "record_locator": "sheet=category_top_products;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000010",
+        "source_id": "kalodata",
+        "field_path": "market_metrics.revenue_30d",
+        "record_locator": "sheet=category_top_products;row=2",
+        "note": "Kalodata 30d GMV，人民币换算口径"
+      },
+      {
+        "evidence_id": "ev_kalodata_000011",
+        "source_id": "kalodata",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=category_top_products;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000012",
+        "source_id": "kalodata",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=category_top_products;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000013",
+        "source_id": "kalodata",
+        "field_path": "competition_metrics.commission_rate",
+        "record_locator": "sheet=category_top_products;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000014",
+        "source_id": "kalodata",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=category_top_products;row=2",
+        "note": "derived: mean(trend后3点)/mean(前3点)-1"
+      },
+      {
+        "evidence_id": "ev_kalodata_000076",
+        "source_id": "kalodata",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000077",
+        "source_id": "kalodata",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000078",
+        "source_id": "kalodata",
+        "field_path": "context.shop_rating",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000079",
+        "source_id": "kalodata",
+        "field_path": "basic_facts.brand",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000080",
+        "source_id": "kalodata",
+        "field_path": "competition_metrics.seller_type",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000081",
+        "source_id": "kalodata",
+        "field_path": "competition_metrics.creator_gmv_concentration",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000082",
+        "source_id": "kalodata",
+        "field_path": "basic_facts.category_path",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000083",
+        "source_id": "kalodata",
+        "field_path": "context.price_range",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000084",
+        "source_id": "kalodata",
+        "field_path": "context.shipping_fee",
+        "record_locator": "sheet=product_detail;row=2",
+        "note": "运费，供利润结构代理指标使用"
+      },
+      {
+        "evidence_id": "ev_kalodata_000085",
+        "source_id": "kalodata",
+        "field_path": "market_metrics.related_creator_count",
+        "record_locator": "sheet=product_detail_total;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000086",
+        "source_id": "kalodata",
+        "field_path": "context.creator_conversion_ratio",
+        "record_locator": "sheet=product_detail_total;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000087",
+        "source_id": "kalodata",
+        "field_path": "market_metrics.video_revenue_share",
+        "record_locator": "sheet=product_detail_total;row=2",
+        "note": "derived: original_video_revenue / original_revenue"
+      },
+      {
+        "evidence_id": "ev_kalodata_000088",
+        "source_id": "kalodata",
+        "field_path": "market_metrics.video_views_max",
+        "record_locator": "sheet=product_videos;row=1..5",
+        "note": "深挖商品关联视频最高播放量"
+      },
+      {
+        "evidence_id": "ev_tabcut_000130",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=最终原数据;row=53",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000131",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=最终原数据;row=53",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000132",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=最终原数据;row=53",
+        "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000133",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=最终原数据;row=53",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000135",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=最终原数据;row=53",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000240",
+        "source_id": "tabcut",
+        "field_path": "context.product_total_sales",
+        "record_locator": "sheet=最终原数据;row=5..5",
+        "note": "Tabcut 商品累计总销量（估算）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000241",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.video_views_max",
+        "record_locator": "sheet=最终原数据;row=5..5",
+        "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000242",
+        "source_id": "tabcut",
+        "field_path": "context.video_count_observed",
+        "record_locator": "sheet=最终原数据;row=5..5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000243",
+        "source_id": "tabcut",
+        "field_path": "context.video_gmv_sum",
+        "record_locator": "sheet=最终原数据;row=5..5",
+        "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000244",
+        "source_id": "tabcut",
+        "field_path": "context.video_engagement_max",
+        "record_locator": "sheet=最终原数据;row=5..5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000003",
+        "source_id": "kalodata",
+        "field_path": "competition_metrics.category_top3_shop_ratio",
+        "record_locator": "sheet=category_summary;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000004",
+        "source_id": "kalodata",
+        "field_path": "competition_metrics.category_top10_shop_ratio",
+        "record_locator": "sheet=category_summary;row=2",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_000005",
+        "source_id": "kalodata",
+        "field_path": "competition_metrics.category_shop_count",
+        "record_locator": "sheet=category_summary;row=2",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_kalodata_000003",
+    "ev_kalodata_000004",
+    "ev_kalodata_000005",
+    "ev_kalodata_000008",
+    "ev_kalodata_000009",
+    "ev_kalodata_000010",
+    "ev_kalodata_000011",
+    "ev_kalodata_000012",
+    "ev_kalodata_000013",
+    "ev_kalodata_000014",
+    "ev_kalodata_000076",
+    "ev_kalodata_000077",
+    "ev_kalodata_000078",
+    "ev_kalodata_000079",
+    "ev_kalodata_000080",
+    "ev_kalodata_000081",
+    "ev_kalodata_000082",
+    "ev_kalodata_000083",
+    "ev_kalodata_000084",
+    "ev_kalodata_000085",
+    "ev_kalodata_000086",
+    "ev_kalodata_000087",
+    "ev_kalodata_000088",
+    "ev_tabcut_000130",
+    "ev_tabcut_000131",
+    "ev_tabcut_000132",
+    "ev_tabcut_000133",
+    "ev_tabcut_000135",
+    "ev_tabcut_000240",
+    "ev_tabcut_000241",
+    "ev_tabcut_000242",
+    "ev_tabcut_000243",
+    "ev_tabcut_000244"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

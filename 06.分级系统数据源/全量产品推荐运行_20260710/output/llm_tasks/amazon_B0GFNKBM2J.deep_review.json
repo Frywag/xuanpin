@@ -1,0 +1,704 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "amazon_B0GFNKBM2J",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "amazon_B0GFNKBM2J",
+      "platform": "amazon",
+      "canonical_url": "https://www.amazon.com/YESNO-Womens-Dresses-Vacation-Pockets/dp/B0GFNKBM2J/ref=zg_bs_g_2346727011_d_sccl_9/146-3373523-6428265",
+      "basic_facts": {
+        "title": "YESNO Women's Summer Maxi Dresses Casual Floral Short Sleeve V Neck Boho Beach Vacation Swing Dress with Pockets EVF",
+        "brand": "YESNO",
+        "category_path": [
+          "Clothing, Shoes & Jewelry",
+          "Women",
+          "Clothing",
+          "Dresses",
+          "Casual"
+        ],
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/717d1ATJ0AL._AC_UL600_SR600,400_.jpg",
+        "price": {
+          "amount": 24.99,
+          "currency": "USD"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.2,
+        "review_count": 882.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 13323.0,
+        "sales_7d_units": null,
+        "sales_floor_units": null,
+        "revenue_30d": {
+          "amount": 332941.78,
+          "currency": "USD"
+        },
+        "gmv_7d": null,
+        "sales_growth_rate": 90.0,
+        "favorites_count": null,
+        "bestseller_rank_text": "Best Sellers Rank: #2,420 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry) #59 in Women's Casual Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": []
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [
+          {
+            "cluster_name": "正面标签",
+            "tags": []
+          }
+        ],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [
+          {
+            "style_group": "dress",
+            "source_group": "候选自身（amazon）",
+            "currency": "USD",
+            "n": 1,
+            "p25": 24.99,
+            "p50": 24.99,
+            "p75": 24.99,
+            "note": "候选商品价格"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "amazon_plugin",
+            "currency": "USD",
+            "n": 200,
+            "p25": 14.99,
+            "p50": 26.48,
+            "p75": 37.99,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_aerie",
+            "currency": "USD",
+            "n": 20,
+            "p25": 52.46,
+            "p50": 54.95,
+            "p75": 59.95,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_alo_yoga",
+            "currency": "USD",
+            "n": 45,
+            "p25": 138.0,
+            "p50": 138.0,
+            "p75": 138.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_amazon",
+            "currency": "USD",
+            "n": 399,
+            "p25": 18.88,
+            "p50": 29.99,
+            "p75": 39.99,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_cupshe",
+            "currency": "USD",
+            "n": 48,
+            "p25": 32.75,
+            "p50": 36.0,
+            "p75": 40.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_for_love_lemons",
+            "currency": "USD",
+            "n": 116,
+            "p25": 22900.0,
+            "p50": 28250.0,
+            "p75": 31900.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_good_american",
+            "currency": "USD",
+            "n": 12,
+            "p25": 93.0,
+            "p50": 138.0,
+            "p75": 148.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_lulus",
+            "currency": "USD",
+            "n": 21,
+            "p25": 69.0,
+            "p50": 79.0,
+            "p75": 99.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_madewell",
+            "currency": "USD",
+            "n": 31,
+            "p25": 123.0,
+            "p50": 148.0,
+            "p75": 158.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_quince",
+            "currency": "USD",
+            "n": 89,
+            "p25": 59.9,
+            "p50": 69.9,
+            "p75": 99.9,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_reformation",
+            "currency": "USD",
+            "n": 47,
+            "p25": 248.0,
+            "p50": 278.0,
+            "p75": 313.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_skims",
+            "currency": "USD",
+            "n": 24,
+            "p25": 68.0,
+            "p50": 86.0,
+            "p75": 98.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "tiktok_shop_plugin",
+            "currency": "CNY",
+            "n": 88,
+            "p25": 168.96,
+            "p50": 275.63,
+            "p75": 345.18,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          }
+        ],
+        "same_style_signals": [
+          {
+            "signal": "frontend_amazon 语料中有 397 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 397,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "amazon_plugin 语料中有 199 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 199,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_for_love_lemons 语料中有 116 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 116,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "tiktok_shop_plugin 语料中有 87 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 87,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_quince 语料中有 80 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 80,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_lulus 语料中有 76 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 76,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_urban_outfitters 语料中有 70 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 70,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_anthropologie 语料中有 66 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 66,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_free_people 语料中有 66 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 66,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_cupshe 语料中有 48 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 48,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_reformation 语料中有 47 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 47,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_alo_yoga 语料中有 45 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 45,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_everlane 语料中有 45 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 45,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_princess_polly 语料中有 33 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 33,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_madewell 语料中有 31 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 31,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_lululemon 语料中有 25 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 25,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_skims 语料中有 24 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 24,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_aerie 语料中有 18 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 18,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_good_american 语料中有 12 款标题命中相同风格词 ['dress', 'dresses']",
+            "kind": "style_token_overlap",
+            "count": 12,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          }
+        ]
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": "Casual",
+        "category_label": null,
+        "source_group": "amazon_plugin",
+        "site": null,
+        "shop_name": null,
+        "seller_name": "yourfashionshow",
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":130,\"positive\":116,\"negative\":14,\"snippets\":[\"Customers find the dress visually appealing, praising its beautiful patterns and print, with one customer noting how it accentuates desired features.\",\"...The fabric dries to a “bubbly” texture, & that’s what makes it so darn\",\". A very cool dress for 3 out of 4 seasons in southern Arizona.\",\". Got many compliments wearing it. Length wise perfect . Going to buy other colors as well\",\"...I hate wearing dresses because they are not flattering but this one is\",\". I like the material and the fit is just perfect. Highly recommend!\",\". Love this print and the brushed cotton. It may fade but I feel it will add to the charm of the dress....\"]},{\"tag\":\"comfort\",\"mentions\":107,\"positive\":106,\"negative\":1,\"snippets\":[\", easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\",\", the colors on the two I bought are true to the photo. I bought my normal xl and they fit fine!\",\"and cool for the hot Florida summer. My phone fits on the pockets and the length is perfect. I'm 5'7\\\" tall and large....\",\"! I will be wearing this quite a bit this summer! The color is beautiful!...\"]},{\"tag\":\"quality\",\"mentions\":101,\"positive\":92,\"negative\":9,\"snippets\":[\"Customers find the dress to be of good quality, describing it as nice and cool, with one customer noting it's perfect for summer wear.\",\"! The quality, style and fit. So comfortable as well as the price is affordable.\",\". I bought the navy/green plaid first and love it. This is true to the colors and it’s kind of a woven fabric....\",\", breathable material, has pockets! Take in account that material is going to shrink some....\",\"...It’s got a great fit, very flattering for the tummy. It’s\",\"and comfortable and I love that the sleeves aren’t tight and uncomfortable....\"]},{\"tag\":\"lightweight\",\"mentions\":56,\"positive\":54,\"negative\":2,\"snippets\":[\"Customers appreciate the dress's lightweight fabric, describing it as a beautiful summer dress.\",\", soft, colorful, COMFORTABLE, easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\",\". Size is accurate. It fits larger sizes well with good room in chest and tummy....\",\"and flowy. It hangs well. I agree with others that say the bust is too tight....\",\"perfect for summer and or travel. Fits comfortably and the pattern is feminin.\"]},{\"tag\":\"color\",\"mentions\":48,\"positive\":42,\"negative\":6,\"snippets\":[\"Customers like the dress's color, with one mentioning that the floral print is vibrant without being loud, and another noting that it compliments various skin tones.\",\", but the skirt part of the dress is a little bigger then what I like....\",\". But it’s made of 100% combed cotton instead of a Cotton rayon blend. I’m keeping it....\",\", COMFORTABLE, easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\"]},{\"tag\":\"fit\",\"mentions\":148,\"positive\":103,\"negative\":45,\"snippets\":[\"Customers have mixed opinions about the dress's fit, with some finding it flattering and roomy through the body, while others report it runs larger than expected and is too tight across the chest.\",\"and feels comfortable. I’ve received compliments on it. The fabric is luxurious while being cotton based. Washes well.\",\". The fabric feels very soft, lightweight and comfortable....\",\". The hem was uneven longer at the back than at the front. The fabric wrinkled easily is not permanent pressed....\",\"with the high empire waist that falls nicely. I have yet to see how it does with washing....\"]},{\"tag\":\"fabric\",\"mentions\":101,\"positive\":70,\"negative\":31,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it lovely cotton suitable for summer, while others report it being very thin and not up to par.\",\"and not see through. I plan on buying another. Washes well and I Hung it to dry.\",\"...Sleeves cover tops of arms well. Not too tight. Flowing. Long.\",\". I went with a size larger to hide my tummy best. I’m 5’3 and 200lbs....\",\", but it runs small. I even ordered up a size since I have a generous chest, and it’s still snug.\"]},{\"tag\":\"sizing\",\"mentions\":52,\"positive\":22,\"negative\":30,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report that it runs very small.\",\". I order the same size in everything & it's generally a great fit but this was tight in my shoulder & bust areas....\",\". The purple color was more navy-ish. I wish it had been more distinctly purple....\",\". I usually wear a medium but had to downsize to a small. perfect for summer just hanging around.\"]}]"
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "A",
+      "pct": 53.8,
+      "total": 32.3,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 19.2,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_30d_units=13,323 -> 9分；销量/销售额增长率 +9000.0% -> 6分；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_37fde153c0672d66",
+            "ev_fe7f9b13af71a9de"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 6.8,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "evidence_refs": [
+            "ev_5155e2ad7efef0dd",
+            "ev_d7e318eb5f971ece"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 9.0,
+          "max_score": 15.0,
+          "reason": "评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "evidence_refs": [
+            "ev_110dc8f7ae0d08c7",
+            "ev_2f2d3ff9afc532d5"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_9f167e829725a2d0"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_30d_units=13,323 -> 9分；销量/销售额增长率 +9000.0% -> 6分；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_37fde153c0672d66",
+            "ev_fe7f9b13af71a9de"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_5155e2ad7efef0dd",
+            "ev_d7e318eb5f971ece"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_110dc8f7ae0d08c7",
+            "ev_2f2d3ff9afc532d5"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_9f167e829725a2d0"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "同风格红海程度：高（语料内同风格候选 1485 款，词表确定性匹配）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_9f167e829725a2d0"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_4b996131021389a2"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 53.8,
+          "grade": "A",
+          "gate_reason": "PScore 32.3/60.0（53.8%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 53.8,
+          "grade": "A",
+          "gate_reason": "评价标签聚类：0 个负面聚类 / 0 次标签提及",
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": true,
+          "score": 53.8,
+          "grade": "A",
+          "gate_reason": "同风格信号：frontend_amazon 语料中有 397 款标题命中相同风格词 ['dress', 'dresses']；带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台",
+          "required_next_data": [
+            "供应链字段人工调查（选品后画像存库用，不参与打分）"
+          ]
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_9f167e829725a2d0",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=商品详情;row=60;column=英文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_2dca679affd00eb8",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=商品详情;row=60;column=中文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_f741e0945c2a435d",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.brand",
+        "record_locator": "sheet=商品详情;row=60;column=品牌",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_db23fe89dce672f0",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=商品详情;row=60;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_35c808c1c1d7d05b",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.category_path",
+        "record_locator": "sheet=商品详情;row=60;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_3c5612035f6066df",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=商品详情;row=60;column=图片链接",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_5155e2ad7efef0dd",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=商品详情;row=60;column=价格($)",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_110dc8f7ae0d08c7",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=商品详情;row=60;column=星级",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_d7e318eb5f971ece",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=商品详情;row=60;column=评分数",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_fe7f9b13af71a9de",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=商品详情;row=60;column=近30天销量(父体)",
+        "note": "SellerSprite 估算；父体近30天销量"
+      },
+      {
+        "evidence_id": "ev_024e6bf3e5425800",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.revenue_30d",
+        "record_locator": "sheet=商品详情;row=60;column=近30天销售额($)",
+        "note": "SellerSprite 估算"
+      },
+      {
+        "evidence_id": "ev_37fde153c0672d66",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=商品详情;row=60;column=销量增长率",
+        "note": "源表百分数口径归一为小数"
+      },
+      {
+        "evidence_id": "ev_4b996131021389a2",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=商品详情;row=60;column=Amazon类目排名",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_c6c7fa67eb2529e2",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.seller_name",
+        "record_locator": "sheet=商品详情;row=60;column=卖家名称",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_bf148fe58c7357a1",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.image_count",
+        "record_locator": "sheet=商品详情;row=60;column=主图数量",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_113c55a0f79c5f69",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.review_tags_raw",
+        "record_locator": "sheet=商品详情;row=60;column=评论亮点",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_b3e7776631fd91b6",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=商品详情;row=60;column=采集说明",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_8a5386a0d25a2c5d",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.design_signals",
+        "record_locator": "sheet=商品详情;row=60;column=英文五点/面料/产品属性JSON",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_2f2d3ff9afc532d5",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=商品详情;row=60;column=销量趋势/BSR趋势/价格趋势",
+        "note": "全量趋势行聚合得出"
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_024e6bf3e5425800",
+    "ev_110dc8f7ae0d08c7",
+    "ev_113c55a0f79c5f69",
+    "ev_2dca679affd00eb8",
+    "ev_2f2d3ff9afc532d5",
+    "ev_35c808c1c1d7d05b",
+    "ev_37fde153c0672d66",
+    "ev_3c5612035f6066df",
+    "ev_4b996131021389a2",
+    "ev_5155e2ad7efef0dd",
+    "ev_8a5386a0d25a2c5d",
+    "ev_9f167e829725a2d0",
+    "ev_b3e7776631fd91b6",
+    "ev_bf148fe58c7357a1",
+    "ev_c6c7fa67eb2529e2",
+    "ev_d7e318eb5f971ece",
+    "ev_db23fe89dce672f0",
+    "ev_f741e0945c2a435d",
+    "ev_fe7f9b13af71a9de"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

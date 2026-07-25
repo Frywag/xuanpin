@@ -1,0 +1,275 @@
+{
+  "schema_version": "kalodata.lossless.package.v1",
+  "package_id": "kalodata_us_womens_dresses_20260710_system_ready",
+  "generated_at": "2026-07-10T08:34:38.511Z",
+  "market": "US",
+  "category": {
+    "id": "842504",
+    "name": "女士连衣裙",
+    "start_date": "2026-06-09",
+    "end_date": "2026-07-08"
+  },
+  "delivery_semantics": {
+    "coverage_claim": "all data returned by the successfully executed read-only requests in this collection run",
+    "not_claimed": "all rows in the Kalodata platform database",
+    "primary_lossless_format": "JSON and JSONL",
+    "spreadsheet_role": "normalized index and analytical convenience only",
+    "duplicate_policy": "preserve source occurrences in ledgers; normalized tables may deduplicate by entity key",
+    "identifier_policy": "retain all IDs exactly as strings",
+    "sensitive_data_policy": "credentials and authentication material are excluded or redacted"
+  },
+  "access_boundaries": {
+    "observed_platform_totals": {
+      "products": 37353,
+      "videos_with_product": 99425
+    },
+    "plan_limits": {
+      "product_list_page_size": 10,
+      "product_list_max_visible_page": 1,
+      "video_list_page_size": 10,
+      "video_list_max_visible_page": 1,
+      "creator_list_page_size": 10,
+      "creator_list_max_visible_page": 1,
+      "brand_list_page_size": 10,
+      "brand_list_max_visible_page": 1,
+      "data_export_total": 0,
+      "data_export_remain": 0
+    },
+    "live_quota_snapshot": {
+      "observed_at": "2026-07-10T08:34:38.493Z",
+      "search": {
+        "total": 30,
+        "used": 30,
+        "remain": 0,
+        "full": true
+      },
+      "detail": {
+        "total": 30,
+        "used": 30,
+        "remain": 0,
+        "full": true
+      },
+      "export": {
+        "total": 0,
+        "used": 0,
+        "remain": 0,
+        "full": true
+      }
+    },
+    "unavailable_due_to_plan_or_quota": [
+      "product, video, creator and brand list pages after page 1",
+      "full detail access for entities not unlocked before detail quota exhaustion",
+      "data exports because export quota is zero",
+      "modules requiring an upgraded plan, including ad analysis and some creator/shop/brand capabilities"
+    ]
+  },
+  "counts": {
+    "raw_files": 10,
+    "request_records": 515,
+    "raw_dataset_records": 1208,
+    "raw_leaf_fields": 84494,
+    "canonical_field_paths": 2019,
+    "video_url_records": 231,
+    "video_urls": 230
+  },
+  "integrity": {
+    "raw_files": [
+      {
+        "path": "raw/all_known_video_urls.json",
+        "bytes": 71718,
+        "sha256": "e05a80ff0db4805af610874e018e10dab5df9d9e9893fbce9f7eb8b3402b476d",
+        "leaf_count": 1687,
+        "max_depth": 4,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/brand_page_network.json",
+        "bytes": 51605,
+        "sha256": "9742de681038e8b0cf8d98dcdb6e325edab9da2a072d2189511181e78a2d2982",
+        "leaf_count": 909,
+        "max_depth": 8,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/creator_page_network.json",
+        "bytes": 27933,
+        "sha256": "0f511c0841a40d27cbdce25b9436a1a3f011c5ca5a25808ac666a9e47b1ade00",
+        "leaf_count": 844,
+        "max_depth": 7,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/entity_details_collection.json",
+        "bytes": 2447025,
+        "sha256": "40d27c330a5d1d8b3907b641ee3cd97b6bcfcc3ee4299cba525ab3db1b01d1ae",
+        "leaf_count": 45656,
+        "max_depth": 9,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/lists_collection.json",
+        "bytes": 170866,
+        "sha256": "045427018f3c8e974e8b4479adfef1929cb1bdfbe22dd140196ab8b70acf5ca0",
+        "leaf_count": 5148,
+        "max_depth": 6,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/probe_observations.json",
+        "bytes": 2117,
+        "sha256": "28b3ea860582422cae099d58eab5bbf3dcc59731832bbc31a186cc532cf1d6d2",
+        "leaf_count": 47,
+        "max_depth": 4,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/product_page_network_capture.json",
+        "bytes": 51526,
+        "sha256": "bc24c179d31c8537901a94444f58aa4855b90bd456a295ed16d3d11c4bf330c1",
+        "leaf_count": 1275,
+        "max_depth": 8,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/remaining_sorts_collection.json",
+        "bytes": 121362,
+        "sha256": "e9435281acfc7ac6fe6ebce7db1849ad8a1ffba3bcdfdde623b161e5d536ca8a",
+        "leaf_count": 5032,
+        "max_depth": 6,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/segments_and_sorts_collection.json",
+        "bytes": 743067,
+        "sha256": "40c07b0d9b08f9bc708abb1705a6ec182934152b96fc23db098b123fe6db2ce5",
+        "leaf_count": 22998,
+        "max_depth": 6,
+        "redacted_leaf_count": 0
+      },
+      {
+        "path": "raw/video_page_network.json",
+        "bytes": 27736,
+        "sha256": "d7288d6d279c43f8d7a0676f796115ccab7df8422d1b69711b588585526f3e85",
+        "leaf_count": 898,
+        "max_depth": 7,
+        "redacted_leaf_count": 0
+      }
+    ],
+    "processed_jsonl_files": [
+      {
+        "path": "processed/brand_profile_snapshots.jsonl",
+        "bytes": 108868,
+        "sha256": "10fa7704d1f69690ad91cfdf4ad4b88095cc6cf07895ba62fa669e12e6b2ace4",
+        "rows": 21
+      },
+      {
+        "path": "processed/category_daily_metrics.jsonl",
+        "bytes": 68374,
+        "sha256": "226bb84268ce37c2d44513bf0bdfb2690c2dbd322bc7efff329b9aac035b4ed0",
+        "rows": 150
+      },
+      {
+        "path": "processed/category_market_snapshot.jsonl",
+        "bytes": 4767,
+        "sha256": "6174f4ee77d7d48fbd09ebcb49a8db822e871e3c6d5698cfe83adae61c6d1db4",
+        "rows": 5
+      },
+      {
+        "path": "processed/category_top_creators.jsonl",
+        "bytes": 34739,
+        "sha256": "506a1d17bbd345c009753d5e9c80517534522f659922128f7d9e148c7716203a",
+        "rows": 50
+      },
+      {
+        "path": "processed/category_top_products.jsonl",
+        "bytes": 44621,
+        "sha256": "f76e18bd683f06811ef28f493a4568397bf3750cfc4e5ac5db26b58834d8da07",
+        "rows": 50
+      },
+      {
+        "path": "processed/category_top_shops.jsonl",
+        "bytes": 35451,
+        "sha256": "8233aca881156bdd023283728d06b1a92a8a70a12b8ed99d8e1d33bade42f966",
+        "rows": 50
+      },
+      {
+        "path": "processed/collector_endpoint_costs.jsonl",
+        "bytes": 63879,
+        "sha256": "92950409e330bf1bfdfa938cb3fe71990ca61b8ac3c78e30831b6d2941b90712",
+        "rows": 108
+      },
+      {
+        "path": "processed/creator_profile_snapshots.jsonl",
+        "bytes": 114494,
+        "sha256": "8c1d672cb4e967c268a580c6e6ee08140d3ee9fbdc1fd72b47fab686f0437bc3",
+        "rows": 35
+      },
+      {
+        "path": "processed/entity_relationships.jsonl",
+        "bytes": 394457,
+        "sha256": "d2296fd04c10d9a26bd5345534bddb275c124af8fb22de8755e62704465e6f40",
+        "rows": 1081
+      },
+      {
+        "path": "processed/product_daily_history.jsonl",
+        "bytes": 362237,
+        "sha256": "aabd6f3f6208b28909225cffcab27c8ec7e138bc7703bd324a74dbc8a4020900",
+        "rows": 600
+      },
+      {
+        "path": "processed/product_profile_snapshots.jsonl",
+        "bytes": 1361105,
+        "sha256": "da589706d222e26531d339ec2408346bd6375b652ed728a89e43a838e9f747df",
+        "rows": 93
+      },
+      {
+        "path": "processed/shop_profile_snapshots.jsonl",
+        "bytes": 66326,
+        "sha256": "55405688a00d5b0ac8679b62f66546b366c5cd4033f096c8521cac6857abbb72",
+        "rows": 34
+      },
+      {
+        "path": "processed/video_assets.jsonl",
+        "bytes": 427073,
+        "sha256": "3dc3c499f2a2d91ae494acfd54e5c4e7743a2d56e5063886aafc76ebc6edc4bd",
+        "rows": 231
+      }
+    ],
+    "package_files": [
+      {
+        "path": "ledgers/request_response_ledger.jsonl",
+        "bytes": 1094737,
+        "sha256": "44b7ee7a903a1ba6301591a9c7afac816eba9d156cb6606302e61ec969ffa607"
+      },
+      {
+        "path": "ledgers/raw_dataset_records.jsonl",
+        "bytes": 1596096,
+        "sha256": "14d6853f080f2515f273d8e8d9a5bb746aca7384c3dbf3dca7994a78a3f9031e"
+      },
+      {
+        "path": "ledgers/raw_field_ledger.jsonl",
+        "bytes": 13143883,
+        "sha256": "490f5e528b7175f7d7cecd0957c9b77cf6589923b0957e85b9405042c2e2a305"
+      },
+      {
+        "path": "ledgers/raw_field_dictionary.jsonl",
+        "bytes": 388484,
+        "sha256": "de06af95f3bbe26f9d4bece9d3d669083d470b343a19191e8de268915a9b1b20"
+      },
+      {
+        "path": "ledgers/quota_snapshot_20260710.json",
+        "bytes": 303,
+        "sha256": "4c5db020f3dbf69b541258d89d60dc2e7a2b2a5532c08d8528ef9ea6f5bc7baa"
+      }
+    ]
+  },
+  "self_contained": true,
+  "entrypoints": {
+    "source_envelope": "Kalodata连衣裙_20260710.source_envelope.json",
+    "workbook": "workbooks/Kalodata连衣裙全量采集_20260710.xlsx",
+    "raw_data": "raw/",
+    "normalized_jsonl": "processed/",
+    "audit_ledgers": "ledgers/",
+    "delivery_manifest": "metadata/delivery_manifest.json"
+  }
+}

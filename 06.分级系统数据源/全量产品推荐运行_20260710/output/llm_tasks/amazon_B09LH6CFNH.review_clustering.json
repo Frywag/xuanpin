@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B09LH6CFNH",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "CHICGAL Summer Dresses for Women Beach Cover Ups Strapless Boho Floral Print Sundress 2026",
+    "rating": 4.3,
+    "review_count": 14165.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":966,\"positive\":906,\"negative\":60,\"snippets\":[\"Customers like the appearance of the dress, finding it cute with a pretty pattern, and one customer describes it as feminine and flirty.\",\"Material is a little heavier/thicker than I thought. Overall it's a\",\"and perfect summer dress for any occasion - from running errands, beach day...\",\". It is also a bit of a thicker material that doesn't allow any show-through....\",\"and comfortable. Perfect for a beach getaway. The material is light and sexy enough for ladies who are with larger breast....\",\". The material is a good weight…not too heavy or light. I wouldn’t size down in this one. It sort of squashes the chest area....\"]},{\"tag\":\"fit\",\"mentions\":956,\"positive\":798,\"negative\":158,\"snippets\":[\"Customers find the dress fits beautifully and stays in place, with one customer noting it doesn't slip at all.\",\", it exceeds my expectations. Know your body type- this looks best if you like the way a high-wasted dress looks on you....\",\"and comfortable! Thought it was gonna be to small but it fit perfectly. Everyone gave me compliments on the color and style.\",\"and doesn't flatten my chest. Colors are stunning! This is the second pattern I've ordered. Machine wash but hang dry....\",\"and it longer than expected. I am tall and I thought it would be above my knee and it actually falls right at my knees.\"]},{\"tag\":\"comfort\",\"mentions\":557,\"positive\":531,\"negative\":26,\"snippets\":[\"Customers find the dress comfortable, particularly in hot weather, with one customer noting it doesn't feel like wearing a tent.\",\", colors are amazing & better than the pic! Material is soft & breathable but not see through. Highly recommend!...\",\"...the house during hot weather to look presentable, but still\",\". The fit is true to size, if in between sizes I'd say size down....\",\", light weight, and. made the bump look cute. It can be used a dress or beach coverup....\",\"Adorable strapless summer fun dress. Slip on and go anywhere.\",\". It’s true to size. I would have loved for it to be just a tad shorter.\"]},{\"tag\":\"quality\",\"mentions\":421,\"positive\":351,\"negative\":70,\"snippets\":[\"Customers find the dress to be well-made, with one customer noting it is well sewn.\",\"if it was anywhere near the color pictured. It shows a bright blue, almost purple type of color but the dress is blue.\",\". Washes well. Lightweight and of modest length. Machine wash, hang dry. Great value.\",\", and received quickly. I was unsure about the pattern, but when I received it in person, I loved it more than the way it looked online....\",\". Got it in two different prints. It’s true to size, the fabric is great. Great for going to the beach or a bbq.\"]},{\"tag\":\"material\",\"mentions\":390,\"positive\":276,\"negative\":114,\"snippets\":[\"Customers appreciate the fabric of the dress, describing it as good and beautiful, with one customer noting its flowy nature.\",\", breathable, ruched part doesn’t squeeze or rub uncomfortably. I wore it all day & felt comfy & cute the whole time!...\",\", soft. Comes right above knee The color is mayb a little brighter then pictured. But overall, its perfect\",\"but the top fits well and is tight enough to feel secure and stretchy enough to fit but the design and material doesn't look like the...\",\"because it will not get wrinkled when packed. Whether in a suitcase or beach bag, you’ll be good to go to dinner or wherever!\"]},{\"tag\":\"summer-friendly\",\"mentions\":285,\"positive\":280,\"negative\":5,\"snippets\":[\"Customers find this dress perfect for summer, particularly as a beach cover-up, and one customer mentions it's ideal for tropical trips.\",\"! The colors are vibrant and it fit just perfectly. I am 5'2, 187lbs and it was the perfect length....\",\"Really cute dress, I’m 5,3 so it’s down to my knees , flowy soft\",\". Not sheer since it’s stretchy and loose I could’ve downsized\",\", love the print. I'm 5'4, 135lbs. and got a large. Bought a second one Medium size and both fit good.\"]},{\"tag\":\"color\",\"mentions\":282,\"positive\":242,\"negative\":40,\"snippets\":[\"Customers like the colors of the dress, describing them as lovely, with one customer noting they are true to both color and size.\",\"and the fit. We were going on a trip and I had a bag that was fully packed....\",\"! Certainly a summer favorite! Very comfortable. Perfect fit. 5'5\\\", 34D, 148lbs. Ordered Medium.\",\"and material of the dress. It’s a great travel dress, too. Looks great with a white jacket.\",\"and it fit just perfectly. I am 5'2, 187lbs and it was the perfect length....\"]},{\"tag\":\"softness\",\"mentions\":229,\"positive\":205,\"negative\":24,\"snippets\":[\". Comes right above knee The color is mayb a little brighter then pictured. But overall, its perfect\",\", perfect for summer hot days or even can be dressed up with some heels. I ordered a few colors.\",\"cabd colors are vibrant. I have 3. Best money I e er spent. Bought a size XXL. Fits perfect . They wash up beautiful I love them.\",\"and fairly lightweight. It stays up, even though it doesn't have straps. The colors are pretty together....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_7aac22832eba62e0",
+    "ev_a997ead6f80b50aa",
+    "ev_d3eeead88664310a"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

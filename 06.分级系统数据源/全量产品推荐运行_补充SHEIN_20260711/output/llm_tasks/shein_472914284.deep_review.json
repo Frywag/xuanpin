@@ -1,0 +1,430 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "shein_472914284",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "shein_472914284",
+      "platform": "shein",
+      "canonical_url": "https://us.shein.com/NEW-IDEA-Women-s-Sexy-Elegant-White-One-Shoulder-Cami-Cutout-Irregular-Slit-Midi-Dress-Ruched-Waist-Summer-Dress-For-Night-Out-Party-Date-Vacation-p-472914284.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_472914284%7C0-2",
+      "basic_facts": {
+        "title": "NEW IDEA Women's Sexy Elegant White One-Shoulder Cami Cutout Irregular Slit Midi Dress, Ruched Waist Summer Dress For Night Out, Party, Date Vacation",
+        "brand": null,
+        "category_path": [],
+        "image_url": "https://img.ltwebstatic.com/v4/j/spmp/2026/05/20/91/17792696794326a9d62b0806a6d63cea84ef5dbc11.webp",
+        "price": {
+          "amount": 18.72,
+          "currency": "USD"
+        },
+        "original_price": {
+          "amount": 34.3,
+          "currency": "USD"
+        },
+        "discount_pct": -0.45,
+        "rating": 2.75,
+        "review_count": 4,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": null,
+        "sales_7d_units": null,
+        "sales_floor_units": 800,
+        "revenue_30d": null,
+        "gmv_7d": null,
+        "sales_growth_rate": null,
+        "favorites_count": null,
+        "bestseller_rank_text": "#10 Bestseller in Drawstring Women Short Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": [
+          {
+            "signal": "RefinedWhites",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_9b0081be0bd08d89"
+            ]
+          },
+          {
+            "signal": "HalterNeckAttire",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_9b0081be0bd08d89"
+            ]
+          },
+          {
+            "signal": "PreSpringDresses",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_9b0081be0bd08d89"
+            ]
+          }
+        ]
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [
+          {
+            "cluster_name": "正面标签",
+            "tags": [
+              {
+                "tag": "Helpful",
+                "count": 1
+              }
+            ]
+          }
+        ],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [],
+        "same_style_signals": []
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "market_metrics.sales_growth_rate",
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": "Women Dresses",
+        "category_label": "women_dresses_shein",
+        "source_group": "frontend_shein",
+        "site": "shein",
+        "shop_name": null,
+        "seller_name": null,
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": "b***t\n21 Jun,2026\nColor: WhiteSize: L\nNot made for me. I do not have the shape for it.\nTranslate\nFrom SHEIN US\nPoints Program\nHelpful (1)"
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "A",
+      "pct": 53.3,
+      "total": 32.0,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 20.4,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_d72f1dc8a1502587",
+            "ev_ec21f0c0f271d1e6"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 3.8,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 outside -> 2分",
+          "evidence_refs": [
+            "ev_616d45af6c230f63",
+            "ev_9d81fd4a44a45729"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 10.5,
+          "max_score": 15.0,
+          "reason": "评分2.75（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张",
+          "evidence_refs": [
+            "ev_4433d4d6df339f2f",
+            "ev_6fb572cf6745ab60",
+            "ev_9b0081be0bd08d89"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 frontend_shein 单源（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_079da18fe797a1cf"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_d72f1dc8a1502587",
+            "ev_ec21f0c0f271d1e6"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 outside -> 2分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_616d45af6c230f63",
+            "ev_9d81fd4a44a45729"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：评分2.75（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_4433d4d6df339f2f",
+            "ev_6fb572cf6745ab60",
+            "ev_9b0081be0bd08d89"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 frontend_shein 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_079da18fe797a1cf"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 53.3,
+          "grade": "A",
+          "gate_reason": "PScore 32.0/60.0（53.3%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 53.3,
+          "grade": "A",
+          "gate_reason": "评价标签聚类：0 个负面聚类 / 1 次标签提及",
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": null,
+          "score": null,
+          "grade": null,
+          "gate_reason": null,
+          "required_next_data": []
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_079da18fe797a1cf",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=shein;row=82;column=商品名称（原文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_ddb96f81365d7d94",
+        "source_id": "frontend_shein",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=shein;row=82;column=商品名称（中文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_ae7712df69cb24e2",
+        "source_id": "frontend_shein",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=shein;row=82;column=站点",
+        "note": "由 SHEIN 美国站女装连衣裙类目确定"
+      },
+      {
+        "evidence_id": "ev_d9fa99b600d84af8",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=shein;row=82;column=高清主图链接",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_616d45af6c230f63",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=shein;row=82;column=销售价/币种",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_983520e683a35d31",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.original_price",
+        "record_locator": "sheet=shein;row=82;column=原价/币种",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_cc2edf8fb33c8110",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.discount_pct",
+        "record_locator": "sheet=shein;row=82;column=折扣",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_6fb572cf6745ab60",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=shein;row=82;column=评分",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_9d81fd4a44a45729",
+        "source_id": "frontend_shein",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=shein;row=82;column=评价数",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_d72f1dc8a1502587",
+        "source_id": "frontend_shein",
+        "field_path": "market_metrics.sales_floor_units",
+        "record_locator": "sheet=shein;row=82;column=销量",
+        "note": "SHEIN 销量为下限口径，例如 100+ 记为 100"
+      },
+      {
+        "evidence_id": "ev_ec21f0c0f271d1e6",
+        "source_id": "frontend_shein",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=shein;row=82;column=畅销榜排名",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_9b0081be0bd08d89",
+        "source_id": "frontend_shein",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=shein;row=82;column=趋势标签（原文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_e1cc888992c85246",
+        "source_id": "frontend_shein",
+        "field_path": "context.review_tags_raw",
+        "record_locator": "sheet=shein;row=82;column=评价标签（原文）",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_4433d4d6df339f2f",
+        "source_id": "frontend_shein",
+        "field_path": "context.image_count",
+        "record_locator": "sheet=shein;row=82;column=商品ID",
+        "note": "由 media 表按商品ID去重计数"
+      },
+      {
+        "evidence_id": "ev_9c0efa578fd31693",
+        "source_id": "frontend_shein",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=shein;row=82;column=原始证据路径",
+        "note": "工作簿内原始证据路径另保留在 source_raw_evidence_path"
+      },
+      {
+        "evidence_id": "ev_6b70517bb9a671d7",
+        "source_id": "frontend_shein",
+        "field_path": "context.design_signals",
+        "record_locator": "sheet=shein;row=82;column=商品描述/详情字段/颜色/尺码",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_079da18fe797a1cf",
+    "ev_4433d4d6df339f2f",
+    "ev_616d45af6c230f63",
+    "ev_6b70517bb9a671d7",
+    "ev_6fb572cf6745ab60",
+    "ev_983520e683a35d31",
+    "ev_9b0081be0bd08d89",
+    "ev_9c0efa578fd31693",
+    "ev_9d81fd4a44a45729",
+    "ev_ae7712df69cb24e2",
+    "ev_cc2edf8fb33c8110",
+    "ev_d72f1dc8a1502587",
+    "ev_d9fa99b600d84af8",
+    "ev_ddb96f81365d7d94",
+    "ev_e1cc888992c85246",
+    "ev_ec21f0c0f271d1e6"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

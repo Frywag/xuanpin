@@ -1,0 +1,188 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "tiktok_shop_1731406217255686451",
+  "run_id": "run_20260708_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+    "grade": "A",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 27.6,
+        "max": 30.0,
+        "reason": "量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_kalodata_000011",
+          "ev_kalodata_000014",
+          "ev_tabcut_000132",
+          "ev_tabcut_000133"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 5.2,
+        "max": 15.0,
+        "reason": "类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分",
+        "evidence_refs": [
+          "ev_kalodata_000004",
+          "ev_kalodata_000077"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 7.5,
+        "max": 15.0,
+        "reason": "评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%",
+        "evidence_refs": [
+          "ev_kalodata_000076",
+          "ev_kalodata_000087"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -8.0,
+        "max": 0.0,
+        "reason": "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND；达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_kalodata_000080",
+          "ev_kalodata_000081"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_30d_units=86,499 -> 15分；销量/销售额增长率 +55.5% -> 5分；2个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_kalodata_000011",
+          "ev_kalodata_000014",
+          "ev_tabcut_000132",
+          "ev_tabcut_000133"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "竞争可突破：类目Top10店铺占比 11.9% -> 集中度6分；竞品评论门槛≈68,609（组内评论数p90代理）-> 1分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_kalodata_000004",
+          "ev_kalodata_000077"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；视频销售额占比 93%",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_kalodata_000076",
+          "ev_kalodata_000087"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "品牌方自营/知名品牌商品，跟卖或仿款有侵权风险：卖家类型 BRAND（人工待确认）",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_kalodata_000080"
+        ],
+        "confidence": "low"
+      },
+      {
+        "claim": "达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 40%",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_kalodata_000081"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "多源互验：kalodata、tabcut 按商品ID匹配到同一商品",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_kalodata_000008",
+          "ev_tabcut_000130"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "同风格红海程度：低（语料内同风格候选 6 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_kalodata_000008",
+          "ev_tabcut_000130"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：tiktok_shop（视频销售额占比 93%，内容驱动型，优先 TikTok Shop）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_kalodata_000087"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "basic_facts.price(band)",
+      "product_opportunity.reviews"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_kalodata_000003",
+    "ev_kalodata_000004",
+    "ev_kalodata_000005",
+    "ev_kalodata_000008",
+    "ev_kalodata_000009",
+    "ev_kalodata_000010",
+    "ev_kalodata_000011",
+    "ev_kalodata_000012",
+    "ev_kalodata_000013",
+    "ev_kalodata_000014",
+    "ev_kalodata_000076",
+    "ev_kalodata_000077",
+    "ev_kalodata_000078",
+    "ev_kalodata_000079",
+    "ev_kalodata_000080",
+    "ev_kalodata_000081",
+    "ev_kalodata_000082",
+    "ev_kalodata_000083",
+    "ev_kalodata_000084",
+    "ev_kalodata_000085",
+    "ev_kalodata_000086",
+    "ev_kalodata_000087",
+    "ev_kalodata_000088",
+    "ev_tabcut_000130",
+    "ev_tabcut_000131",
+    "ev_tabcut_000132",
+    "ev_tabcut_000133",
+    "ev_tabcut_000135",
+    "ev_tabcut_000240",
+    "ev_tabcut_000241",
+    "ev_tabcut_000242",
+    "ev_tabcut_000243",
+    "ev_tabcut_000244"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

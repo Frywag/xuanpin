@@ -1,0 +1,61 @@
+{
+  "executive_summary": "medicube PDRN 多效棒是本轮市场信号最强的候选：Tabcut×EchoTik 双源互验，30 天销量 282,833 件、近 7 天 75,100 件仍在加速（增长率 +38.9%），7 天 GMV $5,651,900，最高单条视频播放 31,640,117，联盟达人 7,520 个——是教科书级的内容驱动爆品。但它是 medicube 品牌自营的韩妆产品，对本项目（女装供应链）不可直接开款：跟卖有 IP 风险，仿制涉及化妆品配方与合规，均超出能力边界。建议保留 S 作为市场情报与内容打法样板，开款决策 hold。",
+  "sections": {
+    "demand": {
+      "assessment": "需求证据是全语料最强：30 天 282,833 件（Tabcut 榜单）与 7 天 75,100 件、GMV $5,651,900（EchoTik 商品库）两源互验，口径一致；累计总销量 834,533 件说明并非单周脉冲。增长率 +38.9% 处于 Tabcut 观测中位之上，动能真实。",
+      "strengths": ["双源销量互验，置信度 high", "7天/30天/累计三个时间尺度的需求证据齐全", "增长仍在持续而非见顶"],
+      "concerns": ["销量为工具估算口径，非平台官方数据"],
+      "evidence_refs": ["ev_tabcut_000091", "ev_echotik_000340", "ev_echotik_000341", "ev_tabcut_000092", "ev_tabcut_000230"],
+      "confidence": "high"
+    },
+    "competition": {
+      "assessment": "竞争维是本候选评分的最薄弱环节，但主要是数据缺口而非竞争劣势：美妆个护类目的集中度数据未采集（missing），引擎用女装组的评论门槛 68,609 做代理，跨类目代理的参考价值有限。价格带位置在组内主流区间。",
+      "strengths": ["价格带处于组内主流区间，非极端定价"],
+      "concerns": ["类目集中度缺失，无法判断头部垄断程度", "评论门槛代理值来自女装组，跨类目失真"],
+      "evidence_refs": ["ev_echotik_000335", "ev_echotik_000339"],
+      "confidence": "low"
+    },
+    "product": {
+      "assessment": "评分 4.2 低于观测类目 P25，配合 36,000 条评论，说明存在真实的产品不满，但本轮无评论全文，痛点具体是什么无法回答。内容杠杆极强：最高播放 31,640,117、最高互动率 0.0176（比例口径），达人 7,520 个，'含金石成分棒状涂抹'的产品形态天然适配短视频演示。",
+      "strengths": ["产品形态适配短视频演示，内容素材可复用性强", "评分偏低+评论量大=有改良切入点"],
+      "concerns": ["无评论全文，痛点假设无法验证（已列入补采）"],
+      "evidence_refs": ["ev_echotik_000338", "ev_echotik_000339", "ev_tabcut_000231", "ev_tabcut_000234", "ev_echotik_000343"],
+      "confidence": "medium"
+    },
+    "supply_chain": {
+      "assessment": "供应链维只有价格位置一个代理信号（售价高于组内中位，有溢价空间）。核心问题是品类能力：这是韩妆护肤品（PDRN/胶原蛋白配方），配方研发、化妆品备案、FDA 合规均不在女装供应链能力档案的规划范围内，能力档案启用后此款预计也不会命中。",
+      "strengths": ["售价高于组内中位（代理指标）"],
+      "concerns": ["化妆品配方与合规能力完全超出本项目供应链范围", "成本/MOQ/交期全部缺失（按流程仅终选款人工核实）"],
+      "evidence_refs": ["ev_echotik_000335", "ev_tabcut_000090"],
+      "confidence": "low"
+    },
+    "risk": {
+      "assessment": "店铺「medicube US Store」品牌词出现在商品标题中，为品牌方自营的强信号；medicube 是有认知度的韩妆品牌，直接跟卖有明确 IP 风险，仿制则叠加化妆品合规风险。该风险由启发式规则识别，需人工确认，但从标题与店铺名的一致性看误报概率低。",
+      "strengths": [],
+      "concerns": ["品牌自营，跟卖/仿款 IP 风险高", "化妆品品类合规门槛高"],
+      "evidence_refs": ["ev_echotik_000344", "ev_tabcut_000089"],
+      "confidence": "medium"
+    }
+  },
+  "grade_challenge": {
+    "agrees_with_engine": true,
+    "suggested_grade": null,
+    "rationale": "S 作为「市场信号强度」等级成立（双源互验+全语料最高分）；但注意 S 不等于可开款，品类范围问题见 go_recommendation。"
+  },
+  "go_recommendation": {
+    "decision": "hold",
+    "conditions": [
+      "本项目为女装选品，美妆品类超出供应链能力边界——保留为市场情报与内容打法样板，不进入开款流程",
+      "若公司决定扩品类到美妆，需先完成化妆品合规评估与 medicube 的 IP 风险人工确认",
+      "其内容分发结构（高播放+高达人数）可作为女装候选（如 OEAK）的达人策略参考"
+    ]
+  },
+  "open_questions": [
+    "美妆个护类目的集中度与竞争结构数据是否值得补采（取决于是否扩品类）",
+    "36,000 条评论中差评聚焦什么（若补采评论全文可回答）"
+  ],
+  "next_actions": ["归档为内容驱动爆品样板", "不列入女装开款清单"],
+  "missing_fields": ["评论全文", "美妆类目集中度", "owned_supply_inputs 全部"],
+  "assumptions": ["「medicube 是有认知度的韩妆品牌」为评审者常识判断，未在本轮数据中验证"],
+  "confidence": "high"
+}

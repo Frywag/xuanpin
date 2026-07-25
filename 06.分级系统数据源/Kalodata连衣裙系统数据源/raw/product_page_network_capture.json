@@ -1,0 +1,1717 @@
+{
+  "capturedAt": "2026-07-10T06:37:36.725Z",
+  "captures": [
+    {
+      "url": "https://www.kalodata.com/user/features",
+      "method": "POST",
+      "postData": {
+        "country": "US",
+        "list": [
+          "OVERVIEW.POTENTIAL_LIST",
+          "OVERVIEW.DETAIL",
+          "OVERVIEW.LEVEL_THIRD",
+          "OVERVIEW.DATA_RANGE",
+          "VIDEO.LIST",
+          "VIDEO.DETAIL",
+          "LIVESTREAM.LIST",
+          "LIVESTREAM.DETAIL",
+          "PRODUCT.LIST",
+          "PRODUCT.DETAIL",
+          "CREATOR.LIST",
+          "DATA.EXPORT",
+          "CREATOR.DETAIL",
+          "CREATOR.MCN_SIGN",
+          "CREATOR.CONTACT",
+          "CREATOR.COLLABORATED_SHOP",
+          "FORYOU.TABLELIST",
+          "FORYOU.COLLABORATED_SHOP",
+          "FORYOU.HOT",
+          "FORYOU.FOCUSCOUNT",
+          "SHOP.LIST",
+          "SHOP.DETAIL",
+          "BRAND.LIST",
+          "BRAND.DETAIL",
+          "DOWNLOAD.VIDEO",
+          "FILTER.CUSTOM_RANGE",
+          "LIST.DATE_RANGE",
+          "DETAIL.DATE_RANGE",
+          "LIST.DATE_SPACING",
+          "DETAIL.DATE_SPACING",
+          "LIVESTREAM.FULL_RECORD",
+          "LIST.CATE_CASCADER_LIST",
+          "FILTER.CUSTOM_TIMES",
+          "AD.ANALYSIS",
+          "AD.CREATOR_DEBUT",
+          "DETAIL.ACCESS_TIMES",
+          "CUSTOMIZED.DATA.EXPORT",
+          "AI.CREDITS",
+          "DATA.EXPORT.NUM"
+        ]
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": {
+          "BRAND.DETAIL": {
+            "key": "BRAND.DETAIL",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "FORYOU.HOT": {
+            "key": "FORYOU.HOT",
+            "type": "LIST",
+            "enable": null,
+            "count": -1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "FORYOU.COLLABORATED_SHOP": {
+            "key": "FORYOU.COLLABORATED_SHOP",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "FORYOU.FOCUSCOUNT": {
+            "key": "FORYOU.FOCUSCOUNT",
+            "type": "ASSETS",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "The amount of the benefit reached the limit.",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 10,
+              "used": 0,
+              "remain": 10,
+              "full": false
+            }
+          },
+          "LIVESTREAM.LIST": {
+            "key": "LIVESTREAM.LIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 500,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "DETAIL.DATE_SPACING": {
+            "key": "DETAIL.DATE_SPACING",
+            "type": "LIST",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Query exceeds span",
+              "cause": null,
+              "actionType": null
+            },
+            "progress": null
+          },
+          "DETAIL.DATE_RANGE": {
+            "key": "DETAIL.DATE_RANGE",
+            "type": "LIST",
+            "enable": null,
+            "count": 30,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Query out of time range",
+              "cause": null,
+              "actionType": null
+            },
+            "progress": null
+          },
+          "CREATOR.COLLABORATED_SHOP": {
+            "key": "CREATOR.COLLABORATED_SHOP",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "LIST.DATE_RANGE": {
+            "key": "LIST.DATE_RANGE",
+            "type": "LIST",
+            "enable": null,
+            "count": 30,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Query out of time range",
+              "cause": null,
+              "actionType": null
+            },
+            "progress": null
+          },
+          "AI.CREDITS": {
+            "key": "AI.CREDITS",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "The amount of the benefit reached the limit.",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 1500,
+              "used": 221,
+              "remain": 1279,
+              "full": false
+            }
+          },
+          "FILTER.CUSTOM_TIMES": {
+            "key": "FILTER.CUSTOM_TIMES",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Today's query times has been used up",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 30,
+              "used": 2,
+              "remain": 28,
+              "full": false
+            }
+          },
+          "AD.CREATOR_DEBUT": {
+            "key": "AD.CREATOR_DEBUT",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "OVERVIEW.DATA_RANGE": {
+            "key": "OVERVIEW.DATA_RANGE",
+            "type": "LIST",
+            "enable": null,
+            "count": 30,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "LIST.DATE_SPACING": {
+            "key": "LIST.DATE_SPACING",
+            "type": "LIST",
+            "enable": null,
+            "count": 31,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Query exceeds span",
+              "cause": null,
+              "actionType": null
+            },
+            "progress": null
+          },
+          "FORYOU.TABLELIST": {
+            "key": "FORYOU.TABLELIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "SHOP.LIST": {
+            "key": "SHOP.LIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "LIVESTREAM.DETAIL": {
+            "key": "LIVESTREAM.DETAIL",
+            "type": "MODULE",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "DATA.EXPORT": {
+            "key": "DATA.EXPORT",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "The amount of the benefit reached the limit.",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 0,
+              "used": 0,
+              "remain": 0,
+              "full": true
+            }
+          },
+          "DATA.EXPORT.NUM": {
+            "key": "DATA.EXPORT.NUM",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "The amount of the benefit reached the limit.",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 0,
+              "used": 0,
+              "remain": 0,
+              "full": true
+            }
+          },
+          "VIDEO.LIST": {
+            "key": "VIDEO.LIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "CREATOR.DETAIL": {
+            "key": "CREATOR.DETAIL",
+            "type": "MODULE",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "CREATOR.CONTACT": {
+            "key": "CREATOR.CONTACT",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "FILTER.CUSTOM_RANGE": {
+            "key": "FILTER.CUSTOM_RANGE",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "BRAND.LIST": {
+            "key": "BRAND.LIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "CUSTOMIZED.DATA.EXPORT": {
+            "key": "CUSTOMIZED.DATA.EXPORT",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "The amount of the benefit reached the limit.",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 0,
+              "used": 0,
+              "remain": 0,
+              "full": true
+            }
+          },
+          "SHOP.DETAIL": {
+            "key": "SHOP.DETAIL",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "OVERVIEW.DETAIL": {
+            "key": "OVERVIEW.DETAIL",
+            "type": "MODULE",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "CREATOR.MCN_SIGN": {
+            "key": "CREATOR.MCN_SIGN",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "OVERVIEW.POTENTIAL_LIST": {
+            "key": "OVERVIEW.POTENTIAL_LIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "PRODUCT.DETAIL": {
+            "key": "PRODUCT.DETAIL",
+            "type": "MODULE",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "AD.ANALYSIS": {
+            "key": "AD.ANALYSIS",
+            "type": "MODULE",
+            "enable": null,
+            "count": 0,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "CREATOR.LIST": {
+            "key": "CREATOR.LIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "VIDEO.DETAIL": {
+            "key": "VIDEO.DETAIL",
+            "type": "MODULE",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "DOWNLOAD.VIDEO": {
+            "key": "DOWNLOAD.VIDEO",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "The amount of the benefit reached the limit.",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 10,
+              "used": 0,
+              "remain": 10,
+              "full": false
+            }
+          },
+          "PRODUCT.LIST": {
+            "key": "PRODUCT.LIST",
+            "type": "LIST",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data,Exceeded pagination limit",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          },
+          "LIVESTREAM.FULL_RECORD": {
+            "key": "LIVESTREAM.FULL_RECORD",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "The amount of the benefit reached the limit.",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 1,
+              "used": 0,
+              "remain": 1,
+              "full": false
+            }
+          },
+          "DETAIL.ACCESS_TIMES": {
+            "key": "DETAIL.ACCESS_TIMES",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Today's detail times has been used up",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 30,
+              "used": 2,
+              "remain": 28,
+              "full": false
+            }
+          },
+          "OVERVIEW.LEVEL_THIRD": {
+            "key": "OVERVIEW.LEVEL_THIRD",
+            "type": "MODULE",
+            "enable": null,
+            "count": 1,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Upgrade to view more data",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": null
+          }
+        },
+        "message": "trial",
+        "cached": null,
+        "code": null
+      }
+    },
+    {
+      "url": "https://www.kalodata.com/product/queryList",
+      "method": "POST",
+      "postData": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [],
+        "showCateIds": [],
+        "pageNo": 1,
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ]
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": [
+          {
+            "sec_cate_id": 848776,
+            "is_full_service": 0,
+            "video_revenue": "¥2,767.51万",
+            "is_overseas": 0,
+            "gmv_A": 200071596,
+            "gmv_B": 220380600,
+            "revenue": "¥2,856.62万",
+            "revenue_trend": [
+              13867200,
+              11133000,
+              10306800,
+              11397600,
+              9995400,
+              10992240,
+              10650150,
+              10204110,
+              16995600,
+              29877750,
+              23934750,
+              14651000,
+              16128000,
+              15909250,
+              14337750,
+              15465528,
+              17325165,
+              17283591,
+              16928613,
+              17628975,
+              14941056,
+              16623204,
+              16990974,
+              17926389,
+              11031501,
+              8855900,
+              8133900,
+              6995800,
+              7122600,
+              6818400
+            ],
+            "creator_num": 8031,
+            "delivery_type": "local",
+            "id": "1729508370969629931",
+            "ter_cate_id": 601611,
+            "unit_price": "¥116.51",
+            "creator_conversion_ratio": 0.4709251649856805,
+            "product_title": "[NEW] [medicube] PDRN Pink Collagen Volume Multi Balm | All In One Volufiline, PDRN, NAD Stick for Youthful-Looking, Helping Look of Fine Lines, Firming Care, Anti-Aging Care | For Under-Eyes, Neck, Forehead, Smile Lines, Lip Care | Korean Skincare",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥28.67",
+            "sale": 245187,
+            "min_real_price": "¥122.30",
+            "revenue_grouping_rate": "-9.2%",
+            "pri_cate_id": 601450,
+            "showcase_revenue": "¥1.41万",
+            "max_real_price": "¥122.30",
+            "commission_rate": "15%",
+            "launch_date": "2026-03-18",
+            "product_rating": 4.2,
+            "live_revenue": "¥87.70万"
+          },
+          {
+            "sec_cate_id": 940808,
+            "is_full_service": 0,
+            "video_revenue": "¥1,852.35万",
+            "is_overseas": 0,
+            "gmv_A": 126581937,
+            "gmv_B": 164869113,
+            "revenue": "¥1,980.17万",
+            "revenue_trend": [
+              9010300,
+              10123900,
+              11539200,
+              13478920,
+              14169610,
+              14866600,
+              10500880,
+              9038770,
+              6629904,
+              10342539,
+              15727400,
+              9050730,
+              11675950,
+              8955050,
+              9759360,
+              7247760,
+              9176310,
+              13385034,
+              13040586,
+              17599140,
+              7781238,
+              7441419,
+              8796580,
+              7690280,
+              7184970,
+              5666050,
+              6045780,
+              5077020,
+              5074030,
+              5375740
+            ],
+            "creator_num": 2587,
+            "delivery_type": "local",
+            "id": "1731236289885213002",
+            "ter_cate_id": 945160,
+            "unit_price": "¥198.91",
+            "creator_conversion_ratio": 0.45612678778507926,
+            "product_title": "SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 99549,
+            "min_real_price": "¥376.19",
+            "revenue_grouping_rate": "-23.2%",
+            "pri_cate_id": 605196,
+            "showcase_revenue": "¥6,956.62",
+            "max_real_price": "¥536.74",
+            "commission_rate": "6%",
+            "launch_date": "2025-07-06",
+            "product_rating": 4.2,
+            "live_revenue": "¥127.12万"
+          },
+          {
+            "sec_cate_id": 700646,
+            "is_full_service": 0,
+            "video_revenue": "¥1,615.23万",
+            "is_overseas": 0,
+            "gmv_A": 137144945,
+            "gmv_B": 144870030,
+            "revenue": "¥1,916.06万",
+            "revenue_trend": [
+              9555000,
+              9435482,
+              11405842,
+              8534519,
+              9158996,
+              11178615,
+              11884131,
+              9351265,
+              8775414,
+              8934702,
+              11240117,
+              6655754,
+              9498465,
+              8805524,
+              10456204,
+              9693075,
+              11377200,
+              9230502,
+              8513284,
+              10307440,
+              8137692,
+              8811342,
+              8094279,
+              11336781,
+              9702057,
+              8443339,
+              7344603,
+              9055711,
+              9445016,
+              7652624
+            ],
+            "creator_num": 6441,
+            "delivery_type": "local",
+            "id": "1729448464509734958",
+            "ter_cate_id": 700650,
+            "unit_price": "¥102.44",
+            "creator_conversion_ratio": 0.44946436888681884,
+            "product_title": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 187051,
+            "min_real_price": "¥203.62",
+            "revenue_grouping_rate": "-5.3%",
+            "pri_cate_id": 700645,
+            "showcase_revenue": "¥2.03万",
+            "max_real_price": "¥203.62",
+            "commission_rate": "25%",
+            "launch_date": "2024-04-16",
+            "product_rating": 4.6,
+            "live_revenue": "¥298.80万"
+          },
+          {
+            "sec_cate_id": 844168,
+            "is_full_service": 0,
+            "video_revenue": "¥1,656.56万",
+            "is_overseas": 0,
+            "gmv_A": 123104720,
+            "gmv_B": 132883425,
+            "revenue": "¥1,739.23万",
+            "revenue_trend": [
+              149994,
+              274989,
+              999960,
+              9624615,
+              15549378,
+              19049238,
+              12149514,
+              1849926,
+              4488561,
+              18599256,
+              26048958,
+              5549778,
+              5924763,
+              6549738,
+              6074757,
+              8811371,
+              0,
+              10449582,
+              27573897,
+              26523939,
+              7699692,
+              3487350,
+              11345512,
+              7474701,
+              3424863,
+              3924843,
+              3599856,
+              3024879,
+              2514365,
+              3249870
+            ],
+            "creator_num": 923,
+            "delivery_type": "local",
+            "id": "1731966270376022101",
+            "ter_cate_id": 983304,
+            "unit_price": "¥1,679.93",
+            "creator_conversion_ratio": 0.3250270855904659,
+            "product_title": "Ninja CREAMi XL Deluxe 11-in-1 Ice Cream and Frozen Treat Maker - NC501",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 10353,
+            "min_real_price": "¥1,698.47",
+            "revenue_grouping_rate": "-7.4%",
+            "pri_cate_id": 600942,
+            "showcase_revenue": "¥10.25万",
+            "max_real_price": "¥1,698.47",
+            "commission_rate": "5%",
+            "launch_date": "2025-10-27",
+            "product_rating": 4.8,
+            "live_revenue": "¥72.42万"
+          },
+          {
+            "sec_cate_id": 909192,
+            "is_full_service": 0,
+            "video_revenue": "¥1,089.76万",
+            "is_overseas": 0,
+            "gmv_A": 144511962,
+            "gmv_B": 72312917,
+            "revenue": "¥1,473.15万",
+            "revenue_trend": [
+              833800,
+              1213179,
+              1580809,
+              1066127,
+              1781300,
+              1478100,
+              947500,
+              758000,
+              1855560,
+              13174476,
+              11780832,
+              13267254,
+              11257064,
+              6154274,
+              5164642,
+              14442442,
+              13921635,
+              38223300,
+              22618800,
+              17960439,
+              6914922,
+              4528356,
+              8842533,
+              9480135,
+              2368800,
+              1217300,
+              1217300,
+              723800,
+              1381800,
+              670400
+            ],
+            "creator_num": 2577,
+            "delivery_type": "local",
+            "id": "1731831763391320673",
+            "ter_cate_id": 911240,
+            "unit_price": "¥2,109.92",
+            "creator_conversion_ratio": 0.19829258828094684,
+            "product_title": "Xtra Muse Vlogging Camera with 1'' CMOS 4K/120fps Videos 3-Axis Gimbal Stabilizer Fast Focusing Face/Object Tracking Portable Handycam Camcorder",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 6982,
+            "min_real_price": "¥3,050.58",
+            "revenue_grouping_rate": "99.8%",
+            "pri_cate_id": 601739,
+            "showcase_revenue": "¥48.86万",
+            "max_real_price": "¥3,050.58",
+            "commission_rate": "-",
+            "launch_date": "2025-10-15",
+            "product_rating": 4.9,
+            "live_revenue": "¥334.52万"
+          },
+          {
+            "sec_cate_id": 848776,
+            "is_full_service": 0,
+            "video_revenue": "¥1,226.86万",
+            "is_overseas": 0,
+            "gmv_A": 99654026,
+            "gmv_B": 113278319,
+            "revenue": "¥1,446.70万",
+            "revenue_trend": [
+              6335532,
+              4583772,
+              4043646,
+              5744313,
+              6306336,
+              7204800,
+              6707100,
+              4858500,
+              7237060,
+              15290214,
+              11286734,
+              8430405,
+              9323489,
+              8007003,
+              7919415,
+              7080030,
+              7758837,
+              9054024,
+              9061723,
+              7699000,
+              5627969,
+              6051414,
+              6284439,
+              6510708,
+              5760800,
+              6490400,
+              6353600,
+              4841200,
+              5211486,
+              5868396
+            ],
+            "creator_num": 2499,
+            "delivery_type": "local",
+            "id": "1732363645554692331",
+            "ter_cate_id": 601611,
+            "unit_price": "¥512.72",
+            "creator_conversion_ratio": 0.3861544617847139,
+            "product_title": "[NEW] [medicube] Gatekeeping My Real Age Set | 5-step Longevity, Anti- Aging Routine l PDRN & Volufiline & Collagen & NAD+ EGF Complex l Cares for Look of Fine Lines, Firming Care, Radiant & Youthful Looking, Plumping | Korean Skincare, K-Beauty",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 28216,
+            "min_real_price": "¥536.74",
+            "revenue_grouping_rate": "-12%",
+            "pri_cate_id": 601450,
+            "showcase_revenue": "¥2.43万",
+            "max_real_price": "¥536.74",
+            "commission_rate": "15%",
+            "launch_date": "2026-04-24",
+            "product_rating": 4.7,
+            "live_revenue": "¥217.40万"
+          },
+          {
+            "sec_cate_id": 871048,
+            "is_full_service": 0,
+            "video_revenue": "¥1,018.26万",
+            "is_overseas": 1,
+            "gmv_A": 119737627,
+            "gmv_B": 92080635,
+            "revenue": "¥1,439.13万",
+            "revenue_trend": [
+              2695000,
+              4123000,
+              3710700,
+              3357300,
+              2356000,
+              2408400,
+              2570100,
+              2002600,
+              4180443,
+              16444100,
+              14605092,
+              6657300,
+              8648800,
+              9217800,
+              9104000,
+              9207558,
+              9957500,
+              11721400,
+              15293013,
+              16785500,
+              8837139,
+              7567131,
+              8360886,
+              10697200,
+              4722700,
+              1413600,
+              2297100,
+              4181900,
+              3983000,
+              4712000
+            ],
+            "creator_num": 857,
+            "delivery_type": "global",
+            "id": "1731438296477111249",
+            "ter_cate_id": 604468,
+            "unit_price": "¥3,802.19",
+            "creator_conversion_ratio": 0.17152858809801633,
+            "product_title": "【2 Packages Shipping】GOSUHI 108\\\" U-Shaped Modular Sectional Sofa - Comfy Cloud 3-Seater with 2 Movable Ottoman, Cloud Sofa,Deep Seat Linen Couch for Living Room, Beige Color ,Comfort & Stylish Design,Chenille pink",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 3785,
+            "min_real_price": "¥4,545.30",
+            "revenue_grouping_rate": "30%",
+            "pri_cate_id": 604453,
+            "showcase_revenue": "¥23.11万",
+            "max_real_price": "¥4,749.13",
+            "commission_rate": "8%",
+            "launch_date": "2025-08-18",
+            "product_rating": 4.7,
+            "live_revenue": "¥397.76万"
+          },
+          {
+            "sec_cate_id": 844168,
+            "is_full_service": 0,
+            "video_revenue": "¥1,057.43万",
+            "is_overseas": 0,
+            "gmv_A": 35755696,
+            "gmv_B": 163064245,
+            "revenue": "¥1,350.82万",
+            "revenue_trend": [
+              5179852,
+              3532343,
+              2879872,
+              4117317,
+              5017277,
+              6344718,
+              4969858,
+              4339876,
+              2517394,
+              9967057,
+              24501411,
+              10529532,
+              78992743,
+              0,
+              174995,
+              349990,
+              209994,
+              227843,
+              209994,
+              34999,
+              0,
+              260392,
+              5459844,
+              14559584,
+              3254907,
+              1959944,
+              2239936,
+              1784949,
+              2624925,
+              2578395
+            ],
+            "creator_num": 1848,
+            "delivery_type": "local",
+            "id": "1732091998513369173",
+            "ter_cate_id": 983304,
+            "unit_price": "¥1,982.70",
+            "creator_conversion_ratio": 0.20075757575757575,
+            "product_title": "Ninja SLUSHi Slushie Machine, 7+ Servings - FS301",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 6813,
+            "min_real_price": "¥2,377.89",
+            "revenue_grouping_rate": "-78.1%",
+            "pri_cate_id": 600942,
+            "showcase_revenue": "¥27.22万",
+            "max_real_price": "¥2,513.78",
+            "commission_rate": "5%",
+            "launch_date": "2025-11-26",
+            "product_rating": 4.8,
+            "live_revenue": "¥266.17万"
+          },
+          {
+            "sec_cate_id": 808328,
+            "is_full_service": 0,
+            "video_revenue": "¥1,251.16万",
+            "is_overseas": 0,
+            "gmv_A": 126182071,
+            "gmv_B": 68844339,
+            "revenue": "¥1,325.04万",
+            "revenue_trend": [
+              1732500,
+              2504300,
+              2093500,
+              1911800,
+              2030300,
+              2014500,
+              2227800,
+              1888100,
+              2077437,
+              5790438,
+              17530893,
+              5547270,
+              5947947,
+              6383160,
+              9164394,
+              7629396,
+              9171993,
+              12188796,
+              10319442,
+              11327166,
+              7180191,
+              8981163,
+              10145408,
+              14509469,
+              7699047,
+              4921500,
+              6927500,
+              5457000,
+              4896000,
+              4828000
+            ],
+            "creator_num": 2074,
+            "delivery_type": "local",
+            "id": "1729931833196778371",
+            "ter_cate_id": 600157,
+            "unit_price": "¥524.60",
+            "creator_conversion_ratio": 0.3317261330761813,
+            "product_title": "Comfrt | The Dreamer Blanket | Oversized, Cozy, Soft Warm Throw",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 25258,
+            "min_real_price": "¥577.50",
+            "revenue_grouping_rate": "83.3%",
+            "pri_cate_id": 600154,
+            "showcase_revenue": "¥2.43万",
+            "max_real_price": "¥1,352.04",
+            "commission_rate": "10%",
+            "launch_date": "2024-11-11",
+            "product_rating": 4.9,
+            "live_revenue": "¥71.45万"
+          },
+          {
+            "sec_cate_id": 844808,
+            "is_full_service": 0,
+            "video_revenue": "¥1,125.99万",
+            "is_overseas": 0,
+            "gmv_A": 85346586,
+            "gmv_B": 105152777,
+            "revenue": "¥1,294.29万",
+            "revenue_trend": [
+              12974481,
+              6474741,
+              5674773,
+              10599576,
+              4724811,
+              12299508,
+              6424743,
+              4399824,
+              3574857,
+              6749730,
+              11874525,
+              5324787,
+              5449782,
+              3799848,
+              4806791,
+              6374745,
+              9199632,
+              23924043,
+              25873965,
+              19449222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              524979
+            ],
+            "creator_num": 340,
+            "delivery_type": "local",
+            "id": "1732212014127944368",
+            "ter_cate_id": 601102,
+            "unit_price": "¥1,694.76",
+            "creator_conversion_ratio": 0.35,
+            "product_title": "Shark Detect Ultralight Corded Stick Vacuum with Direction Detect and Self-Cleaning Brushroll - HZ752",
+            "is_tokopedia": 0,
+            "shipping_fee": "¥0.00",
+            "sale": 7637,
+            "min_real_price": "¥1,698.47",
+            "revenue_grouping_rate": "-18.8%",
+            "pri_cate_id": 600942,
+            "showcase_revenue": "¥7.56万",
+            "max_real_price": "¥1,698.47",
+            "commission_rate": "5%",
+            "launch_date": "2026-01-13",
+            "product_rating": 4.6,
+            "live_revenue": "¥160.74万"
+          }
+        ],
+        "message": null,
+        "cached": true,
+        "code": null
+      }
+    },
+    {
+      "url": "https://www.kalodata.com/product/count",
+      "method": "POST",
+      "postData": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [],
+        "showCateIds": [],
+        "pageNo": 1,
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ]
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": 2441222,
+        "message": null,
+        "cached": true,
+        "code": null
+      }
+    },
+    {
+      "url": "https://www.kalodata.com/user/features",
+      "method": "POST",
+      "postData": {
+        "country": "US",
+        "list": [
+          "FILTER.CUSTOM_TIMES"
+        ]
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": {
+          "FILTER.CUSTOM_TIMES": {
+            "key": "FILTER.CUSTOM_TIMES",
+            "type": "BENEFIT",
+            "enable": null,
+            "count": 10,
+            "guidance": {
+              "targetLevel": null,
+              "purchasePrices": null,
+              "target": null,
+              "message": "Today's query times has been used up",
+              "cause": null,
+              "actionType": {
+                "code": "UPGRADE",
+                "name": "Upgrade",
+                "desc": "Upgrade to view more data"
+              }
+            },
+            "progress": {
+              "total": 30,
+              "used": 2,
+              "remain": 28,
+              "full": false
+            }
+          }
+        },
+        "message": "trial",
+        "cached": null,
+        "code": null
+      }
+    },
+    {
+      "url": "https://www.kalodata.com/product/enrich",
+      "method": "POST",
+      "postData": {
+        "ids": [
+          "1729508370969629931",
+          "1731236289885213002",
+          "1729448464509734958",
+          "1731966270376022101",
+          "1731831763391320673",
+          "1732363645554692331",
+          "1731438296477111249",
+          "1732091998513369173",
+          "1729931833196778371",
+          "1732212014127944368"
+        ],
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": []
+      },
+      "status": 200,
+      "mimeType": "application/json",
+      "responseBody": {
+        "success": true,
+        "data": [
+          {
+            "id": "1729508370969629931",
+            "videos": [
+              {
+                "id": "7651690644640992542",
+                "contentType": "video"
+              },
+              {
+                "id": "7641765784921984270",
+                "contentType": "video"
+              },
+              {
+                "id": "7639589618840636685",
+                "contentType": "video"
+              }
+            ]
+          },
+          {
+            "id": "1731236289885213002",
+            "videos": [
+              {
+                "id": "7651343634247290143",
+                "contentType": "video"
+              },
+              {
+                "id": "7648001830957403422",
+                "contentType": "video"
+              },
+              {
+                "id": "7648994013772549390",
+                "contentType": "video"
+              }
+            ]
+          },
+          {
+            "id": "1729448464509734958",
+            "videos": [
+              {
+                "id": "7647293716255804686",
+                "contentType": "video"
+              },
+              {
+                "id": "7647978926869990670",
+                "contentType": "video"
+              },
+              {
+                "id": "7638172776431357215",
+                "contentType": "multi_photo"
+              }
+            ]
+          },
+          {
+            "id": "1731966270376022101",
+            "videos": [
+              {
+                "id": "7650510426706283807",
+                "contentType": "video"
+              },
+              {
+                "id": "7650994364725873951",
+                "contentType": "video"
+              },
+              {
+                "id": "7646585631140875551",
+                "contentType": "video"
+              }
+            ]
+          },
+          {
+            "id": "1731831763391320673",
+            "videos": [
+              {
+                "id": "7620850872125377805",
+                "contentType": "video"
+              },
+              {
+                "id": "7654627968626576653",
+                "contentType": "video"
+              },
+              {
+                "id": "7606453833086111007",
+                "contentType": "video"
+              }
+            ]
+          },
+          {
+            "id": "1732363645554692331",
+            "videos": [
+              {
+                "id": "7646208610892025118",
+                "contentType": "video"
+              },
+              {
+                "id": "7653674151990889759",
+                "contentType": "video"
+              },
+              {
+                "id": "7636127089262988557",
+                "contentType": "video"
+              }
+            ]
+          },
+          {
+            "id": "1731438296477111249",
+            "videos": [
+              {
+                "id": "7550769614523813133",
+                "contentType": "video"
+              },
+              {
+                "id": "7540086540781784350",
+                "contentType": "video"
+              },
+              {
+                "id": "7628049757621079310",
+                "contentType": "video"
+              }
+            ]
+          },
+          {
+            "id": "1732091998513369173",
+            "videos": [
+              {
+                "id": "7639572727627648269",
+                "contentType": "video"
+              },
+              {
+                "id": "7640188324191177998",
+                "contentType": "video"
+              },
+              {
+                "id": "7650208491834985742",
+                "contentType": "autocut"
+              }
+            ]
+          },
+          {
+            "id": "1729931833196778371",
+            "videos": [
+              {
+                "id": "7650248595068685581",
+                "contentType": "video"
+              },
+              {
+                "id": "7634326333555887373",
+                "contentType": "video"
+              },
+              {
+                "id": "7649925965539314974",
+                "contentType": "video"
+              }
+            ]
+          },
+          {
+            "id": "1732212014127944368",
+            "videos": [
+              {
+                "id": "7648756014124256525",
+                "contentType": "video"
+              },
+              {
+                "id": "7654699356712455437",
+                "contentType": "video"
+              },
+              {
+                "id": "7654766680412835086",
+                "contentType": "video"
+              }
+            ]
+          }
+        ],
+        "message": null,
+        "cached": true,
+        "code": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": "analysis.result.v1",
+  "analysis_id": "analysis_shein_488434750",
+  "candidate_id": "shein_488434750",
+  "market": "US",
+  "layer_results": {
+    "L1": {
+      "passed": true,
+      "score": 58.3,
+      "grade": "A",
+      "gate_reason": "PScore 35.0/60.0（58.3%）-> A",
+      "required_next_data": []
+    },
+    "L2": {
+      "passed": true,
+      "score": 58.3,
+      "grade": "A",
+      "gate_reason": "评价标签聚类：0 个负面聚类 / 1 次标签提及",
+      "required_next_data": []
+    },
+    "L3": {
+      "passed": true,
+      "score": 58.3,
+      "grade": "A",
+      "gate_reason": "同风格信号：frontend_amazon 语料中有 358 款标题命中相同风格词 ['dress']；带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台",
+      "required_next_data": [
+        "供应链字段人工调查（选品后画像存库用，不参与打分）"
+      ]
+    }
+  },
+  "priority_score": {
+    "total": 35.0,
+    "achievable_max": 60.0,
+    "pct": 58.3,
+    "grade": "A",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 20.4,
+        "max_score": 30.0,
+        "reason": "量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+        "evidence_refs": [
+          "ev_0fe824da88fe5717",
+          "ev_36ae176af0fc3137"
+        ],
+        "missing": false
+      },
+      {
+        "name": "竞争可突破",
+        "score": 6.8,
+        "max_score": 15.0,
+        "reason": "竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_454db011456c3560",
+          "ev_a2370fe4fcb437c1"
+        ],
+        "missing": false
+      },
+      {
+        "name": "产品机会",
+        "score": 10.5,
+        "max_score": 15.0,
+        "reason": "评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张",
+        "evidence_refs": [
+          "ev_3bb3d0effd0314e1",
+          "ev_7ee173db73e7eb5a",
+          "ev_d589d2e96f359c00"
+        ],
+        "missing": false
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max_score": 0.0,
+        "reason": "单一数据源，量价未经第二源互验：仅 frontend_shein 单源（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_8813165f02bce2b1"
+        ],
+        "missing": false
+      }
+    ],
+    "track": "trend_rising",
+    "track_label": "趋势上升款"
+  },
+  "track_tags": [
+    "趋势上升款"
+  ],
+  "recommendation": {
+    "decision": "research_more",
+    "reason_summary": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源；竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张",
+    "risk_summary": "单一数据源，量价未经第二源互验：仅 frontend_shein 单源",
+    "next_actions": [
+      "补齐关键缺字段后复评",
+      "L3 完成，等待供应链输入与人审"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+      "claim_type": "demand",
+      "evidence_refs": [
+        "ev_0fe824da88fe5717",
+        "ev_36ae176af0fc3137"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+      "claim_type": "competition",
+      "evidence_refs": [
+        "ev_454db011456c3560",
+        "ev_a2370fe4fcb437c1"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "产品机会：评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张",
+      "claim_type": "product",
+      "evidence_refs": [
+        "ev_3bb3d0effd0314e1",
+        "ev_7ee173db73e7eb5a",
+        "ev_d589d2e96f359c00"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "单一数据源，量价未经第二源互验：仅 frontend_shein 单源",
+      "claim_type": "risk",
+      "evidence_refs": [
+        "ev_8813165f02bce2b1"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "同风格红海程度：高（语料内同风格候选 1597 款，词表确定性匹配）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_8813165f02bce2b1"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "平台优先级：shein（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_0fe824da88fe5717"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "missing_fields": [
+    "market_metrics.sales_growth_rate",
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio"
+  ],
+  "blocked_reasons": [],
+  "confidence": "medium",
+  "created_at": "2026-07-10T20:45:43+00:00"
+}

@@ -1,0 +1,446 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "tiktok_shop_1731236289885213002",
+  "run_id": "run_20260714_003",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "tiktok_shop_1731236289885213002",
+      "platform": "tiktok_shop",
+      "canonical_url": "https://shop.tiktok.com/view/product/1731236289885213002",
+      "basic_facts": {
+        "title": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering",
+        "brand": null,
+        "category_path": [],
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731236289885213002/17312362898852130020.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "price": {
+          "amount": 55.37,
+          "currency": "USD"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.2,
+        "review_count": 18200.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 104947.0,
+        "sales_7d_units": 28600.0,
+        "sales_floor_units": null,
+        "revenue_30d": null,
+        "gmv_7d": {
+          "amount": 1921200.0,
+          "currency": "USD"
+        },
+        "sales_growth_rate": 1.8562,
+        "favorites_count": null,
+        "bestseller_rank_text": null,
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": []
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [
+          {
+            "source_id": "tabcut",
+            "envelope_id": "envelope_tabcut_20260714",
+            "product_id": "1731236289885213002",
+            "match_type": "exact_or_prefix_product_id"
+          },
+          {
+            "source_id": "echotik",
+            "envelope_id": "envelope_echotik_20260714",
+            "product_id": "1731236289885213002",
+            "match_type": "exact_or_prefix_product_id"
+          }
+        ],
+        "platform_price_comparison": [],
+        "same_style_signals": []
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio",
+        "product_opportunity.reviews",
+        "freshness.listed_at",
+        "freshness.style_novelty_evidence"
+      ],
+      "field_issues": [
+        {
+          "field_path": "primary_product_id",
+          "issue": "id_truncated_in_source",
+          "detail": "EchoTik 页面导出的 product_id 为截断值 17312362898852130...，已按前缀合并到完整 id",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "basic_facts.title",
+          "issue": "source_conflict",
+          "detail": "echotik 给出 '【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering summervibes☀️'，与已有 '【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering' 不一致，保留先值",
+          "evidence_refs": []
+        }
+      ],
+      "context": {
+        "category_name": "五金工具",
+        "category_label": null,
+        "source_group": "tiktok_shop_plugin",
+        "site": null,
+        "shop_name": "SEESE Store",
+        "seller_name": null,
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": 289200.0,
+        "video_engagement_max": null,
+        "affiliate_creator_count": 3122.0,
+        "review_tags_raw": null
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "S",
+      "pct": 57.2,
+      "total": 34.3,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 28.8,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_30d_units=104,947 -> 15分；销量/销售额增长率 +185.6% -> 6分；2个独立需求证据源",
+          "evidence_refs": [
+            "ev_tabcut_000114",
+            "ev_tabcut_000115"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 2.2,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 outside -> 2分",
+          "evidence_refs": [
+            "ev_echotik_000366",
+            "ev_echotik_000370",
+            "ev_tabcut_000113"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 6.0,
+          "max_score": 15.0,
+          "reason": "评分4.2（低于类目P25_有明确改良空间）-> 8分",
+          "evidence_refs": [
+            "ev_echotik_000369"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「SEESE Store」品牌词出现在标题中（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_echotik_000375"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_30d_units=104,947 -> 15分；销量/销售额增长率 +185.6% -> 6分；2个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_tabcut_000114",
+            "ev_tabcut_000115"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 outside -> 2分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_echotik_000366",
+            "ev_echotik_000370",
+            "ev_tabcut_000113"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_echotik_000369"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「SEESE Store」品牌词出现在标题中（人工待确认）",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_echotik_000375"
+          ],
+          "confidence": "low"
+        },
+        {
+          "claim": "多源互验：tabcut、echotik 按商品ID匹配到同一商品",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_tabcut_000112",
+            "ev_echotik_000365"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "平台优先级：tiktok_shop（候选来自 TikTok Shop 数据源，维持原平台优先）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_tabcut_000112",
+            "ev_echotik_000365"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 57.2,
+          "grade": "S",
+          "gate_reason": "PScore 34.3/60.0（57.2%）-> S",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 57.2,
+          "grade": "S",
+          "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+          "required_next_data": [
+            "reviews_or_review_tags"
+          ]
+        },
+        "L3": {
+          "passed": true,
+          "score": 57.2,
+          "grade": "S",
+          "gate_reason": "2 个数据源按商品ID互验（tabcut、echotik）；候选来自 TikTok Shop 数据源，维持原平台优先",
+          "required_next_data": [
+            "供应链字段人工调查（选品后画像存库用，不参与打分）"
+          ]
+        }
+      },
+      "confidence": "high"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_tabcut_000112",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=最终原数据;row=50",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000113",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=最终原数据;row=50",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000114",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=最终原数据;row=50",
+        "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000115",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=最终原数据;row=50",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000116",
+        "source_id": "tabcut",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=最终原数据;row=50",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000117",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=最终原数据;row=50",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000365",
+        "source_id": "echotik",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000366",
+        "source_id": "echotik",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": "EchoTik 商品库页面价格（区间取下限）"
+      },
+      {
+        "evidence_id": "ev_echotik_000367",
+        "source_id": "echotik",
+        "field_path": "context.price_range",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000369",
+        "source_id": "echotik",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000370",
+        "source_id": "echotik",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000371",
+        "source_id": "echotik",
+        "field_path": "market_metrics.sales_7d_units",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": "EchoTik 7 天销量（估算）"
+      },
+      {
+        "evidence_id": "ev_echotik_000372",
+        "source_id": "echotik",
+        "field_path": "market_metrics.gmv_7d",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000373",
+        "source_id": "echotik",
+        "field_path": "context.product_total_sales",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": "EchoTik 商品累计销量（估算）"
+      },
+      {
+        "evidence_id": "ev_echotik_000374",
+        "source_id": "echotik",
+        "field_path": "context.affiliate_creator_count",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000375",
+        "source_id": "echotik",
+        "field_path": "context.shop_name",
+        "record_locator": "sheet=EchoTik商品库实采;row=5",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_echotik_000365",
+    "ev_echotik_000366",
+    "ev_echotik_000367",
+    "ev_echotik_000369",
+    "ev_echotik_000370",
+    "ev_echotik_000371",
+    "ev_echotik_000372",
+    "ev_echotik_000373",
+    "ev_echotik_000374",
+    "ev_echotik_000375",
+    "ev_tabcut_000112",
+    "ev_tabcut_000113",
+    "ev_tabcut_000114",
+    "ev_tabcut_000115",
+    "ev_tabcut_000116",
+    "ev_tabcut_000117"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "shein_461740289",
+  "run_id": "run_20260716_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "DVSLOE Women's Y2K Striped Halter Neck Mini Dress, Sexy Fitted Sleeveless Tank Dress, Summer Street Style, Suitable For Daily Wear And Casual Outings",
+    "grade": "A",
+    "track": "基础常青款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 11.4,
+        "max": 22.0,
+        "reason": "量级信号 sales_floor_units=1,000 -> 12分；1个独立需求证据源",
+        "evidence_refs": [
+          "ev_shein_frontend_000740"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 12.6,
+        "max": 28.0,
+        "reason": "竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_shein_frontend_000735",
+          "ev_shein_frontend_000739"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 1.5,
+        "max": 15.0,
+        "reason": "评分4.83（口碑较好_改良空间有限）-> 2分",
+        "evidence_refs": [
+          "ev_shein_frontend_000738"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -1.3,
+        "max": 0.0,
+        "reason": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源（赛道风险系数×0.67）",
+        "evidence_refs": [
+          "ev_shein_frontend_000730"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_floor_units=1,000 -> 12分；1个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_shein_frontend_000740"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_shein_frontend_000735",
+          "ev_shein_frontend_000739"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "产品机会：评分4.83（口碑较好_改良空间有限）-> 2分",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_shein_frontend_000738"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_shein_frontend_000730"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "market_metrics.sales_growth_rate",
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_shein_frontend_000730",
+    "ev_shein_frontend_000731",
+    "ev_shein_frontend_000732",
+    "ev_shein_frontend_000734",
+    "ev_shein_frontend_000735",
+    "ev_shein_frontend_000736",
+    "ev_shein_frontend_000737",
+    "ev_shein_frontend_000738",
+    "ev_shein_frontend_000739",
+    "ev_shein_frontend_000740",
+    "ev_shein_frontend_000741"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

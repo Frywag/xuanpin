@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0FV8B1HD4",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "WIHOLL Summer Dresses Cap Sleeve Crewneck Maxi Long Casual Dress with Pockets Beach Vacation Sundresses 2026 Trendy",
+    "rating": 4.4,
+    "review_count": 1036.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":113,\"positive\":93,\"negative\":20,\"snippets\":[\"Customers like how the dress fits, describing it as loose and flattering, with one customer noting it skims over their curves.\",\". The Material makes it very comfortable and lightweight. I would highly recommend this dress!...\",\". I’m sure if I’m walking and the wind is blowing, you can see my tummy, but otherwise it flatters my shape very well....\",\"and fabric is decent considering a lot of Amazon items are really cheaply made....\",\"...True to size. Not a fit tight and not big, and very comfortable.\",\"and does not feel heavy for a long dress. Everyone loved it.\"]},{\"tag\":\"comfort\",\"mentions\":97,\"positive\":97,\"negative\":0,\"snippets\":[\"Customers find the dress comfortable, with one mentioning it works well for casual shopping and another noting its true-to-size fit.\",\"as well! I’m 7 months pregnant and it looks great with my bump. I’ll definitely wear it postpartum as well....\",\", cool in hot floria heat, pockets hold cell phone without falling out when, washes up like a dream and no wrinkles....\",\". Perfect fit and does not feel heavy for a long dress. Everyone loved it.\",\"and I feel really pretty when I wear it. The low price is the icing on top!...\"]},{\"tag\":\"appearance\",\"mentions\":95,\"positive\":91,\"negative\":4,\"snippets\":[\"Customers find the dress visually appealing, with one mentioning it has a summery look and another noting the well-done print.\",\"and comfortable. Wish the sleeves were just a tad bit longer. I don’t like showing too much of my arms. But it is cute dress....\",\"! Nice length. I will definitely get a lot of wear out of it for Spring and summer!\",\", feels great. Its very flattering, even if your body isn't perfect. The pockets are such great addition.\"]},{\"tag\":\"quality\",\"mentions\":71,\"positive\":59,\"negative\":12,\"snippets\":[\"Customers find the dress to be of good quality, describing it as a perfect Hawaiian dress.\",\", not too long or short, pockets are great. The material is higher quality and the pattern is as shown. True to size.\",\", feels soft on skin and not clingy. Love the pockets and was true to size. You can add a belt to dress it up.\",\". Good material. Size fits nicely. And of course the most important thing, IT Has Pockets!!!\",\"! Can be dressed up for a party or worn casually for comfort to shop.\"]},{\"tag\":\"softness\",\"mentions\":45,\"positive\":44,\"negative\":1,\"snippets\":[\"Customers find the dress super soft and comfortable to wear.\",\", very cool for warm weather. I now own 2 of them. Best part ... it has POCKETS!!!...\",\"! Has pockets and I'm 5'6\\\" and the length is perfect. Lands just at the top of my foot!\",\"but not clingy. Neck is a little high, but it feels comfortable. At 5'3\\\" length is perfect for me with flat or low heel sandals.\"]},{\"tag\":\"pockets\",\"mentions\":42,\"positive\":41,\"negative\":1,\"snippets\":[\", doesn't look like a moo moo or potato bag, for it being a loose...\",\". Lightweight fabric with stretch. Super Comfy. Always get tons of compliments!\",\"I love ittttt. I have a bigger stomach and this hides it. It has\"]},{\"tag\":\"fabric quality\",\"mentions\":60,\"positive\":38,\"negative\":22,\"snippets\":[\"Customers have mixed opinions about the fabric quality of the dress, with some loving it and finding it nice, while others mention it's not what they expected.\",\". They could have cut on the fold like the front. Maybe it was just the one delivered to me and if so, I hope your dress is better.\"]},{\"tag\":\"length\",\"mentions\":43,\"positive\":29,\"negative\":14,\"snippets\":[\"Customers have mixed opinions about the dress's length, with some finding it nice while others say it's too short to wear.\",\", just like the model, love the pockets, doesn't look like a moo moo or potato bag, for it being a loose...\",\". I will definitely get a lot of wear out of it for Spring and summer!\",\". I am 5'2\\\" and it is only half an inch from the floor. I realize I'm not tall but I don't typically have dresses fall THAT long\",\"...bottom and this is flowing enough that it fits perfectly and it’s\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_03f6e8f43476141d",
+    "ev_6308fd862a55b856",
+    "ev_a8a7780a752f3693",
+    "ev_c19288b19364b9b3",
+    "ev_d4a650d37ceef439"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "tiktok_shop_1729448464509734958",
+  "run_id": "run_20260707_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "tiktok_shop_1729448464509734958",
+      "platform": "tiktok_shop",
+      "canonical_url": "https://shop.tiktok.com/view/product/1729448464509734958",
+      "basic_facts": {
+        "title": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+        "brand": null,
+        "category_path": [],
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729448464509734958/17294484645097349580.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "price": {
+          "amount": 15.97,
+          "currency": "USD"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.6,
+        "review_count": 128600.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 194250.0,
+        "sales_7d_units": 39000.0,
+        "sales_floor_units": null,
+        "revenue_30d": null,
+        "gmv_7d": {
+          "amount": 879200.0,
+          "currency": "USD"
+        },
+        "sales_growth_rate": 0.0725,
+        "favorites_count": null,
+        "bestseller_rank_text": null,
+        "video_views_max": 18721163.0,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": []
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [],
+        "same_style_signals": []
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio",
+        "owned_supply_inputs.capability_profile",
+        "product_opportunity.reviews"
+      ],
+      "field_issues": [
+        {
+          "field_path": "primary_product_id",
+          "issue": "id_truncated_in_source",
+          "detail": "EchoTik 页面导出的 product_id 为截断值 17294484645097349...，已按前缀合并到完整 id",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "basic_facts.price",
+          "issue": "source_conflict",
+          "detail": "echotik 给出 {'amount': 29.97, 'currency': 'USD'}，与已有 {'amount': 15.97, 'currency': 'USD'} 不一致，保留先值",
+          "evidence_refs": []
+        }
+      ],
+      "context": {
+        "category_name": "保健",
+        "category_label": null,
+        "source_group": "tiktok_shop_plugin",
+        "site": null,
+        "shop_name": "Toplux Nutrition",
+        "seller_name": null,
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": 1500120.0,
+        "video_engagement_max": 0.0118,
+        "affiliate_creator_count": 15400.0,
+        "review_tags_raw": null
+      }
+    },
+    "engine_analysis": {
+      "track": "balanced",
+      "track_label": "均衡款",
+      "grade": "A",
+      "pct": 48.0,
+      "total": 36.0,
+      "achievable_max": 75.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 21.0,
+          "max_score": 25,
+          "reason": "量级信号 sales_30d_units=194,250 -> 15分；销量/销售额增长率 +7.2% -> 3分；2个独立需求证据源",
+          "evidence_refs": [
+            "ev_tabcut_000097",
+            "ev_tabcut_000098"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 7.0,
+          "max_score": 20,
+          "reason": "竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+          "evidence_refs": [
+            "ev_echotik_000346",
+            "ev_echotik_000349",
+            "ev_tabcut_000096"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 8.0,
+          "max_score": 20,
+          "reason": "评分4.6（低于类目中位_有一定改良空间）-> 5分；关联视频最高播放 18,721,163（热度信号）",
+          "evidence_refs": [
+            "ev_echotik_000348",
+            "ev_tabcut_000267"
+          ],
+          "missing": false
+        },
+        {
+          "name": "自有供应链",
+          "score": 2.0,
+          "max_score": 10.0,
+          "reason": "售价低于组内中位，薄利结构（代理）-> 2分。逐款成本/MOQ/交期仅对终选款人工核实",
+          "evidence_refs": [
+            "ev_echotik_000346",
+            "ev_tabcut_000096"
+          ],
+          "missing": true
+        },
+        {
+          "name": "风险",
+          "score": -2.0,
+          "max_score": 0.0,
+          "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Toplux Nutrition」品牌词出现在标题中",
+          "evidence_refs": [
+            "ev_echotik_000354"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_30d_units=194,250 -> 15分；销量/销售额增长率 +7.2% -> 3分；2个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_tabcut_000097",
+            "ev_tabcut_000098"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈68,609（组内评论数p90代理）-> 1分；价格带位置 within_p25_p75 -> 6分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_echotik_000346",
+            "ev_echotik_000349",
+            "ev_tabcut_000096"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "产品机会：评分4.6（低于类目中位_有一定改良空间）-> 5分；关联视频最高播放 18,721,163（热度信号）",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_echotik_000348",
+            "ev_tabcut_000267"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "自有供应链：售价低于组内中位，薄利结构（代理）-> 2分。逐款成本/MOQ/交期仅对终选款人工核实",
+          "claim_type": "other",
+          "evidence_refs": [
+            "ev_echotik_000346",
+            "ev_tabcut_000096"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Toplux Nutrition」品牌词出现在标题中（人工待确认）",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_echotik_000354"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 48.0,
+          "grade": "A",
+          "gate_reason": "PScore 36.0/75.0（48.0%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 48.0,
+          "grade": "A",
+          "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+          "required_next_data": [
+            "reviews_or_review_tags"
+          ]
+        },
+        "L3": {
+          "passed": null,
+          "score": null,
+          "grade": null,
+          "gate_reason": null,
+          "required_next_data": []
+        }
+      },
+      "confidence": "high"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_tabcut_000095",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=最终原数据;row=47",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000096",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=最终原数据;row=47",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000097",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=最终原数据;row=47",
+        "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000098",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=最终原数据;row=47",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000099",
+        "source_id": "tabcut",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=最终原数据;row=47",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000100",
+        "source_id": "tabcut",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=最终原数据;row=47",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000266",
+        "source_id": "tabcut",
+        "field_path": "context.product_total_sales",
+        "record_locator": "sheet=最终原数据;row=12..12",
+        "note": "Tabcut 商品累计总销量（估算）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000267",
+        "source_id": "tabcut",
+        "field_path": "market_metrics.video_views_max",
+        "record_locator": "sheet=最终原数据;row=12..12",
+        "note": "关联带货视频最高播放量（内容热度信号，非销量）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000268",
+        "source_id": "tabcut",
+        "field_path": "context.video_count_observed",
+        "record_locator": "sheet=最终原数据;row=12..12",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_tabcut_000269",
+        "source_id": "tabcut",
+        "field_path": "context.video_gmv_sum",
+        "record_locator": "sheet=最终原数据;row=12..12",
+        "note": "derived: 观测到的视频估算GMV求和（估算口径）"
+      },
+      {
+        "evidence_id": "ev_tabcut_000270",
+        "source_id": "tabcut",
+        "field_path": "context.video_engagement_max",
+        "record_locator": "sheet=最终原数据;row=12..12",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000345",
+        "source_id": "echotik",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000346",
+        "source_id": "echotik",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": "EchoTik 商品库页面价格（区间取下限）"
+      },
+      {
+        "evidence_id": "ev_echotik_000348",
+        "source_id": "echotik",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000349",
+        "source_id": "echotik",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000350",
+        "source_id": "echotik",
+        "field_path": "market_metrics.sales_7d_units",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": "EchoTik 7 天销量（估算）"
+      },
+      {
+        "evidence_id": "ev_echotik_000351",
+        "source_id": "echotik",
+        "field_path": "market_metrics.gmv_7d",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000353",
+        "source_id": "echotik",
+        "field_path": "context.affiliate_creator_count",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_echotik_000354",
+        "source_id": "echotik",
+        "field_path": "context.shop_name",
+        "record_locator": "sheet=EchoTik商品库实采;row=3",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_echotik_000345",
+    "ev_echotik_000346",
+    "ev_echotik_000348",
+    "ev_echotik_000349",
+    "ev_echotik_000350",
+    "ev_echotik_000351",
+    "ev_echotik_000353",
+    "ev_echotik_000354",
+    "ev_tabcut_000095",
+    "ev_tabcut_000096",
+    "ev_tabcut_000097",
+    "ev_tabcut_000098",
+    "ev_tabcut_000099",
+    "ev_tabcut_000100",
+    "ev_tabcut_000266",
+    "ev_tabcut_000267",
+    "ev_tabcut_000268",
+    "ev_tabcut_000269",
+    "ev_tabcut_000270"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

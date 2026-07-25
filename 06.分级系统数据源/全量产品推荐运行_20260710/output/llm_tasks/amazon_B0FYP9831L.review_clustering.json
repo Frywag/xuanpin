@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0FYP9831L",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "RUMIA Womens Casual Dresses Wrap V Neck Dress A-Line Ruffle Sleeve Summer Sundress Fashion 2026",
+    "rating": 4.4,
+    "review_count": 1155.0,
+    "review_tags_raw": "[{\"tag\":\"fit\",\"mentions\":178,\"positive\":152,\"negative\":26,\"snippets\":[\"Customers find the dress flattering and slimming, with one customer noting it comes right to the knees.\",\". It deficient minimized my hips while giving the right amount of cleavage. I decided to buy a second one.\",\"...\\\" has made many dress styles no longer work for me, but these are\",\"AND comfortable. I'm a size 10/12, and the Large fits perfectly....\",\"and feels very comfortable. It is a lot brighter of a \\\"purple\\\" than i thought it would be making it very pink looking....\",\"! It us super lightweight, and can be used in a casual or dressy atmosphere! Perfect!!\"]},{\"tag\":\"appearance\",\"mentions\":171,\"positive\":163,\"negative\":8,\"snippets\":[\"Customers find the dress pretty and appreciate its nice material, with one customer specifically noting its beautiful print.\",\"! It fits really well! It's super flattering. The wearability is limitless if you live in a warm climate! The size is true to size....\",\", super comfy fabric. I just had to add a quick stitch to make the v neck a little more modest. This is a great spring or summer dress.\",\"and size is true. The material was much nicer than I expected. Very happy with this purchase and would recommend\",\". It comes with 2 decorative clips to secure front \\\"v\\\" if needed....\"]},{\"tag\":\"comfort\",\"mentions\":99,\"positive\":98,\"negative\":1,\"snippets\":[\". Also true to size. I am 5’8 and it is the perfect length. I love it! Definitely recommend.🙂\",\"I wore it for 8+ hours. Stretchy fabric. The quality is nice the color was beautiful also\",\", fits to size thank you for fast great service. Blue is more nurse color not light blue though, but the pink is pretty spot on.\"]},{\"tag\":\"quality\",\"mentions\":74,\"positive\":67,\"negative\":7,\"snippets\":[\"Customers praise the dress's quality, describing it as an excellent summer piece that fits well.\",\"for a great price. Fits a little big but it came with clasps to tighten up in the chest area.\",\"! Fit perfect! True to size. So comfortable and very flattering!\",\"...It comes with 2 decorative clips to secure front \\\"v\\\" if needed. Another\",\", easy throw on and go and know that you're ready for the day and...\"]},{\"tag\":\"material\",\"mentions\":70,\"positive\":49,\"negative\":21,\"snippets\":[\"Customers love the material of the dress, describing it as cotton-like and flowy, though some mention it can be clingy.\",\"...Want to wear more dresses this summer. This foot the bill! Cute,\",\", hides belly, nice length. I’m 5’4” 146 pounds, got a medium.\",\"because it's soft, it runs true to size and the style is flattering! I got it in blue and I love the shade\",\"the cut the style is cute as well again the material made it look cheap\",\"and soft but honestly it feels like it won't hold up after a few washes. The fit was OK....\"]},{\"tag\":\"length\",\"mentions\":52,\"positive\":38,\"negative\":14,\"snippets\":[\"Customers like the dress's length, which is just above the knee.\",\". They enclose a couple pins which could be used on the v-neck.\",\". Very comfortable I wore it for 8+ hours. Stretchy fabric. The quality is nice the color was beautiful also\",\". I'm 5'3\\\" 157 lbs., it goes slightly past my knees or right at my knees....\"]},{\"tag\":\"softness\",\"mentions\":51,\"positive\":50,\"negative\":1,\"snippets\":[\", stretchy, beautiful, comfortable not see through at all as the fabric is cool yet thick enough that it doesn’t cling....\",\"and comfortable. Also true to size. I am 5’8 and it is the perfect length. I love it! Definitely recommend.🙂\"]},{\"tag\":\"summer-friendly\",\"mentions\":49,\"positive\":49,\"negative\":0,\"snippets\":[\"Customers find this dress perfect for summer events and warm weather, and appreciate it as a casual office choice.\",\"! not opaque at all! color just as it is advertised! not too think but not too thin!...\",\"...thinner of material than I thought it would be but that makes it\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_392eb522c7294696",
+    "ev_8c337d35c90172e0",
+    "ev_fa8125e6763d170b"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

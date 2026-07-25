@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0GFNKBM2J",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "YESNO Women's Summer Maxi Dresses Casual Floral Short Sleeve V Neck Boho Beach Vacation Swing Dress with Pockets EVF",
+    "rating": 4.2,
+    "review_count": 882.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":130,\"positive\":116,\"negative\":14,\"snippets\":[\"Customers find the dress visually appealing, praising its beautiful patterns and print, with one customer noting how it accentuates desired features.\",\"...The fabric dries to a “bubbly” texture, & that’s what makes it so darn\",\". A very cool dress for 3 out of 4 seasons in southern Arizona.\",\". Got many compliments wearing it. Length wise perfect . Going to buy other colors as well\",\"...I hate wearing dresses because they are not flattering but this one is\",\". I like the material and the fit is just perfect. Highly recommend!\",\". Love this print and the brushed cotton. It may fade but I feel it will add to the charm of the dress....\"]},{\"tag\":\"comfort\",\"mentions\":107,\"positive\":106,\"negative\":1,\"snippets\":[\", easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\",\", the colors on the two I bought are true to the photo. I bought my normal xl and they fit fine!\",\"and cool for the hot Florida summer. My phone fits on the pockets and the length is perfect. I'm 5'7\\\" tall and large....\",\"! I will be wearing this quite a bit this summer! The color is beautiful!...\"]},{\"tag\":\"quality\",\"mentions\":101,\"positive\":92,\"negative\":9,\"snippets\":[\"Customers find the dress to be of good quality, describing it as nice and cool, with one customer noting it's perfect for summer wear.\",\"! The quality, style and fit. So comfortable as well as the price is affordable.\",\". I bought the navy/green plaid first and love it. This is true to the colors and it’s kind of a woven fabric....\",\", breathable material, has pockets! Take in account that material is going to shrink some....\",\"...It’s got a great fit, very flattering for the tummy. It’s\",\"and comfortable and I love that the sleeves aren’t tight and uncomfortable....\"]},{\"tag\":\"lightweight\",\"mentions\":56,\"positive\":54,\"negative\":2,\"snippets\":[\"Customers appreciate the dress's lightweight fabric, describing it as a beautiful summer dress.\",\", soft, colorful, COMFORTABLE, easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\",\". Size is accurate. It fits larger sizes well with good room in chest and tummy....\",\"and flowy. It hangs well. I agree with others that say the bust is too tight....\",\"perfect for summer and or travel. Fits comfortably and the pattern is feminin.\"]},{\"tag\":\"color\",\"mentions\":48,\"positive\":42,\"negative\":6,\"snippets\":[\"Customers like the dress's color, with one mentioning that the floral print is vibrant without being loud, and another noting that it compliments various skin tones.\",\", but the skirt part of the dress is a little bigger then what I like....\",\". But it’s made of 100% combed cotton instead of a Cotton rayon blend. I’m keeping it....\",\", COMFORTABLE, easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\"]},{\"tag\":\"fit\",\"mentions\":148,\"positive\":103,\"negative\":45,\"snippets\":[\"Customers have mixed opinions about the dress's fit, with some finding it flattering and roomy through the body, while others report it runs larger than expected and is too tight across the chest.\",\"and feels comfortable. I’ve received compliments on it. The fabric is luxurious while being cotton based. Washes well.\",\". The fabric feels very soft, lightweight and comfortable....\",\". The hem was uneven longer at the back than at the front. The fabric wrinkled easily is not permanent pressed....\",\"with the high empire waist that falls nicely. I have yet to see how it does with washing....\"]},{\"tag\":\"fabric\",\"mentions\":101,\"positive\":70,\"negative\":31,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it lovely cotton suitable for summer, while others report it being very thin and not up to par.\",\"and not see through. I plan on buying another. Washes well and I Hung it to dry.\",\"...Sleeves cover tops of arms well. Not too tight. Flowing. Long.\",\". I went with a size larger to hide my tummy best. I’m 5’3 and 200lbs....\",\", but it runs small. I even ordered up a size since I have a generous chest, and it’s still snug.\"]},{\"tag\":\"sizing\",\"mentions\":52,\"positive\":22,\"negative\":30,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report that it runs very small.\",\". I order the same size in everything & it's generally a great fit but this was tight in my shoulder & bust areas....\",\". The purple color was more navy-ish. I wish it had been more distinctly purple....\",\". I usually wear a medium but had to downsize to a small. perfect for summer just hanging around.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_110dc8f7ae0d08c7",
+    "ev_113c55a0f79c5f69",
+    "ev_d7e318eb5f971ece"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

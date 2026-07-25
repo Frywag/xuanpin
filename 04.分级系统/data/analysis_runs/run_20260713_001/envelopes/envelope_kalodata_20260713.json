@@ -1,0 +1,1384 @@
+{
+  "envelope_id": "envelope_kalodata_20260713",
+  "source_id": "kalodata",
+  "source_type": "plugin",
+  "market": "US",
+  "collection_mode": "mixed",
+  "layer_hint": "L1",
+  "collected_at": "2026-07-13T10:41:35+00:00",
+  "collector_version": "grading-system/0.1.0",
+  "quality_status": "VALID",
+  "records": [
+    {
+      "record_kind": "category_context",
+      "fields": {
+        "category_revenue_30d_cny": 1796702990.12,
+        "category_revenue_growth_rate": 0.111915681646234,
+        "category_top3_shop_ratio": 0.04232579491333785,
+        "category_top10_shop_ratio": 0.1186290732759144,
+        "category_shop_count": 19111.0,
+        "category_total_sale_30d": 11799168.0,
+        "category_avg_unit_price_cny": 152.27
+      },
+      "evidence": {
+        "category_revenue_30d_cny": {
+          "evidence_id": "ev_kalodata_000001",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_revenue_30d_cny",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_summary;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_revenue_growth_rate": {
+          "evidence_id": "ev_kalodata_000002",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_revenue_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_summary;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_top3_shop_ratio": {
+          "evidence_id": "ev_kalodata_000003",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_top3_shop_ratio",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_summary;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_top10_shop_ratio": {
+          "evidence_id": "ev_kalodata_000004",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_top10_shop_ratio",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_summary;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_shop_count": {
+          "evidence_id": "ev_kalodata_000005",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_shop_count",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_summary;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_total_sale_30d": {
+          "evidence_id": "ev_kalodata_000006",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_total_sale_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_summary;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_avg_unit_price_cny": {
+          "evidence_id": "ev_kalodata_000007",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_avg_unit_price_cny",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_summary;row=2",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: revenue_origin / total_sale"
+        }
+      },
+      "category_id": "601152",
+      "category_name": "Womenswear & Underwear"
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731406217255686451",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+        "seller_name": "OEAK Apparel",
+        "revenue_30d": {
+          "amount": 9385900.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 86499.0,
+        "unit_price": {
+          "amount": 108.51,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.11,
+        "sales_growth_rate": 0.5547,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear",
+        "rating": 4.4,
+        "review_count": 68609.0,
+        "shop_rating": 4.4,
+        "brand": "oeak apparel",
+        "seller_type": "BRAND",
+        "creator_gmv_concentration": 0.40299999999999997,
+        "category_path": [
+          "女装与女士内衣",
+          "女士内衣",
+          "女士文胸"
+        ],
+        "price_range": {
+          "low": 129.1,
+          "high": 198.58,
+          "currency": "CNY"
+        },
+        "shipping_fee": {
+          "amount": 28.69,
+          "currency": "CNY"
+        },
+        "related_creator_count": 594.0,
+        "creator_conversion_ratio": 0.6215932914046122,
+        "video_revenue_share": 0.929,
+        "video_views_max": 10219600.0
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000008",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000009",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000010",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000011",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000012",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000013",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000014",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=2",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        },
+        "rating": {
+          "evidence_id": "ev_kalodata_000076",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_kalodata_000077",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_rating": {
+          "evidence_id": "ev_kalodata_000078",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "shop_rating",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "brand": {
+          "evidence_id": "ev_kalodata_000079",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "brand",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_type": {
+          "evidence_id": "ev_kalodata_000080",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_type",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "creator_gmv_concentration": {
+          "evidence_id": "ev_kalodata_000081",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "creator_gmv_concentration",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_path": {
+          "evidence_id": "ev_kalodata_000082",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "category_path",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "price_range": {
+          "evidence_id": "ev_kalodata_000083",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "price_range",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shipping_fee": {
+          "evidence_id": "ev_kalodata_000084",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "shipping_fee",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "运费，供利润结构代理指标使用"
+        },
+        "related_creator_count": {
+          "evidence_id": "ev_kalodata_000085",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "related_creator_count",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail_total;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "creator_conversion_ratio": {
+          "evidence_id": "ev_kalodata_000086",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "creator_conversion_ratio",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail_total;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "video_revenue_share": {
+          "evidence_id": "ev_kalodata_000087",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "video_revenue_share",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_detail_total;row=2",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: original_video_revenue / original_revenue"
+        },
+        "video_views_max": {
+          "evidence_id": "ev_kalodata_000088",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "video_views_max",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=product_videos;row=1..5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "深挖商品关联视频最高播放量"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731610554383569260",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "SHAPERX Shapewear for Women Tummy Control Bodysuits Zip-Up Comfort Ultra Stretch Fabric Customizable Fit Breathable Mesh Design Comfortable Fit",
+        "seller_name": "SHAPERX",
+        "revenue_30d": {
+          "amount": 7870200.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 42393.0,
+        "unit_price": {
+          "amount": 185.65,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.15,
+        "sales_growth_rate": -0.2679,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000015",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000016",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000017",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000018",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000019",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000020",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000021",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=3",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731884673280217282",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "Shapermint Truekind Convertible Strapless Bandeau Bra with Wireless Comfort, Anti-Slip Grip & Removable Straps Fit Outfits",
+        "seller_name": "Shapermint US",
+        "revenue_30d": {
+          "amount": 7594900.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 36662.0,
+        "unit_price": {
+          "amount": 207.16,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.17,
+        "sales_growth_rate": -0.0314,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000022",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000023",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000024",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000025",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000026",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000027",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000028",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=4",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732282937141662165",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "LUCKMEEY Womens Strapless Front Closure Bra Push Up Lift Bra Padded Add Cup Non Slip  Anti-Slip Grip & Removable Straps Fit Outfits Wireless Supportive  Seamless Comfortable A B C Cup#TikTokShopDealsforYouDays",
+        "seller_name": "LUCKMEEY-Bras",
+        "revenue_30d": {
+          "amount": 7284600.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 39383.0,
+        "unit_price": {
+          "amount": 184.97,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.1,
+        "sales_growth_rate": 0.2247,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000029",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000030",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000031",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000032",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000033",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000034",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000035",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=5",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1730931316408357062",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "HSIA Bella Women's Convertible Strapless Minimizer Bandeau Bra Underwire Unlined for Large Bust",
+        "seller_name": "Hsia-Bras",
+        "revenue_30d": {
+          "amount": 5403900.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 26797.0,
+        "unit_price": {
+          "amount": 201.66,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.1,
+        "sales_growth_rate": 0.1415,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000036",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000037",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000038",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000039",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000040",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000041",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000042",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=6",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1731492372893241632",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "PUFF Adhesive Bra – No.1 Push-up Sticky Bra, Waterproof & Sweat-proof Invisible Bra, Reusable Silicone Adhesive Bra for Women, Includes Storage Board & Replaceable Pads",
+        "seller_name": "Puff Official",
+        "revenue_30d": {
+          "amount": 4696700.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 32236.0,
+        "unit_price": {
+          "amount": 145.7,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.16,
+        "sales_growth_rate": 0.0261,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000043",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000044",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000045",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000046",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000047",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000048",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000049",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=7",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729451034361697195",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "BOOMBA Invisible Lift - Patented Sticky Fashion Bra Inserts Prevents Nipple Slips No Sewing Required Low Cut Tops Womenswear",
+        "seller_name": "BOOMBA US",
+        "revenue_30d": {
+          "amount": 4538400.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 17906.0,
+        "unit_price": {
+          "amount": 253.45,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.15,
+        "sales_growth_rate": -0.0443,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000050",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000051",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000052",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000053",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000054",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000055",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000056",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=8",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732088899760984856",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "YIANNA Overbust Fajas Colombianas Shapewear for Women Tummy Control Brief Shaper Girdles Compression Garment",
+        "seller_name": "YIANNA INC",
+        "revenue_30d": {
+          "amount": 4120200.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 17151.0,
+        "unit_price": {
+          "amount": 240.23,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.1,
+        "sales_growth_rate": 0.0208,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000057",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000058",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000059",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000060",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000061",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000062",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000063",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=9",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1732387798982235003",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "Thank you for choosing our underwear. Comfortable 24/7 All Seasons Underwear for Everyday Wear - Customer Appreciation Design",
+        "seller_name": "AVA LANE",
+        "revenue_30d": {
+          "amount": 3881100.0,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 2536.0,
+        "unit_price": {
+          "amount": 1530.4,
+          "currency": "CNY"
+        },
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000064",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000065",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000066",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000067",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000068",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      },
+      "field_issue": "new_launch_spike_or_short_trend"
+    },
+    {
+      "record_kind": "product",
+      "product_id": "1729758112198529816",
+      "id_truncated": false,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "Women’s YIANNA Fajas Colombianas shapewear  Tummy Control Butt Lifter Shaper with Zipper Crotch detachable shoulder strap",
+        "seller_name": "YIANNA INC",
+        "revenue_30d": {
+          "amount": 3879100.0000000005,
+          "currency": "CNY"
+        },
+        "sales_30d_units": 16181.0,
+        "unit_price": {
+          "amount": 239.73,
+          "currency": "CNY"
+        },
+        "commission_rate": 0.15,
+        "sales_growth_rate": -0.0747,
+        "category_id": "601152",
+        "category_name": "Womenswear & Underwear"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_kalodata_000069",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "seller_name": {
+          "evidence_id": "ev_kalodata_000070",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "seller_name",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "revenue_30d": {
+          "evidence_id": "ev_kalodata_000071",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "revenue_30d",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "Kalodata 30d GMV，人民币换算口径"
+        },
+        "sales_30d_units": {
+          "evidence_id": "ev_kalodata_000072",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_30d_units",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_kalodata_000073",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "commission_rate": {
+          "evidence_id": "ev_kalodata_000074",
+          "source_id": "kalodata",
+          "source_type": "plugin",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "commission_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_growth_rate": {
+          "evidence_id": "ev_kalodata_000075",
+          "source_id": "kalodata",
+          "source_type": "derived",
+          "tool_or_adapter": "KalodataAdapter",
+          "field_path": "sales_growth_rate",
+          "artifact_path": "02.插件数据源/Kalodata最终交付原数据.xlsx",
+          "record_locator": "sheet=category_top_products;row=11",
+          "observed_at": null,
+          "confidence": "medium",
+          "note": "derived: mean(trend后3点)/mean(前3点)-1"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "artifact_paths": {
+    "raw_workbook": "02.插件数据源/Kalodata最终交付原数据.xlsx"
+  },
+  "schema_version": "source.envelope.v1"
+}

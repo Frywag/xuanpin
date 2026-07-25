@@ -1,0 +1,177 @@
+{
+  "schema_version": "analysis.result.v1",
+  "analysis_id": "analysis_amazon_B0G4RYHM2Z",
+  "candidate_id": "amazon_B0G4RYHM2Z",
+  "market": "US",
+  "layer_results": {
+    "L1": {
+      "passed": true,
+      "score": 53.8,
+      "grade": "S",
+      "gate_reason": "PScore 32.3/60.0（53.8%）-> S",
+      "required_next_data": []
+    },
+    "L2": {
+      "passed": true,
+      "score": 53.8,
+      "grade": "S",
+      "gate_reason": "评价标签聚类：0 个负面聚类 / 0 次标签提及",
+      "required_next_data": []
+    },
+    "L3": {
+      "passed": true,
+      "score": 53.8,
+      "grade": "S",
+      "gate_reason": "2 个数据源按商品ID互验（seller_sprite_amazon、frontend_amazon）；同风格信号：frontend_amazon 语料中有 397 款标题命中相同风格词 ['dress', 'dresses']；带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台",
+      "required_next_data": [
+        "供应链字段人工调查（选品后画像存库用，不参与打分）"
+      ]
+    }
+  },
+  "priority_score": {
+    "total": 32.3,
+    "achievable_max": 60.0,
+    "pct": 53.8,
+    "grade": "S",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 19.2,
+        "max_score": 30.0,
+        "reason": "量级信号 sales_30d_units=19,881 -> 9分；带平台畅销榜标记；2个独立需求证据源",
+        "evidence_refs": [
+          "ev_5db10249b0fccfab",
+          "ev_a794a875858d9821",
+          "ev_e891bf81b8eca90f"
+        ],
+        "missing": false
+      },
+      {
+        "name": "竞争可突破",
+        "score": 6.8,
+        "max_score": 15.0,
+        "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+        "evidence_refs": [
+          "ev_2d478e4cb8511110",
+          "ev_876776608ff96486",
+          "ev_a91598a3443e1242",
+          "ev_e1d8abd5ff101b75"
+        ],
+        "missing": false
+      },
+      {
+        "name": "产品机会",
+        "score": 9.0,
+        "max_score": 15.0,
+        "reason": "评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_417d1e731d87f1a0",
+          "ev_b4ff27008667e5a5",
+          "ev_c3cb9fd46c211f55"
+        ],
+        "missing": false
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max_score": 0.0,
+        "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ZEAGOO」品牌词出现在标题中（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_5faeb3ff5fec0fc5"
+        ],
+        "missing": false
+      }
+    ],
+    "track": "trend_rising",
+    "track_label": "趋势上升款"
+  },
+  "track_tags": [
+    "趋势上升款",
+    "痛点改良款"
+  ],
+  "recommendation": {
+    "decision": "recommend_research",
+    "reason_summary": "市场需求：量级信号 sales_30d_units=19,881 -> 9分；带平台畅销榜标记；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+    "risk_summary": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ZEAGOO」品牌词出现在标题中（人工待确认）",
+    "next_actions": [
+      "进入立项讨论；补齐供应链输入后人审",
+      "L3 完成，等待供应链输入与人审"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "市场需求：量级信号 sales_30d_units=19,881 -> 9分；带平台畅销榜标记；2个独立需求证据源",
+      "claim_type": "demand",
+      "evidence_refs": [
+        "ev_5db10249b0fccfab",
+        "ev_a794a875858d9821",
+        "ev_e891bf81b8eca90f"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+      "claim_type": "competition",
+      "evidence_refs": [
+        "ev_2d478e4cb8511110",
+        "ev_876776608ff96486",
+        "ev_a91598a3443e1242",
+        "ev_e1d8abd5ff101b75"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+      "claim_type": "product",
+      "evidence_refs": [
+        "ev_417d1e731d87f1a0",
+        "ev_b4ff27008667e5a5",
+        "ev_c3cb9fd46c211f55"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ZEAGOO」品牌词出现在标题中（人工待确认）",
+      "claim_type": "risk",
+      "evidence_refs": [
+        "ev_5faeb3ff5fec0fc5"
+      ],
+      "confidence": "low"
+    },
+    {
+      "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_3ed9d5129a3a4738",
+        "ev_9c4b22a3c0b8b3b8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "同风格红海程度：高（语料内同风格候选 1485 款，词表确定性匹配）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_3ed9d5129a3a4738",
+        "ev_9c4b22a3c0b8b3b8"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+      "claim_type": "cross_platform",
+      "evidence_refs": [
+        "ev_5db10249b0fccfab"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio"
+  ],
+  "blocked_reasons": [],
+  "confidence": "high",
+  "created_at": "2026-07-10T13:28:04+00:00"
+}

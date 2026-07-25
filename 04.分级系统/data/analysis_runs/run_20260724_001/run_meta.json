@@ -1,0 +1,181 @@
+{
+  "run_id": "run_20260724_001",
+  "collector_version": "grading-system/0.1.0",
+  "started_at": "2026-07-24T11:42:15+00:00",
+  "finished_at": "2026-07-24T11:42:19+00:00",
+  "run_mode": "full",
+  "run_mode_semantics": "普通全量运行（当前数据可得性下的完整管道，非基线回放）",
+  "project_status": "PRIMARY_TRACKS_V2_CALIBRATION",
+  "result_semantics": "双链并行过渡期：legacy 单赛道结果为基线参考（非正式生产推荐）；tracks.v1 三赛道结果为校准态（rule_status=calibration_pending_business_approval）。业务金标批准前两者均不得作为正式生产等级；唯一业务事实源的切换时点待业务拍板（见 tracks_v1.yaml pending_business_confirmation）",
+  "market": "US",
+  "envelopes": 7,
+  "candidates_total": 2234,
+  "l1_processed": 2234,
+  "l2_processed": 40,
+  "l3_processed": 10,
+  "grade_distribution": {
+    "A": 73,
+    "C": 1787,
+    "B": 367,
+    "S": 7
+  },
+  "track_distribution": {
+    "trend_rising": 88,
+    "balanced": 1532,
+    "evergreen": 563,
+    "pain_improvement": 51
+  },
+  "capability_profile_enabled": false,
+  "pct_p50": 20.0,
+  "pct_p90": 38.5,
+  "pct_max": 63.8,
+  "scoring_config": "04.分级系统/configs/scoring_v0.yaml",
+  "gates_config": "04.分级系统/configs/layer_gates_v0.yaml",
+  "sources_config": "04.分级系统/configs/sources_p0.yaml",
+  "group_stats": "{\"price_bands\": {\"tiktok_shop_plugin|CNY\": {\"n\": 10, \"p10\": 141.981, \"p25\": 185.14, \"p50\": 204.41, \"p75\": 240.105, \"p90\": 381.1449999999995}, \"tiktok_shop_plugin|USD\": {\"n\": 36, \"p10\": 7.49, \"p25\": 14.5375, \"p50\": 19.99, \"p75\": 26.395, \"p90\": 36.975}, \"shein_frontend|USD\": {\"n\": 199, \"p10\": 5.494, \"p25\": 9.19, \"p50\": 12.09, \"p75\": 14.89, \"p90\": 17.670000000000005}, \"indie_frontend|USD\": {\"n\": 850, \"p10\": 48.0, \"p25\": 78.0, \"p50\": 124.6, \"p75\": 168.0, \"p90\": 298.0}, \"patterned_tights_frontend|USD\": {\"n\": 534, \"p10\": 10.860000000000001, \"p25\": 17.0, \"p50\": 22.99, \"p75\": 37.0, \"p90\": 49.0}, \"halloween_frontend|USD\": {\"n\": 541, \"p10\": 8.49, \"p25\": 16.99, \"p50\": 27.99, \"p75\": 49.99, \"p90\": 229.99}}, \"review_p90\": {\"tiktok_shop_plugin\": {\"n\": 11, \"p90\": 68609.0}, \"shein_frontend\": {\"n\": 83, \"p90\": 1000.0}, \"indie_frontend\": {\"n\": 402, \"p90\": 31.900000000000034}, \"halloween_frontend\": {\"n\": 208, \"p90\": 0.0}}}",
+  "envelope_warnings": "{\"envelope_indie_frontend_20260724\": [\"63 行 ACCESS_CHALLENGE（未绕过，按原样入库并降置信度）\"]}",
+  "llm_usage": "无（全部为确定性规则；未编造任何数值）",
+  "security": "输入工作簿不含 token/cookie；输出未写入任何凭证字段",
+  "segments_v1": {
+    "rule_version": "segments_v1_pilot_20260724",
+    "scope": "INCOMPLETE_SCOPE",
+    "platform_task_status": {
+      "amazon": "RUN_PENDING",
+      "tiktok": "RUN_COMPLETE",
+      "shein": "RUN_COMPLETE"
+    },
+    "excluded_to_trend_system": 1988,
+    "per_platform": {
+      "tiktok": {
+        "l3_pass": 28,
+        "segments": 3,
+        "tiers": {
+          "S": 0,
+          "A": 0,
+          "B": 1,
+          "C": 0
+        },
+        "review_queue": 21
+      },
+      "shein": {
+        "l3_pass": 112,
+        "segments": 1,
+        "tiers": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 0
+        },
+        "review_queue": 10
+      }
+    },
+    "opportunity_decisions_pending": 1
+  },
+  "llm_tasks_generated": 44,
+  "deep_review_candidates": [
+    "shein_461740289",
+    "shein_442067622",
+    "shein_460997432",
+    "tiktok_shop_1729508370969629931",
+    "tiktok_shop_1729448464509734958",
+    "tiktok_shop_1729679758111249333",
+    "shein_488434750",
+    "shein_474947349",
+    "shein_476109599",
+    "shein_481449481",
+    "shein_494899768",
+    "tiktok_shop_1732164626458252048"
+  ],
+  "sab_full_retained": 447,
+  "tracks": {
+    "schema_version": "tracks.v2",
+    "rule_version": "tracks_v2_draft_20260716",
+    "rule_status": "calibration_pending_business_approval",
+    "evaluations": 6702,
+    "per_track": {
+      "hit": {
+        "ELIGIBLE": 47,
+        "REJECTED": 185,
+        "PENDING_DATA": 2002
+      },
+      "long_tail": {
+        "ELIGIBLE": 658,
+        "PENDING_DATA": 1381,
+        "REJECTED": 195
+      },
+      "new_product": {
+        "ELIGIBLE": 103,
+        "REJECTED": 129,
+        "PENDING_DATA": 2002
+      }
+    },
+    "eligible_grades": {
+      "hit": {
+        "A": 15,
+        "B": 32
+      },
+      "long_tail": {
+        "B": 648,
+        "S": 3,
+        "A": 7
+      },
+      "new_product": {
+        "B": 88,
+        "A": 15
+      }
+    },
+    "layers": {
+      "hit": {
+        "L2": 10,
+        "L3": 5,
+        "L1": 32
+      },
+      "long_tail": {
+        "L1": 648,
+        "L3": 3,
+        "L2": 7
+      },
+      "new_product": {
+        "L1": 88,
+        "L2": 10,
+        "L3": 5
+      }
+    },
+    "provisional_eligible": {
+      "hit": 0,
+      "long_tail": 0,
+      "new_product": 101
+    },
+    "clusters": 2,
+    "budgets": {
+      "new_product": {
+        "l2": 15,
+        "l3": 5,
+        "refetch": 20
+      },
+      "hit": {
+        "l2": 15,
+        "l3": 5,
+        "refetch": 20
+      },
+      "long_tail": {
+        "l2": 10,
+        "l3": 3,
+        "refetch": 15
+      }
+    }
+  },
+  "trend_words": {
+    "count": 200,
+    "grades": {
+      "C": 7,
+      "D": 193
+    },
+    "note": "词级趋势独立体系（头部独立站+社媒；小红书源待接入）"
+  },
+  "development_directions": {
+    "铺货": 2158,
+    "铺货/改款": 13
+  },
+  "db_path": "04.分级系统/data/selection.db"
+}

@@ -1,0 +1,76 @@
+{
+  "task_type": "cross_platform_compare",
+  "candidate_id": "tiktok_shop_1731284232420626805",
+  "run_id": "run_20260714_002",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只比较 inputs 里已有的 matched_products 与价格带，不得凭空找同款",
+    "不得把不同币种的价格直接换算比较"
+  ],
+  "inputs": {
+    "title": "ADDWIN 2026 New Fascia Ring R10 Mini Muscle Recovery Fascia Device upgraded adjustable strap fits Up to 55in waist, Cordless Rechargeable, Designed for Waist & Back Muscle Recovery portable massager parents gift summervibes",
+    "platform": "tiktok_shop",
+    "matched_products": [
+      {
+        "source_id": "tabcut",
+        "envelope_id": "envelope_tabcut_20260714",
+        "product_id": "1731284232420626805",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "echotik",
+        "envelope_id": "envelope_echotik_20260714",
+        "product_id": "1731284232420626805",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [],
+    "same_style_signals": [],
+    "note": "不同来源币种不同且未换算；同风格信号不构成同款结论"
+  },
+  "allowed_evidence_ids": [
+    "ev_echotik_000376",
+    "ev_echotik_000377",
+    "ev_echotik_000378",
+    "ev_echotik_000380",
+    "ev_echotik_000381",
+    "ev_echotik_000382",
+    "ev_echotik_000383",
+    "ev_echotik_000384",
+    "ev_echotik_000385",
+    "ev_echotik_000386",
+    "ev_tabcut_000183",
+    "ev_tabcut_000184",
+    "ev_tabcut_000185",
+    "ev_tabcut_000186",
+    "ev_tabcut_000187",
+    "ev_tabcut_000188"
+  ],
+  "output_schema": {
+    "platform_priority": "str（平台 id）",
+    "red_ocean_level": "high|medium|low",
+    "differentiation_space": [
+      "str"
+    ],
+    "final_suggestion": "str",
+    "claims": [
+      {
+        "claim": "str",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

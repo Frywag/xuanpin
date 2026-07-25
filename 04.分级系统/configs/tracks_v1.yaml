@@ -1,0 +1,153 @@
+# =====================================================================
+# 三赛道独立 S/A/B 分级配置 v1（依据《三赛道独立SAB分级_目标业务规则》）
+# =====================================================================
+# 状态：calibration —— 以下所有阈值/权重/名额均为草案，供回放校准；
+# 业务金标与负责人批准前，产出一律标记 rule_status=calibration，
+# 不得称为正式生产等级（交接清单 §14/§17）。
+schema_version: tracks.v1
+rule_status: calibration_pending_business_approval
+rule_version: tracks_v1_draft_20260714
+# 项目状态机（P0-09）：FRAMEWORK_READY -> CALIBRATION_READY -> PRODUCTION_ENABLED -> LISTING_READY
+# 当前：框架就绪，部分进入校准就绪；未达生产启用——任何 S/A/B 均不得称正式生产结果
+project_status: FRAMEWORK_READY_PARTIAL_CALIBRATION
+
+tracks:
+  trend_new:
+    label: 趋势新品
+    recommended_development_mode: 新品开发或快速跟进
+    admission:
+      # 准入 = 近期推出证据 AND 款型新颖度证据（两组各至少一种）
+      requires: [recent_launch_evidence, style_novelty_evidence]
+      # 明确不设任何数据门槛：销量/销售额/评论/收藏/达人/增长率/畅销榜
+      data_gates: none
+      reject_only_if: [confirmed_old_product, confirmed_old_style]
+      # 硬性保证：以下信号在趋势赛道的准入与评分中一律不得读取——
+      # 独立站等发现源必须与交易平台公平竞争趋势 S/A/B（业务确认 2026-07-13）
+      forbidden_signals: [rating, review_count, sales_30d_units, sales_7d_units,
+                          sales_floor_units, gmv_7d, revenue_30d, favorites_count,
+                          sales_growth_rate, bestseller_rank_as_demand]
+    scoring_dims_draft:   # 维度优先级已确认，权重为草案（待金标校准）
+      freshness_credibility: 30
+      cross_platform_resonance: 25   # 多平台相似=加权项而非准入项
+      content_diffusion: 15
+      style_definability: 15
+      market_fit: 10
+      risk_floor: -15
+    grade_thresholds_draft: {S: 70, A: 45}   # ELIGIBLE 且低于 A 线 -> B（单源早期可进 B）
+    l2_budget_draft: 15
+    l3_budget_draft: 5
+    refetch_budget_draft: 20   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
+    # ---- 临时可跑占位规则（业务指示 2026-07-14）----
+    # 背景：缺失多为数据源结构性没有（不是漏采）。上架时间/款型新颖度证据缺失时
+    # 不再卡在待补池：无「旧款确证」即临时准入，照常按证据强度评分进入筛选流程；
+    # 缺失照记 missing_fields，补证照排队列。人工确定最终门限/字段后改本段即生效。
+    provisional_admission:
+      enabled: true
+      status: interim_runnable_defaults   # 占位规则，待业务最终确认替换
+      missing_freshness_factor: 0.3       # 无任何新鲜度证据时的占位计分系数（confirmed=1.0/inferred=0.7）
+      grade_cap: null                     # 趋势赛道公平竞争，不设占位等级上限（等级仍由证据强度决定）
+    refetch_focus: [上架时间与新品标签, 跨平台同款式召回, 图片属性相似证据,
+                    TikTok内容发布时间与创作者广度, 相似款新增时间序列]
+    # 补采分层（业务确认 2026-07-13）：评论不属于趋势赛道 L1/L2 —
+    # 评论全量采集与分析后置为 L3 终选验证事项（且主要服务改款赛道）
+    l2_focus: [上架时间与新品标签, 跨平台同款式召回, 图片属性相似证据,
+               TikTok内容发布时间与创作者广度]
+    l3_focus: [相似款新增时间序列, 目标平台机会验证, 评论全量采集与分析(终选验证),
+               IP与季节窗口人工确认]
+
+  hit_improvement:
+    label: 爆款改款
+    recommended_development_mode: 改款、替代款或优化版
+    admission:
+      # 三项联合准入（缺任一 -> PENDING_DATA；确证不可改/无需求 -> REJECTED）
+      requires: [adequate_demand, low_rating_relative, negative_clusters]
+      adequate_demand_draft:        # 「适量销量」相对口径（平台×类目组内分布，待金标）
+        min_transaction_percentile: 0.25   # 组内交易信号 ≥ p25（草案）
+      low_rating_draft:
+        relative_percentile: 0.25          # 低于组内评分 p25，或
+        absolute_ceiling: 4.0              # 绝对警戒线（草案）
+        min_review_sample: 30              # 样本过少不判低分（草案）
+      negative_clusters_draft:
+        min_clusters: 2                    # 「聚类较多」草案口径
+    scoring_dims_draft:
+      demand_validated: 25
+      pain_intensity: 25
+      fixability: 20
+      differentiation_after_fix: 15
+      competition_price_room: 15
+      risk_floor: -15
+    grade_thresholds_draft: {S: 70, A: 45}
+    l2_budget_draft: 15
+    l3_budget_draft: 5
+    refetch_budget_draft: 20   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
+    # ---- 临时可跑占位规则（业务指示 2026-07-14）----
+    # 插件源多无评论全文（结构性缺失）：有交易信号 + 确证低评分（样本≥30）时，
+    # 负面聚类缺失可占位豁免准入；痛点未经聚类确认，占位等级上限 B（S/A 须待
+    # 评论全文回补后确认）。评分缺失或样本不足仍 PENDING（低分前提无法占位判断）。
+    provisional_admission:
+      enabled: true
+      status: interim_runnable_defaults
+      waive_negative_clusters_if_low_rating: true
+      grade_cap: B
+    refetch_focus: [评论全文, 退货原因与客服问题, 聚类频次占比严重度,
+                    竞品共同痛点, 改良方案与目标成本]
+
+  long_tail_direct:
+    label: 长尾直接选品
+    recommended_development_mode: 直接选品或轻度差异化
+    admission:
+      # 不是关键词赛道，也不是兜底赛道
+      requires: [stable_demand_evidence, competition_enterable, no_blocking_quality_issue]
+      stable_demand_draft:
+        transaction_signal_required: true   # 交易类证据（评论数计入，热度不计入）
+        exclude_single_spike_growth: 0.8    # 单次异常暴涨（≥80%）不算稳定（草案）
+      no_blocking_quality_draft:
+        rating_floor: 4.0                   # 低于此值应先走改款赛道（草案）
+    scoring_dims_draft:
+      demand_stability: 25
+      competition_breakthrough: 25
+      price_profit_structure: 20
+      fact_completeness: 15
+      direct_feasibility: 15
+      risk_floor: -15
+    grade_thresholds_draft: {S: 70, A: 45}
+    l2_budget_draft: 10
+    l3_budget_draft: 3
+    refetch_budget_draft: 15   # 准入补证预算（PENDING_DATA 专用，与深挖预算拆分，解补采死锁）
+    # ---- 临时可跑占位规则（业务指示 2026-07-14）----
+    # 缺价格时可占位准入（价格/利润结构不可判 -> 占位等级上限 B）；
+    # 无交易证据仍 PENDING（稳定需求是本赛道前提）；单次暴涨排除不豁免（抗噪红线）。
+    provisional_admission:
+      enabled: true
+      status: interim_runnable_defaults
+      allow_missing_price: true
+      missing_price_factor: 0.3           # 价格带位置不可判时的占位计分系数
+      grade_cap_if_missing_price: B
+    refetch_focus: [多周期需求证据, 评论护城河, 供应能力匹配, 利润结构]
+
+# 机会簇（P0 只实现召回+证据+版本+人工复核框架；相似阈值待业务标注样本）
+clusters:
+  recall: style_token_overlap        # 标题风格词只作召回，不作确认
+  min_members: 2
+  cross_source_required: true
+  confidence_default: low            # 低置信度关系 100% 送人工复核
+  human_review_default: pending
+
+# 业务待确认参数清单（阻塞正式生产等级，不阻塞结构）
+pending_business_confirmation:
+  - 新推出款型证据有效期与各来源新品标签可信度
+  - 各平台×类目「适量销量」分档
+  - 低评分相对/绝对边界与最小样本
+  - 负面聚类数量/频次/占比/严重度口径
+  - 三赛道 S/A/B 阈值与 L2/L3 名额
+  - 款型历史库范围/回看窗口/「市场款型新」判定口径
+  - same_style/same_trend 召回与确认阈值
+  - 确定性 REJECTED 风险红线清单
+  # ---- 流程待确认（《执行矛盾与流程待确认问题》2026-07-14，会议拍板项）----
+  - 临时可跑占位规则 provisional_admission 的最终门限与字段（2026-07-14 业务指示先行启用）
+  - 唯一业务事实源：track_evaluations 何时替代 legacy results（P0-01）
+  - 三赛道编排是否接管深评/152/LLM 任务对象与真实采集成本投向（P0-02/P0-05）
+  - PENDING_DATA 补采任务的负责人/到期/回灌 run 语义（P0-03）
+  - 跨赛道最终决策：完全人审 or 另批规则（P0-04）
+  - 趋势赛道排序与预算对象：机会簇 vs 单商品（P0-06）
+  - 2,000 款不可变基线目录与回放文件清单（P0-07）

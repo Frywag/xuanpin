@@ -1,0 +1,153 @@
+{
+  "task_type": "reason_writer",
+  "candidate_id": "shein_496674906",
+  "run_id": "run_20260713_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只改写 components/claims 里已有的结论，禁止引入任何新事实或新数值"
+  ],
+  "inputs": {
+    "title": "EMERY ROSE Women's Plain Weave Casual Office Summer Dress",
+    "grade": "A",
+    "track": "趋势上升款",
+    "components": [
+      {
+        "name": "市场需求",
+        "score": 24.0,
+        "max": 30.0,
+        "reason": "量级信号 sales_floor_units=3,100 -> 15分；带平台畅销榜标记；1个独立需求证据源",
+        "evidence_refs": [
+          "ev_shein_frontend_001679",
+          "ev_shein_frontend_001680"
+        ]
+      },
+      {
+        "name": "竞争可突破",
+        "score": 5.2,
+        "max": 15.0,
+        "reason": "竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+        "evidence_refs": [
+          "ev_shein_frontend_001674",
+          "ev_shein_frontend_001678"
+        ]
+      },
+      {
+        "name": "产品机会",
+        "score": 6.0,
+        "max": 15.0,
+        "reason": "L2负面评价聚类1个（款式与图片不符）-> 4分；有趋势标签/设计细节记录",
+        "evidence_refs": [
+          "ev_shein_frontend_001681",
+          "ev_shein_frontend_001682"
+        ]
+      },
+      {
+        "name": "风险",
+        "score": -2.7,
+        "max": 0.0,
+        "reason": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源（赛道风险系数×1.33）",
+        "evidence_refs": [
+          "ev_shein_frontend_001669"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "市场需求：量级信号 sales_floor_units=3,100 -> 15分；带平台畅销榜标记；1个独立需求证据源",
+        "claim_type": "demand",
+        "evidence_refs": [
+          "ev_shein_frontend_001679",
+          "ev_shein_frontend_001680"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分",
+        "claim_type": "competition",
+        "evidence_refs": [
+          "ev_shein_frontend_001674",
+          "ev_shein_frontend_001678"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "产品机会：评分4.07（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_shein_frontend_001677",
+          "ev_shein_frontend_001681"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源",
+        "claim_type": "risk",
+        "evidence_refs": [
+          "ev_shein_frontend_001669"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "负面评价聚类「款式与图片不符」提及 1 次，改良方向：图片与实物一致性管控",
+        "claim_type": "product",
+        "evidence_refs": [
+          "ev_shein_frontend_001682"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "同风格红海程度：高（语料内同风格候选 196 款，词表确定性匹配）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_shein_frontend_001669"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "平台优先级：shein（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+        "claim_type": "cross_platform",
+        "evidence_refs": [
+          "ev_shein_frontend_001680"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "missing_fields": [
+      "market_metrics.sales_growth_rate",
+      "owned_supply_inputs.target_cost",
+      "owned_supply_inputs.moq",
+      "owned_supply_inputs.lead_time_days",
+      "competition_metrics.category_top10_shop_ratio"
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_shein_frontend_001669",
+    "ev_shein_frontend_001670",
+    "ev_shein_frontend_001671",
+    "ev_shein_frontend_001673",
+    "ev_shein_frontend_001674",
+    "ev_shein_frontend_001675",
+    "ev_shein_frontend_001676",
+    "ev_shein_frontend_001677",
+    "ev_shein_frontend_001678",
+    "ev_shein_frontend_001679",
+    "ev_shein_frontend_001680",
+    "ev_shein_frontend_001681",
+    "ev_shein_frontend_001682"
+  ],
+  "output_schema": {
+    "reason_summary_cn": "str（≤120字，业务口语，只重述输入事实）",
+    "risk_summary_cn": "str（≤80字）",
+    "next_action_cn": "str（≤60字）",
+    "evidence_refs": [
+      "⊆ allowed_evidence_ids（引用支撑主要结论的证据）"
+    ],
+    "missing_fields": [
+      "str"
+    ]
+  }
+}

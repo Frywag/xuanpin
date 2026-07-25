@@ -1,0 +1,117 @@
+# =====================================================================
+# 三赛道主链 v2（2026-07-16 业务重构指示）：
+#   L0 公共技术检查 → 开发方向判定 → 三赛道扇出（各自 L1/L2/L3）→ 各自 S/A/B
+#   趋势独立为词级 ABCDE 体系（不占用商品赛道）
+# 本文件存在时 v2 为主链（tracks_v1.yaml 保留为历史口径，不再运行）。
+# 所有数值均为可跑占位草案（先跑通，人工随时改门限/加字段）。
+# =====================================================================
+schema_version: tracks.v2
+rule_status: calibration_pending_business_approval
+rule_version: tracks_v2_draft_20260716
+project_status: PRIMARY_TRACKS_V2_CALIBRATION
+
+# ---- 开发方向（进入系统第一步判定；影响后续赛道门限）----
+development_direction:
+  # 铺货：无条件可选（不改差评问题，仅微调外观结构）
+  # 改款：评价数较多且差评比例超过一定值才可选
+  gaiKuan_min_reviews: 50            # 「评价数较多」草案
+  gaiKuan_min_negative_ratio: 0.15   # 「差评比例」草案（差评比例字段缺失时用下行代理）
+  gaiKuan_proxy_rating_ceiling: 4.2  # 占位代理：评分≤此值视为差评比例达标（confidence=low）
+  # 改款方向对赛道销量要求的放宽系数（有差评的产品，销量要求适当放低）
+  sales_requirement_relax_factor: 0.7
+
+tracks:
+  new_product:
+    label: 新品
+    desc: 近期推出且近期销量表现不错
+    recommended_development_mode: 新品开发或快速跟进
+    admission:
+      recent_window_days: 120          # 「近四个月」草案
+      min_txn_percentile: 0.40         # 近期销量表现不错：组内交易分位（草案）
+      provisional_freshness: true      # 缺上架时间证据时按占位规则临时准入（缺失照记）
+    scoring_dims_draft:
+      freshness_credibility: 25
+      sales_momentum: 25
+      style_word_rarity: 20            # 特性词在 Amazon 语料中的稀有度（低频=新）
+      cross_platform_resonance: 15
+      fact_completeness: 15
+      risk_floor: -15
+    grade_thresholds_draft: {S: 70, A: 45}
+    l2_budget_draft: 15
+    l3_budget_draft: 5
+    refetch_budget_draft: 20
+    refetch_focus: [上架时间与新品标签, Amazon特性词频率对照, 跨平台同款召回, 多周期销量确认]
+
+  hit:
+    label: 爆款
+    desc: 销量很高的产品（评分正常走铺货微调；低评分+改款方向=经典爆款改款）
+    recommended_development_mode: 铺货跟进或改款优化（按开发方向人审）
+    admission:
+      min_txn_percentile: 0.75         # 销量很高：组内交易分位（草案）
+    scoring_dims_draft:
+      demand_scale: 30
+      demand_sustainability: 20
+      voc_improvement_room: 20         # 改款方向候选的痛点/改良空间（L2 评论回补后计分）
+      competition_price_room: 15
+      fact_completeness: 15
+      risk_floor: -15
+    grade_thresholds_draft: {S: 70, A: 45}
+    l2_budget_draft: 15
+    l3_budget_draft: 5
+    refetch_budget_draft: 20
+    refetch_focus: [多周期销量序列, 评论全文与负面聚类(改款方向), 竞品价格结构, 类目容量]
+
+  long_tail:
+    label: 长尾
+    desc: 销量表现稳定的产品
+    recommended_development_mode: 直接选品或轻度差异化
+    admission:
+      transaction_signal_required: true
+      exclude_single_spike_growth: 0.8
+      rating_floor: 4.0                # 仅对纯铺货方向阻断；有改款方向不阻断（问题将被修）
+      allow_missing_price: true        # 缺价格占位准入（上限 B，同 v1 口径）
+      missing_price_factor: 0.3
+      grade_cap_if_missing_price: B
+    scoring_dims_draft:
+      demand_stability: 30
+      competition_breakthrough: 20
+      price_profit_structure: 20
+      fact_completeness: 15
+      direct_feasibility: 15
+      risk_floor: -15
+    grade_thresholds_draft: {S: 70, A: 45}
+    l2_budget_draft: 10
+    l3_budget_draft: 3
+    refetch_budget_draft: 15
+    refetch_focus: [多周期需求证据, 竞争结构, 利润结构, 供应能力匹配]
+
+# ---- 赛道内分层（公共 L1/L2/L3 废止；S 必须走完 L3）----
+layers:
+  grade_layer_caps: {L1: B, L2: A, L3: S}   # 分层淘汰：L1 只能到 B，L2 到 A，L3 才可 S
+  l2_criteria: 消费已采富信息（评论标签/跨平台簇/词频对照），刷新分数并列缺口
+  l3_criteria: 终选验证（多源交叉≥2、风险红线、价格可判），通过才放开 S
+
+# ---- 趋势独立体系（词级，不在商品赛道内）----
+trend_words:
+  enabled: true
+  # 对象=款式/设计特性词；来源=头部独立站(discovery)+社媒内容(trend/content)
+  # 小红书源当前缺失（结构性）：接入后按 source.envelope.v1 直投即参与
+  source_roles_required: [discovery, content, trend]
+  min_sites: 1
+  amazon_rarity_high_freq: 30     # Amazon 语料出现≥此次数视为常见词（稀有度低）
+  scoring_draft:                  # 词分 0-100（草案）
+    site_breadth: 40              # 头部独立站覆盖广度
+    new_arrival_share: 25         # 出现在新品位/新品集合的占比
+    amazon_rarity: 20             # Amazon 标题语料低频（市场少见=新）
+    content_signal: 15            # 社媒/内容信号（当前 TikTok 趋势标签；小红书待接入）
+  grade_thresholds_draft: {A: 75, B: 60, C: 40, D: 20}   # 其余为 E
+  max_words: 200
+
+pending_business_confirmation:
+  - 开发方向「评价数较多/差评比例」最终口径与差评比例字段采集（当前用评分代理占位）
+  - 改款方向销量放宽系数（0.7 草案）
+  - 新品「近四个月」窗口与「销量表现不错」分位（0.40 草案）
+  - 爆款「销量很高」分位（0.75 草案）
+  - 分层等级上限（L1=B/L2=A/L3=S）与三赛道 L2/L3/补证名额
+  - 趋势词 ABCDE 阈值与小红书数据源接入
+  - legacy 链正式下线时点（当前保留为审计基线）

@@ -1,0 +1,1370 @@
+[
+  {
+    "key": "cp.canonical_id",
+    "variability": "不变",
+    "meaning": "中台主键(系统生成)",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.spu_id",
+    "variability": "不变",
+    "meaning": "SPU 货号",
+    "amazon": "—",
+    "temu": "SPU货号 `B`",
+    "shein": "货号 `A`",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.sku_seller",
+    "variability": "变",
+    "meaning": "卖家SKU/SKC",
+    "amazon": "SKU `A`",
+    "temu": "SKC货号 等2列 `BQ–BR`",
+    "shein": "卖家SKU `B`",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.product_type",
+    "variability": "不变",
+    "meaning": "平台类目",
+    "amazon": "Product Type `B`",
+    "temu": "—",
+    "shein": "分类 `C`",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.product_level",
+    "variability": "不变",
+    "meaning": "SPU/SKC/SKU 层级",
+    "amazon": "—",
+    "temu": "商品层级 `A`",
+    "shein": "—",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.listing_action",
+    "variability": "变",
+    "meaning": "创建/更新(Operation.op_type)",
+    "amazon": "Listing Action `C`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.parentage",
+    "variability": "变",
+    "meaning": "父子关系",
+    "amazon": "Parentage Level 等2列 `D–E`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.variation_theme",
+    "variability": "变",
+    "meaning": "变体维度",
+    "amazon": "Variation Theme Name `F`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D1 标识层级"
+  },
+  {
+    "key": "cp.title_base",
+    "variability": "不变",
+    "meaning": "标题(多语言)",
+    "amazon": "Item Name `G`",
+    "temu": "商品名称 等2列 `C–D`",
+    "shein": "默认商品名称[en] 等2列 `D–E`",
+    "domain": "D2 标题文案"
+  },
+  {
+    "key": "cp.title_highlight",
+    "variability": "变",
+    "meaning": "标题差异点(防重复)",
+    "amazon": "Item Highlight `H`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D2 标题文案"
+  },
+  {
+    "key": "cp.description",
+    "variability": "不变",
+    "meaning": "描述(多语言)",
+    "amazon": "Product Description `AA`",
+    "temu": "详情图文-英语 `DN`",
+    "shein": "默认商品描述[en] 等2列 `F–G`",
+    "domain": "D2 标题文案"
+  },
+  {
+    "key": "cp.bullet_points",
+    "variability": "不变",
+    "meaning": "卖点要点",
+    "amazon": "Bullet Point 等5列 `AB–AF`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D2 标题文案"
+  },
+  {
+    "key": "cp.keywords",
+    "variability": "变",
+    "meaning": "搜索关键词",
+    "amazon": "Generic Keywords `AG`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D2 标题文案"
+  },
+  {
+    "key": "cp.brand",
+    "variability": "不变",
+    "meaning": "品牌",
+    "amazon": "Brand Name `I`",
+    "temu": "品牌名 `BK`",
+    "shein": "品牌 `H`",
+    "domain": "D3 品牌编码"
+  },
+  {
+    "key": "cp.model",
+    "variability": "不变",
+    "meaning": "型号",
+    "amazon": "Model Number 等3列 `M,N,BQ`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D3 品牌编码"
+  },
+  {
+    "key": "cp.gtin",
+    "variability": "不变",
+    "meaning": "UPC/EAN/GTIN+类型",
+    "amazon": "Product Id Type 等2列 `J–K`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D3 品牌编码"
+  },
+  {
+    "key": "cp.item_type_keyword",
+    "variability": "不变",
+    "meaning": "商品类型词",
+    "amazon": "Item Type Keyword `L`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D3 品牌编码"
+  },
+  {
+    "key": "cp.unspsc",
+    "variability": "不变",
+    "meaning": "UNSPSC/NSN",
+    "amazon": "UNSPSC Code 等2列 `O–P`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D3 品牌编码"
+  },
+  {
+    "key": "cp.ip_character",
+    "variability": "不变",
+    "meaning": "IP形象/主题",
+    "amazon": "Subject Character 等3列 `BL,CC,CD`",
+    "temu": "—",
+    "shein": "商品IP `J`",
+    "domain": "D3 品牌编码"
+  },
+  {
+    "key": "cp.product_series",
+    "variability": "不变",
+    "meaning": "系列线",
+    "amazon": "—",
+    "temu": "系列线 `BM`",
+    "shein": "—",
+    "domain": "D3 品牌编码"
+  },
+  {
+    "key": "cp.main_image",
+    "variability": "不变",
+    "meaning": "主图",
+    "amazon": "Main Image URL `Q`",
+    "temu": "—",
+    "shein": "首图 `K`",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.gallery_images",
+    "variability": "不变",
+    "meaning": "附图集",
+    "amazon": "Other Image URL 等8列 `R–Y`",
+    "temu": "商品轮播图1 等10列 `DD–DM`",
+    "shein": "细节图1 等10列 `N–W`",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.swatch_image",
+    "variability": "变",
+    "meaning": "色块图",
+    "amazon": "Swatch Image URL `Z`",
+    "temu": "—",
+    "shein": "色块图 `M`",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.square_image",
+    "variability": "不变",
+    "meaning": "方块图",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "方块图 `L`",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.sku_image",
+    "variability": "变",
+    "meaning": "SKU图",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "SKU图 `AG`",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.offer_images",
+    "variability": "变",
+    "meaning": "Offer图",
+    "amazon": "Main Image Location 等6列 `EA–EF`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.main_video",
+    "variability": "不变",
+    "meaning": "主图视频",
+    "amazon": "—",
+    "temu": "主图视频 `DO`",
+    "shein": "视频[shein-us] `CO`",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.detail_video",
+    "variability": "不变",
+    "meaning": "详情视频",
+    "amazon": "—",
+    "temu": "详情视频 `DP`",
+    "shein": "—",
+    "domain": "D4 媒体"
+  },
+  {
+    "key": "cp.composition",
+    "variability": "不变",
+    "meaning": "成分(材质+比例)",
+    "amazon": "—",
+    "temu": "成分1 等10列 `G–P`",
+    "shein": "成分(62) `AU`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.material_main",
+    "variability": "不变",
+    "meaning": "主材质",
+    "amazon": "Material 等3列 `BB–BD`",
+    "temu": "材质 `Q`",
+    "shein": "材质(160) 等2列 `BO,CH`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.fabric_type",
+    "variability": "不变",
+    "meaning": "面料",
+    "amazon": "Fabric Type `BE`",
+    "temu": "面料 `BG`",
+    "shein": "—",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.fabric_weight",
+    "variability": "不变",
+    "meaning": "面料克重(g/m²)",
+    "amazon": "Apparel Fabric Weight Class `DF`",
+    "temu": "面料克重1（g/m²) 等4列 `AM,AN,BO,BP`",
+    "shein": "主料克重2（g/m²）(1002188) 等2列 `CK–CL`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.fabric_texture",
+    "variability": "不变",
+    "meaning": "面料纹理",
+    "amazon": "—",
+    "temu": "面料纹理1 等2列 `AL,BN`",
+    "shein": "—",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.fabric_stretch",
+    "variability": "不变",
+    "meaning": "面料弹性",
+    "amazon": "Apparel Fabric Stretch `DJ`",
+    "temu": "面料弹性 `AH`",
+    "shein": "面料弹性(39) `BA`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.weave_type",
+    "variability": "不变",
+    "meaning": "织造方式",
+    "amazon": "Compliance Weave Type `JR`",
+    "temu": "织造方式 `AK`",
+    "shein": "—",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.base_fabric",
+    "variability": "不变",
+    "meaning": "基布成分",
+    "amazon": "—",
+    "temu": "基布成分1 等10列 `R–AA`",
+    "shein": "—",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.lining_flag",
+    "variability": "不变",
+    "meaning": "是否带里衬",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "是否带里衬(58) `BD`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.lining_desc",
+    "variability": "不变",
+    "meaning": "里衬描述",
+    "amazon": "Lining Description `BF`",
+    "temu": "—",
+    "shein": "里衬类型(1002186) `CI`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.lining_composition",
+    "variability": "不变",
+    "meaning": "里衬成分",
+    "amazon": "—",
+    "temu": "里衬成分1 等10列 `AR–BA`",
+    "shein": "里衬成分(1000078) `AV`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.lining_weight",
+    "variability": "不变",
+    "meaning": "里料纹理克重",
+    "amazon": "—",
+    "temu": "里料纹理 等3列 `AO–AQ`",
+    "shein": "里衬克重（g/m²）(1002190) `CM`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.coating",
+    "variability": "不变",
+    "meaning": "涂层",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "涂层(1000105) `AW`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.secondary_material",
+    "variability": "不变",
+    "meaning": "次要材质",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "次要材质(1000547) 等2列 `CA,CJ`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.transparency",
+    "variability": "不变",
+    "meaning": "是否透明",
+    "amazon": "—",
+    "temu": "是否透明 `AD`",
+    "shein": "是否透明(207) `BT`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.fleece_flag",
+    "variability": "不变",
+    "meaning": "是否加绒",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "是否加绒(1000437) `BY`",
+    "domain": "D5 材质成分"
+  },
+  {
+    "key": "cp.style",
+    "variability": "不变",
+    "meaning": "风格",
+    "amazon": "Style `AN`",
+    "temu": "风格 `AG`",
+    "shein": "风格(101) `BH`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.pattern",
+    "variability": "不变",
+    "meaning": "图案",
+    "amazon": "Pattern `CA`",
+    "temu": "图案 `AC`",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.print_type",
+    "variability": "不变",
+    "meaning": "印花类型",
+    "amazon": "—",
+    "temu": "印花类型 `AI`",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.season",
+    "variability": "不变",
+    "meaning": "季节",
+    "amazon": "—",
+    "temu": "季节 `AE`",
+    "shein": "季节(77) `BF`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.neckline",
+    "variability": "不变",
+    "meaning": "领型",
+    "amazon": "Neck Style 等5列 `CQ–CU`",
+    "temu": "领型 `BL`",
+    "shein": "领型(66) `BE`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.sleeve_length",
+    "variability": "不变",
+    "meaning": "袖长",
+    "amazon": "Sleeve Length Description `CY`",
+    "temu": "袖长 `BD`",
+    "shein": "袖长(90) `BG`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.sleeve_type",
+    "variability": "不变",
+    "meaning": "袖型",
+    "amazon": "Sleeve Type `CZ`",
+    "temu": "袖型 `BE`",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.closure",
+    "variability": "不变",
+    "meaning": "门襟/闭合",
+    "amazon": "Closure Type 等2列 `DA–DB`",
+    "temu": "门襟类型 `BH`",
+    "shein": "门襟类型(150) `BM`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.fit_type",
+    "variability": "不变",
+    "meaning": "合身/版型",
+    "amazon": "Fit Type `BS`",
+    "temu": "版型 `BJ`",
+    "shein": "合身类型(40) `BB`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.silhouette",
+    "variability": "不变",
+    "meaning": "廓形",
+    "amazon": "—",
+    "temu": "廓形 `BI`",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.length_style",
+    "variability": "不变",
+    "meaning": "长度",
+    "amazon": "—",
+    "temu": "长度 `BB`",
+    "shein": "长度(54) `BC`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.rise_style",
+    "variability": "不变",
+    "meaning": "腰位",
+    "amazon": "Rise Style `BU`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.waistband",
+    "variability": "不变",
+    "meaning": "腰带",
+    "amazon": "—",
+    "temu": "腰带 `BC`",
+    "shein": "腰带(9) `AX`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.padding",
+    "variability": "不变",
+    "meaning": "胸垫/杯",
+    "amazon": "—",
+    "temu": "胸垫 `BF`",
+    "shein": "胸垫(23) `AY`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.detail_feature",
+    "variability": "不变",
+    "meaning": "细节/特殊特征",
+    "amazon": "Special Features 等6列 `AH,AI,AJ,AK,AL,DE`",
+    "temu": "细节 `AB`",
+    "shein": "细节(31) 等2列 `AZ,BU`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.care_instructions",
+    "variability": "不变",
+    "meaning": "护理说明",
+    "amazon": "Care Instructions `BT`",
+    "temu": "护理说明 `AF`",
+    "shein": "护理说明(1000069) `BV`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.style_source",
+    "variability": "不变",
+    "meaning": "款式来源",
+    "amazon": "—",
+    "temu": "款式来源 `AJ`",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.occasion",
+    "variability": "不变",
+    "meaning": "场合",
+    "amazon": "Lifestyle `AM`",
+    "temu": "—",
+    "shein": "场合(128) `BI`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.theme_festival",
+    "variability": "不变",
+    "meaning": "主题/节日",
+    "amazon": "Theme `BR`",
+    "temu": "—",
+    "shein": "节日(1001137) `CD`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.hem_shape",
+    "variability": "不变",
+    "meaning": "下摆形状",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "下摆形状(129) `BJ`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.pocket",
+    "variability": "不变",
+    "meaning": "口袋",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "是否有口袋(1000438) `BZ`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.back_style",
+    "variability": "不变",
+    "meaning": "背部款式",
+    "amazon": "Back Style 等5列 `CE–CI`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.embellishment",
+    "variability": "不变",
+    "meaning": "装饰工艺",
+    "amazon": "Embellishment Feature 等5列 `CL–CP`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.function_type",
+    "variability": "不变",
+    "meaning": "功能类型",
+    "amazon": "Product Benefits 等5列 `BV–BZ`",
+    "temu": "—",
+    "shein": "功能类型(1000104) `BX`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.set_count",
+    "variability": "不变",
+    "meaning": "套装件数",
+    "amazon": "Number of Pieces `BP`",
+    "temu": "—",
+    "shein": "套装数(1000103) `BW`",
+    "domain": "D6 款式属性"
+  },
+  {
+    "key": "cp.target_gender",
+    "variability": "不变",
+    "meaning": "目标性别",
+    "amazon": "Target Gender `AP`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D7 人群适用"
+  },
+  {
+    "key": "cp.department",
+    "variability": "不变",
+    "meaning": "部门",
+    "amazon": "Department Name `AO`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D7 人群适用"
+  },
+  {
+    "key": "cp.age_range",
+    "variability": "不变",
+    "meaning": "年龄段",
+    "amazon": "Age Range Description 等2列 `AQ,JQ`",
+    "temu": "—",
+    "shein": "年龄(154) `BN`",
+    "domain": "D7 人群适用"
+  },
+  {
+    "key": "cp.user_group",
+    "variability": "不变",
+    "meaning": "用户人群",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "用户(176) 等2列 `BR–BS`",
+    "domain": "D7 人群适用"
+  },
+  {
+    "key": "cp.color",
+    "variability": "变",
+    "meaning": "颜色值+ColorMap",
+    "amazon": "Color Map 等2列 `BN–BO`",
+    "temu": "色值(主规格) `BS`",
+    "shein": "—",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.size_value",
+    "variability": "变",
+    "meaning": "尺码值",
+    "amazon": "Size Value `AT`",
+    "temu": "尺码 `BW`",
+    "shein": "—",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.size_system",
+    "variability": "变",
+    "meaning": "尺码体系",
+    "amazon": "Size System `AR`",
+    "temu": "尺码组别 等2列 `BU–BV`",
+    "shein": "—",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.size_class",
+    "variability": "变",
+    "meaning": "尺码类别",
+    "amazon": "Size Class `AS`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.main_attribute",
+    "variability": "变",
+    "meaning": "主规格",
+    "amazon": "—",
+    "temu": "规格类型2 `BT`",
+    "shein": "是否有主规格 等3列 `AN–AP`",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.secondary_attribute",
+    "variability": "变",
+    "meaning": "副规格",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "规格2 等4列 `AQ–AT`",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.size_chart_template",
+    "variability": "不变",
+    "meaning": "尺寸表模板",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "尺寸表模板名称 `AM`",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.special_size",
+    "variability": "不变",
+    "meaning": "特殊尺寸",
+    "amazon": "Shapewear Size To Range 等2列 `AU,BM`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.size_country",
+    "variability": "变",
+    "meaning": "尺码国家",
+    "amazon": "Garment Size Country `DI`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.size_dimension",
+    "variability": "不变",
+    "meaning": "尺寸大小",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "尺寸大小(146) `BL`",
+    "domain": "D8 规格变体"
+  },
+  {
+    "key": "cp.measure_bust",
+    "variability": "不变",
+    "meaning": "胸围",
+    "amazon": "Chest Size 等2列 `CJ–CK`",
+    "temu": "胸围全围（cm) 等2列 `BX,CA`",
+    "shein": "—",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.measure_length",
+    "variability": "不变",
+    "meaning": "衣长",
+    "amazon": "—",
+    "temu": "衣长（cm) `BY`",
+    "shein": "—",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.measure_waist",
+    "variability": "不变",
+    "meaning": "腰围",
+    "amazon": "Waist Size 等2列 `CV–CW`",
+    "temu": "腰围（cm) `BZ`",
+    "shein": "—",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.leg_opening",
+    "variability": "不变",
+    "meaning": "脚口",
+    "amazon": "Leg Hem Opening Width 等2列 `DG–DH`",
+    "temu": "—",
+    "shein": "脚口位置(1001915) `CG`",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.bottom_type",
+    "variability": "不变",
+    "meaning": "下装类型",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "下装类型(161) `BP`",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.bra_spec",
+    "variability": "不变",
+    "meaning": "内衣规格",
+    "amazon": "Cup Size Value 等8列 `AV,AW,AX,AY,BI,BJ,BK,JO`",
+    "temu": "—",
+    "shein": "内衣版型(134) 等3列 `BK,CC,CE`",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.swimwear_form",
+    "variability": "不变",
+    "meaning": "泳装形态",
+    "amazon": "Swimwear Form Type 等3列 `CX,DC,DD`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.body_type",
+    "variability": "不变",
+    "meaning": "体型/身高",
+    "amazon": "Body Type 等2列 `AZ–BA`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D9 尺寸测量"
+  },
+  {
+    "key": "cp.fit_model",
+    "variability": "不变",
+    "meaning": "试穿模特",
+    "amazon": "—",
+    "temu": "试穿模特 `CB`",
+    "shein": "—",
+    "domain": "D10 模特"
+  },
+  {
+    "key": "cp.fit_model_size",
+    "variability": "不变",
+    "meaning": "试穿尺码",
+    "amazon": "—",
+    "temu": "试穿尺码 `CC`",
+    "shein": "—",
+    "domain": "D10 模特"
+  },
+  {
+    "key": "cp.fit_sentiment",
+    "variability": "不变",
+    "meaning": "试穿感受/偏码",
+    "amazon": "Fit to Size Sentiment `DK`",
+    "temu": "试穿感受 `CD`",
+    "shein": "—",
+    "domain": "D10 模特"
+  },
+  {
+    "key": "cp.list_price",
+    "variability": "变",
+    "meaning": "标价",
+    "amazon": "List Price `DU`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.your_price",
+    "variability": "变",
+    "meaning": "售价/申报价",
+    "amazon": "Your Price USD `EX`",
+    "temu": "申报价格-美国站 `CF`",
+    "shein": "价格 `AH`",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.currency",
+    "variability": "变",
+    "meaning": "币种",
+    "amazon": "—",
+    "temu": "币种 `CG`",
+    "shein": "—",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.sale_price",
+    "variability": "变",
+    "meaning": "促销价",
+    "amazon": "Sale Price USD 等5列 `FB–FF`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.msrp",
+    "variability": "变",
+    "meaning": "建议零售价",
+    "amazon": "—",
+    "temu": "制造商建议零售价(USD) `CN`",
+    "shein": "—",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.price_minmax",
+    "variability": "变",
+    "meaning": "限价",
+    "amazon": "Minimum Seller Allowed Price 等2列 `EZ–FA`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.b2b_pricing",
+    "variability": "变",
+    "meaning": "B2B阶梯价",
+    "amazon": "Pricing Rule 等17列 `EY,FG–FV`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.tax_code",
+    "variability": "变",
+    "meaning": "税码",
+    "amazon": "Product Tax Code `DV`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.reference_link",
+    "variability": "变",
+    "meaning": "参考链接",
+    "amazon": "—",
+    "temu": "参考链接 `CE`",
+    "shein": "参考产品链接 等2列 `AK–AL`",
+    "domain": "D11 价格"
+  },
+  {
+    "key": "cp.quantity",
+    "variability": "变",
+    "meaning": "库存数量",
+    "amazon": "Quantity (US) `ET`",
+    "temu": "发货仓1库存 `CI`",
+    "shein": "库存 等2列 `X–Y`",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.warehouse",
+    "variability": "变",
+    "meaning": "发货仓",
+    "amazon": "—",
+    "temu": "发货仓1 `CH`",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.fulfillment_channel",
+    "variability": "变",
+    "meaning": "履约渠道",
+    "amazon": "Fulfillment Channel Code (US) `ES`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.handling_time",
+    "variability": "变",
+    "meaning": "处理时效",
+    "amazon": "Handling Time (US) `EU`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.restock_date",
+    "variability": "变",
+    "meaning": "补货日期",
+    "amazon": "Restock Date (US) `EV`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.inventory_always",
+    "variability": "变",
+    "meaning": "无限库存",
+    "amazon": "Inventory Always Available (US) `EW`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.max_order_qty",
+    "variability": "变",
+    "meaning": "限购",
+    "amazon": "Maximum Order Quantity `DX`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.shelf_way",
+    "variability": "变",
+    "meaning": "上架方式",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "上架方式 `AI`",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.launch_date",
+    "variability": "变",
+    "meaning": "上架/发布日期",
+    "amazon": "Product Site Launch Date 等2列 `CB,DW`",
+    "temu": "—",
+    "shein": "首次期望上架日期 `AJ`",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.shipping_template",
+    "variability": "变",
+    "meaning": "运费模板",
+    "amazon": "Shipping Template (US) `FW`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.sku_classification",
+    "variability": "变",
+    "meaning": "SKU分类数量",
+    "amazon": "—",
+    "temu": "SKU分类 等3列 `CJ–CL`",
+    "shein": "—",
+    "domain": "D12 库存履约"
+  },
+  {
+    "key": "cp.package_dims",
+    "variability": "不变",
+    "meaning": "包装尺寸",
+    "amazon": "Item Package Length 等6列 `FX–GC`",
+    "temu": "最长边（cm) 等3列 `CZ–DB`",
+    "shein": "长 等4列 `AB–AE`",
+    "domain": "D13 物流包装"
+  },
+  {
+    "key": "cp.package_weight",
+    "variability": "不变",
+    "meaning": "包装重量",
+    "amazon": "Package Weight 等2列 `GD–GE`",
+    "temu": "重量（g) `DC`",
+    "shein": "重量 等2列 `Z–AA`",
+    "domain": "D13 物流包装"
+  },
+  {
+    "key": "cp.item_weight",
+    "variability": "不变",
+    "meaning": "净重",
+    "amazon": "Item Weight 等2列 `DP–DQ`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D13 物流包装"
+  },
+  {
+    "key": "cp.package_type",
+    "variability": "不变",
+    "meaning": "包装类型",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "包装类型 `AF`",
+    "domain": "D13 物流包装"
+  },
+  {
+    "key": "cp.number_of_items",
+    "variability": "不变",
+    "meaning": "件数",
+    "amazon": "Number of Items 等2列 `BG–BH`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D13 物流包装"
+  },
+  {
+    "key": "cp.independent_packaging",
+    "variability": "变",
+    "meaning": "独立包装",
+    "amazon": "—",
+    "temu": "是否独立包装 `CM`",
+    "shein": "—",
+    "domain": "D13 物流包装"
+  },
+  {
+    "key": "cp.country_of_origin",
+    "variability": "不变",
+    "meaning": "产地",
+    "amazon": "Country of Origin `GF`",
+    "temu": "商品产地 等2列 `E–F`",
+    "shein": "产地 `I`",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.sensitive_attrs",
+    "variability": "变",
+    "meaning": "敏感品属性",
+    "amazon": "—",
+    "temu": "敏感词属性1 等7列 `CO–CU`",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.liquid_capacity",
+    "variability": "不变",
+    "meaning": "液体容量",
+    "amazon": "—",
+    "temu": "液体容量（ml) `CV`",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.blade_specs",
+    "variability": "不变",
+    "meaning": "刀具规格",
+    "amazon": "—",
+    "temu": "刀具长度(cm) 等2列 `CW–CX`",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.battery_capacity",
+    "variability": "不变",
+    "meaning": "储电容量",
+    "amazon": "—",
+    "temu": "储电容量（wh) `CY`",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.battery_compliance",
+    "variability": "变",
+    "meaning": "电池合规",
+    "amazon": "Are batteries required? 等26列 `GG–GV,JM,JP,JS–JZ`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.dangerous_goods",
+    "variability": "变",
+    "meaning": "危险品",
+    "amazon": "Dangerous Goods Regulations 等5列 `GW–HA`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.ghs",
+    "variability": "变",
+    "meaning": "GHS",
+    "amazon": "GHS Class 等10列 `HB–HF,KB–KF`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.hazmat",
+    "variability": "变",
+    "meaning": "Hazmat",
+    "amazon": "Hazmat Aspect 等2列 `HG–HH`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.sds",
+    "variability": "变",
+    "meaning": "SDS",
+    "amazon": "Safety Data Sheet URL `HI`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.age_restriction",
+    "variability": "变",
+    "meaning": "年龄限制",
+    "amazon": "Buyer Age Restrictions `HJ`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.ca_prop65",
+    "variability": "变",
+    "meaning": "加州65",
+    "amazon": "California Proposition 65 等6列 `HK–HP`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.pesticide",
+    "variability": "变",
+    "meaning": "农药标识",
+    "amazon": "Pesticide Marking 等9列 `HQ–HY`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.fcc",
+    "variability": "变",
+    "meaning": "FCC",
+    "amazon": "Radio Frequency Emission 等6列 `HZ–IE`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.regulatory_cert",
+    "variability": "变",
+    "meaning": "法规认证",
+    "amazon": "Compliance Regulation Type 等11列 `IF–IP`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.compliance_media",
+    "variability": "变",
+    "meaning": "合规文档",
+    "amazon": "Compliance Media Source 等19列 `IQ–JI`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.gpsr",
+    "variability": "变",
+    "meaning": "GPSR",
+    "amazon": "Safety Attestation 等2列 `JJ–JK`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.pfas",
+    "variability": "变",
+    "meaning": "PFAS",
+    "amazon": "Contains PFAS `JL`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.baa_taa",
+    "variability": "变",
+    "meaning": "BAA/TAA",
+    "amazon": "BAA/TAA Compliance 等3列 `KG–KI`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.ships_globally",
+    "variability": "变",
+    "meaning": "全球发货",
+    "amazon": "Ships Globally `JN`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.certificate",
+    "variability": "变",
+    "meaning": "证书",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "证书编号/检测机构(1002226) `CN`",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.disclaimer",
+    "variability": "变",
+    "meaning": "免责声明",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "免责声明(1001698) `CF`",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.plated_metal",
+    "variability": "不变",
+    "meaning": "镀贵金属",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "镀贵金属类型(1000561) `CB`",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.location",
+    "variability": "变",
+    "meaning": "所在地",
+    "amazon": "—",
+    "temu": "—",
+    "shein": "所在地(169) `BQ`",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.import_designation",
+    "variability": "变",
+    "meaning": "进口标识",
+    "amazon": "Import Designation `EG`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.green_purchasing",
+    "variability": "变",
+    "meaning": "绿色采购",
+    "amazon": "Is Green Purchasing Law Compliant `DO`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.oem_sourced",
+    "variability": "不变",
+    "meaning": "OEM来源",
+    "amazon": "Is OEM Sourced Product `KA`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.condition",
+    "variability": "变",
+    "meaning": "商品状况",
+    "amazon": "Item Condition 等13列 `DS,DT,EH–ER`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.gift_options",
+    "variability": "变",
+    "meaning": "礼品选项",
+    "amazon": "Offering Can Be Gift Messaged 等2列 `DY–DZ`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.skip_offer",
+    "variability": "变",
+    "meaning": "跳过Offer",
+    "amazon": "Skip Offer `DR`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.government_contract",
+    "variability": "变",
+    "meaning": "政府合同",
+    "amazon": "Government Contract Name 等2列 `DL–DM`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  },
+  {
+    "key": "cp.collection_item",
+    "variability": "变",
+    "meaning": "收藏品",
+    "amazon": "Collection Item `DN`",
+    "temu": "—",
+    "shein": "—",
+    "domain": "D14 合规安全"
+  }
+]

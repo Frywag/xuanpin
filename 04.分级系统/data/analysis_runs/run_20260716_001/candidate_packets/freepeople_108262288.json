@@ -1,0 +1,383 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "freepeople_108262288",
+  "market": "US",
+  "platform": "freepeople",
+  "primary_product_id": "108262288",
+  "canonical_url": "https://www.freepeople.com/shop/raven-solid-convertible-maxi-skirt/?color=066",
+  "source_refs": [
+    {
+      "source_id": "indie_frontend",
+      "envelope_id": "envelope_indie_frontend_20260716"
+    }
+  ],
+  "basic_facts": {
+    "title": "Raven Solid Convertible Maxi Skirt",
+    "brand": null,
+    "category_path": [],
+    "image_url": null,
+    "price": {
+      "amount": 128.0,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.1111,
+    "review_count": 9.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": null,
+    "sales_7d_units": null,
+    "sales_floor_units": null,
+    "revenue_30d": null,
+    "gmv_7d": null,
+    "sales_growth_rate": null,
+    "favorites_count": 3949.0,
+    "bestseller_rank_text": null,
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [],
+    "platform_price_comparison": [
+      {
+        "style_group": "dress",
+        "source_group": "候选自身（freepeople）",
+        "currency": "USD",
+        "n": 1,
+        "p25": 128.0,
+        "p50": 128.0,
+        "p75": 128.0,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "indie_frontend",
+        "currency": "USD",
+        "n": 686,
+        "p25": 88.0,
+        "p50": 128.0,
+        "p75": 188.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "shein_frontend",
+        "currency": "USD",
+        "n": 191,
+        "p25": 9.42,
+        "p50": 12.09,
+        "p75": 15.11,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "indie_frontend 语料中有 682 款标题命中相同风格词 ['skirt']",
+        "kind": "style_token_overlap",
+        "count": 682,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "shein_frontend 语料中有 5 款标题命中相同风格词 ['skirt']",
+        "kind": "style_token_overlap",
+        "count": 5,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "patterned_tights_frontend 语料中有 1 款标题命中相同风格词 ['skirt']",
+        "kind": "style_token_overlap",
+        "count": 1,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ]
+  },
+  "freshness": {
+    "listed_at": null,
+    "first_seen_at": null,
+    "last_seen_at": null,
+    "new_arrival_flag": null,
+    "collection_name": null,
+    "earliest_review_at": null,
+    "earliest_content_at": null,
+    "freshness_status": "unknown",
+    "novelty_status": "unknown",
+    "freshness_evidence_refs": [],
+    "novelty_evidence_refs": []
+  },
+  "style_attributes": {},
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "market_metrics.sales_growth_rate",
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "field_issues": [],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_indie_frontend_003227",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003228",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.title_cn",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003229",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.category_name",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003231",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.raw_evidence_path",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003232",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003233",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003234",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003235",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "market_metrics.favorites_count",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "收藏/心愿单热度，非成交数据"
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003236",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.image_count",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_indie_frontend_003237",
+      "source_id": "indie_frontend",
+      "source_type": "frontend",
+      "tool_or_adapter": "FrontendWorkbookAdapter",
+      "field_path": "context.design_signals",
+      "artifact_path": "03.前端数据源/独立站.xlsx",
+      "record_locator": "sheet=freepeople;row=65",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "indie_frontend",
+    "category_label": "women_apparel_indie",
+    "seasonal": false,
+    "track_hint": null,
+    "source_roles": [
+      "discovery"
+    ],
+    "site": "freepeople",
+    "title_cn": "Raven Solid Convertible 长款半身裙",
+    "category_name": "Maxi Skirts",
+    "raw_evidence_path": "D:\\06.Fable\\sp\\commerce-intelligence\\outputs\\sites\\four-sites\\2026-06-17-live-collection\\raw\\freepeople\\108262288\\manifest.json",
+    "image_count": 4.0,
+    "design_signals": [
+      {
+        "kind": "design_details",
+        "text": "Measurements for size small: Hips: 29 in; Waist: 23 in; Length: 40.5 in"
+      }
+    ],
+    "profile": {
+      "产品中文名称": {
+        "value": "Raven Solid Convertible 长款半身裙",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003228"
+        ]
+      },
+      "产品英文标题": {
+        "value": "Raven Solid Convertible Maxi Skirt",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003227"
+        ]
+      },
+      "售价": {
+        "value": "128.0 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003232"
+        ]
+      },
+      "评分": {
+        "value": 4.1111,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003233"
+        ]
+      },
+      "评论数": {
+        "value": 9.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003234"
+        ]
+      },
+      "来源类目": {
+        "value": "Maxi Skirts",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_indie_frontend_003229"
+        ]
+      },
+      "商品链接": {
+        "value": "https://www.freepeople.com/shop/raven-solid-convertible-maxi-skirt/?color=066",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "freepeople",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

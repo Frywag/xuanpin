@@ -1,0 +1,6792 @@
+{
+  "status": "done",
+  "meta": {
+    "categoryId": 842504,
+    "categoryName": "女士连衣裙",
+    "country": "US",
+    "startDate": "2026-06-09",
+    "endDate": "2026-07-08"
+  },
+  "startedAt": "2026-07-10T06:50:45.410Z",
+  "initialQuota": {
+    "search": {
+      "total": 30,
+      "used": 4,
+      "remain": 26,
+      "full": false
+    },
+    "detail": {
+      "total": 30,
+      "used": 2,
+      "remain": 28,
+      "full": false
+    }
+  },
+  "calls": [
+    {
+      "label": "category_summary",
+      "url": "/v1/tiktok/categories/842504/summary",
+      "method": "GET",
+      "request": {
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "realtime": "true"
+      },
+      "startedAt": "2026-07-10T06:50:45.641Z",
+      "finishedAt": "2026-07-10T06:50:45.879Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": null
+    },
+    {
+      "label": "category_history",
+      "url": "/v1/tiktok/categories/842504/history",
+      "method": "GET",
+      "request": {
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08"
+      },
+      "startedAt": "2026-07-10T06:50:46.297Z",
+      "finishedAt": "2026-07-10T06:50:46.524Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 30
+    },
+    {
+      "label": "category_top_products",
+      "url": "/overview/detail/queryProductTopsList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "id": 842504,
+        "type": "product",
+        "pageNo": 1,
+        "pageSize": 10
+      },
+      "startedAt": "2026-07-10T06:50:46.919Z",
+      "finishedAt": "2026-07-10T06:50:47.177Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "category_top_shops",
+      "url": "/overview/detail/queryShopTopsList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "id": 842504,
+        "type": "shop",
+        "pageNo": 1,
+        "pageSize": 10
+      },
+      "startedAt": "2026-07-10T06:50:47.549Z",
+      "finishedAt": "2026-07-10T06:50:47.811Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "category_top_creators",
+      "url": "/overview/detail/queryCreatorTopsList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "id": 842504,
+        "type": "creator",
+        "pageNo": 1,
+        "pageSize": 10
+      },
+      "startedAt": "2026-07-10T06:50:48.183Z",
+      "finishedAt": "2026-07-10T06:50:48.422Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "product_list_page_1",
+      "url": "/product/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "pageNo": 1
+      },
+      "startedAt": "2026-07-10T06:50:48.789Z",
+      "finishedAt": "2026-07-10T06:50:49.076Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "product_enrich_page_1",
+      "url": "/product/enrich",
+      "method": "POST",
+      "request": {
+        "ids": [
+          "1729451011337261203",
+          "1730778628184969488",
+          "1729452124269023475",
+          "1729430342213472565",
+          "1729506405979428083",
+          "1732144170019099237",
+          "1732071775099523793",
+          "1730867312113849041",
+          "1732189362609557800",
+          "1729506923078784569"
+        ],
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ]
+      },
+      "startedAt": "2026-07-10T06:50:49.441Z",
+      "finishedAt": "2026-07-10T06:50:49.892Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "product_list_page_2",
+      "url": "/product/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "pageNo": 2
+      },
+      "startedAt": "2026-07-10T06:50:50.302Z",
+      "finishedAt": "2026-07-10T06:50:50.589Z",
+      "httpStatus": 200,
+      "success": false,
+      "message": "{\"message\":\"Upgrade to view more data,Exceeded pagination limit\",\"cause\":\"PRODUCT.LIST\",\"actionType\":{\"code\":\"UPGRADE\",\"name\":\"Upgrade\",\"desc\":\"Upgrade to view more data\"}}",
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": null
+    },
+    {
+      "label": "video_list_page_1_reused_capture",
+      "url": "/video/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          "842504"
+        ],
+        "showCateIds": [
+          "842504"
+        ],
+        "pageNo": 1,
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "video.filter.video_type": "WithProduct",
+        "video.filter.ad.daily_roas": ""
+      },
+      "httpStatus": 200,
+      "success": true,
+      "quotaDelta": {
+        "searchUsed": 1,
+        "detailUsed": 0
+      },
+      "rowCount": 10,
+      "note": "复用页面加载时已扣次的第1页响应"
+    },
+    {
+      "label": "video_list_page_2",
+      "url": "/video/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "video.filter.video_type": "WithProduct",
+        "video.filter.ad.daily_roas": "",
+        "pageNo": 2
+      },
+      "startedAt": "2026-07-10T06:50:50.964Z",
+      "finishedAt": "2026-07-10T06:50:51.209Z",
+      "httpStatus": 200,
+      "success": false,
+      "message": "{\"message\":\"Upgrade to view more data,Exceeded pagination limit\",\"cause\":\"VIDEO.LIST\",\"actionType\":{\"code\":\"UPGRADE\",\"name\":\"Upgrade\",\"desc\":\"Upgrade to view more data\"}}",
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": null
+    },
+    {
+      "label": "creator_list_page_1",
+      "url": "/creator/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "pageNo": 1
+      },
+      "startedAt": "2026-07-10T06:50:51.578Z",
+      "finishedAt": "2026-07-10T06:50:52.874Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 4,
+          "remain": 26,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 5,
+          "remain": 25,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 1,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "creator_enrich_page_1",
+      "url": "/creator/enrich",
+      "method": "POST",
+      "request": {
+        "ids": [
+          "6715264465669899270",
+          "7144896414652646446",
+          "6651270434204467206",
+          "6811964865076102149",
+          "6754516198932939782",
+          "6815344233891202054",
+          "6787850818970059781",
+          "7382743954934989870",
+          "7316385957875172398",
+          "6696886000284615685"
+        ],
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ]
+      },
+      "startedAt": "2026-07-10T06:50:53.233Z",
+      "finishedAt": "2026-07-10T06:50:53.570Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 5,
+          "remain": 25,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 5,
+          "remain": 25,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "creator_list_page_2",
+      "url": "/creator/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "pageNo": 2
+      },
+      "startedAt": "2026-07-10T06:50:53.935Z",
+      "finishedAt": "2026-07-10T06:50:54.201Z",
+      "httpStatus": 200,
+      "success": false,
+      "message": "{\"message\":\"Upgrade to view more data,Exceeded pagination limit\",\"cause\":\"CREATOR.LIST\",\"actionType\":{\"code\":\"UPGRADE\",\"name\":\"Upgrade\",\"desc\":\"Upgrade to view more data\"}}",
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 5,
+          "remain": 25,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 5,
+          "remain": 25,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": null
+    },
+    {
+      "label": "brand_list_page_1",
+      "url": "/api/tiktok/brand/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "pageNo": 1
+      },
+      "startedAt": "2026-07-10T06:50:54.566Z",
+      "finishedAt": "2026-07-10T06:50:55.067Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 5,
+          "remain": 25,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 6,
+          "remain": 24,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 1,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "brand_enrich_page_1",
+      "url": "/api/tiktok/brand/list/enrich",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "pageNo": 1,
+        "ids": [
+          "740798288799772152",
+          "420833615500780679",
+          "1032425620894471799",
+          "601371118766563914",
+          "291220117406132817",
+          "559371843990203421",
+          "643140411012637513",
+          "188656661900518440",
+          "1105253081273012067",
+          "648853222423873361"
+        ]
+      },
+      "startedAt": "2026-07-10T06:50:55.434Z",
+      "finishedAt": "2026-07-10T06:50:55.939Z",
+      "httpStatus": 200,
+      "success": true,
+      "message": null,
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 6,
+          "remain": 24,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 6,
+          "remain": 24,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": 10
+    },
+    {
+      "label": "brand_list_page_2",
+      "url": "/api/tiktok/brand/queryList",
+      "method": "POST",
+      "request": {
+        "country": "US",
+        "startDate": "2026-06-09",
+        "endDate": "2026-07-08",
+        "cateIds": [
+          842504
+        ],
+        "showCateIds": [
+          842504
+        ],
+        "pageSize": 10,
+        "sort": [
+          {
+            "field": "revenue",
+            "type": "DESC"
+          }
+        ],
+        "pageNo": 2
+      },
+      "startedAt": "2026-07-10T06:50:56.305Z",
+      "finishedAt": "2026-07-10T06:50:56.557Z",
+      "httpStatus": 200,
+      "success": false,
+      "message": "{\"message\":\"Upgrade to view more data,Exceeded pagination limit\",\"cause\":\"BRAND.LIST\",\"actionType\":{\"code\":\"UPGRADE\",\"name\":\"Upgrade\",\"desc\":\"Upgrade to view more data\"}}",
+      "quotaBefore": {
+        "search": {
+          "total": 30,
+          "used": 6,
+          "remain": 24,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaAfter": {
+        "search": {
+          "total": 30,
+          "used": 6,
+          "remain": 24,
+          "full": false
+        },
+        "detail": {
+          "total": 30,
+          "used": 2,
+          "remain": 28,
+          "full": false
+        }
+      },
+      "quotaDelta": {
+        "searchUsed": 0,
+        "detailUsed": 0
+      },
+      "rowCount": null
+    }
+  ],
+  "datasets": {
+    "categorySummary": {
+      "revenue_growth_rate": -0.0020894002792029107,
+      "self_promotion_revenue_origin": 24436772.70102252,
+      "video_revenue": "¥1.95亿",
+      "self_promotion_revenue": "¥2,443.68万",
+      "affiliate_revenue": "¥2.21亿",
+      "top_3_shop_revenue_ratio": 0.06642897024349745,
+      "revenue_origin": 275560506.1,
+      "average_revenue": "¥6.13万",
+      "top_10_shop_revenue_ratio": 0.19169710680829669,
+      "live_revenue_origin": 31112122.22712912,
+      "showcase_revenue_origin": 49028681.72707816,
+      "revenue": "¥2.76亿",
+      "shopping_mall_revenue_origin": 29956008.6987703,
+      "affiliate_revenue_origin": 221167724.7002072,
+      "total_sale": 1662787,
+      "shop_number": 4493,
+      "showcase_revenue": "¥4,902.87万",
+      "video_revenue_origin": 195419702.14356083,
+      "id": "842504",
+      "shopping_mall_revenue": "¥2,995.60万",
+      "live_revenue": "¥3,111.21万"
+    },
+    "categoryHistory": [
+      {
+        "revenue": 8060822.02670109,
+        "partitionDay": "2026-06-09",
+        "liveRevenue": 803863.8448211434,
+        "top3ShopRevenueRatio": 0.07908956228500688,
+        "averageRevenue": 4944.47,
+        "videoRevenue": 5924179.977579237,
+        "shopNumber": 1625,
+        "top10ShopRevenueRatio": 0.21425068239703163
+      },
+      {
+        "revenue": 8701544.11115263,
+        "partitionDay": "2026-06-10",
+        "liveRevenue": 831004.8578319801,
+        "top3ShopRevenueRatio": 0.0782211581024788,
+        "averageRevenue": 5125.27,
+        "videoRevenue": 6156692.325984305,
+        "shopNumber": 1692,
+        "top10ShopRevenueRatio": 0.21429964877258437
+      },
+      {
+        "revenue": 10204245.0657336,
+        "partitionDay": "2026-06-11",
+        "liveRevenue": 1290084.9271325204,
+        "top3ShopRevenueRatio": 0.06754623018443984,
+        "averageRevenue": 5610.65,
+        "videoRevenue": 6986892.0745999925,
+        "shopNumber": 1813,
+        "top10ShopRevenueRatio": 0.19621061434080828
+      },
+      {
+        "revenue": 10560557.32581445,
+        "partitionDay": "2026-06-12",
+        "liveRevenue": 1281695.7570404592,
+        "top3ShopRevenueRatio": 0.07612549399145092,
+        "averageRevenue": 6093.82,
+        "videoRevenue": 7550307.028569487,
+        "shopNumber": 1728,
+        "top10ShopRevenueRatio": 0.2042997015888378
+      },
+      {
+        "revenue": 9835352.651425077,
+        "partitionDay": "2026-06-13",
+        "liveRevenue": 1224308.2515201955,
+        "top3ShopRevenueRatio": 0.07772441837986825,
+        "averageRevenue": 5819.41,
+        "videoRevenue": 6894048.034786154,
+        "shopNumber": 1685,
+        "top10ShopRevenueRatio": 0.20158419902816763
+      },
+      {
+        "revenue": 9676137.989604918,
+        "partitionDay": "2026-06-14",
+        "liveRevenue": 1084348.4050684513,
+        "top3ShopRevenueRatio": 0.0825250001584852,
+        "averageRevenue": 5578.73,
+        "videoRevenue": 6920763.325067092,
+        "shopNumber": 1729,
+        "top10ShopRevenueRatio": 0.21341615886837348
+      },
+      {
+        "revenue": 8786880.048918027,
+        "partitionDay": "2026-06-15",
+        "liveRevenue": 966626.6263545877,
+        "top3ShopRevenueRatio": 0.08373197019822601,
+        "averageRevenue": 5851,
+        "videoRevenue": 6385668.036824404,
+        "shopNumber": 1497,
+        "top10ShopRevenueRatio": 0.22488626535369244
+      },
+      {
+        "revenue": 8838605.292658899,
+        "partitionDay": "2026-06-16",
+        "liveRevenue": 940949.4173998709,
+        "top3ShopRevenueRatio": 0.07805122627573945,
+        "averageRevenue": 5283.74,
+        "videoRevenue": 6210090.770119238,
+        "shopNumber": 1667,
+        "top10ShopRevenueRatio": 0.2011986994804864
+      },
+      {
+        "revenue": 8752445.96935829,
+        "partitionDay": "2026-06-17",
+        "liveRevenue": 1043830.2816183714,
+        "top3ShopRevenueRatio": 0.07916643627207796,
+        "averageRevenue": 5486.74,
+        "videoRevenue": 6206221.01436967,
+        "shopNumber": 1590,
+        "top10ShopRevenueRatio": 0.20837691360553384
+      },
+      {
+        "revenue": 10145064.918300098,
+        "partitionDay": "2026-06-18",
+        "liveRevenue": 1130263.1382274008,
+        "top3ShopRevenueRatio": 0.07238092295332706,
+        "averageRevenue": 6122.65,
+        "videoRevenue": 7240363.148418657,
+        "shopNumber": 1652,
+        "top10ShopRevenueRatio": 0.20646514692813495
+      },
+      {
+        "revenue": 11563221.048340524,
+        "partitionDay": "2026-06-19",
+        "liveRevenue": 1286868.2950028875,
+        "top3ShopRevenueRatio": 0.07562710374736535,
+        "averageRevenue": 7272.1,
+        "videoRevenue": 8406542.378639128,
+        "shopNumber": 1586,
+        "top10ShopRevenueRatio": 0.21612296664754124
+      },
+      {
+        "revenue": 7025568.909875327,
+        "partitionDay": "2026-06-20",
+        "liveRevenue": 736036.4846961307,
+        "top3ShopRevenueRatio": 0.07915292180622513,
+        "averageRevenue": 4457.68,
+        "videoRevenue": 5009435.404423005,
+        "shopNumber": 1570,
+        "top10ShopRevenueRatio": 0.21928157175836488
+      },
+      {
+        "revenue": 8461653.904949553,
+        "partitionDay": "2026-06-21",
+        "liveRevenue": 843034.4124740972,
+        "top3ShopRevenueRatio": 0.0764790137062225,
+        "averageRevenue": 5317.68,
+        "videoRevenue": 6128298.535856235,
+        "shopNumber": 1586,
+        "top10ShopRevenueRatio": 0.20453238209861327
+      },
+      {
+        "revenue": 8062499.439480925,
+        "partitionDay": "2026-06-22",
+        "liveRevenue": 937489.418079288,
+        "top3ShopRevenueRatio": 0.07950440089032616,
+        "averageRevenue": 5169.9,
+        "videoRevenue": 5704303.495600774,
+        "shopNumber": 1554,
+        "top10ShopRevenueRatio": 0.2030312358349514
+      },
+      {
+        "revenue": 9249743.927710025,
+        "partitionDay": "2026-06-23",
+        "liveRevenue": 1092109.31820498,
+        "top3ShopRevenueRatio": 0.08053884648063037,
+        "averageRevenue": 5687.85,
+        "videoRevenue": 6505064.646533274,
+        "shopNumber": 1621,
+        "top10ShopRevenueRatio": 0.19522463112920924
+      },
+      {
+        "revenue": 9313291.096239427,
+        "partitionDay": "2026-06-24",
+        "liveRevenue": 1233990.0805109215,
+        "top3ShopRevenueRatio": 0.07126323053831084,
+        "averageRevenue": 5802.4,
+        "videoRevenue": 6535883.276149064,
+        "shopNumber": 1600,
+        "top10ShopRevenueRatio": 0.19410570965010565
+      },
+      {
+        "revenue": 9668453.442945952,
+        "partitionDay": "2026-06-25",
+        "liveRevenue": 1155183.4765770969,
+        "top3ShopRevenueRatio": 0.07107937116564417,
+        "averageRevenue": 6005.76,
+        "videoRevenue": 6839714.576893025,
+        "shopNumber": 1605,
+        "top10ShopRevenueRatio": 0.1960730275622519
+      },
+      {
+        "revenue": 11214906.750008492,
+        "partitionDay": "2026-06-26",
+        "liveRevenue": 1289940.5510072357,
+        "top3ShopRevenueRatio": 0.07857207104274136,
+        "averageRevenue": 5163.67,
+        "videoRevenue": 7596208.377212351,
+        "shopNumber": 2165,
+        "top10ShopRevenueRatio": 0.20197188337166166
+      },
+      {
+        "revenue": 9892061.89489418,
+        "partitionDay": "2026-06-27",
+        "liveRevenue": 1175438.3938580698,
+        "top3ShopRevenueRatio": 0.07661898264908146,
+        "averageRevenue": 5765.99,
+        "videoRevenue": 7017083.330502429,
+        "shopNumber": 1710,
+        "top10ShopRevenueRatio": 0.19981601686856576
+      },
+      {
+        "revenue": 10643638.753949111,
+        "partitionDay": "2026-06-28",
+        "liveRevenue": 1087580.8676155857,
+        "top3ShopRevenueRatio": 0.07436738843195297,
+        "averageRevenue": 6276.25,
+        "videoRevenue": 7856507.796310765,
+        "shopNumber": 1691,
+        "top10ShopRevenueRatio": 0.19842890577787792
+      },
+      {
+        "revenue": 8017699.969426232,
+        "partitionDay": "2026-06-29",
+        "liveRevenue": 960832.0141318748,
+        "top3ShopRevenueRatio": 0.06422954416068363,
+        "averageRevenue": 4663.57,
+        "videoRevenue": 5656524.170261915,
+        "shopNumber": 1712,
+        "top10ShopRevenueRatio": 0.18416786582579445
+      },
+      {
+        "revenue": 9281882.460848592,
+        "partitionDay": "2026-06-30",
+        "liveRevenue": 966385.025647994,
+        "top3ShopRevenueRatio": 0.07290618615301685,
+        "averageRevenue": 5350.67,
+        "videoRevenue": 6654565.954411115,
+        "shopNumber": 1729,
+        "top10ShopRevenueRatio": 0.18898853893867312
+      },
+      {
+        "revenue": 9711933.14536128,
+        "partitionDay": "2026-07-01",
+        "liveRevenue": 1030773.7880898189,
+        "top3ShopRevenueRatio": 0.07187918676489269,
+        "averageRevenue": 5429.53,
+        "videoRevenue": 7000279.648061963,
+        "shopNumber": 1783,
+        "top10ShopRevenueRatio": 0.1822845059608654
+      },
+      {
+        "revenue": 10189692.8355471,
+        "partitionDay": "2026-07-02",
+        "liveRevenue": 1129561.9118796072,
+        "top3ShopRevenueRatio": 0.07634825071911165,
+        "averageRevenue": 5592.84,
+        "videoRevenue": 7404574.650949485,
+        "shopNumber": 1816,
+        "top10ShopRevenueRatio": 0.19465649876245902
+      },
+      {
+        "revenue": 9714829.975880694,
+        "partitionDay": "2026-07-03",
+        "liveRevenue": 1255073.8866052926,
+        "top3ShopRevenueRatio": 0.06889136628614687,
+        "averageRevenue": 5338.45,
+        "videoRevenue": 6687202.772021606,
+        "shopNumber": 1814,
+        "top10ShopRevenueRatio": 0.17681857757952363
+      },
+      {
+        "revenue": 8277608.655773346,
+        "partitionDay": "2026-07-04",
+        "liveRevenue": 799731.1546692937,
+        "top3ShopRevenueRatio": 0.06387612581815906,
+        "averageRevenue": 4795.44,
+        "videoRevenue": 5897182.865101743,
+        "shopNumber": 1720,
+        "top10ShopRevenueRatio": 0.16630725054077164
+      },
+      {
+        "revenue": 7874856.81285457,
+        "partitionDay": "2026-07-05",
+        "liveRevenue": 878646.1935659205,
+        "top3ShopRevenueRatio": 0.06477131512745128,
+        "averageRevenue": 4620.5,
+        "videoRevenue": 5503315.555253592,
+        "shopNumber": 1698,
+        "top10ShopRevenueRatio": 0.15919827149481924
+      },
+      {
+        "revenue": 8010536.331827292,
+        "partitionDay": "2026-07-06",
+        "liveRevenue": 966158.6438835479,
+        "top3ShopRevenueRatio": 0.07733661192229131,
+        "averageRevenue": 4552.01,
+        "videoRevenue": 5460243.299249244,
+        "shopNumber": 1753,
+        "top10ShopRevenueRatio": 0.179564048705437
+      },
+      {
+        "revenue": 7821974.657743656,
+        "partitionDay": "2026-07-07",
+        "liveRevenue": 781305.0922308658,
+        "top3ShopRevenueRatio": 0.07873732859540887,
+        "averageRevenue": 4506.3,
+        "videoRevenue": 5625207.595882732,
+        "shopNumber": 1729,
+        "top10ShopRevenueRatio": 0.19222776917878398
+      },
+      {
+        "revenue": 8002796.684444746,
+        "partitionDay": "2026-07-08",
+        "liveRevenue": 909007.7113836328,
+        "top3ShopRevenueRatio": 0.07193031487139812,
+        "averageRevenue": 4512.61,
+        "videoRevenue": 5456338.077929136,
+        "shopNumber": 1767,
+        "top10ShopRevenueRatio": 0.18067742424733005
+      }
+    ],
+    "categoryTopProducts": [
+      {
+        "revenue": "¥300.75万",
+        "sale": 23360,
+        "revenue_trend": [
+          1661625,
+          1748979,
+          2191446,
+          2104092,
+          1475393,
+          1676817,
+          1673019,
+          1631313,
+          1724292,
+          1720494,
+          1653456,
+          1114346,
+          1410514,
+          1014066,
+          1186875,
+          1355886,
+          1454634,
+          1828737,
+          1864818,
+          1954071,
+          1298916,
+          1574271,
+          1319805,
+          1908495,
+          1304613,
+          1249309,
+          812772,
+          721620,
+          878999,
+          752004
+        ],
+        "seller_name": "TanmingFashion",
+        "commission_rate": "10%",
+        "id": "1729451011337261203",
+        "unit_price": "¥128.75",
+        "video_ids": [
+          "7649355179061415181",
+          "7649370512224685343",
+          "7651573451915922701"
+        ],
+        "collect_day": "2024-06-06",
+        "product_title": "Tanming Women's Sleeveless Sports Romper Dress - Athletic V-Neck Spaghetti Strap Mini Sundress with Built-in Shorts, Pockets, Sporty Chic Design, Athleisure Women's Clothes for Summer, Spring Tennis,summerwins,summeroutfits,vacationoutfits,beachoutfits",
+        "seller_id": "7495478086912805011"
+      },
+      {
+        "revenue": "¥253.16万",
+        "sale": 23677,
+        "revenue_trend": [
+          886028,
+          972328,
+          1777112,
+          1986184,
+          1384744,
+          1381880,
+          1301688,
+          1310280,
+          1251568,
+          1572384,
+          1757020,
+          1072080,
+          1063146,
+          1027009,
+          1121063,
+          1309171,
+          1319790,
+          1611126,
+          1271844,
+          1362690,
+          973350,
+          1033850,
+          1127346,
+          1427612,
+          1328722,
+          1094280,
+          946718,
+          974904,
+          817904,
+          798116
+        ],
+        "seller_name": "Sunshine Grove",
+        "commission_rate": "8%",
+        "id": "1730778628184969488",
+        "unit_price": "¥106.92",
+        "video_ids": [
+          "7643497302761442591",
+          "7628804543161273630",
+          "7654497778445471006"
+        ],
+        "collect_day": "2025-04-04",
+        "product_title": "Women's Plain Dress, Summer Clothes Women, Casual Sleeveless Backless Dress for Beach Holiday Vacation, Ladies Summer Clothes",
+        "seller_id": "8647592758759756048"
+      },
+      {
+        "revenue": "¥227.21万",
+        "sale": 16540,
+        "revenue_trend": [
+          1316007,
+          1410957,
+          1374876,
+          1397664,
+          1080531,
+          1547227,
+          1241460,
+          850752,
+          1202377,
+          1141299,
+          1586396,
+          972790,
+          1009261,
+          761499,
+          932409,
+          879237,
+          1076733,
+          1319805,
+          1285623,
+          1291320,
+          1200078,
+          1021662,
+          1169784,
+          1248357,
+          1475958,
+          1115015,
+          668448,
+          700731,
+          657054,
+          507033
+        ],
+        "seller_name": "SCUSTY",
+        "commission_rate": "11%",
+        "id": "1729452124269023475",
+        "unit_price": "¥137.37",
+        "video_ids": [
+          "7648661794025753887",
+          "7652095672518331679",
+          "7643887301684120845"
+        ],
+        "collect_day": "2024-04-23",
+        "product_title": "SCUSTY Women's Summer Sleeveless  Mini Dress with Built-in Shorts V Neck Spaghetti Straps Athletic Shorts Tennis Dress with Pockets",
+        "seller_id": "7495544445937420531"
+      },
+      {
+        "revenue": "¥225.59万",
+        "sale": 15060,
+        "revenue_trend": [
+          943500,
+          1187025,
+          1272330,
+          1156491,
+          945702,
+          1071036,
+          1010412,
+          1079500,
+          1096772,
+          1360152,
+          1468768,
+          1022560,
+          1141586,
+          846822,
+          1094124,
+          1004196,
+          1091626,
+          1159072,
+          969224,
+          1633692,
+          1416366,
+          1426358,
+          1231514,
+          1101618,
+          1181737,
+          1104074,
+          791323,
+          904669,
+          780828,
+          710625
+        ],
+        "seller_name": "Uaneo",
+        "commission_rate": "11%",
+        "id": "1729430342213472565",
+        "unit_price": "¥149.80",
+        "video_ids": [
+          "7655546149146791198",
+          "7651694915918859533",
+          "7647300909721980173"
+        ],
+        "collect_day": "2024-02-27",
+        "product_title": "UANEO Women's Summer Sleeveless Mini Dress V Neck Spaghetti Straps Athletic Built-in Shorts Sundress SummerVibes",
+        "seller_id": "7495469081498126645"
+      },
+      {
+        "revenue": "¥213.26万",
+        "sale": 14460,
+        "revenue_trend": [
+          1188774,
+          1101420,
+          964614,
+          1107117,
+          1631847,
+          2541483,
+          2479008,
+          1146996,
+          1224855,
+          1336896,
+          1870820,
+          1384446,
+          1126107,
+          337365,
+          205092,
+          634266,
+          1530594,
+          2121651,
+          1637181,
+          1399300,
+          759696,
+          747201,
+          395802,
+          477309,
+          447776,
+          452319,
+          381809,
+          235882,
+          269865,
+          251874
+        ],
+        "seller_name": "SCUSTY",
+        "commission_rate": "10%",
+        "id": "1729506405979428083",
+        "unit_price": "¥147.49",
+        "video_ids": [
+          "7647980966652153119",
+          "7647200632503340319",
+          "7650858027058220318"
+        ],
+        "collect_day": "2026-03-17",
+        "product_title": "SCUSTY Women's Summer Sleeveless 4th Of July Striped Mini Dress with Built-in Shorts V Neck Spaghetti Straps Athletic Shorts Tennis Dress with Pockets",
+        "seller_id": "7495544445937420531"
+      },
+      {
+        "revenue": "¥175.65万",
+        "sale": 6108,
+        "revenue_trend": [
+          911772,
+          941386,
+          767808,
+          631842,
+          668648,
+          827012,
+          899775,
+          1077755,
+          1381286,
+          1363659,
+          1303674,
+          554274,
+          739815,
+          932588,
+          888598,
+          815796,
+          835791,
+          958982,
+          643839,
+          805017,
+          531867,
+          897396,
+          778623,
+          901795,
+          954583,
+          715821,
+          554274,
+          989775,
+          849007,
+          730234
+        ],
+        "seller_name": "O Y S",
+        "commission_rate": "10%",
+        "id": "1732144170019099237",
+        "unit_price": "¥287.57",
+        "video_ids": [
+          "7651031767050226958",
+          "7650185788256308493",
+          "7649884720569847053"
+        ],
+        "collect_day": "2026-02-24",
+        "product_title": "OYS Women's Casual Sleeveless Square Neck A-Line Solid Slim Flowy Long Dress with Pockets & Back Tie Detail Design",
+        "seller_id": "7495443990254291557"
+      },
+      {
+        "revenue": "¥142.08万",
+        "sale": 6138,
+        "revenue_trend": [
+          843500,
+          666729,
+          761670,
+          912366,
+          541961,
+          614250,
+          616042,
+          491274,
+          592800,
+          964080,
+          1462125,
+          807070,
+          658320,
+          692640,
+          739440,
+          722854,
+          711360,
+          1094808,
+          848640,
+          838651,
+          574080,
+          754435,
+          748800,
+          833040,
+          492960,
+          405496,
+          399489,
+          318240,
+          400860,
+          403920
+        ],
+        "seller_name": "AUSELILY",
+        "commission_rate": "10%",
+        "id": "1732071775099523793",
+        "unit_price": "¥231.47",
+        "video_ids": [
+          "7647660918129691917",
+          "7648096481731185934",
+          "7651711293467954462"
+        ],
+        "collect_day": "2026-01-26",
+        "product_title": "AUSELILY Babydoll Dress for Women Short Sleeve Button Down Textured Non-clingy Loose Fit Flowy Mini Dress with Pockets 2026 New Summer Dress",
+        "seller_id": "7495652232633813713"
+      },
+      {
+        "revenue": "¥140.54万",
+        "sale": 5521,
+        "revenue_trend": [
+          1025550,
+          868398,
+          607590,
+          812511,
+          661770,
+          677250,
+          607590,
+          576630,
+          409241,
+          959481,
+          1358405,
+          1216617,
+          1231162,
+          1023162,
+          763458,
+          698117,
+          519440,
+          821583,
+          646720,
+          527877,
+          522880,
+          598560,
+          575505,
+          571040,
+          416240,
+          309528,
+          387000,
+          420325,
+          376401,
+          494636
+        ],
+        "seller_name": "AUSELILY",
+        "commission_rate": "10%",
+        "id": "1730867312113849041",
+        "unit_price": "¥254.55",
+        "video_ids": [
+          "7639787539792022798",
+          "7640166436756851998",
+          "7634676870113545503"
+        ],
+        "collect_day": "2025-03-29",
+        "product_title": "[Restocked] AUSELILY Women's Plus Size Off The Shoulder Dress Wedding Guest Dress Summer Casual Long Ruffle Party Side Split Beach Maxi Dresses with Pockets",
+        "seller_id": "7495652232633813713"
+      },
+      {
+        "revenue": "¥125.52万",
+        "sale": 17066,
+        "revenue_trend": [
+          782478,
+          863424,
+          950366,
+          1253164,
+          923384,
+          864923,
+          492507,
+          553446,
+          576423,
+          824175,
+          810088,
+          379378,
+          449500,
+          399600,
+          467480,
+          578421,
+          578421,
+          568168,
+          558279,
+          595404,
+          444555,
+          492652,
+          619411,
+          729270,
+          577422,
+          655344,
+          413586,
+          334665,
+          372627,
+          366633
+        ],
+        "seller_name": "OUC",
+        "commission_rate": "11%",
+        "id": "1732189362609557800",
+        "unit_price": "¥73.55",
+        "video_ids": [
+          "7614231772011842847",
+          "7624960595334319390",
+          "7613535041704021279"
+        ],
+        "collect_day": "2026-01-01",
+        "product_title": "Women's Solid Color Cami Lounge Dress, Elegant Sleeveless Long Dress for Summer, Ladies Sleepwear for Indoor Wear",
+        "seller_id": "7496190416438855976"
+      },
+      {
+        "revenue": "¥122.57万",
+        "sale": 5159,
+        "revenue_trend": [
+          317641,
+          338468,
+          83581,
+          228098,
+          342624,
+          360469,
+          294320,
+          507702,
+          632788,
+          647742,
+          1826778,
+          643148,
+          745995,
+          702327,
+          684138,
+          735770,
+          729246,
+          819462,
+          820896,
+          1003653,
+          600582,
+          612654,
+          558330,
+          552294,
+          592454,
+          606730,
+          499660,
+          642420,
+          471108,
+          438987
+        ],
+        "seller_name": "QINSEN",
+        "commission_rate": "11%",
+        "id": "1729506923078784569",
+        "unit_price": "¥237.58",
+        "video_ids": [
+          "7652132814325828878",
+          "7639513448577076493",
+          "7654329576637713678"
+        ],
+        "collect_day": "2026-03-14",
+        "product_title": "QINSEN Womens Zip Front Tennis Dress Polo Collar Racer Back Workout Golf Dresses Build in Shorts with Pockets",
+        "seller_id": "7495294890295659065"
+      }
+    ],
+    "categoryTopShops": [
+      {
+        "is_full_service": 0,
+        "revenue": "¥656.02万",
+        "sale": 24154,
+        "product_ids": [
+          "1732144170019099237",
+          "1729467441089778277",
+          "1732196584130777701"
+        ],
+        "revenue_trend": [
+          262224,
+          282938,
+          223258,
+          209895,
+          224644,
+          262673,
+          245460,
+          254728,
+          299018,
+          269831,
+          290192,
+          157340,
+          197447,
+          222152,
+          252440,
+          209848,
+          189007,
+          220684,
+          199832,
+          232832,
+          165266,
+          219295,
+          225952,
+          223999,
+          209213,
+          167770,
+          149823,
+          227815,
+          224570,
+          217516
+        ],
+        "name": "O Y S",
+        "seller_type": "BRAND",
+        "market_share": "2.38%",
+        "id": "7495443990254291557",
+        "unit_price": "¥271.60"
+      },
+      {
+        "is_full_service": 0,
+        "revenue": "¥607.24万",
+        "sale": 17259,
+        "product_ids": [
+          "1731840876855529559",
+          "1732220923495878743",
+          "1732265323175120983"
+        ],
+        "revenue_trend": [
+          548727,
+          589538,
+          621775,
+          687919,
+          570223,
+          572495,
+          556346,
+          668802,
+          529881,
+          847432,
+          917412,
+          521342,
+          694073,
+          736593,
+          776467,
+          765914,
+          816308,
+          1193215,
+          1017506,
+          1083465,
+          745077,
+          851610,
+          865140,
+          1000398,
+          696710,
+          463213,
+          460815,
+          533810,
+          578105,
+          620978
+        ],
+        "name": "Cider",
+        "seller_type": "BRAND",
+        "market_share": "2.20%",
+        "id": "7495295374523467863",
+        "unit_price": "¥351.84"
+      },
+      {
+        "is_full_service": 1,
+        "revenue": "¥567.25万",
+        "sale": 45987,
+        "product_ids": [
+          "1730255908420358449",
+          "1731230058804908337",
+          "1730467228173504817"
+        ],
+        "revenue_trend": [
+          271460,
+          327498,
+          399748,
+          427772,
+          319244,
+          370732,
+          343813,
+          281075,
+          349112,
+          336371,
+          403388,
+          265567,
+          248355,
+          346366,
+          383348,
+          428579,
+          447313,
+          414800,
+          386975,
+          465591,
+          326728,
+          423755,
+          413465,
+          413322,
+          418635,
+          327632,
+          323536,
+          363520,
+          350515,
+          337160
+        ],
+        "name": "Hawthaw Women Apparel",
+        "seller_type": "RETAILER",
+        "market_share": "2.06%",
+        "id": "8646959719942030641",
+        "unit_price": "¥123.35"
+      },
+      {
+        "is_full_service": 0,
+        "revenue": "¥559.15万",
+        "sale": 24543,
+        "product_ids": [
+          "1731810630860313364",
+          "1731809833467548436",
+          "1731795020274963220"
+        ],
+        "revenue_trend": [
+          192833,
+          204837,
+          195730,
+          207886,
+          230119,
+          219630,
+          201193,
+          171607,
+          182407,
+          228104,
+          273178,
+          161525,
+          242202,
+          214899,
+          259930,
+          218783,
+          199904,
+          199977,
+          177866,
+          184847,
+          120595,
+          155387,
+          182922,
+          195116,
+          156760,
+          107548,
+          96990,
+          131938,
+          140963,
+          150592
+        ],
+        "name": "Wenrine shop",
+        "seller_type": "BRAND",
+        "market_share": "2.03%",
+        "id": "7494102983950501652",
+        "unit_price": "¥227.83"
+      },
+      {
+        "is_full_service": 0,
+        "revenue": "¥552.88万",
+        "sale": 40072,
+        "product_ids": [
+          "1729451011337261203",
+          "1732293649718546579",
+          "1730145882292261011"
+        ],
+        "revenue_trend": [
+          403203,
+          414904,
+          517160,
+          499981,
+          484615,
+          443910,
+          426462,
+          415187,
+          437785,
+          507967,
+          517490,
+          313685,
+          373928,
+          331968,
+          349920,
+          397623,
+          500337,
+          581628,
+          494415,
+          492317,
+          333873,
+          390210,
+          396549,
+          459602,
+          341731,
+          365596,
+          273313,
+          276338,
+          294102,
+          294462
+        ],
+        "name": "TanmingFashion",
+        "seller_type": "RETAILER",
+        "market_share": "2.01%",
+        "id": "7495478086912805011",
+        "unit_price": "¥137.97"
+      },
+      {
+        "is_full_service": 1,
+        "revenue": "¥533.22万",
+        "sale": 45978,
+        "product_ids": [
+          "1731627621571137976",
+          "1731263238657970616",
+          "1732258147779121592"
+        ],
+        "revenue_trend": [
+          240731,
+          260933,
+          355961,
+          333311,
+          254515,
+          256437,
+          286790,
+          258460,
+          262915,
+          290021,
+          307237,
+          142134,
+          182494,
+          198131,
+          285129,
+          304236,
+          307824,
+          336706,
+          340960,
+          397624,
+          284887,
+          366912,
+          362655,
+          438200,
+          384893,
+          321915,
+          310760,
+          344733,
+          359192,
+          322708
+        ],
+        "name": "Hugcitar",
+        "seller_type": "RETAILER",
+        "market_share": "1.94%",
+        "id": "8647185368539369912",
+        "unit_price": "¥115.97"
+      },
+      {
+        "is_full_service": 0,
+        "revenue": "¥505.31万",
+        "sale": 34853,
+        "product_ids": [
+          "1729452124269023475",
+          "1729506405979428083",
+          "1732380986387697907"
+        ],
+        "revenue_trend": [
+          308142,
+          326269,
+          289786,
+          318743,
+          305478,
+          450680,
+          395182,
+          246584,
+          324809,
+          330167,
+          456235,
+          254246,
+          276829,
+          210196,
+          246906,
+          227056,
+          326802,
+          423744,
+          456812,
+          414678,
+          261374,
+          260344,
+          262131,
+          299565,
+          279295,
+          238326,
+          191093,
+          173888,
+          225716,
+          202569
+        ],
+        "name": "SCUSTY",
+        "seller_type": "BRAND",
+        "market_share": "1.83%",
+        "id": "7495544445937420531",
+        "unit_price": "¥144.98"
+      },
+      {
+        "is_full_service": 0,
+        "revenue": "¥479.07万",
+        "sale": 21844,
+        "product_ids": [
+          "1731887412557484425",
+          "1731588260276834697",
+          "1731887610286870921"
+        ],
+        "revenue_trend": [
+          238982,
+          320971,
+          396998,
+          634670,
+          557009,
+          421978,
+          355025,
+          271523,
+          342490,
+          357862,
+          389142,
+          315743,
+          315723,
+          251587,
+          330145,
+          340455,
+          360086,
+          457461,
+          385361,
+          342922,
+          275385,
+          267861,
+          270831,
+          290011,
+          274106,
+          288366,
+          227950,
+          222992,
+          211761,
+          269633
+        ],
+        "name": "CHOUYATOU",
+        "seller_type": "BRAND",
+        "market_share": "1.74%",
+        "id": "7495552971774921097",
+        "unit_price": "¥219.31"
+      },
+      {
+        "is_full_service": 0,
+        "revenue": "¥447.23万",
+        "sale": 19553,
+        "product_ids": [
+          "1732071775099523793",
+          "1730867312113849041",
+          "1730885183871947473"
+        ],
+        "revenue_trend": [
+          186094,
+          170353,
+          163449,
+          173154,
+          151894,
+          164935,
+          144973,
+          151426,
+          136338,
+          248243,
+          344316,
+          236449,
+          233309,
+          190709,
+          173063,
+          158948,
+          158195,
+          245229,
+          178168,
+          177312,
+          131430,
+          145987,
+          159612,
+          160857,
+          120399,
+          111405,
+          98824,
+          84564,
+          101675,
+          120563
+        ],
+        "name": "AUSELILY",
+        "seller_type": "BRAND",
+        "market_share": "1.62%",
+        "id": "7495652232633813713",
+        "unit_price": "¥228.73"
+      },
+      {
+        "is_full_service": 0,
+        "revenue": "¥375.03万",
+        "sale": 18743,
+        "product_ids": [
+          "1731197526662222326",
+          "1729484235456352758",
+          "1732323705040966134"
+        ],
+        "revenue_trend": [
+          504008,
+          489645,
+          565445,
+          574891,
+          494590,
+          427276,
+          470148,
+          417373,
+          499047,
+          556051,
+          652599,
+          306358,
+          392069,
+          364695,
+          444474,
+          438677,
+          434747,
+          554107,
+          462792,
+          415260,
+          285296,
+          325780,
+          345875,
+          377868,
+          374879,
+          331900,
+          282605,
+          304758,
+          325094,
+          412843
+        ],
+        "name": "chicme",
+        "seller_type": "BRAND",
+        "market_share": "1.36%",
+        "id": "7495527762152557046",
+        "unit_price": "¥200.09"
+      }
+    ],
+    "categoryTopCreators": [
+      {
+        "revenue": "¥338.81万",
+        "sale": 14134,
+        "followers": "31.68万",
+        "product_ids": [
+          "1732399025561703256",
+          "1732444577939624723",
+          "1731045773437145503"
+        ],
+        "revenue_trend": [
+          4249005,
+          4494678,
+          3795481,
+          4744324,
+          4240331,
+          4247936,
+          3910041,
+          6288536,
+          3815655,
+          3998766,
+          4373271,
+          2240883,
+          2393039,
+          3388367,
+          3535655,
+          4378182,
+          4606160,
+          4574922,
+          3866630,
+          3248674,
+          2523109,
+          2928938,
+          3242404,
+          3539437,
+          2921076,
+          2355758,
+          2612574,
+          2958701,
+          2694860,
+          2564417
+        ],
+        "nickname": "Tori Flowers",
+        "handle": "torijflow",
+        "id": "6715264465669899270"
+      },
+      {
+        "revenue": "¥279.63万",
+        "sale": 15044,
+        "followers": "6.59万",
+        "product_ids": [
+          "1729452124269023475",
+          "1730660284948714493",
+          "1731127988399214966"
+        ],
+        "revenue_trend": [
+          2079102,
+          2497532,
+          2576340,
+          2714665,
+          2779053,
+          2898629,
+          2059783,
+          1623183,
+          1760531,
+          2574696,
+          2869558,
+          1630355,
+          1804288,
+          1911315,
+          2233284,
+          2162441,
+          2623837,
+          3262794,
+          2562304,
+          2847141,
+          2053972,
+          1897113,
+          2016212,
+          1962158,
+          2027581,
+          1363612,
+          1166390,
+          1185689,
+          1197863,
+          987669
+        ],
+        "nickname": "Kaylie | Everyday style",
+        "handle": "kaylieburran",
+        "id": "7144896414652646446"
+      },
+      {
+        "revenue": "¥238.20万",
+        "sale": 17598,
+        "followers": "34.01万",
+        "product_ids": [
+          "1729451011337261203",
+          "1732293649718546579",
+          "1731711913685324424"
+        ],
+        "revenue_trend": [
+          3111885,
+          2338026,
+          2905449,
+          3441993,
+          2579219,
+          2537331,
+          2348219,
+          2557382,
+          2120181,
+          3961332,
+          3862342,
+          1852575,
+          2217893,
+          1708563,
+          2641927,
+          2768327,
+          3010561,
+          3181485,
+          3194353,
+          2687093,
+          1835904,
+          1927746,
+          2593408,
+          3559693,
+          2740076,
+          2577452,
+          1770820,
+          1719743,
+          1902287,
+          1872021
+        ],
+        "nickname": "YourStyleSis🪩",
+        "handle": "yourstylesis_777",
+        "id": "6651270434204467206"
+      },
+      {
+        "revenue": "¥141.44万",
+        "sale": 5706,
+        "followers": "13.19万",
+        "product_ids": [
+          "1732309663150608541",
+          "1729748535203501053",
+          "1732173592754295177"
+        ],
+        "revenue_trend": [
+          1795240,
+          2261353,
+          2340266,
+          2834630,
+          2406629,
+          2264178,
+          1763575,
+          1456464,
+          1676513,
+          2589985,
+          2880879,
+          1595482,
+          1721011,
+          1677788,
+          1892050,
+          2195502,
+          2031643,
+          2900765,
+          2501495,
+          2352099,
+          1809371,
+          1648193,
+          2358192,
+          2903642,
+          2120868,
+          1590849,
+          1324278,
+          1213779,
+          1465858,
+          1504500
+        ],
+        "nickname": "Linda🍒",
+        "handle": "lindaannettem",
+        "id": "6811964865076102149"
+      },
+      {
+        "revenue": "¥138.31万",
+        "sale": 8495,
+        "followers": "3.82万",
+        "product_ids": [
+          "1731080819138073061",
+          "1731397819019989366",
+          "1732320553989476844"
+        ],
+        "revenue_trend": [
+          1235257,
+          1174610,
+          2460071,
+          2831739,
+          3058277,
+          2469396,
+          2506655,
+          1828695,
+          1724301,
+          2125948,
+          2367272,
+          1261592,
+          1584676,
+          1182789,
+          1413709,
+          1389364,
+          1563988,
+          1719343,
+          1423424,
+          2122703,
+          2370990,
+          1880447,
+          2166386,
+          1666804,
+          1726529,
+          1589820,
+          1473187,
+          1352277,
+          1194911,
+          1322892
+        ],
+        "nickname": "momwithaplot",
+        "handle": "momwithaplot",
+        "id": "6754516198932939782"
+      },
+      {
+        "revenue": "¥134.43万",
+        "sale": 6454,
+        "followers": "2.33万",
+        "product_ids": [
+          "1732308144916828570",
+          "1731465195500114484",
+          "1729476467655284360"
+        ],
+        "revenue_trend": [
+          1993512,
+          2531749,
+          2224796,
+          3521869,
+          3989089,
+          3675149,
+          2871769,
+          1892578,
+          1830499,
+          2711152,
+          3297206,
+          2565010,
+          3038514,
+          2041909,
+          2483627,
+          2957888,
+          2891642,
+          3335740,
+          2149331,
+          3324287,
+          2031471,
+          1975830,
+          2356091,
+          2932896,
+          2413726,
+          2317954,
+          1813200,
+          1724501,
+          1898215,
+          1495423
+        ],
+        "nickname": "adrienne hier",
+        "handle": "adriennehier",
+        "id": "6815344233891202054"
+      },
+      {
+        "revenue": "¥121.04万",
+        "sale": 975,
+        "followers": "9.88万",
+        "product_ids": [
+          "1732435598389121168",
+          "1731648121594679440",
+          "1732410374119461008"
+        ],
+        "revenue_trend": [
+          633703,
+          274536,
+          1664090,
+          598038,
+          613485,
+          686472,
+          379950,
+          686442,
+          574900,
+          975180,
+          1010808,
+          372991,
+          522043,
+          354255,
+          1008497,
+          688940,
+          523397,
+          1284729,
+          569587,
+          571093,
+          407986,
+          926970,
+          471739,
+          758009,
+          487810,
+          309203,
+          343171,
+          410469,
+          566305,
+          420743
+        ],
+        "nickname": "Betty's Closet",
+        "handle": "bettys_closett",
+        "id": "6787850818970059781"
+      },
+      {
+        "revenue": "¥119.65万",
+        "sale": 4049,
+        "followers": "2.44万",
+        "product_ids": [
+          "1729648385341166420",
+          "1731569071085752868",
+          "1729413609386578396"
+        ],
+        "revenue_trend": [
+          1136007,
+          1049293,
+          1102055,
+          1050172,
+          911946,
+          1027723,
+          920699,
+          984182,
+          823474,
+          969077,
+          1109080,
+          554624,
+          1007176,
+          928853,
+          1137122,
+          832662,
+          1093768,
+          1102665,
+          981700,
+          1177286,
+          832519,
+          1300160,
+          1326296,
+          1530178,
+          1357834,
+          1073407,
+          804744,
+          857978,
+          888838,
+          802930
+        ],
+        "nickname": "Emily Peachy🌹",
+        "handle": "peachyfindsgems",
+        "id": "7382743954934989870"
+      },
+      {
+        "revenue": "¥119.55万",
+        "sale": 14839,
+        "followers": "6.88万",
+        "product_ids": [
+          "1732406333887910392",
+          "1732281622357381624",
+          "1732355411695473496"
+        ],
+        "revenue_trend": [
+          6693,
+          386288,
+          1405788,
+          1777969,
+          2258249,
+          2522965,
+          1844237,
+          1998473,
+          6497,
+          0,
+          682124,
+          1344945,
+          232058,
+          1441858,
+          1772451,
+          430730,
+          215397,
+          2259256,
+          814342,
+          1731913,
+          1022428,
+          0,
+          383044,
+          1770100,
+          348454,
+          1493968,
+          1825714,
+          1736625,
+          2255,
+          688307
+        ],
+        "nickname": "Juicy Fashion Apparel",
+        "handle": "juicy.fashion.apparel",
+        "id": "7316385957875172398"
+      },
+      {
+        "revenue": "¥118.20万",
+        "sale": 4473,
+        "followers": "84.63万",
+        "product_ids": [
+          "1731208459451928950",
+          "1732282937141662165",
+          "1732312829179957271"
+        ],
+        "revenue_trend": [
+          3386959,
+          4291018,
+          4144068,
+          4491704,
+          4428431,
+          3780509,
+          4804470,
+          3786117,
+          3797802,
+          4658905,
+          5063416,
+          2889480,
+          3660708,
+          3871765,
+          4143391,
+          4018163,
+          4040182,
+          4092839,
+          3919549,
+          4763564,
+          3512262,
+          4110356,
+          3694642,
+          4274647,
+          3519359,
+          2598192,
+          2630546,
+          3313102,
+          2935929,
+          2961557
+        ],
+        "nickname": "dj.foof🦋🐚🫧🌷",
+        "handle": "dj.foof",
+        "id": "6696886000284615685"
+      }
+    ],
+    "products": [
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥294.66万",
+        "is_overseas": 0,
+        "gmv_A": 20278949.999999996,
+        "gmv_B": 23986727,
+        "revenue": "¥300.75万",
+        "revenue_trend": [
+          1661625,
+          1748979,
+          2191446,
+          2104092,
+          1475393,
+          1676817,
+          1673019,
+          1631313,
+          1724292,
+          1720494,
+          1653456,
+          1114346,
+          1410514,
+          1014066,
+          1186875,
+          1355886,
+          1454634,
+          1828737,
+          1864818,
+          1954071,
+          1298916,
+          1574271,
+          1319805,
+          1908495,
+          1304613,
+          1249309,
+          812772,
+          721620,
+          878999,
+          752004
+        ],
+        "creator_num": 791,
+        "delivery_type": "local",
+        "id": "1729451011337261203",
+        "ter_cate_id": 601281,
+        "unit_price": "¥128.75",
+        "creator_conversion_ratio": 0.4538558786346397,
+        "product_title": "Tanming Women's Sleeveless Sports Romper Dress - Athletic V-Neck Spaghetti Strap Mini Sundress with Built-in Shorts, Pockets, Sporty Chic Design, Athleisure Women's Clothes for Summer, Spring Tennis,summerwins,summeroutfits,vacationoutfits,beachoutfits",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 23360,
+        "min_real_price": "¥169.79",
+        "revenue_grouping_rate": "-15.5%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥252.20",
+        "max_real_price": "¥169.79",
+        "commission_rate": "10%",
+        "launch_date": "2024-06-06",
+        "product_rating": 4.6,
+        "live_revenue": "¥6.06万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 1,
+        "video_revenue": "¥236.15万",
+        "is_overseas": 1,
+        "gmv_A": 17397423,
+        "gmv_B": 19864514,
+        "revenue": "¥253.16万",
+        "revenue_trend": [
+          886028,
+          972328,
+          1777112,
+          1986184,
+          1384744,
+          1381880,
+          1301688,
+          1310280,
+          1251568,
+          1572384,
+          1757020,
+          1072080,
+          1063146,
+          1027009,
+          1121063,
+          1309171,
+          1319790,
+          1611126,
+          1271844,
+          1362690,
+          973350,
+          1033850,
+          1127346,
+          1427612,
+          1328722,
+          1094280,
+          946718,
+          974904,
+          817904,
+          798116
+        ],
+        "creator_num": 1286,
+        "delivery_type": "global",
+        "id": "1730778628184969488",
+        "ter_cate_id": 601281,
+        "unit_price": "¥106.92",
+        "creator_conversion_ratio": 0.3895800933125972,
+        "product_title": "Women's Plain Dress, Summer Clothes Women, Casual Sleeveless Backless Dress for Beach Holiday Vacation, Ladies Summer Clothes",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥54.29",
+        "sale": 23677,
+        "min_real_price": "¥197.64",
+        "revenue_grouping_rate": "-12.4%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥1,507.69",
+        "max_real_price": "¥199.54",
+        "commission_rate": "8%",
+        "launch_date": "2025-04-04",
+        "product_rating": 4.4,
+        "live_revenue": "¥16.87万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥223.83万",
+        "is_overseas": 0,
+        "gmv_A": 15616838,
+        "gmv_B": 17825505,
+        "revenue": "¥227.21万",
+        "revenue_trend": [
+          1316007,
+          1410957,
+          1374876,
+          1397664,
+          1080531,
+          1547227,
+          1241460,
+          850752,
+          1202377,
+          1141299,
+          1586396,
+          972790,
+          1009261,
+          761499,
+          932409,
+          879237,
+          1076733,
+          1319805,
+          1285623,
+          1291320,
+          1200078,
+          1021662,
+          1169784,
+          1248357,
+          1475958,
+          1115015,
+          668448,
+          700731,
+          657054,
+          507033
+        ],
+        "creator_num": 564,
+        "delivery_type": "local",
+        "id": "1729452124269023475",
+        "ter_cate_id": 601281,
+        "unit_price": "¥137.37",
+        "creator_conversion_ratio": 0.4379432624113475,
+        "product_title": "SCUSTY Women's Summer Sleeveless  Mini Dress with Built-in Shorts V Neck Spaghetti Straps Athletic Shorts Tennis Dress with Pockets",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 16540,
+        "min_real_price": "¥156.20",
+        "revenue_grouping_rate": "-12.4%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥0.00",
+        "max_real_price": "¥169.79",
+        "commission_rate": "11%",
+        "launch_date": "2024-04-23",
+        "product_rating": 4.6,
+        "live_revenue": "¥3.38万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥224.54万",
+        "is_overseas": 0,
+        "gmv_A": 16506922,
+        "gmv_B": 16696780,
+        "revenue": "¥225.59万",
+        "revenue_trend": [
+          943500,
+          1187025,
+          1272330,
+          1156491,
+          945702,
+          1071036,
+          1010412,
+          1079500,
+          1096772,
+          1360152,
+          1468768,
+          1022560,
+          1141586,
+          846822,
+          1094124,
+          1004196,
+          1091626,
+          1159072,
+          969224,
+          1633692,
+          1416366,
+          1426358,
+          1231514,
+          1101618,
+          1181737,
+          1104074,
+          791323,
+          904669,
+          780828,
+          710625
+        ],
+        "creator_num": 485,
+        "delivery_type": "local",
+        "id": "1729430342213472565",
+        "ter_cate_id": 601281,
+        "unit_price": "¥149.80",
+        "creator_conversion_ratio": 0.3958762886597938,
+        "product_title": "UANEO Women's Summer Sleeveless Mini Dress V Neck Spaghetti Straps Athletic Built-in Shorts Sundress SummerVibes",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 15060,
+        "min_real_price": "¥169.79",
+        "revenue_grouping_rate": "-1.1%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥0.00",
+        "max_real_price": "¥234.53",
+        "commission_rate": "11%",
+        "launch_date": "2024-02-27",
+        "product_rating": 4.6,
+        "live_revenue": "¥1.05万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥212.20万",
+        "is_overseas": 0,
+        "gmv_A": 11742525,
+        "gmv_B": 19646840,
+        "revenue": "¥213.26万",
+        "revenue_trend": [
+          1188774,
+          1101420,
+          964614,
+          1107117,
+          1631847,
+          2541483,
+          2479008,
+          1146996,
+          1224855,
+          1336896,
+          1870820,
+          1384446,
+          1126107,
+          337365,
+          205092,
+          634266,
+          1530594,
+          2121651,
+          1637181,
+          1399300,
+          759696,
+          747201,
+          395802,
+          477309,
+          447776,
+          452319,
+          381809,
+          235882,
+          269865,
+          251874
+        ],
+        "creator_num": 392,
+        "delivery_type": "local",
+        "id": "1729506405979428083",
+        "ter_cate_id": 601281,
+        "unit_price": "¥147.49",
+        "creator_conversion_ratio": 0.5408163265306123,
+        "product_title": "SCUSTY Women's Summer Sleeveless 4th Of July Striped Mini Dress with Built-in Shorts V Neck Spaghetti Straps Athletic Shorts Tennis Dress with Pockets",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 14460,
+        "min_real_price": "¥201.65",
+        "revenue_grouping_rate": "-40.2%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥157.90",
+        "max_real_price": "¥201.65",
+        "commission_rate": "10%",
+        "launch_date": "2026-03-17",
+        "product_rating": 4.7,
+        "live_revenue": "¥1.05万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥171.48万",
+        "is_overseas": 0,
+        "gmv_A": 11962800,
+        "gmv_B": 13889892,
+        "revenue": "¥175.65万",
+        "revenue_trend": [
+          911772,
+          941386,
+          767808,
+          631842,
+          668648,
+          827012,
+          899775,
+          1077755,
+          1381286,
+          1363659,
+          1303674,
+          554274,
+          739815,
+          932588,
+          888598,
+          815796,
+          835791,
+          958982,
+          643839,
+          805017,
+          531867,
+          897396,
+          778623,
+          901795,
+          954583,
+          715821,
+          554274,
+          989775,
+          849007,
+          730234
+        ],
+        "creator_num": 619,
+        "delivery_type": "local",
+        "id": "1732144170019099237",
+        "ter_cate_id": 601281,
+        "unit_price": "¥287.57",
+        "creator_conversion_ratio": 0.284329563812601,
+        "product_title": "OYS Women's Casual Sleeveless Square Neck A-Line Solid Slim Flowy Long Dress with Pockets & Back Tie Detail Design",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 6108,
+        "min_real_price": "¥298.88",
+        "revenue_grouping_rate": "-13.9%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥0.00",
+        "max_real_price": "¥380.41",
+        "commission_rate": "10%",
+        "launch_date": "2026-02-24",
+        "product_rating": 4.7,
+        "live_revenue": "¥4.17万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥139.88万",
+        "is_overseas": 1,
+        "gmv_A": 9547633,
+        "gmv_B": 11364267,
+        "revenue": "¥142.08万",
+        "revenue_trend": [
+          843500,
+          666729,
+          761670,
+          912366,
+          541961,
+          614250,
+          616042,
+          491274,
+          592800,
+          964080,
+          1462125,
+          807070,
+          658320,
+          692640,
+          739440,
+          722854,
+          711360,
+          1094808,
+          848640,
+          838651,
+          574080,
+          754435,
+          748800,
+          833040,
+          492960,
+          405496,
+          399489,
+          318240,
+          400860,
+          403920
+        ],
+        "creator_num": 340,
+        "delivery_type": "global",
+        "id": "1732071775099523793",
+        "ter_cate_id": 601281,
+        "unit_price": "¥231.47",
+        "creator_conversion_ratio": 0.5882352941176471,
+        "product_title": "AUSELILY Babydoll Dress for Women Short Sleeve Button Down Textured Non-clingy Loose Fit Flowy Mini Dress with Pockets 2026 New Summer Dress",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 6138,
+        "min_real_price": "¥264.90",
+        "revenue_grouping_rate": "-16%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥2,042.06",
+        "max_real_price": "¥278.49",
+        "commission_rate": "10%",
+        "launch_date": "2026-01-26",
+        "product_rating": 4.7,
+        "live_revenue": "¥2.00万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥137.08万",
+        "is_overseas": 1,
+        "gmv_A": 7885852,
+        "gmv_B": 12798815,
+        "revenue": "¥140.54万",
+        "revenue_trend": [
+          1025550,
+          868398,
+          607590,
+          812511,
+          661770,
+          677250,
+          607590,
+          576630,
+          409241,
+          959481,
+          1358405,
+          1216617,
+          1231162,
+          1023162,
+          763458,
+          698117,
+          519440,
+          821583,
+          646720,
+          527877,
+          522880,
+          598560,
+          575505,
+          571040,
+          416240,
+          309528,
+          387000,
+          420325,
+          376401,
+          494636
+        ],
+        "creator_num": 375,
+        "delivery_type": "global",
+        "id": "1730867312113849041",
+        "ter_cate_id": 601281,
+        "unit_price": "¥254.55",
+        "creator_conversion_ratio": 0.552,
+        "product_title": "[Restocked] AUSELILY Women's Plus Size Off The Shoulder Dress Wedding Guest Dress Summer Casual Long Ruffle Party Side Split Beach Maxi Dresses with Pockets",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 5521,
+        "min_real_price": "¥298.88",
+        "revenue_grouping_rate": "-38.4%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥1,737.00",
+        "max_real_price": "¥298.88",
+        "commission_rate": "10%",
+        "launch_date": "2025-03-29",
+        "product_rating": 4.7,
+        "live_revenue": "¥3.28万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥122.44万",
+        "is_overseas": 1,
+        "gmv_A": 7884858,
+        "gmv_B": 10590336,
+        "revenue": "¥125.52万",
+        "revenue_trend": [
+          782478,
+          863424,
+          950366,
+          1253164,
+          923384,
+          864923,
+          492507,
+          553446,
+          576423,
+          824175,
+          810088,
+          379378,
+          449500,
+          399600,
+          467480,
+          578421,
+          578421,
+          568168,
+          558279,
+          595404,
+          444555,
+          492652,
+          619411,
+          729270,
+          577422,
+          655344,
+          413586,
+          334665,
+          372627,
+          366633
+        ],
+        "creator_num": 571,
+        "delivery_type": "global",
+        "id": "1732189362609557800",
+        "ter_cate_id": 601281,
+        "unit_price": "¥73.55",
+        "creator_conversion_ratio": 0.4290718038528897,
+        "product_title": "Women's Solid Color Cami Lounge Dress, Elegant Sleeveless Long Dress for Summer, Ladies Sleepwear for Indoor Wear",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 17066,
+        "min_real_price": "¥108.64",
+        "revenue_grouping_rate": "-25.5%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥63.12",
+        "max_real_price": "¥305.67",
+        "commission_rate": "11%",
+        "launch_date": "2026-01-01",
+        "product_rating": 4.5,
+        "live_revenue": "¥3.08万"
+      },
+      {
+        "sec_cate_id": 842504,
+        "is_full_service": 0,
+        "video_revenue": "¥118.86万",
+        "is_overseas": 0,
+        "gmv_A": 9684246,
+        "gmv_B": 8355819,
+        "revenue": "¥122.57万",
+        "revenue_trend": [
+          317641,
+          338468,
+          83581,
+          228098,
+          342624,
+          360469,
+          294320,
+          507702,
+          632788,
+          647742,
+          1826778,
+          643148,
+          745995,
+          702327,
+          684138,
+          735770,
+          729246,
+          819462,
+          820896,
+          1003653,
+          600582,
+          612654,
+          558330,
+          552294,
+          592454,
+          606730,
+          499660,
+          642420,
+          471108,
+          438987
+        ],
+        "creator_num": 393,
+        "delivery_type": "local",
+        "id": "1729506923078784569",
+        "ter_cate_id": 601281,
+        "unit_price": "¥237.58",
+        "creator_conversion_ratio": 0.43765903307888043,
+        "product_title": "QINSEN Womens Zip Front Tennis Dress Polo Collar Racer Back Workout Golf Dresses Build in Shorts with Pockets",
+        "is_tokopedia": 0,
+        "shipping_fee": "¥0.00",
+        "sale": 5159,
+        "min_real_price": "¥255.39",
+        "revenue_grouping_rate": "15.9%",
+        "pri_cate_id": 601152,
+        "showcase_revenue": "¥0.00",
+        "max_real_price": "¥319.26",
+        "commission_rate": "11%",
+        "launch_date": "2026-03-14",
+        "product_rating": 4.6,
+        "live_revenue": "¥3.71万"
+      }
+    ],
+    "productEnrich": [
+      {
+        "id": "1729451011337261203",
+        "videos": [
+          {
+            "id": "7649355179061415181",
+            "contentType": "video"
+          },
+          {
+            "id": "7649370512224685343",
+            "contentType": "multi_photo"
+          },
+          {
+            "id": "7651573451915922701",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1730778628184969488",
+        "videos": [
+          {
+            "id": "7643497302761442591",
+            "contentType": "video"
+          },
+          {
+            "id": "7628804543161273630",
+            "contentType": "video"
+          },
+          {
+            "id": "7654497778445471006",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1729452124269023475",
+        "videos": [
+          {
+            "id": "7648661794025753887",
+            "contentType": "video"
+          },
+          {
+            "id": "7652095672518331679",
+            "contentType": "video"
+          },
+          {
+            "id": "7643887301684120845",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1729430342213472565",
+        "videos": [
+          {
+            "id": "7655546149146791198",
+            "contentType": "video"
+          },
+          {
+            "id": "7651694915918859533",
+            "contentType": "video"
+          },
+          {
+            "id": "7647300909721980173",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1729506405979428083",
+        "videos": [
+          {
+            "id": "7647980966652153119",
+            "contentType": "video"
+          },
+          {
+            "id": "7647200632503340319",
+            "contentType": "video"
+          },
+          {
+            "id": "7650858027058220318",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1732144170019099237",
+        "videos": [
+          {
+            "id": "7651031767050226958",
+            "contentType": "video"
+          },
+          {
+            "id": "7650185788256308493",
+            "contentType": "video"
+          },
+          {
+            "id": "7649884720569847053",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1732071775099523793",
+        "videos": [
+          {
+            "id": "7647660918129691917",
+            "contentType": "video"
+          },
+          {
+            "id": "7648096481731185934",
+            "contentType": "video"
+          },
+          {
+            "id": "7651711293467954462",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1730867312113849041",
+        "videos": [
+          {
+            "id": "7639787539792022798",
+            "contentType": "video"
+          },
+          {
+            "id": "7640166436756851998",
+            "contentType": "video"
+          },
+          {
+            "id": "7634676870113545503",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1732189362609557800",
+        "videos": [
+          {
+            "id": "7614231772011842847",
+            "contentType": "video"
+          },
+          {
+            "id": "7624960595334319390",
+            "contentType": "video"
+          },
+          {
+            "id": "7613535041704021279",
+            "contentType": "video"
+          }
+        ]
+      },
+      {
+        "id": "1729506923078784569",
+        "videos": [
+          {
+            "id": "7652132814325828878",
+            "contentType": "video"
+          },
+          {
+            "id": "7639513448577076493",
+            "contentType": "video"
+          },
+          {
+            "id": "7654329576637713678",
+            "contentType": "video"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "ad": 1,
+        "gpm": "¥75.65",
+        "ai_video": 0,
+        "description": "I’m 5’3 & 133 wearing a small in the color army green ✨",
+        "handle": "yourstylesis_777",
+        "ad_cpa": "¥30.33",
+        "ad_view_ratio": "15.92%",
+        "duration": "22s",
+        "revenue": "¥39.25万",
+        "sale": 3046,
+        "content_type": "video",
+        "revenue_trend": [
+          9494.999999999998,
+          17090.999999999996,
+          520325.99999999994,
+          805175.9999999999,
+          641220.9999999999,
+          626669.9999999999,
+          535517.9999999999,
+          284553.99999999994,
+          191798.99999999997,
+          138626.99999999997,
+          248381,
+          162472,
+          174048,
+          81656.99999999999,
+          79757.99999999999,
+          108242.99999999999,
+          98747.99999999999,
+          136727.99999999997,
+          286748.99999999994,
+          157616.99999999997,
+          117737.99999999999,
+          93050.99999999999,
+          34181.99999999999,
+          83555.99999999999,
+          47474.99999999999,
+          29234.999999999996,
+          22787.999999999996,
+          17090.999999999996,
+          13642.999999999998,
+          13292.999999999998
+        ],
+        "original_duration": 22.634,
+        "revenueDiff": -3256656,
+        "ad2Roas": 3.4,
+        "revenue_grouping_rate": -1.7848844645262532,
+        "views_trend": [
+          17294,
+          19642,
+          394504,
+          790760,
+          598195,
+          701669,
+          473458,
+          264310,
+          91772,
+          125661,
+          143992,
+          123379,
+          122790,
+          76479,
+          63847,
+          83348,
+          85923,
+          92225,
+          241914,
+          122106,
+          133071,
+          72978,
+          35347,
+          120348,
+          72560,
+          36343,
+          30192,
+          15716,
+          21138,
+          17586
+        ],
+        "id": "7649355179061415181",
+        "collect_day": "2026-06-09",
+        "ad2Cost": "¥9.24万",
+        "publish_date": "2026/06/09 07:25:03",
+        "views": "518.85万",
+        "ad_revenue_ratio": "80.00%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥251.22",
+        "ai_video": 0,
+        "description": "Boutique look on a TikTok budget😍 possibly my favorite elevated lounge dress yet! SO affordable and classy!👒🐚 wearing size M and I'm 5'9! #boujeeonabudget #countryclubaesthetic #coastalgranddaughter #elevatedcasual #SummerFashion ",
+        "handle": "torijflow",
+        "ad_cpa": "¥48.05",
+        "ad_view_ratio": "40.15%",
+        "duration": "1m 18s",
+        "revenue": "¥38.55万",
+        "sale": 1434,
+        "content_type": "video",
+        "revenue_trend": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          346183,
+          2970609,
+          986435.9999999999,
+          411793.99999999994,
+          15991.999999999998,
+          71963.99999999999,
+          19989.999999999996,
+          55971.99999999999,
+          135931.99999999997,
+          93547.99999999999,
+          75961.99999999999,
+          52767.99999999999,
+          95641.99999999999,
+          75961.99999999999,
+          6595.999999999999,
+          32979.99999999999,
+          32979.99999999999,
+          87955.99999999999,
+          15991.999999999998,
+          15991.999999999998,
+          11993.999999999998,
+          9893.999999999998,
+          3297.9999999999995,
+          47975.99999999999
+        ],
+        "original_duration": 78.4,
+        "revenueDiff": -4355332,
+        "ad2Roas": 3.39,
+        "revenue_grouping_rate": -1.8373589889856536,
+        "views_trend": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          116792,
+          883208,
+          200000,
+          100004,
+          5553,
+          25071,
+          1506,
+          31950,
+          43772,
+          21567,
+          8723,
+          8100,
+          19579,
+          13574,
+          10840,
+          9314,
+          11307,
+          10692,
+          2014,
+          2107,
+          2038,
+          2059,
+          694,
+          4167
+        ],
+        "id": "7651649564759313694",
+        "collect_day": "2026-06-15",
+        "ad2Cost": "¥6.89万",
+        "publish_date": "2026/06/15 11:48:41",
+        "views": "153.46万",
+        "ad_revenue_ratio": "60.67%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥96.02",
+        "ai_video": 0,
+        "description": "What a stunning sundress! I love this so much ",
+        "handle": "momwithaplot",
+        "ad_cpa": "¥26.50",
+        "ad_view_ratio": "11.16%",
+        "duration": "19s",
+        "revenue": "¥36.45万",
+        "sale": 1787,
+        "content_type": "video",
+        "revenue_trend": [
+          0,
+          0,
+          854715,
+          1193602,
+          716761,
+          0,
+          506831,
+          143952,
+          129465,
+          166455,
+          178146,
+          95968,
+          119960,
+          130560,
+          65978,
+          128957,
+          110963,
+          112455,
+          54978,
+          59976,
+          37592,
+          32989,
+          46990,
+          31983.999999999996,
+          71963.99999999999,
+          95951.99999999999,
+          75184,
+          93980,
+          43977.99999999999,
+          63967.99999999999
+        ],
+        "original_duration": 19.7,
+        "revenueDiff": -3240483,
+        "ad2Roas": 3.75,
+        "revenue_grouping_rate": -1.7977999054187113,
+        "views_trend": [
+          0,
+          579,
+          847550,
+          951871,
+          400000,
+          0,
+          483877,
+          96320,
+          36284,
+          63325,
+          49399,
+          57223,
+          43486,
+          32311,
+          27747,
+          62288,
+          40545,
+          60662,
+          32872,
+          23535,
+          11021,
+          16334,
+          26546,
+          39461,
+          73908,
+          117820,
+          34980,
+          58988,
+          43673,
+          63155
+        ],
+        "id": "7649785545190608159",
+        "collect_day": "2026-06-10",
+        "ad2Cost": "¥4.74万",
+        "publish_date": "2026/06/10 11:15:03",
+        "views": "379.58万",
+        "ad_revenue_ratio": "48.80%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥51.02",
+        "ai_video": 0,
+        "description": "I am 5'5\" and 135 lbs, I am wearing a size medium because the smalls I got all shrank way too short when I washed them (: #summerclothes #womensoutfits #minidress #dress #MomsofTikTok ",
+        "handle": "kyahflores",
+        "ad_cpa": "¥34.05",
+        "ad_view_ratio": "9.86%",
+        "duration": "40s",
+        "revenue": "¥33.95万",
+        "sale": 2154,
+        "content_type": "video",
+        "revenue_trend": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17486,
+          577038,
+          911770,
+          582034,
+          592026,
+          407174,
+          474374,
+          423998,
+          302256,
+          316949,
+          243484,
+          148125
+        ],
+        "original_duration": 40.3,
+        "revenueDiff": 4996714,
+        "ad2Roas": 3.7,
+        "revenue_grouping_rate": -2.145788533731822,
+        "views_trend": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          119,
+          15835,
+          469959,
+          1814087,
+          676639,
+          650881,
+          454103,
+          713864,
+          471933,
+          521494,
+          348268,
+          369159,
+          147563
+        ],
+        "id": "7655546149146791198",
+        "collect_day": "2026-06-26",
+        "ad2Cost": "¥7.34万",
+        "publish_date": "2026/06/26 17:00:00",
+        "views": "665.39万",
+        "ad_revenue_ratio": "80.00%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥70.01",
+        "ai_video": 0,
+        "description": "My favorite look for less find of all time! The comfiest dress with built in romper lining! I’m obsessed with the new stripe colors! #tiktokshopcreatorpicks #dealsforyoudays #summerootd #casualdress #activewear ",
+        "handle": "emgraceyoung",
+        "ad_cpa": "¥27.04",
+        "ad_view_ratio": "11.41%",
+        "duration": "25s",
+        "revenue": "¥29.05万",
+        "sale": 1958,
+        "content_type": "video",
+        "revenue_trend": [
+          562103.9999999999,
+          402587.99999999994,
+          212415,
+          229778.99999999997,
+          514794,
+          697221,
+          407337,
+          91151.99999999999,
+          60767.99999999999,
+          104444.99999999999,
+          104580,
+          87465,
+          77858.99999999999,
+          17493,
+          15191.999999999998,
+          39878.99999999999,
+          112040.99999999999,
+          109956,
+          119939.99999999999,
+          119939.99999999999,
+          47481,
+          44982,
+          15991.999999999998,
+          29988,
+          15991.999999999998,
+          12495,
+          7995.999999999999,
+          5996.999999999999,
+          3997.9999999999995,
+          3997.9999999999995
+        ],
+        "original_duration": 25.82,
+        "revenueDiff": -2894517,
+        "ad2Roas": 3.54,
+        "revenue_grouping_rate": -1.8175778565378646,
+        "views_trend": [
+          590992,
+          336860,
+          115400,
+          173255,
+          377696,
+          626986,
+          366762,
+          137941,
+          86775,
+          135493,
+          87309,
+          129491,
+          112481,
+          61629,
+          58519,
+          49942,
+          129571,
+          101599,
+          141882,
+          143841,
+          55540,
+          33835,
+          14683,
+          25594,
+          17219,
+          13006,
+          10790,
+          6987,
+          4177,
+          3182
+        ],
+        "id": "7647980966652153119",
+        "collect_day": "2026-06-07",
+        "ad2Cost": "¥5.29万",
+        "publish_date": "2026/06/07 13:35:00",
+        "views": "414.94万",
+        "ad_revenue_ratio": "64.53%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥90.96",
+        "ai_video": 0,
+        "description": "Ootd stylo polka dot 🖤🤍 #paratiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii #summerlooks #ootd #polkadot #dealsforyoudays ",
+        "handle": "silviajuliana_0",
+        "ad_cpa": "¥7.74",
+        "ad_view_ratio": "10.01%",
+        "duration": "13s",
+        "revenue": "¥28.03万",
+        "sale": 4455,
+        "content_type": "video",
+        "revenue_trend": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1682,
+          364153,
+          822402.0000000001,
+          226305.00000000003,
+          331272.00000000006,
+          337952,
+          405288,
+          300502,
+          151200,
+          137760,
+          220042,
+          171468,
+          148147.99999999997,
+          79236,
+          149544,
+          87048,
+          93744,
+          97826
+        ],
+        "original_duration": 13.734,
+        "revenueDiff": 1749098,
+        "ad2Roas": 3.09,
+        "revenue_grouping_rate": -2.381670038537098,
+        "views_trend": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          466,
+          652328,
+          547206,
+          100000,
+          177404,
+          253363,
+          191959,
+          152294,
+          108418,
+          125268,
+          193438,
+          185558,
+          88287,
+          55773,
+          65664,
+          77024,
+          48399,
+          58559
+        ],
+        "id": "7653995557790207263",
+        "collect_day": "2026-06-21",
+        "ad2Cost": "¥3.45万",
+        "publish_date": "2026/06/21 19:32:12",
+        "views": "308.14万",
+        "ad_revenue_ratio": "38.00%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥73.69",
+        "ai_video": 0,
+        "description": "These cotton active dresses are comfy, easy to layer with and come in so many colors that would be perfect for an easy 4th of July outfit!!  #4thofjulyoutfit #4thofjuly #redwhiteandblue #activedress #dealsforyoudays @TanmingFashion ",
+        "handle": "mariamamaoftwo",
+        "ad_cpa": "¥15.15",
+        "ad_view_ratio": "7.75%",
+        "duration": "0m",
+        "revenue": "¥27.94万",
+        "sale": 2170,
+        "content_type": "multi_photo",
+        "revenue_trend": [
+          3797.9999999999995,
+          805175.9999999999,
+          546911.9999999999,
+          357011.99999999994,
+          187103.99999999997,
+          320930.99999999994,
+          138626.99999999997,
+          114990.99999999999,
+          244970.99999999997,
+          123434.99999999999,
+          110593,
+          81236,
+          106967,
+          68363.99999999999,
+          100646.99999999999,
+          119636.99999999999,
+          125333.99999999999,
+          98747.99999999999,
+          113939.99999999999,
+          151919.99999999997,
+          53171.99999999999,
+          55070.99999999999,
+          30383.999999999996,
+          17090.999999999996,
+          7595.999999999999,
+          9744.999999999998,
+          7595.999999999999,
+          5696.999999999999,
+          3897.9999999999995,
+          1898.9999999999998
+        ],
+        "original_duration": 0,
+        "revenueDiff": -2509035.9999999995,
+        "ad2Roas": 3.67,
+        "revenue_grouping_rate": -1.799594648583068,
+        "views_trend": [
+          7588,
+          992412,
+          415891,
+          351228,
+          174795,
+          359754,
+          122907,
+          106640,
+          116820,
+          111305,
+          64315,
+          62250,
+          75625,
+          63368,
+          80258,
+          92466,
+          108792,
+          66829,
+          95621,
+          117777,
+          61039,
+          42340,
+          31822,
+          25482,
+          11095,
+          12151,
+          9059,
+          4348,
+          4409,
+          3163
+        ],
+        "id": "7649370512224685343",
+        "collect_day": "2026-06-09",
+        "ad2Cost": "¥3.29万",
+        "publish_date": "2026/06/09 08:24:33",
+        "views": "379.15万",
+        "ad_revenue_ratio": "43.20%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥111.71",
+        "ai_video": 0,
+        "description": "so much easier to twirl in #summerdress #europeansummer #europeoutfits #womensfashion  ",
+        "handle": "itsawinchick",
+        "ad_cpa": "¥89.12",
+        "ad_view_ratio": "26.81%",
+        "duration": "14s",
+        "revenue": "¥27.53万",
+        "sale": 829,
+        "content_type": "video",
+        "revenue_trend": [
+          116578,
+          43192,
+          275548,
+          199763,
+          107980,
+          210561,
+          39992,
+          19996,
+          129974,
+          227801,
+          214957,
+          109978,
+          129974,
+          149970,
+          199960,
+          129974,
+          118560.00000000001,
+          269642,
+          324935,
+          189962,
+          161462,
+          152964,
+          114977,
+          182707,
+          44991,
+          29994,
+          39992,
+          29994,
+          34993,
+          49990
+        ],
+        "original_duration": 14.167,
+        "revenueDiff": -301087,
+        "ad2Roas": 2.81,
+        "revenue_grouping_rate": -1.0448181118359416,
+        "views_trend": [
+          109854,
+          34554,
+          157857,
+          84612,
+          63798,
+          116326,
+          85552,
+          55190,
+          82639,
+          133389,
+          89378,
+          105273,
+          68589,
+          80134,
+          90837,
+          60441,
+          80989,
+          172951,
+          183618,
+          98016,
+          99048,
+          91719,
+          85081,
+          101894,
+          24660,
+          17946,
+          21445,
+          25341,
+          22561,
+          20394
+        ],
+        "id": "7648285293547769102",
+        "collect_day": "2026-06-06",
+        "ad2Cost": "¥7.39万",
+        "publish_date": "2026/06/06 10:14:04",
+        "views": "246.41万",
+        "ad_revenue_ratio": "75.46%"
+      },
+      {
+        "ad": 0,
+        "gpm": "¥261.58",
+        "ai_video": 0,
+        "description": "The prettiest dress!! #tiktokshopcreatorpicks #tiktokshopmemorialday #dealsforyoudays ",
+        "handle": "kaylieburran",
+        "ad_cpa": "¥0.00",
+        "ad_view_ratio": "0%",
+        "duration": "33s",
+        "revenue": "¥27.19万",
+        "sale": 954,
+        "content_type": "video",
+        "revenue_trend": [
+          99144,
+          214812,
+          210681,
+          260712,
+          290088,
+          183600,
+          242352,
+          123903,
+          68288,
+          239008,
+          311564,
+          132308,
+          91783,
+          253753,
+          296476,
+          113129,
+          42911,
+          330408,
+          59657,
+          108031,
+          117425,
+          70455,
+          65758,
+          28182,
+          46970,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "original_duration": 33.5,
+        "revenueDiff": -2035546,
+        "ad2Roas": 0,
+        "revenue_grouping_rate": -1.764357383384176,
+        "views_trend": [
+          24752,
+          60651,
+          57526,
+          64774,
+          65229,
+          60203,
+          83957,
+          35076,
+          18127,
+          66319,
+          66069,
+          60488,
+          21959,
+          28117,
+          55671,
+          50606,
+          31285,
+          30973,
+          17960,
+          17602,
+          18439,
+          9265,
+          16279,
+          17154,
+          13912,
+          7350,
+          8402,
+          10398,
+          11609,
+          9144
+        ],
+        "id": "7643118349907430669",
+        "collect_day": "2026-05-23",
+        "ad2Cost": "¥0.00",
+        "publish_date": "2026/05/23 12:03:10",
+        "views": "103.93万",
+        "ad_revenue_ratio": "0%"
+      },
+      {
+        "ad": 1,
+        "gpm": "¥85.16",
+        "ai_video": 0,
+        "description": "Can u tell im obsessed ",
+        "handle": "maddiehankins",
+        "ad_cpa": "¥35.72",
+        "ad_view_ratio": "20.03%",
+        "duration": "11s",
+        "revenue": "¥27.17万",
+        "sale": 2001,
+        "content_type": "video",
+        "revenue_trend": [
+          683639.9999999999,
+          510830.99999999994,
+          404486.99999999994,
+          341819.99999999994,
+          182303.99999999997,
+          411521,
+          209209,
+          93050.99999999999,
+          66671,
+          58868.99999999999,
+          85520,
+          62002,
+          41382,
+          34181.99999999999,
+          39878.99999999999,
+          32282.999999999996,
+          39878.99999999999,
+          58868.99999999999,
+          47474.99999999999,
+          36080.99999999999,
+          29887,
+          39878.99999999999,
+          60767.99999999999,
+          131043,
+          80465,
+          75867,
+          39878.99999999999,
+          28484.999999999996,
+          37979.99999999999,
+          34181.99999999999
+        ],
+        "original_duration": 11.934,
+        "revenueDiff": -2452346,
+        "ad2Roas": 3.04,
+        "revenue_grouping_rate": -1.800545451494825,
+        "views_trend": [
+          946010,
+          472614,
+          251278,
+          151986,
+          109491,
+          216048,
+          117902,
+          45535,
+          18905,
+          50208,
+          50137,
+          43709,
+          27513,
+          22980,
+          23688,
+          17150,
+          24735,
+          33215,
+          35308,
+          30439,
+          34150,
+          31565,
+          46547,
+          81732,
+          60364,
+          72394,
+          49112,
+          28031,
+          49725,
+          47484
+        ],
+        "id": "7648661794025753887",
+        "collect_day": "2026-06-07",
+        "ad2Cost": "¥7.15万",
+        "publish_date": "2026/06/07 10:34:38",
+        "views": "319万",
+        "ad_revenue_ratio": "80.00%"
+      }
+    ],
+    "videoEnrich": [
+      {
+        "product_id": "1729452124269023475",
+        "id": "7648661794025753887"
+      },
+      {
+        "product_id": "1729506405979428083",
+        "id": "7647980966652153119"
+      },
+      {
+        "product_id": "1730660284948714493",
+        "id": "7643118349907430669"
+      },
+      {
+        "product_id": "1729451011337261203",
+        "id": "7649370512224685343"
+      },
+      {
+        "product_id": "1729430342213472565",
+        "id": "7655546149146791198"
+      },
+      {
+        "product_id": "1732265323175120983",
+        "id": "7648285293547769102"
+      },
+      {
+        "product_id": "1729451011337261203",
+        "id": "7649355179061415181"
+      },
+      {
+        "product_id": "1731080819138073061",
+        "id": "7649785545190608159"
+      },
+      {
+        "product_id": "1729595068919418943",
+        "id": "7653995557790207263"
+      },
+      {
+        "product_id": "1732399025561703256",
+        "id": "7651649564759313694"
+      }
+    ],
+    "creators": [
+      {
+        "signature": "Affordable fashion finds🛍️\n💌: torijflow@grail-talent.com\nFollower of Jesus",
+        "handle": "torijflow",
+        "unit_price": "¥239.71",
+        "new_followers": "2.17万",
+        "video_engagement_rate": "2.45%",
+        "creatorDebut": "2024-07-31",
+        "revenue": "¥338.81万",
+        "sale": "1.41万",
+        "followers": "31.68万",
+        "revenue_trend": [
+          1881823,
+          1614776,
+          1577842,
+          2017658,
+          1669836,
+          1674803,
+          1557935,
+          4325752,
+          2321841,
+          1997503,
+          1852307,
+          991114,
+          1099517,
+          1520490,
+          1728483,
+          2581070,
+          2375098,
+          2030597,
+          1777761,
+          1545505,
+          1077272,
+          1323563,
+          1267381,
+          1582958,
+          1273587,
+          914388,
+          1120832,
+          1164585,
+          1066388,
+          935292
+        ],
+        "revenue_grouping_rate": -0.20823044099386023,
+        "nickname": "Tori Flowers",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"601352\"],\"sec_main_category\":[\"601152-842504\",\"601152-842760\",\"601152-842248\"],\"ter_main_category\":[\"601152-842504-601281\",\"601152-842760-601291\",\"601152-842504-601271\"]}",
+        "views_trend": [
+          1806206,
+          1814003,
+          1731567,
+          1729074,
+          1470117,
+          1555051,
+          1571797,
+          2310967,
+          1235534,
+          1426495,
+          1251227,
+          1177189,
+          1096702,
+          1748629,
+          1637373,
+          1745136,
+          2684945,
+          2752339,
+          2126535,
+          1584736,
+          1594775,
+          1773579,
+          1603976,
+          1656277,
+          1417146,
+          1267820,
+          1460401,
+          1842630,
+          1506632,
+          1368470
+        ],
+        "id": "6715264465669899270",
+        "views": "4,994.73万"
+      },
+      {
+        "signature": "No specific style, if I like it I'm gonna wear it! \n\n🌸🌞🦋🌼🌈",
+        "handle": "kaylieburran",
+        "unit_price": "¥185.88",
+        "new_followers": "8,200",
+        "video_engagement_rate": "0.67%",
+        "creatorDebut": "2025-10-28",
+        "revenue": "¥279.63万",
+        "sale": "1.5万",
+        "followers": "6.59万",
+        "revenue_trend": [
+          1482882,
+          1729615,
+          1701931,
+          1788892,
+          1823637,
+          1880402,
+          1385296,
+          1009773,
+          897852,
+          1646727,
+          1861969,
+          1066076,
+          1129543,
+          1306554,
+          1493158,
+          1332640,
+          1684128,
+          2438815,
+          1710757,
+          2021189,
+          1405975,
+          1204556,
+          1276813,
+          1186942,
+          1419232,
+          810947,
+          637775,
+          621453,
+          741206,
+          460891
+        ],
+        "revenue_grouping_rate": -0.1464124955577312,
+        "nickname": "Kaylie | Everyday style",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"602284\"],\"sec_main_category\":[\"601152-842504\",\"601152-842248\",\"601152-842760\"],\"ter_main_category\":[\"601152-842504-601281\",\"601152-842248-843400\",\"601152-842504-601271\"]}",
+        "views_trend": [
+          940381,
+          1009671,
+          794005,
+          714057,
+          855891,
+          904739,
+          770500,
+          515011,
+          447286,
+          835808,
+          680671,
+          614920,
+          634171,
+          558415,
+          687414,
+          742183,
+          947840,
+          813530,
+          955736,
+          1073588,
+          1151828,
+          727805,
+          881177,
+          768525,
+          1043503,
+          721696,
+          652603,
+          619537,
+          698367,
+          495006
+        ],
+        "id": "7144896414652646446",
+        "views": "2,325.59万"
+      },
+      {
+        "signature": "I love Jesus & fashion ✨\nI don't follow trends❌\nInstagram➡️ @yourstylesis_777\nFULL OUTFITS HERE⬇️",
+        "handle": "yourstylesis_777",
+        "unit_price": "¥135.36",
+        "new_followers": "1.05万",
+        "video_engagement_rate": "1.29%",
+        "creatorDebut": "2025-07-03",
+        "revenue": "¥238.20万",
+        "sale": "1.76万",
+        "followers": "34.01万",
+        "revenue_trend": [
+          1579334,
+          1015175,
+          1532331,
+          1808423,
+          1400037,
+          1367759,
+          1204186,
+          1477801,
+          826364,
+          1759652,
+          1467982,
+          907944,
+          1095787,
+          757130,
+          869194,
+          1012529,
+          1439851,
+          1267248,
+          1393508,
+          1107414,
+          823975,
+          805602,
+          1116939,
+          1903047,
+          1184583,
+          1137915,
+          714835,
+          581537,
+          760686,
+          740847
+        ],
+        "revenue_grouping_rate": -0.16144354801451286,
+        "nickname": "YourStyleSis🪩",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"601352\"],\"sec_main_category\":[\"601152-842504\",\"601152-842376\",\"601152-842760\"],\"ter_main_category\":[\"601152-842504-601281\",\"601152-842376-601277\",\"601152-842376-601266\"]}",
+        "views_trend": [
+          2810587,
+          1149397,
+          1336196,
+          1895961,
+          1365906,
+          1587890,
+          1246275,
+          1772497,
+          755448,
+          2449178,
+          1398149,
+          1121120,
+          1235798,
+          931919,
+          1262481,
+          1436989,
+          2017906,
+          1860244,
+          1905001,
+          1472502,
+          1331082,
+          1009193,
+          1532337,
+          2877220,
+          2481035,
+          1968029,
+          1356990,
+          893203,
+          1512508,
+          1259426
+        ],
+        "id": "6651270434204467206",
+        "views": "4,723.25万"
+      },
+      {
+        "signature": "Jesus.Wife.Mom.InteriorDesigner.Fashion \n✨a Millennial trying to slay on a budget✨ Collab- Linda.Mendoza.collab@gmail.com\n @heyits_linda @soyLindaXO",
+        "handle": "lindaannettem",
+        "unit_price": "¥247.88",
+        "new_followers": "7,900",
+        "video_engagement_rate": "2.59%",
+        "creatorDebut": "2025-06-06",
+        "revenue": "¥141.44万",
+        "sale": "5,706",
+        "followers": "13.19万",
+        "revenue_trend": [
+          631850,
+          761943,
+          863945,
+          1125971,
+          798831,
+          694392,
+          497758,
+          428152,
+          421186,
+          825459,
+          1050006,
+          529798,
+          603251,
+          570866,
+          606997,
+          761992,
+          769822,
+          972738,
+          958942,
+          805813,
+          629981,
+          528190,
+          728791,
+          1160686,
+          827233,
+          572866,
+          419653,
+          461480,
+          438738,
+          370327
+        ],
+        "revenue_grouping_rate": -0.0003028700612512193,
+        "nickname": "Linda🍒",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"601450\"],\"sec_main_category\":[\"601152-842504\",\"601152-842248\",\"601152-842760\"],\"ter_main_category\":[\"601152-842504-601281\",\"601152-842760-601291\",\"601152-842248-601302\"]}",
+        "views_trend": [
+          572147,
+          646263,
+          600623,
+          716109,
+          558268,
+          602919,
+          531609,
+          460488,
+          388992,
+          718697,
+          645706,
+          581513,
+          568957,
+          654442,
+          650440,
+          629316,
+          698030,
+          796386,
+          801688,
+          791625,
+          710456,
+          693179,
+          1111962,
+          1067751,
+          660065,
+          621435,
+          538341,
+          461639,
+          618166,
+          525162
+        ],
+        "id": "6811964865076102149",
+        "views": "1,962.24万"
+      },
+      {
+        "signature": "Hannah❤️\n‼️ NOT AI ‼️ \n🌟 all things 30s, short girl, dog mom, human mom but also mamacita approved 🌟",
+        "handle": "momwithaplot",
+        "unit_price": "¥162.81",
+        "new_followers": "1,900",
+        "video_engagement_rate": "-",
+        "creatorDebut": "2025-10-06",
+        "revenue": "¥138.31万",
+        "sale": "8,495",
+        "followers": "3.82万",
+        "revenue_trend": [
+          311061,
+          320090,
+          1254927,
+          1592036,
+          1161255,
+          575312,
+          1008074,
+          595809,
+          573570,
+          653395,
+          873394,
+          442455,
+          612874,
+          508823,
+          544665,
+          567981,
+          492218,
+          431996,
+          328464,
+          528148,
+          659293,
+          576597,
+          1164596,
+          697421,
+          681455,
+          748077,
+          702247,
+          715104,
+          516641,
+          518769
+        ],
+        "revenue_grouping_rate": -0.15404180729687134,
+        "nickname": "momwithaplot",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"602284\"],\"sec_main_category\":[\"601152-842504\",\"601152-842376\",\"601152-842248\"],\"ter_main_category\":[\"601152-842504-601281\",\"601152-842248-843400\",\"601152-842376-601266\"]}",
+        "views_trend": [
+          525360,
+          525784,
+          1433182,
+          1603378,
+          1277394,
+          970815,
+          1609475,
+          795461,
+          658384,
+          875479,
+          1285978,
+          939277,
+          705589,
+          559342,
+          660021,
+          663225,
+          759943,
+          673981,
+          651142,
+          857551,
+          1260515,
+          835681,
+          1279641,
+          1079996,
+          968960,
+          1065871,
+          620457,
+          718735,
+          685560,
+          738421
+        ],
+        "id": "6754516198932939782",
+        "views": "2,728.46万"
+      },
+      {
+        "signature": "Believer. Wife. Weenie Mom 🐾\nAffordable Fashion 🛍️\nAlways Wear A Smile 🫶🏻",
+        "handle": "adriennehier",
+        "unit_price": "¥208.29",
+        "new_followers": "2,300",
+        "video_engagement_rate": "0.48%",
+        "creatorDebut": "2025-07-24",
+        "revenue": "¥134.43万",
+        "sale": "6,454",
+        "followers": "2.33万",
+        "revenue_trend": [
+          512031,
+          566035,
+          558898,
+          1136539,
+          1257585,
+          996791,
+          664139,
+          475187,
+          442386,
+          663131,
+          650256,
+          422132,
+          467214,
+          357722,
+          572379,
+          1056769,
+          973948,
+          925580,
+          651958,
+          874517,
+          557871,
+          532401,
+          592309,
+          702585,
+          542250,
+          475436,
+          409517,
+          536568,
+          667653,
+          544427
+        ],
+        "revenue_grouping_rate": 0.030933160891667116,
+        "nickname": "adrienne hier",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"601352\"],\"sec_main_category\":[\"601152-842376\",\"601152-842504\",\"603014-846224\"],\"ter_main_category\":[\"601152-842504-601281\",\"603014-846224-847376\",\"601152-842376-601266\"]}",
+        "views_trend": [
+          568036,
+          604798,
+          577929,
+          757117,
+          830080,
+          815138,
+          612276,
+          476603,
+          400356,
+          578869,
+          660544,
+          835924,
+          857689,
+          631393,
+          933254,
+          984665,
+          900182,
+          856422,
+          560496,
+          857584,
+          575313,
+          484667,
+          662406,
+          797669,
+          676702,
+          669905,
+          541684,
+          533808,
+          643251,
+          420813
+        ],
+        "id": "6815344233891202054",
+        "views": "2,030.56万"
+      },
+      {
+        "signature": "Latina Owned 🇲🇽\nLive Daily | 14 DAY EXCHANGES\nLocal Pick Up ONLY",
+        "handle": "bettys_closett",
+        "unit_price": "¥1,241.45",
+        "new_followers": "5,300",
+        "video_engagement_rate": "-",
+        "creatorDebut": "2025-02-18",
+        "revenue": "¥121.04万",
+        "sale": "975",
+        "followers": "9.88万",
+        "revenue_trend": [
+          594203,
+          212136,
+          952340,
+          582538,
+          596985,
+          668472,
+          367575,
+          686442,
+          574900,
+          964880,
+          962643,
+          324691,
+          502168,
+          354255,
+          997497,
+          668440,
+          523397,
+          1284729,
+          569587,
+          534193,
+          378086,
+          828770,
+          441839,
+          742009,
+          475810,
+          309203,
+          337171,
+          401969,
+          566305,
+          412243
+        ],
+        "revenue_grouping_rate": -0.0929136749369094,
+        "nickname": "Betty's Closet",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"953224\",\"603014\"],\"sec_main_category\":[\"601152-842504\",\"601152-842888\",\"953224-954888\"],\"ter_main_category\":[\"601152-842504-601271\",\"601152-842888-601259\",\"601152-842504-601281\"]}",
+        "views_trend": [
+          155619,
+          163978,
+          471500,
+          114161,
+          144086,
+          118061,
+          182452,
+          106459,
+          155497,
+          146105,
+          164537,
+          88391,
+          156243,
+          158657,
+          204575,
+          80219,
+          212859,
+          145537,
+          92795,
+          70973,
+          151949,
+          143009,
+          99908,
+          111624,
+          111729,
+          10167,
+          128492,
+          166283,
+          172468,
+          168464
+        ],
+        "id": "6787850818970059781",
+        "views": "439.68万"
+      },
+      {
+        "signature": "TikTok shop finds 🩵🇵🇷🇮🇹",
+        "handle": "peachyfindsgems",
+        "unit_price": "¥295.51",
+        "new_followers": "1,100",
+        "video_engagement_rate": "1.43%",
+        "creatorDebut": "2025-07-02",
+        "revenue": "¥119.65万",
+        "sale": "4,049",
+        "followers": "2.44万",
+        "revenue_trend": [
+          572848,
+          534405,
+          610726,
+          602557,
+          517245,
+          601806,
+          563470,
+          698426,
+          572268,
+          623625,
+          635571,
+          311028,
+          516252,
+          582668,
+          802193,
+          504819,
+          673235,
+          612810,
+          533827,
+          717130,
+          523471,
+          628335,
+          582699,
+          673300,
+          634151,
+          580572,
+          501195,
+          572197,
+          619197,
+          509116
+        ],
+        "revenue_grouping_rate": 0.013832450856983943,
+        "nickname": "Emily Peachy🌹",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"700645\"],\"sec_main_category\":[\"601152-842504\",\"603014-846224\",\"601152-842760\"],\"ter_main_category\":[\"601152-842504-601281\",\"601152-842504-601271\",\"603014-846224-847248\"]}",
+        "views_trend": [
+          704253,
+          575030,
+          483187,
+          488460,
+          454017,
+          477112,
+          406753,
+          458346,
+          321542,
+          417798,
+          377406,
+          300623,
+          356553,
+          399359,
+          1436553,
+          340864,
+          1269149,
+          568081,
+          728375,
+          673458,
+          629989,
+          770873,
+          928051,
+          973187,
+          764018,
+          733447,
+          796022,
+          701785,
+          587573,
+          480180
+        ],
+        "id": "7382743954934989870",
+        "views": "1,860.2万"
+      },
+      {
+        "signature": "Viral TikTok trendy clothing",
+        "handle": "juicy.fashion.apparel",
+        "unit_price": "¥80.56",
+        "new_followers": "2,600",
+        "video_engagement_rate": "0.31%",
+        "creatorDebut": "2024-01-12",
+        "revenue": "¥119.55万",
+        "sale": "1.48万",
+        "followers": "6.88万",
+        "revenue_trend": [
+          0,
+          157883,
+          760318,
+          1111418,
+          1264140,
+          1316809,
+          1077749,
+          1180458,
+          2769,
+          0,
+          365599,
+          763841,
+          183007,
+          902395,
+          992860,
+          213732,
+          135577,
+          1056742,
+          467672,
+          940325,
+          591065,
+          0,
+          187697,
+          863473,
+          167207,
+          734023,
+          1063991,
+          782203,
+          1986,
+          310662
+        ],
+        "revenue_grouping_rate": -0.2542740796285754,
+        "nickname": "Juicy Fashion Apparel",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"605248\",\"824584\"],\"sec_main_category\":[\"601152-842504\",\"601152-842760\",\"601152-842248\"],\"ter_main_category\":[\"601152-842504-601281\",\"601152-842760-601280\",\"601152-842248-843400\"]}",
+        "views_trend": [
+          390,
+          14975,
+          36085,
+          102141,
+          110808,
+          164173,
+          151287,
+          129080,
+          213,
+          94,
+          14927,
+          84805,
+          24397,
+          123254,
+          125600,
+          16559,
+          12632,
+          129564,
+          35325,
+          102567,
+          42569,
+          174,
+          16426,
+          61327,
+          29031,
+          82826,
+          100323,
+          144247,
+          369,
+          25939
+        ],
+        "id": "7316385957875172398",
+        "views": "188.21万"
+      },
+      {
+        "signature": "outfit inspo🦋🐚🫧\ninsta: @dj.foof\nemail: djfoofconnect@gmail.com 💌",
+        "handle": "dj.foof",
+        "unit_price": "¥264.25",
+        "new_followers": "4,200",
+        "video_engagement_rate": "0.98%",
+        "creatorDebut": "2024-07-21",
+        "revenue": "¥118.20万",
+        "sale": "4,473",
+        "followers": "84.63万",
+        "revenue_trend": [
+          460514,
+          628094,
+          557460,
+          586018,
+          646315,
+          476784,
+          783945,
+          700202,
+          530992,
+          749487,
+          621957,
+          414446,
+          500515,
+          579639,
+          566421,
+          777274,
+          716563,
+          606318,
+          583527,
+          766357,
+          525919,
+          489984,
+          447867,
+          584850,
+          485665,
+          353976,
+          522240,
+          620039,
+          552730,
+          560697
+        ],
+        "revenue_grouping_rate": -0.023717823976014876,
+        "nickname": "dj.foof🦋🐚🫧🌷",
+        "main_category": "{\"pri_main_category\":[\"601152\",\"603014\",\"605248\"],\"sec_main_category\":[\"601152-842376\",\"603014-834568\",\"601152-842248\"],\"ter_main_category\":[\"601152-842504-601281\",\"603014-834568-603705\",\"601152-842376-601266\"]}",
+        "views_trend": [
+          1615058,
+          1811698,
+          1563860,
+          1641805,
+          1716416,
+          1734426,
+          2458040,
+          1933909,
+          1438791,
+          1857412,
+          1534052,
+          1655767,
+          1634452,
+          1939767,
+          1932054,
+          1702475,
+          1815682,
+          1835903,
+          2020362,
+          2915576,
+          1713651,
+          2016016,
+          1796196,
+          1820209,
+          1583885,
+          1516923,
+          1683800,
+          1682351,
+          1327922,
+          1460522
+        ],
+        "id": "6696886000284615685",
+        "views": "5,335.9万"
+      }
+    ],
+    "creatorEnrich": [
+      {
+        "product_ids": [
+          "1732381875681596162",
+          "1732269593645584809",
+          "1732250799366705545"
+        ],
+        "id": "6815344233891202054"
+      },
+      {
+        "product_ids": [
+          "1732309663150608541",
+          "1732173592754295177",
+          "1732083437168267745"
+        ],
+        "id": "6811964865076102149"
+      },
+      {
+        "product_ids": [
+          "1729452124269023475",
+          "1730660284948714493",
+          "1730989114877906957"
+        ],
+        "id": "7144896414652646446"
+      },
+      {
+        "product_ids": [
+          "1729451011337261203",
+          "1732293649718546579",
+          "1729428284144587566"
+        ],
+        "id": "6651270434204467206"
+      },
+      {
+        "product_ids": [
+          "1732281622357381624",
+          "1732355411695473496",
+          "1732347743008691032"
+        ],
+        "id": "7316385957875172398"
+      },
+      {
+        "product_ids": [
+          "1730777507435024421",
+          "1729467441089778277",
+          "1732278705168093897"
+        ],
+        "id": "6696886000284615685"
+      },
+      {
+        "product_ids": [
+          "1732435598389121168",
+          "1731648121594679440",
+          "1732410374119461008"
+        ],
+        "id": "6787850818970059781"
+      },
+      {
+        "product_ids": [
+          "1731080819138073061",
+          "1732320553989476844",
+          "1730947586018545910"
+        ],
+        "id": "6754516198932939782"
+      },
+      {
+        "product_ids": [
+          "1729648385341166420",
+          "1731569071085752868",
+          "1731367884800627164"
+        ],
+        "id": "7382743954934989870"
+      },
+      {
+        "product_ids": [
+          "1732399025561703256",
+          "1732444577939624723",
+          "1731045773437145503"
+        ],
+        "id": "6715264465669899270"
+      }
+    ],
+    "brands": [
+      {
+        "item_sold": "1.88万",
+        "revenue_growth_rate": "-18.58%",
+        "revenue": "¥417.67万",
+        "prev_revenue": 33885402,
+        "avg_unit_price": "¥222.72",
+        "engagement": "9.79万",
+        "ad_spend": "¥110.78万",
+        "market_share": "1.55%",
+        "is_blue_v": 0,
+        "next_revenue": 27588959,
+        "brand_id": "740798288799772152",
+        "id": "740798288799772152",
+        "brand_name": "Wenrine",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/00f7461bb9.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "778",
+        "video_count": "1,409",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 133086.79552943574
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 141637.59894010937
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 133590.3794544281
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 141538.74375785576
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 153896.5927234433
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 153250.6709243469
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 144744.02962258382
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 119427.99877704929
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 128164.96246220742
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 167725.71933281244
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 211535.75432279104
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 119155.75636104222
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 192240.1739307674
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 171090.87203179672
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 191145.97275537587
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 154821.89081767842
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 153208.95471685292
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 151239.3926011482
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 145448.5851139722
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 149352.2437748412
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 94527.09175527397
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 122330.06080782689
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 141868.39691544653
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 152370.0105309644
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 128617.38628256955
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 80474.84458334748
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 74261.84733498658
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 103696.36851581343
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 108252.19961273228
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 113971.66830859122
+          }
+        ]
+      },
+      {
+        "item_sold": "8,703",
+        "revenue_growth_rate": "1.77%",
+        "revenue": "¥316.65万",
+        "prev_revenue": 23097838,
+        "avg_unit_price": "¥363.84",
+        "engagement": "15.94万",
+        "ad_spend": "¥64.05万",
+        "market_share": "9.94%",
+        "is_blue_v": 0,
+        "next_revenue": 23507768,
+        "brand_id": "420833615500780679",
+        "id": "420833615500780679",
+        "brand_name": "CurvySweet",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/0d30cd570e.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "353",
+        "video_count": "811",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 113313.51700241193
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 119950.47049631416
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 100810.0689608316
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 134740.2248870469
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 119797.05812412949
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 101032.03451438666
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 110411.93056357645
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 105688.96286985766
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 97231.91901348642
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 120906.00264972654
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 128775.01104052723
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 55938.037164113186
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 88451.0649862418
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 80228.55589903862
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 92031.66083500357
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 92905.59499949044
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 104894.04490946767
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 120065.2919794816
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 114442.36844787172
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 115672.72480211977
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 80875.49682372525
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 100467.71070421577
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 116891.80283316913
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 136719.77443353602
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 116027.04079899447
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 100725.48153684138
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 79544.51880286714
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 100664.26605972076
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 133696.84410775555
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 83564.90131467201
+          }
+        ]
+      },
+      {
+        "item_sold": "1.37万",
+        "revenue_growth_rate": "-19.19%",
+        "revenue": "¥302.24万",
+        "prev_revenue": 24602820,
+        "avg_unit_price": "¥221.32",
+        "engagement": "4.37万",
+        "ad_spend": "¥87.49万",
+        "market_share": "1.14%",
+        "is_blue_v": 0,
+        "next_revenue": 19881730,
+        "brand_id": "1032425620894471799",
+        "id": "1032425620894471799",
+        "brand_name": "CHOUYATOU",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/41dbf8be7a.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "344",
+        "video_count": "741",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 67652.54611543295
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 76530.28501545674
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 120334.06936848184
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 194699.39192173115
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 199746.8492033835
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 140784.86258789958
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 114760.81122396982
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 68454.3941298366
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 101455.58310969188
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 117242.04232768284
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 109271.66491150593
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 73514.96416075007
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 98018.68396915446
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 84847.64072425858
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 104243.77484118626
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 101204.81027278595
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 106103.06756802663
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 125192.24105717294
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 116008.22094642796
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 122068.34935625234
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 104893.97696776166
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 86432.99249244148
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 91607.56870605021
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 94015.83041750178
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 89978.12277066277
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 80647.21269151068
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 58986.85327988586
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 56560.654958046
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 55725.92315793049
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 61372.8301117641
+          }
+        ]
+      },
+      {
+        "item_sold": "1.54万",
+        "revenue_growth_rate": "-24.55%",
+        "revenue": "¥288.12万",
+        "prev_revenue": 24169660,
+        "avg_unit_price": "¥187.17",
+        "engagement": "13.63万",
+        "ad_spend": "¥53.63万",
+        "market_share": "1.07%",
+        "is_blue_v": 0,
+        "next_revenue": 18236617,
+        "brand_id": "601371118766563914",
+        "id": "601371118766563914",
+        "brand_name": "CHICME",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/0aeebb9bc2.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "945",
+        "video_count": "1,411",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 107063.69534939023
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 126424.36389577742
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 136865.7132180589
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 121095.62795121784
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 114565.34293576112
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 111954.88670720521
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 106606.78737643102
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 88537.82654482454
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 108834.39209158541
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 126185.88850766042
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 161651.1193396066
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 78843.36039677956
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 86970.00373679382
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 82025.47813975609
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 84503.44804158033
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 107859.0209600163
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 111994.90437204878
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 108118.89798552841
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 98013.38451608519
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 81786.25539287292
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 66839.55566124264
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 67715.59601861602
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 82352.54951251825
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 87082.24343513265
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 80767.19774433535
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 75160.91993069946
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 54529.06206474845
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 57171.11118660189
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 79592.68947243266
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 80043.48269185038
+          }
+        ]
+      },
+      {
+        "item_sold": "1.1万",
+        "revenue_growth_rate": "-11.01%",
+        "revenue": "¥279.80万",
+        "prev_revenue": 21790409,
+        "avg_unit_price": "¥254.27",
+        "engagement": "11.23万",
+        "ad_spend": "¥61.81万",
+        "market_share": "1.10%",
+        "is_blue_v": 0,
+        "next_revenue": 19391786,
+        "brand_id": "291220117406132817",
+        "id": "291220117406132817",
+        "brand_name": "utcoco",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/d753313dfd.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "506",
+        "video_count": "615",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 69430.78438699596
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 67232.87019737065
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 74653.87097870027
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 100100.07813296192
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 106709.37935251553
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 66160.88595984645
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 72837.6532934742
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 88544.48483201413
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 86868.2270611815
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 114878.21449196589
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 249683.3237082583
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 116743.35020552366
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 75739.7832659578
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 95862.62187043516
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 95032.03451438666
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 100655.36569623263
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 107818.25593640655
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 127320.31117301354
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 114933.111390427
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 112752.7261609539
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 90507.18483541122
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 90462.95478479464
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 110070.59143255086
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 105316.30261235859
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 82466.69157862554
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 73364.8809321602
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 42341.61089784964
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 47088.62995549818
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 57733.4646872983
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 54678.94146822026
+          }
+        ]
+      },
+      {
+        "item_sold": "1.22万",
+        "revenue_growth_rate": "-33.29%",
+        "revenue": "¥276.35万",
+        "prev_revenue": 24399124,
+        "avg_unit_price": "¥227.28",
+        "engagement": "5.99万",
+        "ad_spend": "¥83.83万",
+        "market_share": "1.15%",
+        "is_blue_v": 0,
+        "next_revenue": 16275548,
+        "brand_id": "559371843990203421",
+        "id": "559371843990203421",
+        "brand_name": "AUSELILY",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/0e0aeb7ef9.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "398",
+        "video_count": "938",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 104256.54788191731
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 94989.50300642049
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 73497.5031423039
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 87910.52077317661
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 85776.87943744267
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 92854.91048680231
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 83332.33685497842
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 88327.13931446818
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 69762.47579576723
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 155123.21228386046
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 201658.72881068042
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 151219.89333152154
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 156408.19376974556
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 118378.36736080442
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 94221.89761184902
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 85899.51421680198
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 78802.11978122771
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 121281.78822570234
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 83054.11556884192
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 92424.77154601352
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 70016.84954309203
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 72782.00903624689
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 84491.96589326358
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 81705.33682100757
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 63079.865475422084
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 62317.62747562591
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 57395.65852498557
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 47378.80898189353
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 48072.76556714339
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 57085.300811903384
+          }
+        ]
+      },
+      {
+        "item_sold": "1.7万",
+        "revenue_growth_rate": "-3.92%",
+        "revenue": "¥259.92万",
+        "prev_revenue": 19510608,
+        "avg_unit_price": "¥153.05",
+        "engagement": "25.23万",
+        "ad_spend": "¥60.43万",
+        "market_share": "1.08%",
+        "is_blue_v": 0,
+        "next_revenue": 18746011,
+        "brand_id": "643140411012637513",
+        "id": "643140411012637513",
+        "brand_name": "UANEO",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/742671ff40.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "294",
+        "video_count": "662",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 78201.65098345619
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 93495.87254135951
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 101491.52427217447
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 90530.1491320447
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 73693.03937221863
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 87614.83846859394
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 78781.80521112884
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 84339.23293813907
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 85762.40785406121
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 108640.82617114515
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 114244.99779189455
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 78676.76733362775
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 91425.0772836906
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 70734.38190032952
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 87951.42168019839
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 75820.090362469
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 85257.53303665455
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 96566.70176988143
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 79694.33026463294
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 123412.44012637157
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 105489.82572952406
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 107633.25067092435
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 97203.04378842952
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 80113.25882392906
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 89758.73900193634
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 81967.59180623025
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 61016.54380541495
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 71139.31446818629
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 61737.94883989537
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 56825.355844685255
+          }
+        ]
+      },
+      {
+        "item_sold": "8,170",
+        "revenue_growth_rate": "-21.62%",
+        "revenue": "¥246.30万",
+        "prev_revenue": 20323158,
+        "avg_unit_price": "¥301.47",
+        "engagement": "15.3万",
+        "ad_spend": "¥57.76万",
+        "market_share": "0.91%",
+        "is_blue_v": 0,
+        "next_revenue": 15929067,
+        "brand_id": "188656661900518440",
+        "id": "188656661900518440",
+        "brand_name": "POPILUSH",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/ee3d025d9a.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "510",
+        "video_count": "834",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 92353.5686381085
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 85386.01080273125
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 110442.50433128375
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 120425.5868464857
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 94488.84057478682
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 95091.14379862077
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 101661.51442062709
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 81329.2794782077
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 107558.51479430648
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 98764.75184291878
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 118737.77898563033
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 51126.74525257329
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 64463.29449332473
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 60691.91833406936
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 98268.57356388218
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 88934.87787478343
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 69744.94683561505
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 94792.40411726738
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 69478.61534803138
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 58240.51363929748
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 46999.21867038081
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 72468.86571321805
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 76962.326324014
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 76116.92767605394
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 93930.83534327547
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 63222.13540782009
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 56044.02622549852
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 65265.00662431633
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 80162.38067737881
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 69884.9067500085
+          }
+        ]
+      },
+      {
+        "item_sold": "4,866",
+        "revenue_growth_rate": "-23.02%",
+        "revenue": "¥241.66万",
+        "prev_revenue": 20096844,
+        "avg_unit_price": "¥496.62",
+        "engagement": "2.76万",
+        "ad_spend": "¥44.47万",
+        "market_share": "0.89%",
+        "is_blue_v": 0,
+        "next_revenue": 15471215,
+        "brand_id": "1105253081273012067",
+        "id": "1105253081273012067",
+        "brand_name": "ZESICA",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/90e009cb4c.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "271",
+        "video_count": "421",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 97128.37585351767
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 116886.09572986377
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 76609.84475320175
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 101623.80677378809
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 110431.97336685123
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 120525.05350409348
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 121130.1423378741
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 79010.29316846146
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 92893.50137581954
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 91417.06016238067
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 102341.20324761355
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 54302.81618371437
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 69159.56109657913
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 56314.57009885518
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 75639.56924958386
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 97152.01956721133
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 65152.69898427149
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 50884.5330706254
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 55928.865033801
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 79580.39202364371
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 40008.35682984
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 84009.51183884227
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 80131.53514284744
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 77399.39531881646
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 83821.17742976526
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 52693.82070183782
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 64092.19689506403
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 74639.46733702483
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 72481.70669565513
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 73165.06437476644
+          }
+        ]
+      },
+      {
+        "item_sold": "1.17万",
+        "revenue_growth_rate": "-16.32%",
+        "revenue": "¥164.78万",
+        "prev_revenue": 13203841,
+        "avg_unit_price": "¥140.89",
+        "engagement": "12.76万",
+        "ad_spend": "¥45.17万",
+        "market_share": "0.68%",
+        "is_blue_v": 0,
+        "next_revenue": 11048679,
+        "brand_id": "648853222423873361",
+        "id": "648853222423873361",
+        "brand_name": "Yeokou",
+        "brand_logo": "https://d149xzut2sq6e3.cloudfront.net/brand/58f6eaa217.jpg",
+        "main_pri_cate_id": "女装与女士内衣",
+        "creator_count": "312",
+        "video_count": "580",
+        "revenue_trend": [
+          {
+            "partition_day": "2026-06-09",
+            "revenue": 57436.967082243435
+          },
+          {
+            "partition_day": "2026-06-10",
+            "revenue": 70284.539864796
+          },
+          {
+            "partition_day": "2026-06-11",
+            "revenue": 87941.29836600197
+          },
+          {
+            "partition_day": "2026-06-12",
+            "revenue": 75582.63409994225
+          },
+          {
+            "partition_day": "2026-06-13",
+            "revenue": 66618.0656996297
+          },
+          {
+            "partition_day": "2026-06-14",
+            "revenue": 53256.64979447633
+          },
+          {
+            "partition_day": "2026-06-15",
+            "revenue": 57489.5539627
+          },
+          {
+            "partition_day": "2026-06-16",
+            "revenue": 57555.18565071169
+          },
+          {
+            "partition_day": "2026-06-17",
+            "revenue": 57266.433400142676
+          },
+          {
+            "partition_day": "2026-06-18",
+            "revenue": 69271.25726126981
+          },
+          {
+            "partition_day": "2026-06-19",
+            "revenue": 69889.5267860176
+          },
+          {
+            "partition_day": "2026-06-20",
+            "revenue": 50508.88337806162
+          },
+          {
+            "partition_day": "2026-06-21",
+            "revenue": 43613.27580935556
+          },
+          {
+            "partition_day": "2026-06-22",
+            "revenue": 35563.47453884567
+          },
+          {
+            "partition_day": "2026-06-23",
+            "revenue": 44813.73781295648
+          },
+          {
+            "partition_day": "2026-06-24",
+            "revenue": 51711.11186601895
+          },
+          {
+            "partition_day": "2026-06-25",
+            "revenue": 51828.0395420729
+          },
+          {
+            "partition_day": "2026-06-26",
+            "revenue": 62420.89886877059
+          },
+          {
+            "partition_day": "2026-06-27",
+            "revenue": 48621.19101810646
+          },
+          {
+            "partition_day": "2026-06-28",
+            "revenue": 46279.17247002072
+          },
+          {
+            "partition_day": "2026-06-29",
+            "revenue": 36813.19427930835
+          },
+          {
+            "partition_day": "2026-06-30",
+            "revenue": 44399.361347963444
+          },
+          {
+            "partition_day": "2026-07-01",
+            "revenue": 54340.5917722594
+          },
+          {
+            "partition_day": "2026-07-02",
+            "revenue": 69732.92115365017
+          },
+          {
+            "partition_day": "2026-07-03",
+            "revenue": 67877.4331623467
+          },
+          {
+            "partition_day": "2026-07-04",
+            "revenue": 61936.270679756766
+          },
+          {
+            "partition_day": "2026-07-05",
+            "revenue": 45499.94904372049
+          },
+          {
+            "partition_day": "2026-07-06",
+            "revenue": 37655.05995855556
+          },
+          {
+            "partition_day": "2026-07-07",
+            "revenue": 38328.97374053062
+          },
+          {
+            "partition_day": "2026-07-08",
+            "revenue": 33221.93158270203
+          }
+        ]
+      }
+    ],
+    "brandEnrich": [
+      {
+        "brand_id": "740798288799772152",
+        "top3_creator_ratio": "19.74%",
+        "top3_product_ratio": "38.32%",
+        "top3_video_ratio": "7.18%",
+        "top3_product_ids": [
+          "1731810630860313364",
+          "1731809833467548436",
+          "1731795020274963220"
+        ]
+      },
+      {
+        "brand_id": "420833615500780679",
+        "top3_creator_ratio": "32.91%",
+        "top3_product_ratio": "68.95%",
+        "top3_video_ratio": "12.13%",
+        "top3_product_ids": [
+          "1731569071085752868",
+          "1729483993705256484",
+          "1729487610900878884"
+        ]
+      },
+      {
+        "brand_id": "1032425620894471799",
+        "top3_creator_ratio": "22.89%",
+        "top3_product_ratio": "60.01%",
+        "top3_video_ratio": "14.36%",
+        "top3_product_ids": [
+          "1731588260276834697",
+          "1732173592754295177",
+          "1732206379152806281"
+        ]
+      },
+      {
+        "brand_id": "601371118766563914",
+        "top3_creator_ratio": "18.30%",
+        "top3_product_ratio": "59.77%",
+        "top3_video_ratio": "8.77%",
+        "top3_product_ids": [
+          "1731197526662222326",
+          "1730879960715792886",
+          "1730723061843530230"
+        ]
+      },
+      {
+        "brand_id": "291220117406132817",
+        "top3_creator_ratio": "21.61%",
+        "top3_product_ratio": "67.37%",
+        "top3_video_ratio": "14.60%",
+        "top3_product_ids": [
+          "1732202457133715937",
+          "1732164775569101281",
+          "1732202391234253281"
+        ]
+      },
+      {
+        "brand_id": "559371843990203421",
+        "top3_creator_ratio": "26.85%",
+        "top3_product_ratio": "80.25%",
+        "top3_video_ratio": "18.00%",
+        "top3_product_ids": [
+          "1730867312113849041",
+          "1730885183871947473",
+          "1730994972093682385"
+        ]
+      },
+      {
+        "brand_id": "643140411012637513",
+        "top3_creator_ratio": "53.76%",
+        "top3_product_ratio": "97.53%",
+        "top3_video_ratio": "25.01%",
+        "top3_product_ids": [
+          "1729430342213472565",
+          "1729494928597160245",
+          "1729534271788585269"
+        ]
+      },
+      {
+        "brand_id": "188656661900518440",
+        "top3_creator_ratio": "18.62%",
+        "top3_product_ratio": "38.42%",
+        "top3_video_ratio": "7.13%",
+        "top3_product_ids": [
+          "1732017386487976772",
+          "1731084282608784196",
+          "1731101957749773124"
+        ]
+      },
+      {
+        "brand_id": "1105253081273012067",
+        "top3_creator_ratio": "19.30%",
+        "top3_product_ratio": "37.56%",
+        "top3_video_ratio": "13.09%",
+        "top3_product_ids": [
+          "1732193915644973298",
+          "1731972238990741746",
+          "1732221033859617010"
+        ]
+      },
+      {
+        "brand_id": "648853222423873361",
+        "top3_creator_ratio": "38.78%",
+        "top3_product_ratio": "85.55%",
+        "top3_video_ratio": "21.65%",
+        "top3_product_ids": [
+          "1729438307158626802",
+          "1729450857615561202",
+          "1730207911691653618"
+        ]
+      }
+    ]
+  },
+  "finalQuota": {
+    "search": {
+      "total": 30,
+      "used": 6,
+      "remain": 24,
+      "full": false
+    },
+    "detail": {
+      "total": 30,
+      "used": 2,
+      "remain": 28,
+      "full": false
+    }
+  },
+  "finishedAt": "2026-07-10T06:50:56.920Z"
+}

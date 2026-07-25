@@ -1,0 +1,725 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "amazon_B0D7Q86R4N",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "amazon_B0D7Q86R4N",
+      "platform": "amazon",
+      "canonical_url": "https://www.amazon.com/elescat-Dresses-Spaghetti-Sleeveless-Sundress/dp/B0D7Q86R4N/ref=zg_bs_g_2346727011_d_sccl_18/146-3373523-6428265",
+      "basic_facts": {
+        "title": "elescat Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026",
+        "brand": "elescat",
+        "category_path": [
+          "Clothing, Shoes & Jewelry",
+          "Women",
+          "Clothing",
+          "Dresses",
+          "Casual"
+        ],
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/41drxZgsYBL._AC_UL600_SR600,400_.jpg",
+        "price": {
+          "amount": 14.99,
+          "currency": "USD"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.4,
+        "review_count": 964.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 13276.0,
+        "sales_7d_units": null,
+        "sales_floor_units": null,
+        "revenue_30d": {
+          "amount": 199007.23,
+          "currency": "USD"
+        },
+        "gmv_7d": null,
+        "sales_growth_rate": 1.2247,
+        "favorites_count": null,
+        "bestseller_rank_text": "Best Sellers Rank: #2,449 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry) #68 in Women's Casual Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": [
+          {
+            "signal": "sales_trend_rising",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_e42c1d3b3abfbc78"
+            ]
+          },
+          {
+            "signal": "bsr_improving",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_e42c1d3b3abfbc78"
+            ]
+          }
+        ]
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [
+          {
+            "cluster_name": "正面标签",
+            "tags": []
+          }
+        ],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [
+          {
+            "source_id": "seller_sprite_amazon",
+            "envelope_id": "envelope_seller_sprite_amazon_20260710",
+            "product_id": "B0D7Q86R4N",
+            "match_type": "exact_or_prefix_product_id"
+          },
+          {
+            "source_id": "frontend_amazon",
+            "envelope_id": "envelope_frontend_amazon_20260710",
+            "product_id": "B0D7Q86R4N",
+            "match_type": "exact_or_prefix_product_id"
+          }
+        ],
+        "platform_price_comparison": [
+          {
+            "style_group": "dress",
+            "source_group": "候选自身（amazon）",
+            "currency": "USD",
+            "n": 1,
+            "p25": 14.99,
+            "p50": 14.99,
+            "p75": 14.99,
+            "note": "候选商品价格"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "amazon_plugin",
+            "currency": "USD",
+            "n": 200,
+            "p25": 14.99,
+            "p50": 26.48,
+            "p75": 37.99,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_aerie",
+            "currency": "USD",
+            "n": 20,
+            "p25": 52.46,
+            "p50": 54.95,
+            "p75": 59.95,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_alo_yoga",
+            "currency": "USD",
+            "n": 45,
+            "p25": 138.0,
+            "p50": 138.0,
+            "p75": 138.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_amazon",
+            "currency": "USD",
+            "n": 399,
+            "p25": 18.88,
+            "p50": 29.99,
+            "p75": 39.99,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_cupshe",
+            "currency": "USD",
+            "n": 48,
+            "p25": 32.75,
+            "p50": 36.0,
+            "p75": 40.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_for_love_lemons",
+            "currency": "USD",
+            "n": 116,
+            "p25": 22900.0,
+            "p50": 28250.0,
+            "p75": 31900.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_good_american",
+            "currency": "USD",
+            "n": 12,
+            "p25": 93.0,
+            "p50": 138.0,
+            "p75": 148.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_lulus",
+            "currency": "USD",
+            "n": 21,
+            "p25": 69.0,
+            "p50": 79.0,
+            "p75": 99.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_madewell",
+            "currency": "USD",
+            "n": 31,
+            "p25": 123.0,
+            "p50": 148.0,
+            "p75": 158.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_quince",
+            "currency": "USD",
+            "n": 89,
+            "p25": 59.9,
+            "p50": 69.9,
+            "p75": 99.9,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_reformation",
+            "currency": "USD",
+            "n": 47,
+            "p25": 248.0,
+            "p50": 278.0,
+            "p75": 313.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "frontend_skims",
+            "currency": "USD",
+            "n": 24,
+            "p25": 68.0,
+            "p50": 86.0,
+            "p75": 98.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "tiktok_shop_plugin",
+            "currency": "CNY",
+            "n": 88,
+            "p25": 168.96,
+            "p50": 275.63,
+            "p75": 345.18,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          }
+        ],
+        "same_style_signals": [
+          {
+            "signal": "frontend_amazon 语料中有 318 款标题命中相同风格词 ['dresses']",
+            "kind": "style_token_overlap",
+            "count": 318,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "amazon_plugin 语料中有 153 款标题命中相同风格词 ['dresses']",
+            "kind": "style_token_overlap",
+            "count": 153,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "tiktok_shop_plugin 语料中有 24 款标题命中相同风格词 ['dresses']",
+            "kind": "style_token_overlap",
+            "count": 24,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "frontend_quince 语料中有 1 款标题命中相同风格词 ['dresses']",
+            "kind": "style_token_overlap",
+            "count": 1,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          }
+        ]
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio"
+      ],
+      "field_issues": [
+        {
+          "field_path": "basic_facts.title",
+          "issue": "source_conflict",
+          "detail": "frontend_amazon 给出 'Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026'，与已有 'elescat Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026' 不一致，保留先值",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "basic_facts.image_url",
+          "issue": "source_conflict",
+          "detail": "frontend_amazon 给出 'https://m.media-amazon.com/images/I/41drxZgsYBL._AC_UL320_.jpg'，与已有 'https://images-na.ssl-images-amazon.com/images/I/41drxZgsYBL._AC_UL600_SR600,400_.jpg' 不一致，保留先值",
+          "evidence_refs": []
+        },
+        {
+          "field_path": "basic_facts.review_count",
+          "issue": "source_conflict",
+          "detail": "frontend_amazon 给出 956.0，与已有 964.0 不一致，保留先值",
+          "evidence_refs": []
+        }
+      ],
+      "context": {
+        "category_name": "Casual",
+        "category_label": "women_dresses_multisite",
+        "source_group": "amazon_plugin",
+        "site": "amazon",
+        "shop_name": null,
+        "seller_name": "elescat",
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":121,\"positive\":115,\"negative\":6,\"snippets\":[\"Customers like the appearance of the dress, describing it as nice and good quality, with one customer noting it's perfect as a swimsuit coverup.\",\"!! I’m 5’5” 165-170lbs and I got a large and it fits great. Could probably even go to a medium for a little more fitted look....\",\"and love the design. I’m 5’6” and weigh about 170… a large is roomy and not too big....\"]},{\"tag\":\"fit\",\"mentions\":96,\"positive\":79,\"negative\":17,\"snippets\":[\"Customers find that the dress fits nicely and is flattering, with one customer noting it hides their big waist, while another mentions it flatters their Yoda-shaped body.\",\", fun. I use it as a bathing suit cover. I bought bathing suits in all colors, but you can wear it from pool to dinner.\"]},{\"tag\":\"comfort\",\"mentions\":89,\"positive\":86,\"negative\":3,\"snippets\":[\"Customers find the dress comfortable, with one mentioning it works well in the heat of Florida.\",\"and the price is nice. The fabric breathes and is soft. Nice fit. Flowing and not clingy.\",\", soft and flowy. It's not see through but very lightweight. Perfect for the summer especially us menopausal gals.\",\", and looks very nice! Fabric is soft, not see-through but not heavy either....\"]},{\"tag\":\"summer-friendly\",\"mentions\":40,\"positive\":39,\"negative\":1,\"snippets\":[\"Customers find the dress suitable for summer, particularly noting it's perfect for warmer days and beach outings. One customer mentions it can be dressed up for evening wear.\",\". I chose the Navy Blue with white flowers, size small @ 5’2” and 110 lbs. looking forward to wearing it all summer....\",\"!! Love it ! It is shapely and soft with a little stretch . It has spaghetti straps.and it fits perfect!\"]},{\"tag\":\"pockets\",\"mentions\":38,\"positive\":37,\"negative\":1,\"snippets\":[\"Customers like the dress's pockets, with one customer noting they are not bulky.\",\"but I probably wouldn’t put anything in them. Made more for looks or your hands.\",\"! Nice and flowy. I am 5’8”, 175lbs and ordered a large.\"]},{\"tag\":\"soft material\",\"mentions\":36,\"positive\":33,\"negative\":3,\"snippets\":[\"This is a nice, simple dress for spring, summer & the fall. It’s\",\"& comfortable & it flows nicely. And, I was told it’s nice to have pockets....\",\", light, and not see through. The colors and style is just as advertised....\",\". I saw some reviews saying it was see through but,mine wasn't. I ordered the tie dye. I would say it's true to size....\"]},{\"tag\":\"color\",\"mentions\":26,\"positive\":23,\"negative\":3,\"snippets\":[\"Customers like the colors of the dress, with one mentioning that the color holds up very well.\",\", and the material is soft and flowy. Love the pockets too!...\",\"and I love the way it fit the pockets made it 10 times better to be able to carry...\",\"and how comfortable she is. It has pockets too! Big plus for her.\"]},{\"tag\":\"fabric quality\",\"mentions\":59,\"positive\":37,\"negative\":22,\"snippets\":[\"Customers have mixed opinions about the dress's fabric quality, with some finding it good and noting its medium thickness, while others describe it as terrible, thin, and rough.\",\". Bit of substance to it. Not too short. Nice flare so not clinging to tummy!....\",\", fitting, and color are great, and I love it. Since it's a summer dress, I like it loose, and I ordered one size up, and I'm glad I did....\"]}]"
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "S",
+      "pct": 54.2,
+      "total": 32.5,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 21.6,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_30d_units=13,276 -> 9分；销量/销售额增长率 +122.5% -> 6分；2个独立需求证据源",
+          "evidence_refs": [
+            "ev_4f896cfbca4b2a0a",
+            "ev_92bfc56146d01a73"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 6.8,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "evidence_refs": [
+            "ev_6211f9bff38d668f",
+            "ev_8d2920878e7709f0",
+            "ev_c94f0c76e9e0a8d6",
+            "ev_caddda9f2a0289b9"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 6.8,
+          "max_score": 15.0,
+          "reason": "评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+          "evidence_refs": [
+            "ev_7c99a6e95ebb7b01",
+            "ev_d743ca21efb35296",
+            "ev_e42c1d3b3abfbc78"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「elescat」品牌词出现在标题中（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_3a226fecf2ff7c25"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_30d_units=13,276 -> 9分；销量/销售额增长率 +122.5% -> 6分；2个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_4f896cfbca4b2a0a",
+            "ev_92bfc56146d01a73"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_6211f9bff38d668f",
+            "ev_8d2920878e7709f0",
+            "ev_c94f0c76e9e0a8d6",
+            "ev_caddda9f2a0289b9"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_7c99a6e95ebb7b01",
+            "ev_d743ca21efb35296",
+            "ev_e42c1d3b3abfbc78"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「elescat」品牌词出现在标题中（人工待确认）",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_3a226fecf2ff7c25"
+          ],
+          "confidence": "low"
+        },
+        {
+          "claim": "多源互验：seller_sprite_amazon、frontend_amazon 按商品ID匹配到同一商品",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_037a2245e1638500",
+            "ev_dd49a0374b343cb4"
+          ],
+          "confidence": "high"
+        },
+        {
+          "claim": "同风格红海程度：高（语料内同风格候选 496 款，词表确定性匹配）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_037a2245e1638500",
+            "ev_dd49a0374b343cb4"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "平台优先级：amazon（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_8ab3767bd0b013cd"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 54.2,
+          "grade": "S",
+          "gate_reason": "PScore 32.5/60.0（54.2%）-> S",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 54.2,
+          "grade": "S",
+          "gate_reason": "评价标签聚类：0 个负面聚类 / 0 次标签提及",
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": true,
+          "score": 54.2,
+          "grade": "S",
+          "gate_reason": "2 个数据源按商品ID互验（seller_sprite_amazon、frontend_amazon）；同风格信号：frontend_amazon 语料中有 318 款标题命中相同风格词 ['dresses']；带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台",
+          "required_next_data": [
+            "供应链字段人工调查（选品后画像存库用，不参与打分）"
+          ]
+        }
+      },
+      "confidence": "high"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_037a2245e1638500",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=商品详情;row=69;column=英文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_2ddbc260b6bf05de",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=商品详情;row=69;column=中文标题",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_4e644b9122899e81",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.brand",
+        "record_locator": "sheet=商品详情;row=69;column=品牌",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_b818963b28fb15af",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=商品详情;row=69;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_884564d47782046a",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.category_path",
+        "record_locator": "sheet=商品详情;row=69;column=类目路径",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_c8994d8cc1a40023",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=商品详情;row=69;column=图片链接",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_c94f0c76e9e0a8d6",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=商品详情;row=69;column=价格($)",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_d743ca21efb35296",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=商品详情;row=69;column=星级",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_8d2920878e7709f0",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=商品详情;row=69;column=评分数",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_4f896cfbca4b2a0a",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=商品详情;row=69;column=近30天销量(父体)",
+        "note": "SellerSprite 估算；父体近30天销量"
+      },
+      {
+        "evidence_id": "ev_9cd2e9e2dfee8134",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.revenue_30d",
+        "record_locator": "sheet=商品详情;row=69;column=近30天销售额($)",
+        "note": "SellerSprite 估算"
+      },
+      {
+        "evidence_id": "ev_92bfc56146d01a73",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=商品详情;row=69;column=销量增长率",
+        "note": "源表百分数口径归一为小数"
+      },
+      {
+        "evidence_id": "ev_8ab3767bd0b013cd",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=商品详情;row=69;column=Amazon类目排名",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_3a226fecf2ff7c25",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.seller_name",
+        "record_locator": "sheet=商品详情;row=69;column=卖家名称",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_cb5fbb2f53c7c0ca",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.image_count",
+        "record_locator": "sheet=商品详情;row=69;column=主图数量",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_372cd4a040e6df08",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.review_tags_raw",
+        "record_locator": "sheet=商品详情;row=69;column=评论亮点",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_5de937c0522f96dd",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=商品详情;row=69;column=采集说明",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_6d0454b44eebf900",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.design_signals",
+        "record_locator": "sheet=商品详情;row=69;column=英文五点/面料/产品属性JSON",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_e42c1d3b3abfbc78",
+        "source_id": "seller_sprite_amazon",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=商品详情;row=69;column=销量趋势/BSR趋势/价格趋势",
+        "note": "全量趋势行聚合得出"
+      },
+      {
+        "evidence_id": "ev_dd49a0374b343cb4",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=商品详情;row=59;column=商品名称",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_eba6eebd89a99b4e",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.brand",
+        "record_locator": "sheet=商品详情;row=59;column=品牌",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_07d2ae7adc7075d2",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=商品详情;row=59;column=主图URL",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_caddda9f2a0289b9",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=商品详情;row=59;column=价格/币种",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_7c99a6e95ebb7b01",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=商品详情;row=59;column=评分",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_6211f9bff38d668f",
+        "source_id": "frontend_amazon",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=商品详情;row=59;column=评价数",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_037a2245e1638500",
+    "ev_07d2ae7adc7075d2",
+    "ev_2ddbc260b6bf05de",
+    "ev_372cd4a040e6df08",
+    "ev_3a226fecf2ff7c25",
+    "ev_4e644b9122899e81",
+    "ev_4f896cfbca4b2a0a",
+    "ev_5de937c0522f96dd",
+    "ev_6211f9bff38d668f",
+    "ev_6d0454b44eebf900",
+    "ev_7c99a6e95ebb7b01",
+    "ev_884564d47782046a",
+    "ev_8ab3767bd0b013cd",
+    "ev_8d2920878e7709f0",
+    "ev_92bfc56146d01a73",
+    "ev_9cd2e9e2dfee8134",
+    "ev_b818963b28fb15af",
+    "ev_c8994d8cc1a40023",
+    "ev_c94f0c76e9e0a8d6",
+    "ev_caddda9f2a0289b9",
+    "ev_cb5fbb2f53c7c0ca",
+    "ev_d743ca21efb35296",
+    "ev_dd49a0374b343cb4",
+    "ev_e42c1d3b3abfbc78",
+    "ev_eba6eebd89a99b4e"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

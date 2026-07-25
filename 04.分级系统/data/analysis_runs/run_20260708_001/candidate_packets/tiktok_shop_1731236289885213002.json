@@ -1,0 +1,419 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "tiktok_shop_1731236289885213002",
+  "market": "US",
+  "platform": "tiktok_shop",
+  "primary_product_id": "1731236289885213002",
+  "canonical_url": "https://shop.tiktok.com/view/product/1731236289885213002",
+  "source_refs": [
+    {
+      "source_id": "tabcut",
+      "envelope_id": "envelope_tabcut_20260708"
+    },
+    {
+      "source_id": "echotik",
+      "envelope_id": "envelope_echotik_20260708"
+    }
+  ],
+  "basic_facts": {
+    "title": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering",
+    "brand": null,
+    "category_path": [],
+    "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731236289885213002/17312362898852130020.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+    "price": {
+      "amount": 55.37,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.2,
+    "review_count": 18200.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": 104947.0,
+    "sales_7d_units": 28600.0,
+    "sales_floor_units": null,
+    "revenue_30d": null,
+    "gmv_7d": {
+      "amount": 1921200.0,
+      "currency": "USD"
+    },
+    "sales_growth_rate": 1.8562,
+    "favorites_count": null,
+    "bestseller_rank_text": null,
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [
+      {
+        "source_id": "tabcut",
+        "envelope_id": "envelope_tabcut_20260708",
+        "product_id": "1731236289885213002",
+        "match_type": "exact_or_prefix_product_id"
+      },
+      {
+        "source_id": "echotik",
+        "envelope_id": "envelope_echotik_20260708",
+        "product_id": "1731236289885213002",
+        "match_type": "exact_or_prefix_product_id"
+      }
+    ],
+    "platform_price_comparison": [],
+    "same_style_signals": []
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio",
+    "product_opportunity.reviews"
+  ],
+  "field_issues": [
+    {
+      "field_path": "primary_product_id",
+      "issue": "id_truncated_in_source",
+      "detail": "EchoTik 页面导出的 product_id 为截断值 17312362898852130...，已按前缀合并到完整 id",
+      "evidence_refs": []
+    },
+    {
+      "field_path": "basic_facts.title",
+      "issue": "source_conflict",
+      "detail": "echotik 给出 '【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering summervibes☀️'，与已有 '【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering' 不一致，保留先值",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_tabcut_000112",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=50",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000113",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=50",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000114",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=50",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "Tabcut Top商品榜销量（30 天榜口径，估算值）"
+    },
+    {
+      "evidence_id": "ev_tabcut_000115",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=50",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000116",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.category_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=50",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_tabcut_000117",
+      "source_id": "tabcut",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=最终原数据;row=50",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000365",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.title",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000366",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.price",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 商品库页面价格（区间取下限）"
+    },
+    {
+      "evidence_id": "ev_echotik_000367",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.price_range",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000369",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000370",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000371",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.sales_7d_units",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 7 天销量（估算）"
+    },
+    {
+      "evidence_id": "ev_echotik_000372",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "market_metrics.gmv_7d",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000373",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.product_total_sales",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": "EchoTik 商品累计销量（估算）"
+    },
+    {
+      "evidence_id": "ev_echotik_000374",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.affiliate_creator_count",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_echotik_000375",
+      "source_id": "echotik",
+      "source_type": "plugin",
+      "tool_or_adapter": "TabcutEchotikAdapter",
+      "field_path": "context.shop_name",
+      "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+      "record_locator": "sheet=EchoTik商品库实采;row=5",
+      "observed_at": null,
+      "confidence": "high",
+      "note": ""
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "tiktok_shop_plugin",
+    "category_label": null,
+    "seasonal": false,
+    "category_name": "五金工具",
+    "price_range": {
+      "low": 55.37,
+      "high": 79.0,
+      "currency": "USD"
+    },
+    "product_total_sales": 289200.0,
+    "affiliate_creator_count": 3122.0,
+    "shop_name": "SEESE Store",
+    "profile": {
+      "产品英文标题": {
+        "value": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000112",
+          "ev_echotik_000365"
+        ]
+      },
+      "售价": {
+        "value": "55.37 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000113",
+          "ev_echotik_000366"
+        ]
+      },
+      "评分": {
+        "value": 4.2,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000369"
+        ]
+      },
+      "评论数": {
+        "value": 18200.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_echotik_000370"
+        ]
+      },
+      "来源类目": {
+        "value": "五金工具",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000116"
+        ]
+      },
+      "主图链接": {
+        "value": "https://cdn.tabcut.com/dataservice/media/item/1731236289885213002/17312362898852130020.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_tabcut_000117"
+        ]
+      },
+      "商品链接": {
+        "value": "https://shop.tiktok.com/view/product/1731236289885213002",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "tiktok_shop",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

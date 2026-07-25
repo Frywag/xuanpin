@@ -1,0 +1,54 @@
+{
+  "executive_summary": "SEESE 无线便携洗车机增长率 +185.6% 为全场最高，30 天 104,947 件、7 天 28,600 件、GMV $1,921,200 双源互验，评论 18,200 条、评分 4.2。但它是五金工具类目、单价 $55.37 的电动设备，与女装选品完全不同赛道；且标题带【DealsForYouDays】促销标记，高增长可能由平台大促驱动，窗口可持续性存疑。建议 reject（不进入女装开款流程），仅保留为大促驱动型爆品的观察样例。",
+  "sections": {
+    "demand": {
+      "assessment": "30 天 104,947 件与 7 天 28,600 件、GMV $1,921,200 双源互验，累计 289,200 件。增长率 +185.6% 全场最高，但标题含【DealsForYouDays】促销活动标记，无法区分自然需求与大促脉冲，趋势曲线缺失使该问题不可验证。",
+      "strengths": ["双源互验，量级扎实", "评论 18,200 条佐证长期真实成交"],
+      "concerns": ["促销标记提示增长可能是大促脉冲，持续性存疑"],
+      "evidence_refs": ["ev_tabcut_000114", "ev_tabcut_000115", "ev_echotik_000371", "ev_echotik_000372", "ev_echotik_000370"],
+      "confidence": "medium"
+    },
+    "competition": {
+      "assessment": "价格带位置在组内偏高区间（outside），$55.37 的客单在 TikTok 观测组中属高价band；类目集中度缺失。评论 18,200 条既是自身护城河，也说明该细分已有成熟玩家。",
+      "strengths": ["高客单+高评论量的组合说明品类有承接高价的能力"],
+      "concerns": ["类目竞争结构数据缺失", "价格带位置在组内极端区间"],
+      "evidence_refs": ["ev_tabcut_000113", "ev_echotik_000370"],
+      "confidence": "low"
+    },
+    "product": {
+      "assessment": "评分 4.2 低于观测类目 P25，18,200 条评论中必有可挖掘的痛点，但无评论全文。产品为「无线+充电底座+车家两用」组合卖点，演示性强。",
+      "strengths": ["卖点适配演示型内容"],
+      "concerns": ["痛点未知", "五金工具的使用场景与女装选品团队的内容能力不匹配"],
+      "evidence_refs": ["ev_echotik_000369", "ev_echotik_000370", "ev_tabcut_000112"],
+      "confidence": "medium"
+    },
+    "supply_chain": {
+      "assessment": "仅价格位置一个代理信号。电动水泵设备涉及电机、电池、防水认证，与女装供应链无任何交集。",
+      "strengths": ["售价高于组内中位（代理指标）"],
+      "concerns": ["硬件供应链完全超出能力范围"],
+      "evidence_refs": ["ev_echotik_000366", "ev_tabcut_000113"],
+      "confidence": "low"
+    },
+    "risk": {
+      "assessment": "店铺「SEESE Store」品牌词在标题中（疑似品牌自营，待人工确认）；促销驱动的高增长有典型的大促后回落风险；高客单设备的退货与售后责任高于服装。",
+      "strengths": [],
+      "concerns": ["促销脉冲回落风险", "设备类售后与安全责任", "疑似品牌自营"],
+      "evidence_refs": ["ev_echotik_000375", "ev_tabcut_000112"],
+      "confidence": "medium"
+    }
+  },
+  "grade_challenge": {
+    "agrees_with_engine": true,
+    "suggested_grade": null,
+    "rationale": "按市场信号 S 成立；但评审提示其增长含促销标记，若后续接入趋势曲线数据，建议引擎增加「促销脉冲」识别规则。"
+  },
+  "go_recommendation": {
+    "decision": "reject",
+    "conditions": []
+  },
+  "open_questions": ["【DealsForYouDays】大促结束后销量是否回落（需趋势曲线）"],
+  "next_actions": ["不列入女装开款清单", "作为促销驱动型爆品观察样例归档"],
+  "missing_fields": ["评论全文", "趋势曲线", "类目竞争结构", "owned_supply_inputs 全部"],
+  "assumptions": ["「促销标记提示大促驱动」为基于标题文本的推断，未经趋势数据验证"],
+  "confidence": "medium"
+}

@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B09NFHM7YJ",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Womens Summer Dresses Beach Casual Loose Tshirt Floral Short Sleeve Flowy Pockets Sundresses 2026",
+    "rating": 4.3,
+    "review_count": 18652.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":1880,\"positive\":1734,\"negative\":146,\"snippets\":[\"Customers love the appearance of the dress, praising its beautiful pattern and overall quality.\",\"This is my third purchase of this dress. They are comfortable,\",\", and very good quality. I especially love the multi-color tie-dye. Very versatile.\",\"...I am ordering her the next size up already because it is such a\",\", and may even order a few for myself. Highly recommend this one!\",\", not too short but a great length and will be easy to toss on for anything when the weather...\",\", but big double white hem ruined the appearance of the dress and white around the collar and short sleeves made it look cheap .\"]},{\"tag\":\"fit\",\"mentions\":1658,\"positive\":1361,\"negative\":297,\"snippets\":[\"Customers find the dress fits beautifully and is flattering, with one customer noting it hits right below the knees and another mentioning it hides their belly.\",\"and the fabric is soft, but a bit too much polyester. It is a little too warm for the summer.\",\"with just the right amount of stretch in the material…the colors are rich…the size is true…the dress is very comfortable…...\",\"and looked nice and crisp at purchase but...got home from cruise and washed it, for the first...\",\"and is very flattering. I got this to where on a cruise so it should be comfortable....\"]},{\"tag\":\"comfort\",\"mentions\":1232,\"positive\":1200,\"negative\":32,\"snippets\":[\"Customers find the dress comfortable, particularly noting its flow and pockets, with one mentioning it is true to size.\",\", cute, and very good quality. I especially love the multi-color tie-dye. Very versatile.\",\"and looks nice and even a bit slimming. I am considering getting more colors.\",\"the look is casual it's not tight fitting and because I'm short the length is perfect for me a couple Inches below...\",\". This dress looks cute with sandals or your Birkies! I did size up and got a 2X. It's a good fit....\"]},{\"tag\":\"color\",\"mentions\":604,\"positive\":522,\"negative\":82,\"snippets\":[\"Customers love the colors of the dress, describing them as lovely, with one customer noting its summery print.\",\"! I received lots of compliments. I normally wear a 18W-20W. The XXL for just fine.\",\"and for sure the length. I found it very comfortable and that is very important. Made of good material and will last....\",\", and the pockets. The only problem is that the dress is much too large and looks like a tent....\",\"I love this dress. Fits perfectly, moves well, hides tummy rolls,\",\"and pattern. Can go from casual to cocktails. Great price....\"]},{\"tag\":\"pockets\",\"mentions\":456,\"positive\":436,\"negative\":20,\"snippets\":[\"Customers love the dress's pockets, particularly the side slits, and one customer notes that they don't stick out.\",\"This dress is pretty, and very comfortable. I love that it has\",\"and it is easy to care for. A great dress for the summer and warm weather....\",\". Color not as vibrant as displayed, but still pretty. Very comfortable. Ordered a size larger than normal as I prefer loose fit.\",\"! Color faded after 2nd wash so now I wear it to the beach and for yardwork. Edit....ripped after 4th wash\",\"The dress not only feels like butter on your skin, but it also\",\"! It's comfortable to wear and can be worn casually or dressed up....\"]},{\"tag\":\"softness\",\"mentions\":438,\"positive\":395,\"negative\":43,\"snippets\":[\"Customers love the dress's softness, describing it as feeling like butter on the skin and having a beautiful floaty texture.\",\"and comfortable to wear and I appreciate it hides my little tummy from having six kids. -See pics- as well as the modest round neckline....\",\"...My partner was fascinated by the material, because it was\",\"and comfortable for her. The article is as described. Also, the service was fast....\",\"...It's super loose and I think an XL would be more flattering. The\",\"(definitely polyester) and the colors are bright as pictured, so I'm...\",\"I’m 5’10” and these are a good length.\",\". Vivid colors. Wash well and still look new. Very comfortable yet casual but not frumpy.\"]},{\"tag\":\"fabric\",\"mentions\":712,\"positive\":482,\"negative\":230,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it excellent and good, while others describe it as terrible and cheap, noting that it is very thin and made of polyester rather than cotton.\",\"...never bought from this vendor, before, the dress is really cute,\",\", the cut is a bit off, the bust area runs small, then it flares quite...\",\". And it has pockets! Color faded after 2nd wash so now I wear it to the beach and for yardwork. Edit....ripped after 4th wash\",\"...This one was just too straight. But the biggest issue was the\",\". Super cheap feeling and see through, I got black. Returned.\",\", the way it flows on the body. It's comfortable and stylish. Colors are great!\"]},{\"tag\":\"size\",\"mentions\":535,\"positive\":262,\"negative\":273,\"snippets\":[\"Customers have mixed experiences with the dress's fit, with some finding it true to size XXL while others report that it runs a little big and the sizing is way off.\",\". I ordered a different color first and it was a perfect fit so I ordered two more this color and another. Neither of the two fit me....\",\"...very nice material for spring and summer living in South Florida,\",\", don't listen to chart, I am a medium and it fits perfectly, not to...\",\", more like a M. Returned that one and decided to try one more time by ordering an XL....\",\". I like the on seam pockets. It machine washes well and is wrinkle free when hung up to dry. It is a great dress for travel....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_5c23961a7c441a27",
+    "ev_6db50257c8cacdb5",
+    "ev_d0bd32529e7af1e3",
+    "ev_d0eba02f08bc95da",
+    "ev_ee0100444125ebb2"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

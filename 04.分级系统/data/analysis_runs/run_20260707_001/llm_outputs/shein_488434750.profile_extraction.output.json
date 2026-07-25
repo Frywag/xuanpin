@@ -1,0 +1,19 @@
+{
+  "profile": {
+    "服饰大类": {"value": "连衣裙", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "产品小类": {"value": "Dress", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "适用性别": {"value": "Women", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "款式风格": {"value": "Boho", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "版型": {"value": "Loose Fit", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "廓形": {"value": "A-line", "evidence_refs": ["ev_shein_frontend_002448", "ev_shein_frontend_002460"], "confidence": "high"},
+    "裙长": {"value": "Mini", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "袖长": {"value": "Sleeveless", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "装饰元素": {"value": ["Print"], "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "图案类型": {"value": ["Graphic"], "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "medium"},
+    "适用场景": {"value": ["度假", "派对", "日常"], "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "适用季节": {"value": ["Summer"], "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"},
+    "节日属性": {"value": "Independence Day", "evidence_refs": ["ev_shein_frontend_002448"], "confidence": "high"}
+  },
+  "missing_fields": ["领型", "开合方式", "面料类型", "弹力"],
+  "assumptions": ["图案类型 Graphic 依据标题 American Flag Print（旗帜图形印花）判断", "标题另含 Casual，款式风格按更具体的 Bohemian 取 Boho"]
+}

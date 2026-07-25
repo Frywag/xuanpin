@@ -1,0 +1,232 @@
+# =====================================================================
+# Priority Score v0 —— 分级标准配置（数据驱动）
+# =====================================================================
+# 权重框架来自《07_分层分析系统组任务书》§8：
+#   市场需求 25 / 竞争可突破 20 / 产品机会 20 / 自有供应链 20 / 风险 -15
+# 所有数值阈值由 2026-06 实采数据的分布分位数推导，推导依据写在行内注释，
+# 详细论证见 docs/01_分级标准_PScoreV0与SABC阈值.md。
+# 口径原则：
+#   - 不同来源的量纲不互换（Kalodata 为 CNY、Tabcut/EchoTik 为 USD、前端各带币种）；
+#   - 收藏/播放是热度信号，封顶分低于成交类信号；
+#   - 缺信号 = 0 分 + missing，绝不用行业均值补。
+schema_version: scoring.v1
+
+# 基准权重（分档内部按此定义；赛道差异用 weight_profiles 缩放，见下）
+weights:
+  demand: 25
+  competition: 20
+  product: 20
+  supply: 0         # v0.4：供应链退出打分，仅作画像字段（选品后人工调查存库）
+  risk_floor: -15
+
+# ================= 三赛道差异化权重（对应附录C §1「赛道只调权重」） =================
+# 打分前先按确定性规则判定赛道（见 track_assignment），再按该赛道的权重档
+# 缩放各维得分与满分；pct = 总分/该赛道可得满分，S/A/B/C 在 pct 上统一分箱。
+weight_profiles:
+  balanced:                                   # 默认档（信号不足以判定赛道）
+    {demand: 25, competition: 20, product: 20, supply: 0, risk_floor: -15}
+  trend_rising:                               # 趋势上升款：动能优先，窗口/库存风险放大
+    {demand: 30, competition: 15, product: 15, supply: 0, risk_floor: -20}
+  evergreen:                                  # 基础常青款：竞争结构与护城河更重要
+    {demand: 22, competition: 28, product: 15, supply: 0, risk_floor: -10}
+  pain_improvement:                           # 痛点改良款：产品机会（差评/改良空间）优先
+    {demand: 20, competition: 15, product: 30, supply: 0, risk_floor: -15}
+
+# 赛道判定（确定性，优先级从上到下，首个命中生效）：
+#   数据依据：Tabcut 增长率 p50=+38.9%；Shein 评分 p25=4.29；基础款词表见 track_tags
+track_assignment:
+  order: [trend_rising, pain_improvement, evergreen]
+  trend_rising: {growth_gte: 0.30, or_bestseller_rank: true}
+  pain_improvement: {rating_lte: 4.30, min_review_count: 10}
+  evergreen: {growth_between: [-0.10, 0.30], basics_keywords: [bra, bras, tights, tank, tee, t-shirt, legging, sock, underwear, shapewear, basic]}
+  fallback: balanced       # 无信号时先看数据源配置的 track_hint，再落 balanced
+
+demand:
+  # ---- 需求量级（三选一取最强信号，防止同一需求被重复计分）max 15 ----
+  volume_max: 15
+  volume_signals:
+    # TikTok 30 天销量（估算）。校准样本：Kalodata 女装内衣类目 Top10（2.5k~86k，
+    # p25/p50/p75 = 17.3k/29.5k/38.7k）+ Tabcut 全类目 Top24（56k~283k，p50=74k）。
+    sales_30d_units:
+      bands: [{gte: 80000, points: 15}, {gte: 30000, points: 12},
+              {gte: 10000, points: 9},  {gte: 1000, points: 6}, {gt: 0, points: 3}]
+    # EchoTik 7 天销量（估算）≈ 30 天阈值 / 4。
+    sales_7d_units:
+      bands: [{gte: 20000, points: 15}, {gte: 7500, points: 12},
+              {gte: 2500, points: 9},   {gte: 250, points: 6}, {gt: 0, points: 3}]
+    # Shein 页面销量下限（"100+"/"4.3k+"）。校准样本：Shein 女装连衣裙 200 款
+    # （n=135，p50=100，p75=800，p90=1620，max=10000）。下限口径 -> 阈值取整。
+    sales_floor_units:
+      bands: [{gte: 2000, points: 15}, {gte: 500, points: 12},
+              {gte: 100, points: 8},   {gt: 0, points: 4}]
+    # 独立站收藏数（热度而非成交，封顶 10/15）。校准样本：freepeople/UO/anthro
+    # 894 款（各站 p50≈200~526，p75≈414~2264，p90≈856~7085，max=71534）。
+    favorites_count:
+      cap: 10
+      bands: [{gte: 5000, points: 10}, {gte: 1000, points: 8},
+              {gte: 300, points: 5},   {gt: 0, points: 2}]
+    # 评论数兜底需求证据（有人买才有评论；封顶 8/15）。校准：Shein p50=14/p90=62；
+    # 独立站评论 p50=3~5.5；halloween frightprops/orientaltrading 有评论数。
+    review_count_as_demand:
+      cap: 8
+      bands: [{gte: 500, points: 8}, {gte: 50, points: 6},
+              {gte: 10, points: 4},  {gt: 0, points: 2}]
+
+  # ---- 需求动能 max 6（增长率与榜单/趋势标签取最强）----
+  momentum_max: 6
+  growth_bands:
+    # 校准样本：Tabcut Top24 销量增长率 n=21，[-20%, +186%]，p50=+38.9%，p75≈+80%；
+    # Kalodata Top10 趋势数组首尾增长 [-26.8%, +55.5%]。
+    - {gte: 0.80, points: 6}    # 高速增长（> Tabcut p75）
+    - {gte: 0.30, points: 5}    # 明确上升（≈ 两源 p50 区间）
+    - {gte: 0.05, points: 3}    # 温和上升
+    - {gte: -0.10, points: 2}   # 平稳（常青候选特征）
+    - {lt: -0.10, points: 0}    # 明确下滑
+  bestseller_rank_points: 4     # Shein 畅销榜标记（200 款中 76 款有，站内强动能证据）
+  trend_tag_points: 2           # 平台趋势标签（200 款中 94 款有，弱动能证据）
+
+  # ---- 需求证据广度 max 4：独立需求信号的来源数 ----
+  breadth_max: 4
+  breadth_bands: [{gte: 3, points: 4}, {gte: 2, points: 3}, {gte: 1, points: 1}]
+
+competition:
+  # ---- 类目集中度 max 6 ----
+  # 校准：Kalodata 女装内衣类目 Top3 店铺占比 4.23%、Top10 占比 11.86%、
+  # 店铺数 19,111 -> 极度分散，新卖家可进入；阈值按占比常识分档。
+  concentration_max: 6
+  top10_ratio_bands:
+    - {lt: 0.20, points: 6}     # 分散市场（实测 11.86% 落在此档）
+    - {lt: 0.40, points: 4}
+    - {lt: 0.60, points: 2}
+    - {gte: 0.60, points: 0}    # 头部垄断
+  # ---- 评论护城河 max 8：竞争对手的评论门槛越低越好切入 ----
+  # 校准：TikTok 女装内衣类目头部（OEAK）product_review_count=68,609 -> 头部同款
+  # 高门槛；Shein 连衣裙 p50=14/p90=62 -> 低门槛。competitor_review_max 取
+  # 同来源同类目组内评论数 p90（运行时计算并落盘），无组内数据时用类目头部实测值。
+  review_moat_max: 8
+  review_moat_bands:
+    - {lt: 100, points: 8}
+    - {lt: 1000, points: 6}
+    - {lt: 10000, points: 3}
+    - {gte: 10000, points: 1}
+  # ---- 价格带位置 max 6：处于来源类目主流价格带 = 可切入 ----
+  # 价格带按 (source_group, currency) 组内分位数运行时计算并写入运行记录，
+  # 不做跨币种换算（换算率不是采集事实）。
+  price_band_max: 6
+  price_band_points:
+    within_p25_p75: 6           # 主流价带
+    within_p10_p90: 4
+    outside: 2                  # 超低/超高价位（连同风险规则一起看）
+
+product:
+  # ---- 痛点/改良空间 max 8 ----
+  # L1 只用低成本代理：评分显著低于类目分布但仍有需求 -> 有改良空间。
+  # 校准：Shein 评分 p25=4.29 / p50=4.67；独立站评分 p25≈3.0~3.9。
+  pain_max: 8
+  rating_pain_bands:
+    - {lte: 4.30, points: 8, label: 低于类目P25_有明确改良空间}
+    - {lte: 4.60, points: 5, label: 低于类目中位_有一定改良空间}
+    - {gt: 4.60, points: 2, label: 口碑较好_改良空间有限}
+  # L2 用真实负面评价标签聚类刷新此分（见 review_tags.py 的负面词表，
+  # 词表全部来自 Shein 实采评价标签，如 Never Received/Runs Large/Wrong Size）。
+  l2_negative_cluster_bands:
+    - {gte: 3, points: 8}       # ≥3 个负面聚类
+    - {gte: 2, points: 6}
+    - {gte: 1, points: 4}
+    - {gte: 0, points: 2}
+  # ---- 差异化元素 max 7 ----
+  diff_max: 7
+  trend_or_design_points: 4     # 有趋势标签 / 图案元素 / 设计细节记录
+  unique_claim_points: 3        # 标题含专利/独家类主张（Patented/Exclusive 等）
+  # ---- 内容/渠道杠杆 max 5 ----
+  # 校准：OEAK 视频销售额占比 92.9%（871.99万/938.59万）、关联达人 594 个；
+  # Tabcut 视频最高播放 1.06 亿。
+  content_max: 5
+  video_share_bands: [{gte: 0.5, points: 5}, {gte: 0.2, points: 3}]
+  creator_count_bands: [{gte: 500, points: 4}, {gte: 100, points: 2}]
+  video_views_bands: [{gte: 10000000, points: 3}, {gte: 1000000, points: 2}]
+  image_count_bands: [{gte: 8, points: 2}, {gte: 4, points: 1}]
+
+supply:
+  # 供应链维两级化（不再要求初筛阶段逐款人工录入）：
+  #   ① profit_proxy（10 分，零人力）：用已采集的真实字段做利润结构代理——
+  #      佣金负担（Kalodata 实测 10~17%）、运费负担（OEAK 实测 运费/售价=26%）、
+  #      价格位置（组内分位，溢价空间）。是「结构代理」不是毛利事实，
+  #      理由文案强制带「代理」字样，confidence=medium。
+  #   ② capability_match（10 分）：品类级供应链能力档案匹配
+  #      （configs/supply_capability.yaml，一次性维护）；档案未启用 -> 记 missing。
+  #   ③ 逐款级 target_cost/moq/lead_time 人工核实只对 L3 终选款触发
+  #      （layer_gates_v0.yaml l3.required_next_data）。
+  profit_proxy_max: 10
+  commission_bands:        # 佣金负担越低利润结构越好；校准：Kalodata Top10 佣金 10%~17%
+    - {lte: 0.12, points: 4}
+    - {lte: 0.16, points: 3}
+    - {lte: 0.20, points: 2}
+    - {gt: 0.20, points: 1}
+  shipping_ratio_bands:    # 运费/售价；OEAK 实测 28.69/108.51=26% 属重负担
+    - {lte: 0.10, points: 3}
+    - {lte: 0.30, points: 2}
+    - {gt: 0.30, points: 0}
+  price_position_points:   # 组内价格分位位置（≥p50 有溢价空间）
+    upper_half: 3
+    lower_half: 2
+  capability_max: 10
+  capability_profile: supply_capability.yaml   # 相对 configs/ 目录
+  required_inputs: [target_cost, moq, lead_time_days, fabric_capability]
+
+risk:
+  # 每条规则：命中即扣分；扣分理由必须能绑定证据或明确标注「人工待确认」。
+  floor: -15
+  rules:
+    single_source: {points: -2, desc: 单一数据源，量价未经第二源互验}
+    quality_degraded: {points: -3, desc: 采集质量状态非VALID（如ACCESS_CHALLENGE）}
+    heat_only_demand: {points: -2, desc: 需求证据只有收藏/播放等热度信号，无成交类证据}
+    seasonal_window: {points: -3, desc: 强季节品类，窗口错配即库存风险}
+    brand_ip: {points: -4, desc: 品牌方自营/知名品牌商品，跟卖或仿款有侵权风险}
+    ultra_low_price: {points: -2, desc: 售价低于来源类目P10，毛利与质量风险}   # Shein p10=$5.49
+    low_rating_high_volume: {points: -3, desc: 评分<3.5且评论≥30，退货风险}
+    creator_concentration: {points: -2, desc: 达人GMV集中度>40%，达人依赖复制风险}  # OEAK 实测 40.3%
+    new_launch_spike: {points: -1, desc: 趋势从0起量，增长率不可解释}
+    # 启发式（证据较弱，只扣分不封顶 S）：店铺/卖家名的品牌词出现在商品标题中，
+    # 疑似品牌自营（如 medicube US Store × "[medicube] PDRN..."），仿款需人工确认
+    brand_shop_heuristic: {points: -2, desc: 店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认}
+
+# ================= S/A/B/C 分箱（P0 校准值） =================
+# pct = max(0, 总分) / achievable_max * 100；achievable_max 在 P0 = 65（供应链维缺失）。
+# 阈值在全量 2,234 个真实候选的 pct 分布上校准（分布：p50=20.0 / p75=27.7 /
+# p90=36.9 / p95=41.5 / p98=46.2 / p99.5=50.8 / max=60.0，见运行记录 sheet 与 docs/01 §6）：
+#   S=50 ≈ 前 0.5%，叠加「≥2 源互验」硬条件后实际只有多源验证的头部款可达（实测 7 款，均为
+#   Tabcut×EchoTik 或 Kalodata×Tabcut 双源互验）；
+#   A=45 ≈ 前 2%（值得继续研究）；B=30 ≈ 前 20%（暂存观察）；其余 C。
+grading:
+  thresholds: {S: 50, A: 45, B: 30}     # 全局兜底阈值（赛道未配置时使用）
+  # ---- 赛道内分箱（“在不同评分重点下划分 S/A/B/C”）----
+  # 各赛道 pct 天花板不同（本轮实测：趋势款 max=59.0 / 痛点款 max=46.9 /
+  # 常青款 max=40.7 / 均衡 max=49.3），全局阈值会让低天花板赛道永远无头部；
+  # 因此在赛道内部按该赛道分布分箱：S≈赛道前1%（叠加多源等硬条件）、
+  # A≈赛道前5%、B≈赛道前15-50%（按赛道数据厚度调整）。
+  thresholds_by_track:
+    trend_rising:     {S: 52, A: 45, B: 32}   # n=88:  p50=37.4 p90=47.9 p98=57.6
+    pain_improvement: {S: 48, A: 44, B: 35}   # n=51:  p50=42.3 p90=45.6 max=46.9
+    evergreen:        {S: 45, A: 34, B: 20}   # n=394: p50=14.5 p90=16.8 p98=32.0
+    balanced:         {S: 50, A: 45, B: 30}   # n=1701: p90=34.7 p98=42.7 max=49.3
+  hard_rules:
+    s_requires_source_count: 2          # S 必须 ≥2 个独立数据源互验
+    s_requires_confidence: medium       # S 不允许 low confidence
+    s_blocked_by_critical_risk: [brand_ip, quality_degraded]   # 命中则封顶 A
+    coverage_caps:                      # 关键字段覆盖率不足时的等级封顶
+      - {below: 0.35, cap: B}
+      - {below: 0.20, cap: C}
+    single_demand_signal_cap: A         # 只有 1 个需求信号来源时封顶 A
+  confidence:
+    high: {min_evidence: 10, min_sources: 2}
+    medium: {min_evidence: 5, min_sources: 1}
+    # 其余 low
+
+track_tags:
+  # 三赛道 + 扩展标签的判定规则（可叠加）
+  trend_rising: {growth_gte: 0.30, or_bestseller_rank: true}
+  evergreen: {growth_between: [-0.10, 0.30], basics_keywords: [bra, bras, tights, tank, tee, t-shirt, legging, sock, underwear, shapewear, basic]}
+  pain_improvement: {rating_lte: 4.30, min_review_count: 10}
+  price_band_opportunity: {price_position: within_p25_p75, concentration_lt: 0.20}
+  watchlist: {max_coverage_below: 0.35}

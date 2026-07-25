@@ -1,0 +1,83 @@
+{
+  "observed_at": "2026-07-10T06:42:45Z",
+  "site": "Kalodata",
+  "market": "US",
+  "category": {
+    "id": "842504",
+    "name": "女士连衣裙",
+    "start_date": "2026-06-09",
+    "end_date": "2026-07-08"
+  },
+  "child_categories": [
+    {
+      "id": "601281",
+      "name": "女士休闲连衣裙"
+    },
+    {
+      "id": "601271",
+      "name": "女士正装连衣裙"
+    },
+    {
+      "id": "601270",
+      "name": "女士婚纱"
+    },
+    {
+      "id": "961672",
+      "name": "伴娘服"
+    }
+  ],
+  "observed_totals": {
+    "products": 37353,
+    "videos_with_product": 99425
+  },
+  "plan_limits": {
+    "product_list_page_size": 10,
+    "product_list_max_visible_page": 1,
+    "video_list_page_size": 10,
+    "video_list_max_visible_page": 1,
+    "creator_list_page_size": 10,
+    "creator_list_max_visible_page": 1,
+    "brand_list_page_size": 10,
+    "brand_list_max_visible_page": 1,
+    "data_export_total": 0,
+    "data_export_remain": 0
+  },
+  "quota_observation": {
+    "before_new_collection": {
+      "search": {
+        "total": 30,
+        "used": 2,
+        "remain": 28
+      },
+      "detail": {
+        "total": 30,
+        "used": 0,
+        "remain": 30
+      }
+    },
+    "after_collection": {
+      "search": {
+        "total": 30,
+        "used": 30,
+        "remain": 0
+      },
+      "detail": {
+        "total": 30,
+        "used": 30,
+        "remain": 0
+      }
+    },
+    "new_collection_usage": {
+      "search_used": 28,
+      "detail_used": 30
+    }
+  },
+  "behavior_notes": [
+    "category summary and history did not consume search quota",
+    "the first successful category Top request unlocked the category and consumed one detail quota",
+    "later category Top shop and creator requests reused the unlock without additional detail quota",
+    "pageSize values above 10 and pageNo above 1 were rejected by the current PRODUCT/VIDEO/CREATOR/BRAND.LIST plan",
+    "brief high-frequency requests triggered a temporary suspected-behavior lock; slower requests later succeeded",
+    "signed query parameters were removed from collected video URLs before delivery"
+  ]
+}

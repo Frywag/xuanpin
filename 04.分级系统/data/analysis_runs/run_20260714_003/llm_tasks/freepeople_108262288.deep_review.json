@@ -1,0 +1,418 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "freepeople_108262288",
+  "run_id": "run_20260714_003",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "freepeople_108262288",
+      "platform": "freepeople",
+      "canonical_url": "https://www.freepeople.com/shop/raven-solid-convertible-maxi-skirt/?color=066",
+      "basic_facts": {
+        "title": "Raven Solid Convertible Maxi Skirt",
+        "brand": null,
+        "category_path": [],
+        "image_url": null,
+        "price": {
+          "amount": 128.0,
+          "currency": "USD"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.1111,
+        "review_count": 9.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": null,
+        "sales_7d_units": null,
+        "sales_floor_units": null,
+        "revenue_30d": null,
+        "gmv_7d": null,
+        "sales_growth_rate": null,
+        "favorites_count": 3949.0,
+        "bestseller_rank_text": null,
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": []
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [
+          {
+            "style_group": "dress",
+            "source_group": "候选自身（freepeople）",
+            "currency": "USD",
+            "n": 1,
+            "p25": 128.0,
+            "p50": 128.0,
+            "p75": 128.0,
+            "note": "候选商品价格"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "indie_frontend",
+            "currency": "USD",
+            "n": 686,
+            "p25": 88.0,
+            "p50": 128.0,
+            "p75": 188.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "shein_frontend",
+            "currency": "USD",
+            "n": 191,
+            "p25": 9.42,
+            "p50": 12.09,
+            "p75": 15.11,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          }
+        ],
+        "same_style_signals": [
+          {
+            "signal": "indie_frontend 语料中有 682 款标题命中相同风格词 ['skirt']",
+            "kind": "style_token_overlap",
+            "count": 682,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "shein_frontend 语料中有 5 款标题命中相同风格词 ['skirt']",
+            "kind": "style_token_overlap",
+            "count": 5,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "patterned_tights_frontend 语料中有 1 款标题命中相同风格词 ['skirt']",
+            "kind": "style_token_overlap",
+            "count": 1,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          }
+        ]
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "market_metrics.sales_growth_rate",
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio",
+        "product_opportunity.reviews",
+        "freshness.listed_at",
+        "freshness.style_novelty_evidence"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": "Maxi Skirts",
+        "category_label": "women_apparel_indie",
+        "source_group": "indie_frontend",
+        "site": "freepeople",
+        "shop_name": null,
+        "seller_name": null,
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": null
+      }
+    },
+    "engine_analysis": {
+      "track": "balanced",
+      "track_label": "均衡款",
+      "grade": "A",
+      "pct": 52.3,
+      "total": 34.0,
+      "achievable_max": 65,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 9.0,
+          "max_score": 25,
+          "reason": "量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_indie_frontend_003235"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 14.0,
+          "max_score": 20,
+          "reason": "竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分",
+          "evidence_refs": [
+            "ev_indie_frontend_003232",
+            "ev_indie_frontend_003234"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 13.0,
+          "max_score": 20,
+          "reason": "评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张",
+          "evidence_refs": [
+            "ev_indie_frontend_003233",
+            "ev_indie_frontend_003236",
+            "ev_indie_frontend_003237"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.0,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 indie_frontend 单源",
+          "evidence_refs": [
+            "ev_indie_frontend_003227"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 favorites_count=3,949 -> 8分；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_indie_frontend_003235"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈32（组内评论数p90代理）-> 8分；价格带位置 within_p25_p75 -> 6分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_indie_frontend_003232",
+            "ev_indie_frontend_003234"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：评分4.1111（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 4 张",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_indie_frontend_003233",
+            "ev_indie_frontend_003236",
+            "ev_indie_frontend_003237"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 indie_frontend 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_indie_frontend_003227"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "同风格红海程度：高（语料内同风格候选 688 款，词表确定性匹配）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_indie_frontend_003227"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "平台优先级：freepeople（无跨平台优先级证据，维持来源平台）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_indie_frontend_003227"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 52.3,
+          "grade": "A",
+          "gate_reason": "PScore 34.0/65（52.3%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 52.3,
+          "grade": "A",
+          "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+          "required_next_data": [
+            "reviews_or_review_tags"
+          ]
+        },
+        "L3": {
+          "passed": true,
+          "score": 52.3,
+          "grade": "A",
+          "gate_reason": "同风格信号：indie_frontend 语料中有 682 款标题命中相同风格词 ['skirt']；无跨平台优先级证据，维持来源平台",
+          "required_next_data": [
+            "供应链字段人工调查（选品后画像存库用，不参与打分）"
+          ]
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_indie_frontend_003227",
+        "source_id": "indie_frontend",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003228",
+        "source_id": "indie_frontend",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003229",
+        "source_id": "indie_frontend",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003231",
+        "source_id": "indie_frontend",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003232",
+        "source_id": "indie_frontend",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003233",
+        "source_id": "indie_frontend",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003234",
+        "source_id": "indie_frontend",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003235",
+        "source_id": "indie_frontend",
+        "field_path": "market_metrics.favorites_count",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": "收藏/心愿单热度，非成交数据"
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003236",
+        "source_id": "indie_frontend",
+        "field_path": "context.image_count",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_indie_frontend_003237",
+        "source_id": "indie_frontend",
+        "field_path": "context.design_signals",
+        "record_locator": "sheet=freepeople;row=65",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_indie_frontend_003227",
+    "ev_indie_frontend_003228",
+    "ev_indie_frontend_003229",
+    "ev_indie_frontend_003231",
+    "ev_indie_frontend_003232",
+    "ev_indie_frontend_003233",
+    "ev_indie_frontend_003234",
+    "ev_indie_frontend_003235",
+    "ev_indie_frontend_003236",
+    "ev_indie_frontend_003237"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

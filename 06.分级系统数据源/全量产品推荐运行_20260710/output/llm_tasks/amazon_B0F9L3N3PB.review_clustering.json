@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0F9L3N3PB",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "chouyatou Women's Summer Striped Midi Long Shirt Dress Casual Loose Short Sleeve Button Down Dress",
+    "rating": 4.0,
+    "review_count": 812.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":132,\"positive\":115,\"negative\":17,\"snippets\":[\"Customers find the dress nice-looking and cool, with one customer mentioning it's perfect for covering their tummy area, while another notes it's right on trend.\",\". I would wear it to church or just any normal day running around. It’s actually better than I expected....\",\"but not what my wife ordered. She ordered the grey but got the green. Length ok (she is 5' 4\\\")...\",\", and pretty. I’ll be wearing it to the grocery, to casual dining places, and to church....\",\"! The fabric is truly 100% cotton so keep in mind this may shrink, and it will possibly come out of the dryer needing to be ironed....\"]},{\"tag\":\"fabric\",\"mentions\":85,\"positive\":66,\"negative\":19,\"snippets\":[\"Customers appreciate the fabric of the dress, describing it as real cotton with a great feel.\",\"...great and it's going to be so cool in the summer with it being\",\". Did I mention how much I LOVE this dress????? lol. You will too!\",\", so there’s no stretch. The rest of the dress is great. I’ll keep it though because I could stand to lose a few pounds anyway.\"]},{\"tag\":\"comfort\",\"mentions\":69,\"positive\":68,\"negative\":1,\"snippets\":[\"Customers find the dress comfortable, particularly in hot weather, with one customer noting it works well for apple shapes.\",\"and cute. I would wear it to church or just any normal day running around. It’s actually better than I expected....\",\"...hospital after giving birth so ic an easily feed my baby and they are\",\"I sized up so it can give a loose feel and still look cute....\",\"and spring time or summer dress. I want every color. A little small, needed a size larger, but it works for me....\",\"and light. 100% cotton. I would size up. I normally wear 2xl but after reading reviews, I went up one size. Good idea....\"]},{\"tag\":\"quality\",\"mentions\":63,\"positive\":52,\"negative\":11,\"snippets\":[\"Customers praise the dress's construction, with one noting it looks put together with little effort.\",\"with a good material, however, below the empire waste there is so much excess material that it can’t possibly look good on...\",\"but am returning it. Not the fault of the dress, it just doesn't look good on me! Was very disappointed but it happens!\",\". Unfortunately it was tight across my chest and I had to return....\"]},{\"tag\":\"summer dress\",\"mentions\":60,\"positive\":60,\"negative\":0,\"snippets\":[\"Customers find this dress perfect for summer, particularly noting its suitability for hot Florida weather.\",\", loose, cool, and pretty. I’ll be wearing it to the grocery, to casual dining places, and to church....\"]},{\"tag\":\"lightweight\",\"mentions\":30,\"positive\":29,\"negative\":1,\"snippets\":[\"Customers appreciate that the dress is lightweight, with one customer noting that the cotton fabric is just right for summer wear, and another mentioning it's comfortable without being see-through.\",\"...this dress was so pretty, and the fact that it is cotton and\",\". I plan on wearing it a lot this summer. Only downside is the need to iron it.\",\", comfortable and perfect for Texas summers. I have had several compliments and one friend bought same dress because she liked it so much\",\", although I am not sure if it is 100 cotton, it feels a little coarse....\"]},{\"tag\":\"fit\",\"mentions\":187,\"positive\":106,\"negative\":81,\"snippets\":[\"Customers have mixed opinions about the dress's fit, with some finding it great and sized correctly, while others report it runs large and is very snug in the chest.\",\"...got it in medium and it is a perfect fit for me as I find it to be\",\". I am 5' 1\\\" and 130 pounds, so the dress comes just above my ankles....\",\". Very small so be sure and order the next size up. LOVE LOVE LOVE this dress. So comfy....\",\"and it light weight. I plan on wearing it a lot this summer. Only downside is the need to iron it.\"]},{\"tag\":\"length\",\"mentions\":27,\"positive\":17,\"negative\":10,\"snippets\":[\"Customers have mixed opinions about the dress's length, with some finding it perfect while others note it runs longer than expected.\",\"I love this dress. I am 5’2” it’s\",\"even for me. I love the feel of the fabric, it’s light weight, perfect for summer.\",\"because I'm only 5'3\\\". It has pockets!\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_a4dfa0f8ca0c13be",
+    "ev_d5c129c995eef8cb",
+    "ev_d8dedaa4c7bd2dc9"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

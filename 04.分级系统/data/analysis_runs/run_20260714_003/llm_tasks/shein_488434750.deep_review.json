@@ -1,0 +1,459 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "shein_488434750",
+  "run_id": "run_20260714_003",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "shein_488434750",
+      "platform": "shein",
+      "canonical_url": "https://us.shein.com/SHEIN-LilyWest-Bohemian-Western-American-Flag-Print-Sleeveless-Dress-For-Women-Casual-Loose-Flowy-A-Line-Patriotic-Mini-Dress-Perfect-For-Summer-Beach-Vacation-Independence-Day-Party-Soft-Lightweight-Fabric-p-488434750.html?mallCode=1&pageListType=4&detailBusinessFrom=0-1_488434750%7C0-2",
+      "basic_facts": {
+        "title": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini Dress, Perfect For Summer Beach Vacation, Independence Day Party, Soft Lightweight Fabric",
+        "brand": null,
+        "category_path": [],
+        "image_url": "https://img.ltwebstatic.com/v4/j/pi/2026/06/01/af/1780283799f2f64f88ed42142869d1b678b34a2dbe.webp",
+        "price": {
+          "amount": 11.79,
+          "currency": "USD"
+        },
+        "original_price": {
+          "amount": 16.09,
+          "currency": "USD"
+        },
+        "discount_pct": -0.27,
+        "rating": 3.6,
+        "review_count": 5.0,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": null,
+        "sales_7d_units": null,
+        "sales_floor_units": 800.0,
+        "revenue_30d": null,
+        "gmv_7d": null,
+        "sales_growth_rate": null,
+        "favorites_count": null,
+        "bestseller_rank_text": "#8 Bestseller in New Arrival Mini Casual Dresses",
+        "video_views_max": null,
+        "video_revenue_share": null,
+        "related_creator_count": null,
+        "trend_signals": [
+          {
+            "signal": "ALineStyles",
+            "kind": "platform_trend_tag",
+            "evidence_refs": [
+              "ev_shein_frontend_002460"
+            ]
+          }
+        ]
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": null,
+        "category_top10_shop_ratio": null,
+        "category_shop_count": null,
+        "competitor_review_max": null,
+        "commission_rate": null,
+        "seller_type": null,
+        "creator_gmv_concentration": null
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [
+          {
+            "cluster_name": "正面标签",
+            "tags": [
+              {
+                "tag": "Shiny",
+                "count": 1
+              }
+            ]
+          }
+        ],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [
+          {
+            "style_group": "dress",
+            "source_group": "候选自身（shein）",
+            "currency": "USD",
+            "n": 1,
+            "p25": 11.79,
+            "p50": 11.79,
+            "p75": 11.79,
+            "note": "候选商品价格"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "indie_frontend",
+            "currency": "USD",
+            "n": 686,
+            "p25": 88.0,
+            "p50": 128.0,
+            "p75": 188.0,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          },
+          {
+            "style_group": "dress",
+            "source_group": "shein_frontend",
+            "currency": "USD",
+            "n": 191,
+            "p25": 9.42,
+            "p50": 12.09,
+            "p75": 15.11,
+            "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+          }
+        ],
+        "same_style_signals": [
+          {
+            "signal": "shein_frontend 语料中有 190 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 190,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "indie_frontend 语料中有 3 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 3,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          },
+          {
+            "signal": "patterned_tights_frontend 语料中有 3 款标题命中相同风格词 ['dress']",
+            "kind": "style_token_overlap",
+            "count": 3,
+            "note": "同风格信号（确定性词表匹配），不构成同款结论"
+          }
+        ]
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "market_metrics.sales_growth_rate",
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "competition_metrics.category_top10_shop_ratio",
+        "freshness.style_novelty_evidence"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": null,
+        "category_label": "women_dresses",
+        "source_group": "shein_frontend",
+        "site": "shein",
+        "shop_name": null,
+        "seller_name": null,
+        "seasonal": false,
+        "shipping_fee": null,
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": "Shiny (1)"
+      }
+    },
+    "engine_analysis": {
+      "track": "trend_rising",
+      "track_label": "趋势上升款",
+      "grade": "A",
+      "pct": 55.8,
+      "total": 33.5,
+      "achievable_max": 60.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 20.4,
+          "max_score": 30.0,
+          "reason": "量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_shein_frontend_002458",
+            "ev_shein_frontend_002459"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 6.8,
+          "max_score": 15.0,
+          "reason": "竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "evidence_refs": [
+            "ev_shein_frontend_002453",
+            "ev_shein_frontend_002457"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 9.0,
+          "max_score": 15.0,
+          "reason": "评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "evidence_refs": [
+            "ev_shein_frontend_002456",
+            "ev_shein_frontend_002460"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源（赛道风险系数×1.33）",
+          "evidence_refs": [
+            "ev_shein_frontend_002448"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_shein_frontend_002458",
+            "ev_shein_frontend_002459"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_shein_frontend_002453",
+            "ev_shein_frontend_002457"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_shein_frontend_002456",
+            "ev_shein_frontend_002460"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 shein_frontend 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_shein_frontend_002448"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "同风格红海程度：高（语料内同风格候选 196 款，词表确定性匹配）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_shein_frontend_002448"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "平台优先级：shein（带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台）",
+          "claim_type": "cross_platform",
+          "evidence_refs": [
+            "ev_shein_frontend_002459"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 55.8,
+          "grade": "A",
+          "gate_reason": "PScore 33.5/60.0（55.8%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 55.8,
+          "grade": "A",
+          "gate_reason": "评价标签聚类：0 个负面聚类 / 1 次标签提及",
+          "required_next_data": []
+        },
+        "L3": {
+          "passed": true,
+          "score": 55.8,
+          "grade": "A",
+          "gate_reason": "同风格信号：shein_frontend 语料中有 190 款标题命中相同风格词 ['dress']；带站内畅销榜标记，优先在原平台（Shein）巩固，再评估多平台",
+          "required_next_data": [
+            "供应链字段人工调查（选品后画像存库用，不参与打分）"
+          ]
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_shein_frontend_002448",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002449",
+        "source_id": "shein_frontend",
+        "field_path": "context.title_cn",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002450",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.image_url",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002452",
+        "source_id": "shein_frontend",
+        "field_path": "context.raw_evidence_path",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002453",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002454",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.original_price",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002455",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.discount_pct",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002456",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002457",
+        "source_id": "shein_frontend",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002458",
+        "source_id": "shein_frontend",
+        "field_path": "market_metrics.sales_floor_units",
+        "record_locator": "sheet=shein;row=189",
+        "note": "Shein 销量为下限口径（如 100+ 记 100）"
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002459",
+        "source_id": "shein_frontend",
+        "field_path": "market_metrics.bestseller_rank_text",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002460",
+        "source_id": "shein_frontend",
+        "field_path": "context.trend_tags",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_shein_frontend_002461",
+        "source_id": "shein_frontend",
+        "field_path": "context.review_tags_raw",
+        "record_locator": "sheet=shein;row=189",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_shein_frontend_002448",
+    "ev_shein_frontend_002449",
+    "ev_shein_frontend_002450",
+    "ev_shein_frontend_002452",
+    "ev_shein_frontend_002453",
+    "ev_shein_frontend_002454",
+    "ev_shein_frontend_002455",
+    "ev_shein_frontend_002456",
+    "ev_shein_frontend_002457",
+    "ev_shein_frontend_002458",
+    "ev_shein_frontend_002459",
+    "ev_shein_frontend_002460",
+    "ev_shein_frontend_002461"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

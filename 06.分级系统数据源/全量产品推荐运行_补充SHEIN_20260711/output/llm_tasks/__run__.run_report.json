@@ -1,0 +1,533 @@
+{
+  "task_type": "run_report",
+  "candidate_id": "__run__",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "报告中的所有数值必须直接取自 inputs（含 inputs.derived 的比例），不要自行计算新数值",
+    "提到具体候选时 candidate_id 必须在 inputs.top_candidates 里",
+    "对没有需求信号的品类（如本轮图案连裤袜）要说明是数据缺失而非品类否定"
+  ],
+  "inputs": {
+    "run_meta": {
+      "run_id": "output",
+      "market": "US",
+      "candidates_total": 2000,
+      "l1_processed": 2000,
+      "l2_processed": 40,
+      "l3_processed": 10,
+      "grade_distribution": {
+        "A": 68,
+        "S": 8,
+        "B": 277,
+        "C": 1647
+      },
+      "track_distribution": {
+        "trend_rising": 285,
+        "balanced": 1378,
+        "evergreen": 80,
+        "pain_improvement": 257
+      },
+      "pct_p50": 20.0,
+      "pct_p90": 43.7,
+      "pct_max": 62.7
+    },
+    "derived": {
+      "grade_share_pct": {
+        "A": 3.4,
+        "S": 0.4,
+        "B": 13.9,
+        "C": 82.3
+      },
+      "track_share_pct": {
+        "trend_rising": 14.2,
+        "balanced": 68.9,
+        "evergreen": 4.0,
+        "pain_improvement": 12.8
+      },
+      "sources_count": 26
+    },
+    "group_price_bands": {
+      "amazon_plugin|USD": {
+        "n": 200,
+        "p10": 12.99,
+        "p25": 14.99,
+        "p50": 26.479999999999997,
+        "p75": 37.99,
+        "p90": 43.891000000000005
+      },
+      "tiktok_shop_plugin|CNY": {
+        "n": 93,
+        "p10": 103.49000000000001,
+        "p25": 151.87,
+        "p50": 274.61,
+        "p75": 354.79,
+        "p90": 539.2779999999999
+      },
+      "frontend_aerie|USD": {
+        "n": 30,
+        "p10": 31.46,
+        "p25": 52.46,
+        "p50": 55.58,
+        "p75": 59.95,
+        "p90": 78.0
+      },
+      "frontend_alo_yoga|USD": {
+        "n": 45,
+        "p10": 138.0,
+        "p25": 138.0,
+        "p50": 138.0,
+        "p75": 138.0,
+        "p90": 138.0
+      },
+      "frontend_amazon|USD": {
+        "n": 406,
+        "p10": 13.235,
+        "p25": 17.99,
+        "p50": 29.99,
+        "p75": 39.97,
+        "p90": 47.59
+      },
+      "frontend_cupshe|USD": {
+        "n": 48,
+        "p10": 29.0,
+        "p25": 32.75,
+        "p50": 36.0,
+        "p75": 40.0,
+        "p90": 44.0
+      },
+      "frontend_farm_rio|USD": {
+        "n": 4,
+        "p10": 254.6,
+        "p25": 264.5,
+        "p50": 270.0,
+        "p75": 289.5,
+        "p90": 324.6
+      },
+      "frontend_for_love_lemons|USD": {
+        "n": 126,
+        "p10": 19800.0,
+        "p25": 23150.0,
+        "p50": 28900.0,
+        "p75": 34900.0,
+        "p90": 48900.0
+      },
+      "frontend_good_american|USD": {
+        "n": 43,
+        "p10": 82.8,
+        "p25": 123.0,
+        "p50": 158.0,
+        "p75": 163.5,
+        "p90": 169.0
+      },
+      "frontend_lulus|USD": {
+        "n": 66,
+        "p10": 54.0,
+        "p25": 66.0,
+        "p50": 78.5,
+        "p75": 87.25,
+        "p90": 99.0
+      },
+      "frontend_madewell|USD": {
+        "n": 41,
+        "p10": 88.0,
+        "p25": 118.0,
+        "p50": 138.0,
+        "p75": 148.0,
+        "p90": 168.0
+      },
+      "frontend_quince|USD": {
+        "n": 99,
+        "p10": 49.9,
+        "p25": 54.0,
+        "p50": 64.9,
+        "p75": 82.0,
+        "p90": 149.9
+      },
+      "frontend_reformation|USD": {
+        "n": 48,
+        "p10": 178.0,
+        "p25": 248.0,
+        "p50": 278.0,
+        "p75": 328.0,
+        "p90": 378.0
+      },
+      "frontend_skims|USD": {
+        "n": 51,
+        "p10": 20.0,
+        "p25": 51.0,
+        "p50": 68.0,
+        "p75": 88.0,
+        "p90": 108.0
+      },
+      "frontend_shein|USD": {
+        "n": 199,
+        "p10": 5.494,
+        "p25": 9.19,
+        "p50": 12.09,
+        "p75": 14.89,
+        "p90": 17.670000000000005
+      }
+    },
+    "top_candidates": [
+      {
+        "candidate_id": "amazon_B09N72KVHY",
+        "title": "Summer Dresses for Women Beach Boho Sleeveless Vintage Floral Flowy Pocket Tshirt Tank Sundresses 2026",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 62.7,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=36,574 -> 12分；销量/销售额增长率 +57.3% -> 5分；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "shein_488434750",
+        "title": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini",
+        "platform": "shein",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 58.3,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 frontend_shein 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源；竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分3.6（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张"
+      },
+      {
+        "candidate_id": "amazon_B09NFHM7YJ",
+        "title": "Womens Summer Dresses Beach Casual Loose Tshirt Floral Short Sleeve Flowy Pockets Sundresses 2026",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 57.7,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=21,163 -> 9分；销量/销售额增长率 +47.7% -> 5分；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分；产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B0F1RW5JJC",
+        "title": "RUMIA Summer Dresses for Women 2026 V-Neck Casual Sundresses T-Shirt Dress",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 55.5,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源",
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「RUMIA FASHION」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=32,560 -> 12分；销量/销售额增长率 +91.6% -> 6分；1个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B0FV8B1HD4",
+        "title": "WIHOLL Summer Dresses Cap Sleeve Crewneck Maxi Long Casual Dress with Pockets Beach Vacation Sundresses 2026 Trendy",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 55.5,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「WIHOLL FASHION」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=31,732 -> 12分；销量/销售额增长率 +53.6% -> 5分；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分；产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B0FQTR83H2",
+        "title": "WIHOLL Summer Dresses for Women 2026 Maxi Dress Boho Halter Dress Sundresses Beach Vacation Clothes Travel Outfits",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 54.2,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「WIHOLL FASHION」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=22,748 -> 9分；销量/销售额增长率 +99.1% -> 6分；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B0D7Q86R4N",
+        "title": "elescat Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 54.2,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「elescat」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=13,276 -> 9分；销量/销售额增长率 +122.5% -> 6分；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.4（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B0G4RYHM2Z",
+        "title": "Zeagoo Summer Dresses for Women Casual A Line Dress 2026 V Neck Short Dresses Floral Sundress Pleated Boho Dress",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 53.8,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ZEAGOO」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=19,881 -> 9分；带平台畅销榜标记；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B0GFNKBM2J",
+        "title": "YESNO Women's Summer Maxi Dresses Casual Floral Short Sleeve V Neck Boho Beach Vacation Swing Dress with Pockets EVF",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 53.8,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=13,323 -> 9分；销量/销售额增长率 +9000.0% -> 6分；1个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.2（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B0CN2XRCZH",
+        "title": "ANRABESS Women's Summer Casual Sleeveless Square Neck Dress 2026 Smocked Ruffle Backless Boho Beach Cute Teen Short Sund",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 53.8,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「ANRABESS」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=10,000 -> 9分；带平台畅销榜标记；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "shein_472914284",
+        "title": "NEW IDEA Women's Sexy Elegant White One-Shoulder Cami Cutout Irregular Slit Midi Dress, Ruched Waist Summer Dress For Ni",
+        "platform": "shein",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 53.3,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 frontend_shein 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_floor_units=800 -> 12分；带平台畅销榜标记；1个独立需求证据源；竞争可突破：竞品评论门槛≈1,000（组内评论数p90代理）-> 3分；价格带位置 outside -> 2分；产品机会：评分2.75（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录；素材图片 8 张"
+      },
+      {
+        "candidate_id": "amazon_B0CWVMP1GC",
+        "title": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "S",
+        "pct": 53.2,
+        "confidence": "high",
+        "source_count": 2,
+        "risk_claims": [
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「OFEEFAN」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=19,800 -> 9分；销量/销售额增长率 +77.9% -> 5分；2个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分；产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "amazon_B09LH6CFNH",
+        "title": "CHICGAL Summer Dresses for Women Beach Cover Ups Strapless Boho Floral Print Sundress 2026",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 52.8,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源",
+          "店铺名含商品品牌词，疑似品牌自营，仿款侵权风险待人工确认：店铺「Chicgal」品牌词出现在标题中（人工待确认）"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=30,023 -> 12分；销量/销售额增长率 +86.2% -> 6分；1个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p10_p90 -> 4分；产品机会：评分4.3（低于类目P25_有明确改良空间）-> 8分；有趋势标签/设计细节记录"
+      },
+      {
+        "candidate_id": "tiktok_shop_1731569071085752868",
+        "title": "Curvysweet Isolde Women's One Shoulder Formal Evening Gown - Built-in Bra, Ribbon Accent, Bodycon Mesh, Ruched Maxi Dres",
+        "platform": "tiktok_shop",
+        "track": "evergreen",
+        "grade": "A",
+        "pct": 52.5,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 kalodata_dresses 单源",
+          "达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 42%"
+        ],
+        "reason_summary": "市场需求：量级信号 review_count_as_demand=1,416 -> 8分；销量/销售额增长率 +12.5% -> 3分；1个独立需求证据源；竞争可突破：类目Top10店铺占比 19.2% -> 集中度6分；竞品评论门槛≈1,449（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.8（口碑较好_改良空间有限）-> 2分；视频销售额占比 98%"
+      },
+      {
+        "candidate_id": "amazon_B0CR5HKB56",
+        "title": "GRECERELLE 2026 Women Year-Round Casual Round Neck Loose Split Wrinkle-Free Long Maxi Vacation Dress with Pockets (XXS-4",
+        "platform": "amazon",
+        "track": "trend_rising",
+        "grade": "A",
+        "pct": 52.2,
+        "confidence": "medium",
+        "source_count": 1,
+        "risk_claims": [
+          "单一数据源，量价未经第二源互验：仅 seller_sprite_amazon 单源"
+        ],
+        "reason_summary": "市场需求：量级信号 sales_30d_units=39,160 -> 12分；带平台畅销榜标记；1个独立需求证据源；竞争可突破：竞品评论门槛≈5,059（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分；产品机会：评分4.6（低于类目中位_有一定改良空间）-> 5分；有趋势标签/设计细节记录"
+      }
+    ],
+    "top_missing_fields": [
+      {
+        "field": "owned_supply_inputs.target_cost",
+        "count": 2000,
+        "share_pct": 100.0
+      },
+      {
+        "field": "owned_supply_inputs.moq",
+        "count": 2000,
+        "share_pct": 100.0
+      },
+      {
+        "field": "owned_supply_inputs.lead_time_days",
+        "count": 2000,
+        "share_pct": 100.0
+      },
+      {
+        "field": "competition_metrics.category_top10_shop_ratio",
+        "count": 1907,
+        "share_pct": 95.3
+      },
+      {
+        "field": "market_metrics.sales_growth_rate",
+        "count": 1753,
+        "share_pct": 87.6
+      },
+      {
+        "field": "market_metrics.<any_demand_signal>",
+        "count": 1572,
+        "share_pct": 78.6
+      },
+      {
+        "field": "basic_facts.rating",
+        "count": 1103,
+        "share_pct": 55.1
+      },
+      {
+        "field": "basic_facts.review_count",
+        "count": 1101,
+        "share_pct": 55.0
+      },
+      {
+        "field": "competition_metrics.competitor_review_max",
+        "count": 830,
+        "share_pct": 41.5
+      },
+      {
+        "field": "basic_facts.price(band)",
+        "count": 505,
+        "share_pct": 25.2
+      }
+    ],
+    "envelope_warnings": {
+      "envelope_frontend_abercrombie_fitch_20260710": [
+        "该站点本轮无有效商品行，仍保留数据源审计记录。"
+      ],
+      "envelope_frontend_aerie_20260710": [
+        "30 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_anthropologie_20260710": [
+        "72 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_cider_20260710": [
+        "该站点本轮无有效商品行，仍保留数据源审计记录。"
+      ],
+      "envelope_frontend_everlane_20260710": [
+        "37 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_farm_rio_20260710": [
+        "11 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_free_people_20260710": [
+        "72 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_good_american_20260710": [
+        "43 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_lululemon_20260710": [
+        "26 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_lulus_20260710": [
+        "105 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_madewell_20260710": [
+        "41 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_old_navy_20260710": [
+        "该站点本轮无有效商品行，仍保留数据源审计记录。"
+      ],
+      "envelope_frontend_princess_polly_20260710": [
+        "134 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_revolve_20260710": [
+        "该站点本轮无有效商品行，仍保留数据源审计记录。"
+      ],
+      "envelope_frontend_urban_outfitters_20260710": [
+        "72 行详情采集状态为失败或受阻，保留列表事实并降级。"
+      ],
+      "envelope_frontend_vuori_20260710": [
+        "该站点本轮无有效商品行，仍保留数据源审计记录。"
+      ],
+      "envelope_seller_sprite_amazon_20260710": [
+        "销量与销售额为 SellerSprite 估算值；趋势工作表按全部有效行聚合。"
+      ],
+      "envelope_frontend_shein_20260711": [
+        "销量采用来源下限口径；媒体表按商品ID关联并去重。"
+      ],
+      "envelope_kalodata_dresses_20260710": [
+        "Kalodata trial plan exposed only page 1 with 10 rows per list/filter; the collector expanded coverage through four child categories and multiple sort dimensions.",
+        "Observed market totals were 37,353 products and 99,425 product videos; this envelope contains 93 unique product candidates actually returned by accessible endpoints.",
+        "Search quota 30/30 and detail quota 30/30 were used; export quota was 0."
+      ]
+    }
+  },
+  "allowed_evidence_ids": [],
+  "output_schema": {
+    "title": "str",
+    "executive_summary": "str（≤300字：这轮分析发现了什么、建议做什么）",
+    "market_landscape": "str（数据源覆盖了什么市场、看到什么格局）",
+    "track_analysis": [
+      {
+        "track": "trend_rising|pain_improvement|evergreen|balanced",
+        "narrative": "str（该赛道的发现与建议）",
+        "top_candidate_ids": [
+          "⊆ inputs.top_candidates 中的 candidate_id"
+        ]
+      }
+    ],
+    "top_candidates_review": [
+      {
+        "candidate_id": "⊆ inputs.top_candidates",
+        "one_liner": "str（一句话点评）"
+      }
+    ],
+    "data_quality_and_gaps": "str（缺什么数据、对结论的影响）",
+    "risk_overview": "str",
+    "next_collection_plan": [
+      "str（下一轮补采/扩源的优先级）"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

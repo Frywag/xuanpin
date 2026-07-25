@@ -1,0 +1,819 @@
+{
+  "task_type": "style_match_report",
+  "candidate_id": "__style_match__",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "verdict 必须四选一；same_product 需标题语义高度一致且价格结构可解释，仅平台不同",
+    "不得依据商品 id 判定同款；id 相同的多源记录已在数据层合并，不属于本任务",
+    "判断不了的对给 unrelated 并说明证据不足，不要猜测"
+  ],
+  "inputs": {
+    "cards": [
+      {
+        "candidate_id": "amazon_B09N72KVHY",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "Summer Dresses for Women Beach Boho Sleeveless Vintage Floral Flowy Pocket Tshirt Tank Sundresses 2026",
+        "price": {
+          "amount": 14.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/818Icz6MFZL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_stable",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dresses",
+          "tank"
+        ],
+        "evidence_refs": [
+          "ev_4423a20f476e0b9c",
+          "ev_3cb63be344499711",
+          "ev_d2a7fc473fdf2f2b",
+          "ev_1616ba17f8ca7856"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B09NFHM7YJ",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "Womens Summer Dresses Beach Casual Loose Tshirt Floral Short Sleeve Flowy Pockets Sundresses 2026",
+        "price": {
+          "amount": 14.98,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/810+mmMoBzL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_stable",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_75a4b95893c31dbd",
+          "ev_4344373c16bf79ec",
+          "ev_00ba6590bac64924",
+          "ev_4bd1874c56613e01"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0F1RW5JJC",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "RUMIA Summer Dresses for Women 2026 V-Neck Casual Sundresses T-Shirt Dress",
+        "price": {
+          "amount": 14.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/61SVcB5cNeL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses",
+          "t-shirt"
+        ],
+        "evidence_refs": [
+          "ev_53c4094e0cb09722",
+          "ev_280cd7e2f90175e1"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0FV8B1HD4",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "WIHOLL Summer Dresses Cap Sleeve Crewneck Maxi Long Casual Dress with Pockets Beach Vacation Sundresses 2026 Trendy",
+        "price": {
+          "amount": 14.22,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/71jdT0STwdL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_723cc32216f51edf",
+          "ev_2a70326908660c75",
+          "ev_2345d581bf2432e6",
+          "ev_0cdb775dcece9e35"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0FQTR83H2",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "WIHOLL Summer Dresses for Women 2026 Maxi Dress Boho Halter Dress Sundresses Beach Vacation Clothes Travel Outfits",
+        "price": {
+          "amount": 14.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/716Xs5IAhxL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_0868461b0fa5c4d3",
+          "ev_0b4c1c923cae5450",
+          "ev_f818c9b241719fd9",
+          "ev_79c61a756887f883"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0D7Q86R4N",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "elescat Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026",
+        "price": {
+          "amount": 14.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/41drxZgsYBL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_037a2245e1638500",
+          "ev_dd49a0374b343cb4",
+          "ev_c94f0c76e9e0a8d6",
+          "ev_caddda9f2a0289b9"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0G4RYHM2Z",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "Zeagoo Summer Dresses for Women Casual A Line Dress 2026 V Neck Short Dresses Floral Sundress Pleated Boho Dress",
+        "price": {
+          "amount": 19.98,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/81DhVwucyKL._AC_UL300_SR300,200_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_3ed9d5129a3a4738",
+          "ev_9c4b22a3c0b8b3b8",
+          "ev_e1d8abd5ff101b75",
+          "ev_a91598a3443e1242"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0GFNKBM2J",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "YESNO Women's Summer Maxi Dresses Casual Floral Short Sleeve V Neck Boho Beach Vacation Swing Dress with Pockets EVF",
+        "price": {
+          "amount": 24.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/717d1ATJ0AL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_9f167e829725a2d0",
+          "ev_5155e2ad7efef0dd"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0CN2XRCZH",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "ANRABESS Women's Summer Casual Sleeveless Square Neck Dress 2026 Smocked Ruffle Backless Boho Beach Cute Teen Short Sundress",
+        "price": {
+          "amount": 33.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/71nSZpmXtoL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_6ed63981009762ed",
+          "ev_d31e925267afa4a1",
+          "ev_103f1b597f57fa14",
+          "ev_92d997e0e38df9ca"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0CWVMP1GC",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "OFEEFAN Womens Summer Dresses 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral/Plain/Eyelet",
+        "price": {
+          "amount": 12.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/811gATfZw8L._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_f5228138b592f4d6",
+          "ev_e8cd77cbb5146a2b",
+          "ev_951a7cef80927136",
+          "ev_861db1bb950ee948"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B09LH6CFNH",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "CHICGAL Summer Dresses for Women Beach Cover Ups Strapless Boho Floral Print Sundress 2026",
+        "price": {
+          "amount": 13.88,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/81nx00bvxOL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_b7a1193bc73abeb6",
+          "ev_16ac7f969fc8b9f6"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1731569071085752868",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "Curvysweet Isolde Women's One Shoulder Formal Evening Gown - Built-in Bra, Ribbon Accent, Bodycon Mesh, Ruched Maxi Dress with Formal Wear, Sleeveless Elegant Bridesmaid Dresses for Women",
+        "price": {
+          "amount": 322.86,
+          "currency": "CNY"
+        },
+        "category": "女士连衣裙",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [
+          "bra",
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_kalodata_dresses_000318",
+          "ev_kalodata_dresses_000324"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0CR5HKB56",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "GRECERELLE 2026 Women Year-Round Casual Round Neck Loose Split Wrinkle-Free Long Maxi Vacation Dress with Pockets (XXS-4XL)",
+        "price": {
+          "amount": 19.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/61ceyasLBOL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_2f9df0d63ba2506d",
+          "ev_8b054b5930e5574f"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0DKSDPKZF",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "Dokotoo Womens Summer Dresses 2026 V Neck A Line Short Sleeve Casual Ruffle Babydoll Mini Dress",
+        "price": {
+          "amount": 27.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/71Ck1fLQNbL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_93992837bdb21e46",
+          "ev_15758afb74aeee73",
+          "ev_34a8753c001f38f9",
+          "ev_e5cd8a6af0f7a783"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1729595068919418943",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "Women's Plain Ruched Tie Back Halter Dress, Casual Chic Sleeveless A Line Short Dress for Summer, Ladies Clothes for Daily Wear",
+        "price": {
+          "amount": 65.08,
+          "currency": "CNY"
+        },
+        "category": "女士休闲连衣裙",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_kalodata_dresses_001305",
+          "ev_kalodata_dresses_001309"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0FT4QF9D5",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "WIHOLL Summer Dresses for Women Flowy Casual Midi Dress Beach Vacation Sundresses with Pockets",
+        "price": {
+          "amount": 17.99,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/7191TnDL93L._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving",
+          "price_stable"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_044a68140dda8490",
+          "ev_986bf44ee9158d5f"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0D53XHGL8",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "Zhiyouni Women's Summer Sleeveless Mini Dress V Neck Spaghetti Straps Athletic Built-in Shorts Sundress",
+        "price": {
+          "amount": 28.78,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/71T8PIMwklL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_854e11db3fadbde9",
+          "ev_472ad6314550d873"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0F2847P7N",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "WIHOLL Women's Summer Dress 2026 A-Line Sleeveless Casual Sundress with Pockets Floral/Solid",
+        "price": {
+          "amount": 14.98,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/81SyaRwvkeL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_df061a974e5d7282",
+          "ev_8331cfe5e55403f3"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0G59CSNQ9",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "Summer Dresses for Women 2026 V Neck Sleeveless Lace Boho Dress Elegant Classy Spring Beach Vacation Outfits",
+        "price": {
+          "amount": 12.48,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/71YgbMzejoL._AC_UL300_SR300,200_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dress",
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_9ec9f721d17a99aa",
+          "ev_b0b0324621bb7fff",
+          "ev_e847a71a4a691e7a",
+          "ev_418d93111ab4a1ac"
+        ]
+      },
+      {
+        "candidate_id": "amazon_B0FRS91D2B",
+        "platform": "amazon",
+        "source_group": "amazon_plugin",
+        "title": "WIHOLL Summer Dresses for Women 2026 Maxi Dresses Long Flowy A Line Sleeveless Sundresses with Pockets",
+        "price": {
+          "amount": 16.19,
+          "currency": "USD"
+        },
+        "category": "Casual",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/81U0zN5sngL._AC_UL600_SR600,400_.jpg",
+        "trend_tags": [
+          "sales_trend_rising",
+          "bsr_improving"
+        ],
+        "style_tokens": [
+          "dresses"
+        ],
+        "evidence_refs": [
+          "ev_4dfc44559bf66b55",
+          "ev_f851c67cfb189069",
+          "ev_04f359f74a12fef8",
+          "ev_f9c657df199b2a70"
+        ]
+      }
+    ],
+    "prefilter_pairs": [
+      {
+        "candidate_a": "amazon_B09N72KVHY",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B09NFHM7YJ",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0F1RW5JJC",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0F1RW5JJC",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0FV8B1HD4",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0FV8B1HD4",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0FQTR83H2",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0FQTR83H2",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0D7Q86R4N",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0G4RYHM2Z",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0G4RYHM2Z",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0GFNKBM2J",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0GFNKBM2J",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0CN2XRCZH",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0CN2XRCZH",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0CWVMP1GC",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B09LH6CFNH",
+        "candidate_b": "tiktok_shop_1731569071085752868",
+        "shared_tokens": [
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1731569071085752868",
+        "candidate_b": "amazon_B0CR5HKB56",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1731569071085752868",
+        "candidate_b": "amazon_B0DKSDPKZF",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1731569071085752868",
+        "candidate_b": "amazon_B0FT4QF9D5",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1731569071085752868",
+        "candidate_b": "amazon_B0D53XHGL8",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1731569071085752868",
+        "candidate_b": "amazon_B0F2847P7N",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1731569071085752868",
+        "candidate_b": "amazon_B0G59CSNQ9",
+        "shared_tokens": [
+          "dress",
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1731569071085752868",
+        "candidate_b": "amazon_B0FRS91D2B",
+        "shared_tokens": [
+          "dresses"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0CR5HKB56",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "amazon_B0DKSDPKZF",
+        "candidate_b": "tiktok_shop_1729595068919418943",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1729595068919418943",
+        "candidate_b": "amazon_B0FT4QF9D5",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1729595068919418943",
+        "candidate_b": "amazon_B0D53XHGL8",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1729595068919418943",
+        "candidate_b": "amazon_B0F2847P7N",
+        "shared_tokens": [
+          "dress"
+        ]
+      },
+      {
+        "candidate_a": "tiktok_shop_1729595068919418943",
+        "candidate_b": "amazon_B0G59CSNQ9",
+        "shared_tokens": [
+          "dress"
+        ]
+      }
+    ],
+    "trend_keywords": [],
+    "note": "趋势站数据源（Pinterest/Google Trends 等）接入后 trend_keywords 会带真实趋势词；当前为空则 trend_alignment 只能基于平台趋势标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_00ba6590bac64924",
+    "ev_037a2245e1638500",
+    "ev_044a68140dda8490",
+    "ev_04f359f74a12fef8",
+    "ev_0868461b0fa5c4d3",
+    "ev_0b4c1c923cae5450",
+    "ev_0cdb775dcece9e35",
+    "ev_103f1b597f57fa14",
+    "ev_15758afb74aeee73",
+    "ev_1616ba17f8ca7856",
+    "ev_16ac7f969fc8b9f6",
+    "ev_2345d581bf2432e6",
+    "ev_280cd7e2f90175e1",
+    "ev_2a70326908660c75",
+    "ev_2f9df0d63ba2506d",
+    "ev_34a8753c001f38f9",
+    "ev_3cb63be344499711",
+    "ev_3ed9d5129a3a4738",
+    "ev_418d93111ab4a1ac",
+    "ev_4344373c16bf79ec",
+    "ev_4423a20f476e0b9c",
+    "ev_472ad6314550d873",
+    "ev_4bd1874c56613e01",
+    "ev_4dfc44559bf66b55",
+    "ev_5155e2ad7efef0dd",
+    "ev_53c4094e0cb09722",
+    "ev_6ed63981009762ed",
+    "ev_723cc32216f51edf",
+    "ev_75a4b95893c31dbd",
+    "ev_79c61a756887f883",
+    "ev_8331cfe5e55403f3",
+    "ev_854e11db3fadbde9",
+    "ev_861db1bb950ee948",
+    "ev_8b054b5930e5574f",
+    "ev_92d997e0e38df9ca",
+    "ev_93992837bdb21e46",
+    "ev_951a7cef80927136",
+    "ev_986bf44ee9158d5f",
+    "ev_9c4b22a3c0b8b3b8",
+    "ev_9ec9f721d17a99aa",
+    "ev_9f167e829725a2d0",
+    "ev_a91598a3443e1242",
+    "ev_b0b0324621bb7fff",
+    "ev_b7a1193bc73abeb6",
+    "ev_c94f0c76e9e0a8d6",
+    "ev_caddda9f2a0289b9",
+    "ev_d2a7fc473fdf2f2b",
+    "ev_d31e925267afa4a1",
+    "ev_dd49a0374b343cb4",
+    "ev_df061a974e5d7282",
+    "ev_e1d8abd5ff101b75",
+    "ev_e5cd8a6af0f7a783",
+    "ev_e847a71a4a691e7a",
+    "ev_e8cd77cbb5146a2b",
+    "ev_f5228138b592f4d6",
+    "ev_f818c9b241719fd9",
+    "ev_f851c67cfb189069",
+    "ev_f9c657df199b2a70",
+    "ev_kalodata_dresses_000318",
+    "ev_kalodata_dresses_000324",
+    "ev_kalodata_dresses_001305",
+    "ev_kalodata_dresses_001309"
+  ],
+  "output_schema": {
+    "pair_judgements": [
+      {
+        "candidate_a": "cards 内 id",
+        "candidate_b": "cards 内 id",
+        "verdict": "same_product|same_style|same_trend|unrelated",
+        "rationale": "str（综合了哪些指标：标题语义/价格/类目/图片/趋势词）",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    ],
+    "trend_alignment": [
+      {
+        "candidate_id": "cards 内 id",
+        "trend_keyword": "str（来自 inputs.trend_keywords）",
+        "rationale": "str"
+      }
+    ],
+    "summary": "str（红海/空白/跨平台机会的总体判断）",
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

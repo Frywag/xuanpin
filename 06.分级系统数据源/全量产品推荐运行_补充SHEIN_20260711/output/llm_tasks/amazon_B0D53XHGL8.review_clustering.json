@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0D53XHGL8",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Zhiyouni Women's Summer Sleeveless Mini Dress V Neck Spaghetti Straps Athletic Built-in Shorts Sundress",
+    "rating": 4.3,
+    "review_count": 1468.0,
+    "review_tags_raw": "[{\"tag\":\"comfort\",\"mentions\":207,\"positive\":202,\"negative\":5,\"snippets\":[\"and looks expensive—- similar to Free People style with interesting seams that add...\",\". Came with an already ripped seam but still works and looks cute. Very comfy and casual. Not tight fitting more on the loose side.\",\"and perfect length. Love that it has pockets as well. Ready to get it in every color.\",\"has pockets and my tummy is disguised lol. Don’t wait buy this dress. I’m ordering more colors!\"]},{\"tag\":\"appearance\",\"mentions\":194,\"positive\":190,\"negative\":4,\"snippets\":[\"Customers find the dress cute and vibrant in color, with several noting it resembles Free People's designs.\",\". Length is great. It’s a little too loose.. I will order again in other colors but I’ll size down next time.\",\"and comfy but strap was ripped when recieved. Was about to sew it myself but shouldn’t need to do that straight out of the package.\",\"...I always get compliments when I’m out and about that it’s\",\"and the built in spandex/bra/shorts are form fitting, flexible and so comfy....\",\"and comfy. Came with an already ripped seam but still works and looks cute. Very comfy and casual. Not tight fitting more on the loose side.\"]},{\"tag\":\"fit\",\"mentions\":186,\"positive\":140,\"negative\":46,\"snippets\":[\"Customers like how the dress fits, describing it as flattering and loose without looking sloppy, with one customer noting it hits at mid-thigh.\",\", the straps stay in place (no annoying slipping 👏), and the flowy skirt is giving...\",\", not too long as some are i have tried. Flattering fit, doesn’t cling to belly area\",\"Cut and color not as shown. I’m 5’3” 110lbs X’s is boxy and\"]},{\"tag\":\"quality\",\"mentions\":107,\"positive\":88,\"negative\":19,\"snippets\":[\"Customers love this dress, describing it as a great summer outfit.\",\"...The fabric is like a heavier weight t-shirt material. It is\",\"very well made. Super comfortable not tight and constricting....\",\". Great for when I have to chase my 2 year old around but still want to look cute.\",\"...all day at Disney in October, super comfortable, loved the pockets..\"]},{\"tag\":\"suitable for summer\",\"mentions\":85,\"positive\":82,\"negative\":3,\"snippets\":[\"Customers find the dress suitable for summer, particularly for outdoor activities and lounging around the house. One customer mentions it's perfect for kids' sporting events in the heat.\",\". I'm a new mom and this is a very convenient dress for nursing as well....\",\". Shorts rise up pretty easily but that’s not a big issue for me. Great dupe for the free people one.\",\"...I'd equate it to an alternative to leggings for spring/summer. Comfy,\",\", fits to size - I'm 5'4\\\" & 140 lbs - the length & fit are great - not...\"]},{\"tag\":\"color\",\"mentions\":53,\"positive\":48,\"negative\":5,\"snippets\":[\"Customers love the colors of the dress, particularly the pink shade, with one customer noting that coral pairs well with tan.\",\"and material, but the stripes run a little big and they aren't adjustable....\",\", it’s exactly like it’s pictured! It’s super soft and comfortable! The length is perfect, and it’s lightweight!\",\". So comfortable, great quality, and flattering sporty fit....\",\", or tossing on with sandals when you want that “I woke up like this” effortless look....\"]},{\"tag\":\"sizing\",\"mentions\":64,\"positive\":35,\"negative\":29,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report that it runs large.\",\"so don’t get any size bigger than usual, it isn’t too tight… just the right amount of...\",\", I’d say. The only negative is that there is not a built in bra and a typical bra could not be worn with it....\",\"and way too short. I’ll be returning both due to the inconsistent sizing for the price. Usually a size small....\"]},{\"tag\":\"length\",\"mentions\":62,\"positive\":24,\"negative\":38,\"snippets\":[\"Customers have mixed opinions about the dress's length, with some finding it great and not too long, while others say it's way too short and not suitable for tall people.\",\". I’ll be returning both due to the inconsistent sizing for the price. Usually a size small....\",\"My favorite summer dress. I bought it in black. So comfortable and\",\". Love that it has pockets as well. Ready to get it in every color.\",\", and trashy looking. I wear it around the house to clean in.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_85070871f898a271",
+    "ev_98e712170bcfe04a",
+    "ev_e77cbf19f12b4382"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

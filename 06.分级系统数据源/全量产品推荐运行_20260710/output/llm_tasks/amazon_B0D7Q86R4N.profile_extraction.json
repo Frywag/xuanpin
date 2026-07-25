@@ -1,0 +1,351 @@
+{
+  "task_type": "profile_extraction",
+  "candidate_id": "amazon_B0D7Q86R4N",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "只依据 inputs.text 中的真实文本判断，不得使用外部知识补全事实",
+    "带 vocab 的键取值必须严格从词表中选择；判断不了就进 missing_fields",
+    "multi 键可给列表；每个键必须带 evidence_refs 与 confidence"
+  ],
+  "inputs": {
+    "key_set": "womenswear",
+    "keys": {
+      "服饰大类": {
+        "vocab": [
+          "上装",
+          "下装",
+          "连衣裙",
+          "外套",
+          "内衣",
+          "睡衣",
+          "泳装",
+          "运动服",
+          "配饰"
+        ]
+      },
+      "产品小类": {
+        "vocab_open": true,
+        "hint": "T-shirt/Dress/Blouse/Leggings/Hoodie/Bra 等"
+      },
+      "适用性别": {
+        "vocab": [
+          "Women",
+          "Men",
+          "Girls",
+          "Boys",
+          "Baby",
+          "Unisex"
+        ]
+      },
+      "款式风格": {
+        "vocab": [
+          "Casual",
+          "Elegant",
+          "Sexy",
+          "Boho",
+          "Streetwear",
+          "Business",
+          "Sporty",
+          "Vintage"
+        ]
+      },
+      "版型": {
+        "vocab": [
+          "Slim Fit",
+          "Regular Fit",
+          "Loose Fit",
+          "Oversized"
+        ]
+      },
+      "廓形": {
+        "vocab": [
+          "A-line",
+          "Straight",
+          "Bodycon",
+          "Wide Leg",
+          "Flare"
+        ]
+      },
+      "裙长": {
+        "vocab": [
+          "Mini",
+          "Midi",
+          "Maxi"
+        ]
+      },
+      "领型": {
+        "vocab": [
+          "Crew Neck",
+          "V Neck",
+          "Square Neck",
+          "Halter",
+          "Collared",
+          "One Shoulder"
+        ]
+      },
+      "袖长": {
+        "vocab": [
+          "Sleeveless",
+          "Short Sleeve",
+          "Long Sleeve"
+        ]
+      },
+      "开合方式": {
+        "vocab": [
+          "Pullover",
+          "Button",
+          "Zipper",
+          "Tie",
+          "Snap"
+        ]
+      },
+      "装饰元素": {
+        "vocab": [
+          "Lace",
+          "Ruffle",
+          "Bow",
+          "Sequin",
+          "Embroidery",
+          "Cutout",
+          "Print"
+        ],
+        "multi": true
+      },
+      "图案类型": {
+        "vocab": [
+          "Solid",
+          "Floral",
+          "Striped",
+          "Plaid",
+          "Graphic"
+        ],
+        "multi": true
+      },
+      "适用场景": {
+        "vocab": [
+          "日常",
+          "通勤",
+          "派对",
+          "度假",
+          "运动",
+          "居家",
+          "婚礼",
+          "校园"
+        ],
+        "multi": true
+      },
+      "适用季节": {
+        "vocab": [
+          "Spring",
+          "Summer",
+          "Fall",
+          "Winter",
+          "All Season"
+        ],
+        "multi": true
+      },
+      "节日属性": {
+        "vocab_open": true,
+        "hint": "Christmas/Halloween/Valentine's Day/Independence Day 或 无"
+      },
+      "面料类型": {
+        "vocab": [
+          "Knit",
+          "Woven",
+          "Denim",
+          "Chiffon",
+          "Satin",
+          "Fleece",
+          "Mesh",
+          "Silicone"
+        ]
+      },
+      "弹力": {
+        "vocab": [
+          "无弹",
+          "微弹",
+          "高弹",
+          "四面弹"
+        ]
+      }
+    },
+    "text": {
+      "title": "elescat Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026",
+      "title_cn": "elescat 女式夏季连衣裙细肩带 V 领休闲无袖背心裙沙滩罩衫带口袋 2026",
+      "category_name": "Casual",
+      "category_path": [
+        "Clothing, Shoes & Jewelry",
+        "Women",
+        "Clothing",
+        "Dresses",
+        "Casual"
+      ],
+      "design_signals": [
+        {
+          "kind": "bullet_points",
+          "text": "Feature: Summer dresses for women feature adjustable spaghetti straps; Tshirt dress is sleeveless and v neck with pockets which can make you cooler in hot summer and convenient for carry small items; Loose shape can hide your belly to make you a chic look|||Match: Sundresses is perfect to match with slippers, flats, heels, necklace, jewelry, or handbad for feminine look; Flowy dress design can be match with a belt to show your curvy; You can also pair with coat and leggings for added warmth in spring or fall|||Material: Casual dresses are made of stretchy breathable fabric which is lightweight and comfortable with a great touch; Swing dress will give you an excellent wearing experience, easy to create an relaxed lifestyle|||Occasion: Beach dress is suitable for daily wear or for outdoor, traveling, walking, dating, beach, vacation, shopping, school and party; Slip dress also suitable as home dress in house, work dress in office and perfect for winter with a long cardigan|||Tips: Mini dress is a great gift for your loved ones, such as your friend, girlfriend, mother, grandmother, daughters on birthday or other special festivals; Please check the size chart and it will help you select the right size"
+        },
+        {
+          "kind": "material",
+          "text": "65% Cotton, 35% Polyester"
+        },
+        {
+          "kind": "attributes",
+          "text": "{\"STYLE\":{\"Color\":\"Black\",\"Occasion Type\":\"Birthday\",\"Apparel Silhouette\":\"A-line\",\"Neck Style\":\"V-Neck\",\"Sleeve Type\":\"Sleeveless\",\"Seasons\":\"All\",\"Apparel Occasion and Lifestyle\":\"casual\",\"Style Name\":\"Soft\",\"Apparel Closure Type\":\"Pull On\",\"Back Style\":\"Backless\",\"Strap Type\":\"Sleeveless\",\"Pattern\":\"Solid Colour\",\"Waist Style\":\"High Waist\",\"collar-type\":\"V-Neck\",\"Life Event\":\"Birthday\",\"Collection Name\":\"Summer\"},\"MEASUREMENTS\":{\"Item Length Description\":\"Maxi\"},\"FEATURES & SPECS\":{\"Apparel Closure Type\":\"Pull On\",\"Additional Features\":\"Stretchable\",\"Sleeve Length Description\":\"Sleeveless\",\"Fit to Size Sentiment\":\"Positive\",\"Fit Type\":\"Loose\"},\"ITEM DETAILS\":{\"Brand Name\":\"elescat\",\"Age Range Description\":\"Adult\",\"Garment Size Country\":\"United States\",\"Unit Count\":\"1 Count\",\"Number of Items\":\"1\"},\"MATERIALS & CARE\":{\"Material Type\":\"Cotton, Polyester\",\"Product Care Instructions\":\"Machine Wash\",\"Apparel Fabric Weight Class\":\"Lightweight\",\"Apparel Fabric Stretch\":\"Medium Stretch\",\"Fabric Type\":\"65% Cotton, 35% Polyester\"}}"
+        },
+        {
+          "kind": "review_summary",
+          "text": "Customers find this summer dress comfortable and flattering, with one mentioning it suits their 5'2\" frame well. They appreciate its soft material, nice colors, and summer-friendly design, with one noting it's perfect for evening wear. The fabric quality receives mixed feedback - while some find it good, others describe it as thin and cheap."
+        }
+      ],
+      "trend_tags": [
+        "sales_trend_rising",
+        "bsr_improving"
+      ],
+      "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":121,\"positive\":115,\"negative\":6,\"snippets\":[\"Customers like the appearance of the dress, describing it as nice and good quality, with one customer noting it's perfect as a swimsuit coverup.\",\"!! I’m 5’5” 165-170lbs and I got a large and it fits great. Could probably even go to a medium for a little more fitted look....\",\"and love the design. I’m 5’6” and weigh about 170… a large is roomy and not too big....\"]},{\"tag\":\"fit\",\"mentions\":96,\"positive\":79,\"negative\":17,\"snippets\":[\"Customers find that the dress fits nicely and is flattering, with one customer noting it hides their big waist, while another mentions it flatters their Yoda-shaped body.\",\", fun. I use it as a bathing suit cover. I bought bathing suits in all colors, but you can wear it from pool to dinner.\"]},{\"tag\":\"comfort\",\"mentions\":89,\"positive\":86,\"negative\":3,\"snippets\":[\"Customers find the dress comfortable, with one mentioning it works well in the heat of Florida.\",\"and the price is nice. The fabric breathes and is soft. Nice fit. Flowing and not clingy.\",\", soft and flowy. It's not see through but very lightweight. Perfect for the summer especially us menopausal gals.\",\", and looks very nice! Fabric is soft, not see-through but not heavy either....\"]},{\"tag\":\"summer-friendly\",\"mentions\":40,\"positive\":39,\"negative\":1,\"snippets\":[\"Customers find the dress suitable for summer, particularly noting it's perfect for warmer days and beach outings. One customer mentions it can be dressed up for evening wear.\",\". I chose the Navy Blue with white flowers, size small @ 5’2” and 110 lbs. looking forward to wearing it all summer....\",\"!! Love it ! It is shapely and soft with a little stretch . It has spaghetti straps.and it fits perfect!\"]},{\"tag\":\"pockets\",\"mentions\":38,\"positive\":37,\"negative\":1,\"snippets\":[\"Customers like the dress's pockets, with one customer noting they are not bulky.\",\"but I probably wouldn’t put anything in them. Made more for looks or your hands.\",\"! Nice and flowy. I am 5’8”, 175lbs and ordered a large.\"]},{\"tag\":\"soft material\",\"mentions\":36,\"positive\":33,\"negative\":3,\"snippets\":[\"This is a nice, simple dress for spring, summer & the fall. It’s\",\"& comfortable & it flows nicely. And, I was told it’s nice to have pockets....\",\", light, and not see through. The colors and style is just as advertised....\",\". I saw some reviews saying it was see through but,mine wasn't. I ordered the tie dye. I would say it's true to size....\"]},{\"tag\":\"color\",\"mentions\":26,\"positive\":23,\"negative\":3,\"snippets\":[\"Customers like the colors of the dress, with one mentioning that the color holds up very well.\",\", and the material is soft and flowy. Love the pockets too!...\",\"and I love the way it fit the pockets made it 10 times better to be able to carry...\",\"and how comfortable she is. It has pockets too! Big plus for her.\"]},{\"tag\":\"fabric quality\",\"mentions\":59,\"positive\":37,\"negative\":22,\"snippets\":[\"Customers have mixed opinions about the dress's fabric quality, with some finding it good and noting its medium thickness, while others describe it as terrible, thin, and rough.\",\". Bit of substance to it. Not too short. Nice flare so not clinging to tummy!....\",\", fitting, and color are great, and I love it. Since it's a summer dress, I like it loose, and I ordered one size up, and I'm glad I did....\"]}]"
+    }
+  },
+  "allowed_evidence_ids": [
+    "ev_037a2245e1638500",
+    "ev_2ddbc260b6bf05de",
+    "ev_6d0454b44eebf900",
+    "ev_884564d47782046a",
+    "ev_b818963b28fb15af",
+    "ev_dd49a0374b343cb4",
+    "ev_e42c1d3b3abfbc78"
+  ],
+  "output_schema": {
+    "profile": {
+      "服饰大类": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "产品小类": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用性别": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "款式风格": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "版型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "廓形": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "裙长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "领型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "袖长": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "开合方式": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "装饰元素": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "图案类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用场景": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "适用季节": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "节日属性": {
+        "value": "短语，来自输入文本",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "面料类型": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "弹力": {
+        "value": "词表内取值",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    },
+    "missing_fields": [
+      "输入文本不足以判断的键，逐个列出"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

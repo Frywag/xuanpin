@@ -1,0 +1,71 @@
+# =====================================================================
+# 最新选品总方案 segments.v1（2026-07-24）：三平台独立分级、细分市场聚类
+# 业务层级 L3->L2->L1->C/B/A/S；代码用稳定阶段键，禁止只按 L1/L2/L3 字样分职责
+# 全部阈值为试点占位草案（§22 实施配置项），人工改此文件即生效
+# =====================================================================
+schema_version: segments.v1
+rule_status: calibration_pending_business_approval
+rule_version: segments_v1_pilot_20260724
+stage_keys: [SOURCE_VALIDATION, PRODUCT_HARD_SCREEN, HUMAN_SEGMENT_ASSIGNMENT,
+             SEGMENT_INITIAL_SCREEN, SEGMENT_DEEP_DIVE, FINAL_SEGMENT_TIER,
+             MULTI_PLATFORM_SYNTHESIS, PRODUCT_STRATEGY_EVALUATION]
+
+platforms:            # 主流程只含三平台（§2.2）；独立站→趋势体系（§15）
+  amazon:  {source_group_patterns: [amazon]}
+  tiktok:  {source_group_patterns: [tiktok, kalodata, tabcut, echotik]}
+  shein:   {source_group_patterns: [shein]}
+
+l3_hard_screen:       # 销量硬性指标（§5）：PASS/REJECTED 二值，无例外通道
+  amazon: {min_txn_percentile: 0.20}
+  tiktok: {min_txn_percentile: 0.20}
+  shein:  {min_txn_percentile: 0.20}
+  # 缺可验证销量 -> L3_REJECTED(原因=无可验证销量)；淘汰记录保留审计
+
+taxonomy:             # 细分市场词表 v1（§6：受控属性组合；版本化）
+  taxonomy_version: tax_v1_pilot_20260724
+  # 试点粒度=品类词（人群/场景/风格作为独立属性标签保存，后续版本细化）
+  garment_segments: [dress, bra, shapewear, bodysuit, corset, skirt, tights,
+                     legging, swim, bikini, top, romper, jumpsuit, pantyhose,
+                     socks, sweater, coat, pajamas]
+  style_attributes: [lace, floral, plaid, ruched, wrap, halter, maxi, mini,
+                     seamless, strapless, push-up, high-waist, mesh, satin]
+
+human_gate:           # §6.3 人工是最终确认者
+  # 试点批量确认开关：true 时「唯一高置信候选」按试点规则批量记为
+  # HUMAN_APPROVED(approver=pilot_config_batch,须复核)——启用该开关本身是
+  # 人工决策；正式生产必须 false 并走逐条审批队列
+  pilot_auto_approve: true
+
+segment_screen:       # L2 细分市场初筛（§8，草案权重）
+  dims: {demand_strength: 30, demand_stability: 20, competition_opportunity: 20,
+         price_profit_room: 15, evidence_confidence: 15}
+  l1_budget_per_platform: 8       # L2 入围进入 L1 深挖的名额（草案）
+
+segment_deep_dive:    # L1 Gate（§9）：PASS/PENDING_DATA/REJECTED
+  min_members: 3                  # 样本量下限（草案）
+  max_head_share: 0.7             # 头部商品销量占比上限（防单品拉高整体）
+  min_field_coverage: 0.5         # 关键字段覆盖率下限（草案）
+
+final_tier:           # C/B/A/S（§10）：仅 L1 PASS 可 A/S；未入 L1 上限 B
+  thresholds_draft: {S: 75, A: 55, B: 35}
+
+synthesis:            # 多平台综合（§11-13）：三任务齐套才 READY
+  unified_dims: [demand_strength, demand_growth, demand_stability,
+                 competition_opportunity, price_profit_room, content_resonance,
+                 product_improvement_room, freshness_novelty, risk_control,
+                 evidence_confidence]
+  # 未校准/任务不齐 -> 只并列展示事实，不发布优势标签（§13.4/13.5）
+
+product_strategy:     # §14 聚类后商品策略：开发动作 × 经营类型（双轴独立）
+  modification_rating_ceiling: 4.2
+  modification_min_reviews: 50
+  hit_min_txn_percentile: 0.75
+  long_tail_stable_range: [0.35, 0.75]
+
+pending_business_confirmation:
+  - 三平台 L3 销量阈值（当前统一 p20 占位）与生命周期分档
+  - taxonomy v1 粒度（品类词试点）与人群/场景/价格带细化
+  - pilot_auto_approve 关闭时点与人工审批岗位/时限
+  - L2 权重、L1 Gate 数值、C/B/A/S 阈值
+  - Amazon 平台数据源接入（当前 RUN_PENDING，综合范围 INCOMPLETE_SCOPE）
+  - 跨平台校准锚点与优势标签发布条件

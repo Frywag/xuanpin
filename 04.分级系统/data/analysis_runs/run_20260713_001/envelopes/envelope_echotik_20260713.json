@@ -1,0 +1,1560 @@
+{
+  "envelope_id": "envelope_echotik_20260713",
+  "source_id": "echotik",
+  "source_type": "plugin",
+  "market": "US",
+  "collection_mode": "mixed",
+  "layer_hint": "L1",
+  "collected_at": "2026-07-13T10:41:36+00:00",
+  "collector_version": "grading-system/0.1.0",
+  "quality_status": "VALID",
+  "records": [
+    {
+      "record_kind": "product",
+      "product_id": "17295083709696299",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "[NEW] [medicube] PDRN Pink Collagen Volume Multi Balm | All In One Volufiline, PDRN, NAD Stick for Youthful-Looking, Helping Look of Fine Lines, Firming Care, Anti-Aging Care | For Under-Eyes, Neck, Forehead, Smile Lines, Lip Care | Korean Skincare",
+        "unit_price": {
+          "amount": 25.1,
+          "currency": "USD"
+        },
+        "price_range": {
+          "low": 25.1,
+          "high": 7599.0,
+          "currency": "USD"
+        },
+        "category_name": "面部护理套装",
+        "rating": 4.2,
+        "review_count": 36000.0,
+        "sales_7d_units": 75100.0,
+        "gmv_7d": {
+          "amount": 5651900.000000001,
+          "currency": "USD"
+        },
+        "product_total_sales": 852300.0,
+        "affiliate_creator_count": 7520.0,
+        "shop_name": "medicube US Store",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000334",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000335",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "price_range": {
+          "evidence_id": "ev_echotik_000336",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "price_range",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000337",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000338",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000339",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000340",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000341",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000342",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000343",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000344",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=2",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17294484645097349",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+        "unit_price": {
+          "amount": 29.97,
+          "currency": "USD"
+        },
+        "category_name": "保健食品",
+        "rating": 4.6,
+        "review_count": 128600.0,
+        "sales_7d_units": 39000.0,
+        "gmv_7d": {
+          "amount": 879200.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 1691200.0,
+        "affiliate_creator_count": 15400.0,
+        "shop_name": "Toplux Nutrition",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000345",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000346",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000347",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000348",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000349",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000350",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000351",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000352",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000353",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000354",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=3",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17296797581112493",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "Loaded Tea – Single Packet | 32oz Caffeinated Flavored Hydration Powder Beverage Mix | Made in USA | Easy to Mix",
+        "unit_price": {
+          "amount": 7.79,
+          "currency": "USD"
+        },
+        "category_name": "冲调饮品",
+        "rating": 4.9,
+        "review_count": 55500.0,
+        "sales_7d_units": 29700.000000000004,
+        "gmv_7d": {
+          "amount": 231100.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 1818600.0000000002,
+        "affiliate_creator_count": 1934.0,
+        "shop_name": "Caffeine, Candles & Chaos",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000355",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000356",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000357",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000358",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000359",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000360",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000361",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000362",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000363",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000364",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=4",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17312362898852130",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering summervibes☀️",
+        "unit_price": {
+          "amount": 55.37,
+          "currency": "USD"
+        },
+        "price_range": {
+          "low": 55.37,
+          "high": 79.0,
+          "currency": "USD"
+        },
+        "category_name": "水枪和雪沫喷枪",
+        "rating": 4.2,
+        "review_count": 18200.0,
+        "sales_7d_units": 28600.0,
+        "gmv_7d": {
+          "amount": 1921200.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 289200.0,
+        "affiliate_creator_count": 3122.0,
+        "shop_name": "SEESE Store",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000365",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000366",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "price_range": {
+          "evidence_id": "ev_echotik_000367",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "price_range",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000368",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000369",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000370",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000371",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000372",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000373",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000374",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000375",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=5",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17312842324206268",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "ADDWIN 2026 New Fascia Ring R10 Mini Muscle Recovery Fascia Device upgraded adjustable strap fits Up to 55in waist, Cordless Rechargeable, Designed for Waist & Back Muscle Recovery portable massager parents gift summervibes",
+        "unit_price": {
+          "amount": 69.99,
+          "currency": "USD"
+        },
+        "price_range": {
+          "low": 69.99,
+          "high": 79.99,
+          "currency": "USD"
+        },
+        "category_name": "健身仪器",
+        "rating": 4.3,
+        "review_count": 9279.0,
+        "sales_7d_units": 26900.0,
+        "gmv_7d": {
+          "amount": 2017400.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 127400.0,
+        "affiliate_creator_count": 826.0,
+        "shop_name": "AddWin Shop",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000376",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000377",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "price_range": {
+          "evidence_id": "ev_echotik_000378",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "price_range",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000379",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000380",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000381",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000382",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000383",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000384",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000385",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000386",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=6",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17322943399919334",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "DR.DENT Purple Mouthwash - Sachets 20 Pack - Peroxide-Free - Alcohol Free - Vegan Mint",
+        "unit_price": {
+          "amount": 29.99,
+          "currency": "USD"
+        },
+        "category_name": "漱口水",
+        "rating": 4.1,
+        "review_count": 2541.0,
+        "sales_7d_units": 26500.0,
+        "gmv_7d": {
+          "amount": 795800.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 69000.0,
+        "affiliate_creator_count": 1750.0,
+        "shop_name": "DR DENT",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000387",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000388",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000389",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000390",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000391",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000392",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000393",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000394",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000395",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000396",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=7",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17324171831330456",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "5-1 FreshHood Apparel fast shipping 100% cotton T-shirts",
+        "unit_price": {
+          "amount": 30.47,
+          "currency": "USD"
+        },
+        "category_name": "笔记本与纸制品",
+        "rating": 0.0,
+        "review_count": 0.0,
+        "sales_7d_units": 22799.999999999996,
+        "gmv_7d": {
+          "amount": 697200.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 124100.0,
+        "affiliate_creator_count": 0.0,
+        "shop_name": "FreshHood Apparel",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000397",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000398",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000399",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000400",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000401",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000402",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000403",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000404",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000405",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000406",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=8",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17323991792948062",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "[NEW] [medicube] PDRN Collagen Gua Sha Neck Wrinkle Cream | Built-In Gua Sha Massager with Volufiline 5% + PDRN | Firming, Contour Care for the Look of Fine Lines, Jawline, Neck, Décolleté | Massage Cream | Korean Skincare",
+        "unit_price": {
+          "amount": 3000.0,
+          "currency": "USD"
+        },
+        "category_name": "面部按摩霜",
+        "rating": 4.9,
+        "review_count": 406.0,
+        "sales_7d_units": 21800.0,
+        "gmv_7d": {
+          "amount": 642800.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 43800.0,
+        "affiliate_creator_count": 1693.0,
+        "shop_name": "medicube US Store",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000407",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000408",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000409",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000410",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000411",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000412",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000413",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000414",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000415",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000416",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=9",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17315285809404686",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "Bare Anatomy Nature x Science Rosemary Water with Rice Water |100% Natural Extract | Soft & Smooth Hair Non-Greasy & Fast Absorbing | 200 ml",
+        "unit_price": {
+          "amount": 19.99,
+          "currency": "USD"
+        },
+        "category_name": "脱发产品",
+        "rating": 4.6,
+        "review_count": 14700.0,
+        "sales_7d_units": 21600.0,
+        "gmv_7d": {
+          "amount": 355200.00000000006,
+          "currency": "USD"
+        },
+        "product_total_sales": 180900.0,
+        "affiliate_creator_count": 2308.0,
+        "shop_name": "Bare Anatomy Haircare",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000417",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000418",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000419",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000420",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000421",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000422",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000423",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000424",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000425",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000426",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=10",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    },
+    {
+      "record_kind": "product",
+      "product_id": "17297181416315658",
+      "id_truncated": true,
+      "source_roles": [
+        "transaction"
+      ],
+      "fields": {
+        "title": "[Dr.Melaxin Official] Calcium Multi Balm Eye Care Routine Korean Skin Care Anti-aging Cosmetics Collagen Eye Stick 9g",
+        "unit_price": {
+          "amount": 23.0,
+          "currency": "USD"
+        },
+        "category_name": "保湿乳液、乳霜与喷雾",
+        "rating": 4.2,
+        "review_count": 60100.0,
+        "sales_7d_units": 21600.0,
+        "gmv_7d": {
+          "amount": 495800.0,
+          "currency": "USD"
+        },
+        "product_total_sales": 902800.0,
+        "affiliate_creator_count": 8064.0,
+        "shop_name": "Dr.Melaxin",
+        "_id_note": "product_id 在源数据中即为截断值，需前缀匹配"
+      },
+      "evidence": {
+        "title": {
+          "evidence_id": "ev_echotik_000427",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "title",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "unit_price": {
+          "evidence_id": "ev_echotik_000428",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "unit_price",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品库页面价格（区间取下限）"
+        },
+        "category_name": {
+          "evidence_id": "ev_echotik_000429",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "category_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "rating": {
+          "evidence_id": "ev_echotik_000430",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "rating",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "review_count": {
+          "evidence_id": "ev_echotik_000431",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "review_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "sales_7d_units": {
+          "evidence_id": "ev_echotik_000432",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "sales_7d_units",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 7 天销量（估算）"
+        },
+        "gmv_7d": {
+          "evidence_id": "ev_echotik_000433",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "gmv_7d",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "product_total_sales": {
+          "evidence_id": "ev_echotik_000434",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "product_total_sales",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": "EchoTik 商品累计销量（估算）"
+        },
+        "affiliate_creator_count": {
+          "evidence_id": "ev_echotik_000435",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "affiliate_creator_count",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        },
+        "shop_name": {
+          "evidence_id": "ev_echotik_000436",
+          "source_id": "echotik",
+          "source_type": "plugin",
+          "tool_or_adapter": "TabcutEchotikAdapter",
+          "field_path": "shop_name",
+          "artifact_path": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx",
+          "record_locator": "sheet=EchoTik商品库实采;row=11",
+          "observed_at": null,
+          "confidence": "high",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "artifact_paths": {
+    "raw_workbook": "02.插件数据源/Tabcut_EchoTik_最终原数据交付表.xlsx"
+  },
+  "schema_version": "source.envelope.v1"
+}

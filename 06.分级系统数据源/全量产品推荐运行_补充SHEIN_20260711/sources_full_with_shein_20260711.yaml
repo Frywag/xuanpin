@@ -1,0 +1,9 @@
+market: US
+
+envelope_inputs:
+  - path: 06.分级系统数据源/全量产品推荐运行_20260710/normalized_inputs
+  - path: 06.分级系统数据源/全量产品推荐运行_补充SHEIN_20260711/normalized_inputs
+  - path: 06.分级系统数据源/Kalodata连衣裙系统数据源/Kalodata连衣裙_20260710.source_envelope.json
+
+plugin_sources: []
+frontend_workbooks: []

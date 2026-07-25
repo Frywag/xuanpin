@@ -1,0 +1,1259 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "clu_1c7e4a394557",
+      "cluster_version": 1,
+      "representative_style": "dress+lace+mini",
+      "relation_type": "same_trend",
+      "confidence": "low",
+      "human_review": "pending",
+      "run_id": "run_20260714_003",
+      "members": [
+        {
+          "candidate_id": "shein_472654456",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000450"
+          ]
+        },
+        {
+          "candidate_id": "shein_488062890",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000564"
+          ]
+        },
+        {
+          "candidate_id": "shein_467757007",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_001864"
+          ]
+        },
+        {
+          "candidate_id": "shein_494899768",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_002253"
+          ]
+        },
+        {
+          "candidate_id": "freepeople_100507946",
+          "source_group": "indie_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_indie_frontend_003860"
+          ]
+        }
+      ],
+      "lineage": {
+        "previous_version": null,
+        "change_reason": "initial"
+      }
+    },
+    {
+      "cluster_id": "clu_0bfc6561cc71",
+      "cluster_version": 1,
+      "representative_style": "dress+lace",
+      "relation_type": "same_trend",
+      "confidence": "low",
+      "human_review": "pending",
+      "run_id": "run_20260714_003",
+      "members": [
+        {
+          "candidate_id": "shein_482959020",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000493"
+          ]
+        },
+        {
+          "candidate_id": "shein_488939708",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000596"
+          ]
+        },
+        {
+          "candidate_id": "shein_456799255",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000616"
+          ]
+        },
+        {
+          "candidate_id": "shein_489949267",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000659"
+          ]
+        },
+        {
+          "candidate_id": "shein_468960220",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000897"
+          ]
+        },
+        {
+          "candidate_id": "shein_485617717",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_000944"
+          ]
+        },
+        {
+          "candidate_id": "shein_439292826_111",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_001151"
+          ]
+        },
+        {
+          "candidate_id": "shein_474947349",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_001288"
+          ]
+        },
+        {
+          "candidate_id": "shein_479365234",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_001345"
+          ]
+        },
+        {
+          "candidate_id": "shein_482128693",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_001397"
+          ]
+        },
+        {
+          "candidate_id": "shein_476109599",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_001483"
+          ]
+        },
+        {
+          "candidate_id": "shein_482111929",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_002153"
+          ]
+        },
+        {
+          "candidate_id": "shein_501499555",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_002398"
+          ]
+        },
+        {
+          "candidate_id": "shein_503080065",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_002473"
+          ]
+        },
+        {
+          "candidate_id": "shein_470423581",
+          "source_group": "shein_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_shein_frontend_002530"
+          ]
+        },
+        {
+          "candidate_id": "urbanoutfitters_104821145",
+          "source_group": "indie_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_indie_frontend_006563"
+          ]
+        },
+        {
+          "candidate_id": "urbanoutfitters_104821145_629",
+          "source_group": "indie_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_indie_frontend_006575"
+          ]
+        },
+        {
+          "candidate_id": "dreamgirl_dreamgirl-womens-plus-size-lace-patterned-knit-garter-dress-with-stockings",
+          "source_group": "patterned_tights_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_patterned_tights_frontend_012670"
+          ]
+        },
+        {
+          "candidate_id": "dreamgirl_dreamgirl-womens-lace-patterned-knit-garter-dress-with-stockings-1",
+          "source_group": "patterned_tights_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_patterned_tights_frontend_012680"
+          ]
+        },
+        {
+          "candidate_id": "snagtights_fishnet-dress-sugar-black",
+          "source_group": "patterned_tights_frontend",
+          "relation": "same_trend_recall",
+          "relation_evidence_refs": [
+            "ev_patterned_tights_frontend_016165"
+          ]
+        }
+      ],
+      "lineage": {
+        "previous_version": null,
+        "change_reason": "initial"
+      }
+    }
+  ],
+  "budgets": {
+    "trend_new": {
+      "l2_queue": [
+        "dreamgirl_dreamgirl-womens-lace-patterned-knit-garter-dress-with-stockings-1",
+        "shein_482959020",
+        "shein_456799255",
+        "shein_485617717",
+        "shein_479365234",
+        "shein_482128693",
+        "shein_501499555",
+        "shein_503080065",
+        "shein_488434750",
+        "urbanoutfitters_104821145",
+        "urbanoutfitters_104821145_629",
+        "dreamgirl_dreamgirl-womens-plus-size-lace-patterned-knit-garter-dress-with-stockings",
+        "snagtights_fishnet-dress-sugar-black",
+        "shein_472654456",
+        "shein_488062890"
+      ],
+      "l3_queue": [
+        "dreamgirl_dreamgirl-womens-lace-patterned-knit-garter-dress-with-stockings-1",
+        "shein_482959020",
+        "shein_456799255",
+        "shein_485617717",
+        "shein_479365234"
+      ],
+      "refetch_queue": [
+        {
+          "subject_id": "dreamgirl_dreamgirl-womens-lace-patterned-knit-garter-dress-with-stockings-1",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_456799255",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_479365234",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_482128693",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_482959020",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_485617717",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_501499555",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_503080065",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_488434750",
+          "missing": [
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "dreamgirl_dreamgirl-womens-plus-size-lace-patterned-knit-garter-dress-with-stockings",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "snagtights_fishnet-dress-sugar-black",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "urbanoutfitters_104821145",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "urbanoutfitters_104821145_629",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_439292826_111",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_472654456",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_474947349",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_476109599",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_482111929",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_488062890",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_488939708",
+          "missing": [
+            "近期推出证据（上架时间/新品标签/更早快照对照/业务确认）",
+            "款型新颖度证据（历史款型库对照/多站点时序/业务确认）"
+          ],
+          "tasks": [
+            "上架时间与新品标签",
+            "跨平台同款式召回",
+            "图片属性相似证据",
+            "TikTok内容发布时间与创作者广度"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        }
+      ]
+    },
+    "hit_improvement": {
+      "l2_queue": [
+        "shein_496674906",
+        "shein_484673105",
+        "shein_482051726",
+        "shein_489292566",
+        "tiktok_shop_1732294339991933438",
+        "shein_490293187",
+        "shein_488062890",
+        "shein_475665708"
+      ],
+      "l3_queue": [
+        "shein_496674906",
+        "shein_484673105",
+        "shein_482051726",
+        "shein_489292566",
+        "tiktok_shop_1732294339991933438"
+      ],
+      "refetch_queue": [
+        {
+          "subject_id": "shein_484673105",
+          "missing": [
+            "负面聚类不足（1 < 2）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "shein_496674906",
+          "missing": [
+            "负面聚类不足（1 < 2）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "tiktok_shop_1732294339991933438",
+          "missing": [
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "provisional_eligible"
+        },
+        {
+          "subject_id": "anthropologie_105090955",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105684583",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105685028",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分样本不足（评论 1 < 30，低分可能是小样本噪音）",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105685143",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分样本不足（评论 2 < 30，低分可能是小样本噪音）",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105685390",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105685465",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106031842",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106031990",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106064330",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分样本不足（评论 2 < 30，低分可能是小样本噪音）",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106424773",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106540669",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分样本不足（评论 2 < 30，低分可能是小样本噪音）",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106540800",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分样本不足（评论 2 < 30，低分可能是小样本噪音）",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106666332",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106667785",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106702194",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106703069",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106905722",
+          "missing": [
+            "交易类需求证据（销量/GMV/评论积累）",
+            "评分样本不足（评论 3 < 30，低分可能是小样本噪音）",
+            "评论全文/负面聚类（缺 VOC 数据）"
+          ],
+          "tasks": [
+            "评论全文",
+            "退货原因与客服问题",
+            "聚类频次占比严重度",
+            "竞品共同痛点",
+            "改良方案与目标成本"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        }
+      ]
+    },
+    "long_tail_direct": {
+      "l2_queue": [
+        "tiktok_shop_1729508370969629931",
+        "tiktok_shop_1729448464509734958",
+        "tiktok_shop_1731528580940468633",
+        "shein_461740289",
+        "shein_469556196",
+        "shein_482051726",
+        "shein_442067622",
+        "shein_482517346",
+        "shein_460997432",
+        "shein_485049586"
+      ],
+      "l3_queue": [
+        "tiktok_shop_1729508370969629931",
+        "tiktok_shop_1729448464509734958",
+        "tiktok_shop_1731528580940468633"
+      ],
+      "refetch_queue": [
+        {
+          "subject_id": "anthropologie_105090955",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105684583",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105685390",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_105685465",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106031842",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106031990",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106424773",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106666332",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106667785",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106702194",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106703069",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106925928",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_106955925",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_107244055",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        },
+        {
+          "subject_id": "anthropologie_107373169",
+          "missing": [
+            "交易类稳定需求证据（热度信号不计入）"
+          ],
+          "tasks": [
+            "多周期需求证据",
+            "评论护城河",
+            "供应能力匹配",
+            "利润结构"
+          ],
+          "status": "open",
+          "owner": null,
+          "due": null,
+          "basis": "pending"
+        }
+      ]
+    }
+  }
+}

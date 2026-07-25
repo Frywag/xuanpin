@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B07TZYYL59",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "YESNO Women Casual Loose Bohemian Floral Dress with Pockets Short Sleeve Long Maxi Summer Beach Swing Dress EJF",
+    "rating": 4.1,
+    "review_count": 22238.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":2237,\"positive\":1920,\"negative\":317,\"snippets\":[\"Customers like the appearance of the dress, describing it as a well-made summer dress with a pretty pattern and feminine style.\",\", draped well, had a slight stretch for ease of movement, they are now using a Rayon/Cotton...\",\"...I stopped do some shopping and a man told me” That’s a\",\"!” The only problem was it said it was cotton-rayon and its 100% cotton....\",\", draping fabric. This dress is some kind of poly... has a \\\"rayon-y\\\" feel and shine..... don't like it at all.\",\"...It washed well and hung to dry with a very quick iron job. It is\",\"and comfortable and ive worn it as a bathsuit cover up and out to lunch.\"]},{\"tag\":\"comfort\",\"mentions\":1269,\"positive\":1232,\"negative\":37,\"snippets\":[\"Customers find the dress comfortable, particularly for summer heat, with one customer noting that the sleeves don't pinch.\",\"Tho is the best dress I have ever gotten from Amazon! Loose, flowy,\",\"and true to size. I love the fabric. Would buy over and over again!\",\". The material was also NOT see-through. I've already bought 2 more of these dresses.\",\", fits well & looks great! I got lots of compliments first time I wore it. Also just wash & hang to dry and no wrinkles!\",\", I ordered another....and planned on more but the second one was very poorly made with...\"]},{\"tag\":\"color\",\"mentions\":685,\"positive\":547,\"negative\":138,\"snippets\":[\"Customers like the colors of the dress, describing them as lovely, with one customer noting they are vibrant.\",\", and the fabric is so soft, HOWEVER, it is not nearly as full as the photos make it look, but when I tried it on, it fits perfectly,...\",\"Perfect for this summer. I like the weight of the fabric and the\",\"....It's bigger than I thought it would be, but I think I over thought the...\",\"and thin, as I wanted, minus only one thing: after washing it became a little cramped in my chest, although I washed...\",\". More of a slate blue than the bright blue shown. Hand wash comfy & flowing\"]},{\"tag\":\"lightweight\",\"mentions\":587,\"positive\":546,\"negative\":41,\"snippets\":[\"Customers appreciate the dress's lightweight fabric, describing it as comfortable and breezy, particularly suitable for summer wear.\",\"and airy. Perfect for a hot hot day and our outdoor recitalwhere I wanted to look professional, but be cool ( and a little hip)....\",\"This dress is exactly what I have been searching for for weeks It is\",\", fits perfectly, easy care, so I have ordered two more in different...\",\"and perfect for summer. It is a thinner material but not so thin you need another layer under it.\",\"but not too sheer, and very soft! Feels really good! The fit is nice, flattering, colors beautiful. This dress is amazing and cute!\"]},{\"tag\":\"fit\",\"mentions\":2042,\"positive\":1301,\"negative\":741,\"snippets\":[\"Customers have mixed opinions about the dress's fit, with some finding it beautiful and flattering, while others report it being too small in the bust and too tight in the shoulders.\",\"...these now in different colors/prints and they are so comfortable and\",\". I wear them with slip on sneakers and it's a quick outfit for work....\",\"...cotton dress very much, but had to return my first order as it was\",\". I ordered two sizes up from what I usually order and it came out fine....\",\"I wanted a light summer dress and this one fit the bill perfectly.\",\"and just the right length. Fabric is a very soft, lightweight fabric....\",\"but order a size up because the boobs are always tight with this brand if you thought to...\"]},{\"tag\":\"fabric\",\"mentions\":1076,\"positive\":702,\"negative\":374,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it nice and loving its material, while others describe it as terrible and not 100% cotton.\",\". I did measurements before buying it. The main issue is that it is too small for my breasts....\",\"...Out of the five, two dresses were of very poor quality, with\",\"and no flare at all, unlike what was shown in the pictures....\",\"and the pockets on the sides and would recommend this to anyone who isn't self-...\",\"! And a vendor that knows a 3x is not a size 12. Well done. Ps, washed beautiful and hung to dry hardly a wrinkle- amazing for cotton....\"]},{\"tag\":\"size\",\"mentions\":463,\"positive\":146,\"negative\":317,\"snippets\":[\"Customers have mixed opinions about the dress's size, with some finding it spot on while others report that it runs larger than expected, particularly through the bust area and arms.\",\", but I knew that from the first one I ordered. Love the fit and density of material. Don't have to worry about wearing it outside.\",\". Order at least 2 sizes larger. Otherwise it was a beautiful dress and gave it to my daughter.\",\". I got L which was down one size from chart ' was still pretty loose across empire/ under bust....\"]},{\"tag\":\"thin material\",\"mentions\":436,\"positive\":92,\"negative\":344,\"snippets\":[\". Would be good to wear over a swimsuit. I ordered a 3x but the sleeves were too narrow....\",\"I am 5’5” and after I washed it the length was perfect. It is\",\"but not real see through and in our 100 degree weather it is very cool...\",\"but not to the point of being see-through. It is sturdy enough to not be clingy either. This is my favorite go-to casual dress....\",\". Wrinkles but is tolerable. I bought solely for at home wear in the desert in summer. Perfect for my needs. Great price too.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_4440cce2b916c060",
+    "ev_a01e000f41a98fb2",
+    "ev_ac7cd630320d8c20"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

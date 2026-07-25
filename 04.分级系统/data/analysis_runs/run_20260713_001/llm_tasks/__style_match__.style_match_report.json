@@ -1,0 +1,532 @@
+{
+  "task_type": "style_match_report",
+  "candidate_id": "__style_match__",
+  "run_id": "run_20260713_001",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "verdict 必须四选一；same_product 需标题语义高度一致且价格结构可解释，仅平台不同",
+    "不得依据商品 id 判定同款；id 相同的多源记录已在数据层合并，不属于本任务",
+    "判断不了的对给 unrelated 并说明证据不足，不要猜测"
+  ],
+  "inputs": {
+    "cards": [
+      {
+        "candidate_id": "tiktok_shop_1729508370969629931",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "[NEW] [medicube] PDRN Pink Collagen Volume Multi Balm | All In One Volufiline, PDRN, NAD Stick for Youthful-Looking, Helping Look of Fine Lines, Firming Care, Anti-Aging Care | For Under-Eyes, Neck, Forehead, Smile Lines, Lip Care | Korean Skincare",
+        "price": {
+          "amount": 20.0,
+          "currency": "USD"
+        },
+        "category": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729508370969629931/17295083709696299310.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_tabcut_000089",
+          "ev_echotik_000334",
+          "ev_tabcut_000090",
+          "ev_echotik_000335"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1731284232420626805",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "ADDWIN 2026 New Fascia Ring R10 Mini Muscle Recovery Fascia Device upgraded adjustable strap fits Up to 55in waist, Cordless Rechargeable, Designed for Waist & Back Muscle Recovery portable massager parents gift summervibes",
+        "price": {
+          "amount": 23.98,
+          "currency": "USD"
+        },
+        "category": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731284232420626805/17312842324206268050.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_tabcut_000183",
+          "ev_echotik_000376",
+          "ev_tabcut_000184",
+          "ev_echotik_000377"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1731236289885213002",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "【DealsForYouDays】SEESE Cordless Pressure Washer and Single Port Charger Base, Bottle Portable Washer for Car,Home Cleaning & Garden Watering",
+        "price": {
+          "amount": 55.37,
+          "currency": "USD"
+        },
+        "category": "五金工具",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731236289885213002/17312362898852130020.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_tabcut_000112",
+          "ev_echotik_000365",
+          "ev_tabcut_000113",
+          "ev_echotik_000366"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1731528580940468633",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "Bare Anatomy Nature x Science Rosemary Water with Rice Water |100% Natural Extract | Soft & Smooth Hair Non-Greasy & Fast Absorbing | 200 ml",
+        "price": {
+          "amount": 14.99,
+          "currency": "USD"
+        },
+        "category": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731528580940468633/17315285809404686330.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_tabcut_000136",
+          "ev_echotik_000417",
+          "ev_tabcut_000137",
+          "ev_echotik_000418"
+        ]
+      },
+      {
+        "candidate_id": "shein_488434750",
+        "platform": "shein",
+        "source_group": "shein_frontend",
+        "title": "SHEIN LilyWest Bohemian Western American Flag Print Sleeveless Dress For Women, Casual Loose Flowy A-Line Patriotic Mini Dress, Perfect For Summer Beach Vacation, Independence Day Party, Soft Lightweight Fabric",
+        "price": {
+          "amount": 11.79,
+          "currency": "USD"
+        },
+        "category": "women_dresses",
+        "image_url": "https://img.ltwebstatic.com/v4/j/pi/2026/06/01/af/1780283799f2f64f88ed42142869d1b678b34a2dbe.webp",
+        "trend_tags": [
+          "ALineStyles"
+        ],
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_shein_frontend_002448",
+          "ev_shein_frontend_002453"
+        ]
+      },
+      {
+        "candidate_id": "shein_496674906",
+        "platform": "shein",
+        "source_group": "shein_frontend",
+        "title": "EMERY ROSE Women's Plain Weave Casual Office Summer Dress",
+        "price": {
+          "amount": 16.59,
+          "currency": "USD"
+        },
+        "category": "women_dresses",
+        "image_url": "https://img.ltwebstatic.com/v4/p/ccc/2025/07/09/0b/17520280931802ca2be226ad320153e3c68187388d.webp",
+        "trend_tags": [
+          "WorkwearBasics"
+        ],
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_shein_frontend_001669",
+          "ev_shein_frontend_001674"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1731406217255686451",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "OEAK Women Jelly Bras Wirefree Full Coverage No Underwire Everyday Bras Comfortable Wireless Padded Tshirt Bra",
+        "price": {
+          "amount": 108.51,
+          "currency": "CNY"
+        },
+        "category": "Womenswear & Underwear",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731406217255686451/17314062172556864510.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [
+          "bra",
+          "bras"
+        ],
+        "evidence_refs": [
+          "ev_kalodata_000008",
+          "ev_tabcut_000130",
+          "ev_kalodata_000012",
+          "ev_tabcut_000131"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1729448464509734958",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "Toplux Magnesium Complex 8 Essential Magnesium Supplement",
+        "price": {
+          "amount": 15.97,
+          "currency": "USD"
+        },
+        "category": "保健",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729448464509734958/17294484645097349580.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_tabcut_000095",
+          "ev_echotik_000345",
+          "ev_tabcut_000096",
+          "ev_echotik_000346"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_101516367",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "Oh So Sweet Lace Set",
+        "price": {
+          "amount": 198.0,
+          "currency": "USD"
+        },
+        "category": "Sets (Collection Apparel)",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_indie_frontend_003067",
+          "ev_indie_frontend_003072"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_108262288",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "Raven Solid Convertible Maxi Skirt",
+        "price": {
+          "amount": 128.0,
+          "currency": "USD"
+        },
+        "category": "Maxi Skirts",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [
+          "skirt"
+        ],
+        "evidence_refs": [
+          "ev_indie_frontend_003227",
+          "ev_indie_frontend_003232"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_107004988",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "Eyes On You Skort",
+        "price": {
+          "amount": 78.0,
+          "currency": "USD"
+        },
+        "category": "Skorts (Apparel)",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_indie_frontend_003849",
+          "ev_indie_frontend_003854"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_106763931",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "Sun Soaked Sarong Mini Skort",
+        "price": {
+          "amount": 98.0,
+          "currency": "USD"
+        },
+        "category": "Skorts (Apparel)",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_indie_frontend_003871",
+          "ev_indie_frontend_003876"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_102380615",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "Take Me Along Circle Skirt",
+        "price": {
+          "amount": 148.0,
+          "currency": "USD"
+        },
+        "category": "Midi Skirts",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [
+          "skirt"
+        ],
+        "evidence_refs": [
+          "ev_indie_frontend_004267",
+          "ev_indie_frontend_004272"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1731879234948338174",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "DRDENT Purple Teeth Whitening Strips - 7/21 Whitening Sessions - Non Sensitive Teeth Whitening - Peroxide-Free",
+        "price": {
+          "amount": 17.38,
+          "currency": "USD"
+        },
+        "category": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1731879234948338174/17318792349483381740.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_tabcut_000124",
+          "ev_tabcut_000125"
+        ]
+      },
+      {
+        "candidate_id": "shein_489732434",
+        "platform": "shein",
+        "source_group": "shein_frontend",
+        "title": "Wood Ear Trim Gathered Ruched Umbrella Skirt Sun Dress Baby Doll Dress Spaghetti Strap Square Neck Dress 100% Pure Cotton Traceable Cotton Comfortable Fabric Casual Relaxed Elegant Commuter Old Money Style Vacation Spring Summer Women's Short Dress",
+        "price": {
+          "amount": 15.59,
+          "currency": "USD"
+        },
+        "category": "women_dresses",
+        "image_url": "https://img.ltwebstatic.com/v4/j/pi/2026/06/02/a4/17803939385bd6f3d955e644d2e6ba11ca243d8974.webp",
+        "trend_tags": [
+          "Cowboycore",
+          "ALineStyles",
+          "HawaiianCharm"
+        ],
+        "style_tokens": [
+          "dress",
+          "skirt"
+        ],
+        "evidence_refs": [
+          "ev_shein_frontend_000716",
+          "ev_shein_frontend_000721"
+        ]
+      },
+      {
+        "candidate_id": "tiktok_shop_1729718141631565851",
+        "platform": "tiktok_shop",
+        "source_group": "tiktok_shop_plugin",
+        "title": "[Dr.Melaxin Official] Calcium Multi Balm Eye Care Routine Korean Skin Care Anti-aging Cosmetics Collagen Eye Stick 9g",
+        "price": {
+          "amount": 18.9,
+          "currency": "USD"
+        },
+        "category": "美妆个护",
+        "image_url": "https://cdn.tabcut.com/dataservice/media/item/1729718141631565851/17297181416315658510.webp?x-oss-process=image/resize,w_246,h_246/format,webp",
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_tabcut_000159",
+          "ev_echotik_000427",
+          "ev_tabcut_000160",
+          "ev_echotik_000428"
+        ]
+      },
+      {
+        "candidate_id": "shein_472914284",
+        "platform": "shein",
+        "source_group": "shein_frontend",
+        "title": "NEW IDEA Women's Sexy Elegant White One-Shoulder Cami Cutout Irregular Slit Midi Dress, Ruched Waist Summer Dress For Night Out, Party, Date Vacation",
+        "price": {
+          "amount": 18.72,
+          "currency": "USD"
+        },
+        "category": "women_dresses",
+        "image_url": "https://img.ltwebstatic.com/v4/j/spmp/2026/05/20/91/17792696794326a9d62b0806a6d63cea84ef5dbc11.webp",
+        "trend_tags": [
+          "RefinedWhites",
+          "HalterNeckAttire",
+          "PreSpringDresses"
+        ],
+        "style_tokens": [
+          "dress"
+        ],
+        "evidence_refs": [
+          "ev_shein_frontend_001299",
+          "ev_shein_frontend_001304"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_101653012",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "Laverne Set",
+        "price": {
+          "amount": 168.0,
+          "currency": "USD"
+        },
+        "category": "Sets (Collection Apparel)",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_indie_frontend_002934",
+          "ev_indie_frontend_002939"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_107719346",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "We The Free Mille-Fleurs Madras Mini Skirt",
+        "price": {
+          "amount": 98.0,
+          "currency": "USD"
+        },
+        "category": "Mini Skirts",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [
+          "skirt"
+        ],
+        "evidence_refs": [
+          "ev_indie_frontend_003838",
+          "ev_indie_frontend_003843"
+        ]
+      },
+      {
+        "candidate_id": "freepeople_106847056",
+        "platform": "freepeople",
+        "source_group": "indie_frontend",
+        "title": "Don't Let Me Go Half Slip",
+        "price": {
+          "amount": 128.0,
+          "currency": "USD"
+        },
+        "category": "Half Slips",
+        "image_url": null,
+        "trend_tags": null,
+        "style_tokens": [],
+        "evidence_refs": [
+          "ev_indie_frontend_004060",
+          "ev_indie_frontend_004065"
+        ]
+      }
+    ],
+    "prefilter_pairs": [
+      {
+        "candidate_a": "freepeople_108262288",
+        "candidate_b": "shein_489732434",
+        "shared_tokens": [
+          "skirt"
+        ]
+      },
+      {
+        "candidate_a": "freepeople_102380615",
+        "candidate_b": "shein_489732434",
+        "shared_tokens": [
+          "skirt"
+        ]
+      },
+      {
+        "candidate_a": "shein_489732434",
+        "candidate_b": "freepeople_107719346",
+        "shared_tokens": [
+          "skirt"
+        ]
+      }
+    ],
+    "trend_keywords": [],
+    "note": "趋势站数据源（Pinterest/Google Trends 等）接入后 trend_keywords 会带真实趋势词；当前为空则 trend_alignment 只能基于平台趋势标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_echotik_000334",
+    "ev_echotik_000335",
+    "ev_echotik_000345",
+    "ev_echotik_000346",
+    "ev_echotik_000365",
+    "ev_echotik_000366",
+    "ev_echotik_000376",
+    "ev_echotik_000377",
+    "ev_echotik_000417",
+    "ev_echotik_000418",
+    "ev_echotik_000427",
+    "ev_echotik_000428",
+    "ev_indie_frontend_002934",
+    "ev_indie_frontend_002939",
+    "ev_indie_frontend_003067",
+    "ev_indie_frontend_003072",
+    "ev_indie_frontend_003227",
+    "ev_indie_frontend_003232",
+    "ev_indie_frontend_003838",
+    "ev_indie_frontend_003843",
+    "ev_indie_frontend_003849",
+    "ev_indie_frontend_003854",
+    "ev_indie_frontend_003871",
+    "ev_indie_frontend_003876",
+    "ev_indie_frontend_004060",
+    "ev_indie_frontend_004065",
+    "ev_indie_frontend_004267",
+    "ev_indie_frontend_004272",
+    "ev_kalodata_000008",
+    "ev_kalodata_000012",
+    "ev_shein_frontend_000716",
+    "ev_shein_frontend_000721",
+    "ev_shein_frontend_001299",
+    "ev_shein_frontend_001304",
+    "ev_shein_frontend_001669",
+    "ev_shein_frontend_001674",
+    "ev_shein_frontend_002448",
+    "ev_shein_frontend_002453",
+    "ev_tabcut_000089",
+    "ev_tabcut_000090",
+    "ev_tabcut_000095",
+    "ev_tabcut_000096",
+    "ev_tabcut_000112",
+    "ev_tabcut_000113",
+    "ev_tabcut_000124",
+    "ev_tabcut_000125",
+    "ev_tabcut_000130",
+    "ev_tabcut_000131",
+    "ev_tabcut_000136",
+    "ev_tabcut_000137",
+    "ev_tabcut_000159",
+    "ev_tabcut_000160",
+    "ev_tabcut_000183",
+    "ev_tabcut_000184"
+  ],
+  "output_schema": {
+    "pair_judgements": [
+      {
+        "candidate_a": "cards 内 id",
+        "candidate_b": "cards 内 id",
+        "verdict": "same_product|same_style|same_trend|unrelated",
+        "rationale": "str（综合了哪些指标：标题语义/价格/类目/图片/趋势词）",
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids"
+        ],
+        "confidence": "high|medium|low"
+      }
+    ],
+    "trend_alignment": [
+      {
+        "candidate_id": "cards 内 id",
+        "trend_keyword": "str（来自 inputs.trend_keywords）",
+        "rationale": "str"
+      }
+    ],
+    "summary": "str（红海/空白/跨平台机会的总体判断）",
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ]
+  }
+}

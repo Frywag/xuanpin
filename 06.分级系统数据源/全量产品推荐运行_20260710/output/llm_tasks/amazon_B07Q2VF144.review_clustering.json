@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B07Q2VF144",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "YOBECHO Womens Summer Ruffle Sleeve Sweetheart Neckline Printing Dress Mini Dresses",
+    "rating": 4.0,
+    "review_count": 13157.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":844,\"positive\":807,\"negative\":37,\"snippets\":[\"Customers find the dress visually appealing, describing it as cute, feminine, and romantic.\",\", sexy, fun. My guy absolutely loves it as much as I do! Love💙 highly recommend for summer time!\",\"and comfortable! The neckline is pretty low compared to some things, but it’s not too hard to adjust.\",\"...The replacement dress has no noticeable defects, fits great and is\",\". I ordered the wine red color in a size small. I'm 5' 7\\\", 126 lbs.,...\",\"and fit very comfortably. Wasn't too tight and was thin but not see through. Waist was a bit loose so I could have sized down.\"]},{\"tag\":\"comfort\",\"mentions\":188,\"positive\":167,\"negative\":21,\"snippets\":[\"Customers find the dress comfortable, noting that it is not itchy and maintains its shape well.\",\"! The neckline is pretty low compared to some things, but it’s not too hard to adjust.\",\", beautiful color. size up if you have bigger chest.Does not wrinkle much overall great dress.\",\"I love it! Wearing it to a clambake for a wedding. It’s very light and\",\", straps are a little weird as to where to place them but I’m pretty...\",\"and good quality. Fabric is breathable and the red color is definitely more of a Mauvy pink....\"]},{\"tag\":\"suitable for summer\",\"mentions\":155,\"positive\":151,\"negative\":4,\"snippets\":[\"Customers find this dress suitable for summer occasions, particularly noting it's great for dinner outings and casual weddings, with one customer mentioning it's perfect for outdoor summer weddings.\",\". Little see through but just wear some shorts. I got a M, for reference 5'8\\\" 140lbs 34DD\",\". It’s a little short but will be ok for summer dates - I’m going to let the front string stay inside....\",\"...Don’t even think about- buy it now, you won’t regret it! Such a\",\"or a casual night out. Easy to dress up with heels or down with sandals....\"]},{\"tag\":\"fit\",\"mentions\":974,\"positive\":674,\"negative\":300,\"snippets\":[\"Customers have mixed opinions about the dress's fit, with some finding it cute and flattering with a perfect size, while others report it being too big or not flattering at all.\",\", I love the cut and shape. The part that holds your chest has a lot of fabric and would look best on a bigger chested girl....\",\"and was such a pretty color. I am not a big dress person but I would definitely recommend this one!\",\"The material was kind of cheap and had a lot of static. Also was\",\", but the other reviews said to go up two sizes and I probably only needed...\",\"for me (5’5”, 120 lbs, 32DD) ordered a size S), and is flattering in all the...\"]},{\"tag\":\"quality\",\"mentions\":371,\"positive\":230,\"negative\":141,\"snippets\":[\"Customers have mixed opinions about the dress's quality, with some finding it nice while others describe it as cheap.\",\"Very flattering, a little tight fit in the mid section but still\",\"! Not real stretchy but Lightweight, cool and beautiful color!...\",\". Everything about it is cheap materials very thin. Wish I wouldn't have minded. If the zipper actually worked. I couldn't get it....\",\". Fit perfect, very short but I just wear shorts under dresses so that was no issue.\",\"...It makes my boobs look awesome and my waist look teeny-tiny.\",\". It’s a teeny bit see-through, but nothing that nude underwear can’t fix....\"]},{\"tag\":\"opacity\",\"mentions\":274,\"positive\":103,\"negative\":171,\"snippets\":[\"Customers have mixed opinions about the dress's opacity, with some finding it thin but not see-through, while others report that the fabric is completely transparent.\",\". The fabric is comfortable but i think this product will begin to fall apart quickly.\",\"...The material is light and thin, perfect for the hot summers, and\",\"...cheap looking and feeling and the material is so thin it is\",\"... will have to wear like a special slip because even with no under garments you can see everything under the dress, it’s a beautiful...\"]},{\"tag\":\"length\",\"mentions\":189,\"positive\":114,\"negative\":75,\"snippets\":[\"Customers have mixed opinions about the dress's length, with some finding it appropriate for dancing and above the knee, while others note it's shorter than expected.\",\". I am 5’5 wearing a size medium. Its light weight, fits my waist well. Has elastic cup sleeves that stay in place....\",\"and does not fit well. I am 5’9ish and 34DD and the bustline is far too small to even try and get away with....\",\". I am bigger busted and the top is great! I am 5’2” and about 125 lbs and a 32G bust. It is great!...\",\"& can be worn with straps up or down. The bust fits well and isn’t too tight for a 36DD....\"]},{\"tag\":\"thin material\",\"mentions\":389,\"positive\":104,\"negative\":285,\"snippets\":[\"Customers criticize the dress's material, describing it as thin, cheap, and see-through.\",\"...something you would buy from Forever 21 that is on clearance....\",\"& you will have to wear light colored underwear, but it’s very breezy & perfect...\",\"This dress is so cute and fit very comfortably. Wasn't too tight and was\",\"but not see through. Waist was a bit loose so I could have sized down.\",\"so i wore shorts under neath. The stitching on the shoulder let go throughout the course of the day....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_4556e41ece5f72b4",
+    "ev_46c44e30c6c247a5",
+    "ev_c42a819d42acc9b6"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

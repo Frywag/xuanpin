@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-07-10T08:34:38.493Z",
+  "search": {
+    "total": 30,
+    "used": 30,
+    "remain": 0,
+    "full": true
+  },
+  "detail": {
+    "total": 30,
+    "used": 30,
+    "remain": 0,
+    "full": true
+  },
+  "export": {
+    "total": 0,
+    "used": 0,
+    "remain": 0,
+    "full": true
+  }
+}

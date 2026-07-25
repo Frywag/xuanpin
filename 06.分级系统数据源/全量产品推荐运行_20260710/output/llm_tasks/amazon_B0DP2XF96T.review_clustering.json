@@ -1,0 +1,51 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0DP2XF96T",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "Zeagoo Womens Summer Dress 2026 Loose V Neck Sleeveless Sundresses Swimsuit Coverup with Pockets Floral Tank Dresses",
+    "rating": 4.2,
+    "review_count": 1307.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":206,\"positive\":193,\"negative\":13,\"snippets\":[\"Customers like the appearance of the dress, describing it as a nicely made sundress with pretty prints. One customer mentions it looks adorable on smaller body types.\",\"and the pattern looks like the photo. There is just no shape at all. You have to add a belt, and it still isn’t great....\",\", comfortable dress. It fits true to size with no huge armholes . I bought it to wear on a cruise and it packs well for travel....\",\". Perfect for nice weather. And I feel good about my appearance when I'm out.\",\"and comfortable. Just what I wanted. Love the pockets. Could have been a bit shorter since I only 5 2\"]},{\"tag\":\"fit\",\"mentions\":153,\"positive\":129,\"negative\":24,\"snippets\":[\"Customers like how the dress fits, describing it as a great loose-fitting casual sundress, with one customer noting it hangs perfectly.\",\"..lightweight fabric..good quality..variety of colors/patterns\",\". I ordered a small. Nice and comfortable. Just what I wanted. Love the pockets. Could have been a bit shorter since I only 5 2\",\". The only thing is it is super thin. You can see right through it.\",\"! No bra showing, no flabby armpits! Perfect for my upcoming cruises!...\"]},{\"tag\":\"comfort\",\"mentions\":101,\"positive\":100,\"negative\":1,\"snippets\":[\", easy dress to put on. Can dress up or down. Love the pockets. Threw in a suitcase for a cruise and came out ready to wear. True to size\",\", it is light weight, it can be used worn for casual or you can dress it up....\",\"...I ordered an xl, It's true to size some what roomy, and nice and\",\". It fits true to size with no huge armholes . I bought it to wear on a cruise and it packs well for travel....\"]},{\"tag\":\"suitable for summer\",\"mentions\":64,\"positive\":63,\"negative\":1,\"snippets\":[\"Customers find this dress suitable for summer, noting it can be dressed up or down and works well as a swim cover-up.\",\". It’s not as long as most as I’m only 5’2 so that was nice . Color was nice . The material is soft .\",\". I can wear it around the house or out anywhere. Bonus are the pockets!\"]},{\"tag\":\"pockets\",\"mentions\":52,\"positive\":50,\"negative\":2,\"snippets\":[\"Customers love the dress's pockets, with one customer noting that they are not in the seam and don't sag.\",\". Threw in a suitcase for a cruise and came out ready to wear. True to size\",\"...Perfect for me and my 10th floor NYC over heated apartment and\",\"so I can always carry what I need and also perfect for sleeping!...\",\". Just the right length. Washes really nicely? I just hang to dry.\"]},{\"tag\":\"value for money\",\"mentions\":43,\"positive\":43,\"negative\":0,\"snippets\":[]},{\"tag\":\"sizing\",\"mentions\":58,\"positive\":32,\"negative\":26,\"snippets\":[\"Customers have mixed experiences with the sizing of the dress, with some finding it true to size while others report that it runs small or very big.\",\"some what roomy, and nice and comfy. I am 5'9 it's the perfect length mid-thigh....\",\". I got a small and I am usually a size 4/6, and there is a lot of room in this dress!...\",\", but if you get things from China, they run extremely small like children’s size....\"]},{\"tag\":\"fabric\",\"mentions\":40,\"positive\":25,\"negative\":15,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it nice and noting its rayon-like appearance, while others describe it as chintzy.\",\"!!!!!! Tag says polyester 95% I bought two will send both back as I’m was looking for true linen.\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_412872234124c10d",
+    "ev_9cd7485cf62b20b4",
+    "ev_ba8b373cec98991b"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

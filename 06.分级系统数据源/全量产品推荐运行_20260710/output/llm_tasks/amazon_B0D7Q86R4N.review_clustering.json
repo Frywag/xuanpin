@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0D7Q86R4N",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "elescat Womens Summer Dresses Spaghetti Strap V Neck Casual Sleeveless Sundress Beach Cover Ups with Pockets 2026",
+    "rating": 4.4,
+    "review_count": 964.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":121,\"positive\":115,\"negative\":6,\"snippets\":[\"Customers like the appearance of the dress, describing it as nice and good quality, with one customer noting it's perfect as a swimsuit coverup.\",\"!! I’m 5’5” 165-170lbs and I got a large and it fits great. Could probably even go to a medium for a little more fitted look....\",\"and love the design. I’m 5’6” and weigh about 170… a large is roomy and not too big....\"]},{\"tag\":\"fit\",\"mentions\":96,\"positive\":79,\"negative\":17,\"snippets\":[\"Customers find that the dress fits nicely and is flattering, with one customer noting it hides their big waist, while another mentions it flatters their Yoda-shaped body.\",\", fun. I use it as a bathing suit cover. I bought bathing suits in all colors, but you can wear it from pool to dinner.\"]},{\"tag\":\"comfort\",\"mentions\":89,\"positive\":86,\"negative\":3,\"snippets\":[\"Customers find the dress comfortable, with one mentioning it works well in the heat of Florida.\",\"and the price is nice. The fabric breathes and is soft. Nice fit. Flowing and not clingy.\",\", soft and flowy. It's not see through but very lightweight. Perfect for the summer especially us menopausal gals.\",\", and looks very nice! Fabric is soft, not see-through but not heavy either....\"]},{\"tag\":\"summer-friendly\",\"mentions\":40,\"positive\":39,\"negative\":1,\"snippets\":[\"Customers find the dress suitable for summer, particularly noting it's perfect for warmer days and beach outings. One customer mentions it can be dressed up for evening wear.\",\". I chose the Navy Blue with white flowers, size small @ 5’2” and 110 lbs. looking forward to wearing it all summer....\",\"!! Love it ! It is shapely and soft with a little stretch . It has spaghetti straps.and it fits perfect!\"]},{\"tag\":\"pockets\",\"mentions\":38,\"positive\":37,\"negative\":1,\"snippets\":[\"Customers like the dress's pockets, with one customer noting they are not bulky.\",\"but I probably wouldn’t put anything in them. Made more for looks or your hands.\",\"! Nice and flowy. I am 5’8”, 175lbs and ordered a large.\"]},{\"tag\":\"soft material\",\"mentions\":36,\"positive\":33,\"negative\":3,\"snippets\":[\"This is a nice, simple dress for spring, summer & the fall. It’s\",\"& comfortable & it flows nicely. And, I was told it’s nice to have pockets....\",\", light, and not see through. The colors and style is just as advertised....\",\". I saw some reviews saying it was see through but,mine wasn't. I ordered the tie dye. I would say it's true to size....\"]},{\"tag\":\"color\",\"mentions\":26,\"positive\":23,\"negative\":3,\"snippets\":[\"Customers like the colors of the dress, with one mentioning that the color holds up very well.\",\", and the material is soft and flowy. Love the pockets too!...\",\"and I love the way it fit the pockets made it 10 times better to be able to carry...\",\"and how comfortable she is. It has pockets too! Big plus for her.\"]},{\"tag\":\"fabric quality\",\"mentions\":59,\"positive\":37,\"negative\":22,\"snippets\":[\"Customers have mixed opinions about the dress's fabric quality, with some finding it good and noting its medium thickness, while others describe it as terrible, thin, and rough.\",\". Bit of substance to it. Not too short. Nice flare so not clinging to tummy!....\",\", fitting, and color are great, and I love it. Since it's a summer dress, I like it loose, and I ordered one size up, and I'm glad I did....\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_372cd4a040e6df08",
+    "ev_6211f9bff38d668f",
+    "ev_7c99a6e95ebb7b01",
+    "ev_8d2920878e7709f0",
+    "ev_d743ca21efb35296"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}

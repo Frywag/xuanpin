@@ -1,0 +1,754 @@
+{
+  "schema_version": "candidate.data.packet.v1",
+  "candidate_id": "amazon_B0GFNKBM2J",
+  "market": "US",
+  "platform": "amazon",
+  "primary_product_id": "B0GFNKBM2J",
+  "canonical_url": "https://www.amazon.com/YESNO-Womens-Dresses-Vacation-Pockets/dp/B0GFNKBM2J/ref=zg_bs_g_2346727011_d_sccl_9/146-3373523-6428265",
+  "source_refs": [
+    {
+      "source_id": "seller_sprite_amazon",
+      "envelope_id": "envelope_seller_sprite_amazon_20260710"
+    }
+  ],
+  "basic_facts": {
+    "title": "YESNO Women's Summer Maxi Dresses Casual Floral Short Sleeve V Neck Boho Beach Vacation Swing Dress with Pockets EVF",
+    "brand": "YESNO",
+    "category_path": [
+      "Clothing, Shoes & Jewelry",
+      "Women",
+      "Clothing",
+      "Dresses",
+      "Casual"
+    ],
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/717d1ATJ0AL._AC_UL600_SR600,400_.jpg",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    },
+    "original_price": null,
+    "discount_pct": null,
+    "rating": 4.2,
+    "review_count": 882.0,
+    "in_stock": null
+  },
+  "market_metrics": {
+    "sales_30d_units": 13323.0,
+    "sales_7d_units": null,
+    "sales_floor_units": null,
+    "revenue_30d": {
+      "amount": 332941.78,
+      "currency": "USD"
+    },
+    "gmv_7d": null,
+    "sales_growth_rate": 90.0,
+    "favorites_count": null,
+    "bestseller_rank_text": "Best Sellers Rank: #2,420 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry) #59 in Women's Casual Dresses",
+    "video_views_max": null,
+    "video_revenue_share": null,
+    "related_creator_count": null,
+    "trend_signals": []
+  },
+  "competition_metrics": {
+    "category_top3_shop_ratio": null,
+    "category_top10_shop_ratio": null,
+    "category_shop_count": null,
+    "competitor_review_max": null,
+    "commission_rate": null,
+    "seller_type": null,
+    "creator_gmv_concentration": null
+  },
+  "product_opportunity": {
+    "review_tag_clusters": [
+      {
+        "cluster_name": "正面标签",
+        "tags": []
+      }
+    ],
+    "negative_review_clusters": [],
+    "improvement_points": [],
+    "differentiation_signals": []
+  },
+  "cross_platform": {
+    "matched_products": [],
+    "platform_price_comparison": [
+      {
+        "style_group": "dress",
+        "source_group": "候选自身（amazon）",
+        "currency": "USD",
+        "n": 1,
+        "p25": 24.99,
+        "p50": 24.99,
+        "p75": 24.99,
+        "note": "候选商品价格"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "amazon_plugin",
+        "currency": "USD",
+        "n": 200,
+        "p25": 14.99,
+        "p50": 26.48,
+        "p75": 37.99,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_aerie",
+        "currency": "USD",
+        "n": 20,
+        "p25": 52.46,
+        "p50": 54.95,
+        "p75": 59.95,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_alo_yoga",
+        "currency": "USD",
+        "n": 45,
+        "p25": 138.0,
+        "p50": 138.0,
+        "p75": 138.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_amazon",
+        "currency": "USD",
+        "n": 399,
+        "p25": 18.88,
+        "p50": 29.99,
+        "p75": 39.99,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_cupshe",
+        "currency": "USD",
+        "n": 48,
+        "p25": 32.75,
+        "p50": 36.0,
+        "p75": 40.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_for_love_lemons",
+        "currency": "USD",
+        "n": 116,
+        "p25": 22900.0,
+        "p50": 28250.0,
+        "p75": 31900.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_good_american",
+        "currency": "USD",
+        "n": 12,
+        "p25": 93.0,
+        "p50": 138.0,
+        "p75": 148.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_lulus",
+        "currency": "USD",
+        "n": 21,
+        "p25": 69.0,
+        "p50": 79.0,
+        "p75": 99.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_madewell",
+        "currency": "USD",
+        "n": 31,
+        "p25": 123.0,
+        "p50": 148.0,
+        "p75": 158.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_quince",
+        "currency": "USD",
+        "n": 89,
+        "p25": 59.9,
+        "p50": 69.9,
+        "p75": 99.9,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_reformation",
+        "currency": "USD",
+        "n": 47,
+        "p25": 248.0,
+        "p50": 278.0,
+        "p75": 313.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_shein",
+        "currency": "USD",
+        "n": 191,
+        "p25": 9.42,
+        "p50": 12.09,
+        "p75": 15.11,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "frontend_skims",
+        "currency": "USD",
+        "n": 24,
+        "p25": 68.0,
+        "p50": 86.0,
+        "p75": 98.0,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      },
+      {
+        "style_group": "dress",
+        "source_group": "tiktok_shop_plugin",
+        "currency": "CNY",
+        "n": 88,
+        "p25": 168.96,
+        "p50": 275.63,
+        "p75": 345.18,
+        "note": "同风格子集价格分位数（运行时统计），不跨币种换算"
+      }
+    ],
+    "same_style_signals": [
+      {
+        "signal": "frontend_amazon 语料中有 397 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 397,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "amazon_plugin 语料中有 199 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 199,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_shein 语料中有 192 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 192,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_for_love_lemons 语料中有 116 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 116,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "tiktok_shop_plugin 语料中有 87 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 87,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_quince 语料中有 80 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 80,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_lulus 语料中有 76 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 76,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_urban_outfitters 语料中有 70 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 70,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_anthropologie 语料中有 66 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 66,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_free_people 语料中有 66 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 66,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_cupshe 语料中有 48 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 48,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_reformation 语料中有 47 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 47,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_alo_yoga 语料中有 45 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 45,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_everlane 语料中有 45 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 45,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_princess_polly 语料中有 33 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 33,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_madewell 语料中有 31 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 31,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_lululemon 语料中有 25 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 25,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_skims 语料中有 24 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 24,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_aerie 语料中有 18 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 18,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      },
+      {
+        "signal": "frontend_good_american 语料中有 12 款标题命中相同风格词 ['dress', 'dresses']",
+        "kind": "style_token_overlap",
+        "count": 12,
+        "note": "同风格信号（确定性词表匹配），不构成同款结论"
+      }
+    ]
+  },
+  "owned_supply_inputs": {
+    "target_cost": null,
+    "moq": null,
+    "lead_time_days": null,
+    "fabric_capability": [],
+    "compliance_notes": []
+  },
+  "missing_fields": [
+    "owned_supply_inputs.target_cost",
+    "owned_supply_inputs.moq",
+    "owned_supply_inputs.lead_time_days",
+    "competition_metrics.category_top10_shop_ratio"
+  ],
+  "field_issues": [],
+  "evidence_pack": [
+    {
+      "evidence_id": "ev_9f167e829725a2d0",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.title",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=英文标题",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_2dca679affd00eb8",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.title_cn",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=中文标题",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_f741e0945c2a435d",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.brand",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=品牌",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_db23fe89dce672f0",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.category_name",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=类目路径",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_35c808c1c1d7d05b",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.category_path",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=类目路径",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_3c5612035f6066df",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.image_url",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=图片链接",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_5155e2ad7efef0dd",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.price",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=价格($)",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_110dc8f7ae0d08c7",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.rating",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=星级",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_d7e318eb5f971ece",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "basic_facts.review_count",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=评分数",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_fe7f9b13af71a9de",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.sales_30d_units",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=近30天销量(父体)",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "SellerSprite 估算；父体近30天销量"
+    },
+    {
+      "evidence_id": "ev_024e6bf3e5425800",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.revenue_30d",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=近30天销售额($)",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "SellerSprite 估算"
+    },
+    {
+      "evidence_id": "ev_37fde153c0672d66",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.sales_growth_rate",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=销量增长率",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "源表百分数口径归一为小数"
+    },
+    {
+      "evidence_id": "ev_4b996131021389a2",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "market_metrics.bestseller_rank_text",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=Amazon类目排名",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_c6c7fa67eb2529e2",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.seller_name",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=卖家名称",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_bf148fe58c7357a1",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.image_count",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=主图数量",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_113c55a0f79c5f69",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.review_tags_raw",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=评论亮点",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_b3e7776631fd91b6",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.raw_evidence_path",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=采集说明",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_8a5386a0d25a2c5d",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.design_signals",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=英文五点/面料/产品属性JSON",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "high",
+      "note": ""
+    },
+    {
+      "evidence_id": "ev_2f2d3ff9afc532d5",
+      "source_id": "seller_sprite_amazon",
+      "source_type": "plugin",
+      "tool_or_adapter": "full_selection_input_normalizer/1.0",
+      "field_path": "context.trend_tags",
+      "artifact_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+      "record_locator": "sheet=商品详情;row=60;column=销量趋势/BSR趋势/价格趋势",
+      "observed_at": "2026-07-10T13:25:47+00:00",
+      "confidence": "medium",
+      "note": "全量趋势行聚合得出"
+    }
+  ],
+  "quality_status": "VALID",
+  "context": {
+    "source_group": "amazon_plugin",
+    "category_label": null,
+    "seasonal": false,
+    "title_cn": "YESNO 女式夏季超长连衣裙休闲花卉短袖 V 领波西米亚风海滩度假摇摆连衣裙，带口袋 EVF",
+    "category_name": "Casual",
+    "seller_name": "yourfashionshow",
+    "image_count": 0.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":130,\"positive\":116,\"negative\":14,\"snippets\":[\"Customers find the dress visually appealing, praising its beautiful patterns and print, with one customer noting how it accentuates desired features.\",\"...The fabric dries to a “bubbly” texture, & that’s what makes it so darn\",\". A very cool dress for 3 out of 4 seasons in southern Arizona.\",\". Got many compliments wearing it. Length wise perfect . Going to buy other colors as well\",\"...I hate wearing dresses because they are not flattering but this one is\",\". I like the material and the fit is just perfect. Highly recommend!\",\". Love this print and the brushed cotton. It may fade but I feel it will add to the charm of the dress....\"]},{\"tag\":\"comfort\",\"mentions\":107,\"positive\":106,\"negative\":1,\"snippets\":[\", easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\",\", the colors on the two I bought are true to the photo. I bought my normal xl and they fit fine!\",\"and cool for the hot Florida summer. My phone fits on the pockets and the length is perfect. I'm 5'7\\\" tall and large....\",\"! I will be wearing this quite a bit this summer! The color is beautiful!...\"]},{\"tag\":\"quality\",\"mentions\":101,\"positive\":92,\"negative\":9,\"snippets\":[\"Customers find the dress to be of good quality, describing it as nice and cool, with one customer noting it's perfect for summer wear.\",\"! The quality, style and fit. So comfortable as well as the price is affordable.\",\". I bought the navy/green plaid first and love it. This is true to the colors and it’s kind of a woven fabric....\",\", breathable material, has pockets! Take in account that material is going to shrink some....\",\"...It’s got a great fit, very flattering for the tummy. It’s\",\"and comfortable and I love that the sleeves aren’t tight and uncomfortable....\"]},{\"tag\":\"lightweight\",\"mentions\":56,\"positive\":54,\"negative\":2,\"snippets\":[\"Customers appreciate the dress's lightweight fabric, describing it as a beautiful summer dress.\",\", soft, colorful, COMFORTABLE, easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\",\". Size is accurate. It fits larger sizes well with good room in chest and tummy....\",\"and flowy. It hangs well. I agree with others that say the bust is too tight....\",\"perfect for summer and or travel. Fits comfortably and the pattern is feminin.\"]},{\"tag\":\"color\",\"mentions\":48,\"positive\":42,\"negative\":6,\"snippets\":[\"Customers like the dress's color, with one mentioning that the floral print is vibrant without being loud, and another noting that it compliments various skin tones.\",\", but the skirt part of the dress is a little bigger then what I like....\",\". But it’s made of 100% combed cotton instead of a Cotton rayon blend. I’m keeping it....\",\", COMFORTABLE, easy care fabric Great dress to “ dress” up or down, w scarf, jacket Sandals, shoes or boots etc\"]},{\"tag\":\"fit\",\"mentions\":148,\"positive\":103,\"negative\":45,\"snippets\":[\"Customers have mixed opinions about the dress's fit, with some finding it flattering and roomy through the body, while others report it runs larger than expected and is too tight across the chest.\",\"and feels comfortable. I’ve received compliments on it. The fabric is luxurious while being cotton based. Washes well.\",\". The fabric feels very soft, lightweight and comfortable....\",\". The hem was uneven longer at the back than at the front. The fabric wrinkled easily is not permanent pressed....\",\"with the high empire waist that falls nicely. I have yet to see how it does with washing....\"]},{\"tag\":\"fabric\",\"mentions\":101,\"positive\":70,\"negative\":31,\"snippets\":[\"Customers have mixed opinions about the fabric of the dress, with some finding it lovely cotton suitable for summer, while others report it being very thin and not up to par.\",\"and not see through. I plan on buying another. Washes well and I Hung it to dry.\",\"...Sleeves cover tops of arms well. Not too tight. Flowing. Long.\",\". I went with a size larger to hide my tummy best. I’m 5’3 and 200lbs....\",\", but it runs small. I even ordered up a size since I have a generous chest, and it’s still snug.\"]},{\"tag\":\"sizing\",\"mentions\":52,\"positive\":22,\"negative\":30,\"snippets\":[\"Customers have mixed opinions about the dress's sizing, with some finding it true to size while others report that it runs very small.\",\". I order the same size in everything & it's generally a great fit but this was tight in my shoulder & bust areas....\",\". The purple color was more navy-ish. I wish it had been more distinctly purple....\",\". I usually wear a medium but had to downsize to a small. perfect for summer just hanging around.\"]}]",
+    "raw_evidence_path": "06.分级系统数据源/插件数据源_女士休闲连衣裙_卖家精灵全量信息_20260710.xlsx",
+    "design_signals": [
+      {
+        "kind": "bullet_points",
+        "text": "For summer swing dresses, heavy fabric can weigh down your silhouette. That’s why we selected the airy cotton-rayon blend, light as a feather, soft as a cloud. The subtle \"bubbles\" created by special weaving not only bring the print to life but also add a gentle stretch. Plus, the fabrics get even softer and gain a subtle thickness with washing, though lightly puckered which smooth out after a quick steam ironing.|||The beauty of mature women never needs to try too hard. You see it in the loose sway of a relaxed hem, in a variety of prints that shift with your mood. Most patterns in black or blue background, calm and modest. Then come the lively green, light pink, and royal purple. And when the occasion calls for something more formal, there are solid black and dark cyan, elegant and confident.|||Empire waist dresses flow into a swinging skirt. Like a gentle embrace, they gracefully flatter plus size figures and offer ease for maternity wear. Below the hips, the skirt’s tier features slightly curved seams that naturally contour to the body, softly shaping the hips for a feminine silhouette. And after six rounds of refinement, the short sleeves are cut to end just above the waist, shifting the focus upward and keeping the look light and fluid.|||The V-neck really is the sweet spot, just open enough to feel fresh and flattering, yet never too revealing. Add a necklace that follows the neckline, instantly the look turns delicate but still effortless. Since style and convenience both matter, these boho maxi dresses also feature two hidden side-seam pockets which don't add bulk.|||Garment Care: Hand wash in cold water. Line dry. Low ironing if necessary."
+      },
+      {
+        "kind": "material",
+        "text": "61.3% Cotton, 38.7% Rayon"
+      },
+      {
+        "kind": "attributes",
+        "text": "{\"STYLE\":{\"Color\":\"Floral 425b\",\"Occasion Type\":\"Casual\",\"Apparel Silhouette\":\"Swing\",\"Neck Style\":\"V-Neck\",\"Sleeve Type\":\"Short Sleeve\",\"Seasons\":\"Summer\",\"Apparel Occasion and Lifestyle\":\"casual\",\"Style Name\":\"Casual\",\"Apparel Closure Type\":\"Pull On\",\"Back Style\":\"Closed Back\",\"Pattern\":\"Floral\",\"Waist Style\":\"Empire Waist\",\"collar-type\":\"V-Neck\"},\"MEASUREMENTS\":{\"Item Length Description\":\"Maxi\",\"Special Size Type\":\"Plus Size\"},\"FEATURES & SPECS\":{\"Apparel Closure Type\":\"Pull On\",\"Sleeve Length Description\":\"Short Sleeve\",\"Fit to Size Sentiment\":\"True\",\"Fit Type\":\"Loose\"},\"ITEM DETAILS\":{\"Brand Name\":\"YESNO\",\"Age Range Description\":\"Adult\",\"Garment Size Country\":\"United States\",\"Unit Count\":\"1 Count\",\"Number of Items\":\"1\"},\"MATERIALS & CARE\":{\"Material Type\":\"61.3% Cotton, 38.7% Rayon\",\"Product Care Instructions\":\"Machine Wash\",\"Apparel Fabric Weight Class\":\"Lightweight\",\"Apparel Fabric Stretch\":\"Medium Stretch\",\"Fabric Type\":\"61.3% Cotton, 38.7% Rayon\"}}"
+      },
+      {
+        "kind": "review_summary",
+        "text": "Customers love the dress's appearance, particularly its beautiful patterns, and find it comfortable, lightweight, and of good quality. The color receives positive feedback, with one customer noting that the floral print is vibrant without being loud. The fit and sizing receive mixed reviews - while some find it flattering and true to size, others mention it runs smaller than expected. The fabric quality is also mixed, with some customers appreciating its cotton-like feel while others find it thin."
+      }
+    ],
+    "trend_tags": [
+      "sales_trend_rising",
+      "bsr_improving"
+    ],
+    "profile": {
+      "产品中文名称": {
+        "value": "YESNO 女式夏季超长连衣裙休闲花卉短袖 V 领波西米亚风海滩度假摇摆连衣裙，带口袋 EVF",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_2dca679affd00eb8"
+        ]
+      },
+      "产品英文标题": {
+        "value": "YESNO Women's Summer Maxi Dresses Casual Floral Short Sleeve V Neck Boho Beach Vacation Swing Dress with Pockets EVF",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_9f167e829725a2d0"
+        ]
+      },
+      "品牌": {
+        "value": "YESNO",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_f741e0945c2a435d"
+        ]
+      },
+      "售价": {
+        "value": "24.99 USD",
+        "group": "子SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_5155e2ad7efef0dd"
+        ]
+      },
+      "评分": {
+        "value": 4.2,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_110dc8f7ae0d08c7"
+        ]
+      },
+      "评论数": {
+        "value": 882.0,
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_d7e318eb5f971ece"
+        ]
+      },
+      "类目路径": {
+        "value": [
+          "Clothing, Shoes & Jewelry",
+          "Women",
+          "Clothing",
+          "Dresses",
+          "Casual"
+        ],
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_35c808c1c1d7d05b"
+        ]
+      },
+      "来源类目": {
+        "value": "Casual",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_db23fe89dce672f0"
+        ]
+      },
+      "主图链接": {
+        "value": "https://images-na.ssl-images-amazon.com/images/I/717d1ATJ0AL._AC_UL600_SR600,400_.jpg",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": [
+          "ev_3c5612035f6066df"
+        ]
+      },
+      "商品链接": {
+        "value": "https://www.amazon.com/YESNO-Womens-Dresses-Vacation-Pockets/dp/B0GFNKBM2J/ref=zg_bs_g_2346727011_d_sccl_9/146-3373523-6428265",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "平台": {
+        "value": "amazon",
+        "group": "款式SKU",
+        "source": "direct",
+        "evidence_refs": []
+      },
+      "起订量": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "交期": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "供货稳定性": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "综合采购成本": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      },
+      "质检通过率": {
+        "value": null,
+        "group": "供应链",
+        "source": "manual",
+        "evidence_refs": [],
+        "note": "终选款人工补录（见 supply_capability 与 L3 流程）"
+      }
+    }
+  }
+}

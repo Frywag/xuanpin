@@ -1,0 +1,495 @@
+{
+  "task_type": "deep_review",
+  "candidate_id": "tiktok_shop_1731569071085752868",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "五个 sections 每个都必须给非空 evidence_refs",
+    "grade_challenge 可以不同意引擎等级，但 rationale 必须引用证据支持，且等级的最终变更由人审确认",
+    "supply_chain 一节只能基于利润代理/能力档案/缺失声明，不得推测成本数值"
+  ],
+  "inputs": {
+    "candidate": {
+      "candidate_id": "tiktok_shop_1731569071085752868",
+      "platform": "tiktok_shop",
+      "canonical_url": "https://shop.tiktok.com/view/product/1731569071085752868",
+      "basic_facts": {
+        "title": "Curvysweet Isolde Women's One Shoulder Formal Evening Gown - Built-in Bra, Ribbon Accent, Bodycon Mesh, Ruched Maxi Dress with Formal Wear, Sleeveless Elegant Bridesmaid Dresses for Women",
+        "brand": null,
+        "category_path": [
+          "女装与女士内衣",
+          "女士连衣裙",
+          "女士正装连衣裙"
+        ],
+        "image_url": null,
+        "price": {
+          "amount": 322.86,
+          "currency": "CNY"
+        },
+        "original_price": null,
+        "discount_pct": null,
+        "rating": 4.8,
+        "review_count": 1416,
+        "in_stock": null
+      },
+      "market_metrics": {
+        "sales_30d_units": 2643,
+        "sales_7d_units": null,
+        "sales_floor_units": null,
+        "revenue_30d": {
+          "amount": 939714.44,
+          "currency": "CNY"
+        },
+        "gmv_7d": null,
+        "sales_growth_rate": 0.12478667949869249,
+        "favorites_count": null,
+        "bestseller_rank_text": null,
+        "video_views_max": 359099.99999999994,
+        "video_revenue_share": 0.9779566652184254,
+        "related_creator_count": 239,
+        "trend_signals": []
+      },
+      "competition_metrics": {
+        "category_top3_shop_ratio": 0.06642897024349745,
+        "category_top10_shop_ratio": 0.19169710680829669,
+        "category_shop_count": 4493,
+        "competitor_review_max": null,
+        "commission_rate": 0.1,
+        "seller_type": "RETAILER",
+        "creator_gmv_concentration": 0.423
+      },
+      "product_opportunity": {
+        "review_tag_clusters": [],
+        "negative_review_clusters": [],
+        "improvement_points": [],
+        "differentiation_signals": []
+      },
+      "cross_platform": {
+        "matched_products": [],
+        "platform_price_comparison": [],
+        "same_style_signals": []
+      },
+      "owned_supply_inputs": {
+        "target_cost": null,
+        "moq": null,
+        "lead_time_days": null,
+        "fabric_capability": [],
+        "compliance_notes": []
+      },
+      "quality_status": "VALID",
+      "missing_fields": [
+        "owned_supply_inputs.target_cost",
+        "owned_supply_inputs.moq",
+        "owned_supply_inputs.lead_time_days",
+        "product_opportunity.reviews"
+      ],
+      "field_issues": [],
+      "context": {
+        "category_name": "女士连衣裙",
+        "category_label": null,
+        "source_group": "tiktok_shop_plugin",
+        "site": null,
+        "shop_name": "CurvySweet-US",
+        "seller_name": "CurvySweet-US",
+        "seasonal": false,
+        "shipping_fee": {
+          "amount": 57,
+          "currency": "CNY"
+        },
+        "product_total_sales": null,
+        "video_engagement_max": null,
+        "affiliate_creator_count": null,
+        "review_tags_raw": null
+      }
+    },
+    "engine_analysis": {
+      "track": "evergreen",
+      "track_label": "基础常青款",
+      "grade": "A",
+      "pct": 52.5,
+      "total": 34.1,
+      "achievable_max": 65.0,
+      "components": [
+        {
+          "name": "市场需求",
+          "score": 10.6,
+          "max_score": 22.0,
+          "reason": "量级信号 review_count_as_demand=1,416 -> 8分；销量/销售额增长率 +12.5% -> 3分；1个独立需求证据源",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000326",
+            "ev_kalodata_dresses_000329"
+          ],
+          "missing": false
+        },
+        {
+          "name": "竞争可突破",
+          "score": 21.0,
+          "max_score": 28.0,
+          "reason": "类目Top10店铺占比 19.2% -> 集中度6分；竞品评论门槛≈1,449（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000324",
+            "ev_kalodata_dresses_000326",
+            "ev_kalodata_dresses_000342"
+          ],
+          "missing": false
+        },
+        {
+          "name": "产品机会",
+          "score": 5.2,
+          "max_score": 15.0,
+          "reason": "评分4.8（口碑较好_改良空间有限）-> 2分；视频销售额占比 98%",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000325",
+            "ev_kalodata_dresses_000338"
+          ],
+          "missing": false
+        },
+        {
+          "name": "风险",
+          "score": -2.7,
+          "max_score": 0.0,
+          "reason": "单一数据源，量价未经第二源互验：仅 kalodata_dresses 单源；达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 42%（赛道风险系数×0.67）",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000318",
+            "ev_kalodata_dresses_000332"
+          ],
+          "missing": false
+        }
+      ],
+      "claims": [
+        {
+          "claim": "市场需求：量级信号 review_count_as_demand=1,416 -> 8分；销量/销售额增长率 +12.5% -> 3分；1个独立需求证据源",
+          "claim_type": "demand",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000326",
+            "ev_kalodata_dresses_000329"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "竞争可突破：类目Top10店铺占比 19.2% -> 集中度6分；竞品评论门槛≈1,449（组内评论数p90代理）-> 3分；价格带位置 within_p25_p75 -> 6分",
+          "claim_type": "competition",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000324",
+            "ev_kalodata_dresses_000326",
+            "ev_kalodata_dresses_000342"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "产品机会：评分4.8（口碑较好_改良空间有限）-> 2分；视频销售额占比 98%",
+          "claim_type": "product",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000325",
+            "ev_kalodata_dresses_000338"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "单一数据源，量价未经第二源互验：仅 kalodata_dresses 单源",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000318"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "claim": "达人GMV集中度>40%，达人依赖复制风险：达人GMV集中度 42%",
+          "claim_type": "risk",
+          "evidence_refs": [
+            "ev_kalodata_dresses_000332"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "layer_results": {
+        "L1": {
+          "passed": true,
+          "score": 52.5,
+          "grade": "A",
+          "gate_reason": "PScore 34.1/65.0（52.5%）-> A",
+          "required_next_data": []
+        },
+        "L2": {
+          "passed": true,
+          "score": 52.5,
+          "grade": "A",
+          "gate_reason": "本轮前端采集未包含评论全文，Shein 候选使用页面评价标签聚合，其余候选记录评论不可得原因并降置信度",
+          "required_next_data": [
+            "reviews_or_review_tags"
+          ]
+        },
+        "L3": {
+          "passed": null,
+          "score": null,
+          "grade": null,
+          "gate_reason": null,
+          "required_next_data": []
+        }
+      },
+      "confidence": "medium"
+    },
+    "evidence_pack": [
+      {
+        "evidence_id": "ev_kalodata_dresses_000318",
+        "source_id": "kalodata_dresses",
+        "field_path": "basic_facts.title",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000319",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.seller_name",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000320",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.shop_name",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000321",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.category_name",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000322",
+        "source_id": "kalodata_dresses",
+        "field_path": "basic_facts.category_path",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000324",
+        "source_id": "kalodata_dresses",
+        "field_path": "basic_facts.price",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000325",
+        "source_id": "kalodata_dresses",
+        "field_path": "basic_facts.rating",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000326",
+        "source_id": "kalodata_dresses",
+        "field_path": "basic_facts.review_count",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000327",
+        "source_id": "kalodata_dresses",
+        "field_path": "market_metrics.sales_30d_units",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000328",
+        "source_id": "kalodata_dresses",
+        "field_path": "market_metrics.revenue_30d",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000329",
+        "source_id": "kalodata_dresses",
+        "field_path": "market_metrics.sales_growth_rate",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": "derived from first/last three daily trend points"
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000330",
+        "source_id": "kalodata_dresses",
+        "field_path": "competition_metrics.commission_rate",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000331",
+        "source_id": "kalodata_dresses",
+        "field_path": "competition_metrics.seller_type",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000332",
+        "source_id": "kalodata_dresses",
+        "field_path": "competition_metrics.creator_gmv_concentration",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000333",
+        "source_id": "kalodata_dresses",
+        "field_path": "market_metrics.related_creator_count",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000334",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.creator_conversion_ratio",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000335",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.shop_rating",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000336",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.price_range",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000337",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.shipping_fee",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000338",
+        "source_id": "kalodata_dresses",
+        "field_path": "market_metrics.video_revenue_share",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000339",
+        "source_id": "kalodata_dresses",
+        "field_path": "market_metrics.video_views_max",
+        "record_locator": "sheet=video_assets;row=13",
+        "note": "maximum observed related video views"
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000341",
+        "source_id": "kalodata_dresses",
+        "field_path": "competition_metrics.category_top3_shop_ratio",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000342",
+        "source_id": "kalodata_dresses",
+        "field_path": "competition_metrics.category_top10_shop_ratio",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000343",
+        "source_id": "kalodata_dresses",
+        "field_path": "competition_metrics.category_shop_count",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000344",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.category_revenue_growth_rate",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      },
+      {
+        "evidence_id": "ev_kalodata_dresses_000345",
+        "source_id": "kalodata_dresses",
+        "field_path": "context.category_avg_unit_price_cny",
+        "record_locator": "sheet=product_profiles;row=13",
+        "note": ""
+      }
+    ]
+  },
+  "allowed_evidence_ids": [
+    "ev_kalodata_dresses_000318",
+    "ev_kalodata_dresses_000319",
+    "ev_kalodata_dresses_000320",
+    "ev_kalodata_dresses_000321",
+    "ev_kalodata_dresses_000322",
+    "ev_kalodata_dresses_000324",
+    "ev_kalodata_dresses_000325",
+    "ev_kalodata_dresses_000326",
+    "ev_kalodata_dresses_000327",
+    "ev_kalodata_dresses_000328",
+    "ev_kalodata_dresses_000329",
+    "ev_kalodata_dresses_000330",
+    "ev_kalodata_dresses_000331",
+    "ev_kalodata_dresses_000332",
+    "ev_kalodata_dresses_000333",
+    "ev_kalodata_dresses_000334",
+    "ev_kalodata_dresses_000335",
+    "ev_kalodata_dresses_000336",
+    "ev_kalodata_dresses_000337",
+    "ev_kalodata_dresses_000338",
+    "ev_kalodata_dresses_000339",
+    "ev_kalodata_dresses_000341",
+    "ev_kalodata_dresses_000342",
+    "ev_kalodata_dresses_000343",
+    "ev_kalodata_dresses_000344",
+    "ev_kalodata_dresses_000345"
+  ],
+  "output_schema": {
+    "executive_summary": "str（≤200字，给运营/立项委员会看）",
+    "sections": {
+      "demand": {
+        "assessment": "str",
+        "strengths": [
+          "str"
+        ],
+        "concerns": [
+          "str"
+        ],
+        "evidence_refs": [
+          "⊆ allowed_evidence_ids，必填非空"
+        ],
+        "confidence": "high|medium|low"
+      },
+      "competition": "同上结构",
+      "product": "同上结构",
+      "supply_chain": "同上结构",
+      "risk": "同上结构"
+    },
+    "grade_challenge": {
+      "agrees_with_engine": "bool",
+      "suggested_grade": "S|A|B|C|null（同意引擎等级时为 null）",
+      "rationale": "str（不同意时必填，说明依据哪些证据）"
+    },
+    "go_recommendation": {
+      "decision": "go_research|hold|reject",
+      "conditions": [
+        "str（放行/持有的前提条件）"
+      ]
+    },
+    "open_questions": [
+      "str（需要人工或补采回答的问题）"
+    ],
+    "next_actions": [
+      "str"
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low"
+  }
+}

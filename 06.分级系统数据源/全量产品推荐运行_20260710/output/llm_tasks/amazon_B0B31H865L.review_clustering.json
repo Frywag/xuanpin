@@ -1,0 +1,53 @@
+{
+  "task_type": "review_clustering",
+  "candidate_id": "amazon_B0B31H865L",
+  "run_id": "output",
+  "rules": [
+    "只允许引用 allowed_evidence_ids 里的证据 id，禁止编造证据",
+    "禁止编造销量、搜索量、销售额、毛利、MOQ、成本等任何数值",
+    "输入中没有的信息必须写入 missing_fields，不得脑补为事实",
+    "不确定的判断写入 assumptions 并降低 confidence",
+    "输出必须是单个 JSON 对象，不要输出任何 JSON 之外的文字",
+    "representative_reviews 只能摘抄输入里的标签原文，不得虚构评论内容"
+  ],
+  "inputs": {
+    "title": "elescat Women's Summer Dresses 2026 Beach Casual Sleeveless Floral Print Tank Loose Sundress with Pocket",
+    "rating": 4.4,
+    "review_count": 35797.0,
+    "review_tags_raw": "[{\"tag\":\"appearance\",\"mentions\":2974,\"positive\":2767,\"negative\":207,\"snippets\":[\"Customers like the appearance of the dress, describing it as nice with a pretty print.\",\"and flowy. The dress code for the restaurants in Bora Bora was dress or slacks, and when I got this dress (it's has pockets!!!)...\",\"! Actually have it on while writing this. I wear it all the time and get compliments. True to size and very comfortable fit....\",\"Absolutely love this dress. Wore it to an outdoor party and was\",\"and comfortable the whole time plus I received compliments on how pretty it was....\",\"and different fabric. This is a perfect beach dress or a relaxed evening at a barbecue. It is not sheer at all\"]},{\"tag\":\"fit\",\"mentions\":2780,\"positive\":2420,\"negative\":360,\"snippets\":[\"Customers like how the dress fits, finding it flattering and loose, with one customer noting it hits right at the knee and another mentioning it hides their tummy.\",\"and comfortable dress. High neck and wide straps mean I can wear any bra with it. Just above the knee, so not too short....\",\". Pockets are nice. Seems to be sewn well. I just wish it was as brightly colored.\",\", compliments your body, good length, material is soft , love that it has pockets Only con is the colors are nice t as vibrant as the picture\",\". I’m 5’4 and 184lbs. Curvy shape. Purchased the XL. This dress is comfortable, just the right length falling at the knee....\"]},{\"tag\":\"comfort\",\"mentions\":2092,\"positive\":2058,\"negative\":34,\"snippets\":[\"Customers find the dress comfortable, particularly in summer heat, and appreciate that it has pockets.\",\"and flattering. It's my 2nd one as there are many cute patterns to choose from.\",\", well-made dress. The colors are bright and as lovely as shown in the picture. I am just over 5 ft....\",\"...They come in all kind of patterns and colors, they are light and\",\", for out 110 and over desert 🏜 heat! I say but, but, and buy them...\",\"! I have had several compliments on it. I can also wear it on chilly days with some leggings and a cardigan.\"]},{\"tag\":\"material\",\"mentions\":970,\"positive\":716,\"negative\":254,\"snippets\":[\"Customers like the fabric of the dress, describing it as good and pretty, with one customer noting it's a nice cotton blend.\",\". Washes nicely. Many compliments Why did you pick this product vs others?: colors pockets skirt fuller....\",\", drapes beautifully. I like the pattern and I bought a black one too....\",\"...Not sure if all of the different patterns are made from the same\",\", the color is vibrant - it's perfect for a cruise I'm getting ready for,...\"]},{\"tag\":\"color\",\"mentions\":932,\"positive\":812,\"negative\":120,\"snippets\":[\"Customers like the dress's colors, describing them as lovely and perfect for a little black dress, with one customer noting the vibrant print.\",\"& the material is nice. I love that it has pockets. I'm 5'3\\\" & reaches right above knee. Very cool & comfortable for summer.\",\"and true to size! Love the pockets and the way the underarm area fit. Would highly recommend for a nice spring/ summer dress.\",\"and I love the fabric and i am glad it has pockets on the side for my phone or keys....\",\"and fits as expected. And love the pockets! The pockets do not flare out like some dresses; you can't tell they are there...\"]},{\"tag\":\"pockets\",\"mentions\":897,\"positive\":820,\"negative\":77,\"snippets\":[\"Customers like the dress's pockets, with one mentioning that they lay flat.\",\"& the slightly longer length, I'm 5'4 & it stopped right above my knees. I wore it with a denim jacket & platform sandals, very cute!\",\"and comes right above the knee. I’m 5’ 6” and 150 lbs and the Medium fit perfectly.\",\"and fabric that that moves like a dream. The print is colorful and reminiscent of Monet's garden.\",\"which I really love. The fabric is soft and it doesn't wrinkle. I would definitely recommend this dress.\"]},{\"tag\":\"softness\",\"mentions\":582,\"positive\":538,\"negative\":44,\"snippets\":[\"Customers love the dress's fabric, describing it as soft, flowy, and comfortable to wear.\",\",GREAT FABRIC LITTLE DRESS.. FITS FLATTERING AROUND THE TUMMY AREA.NICE PATTERN..A DRESS THATS EASY TO WEAR,SHOPPING WITH THE GIRLS,LUNCH CASUAL...\",\"...an XL and it fits beautifully, falls just a bit below the knee, is\",\"and stretchy so it moves with you without constricting, drapes nicely...\",\", love that it has pockets Only con is the colors are nice t as vibrant as the picture\",\", not too thin, not too thick. Does not feel cheap. It’s more about fit to specific bodies. I think 90% of women would love this dress.\"]},{\"tag\":\"sizing\",\"mentions\":811,\"positive\":427,\"negative\":384,\"snippets\":[\"Customers have mixed opinions about the sizing of the dress, with some finding it true to size while others say it runs a little large.\",\"...Not a formal dress but that suits me just fine. Generous cut but\",\". Fabric is light but an easy wash and has held up well. Love it!!\",\". I could get it on but it wasn't loose enough to my comfort....\",\".. A small was recommended and it fits me perfectly.. I am buying another in a...\",\"....I would normally wear a Large but typically order XL in clothing I buy...\"]}]",
+    "note": "本轮无评论全文，只有页面评价标签+次数聚合；结论只能基于这些标签"
+  },
+  "allowed_evidence_ids": [
+    "ev_02f930cc13505b06",
+    "ev_b5fdb7fb79046740",
+    "ev_e204d15843d65f0c",
+    "ev_f699f1402c807e69",
+    "ev_f8dc140d624ac092"
+  ],
+  "output_schema": {
+    "clusters": [
+      {
+        "cluster_name": "str",
+        "frequency_hint": "high|medium|low",
+        "representative_reviews": [
+          "str（只能引用输入中的标签原文）"
+        ],
+        "improvement_opportunity": "str",
+        "risk_if_unfixed": "str",
+        "evidence_refs": [
+          "必须 ⊆ allowed_evidence_ids"
+        ]
+      }
+    ],
+    "missing_fields": [
+      "str"
+    ],
+    "assumptions": [
+      "str"
+    ],
+    "confidence": "high|medium|low",
+    "blocked_reasons": [
+      "str"
+    ]
+  }
+}
